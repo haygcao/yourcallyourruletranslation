@@ -1,0 +1,10 @@
+[
+   {
+      "title":"Incoming Notice",
+      "content":"This is for incoming notice only.",
+      //"imageUrl":"",
+      //"url":"https://example.com/remote_page1",
+      "backgroundColor":"beffbe",
+      "borderRadius":"20.0" 
+   }
+]
