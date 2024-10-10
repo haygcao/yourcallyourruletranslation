@@ -19,7 +19,24 @@ const predefinedLabels = [ // 修改：添加初始值
   {'label': 'Fraud Scam Likely'},
   {'label': 'Spam Likely'},
   {'label': 'Telemarketing'},
-  // ... 省略其他预设标签
+  {'label': 'Robocall'},
+  {'label': 'Delivery'},
+  {'label': 'Takeaway'},
+  {'label': 'Ridesharing'},
+  {'label': 'Insurance'},
+  {'label': 'Loan'},
+  {'label': 'Customer Service'},
+  {'label': 'Unknown'},
+  {'label': 'Financial'},
+  {'label': 'Bank'},
+  {'label': 'Education'},
+  {'label': 'Medical'},
+  {'label': 'Charity'},
+  {'label': 'Other'},
+  {'label': 'Collection'},
+  {'label': 'Survey'},
+  {'label': 'Political'},
+  {'label': 'Ecommerce'},
   {'label': 'Risk'},
 ];
 
@@ -34,7 +51,7 @@ const manualMapping = { // 修改：添加初始值
 
 
 
-// 使用 Promise 来加载脚本
+// 使用 Promise 来加载脚本// 因为app 没有内置npm包，所以只能引入url 或者打包
 function loadScript(url) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -57,7 +74,7 @@ async function loadLibraries() {
   }
 }
 
-// 使用 DOMParser API 提取数据 (版本 A 的 extractDataFromDOM 函数)
+// 使用 DOMParser API 提取数据 (这里重要的就是count 和label，phone number，其他的都是为了测试使用的)
 function extractDataFromDOM(doc, phoneNumber) {
   const jsonObject = {
     count: 0,
@@ -68,6 +85,7 @@ function extractDataFromDOM(doc, phoneNumber) {
     phoneNumber: phoneNumber
   };
 
+  //从这里到你根据实际的html 的element 进行修改，
   const descElement = doc.querySelector('.mark-tip_3WkLJ span');
   if (descElement) {
     const descText = descElement.textContent.trim();
@@ -92,6 +110,9 @@ function extractDataFromDOM(doc, phoneNumber) {
   console.log('Extracted information:', jsonObject);
   return jsonObject;
 }
+//到这里需要你根据实际的html 的element 进行修改，
+
+
 
 // 查询电话号码信息 (版本 A 的 queryPhoneNumber 函数)
 function queryPhoneInfo(phoneNumber) {
@@ -99,6 +120,7 @@ function queryPhoneInfo(phoneNumber) {
 // 将 phoneNumber 存储在 window 对象上
   window.currentPhoneNumber = phoneNumber; // 存储电话号码
 
+///  这里url 和headers 是你需要你修改的
   // 添加 pluginId 到消息中
   FlutterChannel.postMessage(JSON.stringify({
     pluginId: pluginId, 
@@ -109,6 +131,11 @@ function queryPhoneInfo(phoneNumber) {
     },
   }));
 }
+//// 这里url 和headers 是你需要你修改的
+
+
+///剩下的部分都是固定的你不需要改动
+
 
 // 使用 Map 对象来存储 pending 的 Promise
 const pendingPromises = new Map();
