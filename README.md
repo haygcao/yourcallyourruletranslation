@@ -6,7 +6,7 @@
 
 * **白名单和黑名单：** 创建允许和阻止号码的自定义列表。
 * **导入/导出规则：** 轻松共享和备份您的规则集。
-* **在线订阅：** 订阅精选的垃圾号码列表（需要自定义插件）。
+* **在线订阅：** 订阅精选的垃圾号码列表（需要订阅链接）。
 * **正则表达式支持：** 使用正则表达式定义复杂的拦截规则。
 * **STIR/SHAKEN 集成：** 利用 STIR/SHAKEN 技术增强来电显示验证（在部分地区受支持，包括北美）。
 * **SIM 卡识别：** 根据使用的 SIM 卡识别来电。
@@ -67,7 +67,7 @@ YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是
 
 * **Whitelisting & Blacklisting:** Create custom lists of allowed and blocked numbers.
 * **Import/Export Rules:** Easily share and backup your rule sets.
-* **Online Subscription:** Subscribe to curated lists of spam numbers (requires custom plugins).
+* **Online Subscription:** Subscribe to curated lists of spam numbers (requires subscription url).
 * **Regular Expression Support:** Define complex blocking rules using regular expressions.
 * **STIR/SHAKEN Integration:** Leverage STIR/SHAKEN technology for enhanced caller ID verification (supported in select regions, including North America).
 * **SIM Card Recognition:** Identify incoming calls based on the SIM card used.
