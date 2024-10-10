@@ -23,7 +23,7 @@
 YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件来：
 
 * **订阅在线数据库：** 开发插件以从公共或私有在线数据库获取和导入拦截规则。
-* **网页抓取：** 创建插件以从网站抓取电话号码并自动将其添加到您的拦截列表（需要 JavaScript 知识）。
+* **网页抓取：** 创建插件以从网站抓取电话号码并自动将其添加到您的拦截列表（需要 JavaScript 知识）模板：https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest。
 
 ## 贡献
 
@@ -84,7 +84,7 @@ YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是
 YourCallYourRule is designed to be extensible through custom plugins. You can leverage these plugins to:
 
 * **Subscribe to Online Databases:** Develop plugins to fetch and import blocking rules from public or private online databases.
-* **Web Scraping:** Create plugins to scrape phone numbers from websites and automatically add them to your blocking lists (requires JavaScript knowledge).
+* **Web Scraping:** Create plugins to scrape phone numbers from websites and automatically add them to your blocking lists (requires JavaScript knowledge). Template: https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest
 
 ## Contributing
 
