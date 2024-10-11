@@ -13,8 +13,8 @@
 * **来电拦截操作：** 为被拦截的来电选择各种操作，包括挂断、静音和接听后挂断。
 * **基于持续时间的过滤：** 允许在特定时间范围内重复呼叫绕过拦截。
 * **短信拦截：** 根据发件人号码或关键词拦截 unwanted 短信。
-  * 需要将您的原生短信应用程序的通知静音，以防止 unwanted 警报。
-  * 被拦截的短信仍然会送达，但不会触发通知。
+  * 需要将您的原生短信应用程序的通知静音，以防止响铃。
+  * 被拦截的短信仍然会送达，但不会触发响铃。
 * **数据控制：** 没有内置的在线数据库。所有数据都在您的设备上本地管理，确保您的隐私。
 * **备份和恢复：** 支持 WebDAV、Google Drive 和 OneDrive，以实现无缝的数据备份和恢复。 
 
@@ -79,8 +79,8 @@ YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是
 * **Call Blocking Actions:** Choose from various actions for blocked calls, including hang up, mute, and hang up after answer.
 * **Duration-Based Filtering:** Allow repeated calls within a specific time frame to bypass blocking.
 * **SMS Blocking:** Block unwanted SMS messages based on sender number or keywords.
-  * Requires muting your native SMS app's notifications to prevent unwanted alerts.
-  * Blocked SMS messages will still be delivered but will not trigger notifications.
+  * Requires muting your native SMS app's notifications to prevent unwanted ringtone alerts.
+  * Blocked SMS messages will still be delivered but will not trigger ringtone notifications.
 * **Data Control:** No built-in online database. All data is managed locally on your device, ensuring your privacy.
 * **Backup & Restore:** Support for WebDAV, Google Drive, and OneDrive for seamless data backup and restoration.  （By watching ads, unlock random VIP privileges）
 
