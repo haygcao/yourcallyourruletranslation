@@ -1,2 +1,2 @@
-phoneNumber,label,name,avatar,isSubscribed,count,url
+phoneNumber,label,name,avatar,isSubscribed,count,url//if is url isSubscribed equals true otherwise false
 required,required,,,false,,
