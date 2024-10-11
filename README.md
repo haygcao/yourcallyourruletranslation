@@ -33,7 +33,7 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 我很乐意将任何网盘服务集成到应用中，只要有相应的 Flutter 包和测试账号可用。这将为备份和恢复数据提供更大的灵活性。
 
 ## 数据模板
-此仓库包含用于各种用途的数据模板（[https://github.com/haygcao/yourcallyourruletranslation/tree/main/Templates]）。标有 “required” 的字段为必填项，其他字段为可选项。
+此仓库包含用于各种用途的数据模板([https://github.com/haygcao/yourcallyourruletranslation/tree/main/Templates]) ,标有 “required” 的字段为必填项，其他字段为可选项。
 
 ## 贡献
 
