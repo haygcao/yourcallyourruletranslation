@@ -16,7 +16,7 @@
   * 需要将您的原生短信应用程序的通知静音，以防止 unwanted 警报。
   * 被拦截的短信仍然会送达，但不会触发通知。
 * **数据控制：** 没有内置的在线数据库。所有数据都在您的设备上本地管理，确保您的隐私。
-* **备份和恢复：** 支持 WebDAV、Google Drive 和 OneDrive，以实现无缝的数据备份和恢复。
+* **备份和恢复：** 支持 WebDAV、Google Drive 和 OneDrive，以实现无缝的数据备份和恢复。 
 
 ## 扩展功能
 
@@ -50,7 +50,7 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 
 ## 关于开源的说明
 
-YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是开源的，以方便社区贡献和反馈。
+YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是开源的，以方便开发和反馈。
 
 ## 免责声明
 
@@ -82,7 +82,7 @@ YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是
   * Requires muting your native SMS app's notifications to prevent unwanted alerts.
   * Blocked SMS messages will still be delivered but will not trigger notifications.
 * **Data Control:** No built-in online database. All data is managed locally on your device, ensuring your privacy.
-* **Backup & Restore:** Support for WebDAV, Google Drive, and OneDrive for seamless data backup and restoration.
+* **Backup & Restore:** Support for WebDAV, Google Drive, and OneDrive for seamless data backup and restoration.  （By watching ads, unlock random VIP privileges）
 
 ## Extending Functionality
 
@@ -116,7 +116,7 @@ For inspiration, check out these example workflows for creating custom subscript
 
 ## Note on Open Source
 
-The core application of YourCallYourRule is not open source. However, specific functionalities are open-sourced to facilitate community contributions and feedback.
+The core application of YourCallYourRule is not open source. However, specific functionalities are open-sourced to facilitate community development and feedback.
 
 ## Disclaimer
 
