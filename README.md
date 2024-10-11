@@ -33,6 +33,11 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 * **评论问题：** 报告错误、建议新功能或分享 publicly 可用拦截列表的链接。
 * **分享黑名单：** 贡献您精选的垃圾号码列表来帮助他人。
 
+## 通知自定义
+
+应用使用 flutter_local_notifications 包来实现本地通知功能，但目前仅进行了基础配置。如果您有任何关于增强通知功能的创意，欢迎通过修改 `notification.dart` 文件来贡献您的想法: [https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart](https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart)
+
+
 ## 示例
 
 以下是一些用于创建自定义订阅插件的示例工作流程：
@@ -93,7 +98,12 @@ We encourage users to contribute to the project by:
 * **Submitting Pull Requests:** Share your custom plugins or improvements to the app.
 * **Commenting on Issues:** Report bugs, suggest new features, or share links to publicly available blocking lists.
 * **Sharing Blacklists:** Contribute your curated lists of spam numbers to help others.
-* **Enhancing Notifications:** The app utilizes the `flutter_local_notifications` package for local notifications, but only with basic configuration. If you have any creative ideas for enhancing notification functionality, feel free to contribute by modifying the `notification.dart` file: [https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart](https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart)
+
+
+## Notification Customization
+
+The app utilizes the `flutter_local_notifications` package for local notifications, but only with basic configuration. If you have any creative ideas for enhancing notification functionality, feel free to contribute by modifying the `notification.dart` file: [https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart](https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart)
+
 ## Examples
 
 For inspiration, check out these example workflows for creating custom subscription plugins:
