@@ -44,13 +44,18 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 
 ## 示例
 
-以下是一些用于创建自定义订阅插件的示例工作流程：
+以下是一些用于创建自定义订阅插件的示例GitHub Workflow工作流 和部分网站:
 
 * **美国 FCC 数据库：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml)
 * **美国 FCC Robocall 数据库：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml)
 * **法国正则表达式：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml)
+
+* **Workflow 验证：**  基于某些原因app 本身不能提供已经处理号的数据，但不影响你自身定制数据，所以请验证上面的workflow后再使用，如果workfow 有 任何不对的地方欢迎修改。
+*   
 * **西班牙：** 您可以使用 [www.listaspam.com](https://www.listaspam.com/) 和 [www.responderono.es](https://www.responderono.es/) 等网站作为创建您自己的插件的来源。
 * **中国：** 利用 [www.baidu.com](https://www.baidu.com) 或 [www.so.com](https://www.so.com) 等搜索引擎开发针对中文垃圾号码的自定义插件。
+
+
 
 ## 关于开源的说明
 
@@ -119,6 +124,9 @@ For inspiration, check out these example workflows for creating custom subscript
 * **US FCC Database:** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml)
 * **US FCC Robocall Database:** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml)
 * **France Regex:** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml)
+
+* **Workflow Verification:** Due to certain limitations, the app itself cannot provide pre-processed phone number data. However, this does not affect your ability to customize your own data. Please verify the functionality of the provided workflows before using them. If you encounter any issues or inaccuracies with the workflows, we encourage you to modify them and submit your improvements. 
+
 * **Spain:** You can use websites like [www.listaspam.com](https://www.listaspam.com/) and [www.responderono.es](https://www.responderono.es/) as sources for creating your own plugins.
 * **China:** Utilize search engines like [www.baidu.com](https://www.baidu.com) or [www.so.com](https://www.so.com) to develop custom plugins for Chinese spam numbers.
 
