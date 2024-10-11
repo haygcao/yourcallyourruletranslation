@@ -29,6 +29,12 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 * **订阅在线数据库：** 开发插件以从公共或私有在线数据库获取和导入拦截规则。
 * **网页抓取：** 创建插件以从网站抓取电话号码并自动将其添加到您的拦截列表（需要 JavaScript 知识）模板：https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest 已经配置了整套的测试工具。
 
+## 云服务集成
+我很乐意将任何网盘服务集成到应用中，只要有相应的 Flutter 包和测试账号可用。这将为备份和恢复数据提供更大的灵活性。
+
+## 数据模板
+此仓库包含用于各种用途的数据模板（[https://github.com/haygcao/yourcallyourruletranslation/tree/main/Templates]）。标有 “required” 的字段为必填项，其他字段为可选项。
+
 ## 贡献
 
 我们鼓励用户通过以下方式为项目做出贡献：
@@ -103,6 +109,13 @@ YourCallYourRule is designed to be extensible through custom plugins. You can le
 
 * **Subscribe to Online Databases:** Develop plugins to fetch and import blocking rules from public or private online databases.
 * **Web Scraping:** Create plugins to scrape phone numbers from websites and automatically add them to your blocking lists (requires JavaScript knowledge). Template: https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest  A  suite of testing tools has been configured.
+
+## Cloud Service Integration
+I am open to integrating any cloud service into the app, provided that a Flutter package and a test account are available. This allows for broader flexibility in backing up and restoring your data.
+
+## Data Templates
+This repository contains data templates for various purposes ([https://github.com/haygcao/yourcallyourruletranslation/tree/main/Templates]). Fields marked as "required" are mandatory, while others are optional.
+
 
 ## Contributing
 
