@@ -93,7 +93,7 @@ We encourage users to contribute to the project by:
 * **Submitting Pull Requests:** Share your custom plugins or improvements to the app.
 * **Commenting on Issues:** Report bugs, suggest new features, or share links to publicly available blocking lists.
 * **Sharing Blacklists:** Contribute your curated lists of spam numbers to help others.
-
+* **Enhancing Notifications:** The app utilizes the `flutter_local_notifications` package for local notifications, but only with basic configuration. If you have any creative ideas for enhancing notification functionality, feel free to contribute by modifying the `notification.dart` file: [https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart](https://github.com/haygcao/yourcallyourruletranslation/blob/main/notification.dart)
 ## Examples
 
 For inspiration, check out these example workflows for creating custom subscription plugins:
