@@ -1,2 +1,2 @@
-name,phoneNumbers,email,label,avatar,website,group,url//delete the first line , for phoneNumbers(Split comma-separated string into a list) (使用逗号分隔多个号码)
+name,phoneNumbers,email,label,avatar,website,group,url//delete the first line , for phoneNumbersSplit comma-separated string into a list使用逗号分隔多个号码
 required,required,,,,,,
