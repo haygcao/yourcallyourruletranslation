@@ -1,0 +1,2 @@
+phoneNumber,label,name,avatar,isSubscribed,count,url //elete the first line, if the data comes from url then isSubscribed=true,otherwise=false
+required,required,,,,true,,
