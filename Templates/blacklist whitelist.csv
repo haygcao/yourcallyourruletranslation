@@ -1,2 +1,2 @@
 phoneNumber,label,name,avatar,isSubscribed,count,url
-required,required,,,"=IF(ISBLANK(url),FALSE,TRUE)",,, 
+required,required,,,false,,
