@@ -2,6 +2,9 @@
 
 **YourCallYourRule** 是一款功能强大且灵活的 Android 应用程序，旨在让您完全掌控来电和短信。它允许您根据电话号码、关键词等创建个性化的拦截规则。
 
+* **Telegram Channel：** https://t.me/yourcallyourrule
+* **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
+
 ## 功能
 
 * **白名单和黑名单：** 创建允许和阻止号码的自定义列表。
@@ -17,6 +20,7 @@
   * 被拦截的短信仍然会送达，但不会触发响铃。
 * **数据控制：** 没有内置的在线数据库。所有数据都在您的设备上本地管理，确保您的隐私。
 * **备份和恢复：** 支持 WebDAV、Google Drive 和 OneDrive，以实现无缝的数据备份和恢复。 
+* **内置通讯录：**  软件内置通讯录， 你可以将任何联系人存储到app 的通讯录，从而和本地的通讯录分离，支持直接通过联系人号码打开Whatsapp 和 Telegram。
 
 ## 扩展功能
 
@@ -68,6 +72,9 @@ YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是
 
 **YourCallYourRule** is a powerful and flexible Android application designed to give you complete control over incoming calls and SMS messages. It empowers you to create personalized blocking rules based on phone numbers, keywords, and more.
 
+* **Telegram Channel：** https://t.me/yourcallyourrule
+* **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
+  
 ## Features
 
 * **Whitelisting & Blacklisting:** Create custom lists of allowed and blocked numbers.
@@ -83,7 +90,8 @@ YourCallYourRule 的核心应用程序不是开源的。但是，特定功能是
   * Blocked SMS messages will still be delivered but will not trigger ringtone notifications.
 * **Data Control:** No built-in online database. All data is managed locally on your device, ensuring your privacy.
 * **Backup & Restore:** Support for WebDAV, Google Drive, and OneDrive for seamless data backup and restoration.  （By watching ads, unlock random VIP privileges）
-
+* **Built-in Contacts:** The app features a built-in contact list, allowing you to store contacts separately from your device's native contacts. You can directly open WhatsApp and Telegram conversations with contacts from the app's contact list.
+* 
 ## Extending Functionality
 
 YourCallYourRule is designed to be extensible through custom plugins. You can leverage these plugins to:
