@@ -1,0 +1,2 @@
+pattern,name,isWhitelist,isBlacklist,enabled//either which one is true othersise false
+required,required,false,false,true
