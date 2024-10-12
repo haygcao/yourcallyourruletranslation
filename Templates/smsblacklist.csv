@@ -1,0 +1,2 @@
+phoneNumber,label,name,avatar,isSubscribed,url//issubscribe either ture or false if it does not have a url 
+required,required,,,false,
