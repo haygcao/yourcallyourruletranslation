@@ -1,2 +1,2 @@
-pattern,name,isWhitelist,isBlacklist,enabled//either which one is true othersise false
+pattern,name,isWhitelist,isBlacklist,enabled//dlete first line black whitlist either which one is true othersise false
 required,required,false,false,true
