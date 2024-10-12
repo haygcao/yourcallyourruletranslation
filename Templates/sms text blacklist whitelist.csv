@@ -1,0 +1,2 @@
+keyword,name,isSubscribed,url//is subscribed either true or false if it does not have a url
+required,,,false,
