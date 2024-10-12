@@ -1,2 +1,2 @@
-keyword,name,isSubscribed,url
+keyword,name,isSubscribed,url//issubscribed either ture or false if it does not have a url
 required,,false,
