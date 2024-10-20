@@ -142,7 +142,7 @@ For inspiration, check out these example workflows for creating custom subscript
 
 * **Spain:** You can use websites like [www.listaspam.com](https://www.listaspam.com/) and [www.responderono.es](https://www.responderono.es/) as sources for creating your own plugins.
 * **China:** Utilize search engines like [www.baidu.com](https://www.baidu.com) or [www.so.com](https://www.so.com) to develop custom plugins for Chinese spam numbers.
-
+* **Russia:** You can use websites like   [https://8sot.su/](https://8sot.su/) and [https://voprosoff.net/kto-zvonil/](https://voprosoff.net/kto-zvonil/)
 ## Note on Open Source
 
 The core application of YourCallYourRule is not open source. However, specific functionalities are open-sourced to facilitate community development and feedback.
