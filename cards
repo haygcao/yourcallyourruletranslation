@@ -1,10 +1,10 @@
 [
    {
-      "title":"Incoming Notice",
-      "content":"This is for incoming notice only.",
-      //"imageUrl":"",
-      //"url":"https://example.com/remote_page1",
+      "title":"Create your Own Plugin",
+      "content":"Follow this link to create your own plugin.",
+      "imageUrl":"",
+      "url":"https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest",
       "backgroundColor":"beffbe",
-      "borderRadius":"20.0" 
+      "borderRadius":"20.0"
    }
 ]
