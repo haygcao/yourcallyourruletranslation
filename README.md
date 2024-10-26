@@ -63,6 +63,7 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
   
 * **西班牙：** 您可以使用 [www.listaspam.com](https://www.listaspam.com/) 和 [www.responderono.es](https://www.responderono.es/) 等网站作为创建您自己的插件的来源。
 * **中国：** 利用 [www.baidu.com](https://www.baidu.com) 或 [www.so.com](https://www.so.com) 等搜索引擎开发针对中文垃圾号码的自定义插件。
+* **香港/台湾/澳门:** https://www.junk-call.com/
 * **俄罗斯：** 利用 https://8sot.su/ and https://voprosoff.net/kto-zvonil/
 
 
