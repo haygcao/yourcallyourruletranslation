@@ -1,0 +1,58 @@
+name: Generate CSV
+
+on:
+  schedule:
+    - cron: '0 0 */30 * *'  # 每 30 天运行一次
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install PyYAML and requests
+        run: pip install pyyaml requests
+      - name: Generate CSV
+        run: |
+          python <<EOF
+          import yaml
+          import requests
+          import os
+          import json
+
+          base_url = "https://api.github.com/repos/metowolf/vCards/contents/data"
+          headers = {"Accept": "application/vnd.github+json"}
+
+          response = requests.get(base_url, headers=headers)
+          folders = json.loads(response.text)
+
+          for folder in folders:
+            if folder["type"] == "dir":
+              label = folder["name"]
+              csv_filename = f'{label}.csv'
+              with open(csv_filename, 'w') as f:
+                f.write('phoneNumber,label,name,avatar,isSubscribed,count,url\n')
+                folder_url = folder["url"]
+                folder_response = requests.get(folder_url, headers=headers)
+                files = json.loads(folder_response.text)
+                for file in files:
+                  if file["name"].endswith(".yaml"):
+                    name, ext = os.path.splitext(file["name"])
+                    yaml_url = file["download_url"]
+                    yaml_response = requests.get(yaml_url)
+                    data = yaml.safe_load(yaml_response.text)
+                    if 'basic' in data and 'organization' in data['basic'] and 'cellPhone' in data['basic']:
+                      organization = data['basic']['organization']
+                      avatar = f'https://raw.githubusercontent.com/metowolf/vCards/refs/heads/master/data/{label}/{name}.png'
+                      for phone in data['basic']['cellPhone']:
+                        f.write(f'{phone},{label},{organization},{avatar},true,,\n') # 将 isSubscribed 标记为 true
+
+          EOF
+      - name: Commit and Push CSV
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update CSV files"
+          file_pattern: "*.csv"
+          personal_token: ${{ secrets.YOUR_GITHUB_TOKEN }} # 替换为你的 PAT 的 secret 名称
