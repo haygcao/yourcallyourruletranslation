@@ -1,7 +1,8 @@
-# YourCallYourRule: 可定制的来电和短信拦截应用
+# Your Call Your Rule: 可定制的来电和短信拦截应用
 
 **YourCallYourRule** 是一款功能强大且灵活的 Android 应用程序，旨在让您完全掌控来电和短信。它允许您根据电话号码、关键词等创建个性化的拦截规则。
 
+* **Test Link：** https://play.google.com/apps/testing/com.yours.yourcallyourrule
 * **Telegram Channel：** https://t.me/yourcallyourrule
 * **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
 
