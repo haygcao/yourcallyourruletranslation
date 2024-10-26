@@ -59,9 +59,10 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 * **法国正则表达式：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml)
 
 * **Workflow 验证：**  基于某些原因app 本身不能提供已经处理的数据，但不影响你自身定制数据，所以请验证上面的workflow后再使用，如果workfow 有 任何不对的地方欢迎修改。
-*   
+  
 * **西班牙：** 您可以使用 [www.listaspam.com](https://www.listaspam.com/) 和 [www.responderono.es](https://www.responderono.es/) 等网站作为创建您自己的插件的来源。
 * **中国：** 利用 [www.baidu.com](https://www.baidu.com) 或 [www.so.com](https://www.so.com) 等搜索引擎开发针对中文垃圾号码的自定义插件。
+* **俄罗斯：** 利用 https://8sot.su/ and https://voprosoff.net/kto-zvonil/
 
 
 
