@@ -5,6 +5,7 @@
 * **Test Link：** https://play.google.com/apps/testing/com.yours.yourcallyourrule
 * **Telegram Channel：** https://t.me/yourcallyourrule
 * **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
+*  **Plugins & Database:** If anyone can take the advantage the link to develop and plugins and csv database. It will be great, I really appreciate you can share it with others.
 
 ## 功能
 
@@ -148,6 +149,7 @@ For inspiration, check out these example workflows for creating custom subscript
 * **Spain:** You can use websites like [www.listaspam.com](https://www.listaspam.com/) and [www.responderono.es](https://www.responderono.es/) as sources for creating your own plugins.
 * **China:** Utilize search engines like [www.baidu.com](https://www.baidu.com) or [www.so.com](https://www.so.com) to develop custom plugins for Chinese spam numbers.
 * **Russia:** You can use websites like   [https://8sot.su/](https://8sot.su/) and [https://voprosoff.net/kto-zvonil/](https://voprosoff.net/kto-zvonil/)
+*  **Public Universal:**  This https://www.shouldianswer.com/ should work for losts of countries according to the website but you have to develope the plugin to take the advantage. Otherwise you can refer to [call-spam-blocklist](https://github.com/Swyter/call-spam-blocklist/tree/master) all the  honour and etracted list belongs to the author Swyter. But I do advise you make a plugin and share it to others.
 ## Note on Open Source
 
 The core application of YourCallYourRule is not open source. However, specific functionalities are open-sourced to facilitate community development and feedback.
