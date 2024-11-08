@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 授予写入权限
+      contents: write
     steps:
-      - uses: actions/checkout@v4  # 使用 v4 版本 checkout
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -30,6 +30,7 @@ jobs:
           import requests
           import os
           import json
+          import re
 
           base_url = "https://api.github.com/repos/metowolf/vCards/contents/data"
           headers = {"Accept": "application/vnd.github+json"}
@@ -41,7 +42,7 @@ jobs:
             if folder["type"] == "dir":
               label = folder["name"]
               csv_filename = f'{label}.csv'
-              with open(csv_filename, 'w') as f:
+              with open(csv_filename, 'w', encoding='utf-8') as f:  # 添加 encoding 参数
                 f.write('phoneNumber,label,name,avatar,isSubscribed,count,url\n')
                 folder_url = folder["url"]
                 folder_response = requests.get(folder_url, headers=headers)
@@ -56,8 +57,9 @@ jobs:
                       organization = data['basic']['organization']
                       avatar = f'https://raw.githubusercontent.com/metowolf/vCards/refs/heads/master/data/{label}/{name}.png'
                       for phone in data['basic']['cellPhone']:
-                        f.write(f'{phone},{label},{organization},{avatar},true,,\n')
-
+                        
+                        cleaned_phone = re.sub(r'[- ]|,[\d]*$', '', str(phone))  # 正确的正则表达式 # 更新清理规则 cleaned_phone = re.sub(r'[- ]', '', str(phone)) # 转换 phone 为字符串
+                        f.write(f'{cleaned_phone},{label},{organization},{avatar},true,,\n')
           EOF
 
       - name: Commit and Push CSV
