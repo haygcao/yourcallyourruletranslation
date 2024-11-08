@@ -28,7 +28,7 @@
 
 YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件来：
 
-* **订阅在线数据库：** 开发插件以从公共或私有在线数据库获取和导入拦截规则。
+* **订阅在线数据库：** 开发插件以从公共或私有在线数据库获取和导入拦截规则。 [中国用户可以使用的订阅链接数据](https://github.com/haygcao/vccard)
 * **网页抓取：** 创建插件以从网站抓取电话号码并自动将其添加到您的拦截列表（需要 JavaScript 知识）模板：https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest 已经配置了整套的测试工具。
 
 ## 云服务集成
@@ -54,7 +54,7 @@ YourCallYourRule 通过自定义插件进行扩展。您可以利用这些插件
 
 以下是一些用于创建自定义订阅插件的示例GitHub Workflow工作流 和部分网站:
 
-* **中国 vCards CN 数据：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20%E4%B8%AD%E5%9B%BD/%E9%80%9A%E8%AE%AF%E5%BD%95.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20%E4%B8%AD%E5%9B%BD/%E9%80%9A%E8%AE%AF%E5%BD%95.yml)) 所有数据归功于[vCards 中国黄页 - 优化 iOS/Android 来电、信息界面体验](https://github.com/metowolf/vCards) 
+* **中国 vCards CN 数据：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20%E4%B8%AD%E5%9B%BD/%E9%80%9A%E8%AE%AF%E5%BD%95.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20%E4%B8%AD%E5%9B%BD/%E9%80%9A%E8%AE%AF%E5%BD%95.yml)) 所有数据归功于[vCards 中国黄页 - 优化 iOS/Android 来电、信息界面体验](https://github.com/metowolf/vCards)  
   
 * **美国 FCC 数据库：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml)
 * **美国 FCC Robocall 数据库：** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml)
