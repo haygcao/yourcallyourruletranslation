@@ -11,9 +11,9 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4  # Updated to v4
+      - uses: actions/checkout@v4
         with:
-          ref: us         # Checkout the 'us' branch
+          ref: us
           fetch-depth: 0
 
       - name: Install Python
@@ -21,46 +21,59 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install pandas
-        run: pip install pandas
+      - name: Install pandas and phonenumbers
+        run: pip install pandas phonenumbers
 
       - name: Download and Process Data
         run: |
-          wget -O data.csv https://fccprod.servicenowservices.com/api/x_g_fmc_rmd/rmd/csv_download
+          wget --content-disposition -O data.csv https://fccprod.servicenowservices.com/api/x_g_fmc_rmd/rmd/csv_download
 
           python <<EOF
           import pandas as pd
           import re
+          import phonenumbers
 
           df = pd.read_csv('data.csv')
           df = df[['business_name', 'contact_telephone_number']]
           df = df.rename(columns={'business_name': 'name', 'contact_telephone_number': 'phoneNumber'})
 
-          # Clean phone numbers and filter out empty ones
-          df['phoneNumber'] = df['phoneNumber'].astype(str).apply(lambda x: re.sub(r"^'+", "", x)) #added
-          df['phoneNumber'] = df['phoneNumber'].str.replace('.', '', regex=False) 
-         
-
+          df['phoneNumber'] = df['phoneNumber'].astype(str).apply(lambda x: re.sub(r"^'+", "", x))
+          df['phoneNumber'] = df['phoneNumber'].str.replace('.', '', regex=False)
           df['phoneNumber'] = df['phoneNumber'].str.strip()
-          df = df[df['phoneNumber'] != '']
-          df.dropna(subset=['phoneNumber'], inplace=True) 
 
-          
+
+          def format_phone_number(number):
+              try:
+                  if number.startswith("+"):
+                      parsed_number = phonenumbers.parse(number, None)
+                      if phonenumbers.is_valid_number(parsed_number):
+                          return phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.E164)
+                  else:
+                      parsed_number = phonenumbers.parse(number, "US")
+                      if phonenumbers.is_valid_number(parsed_number):
+                          return phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.NATIONAL)
+              except phonenumbers.phonenumberutil.NumberParseException:
+                  pass
+              return number
+
+          df['phoneNumber'] = df['phoneNumber'].apply(format_phone_number)
+
+          df = df[df['phoneNumber'].notna() & (df['phoneNumber'] != '')]  # Filter after formatting
+
           df['label'] = 'Telemarketing'
           df['avatar'] = ''
-          df['isSubscribed'] = True  # Set isSubscribed to True
+          df['isSubscribed'] = True
           df['count'] = ''
           df['url'] = ''
           df = df[['phoneNumber', 'label', 'name', 'avatar', 'isSubscribed', 'count', 'url']]
           df.to_csv('processed_data.csv', index=False)
           EOF
 
-
       - name: Commit and Push CSV
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update processed FCC data"
           file_pattern: "processed_data.csv"
-          branch: us             # Push to the 'us' branch
+          branch: us
           repository: .
-          token: ${{ secrets.secrets.YOUR_GITHUB_TOKEN }}
+          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
