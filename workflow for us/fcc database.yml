@@ -1,55 +1,66 @@
-name: Daily Data Processing
+name: US FCC database Daily Data Processing
 
 on:
   schedule:
-    - cron: '0 3 * * *' # Runs daily at 3:00 AM US Eastern Time
+    - cron: '0 3 * * *'
+  workflow_dispatch:
 
 jobs:
   process_data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4  # Updated to v4
+        with:
+          ref: us         # Checkout the 'us' branch
+          fetch-depth: 0
 
-      - name: Download data
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install pandas
+        run: pip install pandas
+
+      - name: Download and Process Data
         run: |
           wget -O data.csv https://fccprod.servicenowservices.com/api/x_g_fmc_rmd/rmd/csv_download
 
-      - name: Process data
-        run: |
-          # Install necessary tools
-          sudo apt-get update
-          sudo apt-get install -y python3 python3-pip
-          pip3 install pandas
-
-          # Process data with Python
-          python3 <<EOF
+          python <<EOF
           import pandas as pd
+          import re
 
           df = pd.read_csv('data.csv')
           df = df[['business_name', 'contact_telephone_number']]
           df = df.rename(columns={'business_name': 'name', 'contact_telephone_number': 'phoneNumber'})
+
+          # Clean phone numbers and filter out empty ones
+          df['phoneNumber'] = df['phoneNumber'].astype(str).apply(lambda x: re.sub(r"^'+", "", x)) #added
+          df['phoneNumber'] = df['phoneNumber'].str.replace('.', '', regex=False) 
+         
+
+          df['phoneNumber'] = df['phoneNumber'].str.strip()
+          df = df[df['phoneNumber'] != '']
+          df.dropna(subset=['phoneNumber'], inplace=True) 
+
+          
           df['label'] = 'Telemarketing'
           df['avatar'] = ''
-          df['isSubscribed'] = ''
+          df['isSubscribed'] = True  # Set isSubscribed to True
           df['count'] = ''
           df['url'] = ''
           df = df[['phoneNumber', 'label', 'name', 'avatar', 'isSubscribed', 'count', 'url']]
           df.to_csv('processed_data.csv', index=False)
           EOF
 
-      - name: Commit changes
-        uses: actions/github-script@v6
+
+      - name: Commit and Push CSV
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          script: |
-            const fs = require('fs');
-            if (fs.existsSync('processed_data.csv')) {
-              github.rest.repos.createOrUpdateFileContents({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                path: 'processed_data.csv',
-                message: 'Update processed data',
-                content: fs.readFileSync('processed_data.csv', 'base64'),
-                sha: context.payload.before
-              });
-            }
+          commit_message: "Update processed FCC data"
+          file_pattern: "processed_data.csv"
+          branch: us             # Push to the 'us' branch
+          repository: .
+          token: ${{ secrets.secrets.YOUR_GITHUB_TOKEN }}
