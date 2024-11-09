@@ -1,5 +1,5 @@
 [中文版本](https://github.com/haygcao/yourcallyourruletranslation/blob/main/zhreadme.md)
-
+ [Closed Test](https://groups.google.com/g/yourcallyourrule)
 # YourCallYourRule: A Customizable Call & SMS Blocking App
 
 **YourCallYourRule** is a powerful and flexible Android application designed to give you complete control over incoming calls and SMS messages. It empowers you to create personalized blocking rules based on phone numbers, keywords, and more.
@@ -28,7 +28,7 @@
 
 YourCallYourRule is designed to be extensible through custom plugins. You can leverage these plugins to:
 
-* **Subscribe to Online Databases:** Develop plugins to fetch and import blocking rules from public or private online databases.
+* **Subscribe to Online Databases:** Develop plugins to fetch and import blocking rules from public or private online databases. [US User](https://github.com/haygcao/vccard/tree/us)
 * **Web Scraping:** Create plugins to scrape phone numbers from websites and automatically add them to your blocking lists (requires JavaScript knowledge). Template: https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest  A  suite of testing tools has been configured.
 
 ## Cloud Service Integration
