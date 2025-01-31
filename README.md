@@ -59,6 +59,8 @@ For inspiration, check out these example workflows for creating custom subscript
 * **US FCC Database:** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20database.yml)
 * **US FCC Robocall Database:** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20us/fcc%20robocall.yml)
 * **France Regex:** [https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml](https://github.com/haygcao/yourcallyourruletranslation/blob/main/workflow%20for%20france/regex.yml)
+* **Turkish Database:** [https://github.com/haygcao/vccard/blob/Turkish/processed_turkish_spam_numbers.csv](https://github.com/haygcao/vccard/blob/Turkish/processed_turkish_spam_numbers.csv))
+
 
 * **Workflow Verification:** Due to certain limitations, the app itself cannot provide pre-processed phone number data. However, this does not affect your ability to customize your own data. Please verify the functionality of the provided workflows before using them. If you encounter any issues or inaccuracies with the workflows, we encourage you to modify them and submit your improvements. 
 
