@@ -127,12 +127,22 @@ function extractDataFromDOM(doc, phoneNumber) {
     }
 
     // Extract count
+    // Primary method: Extract count
     const countElement = doc.querySelector('.ratings li.active');
     console.log('countElement:', countElement);
+
     if (countElement) {
-      const countText = countElement.textContent.trim().replace('x negatywna', ''); // Removed language specific part
+      const countText = countElement.textContent.trim().replace('x negatywna', '');
       jsonObject.count = parseInt(countText, 10) || 0;
-      console.log('jsonObject.count:', jsonObject.count);
+      console.log('jsonObject.count (primary):', jsonObject.count);
+    } else {
+      // Secondary method: Extract count if primary is missing
+      const advancedCountElement = doc.querySelector('.advanced strong:nth-of-type(2)');
+      console.log('advancedCountElement:', advancedCountElement);
+      if (advancedCountElement) {
+        jsonObject.count = parseInt(advancedCountElement.textContent, 10) || 0;
+        console.log('jsonObject.count (secondary):', jsonObject.count);
+      }
     }
   } catch (error) {
     console.error('Error extracting data:', error);
