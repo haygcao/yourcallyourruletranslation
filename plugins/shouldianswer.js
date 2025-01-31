@@ -44,7 +44,7 @@ const manualMapping = {
     'Telemarketer': 'Telemarketing',
     'Call centre': 'Customer Service', // Or 'Telemarketing' if more appropriate - you can decide based on context
     'Financial services': 'Financial',
-    'Debt collector': 'Collection',
+    'Debt collector': 'Debt Collection',
     'Company': 'Other', // This could be 'Customer Service' if referring to legitimate company calls
     'Service': 'Customer Service', // Or 'Other' depending on context
     'Non-profit Organization': 'Charity',
