@@ -2,7 +2,7 @@
 
 **YourCallYourRule** 是一款功能强大且灵活的 Android 应用程序，旨在让您完全掌控来电和短信。它允许您根据电话号码、关键词等创建个性化的拦截规则。
 
-* **Test Link：** https://play.google.com/apps/testing/com.yours.yourcallyourrule
+* ** Link：** https://play.google.com/apps/testing/com.yours.yourcallyourrule
 * **Telegram Channel：** https://t.me/yourcallyourrule
 * **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
 * **Plugins & Database:** If anyone can take the advantage the link to develop and plugins and csv database. It will be great, I really appreciate you can share it with others. and You can mark the numbers on your sides and share it to Telegram group and anyehre you like  or github.
