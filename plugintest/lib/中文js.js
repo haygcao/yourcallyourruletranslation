@@ -257,7 +257,7 @@ async function generateOutput(phoneNumber, nationalNumber, e164Number, externalR
   // 依次处理每个号码，哪个先返回有效结果就用哪个
   try {
     let result;
-
+//下面的phoneNumber, nationalNumber, e164Number 至少保留一个，但是不建议使用多个，比如在中国，一般使用phoneNumber即可
     if (phoneNumber) {
       const phoneRequestId = Math.random().toString(36).substring(2);
       try {
