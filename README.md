@@ -8,6 +8,18 @@
 * **Telegram Channel：** https://t.me/yourcallyourrule
 * **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
 * **Plugins & Database:** If anyone can take the advantage the link to develop and plugins and csv database. It will be great, I really appreciate you can share it with others.  
+
+## Plugins
+
+| URL                                                      | Country       |
+| :------------------------------------------------------- | :------------ |
+| [[shouldianswer](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/shouldianswer.js)] | United States |
+| [odebractelefon.js](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/odebractelefon.js) | Poland|
+| [CN](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/soo.js) | China       |
+| [https://www.example.fr/plugin4](https://www.example.fr/plugin4) | France        |
+| [https://www.example.com.au/plugin5](https://www.example.com.au/plugin5)| Australia     |
+
+
 ## Features
 
 * **Whitelisting & Blacklisting:** Create custom lists of allowed and blocked numbers.
