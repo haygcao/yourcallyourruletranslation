@@ -42,8 +42,24 @@ const predefinedLabels = [
 // Manual mapping table to map source labels to predefined labels (updated based on odebractelefon.pl labels)
 const manualMapping = {
     'NEGATYWNA TELEMARKETER': 'Telemarketing', // Maps "NEGATYWNA TELEMARKETER" to "Telemarketing"
-    'NEGATYWNA': 'Spam Likely', // Maps "NEGATYWNA" to "Spam Likely"
-    // ... add more mappings for labels from odebractelefon.pl website
+    'Telemarketer': 'Telemarketing',          // 1: 电销员 -> Telemarketing
+    'Call center': 'Customer Service',        // 6: 呼叫中心 -> 考虑为客户服务的一种形式，映射到 Customer Service
+    'Ćicha rozmowa / dzwonka': 'Spam Likely', // 3: 静默电话/响一声 -> Spam Likely
+    'Złośiwe połączenie': 'Spam Likely',     // 4: 恶意电话 -> Spam Likely
+    'Niechciany telefon': 'Spam Likely',     // 5: 不需要的电话 -> Spam Likely
+    'Usługi finansowe': 'Financial',         // 15: 金融服务 -> Financial
+    'Ściąganie długów': 'Collection',         // 2: 债务催收 -> Collection
+    'Organizacja non-profit': 'Charity',      // 8: 非营利组织 -> Charity
+    'Polityka': 'Political',                  // 9: 政治 -> Political
+    'Oszustwo': 'Fraud Scam Likely',         // 10: 欺诈 -> Fraud Scam Likely
+    'Dowcip': 'Spam Likely',                 // 11: 恶作剧 -> Spam Likely (虽然风险低，但归为垃圾电话)
+    'Fax': 'Other',                           // 7: 传真 -> Other (现代通信中传真较少见，归为其他)
+    'SMS': 'Other',                           // 12: 短信 -> Other (虽然也可能是垃圾短信，但在此上下文中，我们将其归类为 Other)
+    'Ankieta': 'Survey',                      // 13: 调查 -> Survey
+    'Firma': 'Unknown',                       // 16: 公司 -> 含义较广，无法准确分类, 归类为 Unknown
+    'Usługa': 'Unknown',                      // 17: 服务 -> 含义较广，无法准确分类, 归类为 Unknown
+    'Inne': 'Other',                          // 14: 其他 -> Other
+    'Automat': 'Robocall',                    // 18: 自动语音 -> Robocall
     'Unknown': 'Unknown', // Maps unknown labels to "Unknown"
 };
 
