@@ -32,7 +32,7 @@ const predefinedLabels = [
     {'label': 'Medical'},
     {'label': 'Charity'},
     {'label': 'Other'},
-    {'label': 'Collection'},
+    {'label': 'Debt Collection'},
     {'label': 'Survey'},
     {'label': 'Political'},
     {'label': 'Ecommerce'},
@@ -56,7 +56,7 @@ const manualMappingForChineseCategories = {
     '发票办证': 'Fraud Scam Likely', // Or 'Spam Likely'
     '反动谣言': 'Risk', // Or 'Spam Likely', 'Risk', 'Political'
     '教育培训': 'Education',
-    '违规催收': 'Collection',
+    '违规催收': 'Debt Collection',
     '医疗卫生': 'Medical',
     '股票证券': 'Financial',
     '旅游推广': 'Telemarketing', // Or 'Spam Likely'
