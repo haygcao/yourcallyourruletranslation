@@ -32,7 +32,7 @@ const predefinedLabels = [
     {'label': 'Medical'},
     {'label': 'Charity'},
     {'label': 'Other'},
-    {'label': 'Collection'},
+    {'label': 'Debt Collection'},
     {'label': 'Survey'},
     {'label': 'Political'},
     {'label': 'Ecommerce'},
@@ -46,7 +46,7 @@ const predefinedLabels = [
     const manualMappingForChineseCategories = {
     '中介': 'Agent',             // 含义较广，包括房产中介等
     '房产中介': 'Agent',         // 细化为房地产经纪人
-    '违规催收': 'Collection',
+    '违规催收': 'Debt Collection',
     '快递物流': 'Delivery',
     '快递': 'Delivery',
     '教育培训': 'Education',
