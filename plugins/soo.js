@@ -37,14 +37,54 @@ const predefinedLabels = [
     {'label': 'Political'},
     {'label': 'Ecommerce'},
     {'label': 'Risk'},
+    {'label': 'Agent'},
+    {'label': 'Recruiter'},
+    {'label': 'Headhunter'}, 
 ];
 
 // 手动映射表，将 source label 映射到预设标签
-const manualMapping = {
+const manualMappingForChineseCategories = {
     '骚扰电话': 'Fraud Scam Likely', // 对应预设标签 "Fraud Scam Likely"
-    '标签2': 'Spam Likely', // 对应预设标签 "Spam Likely"
-    // ... 省略其他手动映射
-    '标签22': 'Risk', // 对应预设标签 "Risk"
+    '非应邀商业电话': 'Spam Likely', // 对应预设标签 "Spam Likely"
+    '保险推销': 'Insurance',
+    '贷款理财': 'Loan', // Or 'Financial'
+    '房产中介': 'Agent', // Or 'Spam Likely'
+    '猎头招聘': 'Headhunter', // Or 'Spam Likely'
+    '广告营销': 'Telemarketing',
+    '客服热线': 'Customer Service',
+    '淫秽色情': 'Risk', // Or 'Spam Likely', 'Risk'
+    '发票办证': 'Fraud Scam Likely', // Or 'Spam Likely'
+    '反动谣言': 'Risk', // Or 'Spam Likely', 'Risk', 'Political'
+    '教育培训': 'Education',
+    '违规催收': 'Collection',
+    '医疗卫生': 'Medical',
+    '股票证券': 'Financial',
+    '旅游推广': 'Telemarketing', // Or 'Spam Likely'
+    '食药推销': 'Telemarketing', // Or 'Spam Likely', potentially 'Medical' for some cases
+    '其他': 'Other',
+    '涉诈电话': 'Fraud Scam Likely',
+    '送餐外卖': 'Takeaway',
+    '快递物流': 'Delivery',
+    '网约车': 'Ridesharing',
+    '滴滴/优步': 'Ridesharing',
+    '出租车': 'Ridesharing',
+    '美团': 'Takeaway',
+    '饿了么': 'Takeaway',
+    '广告推销': 'Telemarketing',  
+    '金融': 'Financial',  
+    '广告': 'Spam Likely', // 对应预设标签 "Spam Likely"
+    '骚扰': 'Spam Likely', // 对应预设标签 "Spam Likely"  
+    '诈骗': 'Fraud Scam Likely', // 对应预设标签 "Spam Likely"  
+    '违法': 'Risk', // 对应预设标签 "Spam Likely" 
+    '推销': 'Telemarketing',
+    '中介': 'Agent',
+    '保险理财': 'Financial',
+    '保险': 'Insurance',
+    '招聘猎头': 'Headhunter', // Or 'Spam Likely'
+    '招聘': 'Recruiter', // Or 'Spam Likely'
+    '猎头': 'Headhunter', // Or 'Spam Likely'
+    '快递': 'Delivery', // 对应预设标签 "Spam Likely" 
+    '外卖': 'Takeaway', // 对应预设标签 "Spam Likely" 
 };
 
 // 使用 Map 对象来存储 pending 的 Promise
