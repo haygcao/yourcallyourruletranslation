@@ -84,7 +84,7 @@ const predefinedLabels = [
     '广告推销': 'Telemarketing',
     '旅游推广': 'Telemarketing',
     '食药推销': 'Telemarketing',      
-    '推销': 'Telemarketing'
+    '推销': 'Telemarketing',
 };
 // 使用 Map 对象来存储 pending 的 Promise
 const pendingPromises = new Map();
