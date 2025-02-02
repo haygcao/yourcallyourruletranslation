@@ -15,7 +15,7 @@
 | :------------------------------------------------------- | :------------ |
 | [[shouldianswer](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/shouldianswer.js)] | United States |
 | [odebractelefon.js](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/odebractelefon.js) | Poland|
-| [CN](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/soo.js) | China       |
+| [CN](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/soo.js) [CN2](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/bd.js)| China       |
 | [https://www.example.fr/plugin4](https://www.example.fr/plugin4) | France        |
 | [https://www.example.com.au/plugin5](https://www.example.com.au/plugin5)| Australia     |
 
