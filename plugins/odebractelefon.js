@@ -32,7 +32,7 @@ const predefinedLabels = [
     {'label': 'Medical'},
     {'label': 'Charity'},
     {'label': 'Other'},
-    {'label': 'Collection'},
+    {'label': 'Debt Collection'},
     {'label': 'Survey'},
     {'label': 'Political'},
     {'label': 'Ecommerce'},
@@ -48,7 +48,7 @@ const manualMapping = {
     'Złośiwe połączenie': 'Spam Likely',     // 4: 恶意电话 -> Spam Likely
     'Niechciany telefon': 'Spam Likely',     // 5: 不需要的电话 -> Spam Likely
     'Usługi finansowe': 'Financial',         // 15: 金融服务 -> Financial
-    'Ściąganie długów': 'Collection',         // 2: 债务催收 -> Collection
+    'Ściąganie długów': 'Debt Collection',         // 2: 债务催收 -> Collection
     'Organizacja non-profit': 'Charity',      // 8: 非营利组织 -> Charity
     'Polityka': 'Political',                  // 9: 政治 -> Political
     'Oszustwo': 'Fraud Scam Likely',         // 10: 欺诈 -> Fraud Scam Likely
