@@ -37,6 +37,9 @@ const predefinedLabels = [
     {'label': 'Political'},
     {'label': 'Ecommerce'},
     {'label': 'Risk'},
+    {'label': 'Agent'},
+    {'label': 'Recruiter'},
+    {'label': 'Headhunter'},  
 ];
 
 // 手动映射表，将 source label 映射到预设标签
@@ -45,8 +48,8 @@ const manualMappingForChineseCategories = {
     '非应邀商业电话': 'Spam Likely', // 对应预设标签 "Spam Likely"
     '保险推销': 'Insurance',
     '贷款理财': 'Loan', // Or 'Financial'
-    '房产中介': 'Telemarketing', // Or 'Spam Likely'
-    '猎头招聘': 'Telemarketing', // Or 'Spam Likely'
+    '房产中介': 'Agent', // Or 'Spam Likely'
+    '猎头招聘': 'Headhunter', // Or 'Spam Likely'
     '广告营销': 'Telemarketing',
     '客服热线': 'Customer Service',
     '淫秽色情': 'Risk', // Or 'Spam Likely', 'Risk'
@@ -64,6 +67,24 @@ const manualMappingForChineseCategories = {
     '快递物流': 'Delivery',
     '网约车': 'Ridesharing',
     '滴滴/优步': 'Ridesharing',
+    '出租车': 'Ridesharing',
+    '美团': 'Takeaway',
+    '饿了么': 'Takeaway',
+    '广告推销': 'Telemarketing',  
+    '金融': 'Financial',  
+    '广告': 'Spam Likely', // 对应预设标签 "Spam Likely"
+    '骚扰': 'Spam Likely', // 对应预设标签 "Spam Likely"  
+    '诈骗': 'Fraud Scam Likely', // 对应预设标签 "Spam Likely"  
+    '违法': 'Risk', // 对应预设标签 "Spam Likely" 
+    '推销': 'Telemarketing',
+    '中介': 'Agent',
+    '保险理财': 'Financial',
+    '保险': 'Insurance',
+    '招聘猎头': 'Headhunter', // Or 'Spam Likely'
+    '招聘': 'Recruiter', // Or 'Spam Likely'
+    '猎头': 'Headhunter', // Or 'Spam Likely'
+    '快递': 'Delivery', // 对应预设标签 "Spam Likely" 
+    '外卖': 'Takeaway', // 对应预设标签 "Spam Likely" 
 };
 
 // 使用 Map 对象来存储 pending 的 Promise
