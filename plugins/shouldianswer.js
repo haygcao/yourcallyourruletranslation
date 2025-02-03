@@ -37,6 +37,7 @@ const predefinedLabels = [
     {'label': 'Political'},
     {'label': 'Ecommerce'},
     {'label': 'Risk'},
+    {'label': 'Silent call(Voice Clone?)'}, 
 ];
 
 // Manual mapping table to map source labels to predefined labels (updated based on shouldianswer.com labels)
@@ -57,6 +58,23 @@ const manualMapping = {
     'Other': 'Other',
     'NEGATIVE TELEMARKETER': 'Telemarketing', // From previous examples
     'Unknown': 'Unknown',
+    'TELEMARKETER': 'Telemarketing',
+    'CALL CENTRE': 'Customer Service', // Or 'Telemarketing' if more appropriate
+    'FINANCIAL SERVICES': 'Financial',
+    'DEBT COLLECTOR': 'Debt Collection',
+    'COMPANY': 'Other', // This could be 'Customer Service' if referring to legitimate company calls
+    'SERVICE': 'Customer Service', // Or 'Other' depending on context
+    'NON-PROFIT ORGANIZATION': 'Charity',
+    'SURVEY': 'Survey',
+    'NUISANCE CALL': 'Spam Likely',
+    'UNSOLICITED CALL': 'Spam Likely',
+    'POLITICAL CALL': 'Political',
+    'SCAM CALL': 'Fraud Scam Likely',
+    'PRANK CALL': 'Spam Likely', // Or 'Other'
+    'OTHER': 'Other',
+    'NEGATIVE TELEMARKETER': 'Telemarketing', 
+    'UNKNOWN': 'Unknown',
+    'SILENT CALL': 'Silent call(Voice Clone?)',
 };
 
 // Using a Map object to store pending Promises
@@ -102,19 +120,22 @@ function extractDataFromDOM(doc, phoneNumber) {
     console.log('numberElement:', numberElement);
     if (numberElement) {
       // Extract phone number
-      jsonObject.phoneNumber = numberElement.childNodes[0].nodeValue.trim();
+      jsonObject.phoneNumber = numberElement.firstChild.nodeValue.trim();
 
-      // Extract label - targeting the correct span
-      const labelSpan = numberElement.querySelector('span:first-of-type');
+      // Extract label - targeting the correct span and removing prefixes
+      const labelSpan = numberElement.querySelector('span[style="color:#000"]');
       if (labelSpan) {
-        jsonObject.sourceLabel = labelSpan.textContent.trim();
+        const rawLabel = labelSpan.textContent.trim();
+        jsonObject.sourceLabel = rawLabel.replace(/^(POSITIVE|NEGATIVE|NEUTRAL)\s*/i, '').trim();
       }
-
-      // Extract city and province - targeting the third span
-      const locationSpan = numberElement.querySelector('span:nth-of-type(3)');
+      
+      
+      // Extract city and province - targeting the last span
+      const locationSpan = numberElement.querySelector('span:last-of-type');
       if (locationSpan) {
-          jsonObject.city = locationSpan.textContent.trim();
-          jsonObject.province = locationSpan.textContent.trim();
+        const locationParts = locationSpan.textContent.trim().split(',');
+        jsonObject.city = locationParts.length > 1 ? locationParts[locationParts.length - 1].trim() : "";
+        jsonObject.province = ""; // No province information available
       }
 
       console.log('jsonObject.sourceLabel:', jsonObject.sourceLabel);
@@ -123,20 +144,24 @@ function extractDataFromDOM(doc, phoneNumber) {
     }
 
     // Extract count
-    const countElement = doc.querySelector('.infox strong');
-    console.log('countElement:', countElement);
-    if (countElement) {
-        // Find the next <strong> element after the first one, which contains the count
-        let nextStrongElement = countElement.nextElementSibling;
-        while (nextStrongElement && nextStrongElement.tagName !== 'STRONG') {
-            nextStrongElement = nextStrongElement.nextElementSibling;
-        }
+    const infoxElement = doc.querySelector('.infox');
+    console.log('infoxElement:', infoxElement);
+    if (infoxElement) {
+      const infoxText = infoxElement.textContent;
 
-        if (nextStrongElement) {
-            const countText = nextStrongElement.textContent.trim();
-            jsonObject.count = parseInt(countText, 10) || 0;
+      // Check for "Single user" case
+      if (infoxText.includes('Single user rated it as')) {
+        jsonObject.count = 1;
+      } else {
+        // Find all strong elements within infox
+        const strongElements = infoxElement.querySelectorAll('strong');
+        if (strongElements.length >= 2) {
+          // Extract count from the second strong element
+          const countText = strongElements[1].textContent.trim();
+          jsonObject.count = parseInt(countText, 10) || 0;
         }
-        console.log('jsonObject.count:', jsonObject.count);
+      }
+      console.log('jsonObject.count:', jsonObject.count);
     }
   } catch (error) {
     console.error('Error extracting data:', error);
