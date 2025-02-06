@@ -1,9 +1,9 @@
-/* Global Styles (Warm Mode) - Updated Color Palette */
+/* Global Styles */
 body.warm-mode {
     font-family: 'Sora', sans-serif;
     margin: 0;
-    background-color: #FFDAB9; /* Peach Puff - Dominant Warm Background */
-    color: #774F38; /* Sienna - Darker Text for Contrast */
+    background-color: #FFF8E1; /* 60% - Light Beige (Primary Background) */
+    color: #424242; /* Dark Gray for Text (for better contrast) */
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -18,7 +18,14 @@ body.warm-mode {
     padding: 0 20px;
 }
 
-/* Rounded Corners - Consistent */
+/* --- 6-3-1 Color Principle --- */
+/* 60% - #FFF8E1 (Light Beige - Primary Background) */
+/* 30% - #FFD54F (Warm Yellow - Secondary Background/Cards) */
+/* 10% - #FF6F00 (Deep Orange - Accent Color) */
+/*  +  #4CAF50 (Green - Complementary Accent for "Wood" element) */
+
+/* Rounded Corners */
+/* ... (All the rounded corners classes, same as before) ... */
 .header-container,
 .hero-container,
 .features-container,
@@ -43,18 +50,18 @@ header nav ul li a,
 .github-button,
 .download-google-play,
 .download-github {
-    border-radius: 25px;
+    border-radius: 25px; /* Slightly increased roundness */
 }
 
-/* Header Styles - Warm Palette */
+/* Header Styles */
 header {
-    background-color: #FFDAB9; /* Match Dominant Background */
-    color: #774F38;
+    background-color: #FFF8E1; /* Match Background */
+    color: #424242; /* Dark Gray */
     padding: 30px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid rgba(255, 160, 122, 0.4); /* Light Coral Border */
+    border-bottom: 2px solid rgba(255, 183, 77, 0.4); /* Orange Border - 10% Color */
 }
 
 header .header-container {
@@ -62,7 +69,7 @@ header .header-container {
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-Transparent White Header (Secondary Color) */
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
 }
 
@@ -70,19 +77,19 @@ header .logo img {
     height: 45px;
 }
 
+/* ... (Header Nav Styles - same as before, but adjust hover color) ... */
 header nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
 }
-
 header nav ul li {
-    margin-left: 35px;
+    margin-left: 35px; /* Adjusted Nav Spacing */
 }
 
 header nav ul li a {
-    color: #774F38;
+    color: #555;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -91,7 +98,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #E64A19; /* Deep Orange Hover (Accent Color) */
+    color: #FF6F00; /* Deep Orange Hover - 10% Color*/
 }
 
 header nav ul li a::after {
@@ -100,18 +107,17 @@ header nav ul li a::after {
     left: 0;
     bottom: 0;
     width: 0;
-    height: 3px;
-    background-color: #E64A19; /* Deep Orange Underline (Accent Color) */
+    height: 3px; /* Thicker Underline */
+    background-color: #FF6F00;
     transition: width 0.3s ease;
 }
-
 header nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Hero Section - Warm Palette & Animations */
+/* Hero Section */
 #hero {
-    background-color: #FFDAB9; /* Match Dominant Background */
+    background-color: #FFF8E1;
     padding: 120px 0;
     position: relative;
     overflow: hidden;
@@ -119,8 +125,8 @@ header nav ul li a:hover::after {
 
 #hero .hero-container {
     padding: 80px 50px;
-    background-color: #FFE4B5; /* Light PapayaWhip Hero Background (Secondary Color) */
-    box-shadow: 0 0 30px rgba(255, 160, 122, 0.2); /* Light Coral Shadow */
+    background-color: #FFD54F; /* 30% - Warm Yellow Hero Background */
+    box-shadow: 0 0 30px rgba(255, 183, 77, 0.3);
 }
 
 #hero .hero-grid {
@@ -139,32 +145,107 @@ header nav ul li a:hover::after {
     margin-bottom: 0;
 }
 
-/* Hero Title - Warm Palette & Animation Ready */
+/* Hero Title - Warm Palette */
 .hero-title {
     font-family: 'Sora', sans-serif;
     font-weight: 700;
-    font-size: 4.4em; /* Adjusted Size */
-    color: #E64A19; /* Deep Orange Title (Accent Color) */
+    font-size: 4.2em;
+    color: #FF6F00; /* 10% - Deep Orange Title */
     margin-bottom: 15px;
     line-height: 1.2;
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
-    position: relative; /* For lightning bolt animation positioning */
 }
 
 .hero-title .highlight {
-    color: #6B8E23; /* OliveDrab - Wood/Green Accent */
+    color: #4CAF50; /* Green Highlight */
 }
 
-/* Hero Subtitle - Warm Palette */
+/* --- Hero Subtitle and Animations --- */
 .hero-subtitle {
-    font-size: 1.2em;
-    color: #8B4513; /* SaddleBrown - Earthy Tone */
+    font-size: 1.3em; /* Increased Subtitle Size */
+    color: #555;
     margin-bottom: 25px;
     font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative; /* For positioning animations */
+    display: flex;        /* Allows for horizontal layout of text and animation */
+    align-items: center;  /* Vertically center text and animations */
+    gap: 15px;             /* Spacing between text and animation */
 }
+
+.animation-container {
+    display: flex;      /* Horizontal layout for animation elements */
+    align-items: center;
+    gap: 10px;          /* Space between animation icons */
+}
+
+/* Phone Slash Animation */
+.slash-animation {
+    color: #FF6F00;
+    font-size: 1.8em; /* Slightly larger */
+    animation: slash 1.5s ease-in-out infinite;
+}
+
+@keyframes slash {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(30deg) scale(1.3); opacity: 0.5;} /* Enlarged and faded */
+}
+
+/* Lightning Bolt Animation */
+.lightning-animation {
+    color: #FFEB3B; /* Yellow */
+    font-size: 1.5em;
+    animation: lightning 2s linear infinite;
+    margin-left: 5px; /* Spacing */
+}
+
+@keyframes lightning {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4) translateY(-8px); /* Move up slightly */
+    opacity: 0;
+  }
+}
+
+/* Delivery Animation (Package and Person Running) */
+.delivery-animation {
+    display: flex; /* Keep icons together */
+    align-items: center;
+    animation: delivery 3s ease-in-out infinite;
+}
+.delivery-animation .fa-box{
+    color: #A0522D;
+}
+.delivery-animation .fa-person-running{
+    color: #E64A19;
+}
+
+@keyframes delivery {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-20px); } /* Package moves left */
+    40% { transform: translateX(-20px) scaleX(-1); } /* Person flips direction */
+    60% { transform: translateX(0) scaleX(-1); } /* Person runs right */
+    80% { transform: translateX(20px) scaleX(-1);}
+    100% { transform: translateX(0); }
+}
+
+/* Block Icon Animation */
+.block-animation {
+    color: #e53935; /* Red */
+    font-size: 1.6em;
+    animation: block-shake 0.8s infinite;
+}
+
+@keyframes block-shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
 
 #hero .hero-description {
     font-size: 1.1em;
@@ -173,13 +254,15 @@ header nav ul li a:hover::after {
     line-height: 1.8;
 }
 
+/* Hero Button Area */
+/* ... (Hero Button Area Styles - same as before, but adjust color) ... */
 /* Hero Button Area - Warm Palette */
 .hero-button-area {
     margin-top: 25px;
 }
 
 .hero-button-area .button.primary.hero-get-started {
-    background-color: #6B8E23; /* OliveDrab Button (Wood/Green Accent) */
+    background-color: #4CAF50; /* Green Button - Wood Element */
     color: #fff;
     padding: 16px 40px;
     font-size: 1.1em;
@@ -207,7 +290,7 @@ header nav ul li a:hover::after {
     height: 550px;
     margin-bottom: 25px;
     overflow: hidden;
-    box-shadow: 8px 8px 25px rgba(255, 160, 122, 0.2); /* Light Coral Shadow */
+    box-shadow: 8px 8px 25px rgba(255, 204, 153, 0.2);
 }
 
 #hero .swiper-slide img {
@@ -229,11 +312,12 @@ header nav ul li a:hover::after {
 }
 
 /* Buttons in Hero (Download Buttons) - Warm Palette */
+/* ... (Hero Button Styles - same as before, adjust colors) ... */
 #hero .button {
     padding: 15px 35px;
     border-radius: 20px;
     font-size: 1.05em;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08); /* Softer Shadow */
     margin: 0 18px 18px 0;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -242,80 +326,66 @@ header nav ul li a:hover::after {
     cursor: pointer;
     outline: none;
 }
-
-#hero .button.primary.google-play-button {
-    background-color: #FFA07A; /* Light Salmon - Fire Element */
-    color: #774F38; /* Sienna Text */
+#hero .button.primary.google-play-button { /* Google Play Button - Warm */
+    background-color: #FFC107; /* Yellow - Fire Element */
+    color: #555;
 }
 
-#hero .button.secondary.github-button {
-    background-color: #CD853F; /* Peru - Earthy Tone */
+#hero .button.secondary.github-button { /* GitHub Button - Muted Warm */
+    background-color: #FF7043; /* Light Red/Orange - Fire Element */
     color: #fff;
 }
-
 #hero .button:hover {
     transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1); /* Slightly Enhanced Shadow */
 }
 
 #hero .button:active {
     transform: translateY(0);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05); /* Even Softer Shadow on Active */
 }
 
-/* Hero Animation Area - Lightning Bolt */
-.hero-animation-area {
+/* Hero Background Art - Decorative Element */
+/* ... (Hero Background Art Styles - same as before) ... */
+
+/* Hero Background Art - Decorative Element */
+.hero-bg-art {
     position: absolute;
-    top: 20%; /* Adjust position as needed */
-    left: 10%; /* Adjust position as needed */
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Adjust size as needed */
-    pointer-events: none;
-}
-
-.hero-animation-svg {
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    background: url('assets/hero-bg-pattern.svg'); /* Replace with your SVG pattern */
+    opacity: 0.1; /* Very Subtle Pattern */
+    pointer-events: none; /* Make it non-interactive */
+    z-index: -1; /* Behind content */
 }
 
-/* Lightning Bolt Animation Styles */
-#lightning-bolt {
-    transform-origin: center center; /* Rotate from center */
-    animation: zap-animation 1s linear infinite; /* Apply animation */
-}
-
-@keyframes zap-animation {
-    0% { transform: rotate(0deg); opacity: 0; } /* Start invisible */
-    20% { transform: rotate(15deg); opacity: 1; } /* Rotate and appear */
-    80% { transform: rotate(-10deg); opacity: 1; } /* Rotate back */
-    100% { transform: rotate(0deg); opacity: 0; } /* Fade out */
-}
-
-/* Features Section - Warm Palette & Animation Ready */
+/* Features Section */
 #features {
     padding: 100px 0;
-    background-color: #FFDAB9; /* Match Dominant Background */
+    background-color: #FFF8E1; /* 60% - Light Beige */
 }
 
 #features .features-container {
     padding: 80px 50px;
-    background-color: #FFEBCD; /* Light Cornsilk Feature Background (Secondary) */
-    box-shadow: 0 0 20px rgba(255, 160, 122, 0.15);
+    background-color: #FFD54F; /* 30% - Warm Yellow */
+    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
 }
 
 #features .features-heading {
     text-align: center;
     margin-bottom: 60px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(8px);
 }
 
 #features .features-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 2.7em; /* Adjusted Size */
-    color: #E64A19; /* Deep Orange Feature Title (Accent) */
+    font-size: 2.6em;
+    color: #FF6F00; /* 10% - Deep Orange */
     margin-bottom: 15px;
     letter-spacing: -0.3px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
@@ -323,7 +393,7 @@ header nav ul li a:hover::after {
 
 #features .features-heading p {
     font-size: 1.1em;
-    color: #777;
+    color: #666;
 }
 
 .feature-grid {
@@ -336,30 +406,28 @@ header nav ul li a:hover::after {
     padding: 40px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 6px 6px 15px rgba(255, 160, 122, 0.1);
+    box-shadow: 6px 6px 15px rgba(255, 204, 153, 0.1);
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(6px);
-    position: relative; /* For animation placeholder positioning */
-    overflow: hidden; /* Clip animation if needed */
 }
 
 #features .feature-item:hover {
-    box-shadow: 8px 8px 20px rgba(255, 160, 122, 0.15);
+    box-shadow: 8px 8px 20px rgba(255, 204, 153, 0.15);
     transform: translateY(-5px);
 }
 
 #features .feature-item .feature-icon {
-    font-size: 4.0em; /* Adjusted Size */
+    font-size: 3.8em;
     margin-bottom: 25px;
-    color: #6B8E23; /* OliveDrab Feature Icon (Wood/Green) */
+    color: #4CAF50; /* Green - Wood Element */
     opacity: 0.9;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 #features .feature-item h3 {
-    color: #E64A19; /* Deep Orange Feature Title (Accent) */
+    color: #FF6F00; /* 10% - Deep Orange */
     margin-bottom: 18px;
-    font-size: 1.6em; /* Adjusted Size */
+    font-size: 1.5em;
     font-weight: 600;
     letter-spacing: 0.1px;
 }
@@ -370,83 +438,31 @@ header nav ul li a:hover::after {
     line-height: 1.6;
 }
 
-/* Feature Animation Placeholder - For SVG Animations */
-.feature-animation-placeholder {
-    position: absolute;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    width: 60px; /* Adjust size as needed */
-    height: 60px; /* Adjust size as needed */
-    opacity: 0.7; /* Make animations slightly transparent */
-}
-
-.feature-animation-svg {
-    width: 100%;
-    height: auto;
-}
-
-/* Block Call Animation Styles */
-#block-slash {
-    stroke-dasharray: 100; /* Initially dashed */
-    stroke-dashoffset: 100;
-    animation: block-slash-animation 1s ease-out forwards; /* Apply animation */
-}
-
-@keyframes block-slash-animation {
-    to { stroke-dashoffset: 0; } /* Animate to solid line */
-}
-
-
-/* Filter SMS Animation Styles */
-#filter-icon {
-    transform-origin: center center;
-    animation: filter-animation 1s ease-in-out forwards; /* Apply animation */
-}
-
-@keyframes filter-animation {
-    0% { transform: scale(0); opacity: 0; } /* Start invisible, scaled down */
-    80% { transform: scale(1.2); opacity: 1; } /* Overshoot scale */
-    100% { transform: scale(1); opacity: 1; } /* Final scale */
-}
-
-/* Hangup Hand Animation Styles */
-#hangup-hand {
-    transform-origin: top right;
-    animation: hangup-animation 1s ease-in-out forwards; /* Apply animation */
-}
-
-@keyframes hangup-animation {
-    0% { transform: rotate(0deg); opacity: 0; } /* Start invisible */
-    50% { transform: rotate(-45deg); opacity: 1; } /* Rotate to hangup position */
-    100% { transform: rotate(-45deg); opacity: 1; } /* Hold hangup position */
-}
-
-
-/* Download Section - Warm Palette */
+/* Download Section */
 #download {
     padding: 100px 0;
-    background-color: #FFDAB9; /* Match Dominant Background */
+    background-color: #FFF8E1; /* 60% - Light Beige */
 }
 
 #download .download-container {
     padding: 80px 50px;
-    background-color: #FFDAB9; /* Peach Puff - Same as Dominant Background */
-    box-shadow: none; /* Removed Shadow for Download Section */
+    background-color: #FFCC80; /* Lighter Warm Yellow */
+    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
 }
 
 #download .download-heading {
     text-align: center;
     margin-bottom: 60px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.0); /* Fully Transparent Heading Background */
-    backdrop-filter: none; /* No Blur for Heading */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
 }
 
 #download .download-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 2.8em; /* Adjusted Size */
-    color: #E64A19; /* Deep Orange Download Title (Accent) */
+    font-size: 2.6em;
+    color: #FF6F00; /* 10% - Deep Orange */
     margin-bottom: 15px;
     letter-spacing: -0.3px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
@@ -454,7 +470,7 @@ header nav ul li a:hover::after {
 
 #download .download-heading p {
     font-size: 1.1em;
-    color: #777;
+    color: #666;
 }
 
 .download-options {
@@ -472,8 +488,8 @@ header nav ul li a:hover::after {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(6px);
     text-decoration: none;
-    color: #774F38; /* Sienna Text */
-    box-shadow: 6px 6px 15px rgba(255, 160, 122, 0.1);
+    color: #555;
+    box-shadow: 6px 6px 15px rgba(255, 204, 153, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
     text-align: center;
@@ -481,13 +497,13 @@ header nav ul li a:hover::after {
 
 #download .download-card:hover {
     transform: translateY(-5px);
-    box-shadow: 8px 8px 20px rgba(255, 160, 122, 0.15);
+    box-shadow: 8px 8px 20px rgba(255, 204, 153, 0.15);
 }
 
 #download .download-card i {
     font-size: 3.0em;
     margin-bottom: 20px;
-    color: #FFA07A; /* Light Salmon Download Icon (Fire) */
+    color: #FFC107; /* Yellow */
     opacity: 0.8;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
@@ -496,7 +512,7 @@ header nav ul li a:hover::after {
     font-size: 1.4em;
     margin-bottom: 15px;
     font-weight: 600;
-    color: #E64A19; /* Deep Orange Download Card Title (Accent) */
+    color: #FF6F00; /* 10% - Deep Orange */
 }
 
 #download .download-card p {
@@ -505,31 +521,31 @@ header nav ul li a:hover::after {
     line-height: 1.6;
 }
 
-/* Community Section - Warm Palette */
+/* Community Section */
 #community {
     padding: 100px 0;
-    background-color: #FFDAB9; /* Match Dominant Background */
+    background-color: #FFF8E1; /* 60% - Light Beige */
 }
 
 #community .community-container {
     padding: 80px 50px;
-    background-color: #FFDAB9; /* Peach Puff - Same as Dominant Background */
-    box-shadow: none; /* Removed Shadow for Community Section */
+    background-color: #FFD54F; /* 30% - Warm Yellow */
+    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
 }
 
 #community .community-heading {
     text-align: center;
     margin-bottom: 60px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.0); /* Fully Transparent Heading Background */
-    backdrop-filter: none; /* No Blur for Heading */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
 }
 
 #community .community-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 2.8em; /* Adjusted Size */
-    color: #E64A19; /* Deep Orange Community Title (Accent) */
+    font-size: 2.6em;
+    color: #FF6F00; /* 10% - Deep Orange */
     margin-bottom: 15px;
     letter-spacing: -0.3px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
@@ -537,7 +553,7 @@ header nav ul li a:hover::after {
 
 #community .community-heading p {
     font-size: 1.1em;
-    color: #777;
+    color: #666;
 }
 
 .community-links {
@@ -554,17 +570,17 @@ header nav ul li a:hover::after {
     padding: 16px 32px;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(6px);
-    color: #774F38; /* Sienna Text */
+    color: #555;
     text-decoration: none;
     font-size: 1.05em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 5px 5px 10px rgba(255, 160, 122, 0.08);
+    box-shadow: 5px 5px 10px rgba(255, 204, 153, 0.08);
 }
 
 #community .community-link:hover {
     background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-3px);
-    box-shadow: 5px 8px 15px rgba(255, 160, 122, 0.1);
+    box-shadow: 5px 8px 15px rgba(255, 204, 153, 0.1);
 }
 
 #community .community-link i {
@@ -573,23 +589,22 @@ header nav ul li a:hover::after {
     opacity: 0.8;
 }
 
-/* Footer Styles - Warm Palette */
+/* Footer Styles */
 footer {
-    background-color: #FFDAB9; /* Match Dominant Background */
-    color: #8B4513; /* SaddleBrown Footer Text */
+    background-color: #FFF8E1; /* 60% - Light Beige */
+    color: #777;
     text-align: center;
     padding: 30px 0;
     font-size: 0.9em;
     opacity: 0.7;
-    border-top: 2px solid rgba(255, 160, 122, 0.4); /* Light Coral Border */
+    border-top: 2px solid rgba(255, 183, 77, 0.4);
 }
 
 .footer-container {
     padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-Transparent White Footer */
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
 }
 
-/* Responsive Design - No Changes Needed for Layout, only Font Sizes might be adjusted further if required */
-@media (max-width: 1024px) { /* ... Responsive Queries - Same as before, adjust font sizes if needed */ }
-@media (max-width: 768px) { /* ... Responsive Queries - Same as before, adjust font sizes if needed */ }
+/* Responsive Design */
+/* ... (Responsive Styles - Same as
