@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourCallYourRule - Silence Spam Calls with Animation</title> <!-- Emphasizing Animation in Title -->
+    <title>YourCallYourRule - 告别骚扰电话</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -20,9 +20,9 @@
             </div>
             <nav>
                 <ul>
-                   <li><a href="#features">Features</a></li>
-                    <li><a href="#download">Download</a></li>
-                    <li><a href="#community">Community</a></li>
+                   <li><a href="#features">功能</a></li>
+                    <li><a href="#download">下载</a></li>
+                    <li><a href="#community">社区</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,11 +33,16 @@
             <div class="hero-grid">
                 <div class="hero-text-column">
                     <div class="hero-text">
-                        <h1 class="hero-title">Zap <span class="highlight">Spam Calls</span> Instantly!</h1> <!-- Animated Title Idea -->
-                        <p class="hero-subtitle">YourCallYourRule: Animated Call & SMS Blocking</p> <!-- Animation in Subtitle -->
-                        <p class="hero-description">Experience the power of animated spam call blocking!  YourCallYourRule uses visual cues and dynamic effects to show you exactly how it silences unwanted calls and protects your peace.</p>
+                        <h1 class="hero-title">拦截<span class="highlight">骚扰电话</span>，还您清净！</h1>
+                        <p class="hero-subtitle">YourCallYourRule：定制化来电和短信拦截</p>
+                        <p class="hero-description">掌控您的手机，告别骚扰电话和垃圾短信。享受更安静、更专注的移动体验。</p>
                         <div class="hero-button-area">
-                            <a href="#" class="button primary hero-get-started">See it in Action <i class="fas fa-bolt"></i></a> <!-- Bolt Icon for Animation -->
+                            <a href="#" class="button primary hero-get-started">立即体验 <i class="fas fa-phone-slash"></i></a>
+                        </div>
+                         <!-- 闪电动画 -->
+                        <div class="lightning-animation">
+                            <i class="fas fa-phone-slash blocked-call"></i>
+                            <i class="fas fa-bolt lightning-bolt"></i>
                         </div>
                     </div>
                 </div>
@@ -58,88 +63,68 @@
                     </div>
                     <div class="hero-buttons">
                         <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary google-play-button"><i class="fab fa-google-play"></i> Google Play</a>
-                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary github-button"><i class="fab fa-github"></i> GitHub Download</a>
+                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary github-button"><i class="fab fa-github"></i> GitHub 下载</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Animated Spam Blocking Visual - Add SVG Here -->
-            <div class="hero-animation-area">
-                <svg class="hero-animation-svg" viewBox="0 0 500 200">
-                    <!-- Placeholder for your animated SVG - Lightning Bolt & Phone -->
-                    <symbol id="phone-icon" viewBox="0 0 100 100">
-                        <path d="M75.7,90.4c-2.3,0-4.6-0.9-6.3-2.6l-14.5-14.5c-3.5-3.5-9.2-3.5-12.7,0l-14.5,14.5c-1.7,1.7-4,2.6-6.3,2.6H24.3
-                            c-5.3,0-9.6-4.3-9.6-9.6V19.6c0-5.3,4.3-9.6,9.6-9.6h51.4c5.3,0,9.6,4.3,9.6,9.6v70.8C85.3,86.1,81,90.4,75.7,90.4z"/>
-                    </symbol>
-                    <use href="#phone-icon" x="200" y="50" width="100" height="100" fill="#E64A19"/>
-
-                    <path id="lightning-bolt" fill="none" stroke="#FFC107" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
-                          d="M100,50 L150,50 L130,150 L180,150"/>
-
-                    <animateMotion xlink:href="#lightning-bolt" dur="1s" repeatCount="indefinite"
-                                   path="M100,50 C 150,50 140,100 160,100 C 180,100 170,50 180,50"
-                                   rotate="auto" />
-                </svg>
-            </div>
-
-
+            <div class="hero-bg-art"></div>
         </div>
     </section>
 
     <section id="features">
         <div class="container features-container">
             <div class="section-heading features-heading">
-                <h2>Experience Animated Features</h2> <!-- Animated Feature Heading -->
-                <p>See YourCallYourRule's key features come to life with visual animations.</p>
+                <h2>核心功能：拦截噪音，掌控通信</h2>
+                <p>了解 YourCallYourRule 如何帮助您控制您的通信。</p>
             </div>
             <div class="feature-grid">
-                <div class="feature-item feature-card feature-animated" data-animation="block-call"> <!-- Animated Feature Item -->
+                <div class="feature-item feature-card">
                     <i class="fas fa-phone-slash feature-icon"></i>
-                    <h3>Animated Smart Call Blocking</h3>
-                    <p>See spam calls get blocked in real-time with dynamic visual feedback.</p>
-                    <div class="feature-animation-placeholder">
-                        <!-- Animation for Block Call Here -->
-                        <svg class="feature-animation-svg" viewBox="0 0 100 100">
-                            <use href="#phone-icon" x="0" y="0" width="100" height="100" fill="#E64A19"/>
-                            <path id="block-slash" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" d="M10,10 L90,90"/>
-                        </svg>
+                    <h3>智能来电拦截</h3>
+                    <p>通过智能规则有效拦截骚扰电话和未知号码。</p>
+                      <!-- 自动挂断动画 -->
+                     <div class="hang-up-animation">
+                        <i class="fas fa-phone-volume"></i>
+                        <i class="fas fa-arrow-down"></i>
+                        <i class="fas fa-phone-slash"></i>
                     </div>
                 </div>
-                <div class="feature-item feature-card feature-animated" data-animation="filter-sms"> <!-- Animated Feature Item -->
+                <div class="feature-item feature-card">
                     <i class="fas fa-sms-slash feature-icon"></i>
-                    <h3>Animated SMS Filtering</h3>
-                    <p>Watch unwanted SMS messages get filtered out with a smooth animation.</p>
-                     <div class="feature-animation-placeholder">
-                        <!-- Animation for Filter SMS Here -->
-                         <svg class="feature-animation-svg" viewBox="0 0 100 100">
-                            <rect x="10" y="10" width="80" height="80" fill="#E64A19"/>
-                             <path id="filter-icon" fill="#fff" d="M20,20 L80,20 L50,50 L80,80 L20,80 Z"/>
-                        </svg>
-                    </div>
+                    <h3>高级短信过滤</h3>
+                    <p>过滤垃圾短信和不需要的文本，保持收件箱清洁。</p>
                 </div>
-                <div class="feature-item feature-card feature-animated" data-animation="custom-blocklist"> <!-- Animated Feature Item -->
+                <div class="feature-item feature-card">
                     <i class="fas fa-list-alt feature-icon"></i>
-                    <h3>Animated Customizable Blocklists</h3>
-                    <p>Visualize how easy it is to create and customize your blocklists.</p>
-                     <div class="feature-animation-placeholder">
-                        <!-- Animation for Blocklist Here -->
-                         <svg class="feature-animation-svg" viewBox="0 0 100 100">
-                            <rect x="10" y="10" width="80" height="80" fill="#E64A19"/>
-                             <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-size="30">List</text>
-                        </svg>
-                    </div>
+                    <h3>自定义拦截列表</h3>
+                    <p>创建和管理个性化的黑名单和白名单，实现完全控制。</p>
                 </div>
-                <div class="feature-item feature-card feature-animated" data-animation="auto-hangup"> <!-- Animated Feature Item -->
-                    <i class="fas fa-phone-slash feature-icon"></i>
-                    <h3>Animated Auto Hang-Up</h3>
-                    <p>See the app automatically hang up on spam calls with a clear animation.</p>
-                     <div class="feature-animation-placeholder">
-                        <!-- Animation for Auto Hang-Up Here -->
-                        <svg class="feature-animation-svg" viewBox="0 0 100 100">
-                             <use href="#phone-icon" x="0" y="0" width="100" height="100" fill="#E64A19"/>
-                             <path id="hangup-hand" fill="#fff" d="M70,30 C 75,25 85,25 90,30 L90,70 C 85,75 75,75 70,70 Z"/>
-                        </svg>
-                    </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3>灵活的拦截规则</h3>
+                    <p>根据号码、关键字、模式等设置拦截规则。</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>增强隐私保护</h3>
+                    <p>通过本地数据管理和安全功能保护您的隐私和数据。</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-cloud-download-alt feature-icon"></i>
+                    <h3>在线号码库（可选）</h3>
+                    <p>可选择订阅在线号码库，以增强垃圾电话检测。</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3>正则表达式支持</h3>
+                    <p>利用正则表达式实现强大而复杂的拦截规则。</p>
+                </div>
+                <div class="feature-item feature-card">
+                     <!-- 快递/外卖小人动画 -->
+                    <i class="fas fa-truck feature-icon delivery-animation"></i>
+                    <h3>扩展插件</h3>
+                    <p>使用自定义插件和集成扩展应用程序的功能。</p>
+
                 </div>
             </div>
         </div>
@@ -148,19 +133,19 @@
     <section id="download">
         <div class="container download-container">
             <div class="section-heading download-heading">
-                <h2>Download YourCallYourRule Now!</h2> <!-- Call to Action -->
-                <p>Experience animated spam blocking and take back control of your phone.</p>
+                <h2>立即下载 YourCallYourRule</h2>
+                <p>开始拦截垃圾电话，享受更清静的手机体验。</p>
             </div>
             <div class="download-options">
                 <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card download-google-play">
                     <i class="fab fa-google-play"></i>
-                    <h3>Get it on Google Play</h3>
-                    <p>For animated spam blocking and easy updates.</p> <!-- Animation Mention -->
+                    <h3>Google Play 下载</h3>
+                    <p>安装和更新更方便。</p>
                 </a>
                 <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card download-github">
                     <i class="fab fa-github"></i>
-                    <h3>Download from GitHub</h3>
-                    <p>For advanced features and customization.</p>
+                    <h3>GitHub 下载</h3>
+                    <p>支持短信过滤和高级选项。</p>
                 </a>
             </div>
         </div>
@@ -169,15 +154,15 @@
     <section id="community">
         <div class="container community-container">
             <div class="section-heading community-heading">
-                <h2>Join the Animated Community</h2> <!-- Animated Community -->
-                <p>Connect with users who are experiencing the power of animated spam blocking!</p> <!-- Animation Mention -->
+                <h2>加入我们的社区</h2>
+                <p>获取支持、分享技巧并与其他 YourCallYourRule 用户联系。</p>
             </div>
             <div class="community-links">
                 <a href="https://t.me/yourcallyourrule" class="community-link community-telegram">
-                    <i class="fab fa-telegram"></i> Telegram Channel
+                    <i class="fab fa-telegram"></i> Telegram 频道
                 </a>
                 <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="community-link community-telegram">
-                    <i class="fab fa-telegram"></i> Telegram Group
+                    <i class="fab fa-telegram"></i> Telegram 群组
                 </a>
             </div>
         </div>
@@ -185,7 +170,7 @@
 
     <footer>
         <div class="container footer-container">
-            <p>© 2024 YourCallYourRule. All Rights Reserved.</p>
+            <p>© 2024 YourCallYourRule. 版权所有.</p>
         </div>
     </footer>
 
