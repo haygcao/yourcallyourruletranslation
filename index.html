@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourCallYourRule - 告别骚扰电话</title>
+    <title>YourCallYourRule - Stop Spam Calls</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,9 @@
             </div>
             <nav>
                 <ul>
-                   <li><a href="#features">功能</a></li>
-                    <li><a href="#download">下载</a></li>
-                    <li><a href="#community">社区</a></li>
+                   <li><a href="#features">Features</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#community">Community</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,17 +33,23 @@
             <div class="hero-grid">
                 <div class="hero-text-column">
                     <div class="hero-text">
-                        <h1 class="hero-title">拦截 <span class="highlight">骚扰电话</span>，<br>还你清净！</h1>
-                        <!-- 动画容器 -->
-                        <div class="hero-animation-container">
-                            <div class="animation-scene lightning-strike"></div>
-                            <div class="animation-scene delivery-person"></div>
-                            <div class="animation-scene auto-hangup"></div>
-                        </div>
-                        <p class="hero-subtitle">YourCallYourRule: 自定义来电 & 短信拦截</p>
-                        <p class="hero-description">掌控你的手机，拦截不想接的电话和短信。享受更安静、更舒心的移动体验。</p>
+                        <h1 class="hero-title">Stop <span class="highlight">Spam Calls</span>. Reclaim Your Peace.</h1>
+                        <p class="hero-subtitle">
+                            YourCallYourRule:  <!-- Container for subtitle and animations -->
+                                <span id="subtitle-text">Customizable Call & SMS Blocking</span>
+                                <span class="animation-container">
+                                    <i class="fas fa-phone-slash slash-animation"></i>
+                                    <i class="fas fa-bolt lightning-animation"></i>
+                                     <span class="delivery-animation">
+                                        <i class="fas fa-box"></i>
+                                        <i class="fas fa-person-running"></i>
+                                    </span>
+                                    <i class="fas fa-ban block-animation"></i>
+                                </span>
+                            </p>
+                        <p class="hero-description">Take back control of your phone. Block unwanted calls and SMS messages with powerful, personalized rules. Enjoy a quieter, more peaceful mobile experience.</p>
                         <div class="hero-button-area">
-                            <a href="#" class="button primary hero-get-started">立即体验 <i class="fas fa-phone-slash"></i></a>
+                            <a href="#" class="button primary hero-get-started">Get Started <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +57,6 @@
                 <div class="hero-visual-column">
                     <div class="swiper hero-swiper">
                         <div class="swiper-wrapper">
-                            <!-- Swiper slides (mockups) -->
                             <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
                             <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
                             <div class="swiper-slide"><img src="assets/mockup3.png" alt="Mockup 3"></div>
@@ -65,62 +70,60 @@
                     </div>
                     <div class="hero-buttons">
                         <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary google-play-button"><i class="fab fa-google-play"></i> Google Play</a>
-                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary github-button"><i class="fab fa-github"></i> GitHub 下载</a>
+                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary github-button"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
-            <div class="hero-bg-art"></div> <!-- Background art (optional) -->
+            <div class="hero-bg-art"></div>
         </div>
     </section>
 
-    <!-- Features, Download, Community, Footer sections (using your previous HTML with minor class updates) -->
-    <!-- ... (Rest of your HTML - Feature, Download, Community sections) ... -->
     <section id="features">
         <div class="container features-container">
             <div class="section-heading features-heading">
-                <h2>核心功能，屏蔽噪音</h2>
-                <p>了解 YourCallYourRule 如何让您掌控您的通信。</p>
+                <h2>Key Features</h2>
+                <p>Explore the powerful functionalities.</p>
             </div>
             <div class="feature-grid">
                 <div class="feature-item feature-card">
-                    <i class="fas fa-phone-slash feature-icon"></i>
-                    <h3>智能来电拦截</h3>
-                    <p>使用智能规则有效阻止垃圾来电和不需要的号码。</p>
+                   <i class="fas fa-phone-slash feature-icon"></i>
+                    <h3>Smart Call Blocking</h3>
+                    <p>Effectively block spam calls and unwanted numbers.</p>
                 </div>
                 <div class="feature-item feature-card">
-                    <i class="fas fa-sms-slash feature-icon"></i>
-                    <h3>高级短信过滤</h3>
-                    <p>过滤垃圾短信和不需要的文本，保持收件箱清洁。</p>
+                     <i class="fas fa-sms-slash feature-icon"></i>
+                    <h3>Advanced SMS Filtering</h3>
+                    <p>Filter out spam SMS messages and unwanted texts.</p>
                 </div>
                 <div class="feature-item feature-card">
-                    <i class="fas fa-list-alt feature-icon"></i>
-                    <h3>自定义阻止列表</h3>
-                    <p>创建和管理个性化的阻止列表和白名单，以实现终极控制。</p>
+                   <i class="fas fa-list-alt feature-icon"></i>
+                    <h3>Customizable Blocklists</h3>
+                    <p>Create personalized blocklists and whitelists.</p>
                 </div>
                 <div class="feature-item feature-card">
-                     <i class="fas fa-cogs feature-icon"></i>
-                    <h3>灵活的阻止规则</h3>
-                    <p>根据号码、关键词、模式等设置阻止规则。</p>
+                   <i class="fas fa-cogs feature-icon"></i>
+                    <h3>Flexible Blocking Rules</h3>
+                    <p>Set up rules based on numbers, keywords, patterns.</p>
                 </div>
                 <div class="feature-item feature-card">
                     <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>增强隐私</h3>
-                    <p>通过本地数据管理和安全功能保护您的隐私和数据。</p>
+                    <h3>Enhanced Privacy</h3>
+                    <p>Protect your privacy and data with local management.</p>
                 </div>
                 <div class="feature-item feature-card">
-                  <i class="fas fa-cloud-download-alt feature-icon"></i>
-                    <h3>在线垃圾数据库（可选）</h3>
-                    <p>可选择订阅在线数据库以增强垃圾邮件检测。</p>
+                    <i class="fas fa-cloud-download-alt feature-icon"></i>
+                    <h3>Online Spam Database (Optional)</h3>
+                    <p>Subscribe to online databases for extra protection.</p>
                 </div>
                 <div class="feature-item feature-card">
-                    <i class="fas fa-code feature-icon"></i>
-                    <h3>正则表达式支持</h3>
-                    <p>利用正则表达式实现强大而复杂的阻止规则。</p>
+                   <i class="fas fa-code feature-icon"></i>
+                    <h3>Regex Support</h3>
+                    <p>Use regular expressions for powerful blocking.</p>
                 </div>
                 <div class="feature-item feature-card">
-                   <i class="fas fa-expand-plugins feature-icon"></i>
-                    <h3>插件可扩展性</h3>
-                    <p>使用自定义插件和集成扩展应用程序的功能。</p>
+                    <i class="fas fa-expand-plugins feature-icon"></i>
+                    <h3>Plugin Extensibility</h3>
+                    <p>Extend the app's capabilities with plugins.</p>
                 </div>
             </div>
         </div>
@@ -129,19 +132,19 @@
     <section id="download">
         <div class="container download-container">
             <div class="section-heading download-heading">
-                <h2>立即下载 YourCallYourRule</h2>
-                <p>立即开始阻止垃圾邮件并享受宁静的手机体验。</p>
+                <h2>Download Now</h2>
+                <p>Start blocking spam and enjoying peace.</p>
             </div>
             <div class="download-options">
                 <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card download-google-play">
                     <i class="fab fa-google-play"></i>
-                    <h3>在 Google Play 上获取</h3>
-                    <p>对于大多数用户来说，易于安装和更新。</p>
+                    <h3>Google Play</h3>
+                    <p>Easy install and updates.</p>
                 </a>
                 <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card download-github">
                     <i class="fab fa-github"></i>
-                    <h3>从 GitHub 下载</h3>
-                    <p>用于短信过滤和高级选项。</p>
+                    <h3>GitHub</h3>
+                    <p>For SMS filtering and advanced options.</p>
                 </a>
             </div>
         </div>
@@ -150,15 +153,15 @@
     <section id="community">
         <div class="container community-container">
             <div class="section-heading community-heading">
-                <h2>加入我们的社区</h2>
-                <p>获取支持、分享技巧并与其他 YourCallYourRule 用户联系。</p>
+                <h2>Join the Community</h2>
+                <p>Get support, share tips, and connect.</p>
             </div>
             <div class="community-links">
                 <a href="https://t.me/yourcallyourrule" class="community-link community-telegram">
-                    <i class="fab fa-telegram"></i> Telegram 频道
+                    <i class="fab fa-telegram"></i> Telegram Channel
                 </a>
                 <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="community-link community-telegram">
-                    <i class="fab fa-telegram"></i> Telegram 群组
+                    <i class="fab fa-telegram"></i> Telegram Group
                 </a>
             </div>
         </div>
@@ -166,7 +169,7 @@
 
     <footer>
         <div class="container footer-container">
-            <p>© 2024 YourCallYourRule. 版权所有。</p>
+            <p>© 2024 YourCallYourRule. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -184,22 +187,6 @@
             },
             speed: 800,
         });
-
-        // 动画场景切换 (更简洁的实现)
-        const animationScenes = document.querySelectorAll('.animation-scene');
-        let currentSceneIndex = 0;
-
-        function showNextScene() {
-            animationScenes[currentSceneIndex].classList.remove('active');
-            currentSceneIndex = (currentSceneIndex + 1) % animationScenes.length;
-            animationScenes[currentSceneIndex].classList.add('active');
-        }
-
-        // 初始显示第一个场景
-        animationScenes[0].classList.add('active');
-        // 定时切换场景
-        setInterval(showNextScene, 4000); // 每 4 秒切换一次
-
     </script>
 
 </body>
