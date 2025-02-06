@@ -1,66 +1,128 @@
-/* --- Animations for "Stop Spam Calls" Title --- */
-
-/* Phone Slash Animation */
-.phone-strike {
-    color: #d32f2f; /* Deep Red */
-    font-size: 3.5em; /* Large Icon */
-    animation: phoneStrike 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Easing for impact */
-    transform-origin: 50% 50%; /* Center the rotation */
+/* Animation Showcase Container */
+.animation-showcase {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    height: 200px;
+    position: relative;
 }
 
-@keyframes phoneStrike {
-    0%   { transform: rotate(45deg) scale(0);  opacity: 0; } /* Start small and rotated */
-    20%  { transform: rotate(-20deg) scale(1.3); opacity: 1; } /* Rotate other way, enlarge */
-    80%  { transform: rotate(-20deg) scale(1.3); opacity: 1; } /* Stay visible */
-    100% { transform: rotate(-90deg) scale(0.6); opacity: 0; } /* Fade out, rotate more, shrink */
-}
-/* Ban Icon Animation */
-.ban-icon {
-    color: #f44336; /* Slightly brighter red */
-    font-size: 4.0em;
-    animation: banAppear 1.5s 0.5s ease-in-out forwards; /* Delay of 0.5s */
-     z-index: 3;
+.animation-scene {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    margin: 0 10px;
+    overflow: hidden;
 }
 
-@keyframes banAppear {
-    0%   { transform: scale(0); opacity: 0; }  /* Start small and invisible */
-    20%   { transform: scale(1.4); opacity: 1; } /* Overshoot for impact */
-    80%   { transform: scale(1.2); opacity: 1; }  /* Stay large, visible */
-    100% { transform: scale(0.8) translateY(-20px); opacity: 0; } /* Shrink, fade, move up */
+/* Lightning Animation */
+.scene-1 {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
+.lightning {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 0;
+    background: #FFD700;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 10px #FFD700);
+    animation: lightning-strike 3s infinite;
+}
 
-/* --- "Reclaim Your Peace" Animations --- */
-.peace-dove{
+.spam-phone {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: #ff4444;
+    animation: phone-shake 3s infinite;
+}
+
+.spam-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5em;
+    background: #ff4444;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Delivery Animation */
+.delivery-person {
+    position: absolute;
+    bottom: 20%;
+    left: -50px;
+    font-size: 2em;
     color: #4CAF50;
-    font-size: 2.5em;
-    animation:  flyingDove 4s linear infinite;
-
+    animation: delivery-run 4s infinite linear;
 }
-@keyframes flyingDove {
-    0% {
-        transform: translateX(-150px) translateY(50px) scale(0.5) rotate(0deg);
-        opacity: 0;
-    }
-    10%{
-         transform: translateX(-100px) translateY(0px) scale(0.8) rotate(-20deg);
-        opacity: 1;
-    }
-    30%{
-       transform: translateX(0px) translateY(0px) scale(1.0) rotate(-20deg);
-        opacity: 1;
-    }
 
-    70% {
-        transform: translateX(0px) translateY(0px) scale(1.0) rotate(20deg);
-        opacity: 1;
-    }
-   90%{
-       transform: translateX(100px) translateY(0px) scale(0.8) rotate(20deg);
-        opacity: 1;
-   }
-    100% {
-        transform: translateX(150px) translateY(50px) scale(0.5) rotate(30deg);
-        opacity: 0;
-    }
+.delivery-label {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFA726;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.4em;
+    white-space: nowrap;
+}
+
+/* Auto-Answer Animation */
+.phone-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+.answer-shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #4CAF50;
+    animation: shield-protect 3s infinite;
+}
+
+/* Keyframe Animations */
+@keyframes lightning-strike {
+    0%, 100% { height: 0; opacity: 0; }
+    48% { height: 0; opacity: 0; }
+    50% { height: 100%; opacity: 1; }
+    52% { height: 100%; opacity: 0; }
+    54% { height: 0; opacity: 0; }
+}
+
+@keyframes phone-shake {
+    0%, 45%, 100% { transform: translateX(-50%) rotate(0); }
+    48%, 52% { transform: translateX(-50%) rotate(15deg); }
+    50% { transform: translateX(-50%) rotate(-15deg); opacity: 1; }
+    55% { transform: translateX(-50%) rotate(0); opacity: 0; }
+    95% { opacity: 0; }
+}
+
+@keyframes delivery-run {
+    0% { left: -50px; }
+    50% { left: 150%; }
+    50.01% { left: -50px; }
+    100% { left: -50px; }
+}
+
+@keyframes shield-protect {
+    0%, 100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+    80% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
 }
