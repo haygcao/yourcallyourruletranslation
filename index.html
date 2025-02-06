@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Modern, clean font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="dark-mode"> <!-- Added dark-mode class for overall theme -->
+<body class="dark-mode">
 
     <header>
-        <div class="container">
+        <div class="container header-container"> <!-- Added header-container for rounded corners -->
             <div class="logo">
-                <img src="assets/yourcall-logo-white.png" alt="YourCallYourRule Logo"> <!-- White logo for dark background -->
+                <img src="assets/yourcall-logo-white.png" alt="YourCallYourRule Logo">
             </div>
             <nav>
                 <ul>
@@ -29,18 +29,21 @@
     </header>
 
     <section id="hero">
-        <div class="container">
-            <div class="hero-grid"> <!-- Using Grid for structured layout -->
+        <div class="container hero-container"> <!-- Added hero-container for rounded corners -->
+            <div class="hero-grid">
                 <div class="hero-text-column">
                     <div class="hero-text">
-                        <h1>YourCallYourRule</h1>
-                        <h2>Experience Communication, Redefined.</h2>
-                        <p>Unleash the power to control your calls and SMS like never before. Your privacy, your rules.</p>
+                        <h1 class="hero-title">Start <span class="highlight">manage</span> time with AI</h1> <!-- Example title style -->
+                        <p class="hero-subtitle">[ SIMPLE TIME EXPERIENCE ]</p> <!-- Example subtitle style -->
+                        <p class="hero-description">Unleash the power to control your calls and SMS like never before. Your privacy, your rules.</p>
+                        <div class="hero-button-area">
+                            <a href="#" class="button primary hero-get-started">Get Started <i class="fas fa-arrow-right"></i></a> <!-- Example button style -->
+                        </div>
                     </div>
                 </div>
 
                 <div class="hero-visual-column">
-                    <div class="swiper">
+                    <div class="swiper hero-swiper"> <!-- Added hero-swiper class -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
                             <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
@@ -53,7 +56,7 @@
                             <div class="swiper-slide"><img src="assets/mockup9.png" alt="Mockup 9"></div>
                         </div>
                     </div>
-                    <div class="hero-buttons"> <!-- Container for buttons next to Swiper -->
+                    <div class="hero-buttons">
                         <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Google Play</a>
                         <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> GitHub Download</a>
                     </div>
@@ -63,48 +66,48 @@
     </section>
 
     <section id="features">
-        <div class="container">
-            <div class="section-heading">
+        <div class="container features-container"> <!-- Added features-container for rounded corners -->
+            <div class="section-heading features-heading"> <!-- Added features-heading for rounded corners -->
                 <h2>Core Features</h2>
                 <p>Delve into the capabilities that set YourCallYourRule apart.</p>
             </div>
             <div class="feature-grid">
-                <div class="feature-item">
+                <div class="feature-item feature-card"> <!-- Added feature-card for rounded corners -->
                     <i class="fas fa-shield-alt"></i>
                     <h3>Advanced Blocking Technology</h3>
                     <p>Sophisticated algorithms for unparalleled call and SMS filtering.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-fingerprint"></i>
                     <h3>Personalized Rule Sets</h3>
                     <p>Craft custom rules tailored to your exact communication preferences.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-database"></i>
                     <h3>Real-time Spam Intelligence</h3>
                     <p>Option to integrate with online databases for cutting-edge spam detection.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-code"></i>
                     <h3>Regex-Powered Precision</h3>
                     <p>Unleash the power of regular expressions for intricate blocking logic.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-sim-card"></i>
                     <h3>Dual SIM Optimization</h3>
                     <p>Seamlessly manage calls across multiple SIM cards with intelligent filtering.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-lock"></i>
                     <h3>Privacy-Centric Architecture</h3>
                     <p>Your data remains exclusively on your device, ensuring maximum confidentiality.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-puzzle-piece"></i>
                     <h3>Plugin-Based Expansion</h3>
                     <p>Extend functionality and connect to external services with versatile plugins.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item feature-card">
                     <i class="fas fa-cloud-upload-alt"></i>
                     <h3>Secure Cloud Backup</h3>
                     <p>Effortlessly backup and restore your settings via leading cloud platforms.</p>
@@ -114,18 +117,18 @@
     </section>
 
     <section id="download">
-        <div class="container">
-            <div class="section-heading">
+        <div class="container download-container"> <!-- Added download-container for rounded corners -->
+            <div class="section-heading download-heading"> <!-- Added download-heading for rounded corners -->
                 <h2>Get Started Today</h2>
                 <p>Choose your platform and download YourCallYourRule now.</p>
             </div>
             <div class="download-options">
-                <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card google-play">
+                <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card download-google-play"> <!-- Added download-google-play for rounded corners -->
                     <i class="fab fa-google-play"></i>
                     <h3>Download from Google Play</h3>
                     <p>Effortless installation and automatic updates.</p>
                 </a>
-                <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card github">
+                <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card download-github"> <!-- Added download-github for rounded corners -->
                     <i class="fab fa-github"></i>
                     <h3>Get it on GitHub</h3>
                     <p>For advanced customization and SMS filtering capabilities.</p>
@@ -135,16 +138,16 @@
     </section>
 
     <section id="community">
-        <div class="container">
-            <div class="section-heading">
+        <div class="container community-container"> <!-- Added community-container for rounded corners -->
+            <div class="section-heading community-heading"> <!-- Added community-heading for rounded corners -->
                 <h2>Join the Community</h2>
                 <p>Connect with users, share insights, and access support through our community channels.</p>
             </div>
             <div class="community-links">
-                <a href="https://t.me/yourcallyourrule" class="community-link telegram-channel">
+                <a href="https://t.me/yourcallyourrule" class="community-link telegram-channel community-telegram"> <!-- Added community-telegram for rounded corners -->
                     <i class="fab fa-telegram"></i> Telegram Channel
                 </a>
-                <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="community-link telegram-group">
+                <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="community-link telegram-group community-telegram"> <!-- Added community-telegram for rounded corners -->
                     <i class="fab fa-telegram"></i> Telegram Group
                 </a>
             </div>
@@ -152,24 +155,24 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container footer-container"> <!-- Added footer-container for rounded corners -->
             <p>© 2024 YourCallYourRule. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
+        const swiper = new Swiper('.hero-swiper', { // Updated Swiper selector to hero-swiper
             loop: true,
             direction: 'vertical',
             slidesPerView: 'auto',
             spaceBetween: 15,
             centeredSlides: true,
-            autoplay: {  // Enable autoplay
-                delay: 3000, // Slide every 3 seconds
-                disableOnInteraction: false, // Allow interaction without stopping autoplay
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
             },
-            speed: 800, // Transition speed
+            speed: 800,
         });
     </script>
 
