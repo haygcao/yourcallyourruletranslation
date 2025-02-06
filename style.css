@@ -1,205 +1,162 @@
-/* Color Variables */
+/* Red Theme Color Palette */
 :root {
     --primary-red: #c62828;
     --secondary-red: #ef5350;
     --light-red: #ffcdd2;
-    --accent-yellow: #ffd700;
-    --accent-green: #4caf50;
-    --white: #ffffff;
+    --accent-yellow: #FFC107;
+    --accent-green: #4CAF50;
     --text-dark: #212121;
-    --text-light: #757575;
+    --text-light: #ffffff;
 }
 
-/* Global Styles */
 body.red-theme {
     font-family: 'Sora', sans-serif;
     margin: 0;
     background-color: var(--primary-red);
-    color: var(--text-dark);
-    line-height: 1.6;
+    color: var(--text-light);
+    line-height: 1.7;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
     padding: 0 20px;
 }
 
 /* Header Styles */
 header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background: rgba(198, 40, 40, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
+    top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hero Section Animations */
-.animation-scene {
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    margin-bottom: 30px;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
 
-/* Lightning Animation */
-.lightning-scene {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Navigation */
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
 }
 
-.lightning {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 4px;
-    height: 0;
-    background: var(--accent-yellow);
-    filter: drop-shadow(0 0 20px var(--accent-yellow));
-    animation: lightning-strike 3s infinite;
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-@keyframes lightning-strike {
-    0% {
-        height: 0;
-        opacity: 0;
-    }
-    10% {
-        height: 200px;
-        opacity: 1;
-    }
-    20% {
-        height: 200px;
-        opacity: 0;
-    }
-    100% {
-        height: 200px;
-        opacity: 0;
-    }
-}
-
-.spam-call {
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2em;
-    color: var(--secondary-red);
-    animation: spam-call-destroy 3s infinite;
-}
-
-@keyframes spam-call-destroy {
-    0% {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-    }
-    20% {
-        transform: translateX(-50%) scale(1.5) rotate(45deg);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(-50%) scale(1.5) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-/* Delivery Animation */
-.delivery-scene {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-}
-
-.delivery-person, .food-delivery {
-    position: absolute;
-    font-size: 2em;
+nav a:hover {
     color: var(--accent-yellow);
-    animation: run-across 8s infinite linear;
 }
 
-.delivery-person {
-    bottom: 20px;
-    animation-delay: 3s;
+/* Hero Section */
+#hero {
+    padding-top: 120px;
+    background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
 }
 
-.food-delivery {
-    bottom: 80px;
+.hero-container {
+    position: relative;
+    padding: 4rem 0;
 }
 
-@keyframes run-across {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100vw);
-    }
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.delivery-label {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+.hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--light-red);
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button.primary {
     background: var(--accent-yellow);
     color: var(--text-dark);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.4em;
-    white-space: nowrap;
 }
 
-/* Auto Answer Animation */
-.auto-answer-scene {
-    position: absolute;
-    top: 50%;
-    right: 50px;
-    transform: translateY(-50%);
+.button.secondary {
+    background: var(--accent-green);
+    color: var(--text-light);
 }
 
-.phone-ring {
-    font-size: 3em;
-    color: var(--accent-green);
-    animation: phone-ring 2s infinite;
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes phone-ring {
-    0%, 100% {
-        transform: rotate(-15deg);
+/* Features Section */
+#features {
+    background: var(--light-red);
+    padding: 6rem 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
     }
-    50% {
-        transform: rotate(15deg);
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .animation-showcase {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .animation-scene {
+        height: 150px;
+        margin: 10px 0;
     }
 }
-
-.shield {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4em;
-    color: var(--accent-yellow);
-    animation: shield-protect 2s infinite;
-}
-
-@keyframes shield-protect {
-    0% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0;
-    }
-}
-
-/* Rest of your styles... */
