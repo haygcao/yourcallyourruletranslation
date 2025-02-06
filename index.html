@@ -3,29 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourCallYourRule - Take Control of Your Calls & SMS</title>
+    <title>YourCallYourRule - Block Spam, Protect Your Privacy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>YourCallYourRule</h1>
-            <p>Take complete control of your calls and SMS messages.</p>
+            <div class="logo">
+                <img src="assets/yourcallyourrule-logo.png" alt="YourCallYourRule Logo">
+                <span>YourCallYourRule</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <section id="hero">
         <div class="container">
-            <img src="assets/phone-mockup.png" alt="YourCallYourRule App Mockup">
-            <div>
-                <h2>Stop Spam, Protect Your Privacy</h2>
-                <p>YourCallYourRule is a powerful Android app that lets you customize your call and SMS blocking rules to fit your needs. Say goodbye to unwanted calls and messages!</p>
+            <div class="hero-text">
+                <h1>Take Control of Your Digital Life</h1>
+                <p>Block unwanted calls and SMS messages with YourCallYourRule.  Customize your blocking rules and protect your privacy.</p>
                 <div class="buttons">
                     <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Get it on Google Play</a>
                     <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="assets/mockup1.png" alt="YourCallYourRule App Mockup 1"></div>
+                        <div class="swiper-slide"><img src="assets/mockup2.png" alt="YourCallYourRule App Mockup 2"></div>
+                        <div class="swiper-slide"><img src="assets/mockup3.png" alt="YourCallYourRule App Mockup 3"></div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
                 </div>
             </div>
         </div>
@@ -33,7 +62,7 @@
 
     <section id="features">
         <div class="container">
-            <h2>Key Features</h2>
+            <h2>Powerful Features at Your Fingertips</h2>
             <div class="feature-grid">
                 <div class="feature-item">
                     <i class="fas fa-phone-slash"></i>
@@ -80,25 +109,18 @@
         </div>
     </section>
 
-    <section id="sms-filtering">
+    <section id="download">
          <div class="container">
-            <h2>SMS Filtering (GitHub Version Only)</h2>
-            <p>The GitHub version of YourCallYourRule offers powerful SMS filtering capabilities, allowing you to block unwanted SMS messages based on sender number or keywords.</p>
-            <p><b>Note:</b> Due to Google Play policies, this feature is not available in the Play Store version. Choose the appropriate version from the GitHub releases.</p>
-            <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+            <h2>Download YourCallYourRule</h2>
+            <p>Choose the version that suits your needs:</p>
+            <div class="download-buttons">
+                <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Get it on Google Play</a>
+                <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+            </div>
+
+            <p class="sms-note"><b>Note:</b> The GitHub version offers SMS filtering, which is not available on Google Play due to policy restrictions.</p>
         </div>
     </section>
-
-    <section id="extend">
-        <div class="container">
-            <h2>Extend Functionality</h2>
-            <p>YourCallYourRule is designed to be extensible through custom plugins. You can leverage these plugins to: Subscribe to Online Databases, Web Scraping</p>
-            <a href="https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest" class="button secondary"><i class="fas fa-tools"></i> Plugin Test Template</a>
-            <a href="https://github.com/haygcao/yourcallyourruletranslation/tree/main/Templates" class="button secondary"><i class="fas fa-file-alt"></i> Data Templates</a>
-        </div>
-
-    </section>
-
 
     <section id="community">
         <div class="container">
@@ -116,6 +138,35 @@
             <p>© 2024 YourCallYourRule. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+      });
+    </script>
 
 </body>
 </html>
