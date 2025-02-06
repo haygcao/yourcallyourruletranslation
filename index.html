@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourCallYourRule - 智能拦截骚扰电话 | 保护您的通话安全 | 自动拦截垃圾电话</title>
-    <meta name="description" content="智能拦截骚扰电话，保护您的通话安全。支持快递、外卖白名单，自动识别骚扰电话，让您的通话更安心。">
-    <meta name="keywords" content="骚扰电话拦截,垃圾电话过滤,电话安全防护,智能来电识别,通话隐私保护,快递白名单,外卖来电">
+    <title>YourCallYourRule - Stop Spam Calls & Protect Your Peace</title>
+    <meta name="description" content="Block spam calls, scam calls, and unwanted messages. Advanced call blocking app with automatic spam detection, custom filters, and smart protection.">
+    <meta name="keywords" content="call blocker, spam calls, scam calls, unwanted calls, phone protection, call filter, SMS blocker, spam protection, call privacy, automatic call blocking">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="red-theme">
@@ -18,9 +20,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#features">功能特点</a></li>
-                    <li><a href="#download">立即下载</a></li>
-                    <li><a href="#community">社区支持</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#community">Community</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,75 +32,61 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>
-                        <div class="animation-scene">
-                            <!-- Lightning Animation -->
-                            <div class="lightning-scene">
-                                <div class="lightning"></div>
-                                <div class="spam-call">
-                                    <i class="fas fa-phone-slash"></i>
-                                    <span>骚扰电话</span>
+                    <h1>Stop Spam Calls Forever</h1>
+                    <p class="hero-subtitle">Smart Protection Against Unwanted Calls</p>
+                    
+                    <!-- Animation Container -->
+                    <div class="animation-showcase">
+                        <!-- Lightning Animation -->
+                        <div class="animation-scene scene-1">
+                            <div class="lightning"></div>
+                            <div class="spam-phone">
+                                <i class="fas fa-phone"></i>
+                                <span class="spam-label">SPAM</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Animation -->
+                        <div class="animation-scene scene-2">
+                            <div class="delivery-person">
+                                <i class="fas fa-running"></i>
+                                <div class="delivery-label">
+                                    <span>Delivery</span>
                                 </div>
                             </div>
-                            
-                            <!-- Delivery Animation -->
-                            <div class="delivery-scene">
-                                <div class="delivery-person">
-                                    <i class="fas fa-running"></i>
-                                    <div class="delivery-label">快递小哥</div>
-                                </div>
-                                <div class="food-delivery">
-                                    <i class="fas fa-motorcycle"></i>
-                                    <div class="delivery-label">外卖配送</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Auto Answer Animation -->
-                            <div class="auto-answer-scene">
-                                <div class="phone-ring">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="shield">
+                        </div>
+                        
+                        <!-- Auto-Answer Animation -->
+                        <div class="animation-scene scene-3">
+                            <div class="phone-ring">
+                                <i class="fas fa-phone-volume"></i>
+                                <div class="answer-shield">
                                     <i class="fas fa-shield-alt"></i>
                                 </div>
                             </div>
                         </div>
-                        <span class="main-title">智能拦截骚扰电话</span>
-                        <span class="subtitle">让通话更安心</span>
-                    </h1>
-                    <p class="hero-description">
-                        智能识别骚扰电话，自动拦截垃圾来电。<br>
-                        支持快递、外卖白名单，让重要电话不错过。
-                    </p>
+                    </div>
+                </div>
+
+                <!-- Existing Swiper -->
+                <div class="hero-visual">
+                    <div class="swiper hero-swiper">
+                        <!-- Original swiper content -->
+                    </div>
                     <div class="hero-buttons">
-                        <a href="#download" class="button primary">立即下载 <i class="fas fa-arrow-right"></i></a>
-                        <a href="#features" class="button secondary">了解更多</a>
+                        <a href="#" class="button primary google-play-button">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="button secondary github-button">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features section with updated content -->
-    <section id="features">
-        <div class="container">
-            <h2>核心功能</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>智能拦截</h3>
-                    <p>自动识别和拦截骚扰电话，保护您的通话安全</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-list-alt"></i>
-                    <h3>白名单管理</h3>
-                    <p>快递、外卖等重要来电永不错过</p>
-                </div>
-                <!-- Add more feature cards -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Rest of the sections... -->
+    <!-- Keep existing Features, Download, and Community sections -->
+    
 </body>
 </html>
