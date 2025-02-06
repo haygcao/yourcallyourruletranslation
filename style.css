@@ -24,8 +24,7 @@ body.warm-mode {
 /* 10% - #FF6F00 (Deep Orange - Accent Color) */
 /*  +  #4CAF50 (Green - Complementary Accent for "Wood" element) */
 
-/* Rounded Corners */
-/* ... (All the rounded corners classes, same as before) ... */
+/* Rounded Corners - Consistent */
 .header-container,
 .hero-container,
 .features-container,
@@ -74,10 +73,9 @@ header .header-container {
 }
 
 header .logo img {
-    height: 45px;
+    height: 45px; /* Adjusted Logo Size */
 }
 
-/* ... (Header Nav Styles - same as before, but adjust hover color) ... */
 header nav ul {
     padding: 0;
     margin: 0;
@@ -155,95 +153,70 @@ header nav ul li a:hover::after {
     line-height: 1.2;
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex; /* Allows for inline-block parts */
+    flex-wrap: wrap; /* Wrap parts to the next line if needed */
+    gap: 10px;       /* Spacing between parts */
 }
+
+.title-part {
+    display: inline-block; /* Treat each word/phrase as a block */
+}
+
+/* "Spam" Word and Icon Animations */
+.animated-spam {
+    position: relative; /* For positioning the icons */
+    display: inline-flex; /* Keep "Spam Calls" together */
+    align-items: center; /* Vertically align "Spam" and "Calls" */
+    gap: 8px;             /* Space between "Spam" and "Calls" */
+}
+
+.spam-word {
+    color: #e53935;  /* Red color for "Spam" */
+    position: relative;
+    z-index: 1;
+}
+.spam-icons {
+    display: flex; /* Horizontal layout */
+    position: absolute;
+    top: -10px; /* Icons slightly above the word */
+    left: 0;  /* Start from left edge */
+    width: 100%; /* Cover the entire "Spam" word */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 10px; /* Space between slash and ban icons */
+    z-index: 0;    /* Place behind text */
+    animation: spam-block 2s infinite;
+    opacity: 0; /* Initially hidden */
+}
+.spam-icons .fa-phone-slash{
+     color: #FF6F00;
+}
+.spam-icons .fa-ban{
+      color: #e53935; /* Red for the ban icon */
+
+}
+
+@keyframes spam-block {
+  0%    { transform: translateY(20px) scale(0.5); opacity: 0; } /* Start small and below */
+  20%   { transform: translateY(0)    scale(1.2); opacity: 1; }  /* Pop up and enlarge */
+  80%   { transform: translateY(0)    scale(1.2); opacity: 1; }  /* Stay visible */
+  100%  { transform: translateY(-30px) scale(0.8); opacity: 0; } /* Fade out and move up */
+}
+
 
 .hero-title .highlight {
-    color: #4CAF50; /* Green Highlight */
+    color: #4CAF50; /* Green - kept from before */
 }
 
-/* --- Hero Subtitle and Animations --- */
 .hero-subtitle {
-    font-size: 1.3em; /* Increased Subtitle Size */
+    font-size: 1.3em;
     color: #555;
     margin-bottom: 25px;
     font-weight: 500;
     letter-spacing: 0.5px;
-    position: relative; /* For positioning animations */
-    display: flex;        /* Allows for horizontal layout of text and animation */
-    align-items: center;  /* Vertically center text and animations */
-    gap: 15px;             /* Spacing between text and animation */
-}
-
-.animation-container {
-    display: flex;      /* Horizontal layout for animation elements */
+    position: relative;
+    display: flex;
     align-items: center;
-    gap: 10px;          /* Space between animation icons */
-}
-
-/* Phone Slash Animation */
-.slash-animation {
-    color: #FF6F00;
-    font-size: 1.8em; /* Slightly larger */
-    animation: slash 1.5s ease-in-out infinite;
-}
-
-@keyframes slash {
-    0%, 100% { transform: rotate(-10deg); }
-    50% { transform: rotate(30deg) scale(1.3); opacity: 0.5;} /* Enlarged and faded */
-}
-
-/* Lightning Bolt Animation */
-.lightning-animation {
-    color: #FFEB3B; /* Yellow */
-    font-size: 1.5em;
-    animation: lightning 2s linear infinite;
-    margin-left: 5px; /* Spacing */
-}
-
-@keyframes lightning {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.4) translateY(-8px); /* Move up slightly */
-    opacity: 0;
-  }
-}
-
-/* Delivery Animation (Package and Person Running) */
-.delivery-animation {
-    display: flex; /* Keep icons together */
-    align-items: center;
-    animation: delivery 3s ease-in-out infinite;
-}
-.delivery-animation .fa-box{
-    color: #A0522D;
-}
-.delivery-animation .fa-person-running{
-    color: #E64A19;
-}
-
-@keyframes delivery {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-20px); } /* Package moves left */
-    40% { transform: translateX(-20px) scaleX(-1); } /* Person flips direction */
-    60% { transform: translateX(0) scaleX(-1); } /* Person runs right */
-    80% { transform: translateX(20px) scaleX(-1);}
-    100% { transform: translateX(0); }
-}
-
-/* Block Icon Animation */
-.block-animation {
-    color: #e53935; /* Red */
-    font-size: 1.6em;
-    animation: block-shake 0.8s infinite;
-}
-
-@keyframes block-shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-    20%, 40%, 60%, 80% { transform: translateX(5px); }
+    white-space: nowrap;
 }
 
 
@@ -254,9 +227,8 @@ header nav ul li a:hover::after {
     line-height: 1.8;
 }
 
-/* Hero Button Area */
-/* ... (Hero Button Area Styles - same as before, but adjust color) ... */
-/* Hero Button Area - Warm Palette */
+/* Hero Button */
+/* ... (Same as before, adjust colors if needed) ... */
 .hero-button-area {
     margin-top: 25px;
 }
@@ -312,12 +284,11 @@ header nav ul li a:hover::after {
 }
 
 /* Buttons in Hero (Download Buttons) - Warm Palette */
-/* ... (Hero Button Styles - same as before, adjust colors) ... */
 #hero .button {
     padding: 15px 35px;
     border-radius: 20px;
     font-size: 1.05em;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08); /* Softer Shadow */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     margin: 0 18px 18px 0;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -326,27 +297,26 @@ header nav ul li a:hover::after {
     cursor: pointer;
     outline: none;
 }
-#hero .button.primary.google-play-button { /* Google Play Button - Warm */
-    background-color: #FFC107; /* Yellow - Fire Element */
+
+#hero .button.primary.google-play-button {
+    background-color: #FFC107;
     color: #555;
 }
 
-#hero .button.secondary.github-button { /* GitHub Button - Muted Warm */
-    background-color: #FF7043; /* Light Red/Orange - Fire Element */
+#hero .button.secondary.github-button {
+    background-color: #FF7043;
     color: #fff;
 }
+
 #hero .button:hover {
     transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1); /* Slightly Enhanced Shadow */
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 #hero .button:active {
     transform: translateY(0);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05); /* Even Softer Shadow on Active */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
 }
-
-/* Hero Background Art - Decorative Element */
-/* ... (Hero Background Art Styles - same as before) ... */
 
 /* Hero Background Art - Decorative Element */
 .hero-bg-art {
@@ -355,10 +325,10 @@ header nav ul li a:hover::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/hero-bg-pattern.svg'); /* Replace with your SVG pattern */
-    opacity: 0.1; /* Very Subtle Pattern */
-    pointer-events: none; /* Make it non-interactive */
-    z-index: -1; /* Behind content */
+    background: url('assets/hero-bg-pattern.svg'); /* Replace with SVG */
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Features Section */
@@ -607,4 +577,120 @@ footer {
 }
 
 /* Responsive Design */
-/* ... (Responsive Styles - Same as
+@media (max-width: 1024px) {
+    #hero .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #hero .hero-text-column,
+    #hero .hero-visual-column {
+        width: 90%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    #hero .hero-visual-column {
+        align-items: center;
+    }
+
+    #hero .hero-swiper {
+        max-width: 80%;
+        height: auto;
+        aspect-ratio: 9/16;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    #hero .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 3.4em; /* Adjusted Title Size */
+     }
+    .spam-icons {
+        top: -8px; /* Adjust icon position on smaller screens */
+    }
+
+    #hero h2 {
+        font-size: 1.7em;
+    }
+
+    #features .feature-grid,
+    #download .download-options,
+    #community .community-links {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    #download .download-card {
+        width: 100%;
+    }
+
+    .header-container,
+    .hero-container,
+    .features-container,
+    .features-heading,
+    .download-container,
+    .download-heading,
+    .community-container,
+    .community-heading,
+    .footer-container {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul li {
+        margin-left: 25px;
+    }
+
+    .hero-title {
+        font-size: 2.8em; /* Even Smaller Title */
+    }
+
+    .spam-icons {
+        top: -6px; /* Further adjust icon position */
+    }
+
+    #hero h2 {
+        font-size: 1.5em;
+    }
+
+    #hero p {
+        font-size: 0.95em;
+    }
+
+    #features .feature-item,
+    #download .download-card,
+    #community .community-link {
+        padding: 30px;
+    }
+
+    .header-container,
+    .hero-container,
+    .features-container,
+    .features-heading,
+    .download-container,
+    .download-heading,
+    .community-container,
+    .community-heading,
+    .footer-container {
+        padding: 30px 20px;
+    }
+}
+
+/* Very Small Screens (e.g., older phones) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5em; /* Even Smaller Title on very small screens*/
+  }
+
+  .spam-icons {
+        top: -5px;
+    }
+
+    #hero .hero-swiper {
+      max-width: 95%; /* Allow Swiper to almost fill width on very small screen */
+  }
+}
