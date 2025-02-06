@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourCallYourRule - Stop Spam Calls Forever! FREE Call Blocker</title>
-    <meta name="description" content="Block spam calls, scam calls, and unwanted messages for FREE.  YourCallYourRule is the best, advanced call blocking app with automatic spam detection, custom filters, and powerful protection for your Android phone.">
-    <meta name="keywords" content="call blocker, spam calls, scam calls, unwanted calls, block calls, phone protection, call filter, SMS blocker, spam protection, call privacy, automatic call blocking, free call blocker, best call blocker, Android call blocker, stop robocalls">
+    <meta name="description" content="Block spam calls, scam calls, and unwanted messages for FREE. YourCallYourRule is the best, advanced call blocking app.">
+    <meta name="keywords" content="call blocker, spam calls, scam calls, unwanted calls, block calls, phone protection, call filter, SMS blocker">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--  ADD flag-icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script> <!--  ADD 'defer' HERE -->
+      <script src="script.js" defer></script>
 </head>
+<!-- ... (rest of your HTML - header, hero, features, etc.) ... -->
 <body class="red-theme">
     <header>
         <div class="container header-container">
@@ -26,25 +29,24 @@
                     <li><a href="#community" data-i18n="nav_community">Community</a></li>
                 </ul>
             </nav>
-            <!-- Language Switcher (Buttons) -->
+            <!--  Language Switcher (Dropdown with Flags) -->
             <div class="language-switcher">
-                <button class="language-button" data-lang="en">EN</button>
-                <button class="language-button" data-lang="es">ES</button>
-                <button class="language-button" data-lang="fr">Français</button>
-                <button class="language-button" data-lang="zh">简体</button>
-                <button class="language-button" data-lang="zh-td">繁體</button>
-                <button class="language-button" data-lang="ja">日本語</button>
-                <button class="language-button" data-lang="de">Deutsch</button>
-                <button class="language-button" data-lang="kr">한국어</button>
-                <button class="language-button" data-lang="ru">Русский</button>
-             
+                <select id="language-selector">
+                    <option value="en" data-flag="gb">English</option>  <!-- Use data-flag for the flag -->
+                    <option value="es" data-flag="es">Español</option>
+                    <option value="fr" data-flag="fr">Français</option>
+                    <option value="zh" data-flag="cn">简体</option>   <!--  Simplified Chinese -->
+                    <option value="zh-TW" data-flag="tw">繁體</option>  <!--  Traditional Chinese -->
+                    <option value="ja" data-flag="jp">日本語</option>
+                    <option value="de" data-flag="de">Deutsch</option>
+                    <option value="ko" data-flag="kr">한국어</option>  <!-- Corrected to Korean-->
+                    <option value="ru" data-flag="ru">Русский</option>
+                </select>
             </div>
         </div>
     </header>
-
-   <!-- ... (Rest of your HTML - Hero, Features, Download, Community, Footer) ... -->
-   <!-- ... (All the sections remain the SAME as before, with data-i18n attributes) ... -->
-     <section id="hero">
+    <!-- ... (rest of your HTML) ... -->
+    <section id="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -73,10 +75,10 @@
 
                     </div>
                     <p class="hero-subtitle" data-i18n="hero_subtitle">
-                        <!-- The <b> tags are handled *within* the JSON -->
+
                     </p>
                     <p class="hero-description" data-i18n="hero_description">
-                         <!-- The <b> tags are handled *within* the JSON -->
+
                     </p>
                     <div class="hero-button-area">
                         <a href="#" class="button primary hero-get-started" data-i18n="hero_button">Get Started <i class="fas fa-arrow-right"></i></a>
@@ -136,8 +138,7 @@
                     </div>
         </div>
     </section>
-
-    <!-- Features Section -->
+<!-- Features Section -->
    <section id="features">
         <div class="container features-container">
             <div class="section-heading features-heading">
@@ -250,6 +251,6 @@
             speed: 800,
         });
     </script>
-      <script src="script.js"></script>
+    <script src="script.js" defer></script>  <!--  Add 'defer' here -->
 </body>
 </html>
