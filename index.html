@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -28,78 +31,85 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-text">
-                <h1>YourCallYourRule</h1>
-                <h2>Your Call, Your Rules: Block Spam and Reclaim Your Peace</h2>
-                <p>Experience unparalleled control over your calls and SMS with YourCallYourRule, the ultimate customizable blocking app for Android.</p>
-                <div class="buttons">
-                    <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Get it on Google Play</a>
-                    <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <h1>YourCallYourRule</h1>
+                    <h2>Silence the Noise. Own Your Communication.</h2>
+                    <p>The ultimate Android app for customizable call and SMS blocking, putting you in control.</p>
+                </div>
+
+                <div class="hero-actions">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
+                            <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
+                            <div class="swiper-slide"><img src="assets/mockup3.png" alt="Mockup 3"></div>
+                            <div class="swiper-slide"><img src="assets/mockup4.png" alt="Mockup 4"></div>
+                            <div class="swiper-slide"><img src="assets/mockup5.png" alt="Mockup 5"></div>
+                            <div class="swiper-slide"><img src="assets/mockup6.png" alt="Mockup 6"></div>
+                            <div class="swiper-slide"><img src="assets/mockup7.png" alt="Mockup 7"></div>
+                            <div class="swiper-slide"><img src="assets/mockup8.png" alt="Mockup 8"></div>
+                            <div class="swiper-slide"><img src="assets/mockup9.png" alt="Mockup 9"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Get it on Google Play</a>
+                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
-                    <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
-                    <div class="swiper-slide"><img src="assets/mockup3.png" alt="Mockup 3"></div>
-                    <div class="swiper-slide"><img src="assets/mockup4.png" alt="Mockup 4"></div>
-                    <div class="swiper-slide"><img src="assets/mockup5.png" alt="Mockup 5"></div>
-                    <div class="swiper-slide"><img src="assets/mockup6.png" alt="Mockup 6"></div>
-                    <div class="swiper-slide"><img src="assets/mockup7.png" alt="Mockup 7"></div>
-                    <div class="swiper-slide"><img src="assets/mockup8.png" alt="Mockup 8"></div>
-                    <div class="swiper-slide"><img src="assets/mockup9.png" alt="Mockup 9"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-             </div>
         </div>
+        <div class="hero-bg-pattern"></div>
     </section>
 
     <section id="features">
         <div class="container">
-            <h2>Unleash Powerful Features</h2>
+            <div class="section-heading">
+                <h2>Key Features</h2>
+                <p>Explore the powerful functionalities that make YourCallYourRule stand out.</p>
+            </div>
             <div class="feature-grid">
                 <div class="feature-item">
                     <i class="fas fa-phone-slash"></i>
-                    <h3>Smart Blocking Engine</h3>
-                    <p>Intelligently block unwanted calls and SMS with customizable rules.</p>
+                    <h3>Intelligent Call Blocking</h3>
+                    <p>Advanced algorithms to block unwanted calls effectively.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sms-slash"></i>
+                    <h3>Smart SMS Filtering</h3>
+                    <p>Filter out spam and unwanted SMS messages with ease.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Privacy Protection</h3>
+                    <p>Keep your communication private and secure.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Customizable Rules</h3>
+                    <p>Tailor blocking rules to your specific needs.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-list-alt"></i>
-                    <h3>Personalized Blocklists</h3>
-                    <p>Tailor your blocking with whitelists and blacklists for ultimate control.</p>
+                    <h3>Whitelist & Blacklist</h3>
+                    <p>Manage your contacts with personalized lists.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-cloud-download-alt"></i>
-                    <h3>Live Spam Database</h3>
-                    <p>Optionally subscribe to online databases for up-to-the-minute spam protection.</p>
+                    <h3>Online Spam Lists</h3>
+                    <p>Leverage online databases for enhanced protection.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-code"></i>
-                    <h3>Regex Blocking Mastery</h3>
-                    <p>Employ regular expressions for highly advanced and precise blocking rules.</p>
+                    <h3>Regex Support</h3>
+                    <p>Powerful blocking with regular expressions.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-sim-card"></i>
-                    <h3>Dual SIM Awareness</h3>
-                    <p>Filter calls based on the SIM card for refined control over dual SIM devices.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Privacy-First Design</h3>
-                    <p>Your data stays local, ensuring maximum privacy and security.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-plug"></i>
-                    <h3>Expandable with Plugins</h3>
-                    <p>Extend functionality and integrate with external services via plugins.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Robust Backup Solutions</h3>
-                    <p>Securely backup and restore your settings using WebDAV, Google Drive, and OneDrive.</p>
+                    <i class="fas fa-expand-plugins"></i>
+                    <h3>Plugin Extensibility</h3>
+                    <p>Extend functionality with custom plugins.</p>
                 </div>
             </div>
         </div>
@@ -107,23 +117,38 @@
 
     <section id="download">
         <div class="container">
-            <h2>Ready to Take Control?</h2>
-            <p>Download YourCallYourRule and start managing your calls and SMS today:</p>
-            <div class="buttons">
-                <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Get it on Google Play</a>
-                <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+            <div class="section-heading">
+                <h2>Download & Get Started</h2>
+                <p>Choose your preferred platform and download YourCallYourRule today.</p>
             </div>
-             <p class="github-version-info"><b>GitHub Version Advantage:</b>  Unlock SMS filtering – a feature exclusive to the GitHub release due to Play Store policy restrictions.</p>
+            <div class="download-options">
+                <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card google-play">
+                    <i class="fab fa-google-play"></i>
+                    <h3>Get it on Google Play</h3>
+                    <p>Easy installation and updates.</p>
+                </a>
+                <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card github">
+                    <i class="fab fa-github"></i>
+                    <h3>Download from GitHub</h3>
+                    <p>For advanced users and SMS filtering.</p>
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="community">
         <div class="container">
-            <h2>Join Our Growing Community</h2>
-            <p>Connect with fellow users and stay informed:</p>
-            <div class="buttons">
-                <a href="https://t.me/yourcallyourrule" class="button"><i class="fab fa-telegram"></i> Telegram Channel</a>
-                <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="button"><i class="fab fa-telegram"></i> Telegram Group</a>
+            <div class="section-heading">
+                <h2>Join the Community</h2>
+                <p>Connect, share, and get support from our community channels.</p>
+            </div>
+            <div class="community-links">
+                <a href="https://t.me/yourcallyourrule" class="community-link telegram-channel">
+                    <i class="fab fa-telegram"></i> Telegram Channel
+                </a>
+                <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="community-link telegram-group">
+                    <i class="fab fa-telegram"></i> Telegram Group
+                </a>
             </div>
         </div>
     </section>
@@ -138,17 +163,13 @@
     <script>
         const swiper = new Swiper('.swiper', {
             loop: true,
-            direction: 'vertical', // 竖向轮播
-            slidesPerView: 'auto', // 自动高度
+            direction: 'vertical',
+            slidesPerView: 'auto',
             spaceBetween: 10,
             centeredSlides: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
             },
         });
     </script>
