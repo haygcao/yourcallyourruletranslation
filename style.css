@@ -1,20 +1,13 @@
-/* Red Theme Color Palette */
-:root {
-    --primary-red: #c62828;
-    --secondary-red: #ef5350;
-    --light-red: #ffcdd2;
-    --accent-yellow: #FFC107;
-    --accent-green: #4CAF50;
-    --text-dark: #212121;
-    --text-light: #ffffff;
-}
-
+/* Global Styles */
 body.red-theme {
     font-family: 'Sora', sans-serif;
     margin: 0;
-    background-color: var(--primary-red);
-    color: var(--text-light);
+    background-color: #ffebee;  /*  60% - Very Light Red */
+    color: #424242;
     line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -22,6 +15,30 @@ body.red-theme {
     max-width: 1400px;
     margin: auto;
     padding: 0 20px;
+}
+
+/* --- Red Theme Color Palette --- */
+:root {
+    --primary-red: #c62828;      /* Main Red */
+    --secondary-red: #ef5350;    /* Lighter Red */
+    --light-red: #ffcdd2;      /* Very Light Red (for backgrounds) */
+    --accent-yellow: #FFC107;  /* Yellow Accent */
+    --accent-green: #4CAF50;   /* Green Accent */
+    --text-dark: #212121;      /* Dark Text */
+    --text-light: #ffffff;     /* Light Text */
+    --card-bg: rgba(255, 255, 255, 0.85); /* Semi-transparent white for cards */
+    --shield-bg: rgba(0, 0, 0, 0.2); /* Semi-transparent gray */
+}
+
+/* Rounded Corners (Consistent) */
+.header-container, .hero-container, .features-container, .features-heading,
+.feature-card, .download-container, .download-heading, .download-card,
+.community-container, .community-heading, .community-link, .community-telegram,
+.footer-container, .hero-swiper, header nav ul li a, .hero-button-area .button,
+#hero .button, #features .feature-item, #download .download-card,
+#community .community-link, .google-play-button, .github-button,
+.download-google-play, .download-github {
+    border-radius: 25px;
 }
 
 /* Header Styles */
@@ -41,27 +58,52 @@ header {
     padding: 1rem 0;
 }
 
+header .logo img {
+    max-height: 50px; /* Control logo size */
+    height: auto;
+    width: auto;
+}
+
 /* Navigation */
 nav ul {
     display: flex;
     gap: 2rem;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
 }
 
 nav a:hover {
     color: var(--accent-yellow);
 }
 
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-yellow);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 /* Hero Section */
 #hero {
-    padding-top: 120px;
+    padding-top: 120px; /*  space for the fixed header */
     background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
 }
 
@@ -72,60 +114,250 @@ nav a:hover {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /*  Two columns */
     gap: 4rem;
     align-items: center;
 }
 
-.hero-text h1 {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    line-height: 1.2;
+/* --- Hero Text Column --- */
+.hero-text {
+    text-align: left; /* Align text to the left */
 }
 
+/* --- Title Background and Shield --- */
+.title-background-container {
+    position: relative; /*  containing block for the shield */
+    display: inline-block; /*  Important: Make the container only as wide as its content (the title) */
+    padding: 20px;  /*  Add some padding around the title */
+}
+.title-background-shield {
+    position: absolute;   /*  Take the shield out of the normal flow */
+    top: 50%;            /*  Center vertically */
+    left: 30%;           /*  Center horizontally */
+    transform: translate(-50%, -50%) rotate(35deg);  /*  Center and rotate */
+    font-size: 25em;      /*  Make the shield very large */
+   /* color: var(--shield-bg);  /*  Semi-transparent gray */
+   color: #bdbcbb33; /* Deep Red */
+    z-index: 1;            /*  Place the shield *behind* the title text */
+    pointer-events: none; /*  Make the shield "click-through" */
+}
+
+
+
+.hero-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 4.2em;
+    color: #FFD700; /* Deep Red */
+    margin-bottom: 15px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+    display: flex;
+    flex-direction: column; /* Stack lines vertically */
+    gap: 5px;               /* Space between lines */
+    position: relative;    /*  Important for z-index to work */
+    z-index: 2;           /*  Ensure title text is *above* the shield */
+}
+
+.title-line {
+    display: flex; /* Align words horizontally within each line */
+    align-items: center; /* Vertically center within line */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 12px;       /* Space between words */
+}
+.title-line2{
+   margin-left: 50px;
+}
+.title-word {
+    display: inline-block;
+    position: relative; /* For absolute positioning of icons */
+    z-index: 2; /* Ensure text is above animations */
+}
+
+.animated-spam-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1; /*  above other animations */
+}
+
+.spam-word{
+   color: #4CAF50
+}
+.spam-icons, .title-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Click-through */
+}
+
+.phone-strike, .ban-icon, .peace-dove {
+    position: absolute; /* Position absolutely within their containers*/
+    opacity: 0;      /* Initially hidden*/
+    pointer-events: none;
+}
 .hero-subtitle {
     font-size: 1.5rem;
     color: var(--light-red);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Reduced margin */
 }
 
-/* Buttons */
-.button {
-    display: inline-flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.button.primary {
-    background: var(--accent-yellow);
-    color: var(--text-dark);
-}
-
-.button.secondary {
-    background: var(--accent-green);
+.hero-description {
+    font-size: 1.1em;
     color: var(--text-light);
+    margin-bottom: 2rem; /* Reduced margin */
+    line-height: 1.6;    /*  line height */
 }
 
-.button:hover {
+/* --- Hero Button --- */
+.hero-button-area {
+    margin-top: 1rem; /* Reduced margin */
+}
+ .hero-visual{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+.hero-button-area .button.primary.hero-get-started {
+    background-color: var(--accent-green); /* Green Button */
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /*  Shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 50px;  /* Rounded */
+}
+
+.hero-button-area .button.primary.hero-get-started:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Features Section */
+/* --- Hero Visual Column (Swiper and Buttons) --- */
+
+.hero-swiper {
+    width: 100%;
+    max-width: 400px; /*  Swiper size */
+    height: 600px;      /*  Swiper size */
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Space between Swiper and buttons */
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px; /* Match the Swiper's border-radius */
+}
+
+/*  Hero Buttons (Below Swiper) */
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 1rem;
+    width: 100%; /*  full width */
+}
+/* Buttons in Hero (Download Buttons) - Red Theme */
+#hero .button {
+    padding: 15px 35px;
+    border-radius: 20px;
+    font-size: 1.05em;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    margin: 0; /* Remove the previous right margin */
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+#hero .button.primary.google-play-button {
+    background-color: #FFC107; /* Yellow */
+    color: #424242;
+}
+
+#hero .button.secondary.github-button {
+    background-color: #4CAF50; /* Deep Red */
+    color: #fff;
+}
+#hero .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1); /* Slightly Enhanced Shadow */
+}
+
+#hero .button:active {
+    transform: translateY(0);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05); /* Even Softer Shadow on Active */
+}
+
+/* Hero Background Art */
+.hero-bg-art {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('assets/hero-bg-pattern.svg');  /*  SVG pattern */
+    opacity: 0.1; pointer-events: none; z-index: -1;
+}
+
+/* --- Features Section --- */
+
 #features {
-    background: var(--light-red);
+    background-color: #ffebee; /*  Very Light Red */
     padding: 6rem 0;
+}
+
+.features-container {
+    border-radius: 25px;
+    padding: 4rem 2rem; /*  padding */
+    background-color: #FFECB3; /*  Yellow */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {  /* Reusable Section Heading */
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.section-heading h2{
+   font-family: 'Sora', serif;
+    font-weight: 700;
+    font-size: 2.6em;
+    color: #d32f2f;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
+}
+.section-heading p{
+  font-size: 1.1em;
+    color: #666;
+}
+.features-heading {
+    text-align: center;
+    margin-bottom: 3rem; /*  spacing */
+    padding: 2rem 1rem;    /*  padding */
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 0 20px; /* Add some horizontal padding */
+
 }
 
 .feature-item {
@@ -134,29 +366,451 @@ nav a:hover {
     border-radius: 20px;
     text-align: center;
     transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.feature-icon {
+    font-size: 3em;
+    margin-bottom: 1rem;
+    color: var(--accent-green);
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+    color: var(--primary-red);
+}
+
+/* --- Download Section --- */
+
+#download {
+    padding: 6rem 0;
+    background-color: #ffebee;
+}
+
+.download-container {
+    padding: 4rem 2rem; /*  padding */
+    background-color: #ffcdd2; /* Light Red */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+}
+
+.download-heading {
+    text-align: center;
+    margin-bottom: 3rem; /*  spacing */
+    padding: 2rem 1rem;
+    background-color: rgba(255,255,255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+}
+
+.download-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /*  wrap on smaller screens */
+}
+
+.download-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /*  width */
+}
+
+.download-card i {
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color: var(--accent-yellow);
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.download-card h3 {
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Community Section --- */
+#community {
+    padding: 6rem 0;
+    background-color: #ffebee;
+}
+.community-container{
+    padding: 80px 50px;
+    background-color: #ef9a9a; /* Light Red */
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
+    border-radius: 25px;
+}
+.community-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /*  wrap on smaller screens */
+}
+
+.community-heading {
+    text-align: center;
+    margin-bottom: 3rem; /*  spacing */
+     padding: 2rem 1rem;
+    background-color: rgba(255,255,255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+
+}
+
+.community-link {
+    display: inline-flex; /* Use inline-flex for centering */
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    color: #555;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+}
+.community-link:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#community .community-link i {
+    margin-right: 12px;
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+#community .community-heading h2 {
+    font-family: 'Sora', serif;
+    font-weight: 700;
+    font-size: 2.6em;
+    color: #d32f2f;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 20px;
+}
+
+/* Animation Showcase Container */
+/* ... (Your existing .animation-showcase styles are fine) ... */
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        text-align: center; /* Center align content */
     }
-    
+.hero-visual{
+   align-items: center;
+}
     .hero-text h1 {
         font-size: 3rem;
     }
-    
+.title-line2{
+   margin-left: 0px;
+}
     .animation-showcase {
         flex-direction: column;
         height: auto;
     }
-    
+
     .animation-scene {
         height: 150px;
         margin: 10px 0;
     }
+    /*  Hide complex title animations on smaller screens */
+    .phone-strike, .ban-icon, .peace-dove {
+        display: none;
+    }
+     .header-container,
+    .hero-container,
+    .features-container,
+    .features-heading,
+    .download-container,
+    .download-heading,
+    .community-container,
+    .community-heading,
+    .footer-container {
+        padding: 30px 20px; /*  Reduce padding on smaller screens */
+    }
+    .feature-grid{
+       padding: 0px;
+    }
+}
+
+/* Animation Showcase Container */
+.animation-showcase {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    height: 200px;
+    position: relative;
+}
+
+.animation-scene {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+/* Lightning Animation */
+.scene-1 {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.lightning {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 0;
+    background: #FFD700;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 10px #FFD700);
+    animation: lightning-strike 3s infinite;
+}
+
+.spam-phone {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: #ff4444;
+    animation: phone-shake 3s infinite;
+}
+
+.spam-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5em;
+/* --- Animations for "Stop Spam Calls" Title --- */
+
+/* Phone Slash through "Spam" */
+.phone-strike {
+    color: #d32f2f; /* Deep Red */
+    font-size: 4.5em;  /* Large Icon */
+    animation: phoneStrike 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform-origin: 10% 90%; /* Rotation point - adjust for visual centering */
+}
+
+@keyframes phoneStrike {
+    0%   { transform: rotate(45deg) scale(0); opacity: 0; }
+    20%  { transform: rotate(-20deg) scale(1.4); opacity: 1; }
+    80%  { transform: rotate(-20deg) scale(1.3); opacity: 1; }
+    100% { transform: rotate(-90deg) scale(0.6); opacity: 0; }
+}
+
+/* Ban Icon over "Spam" */
+.ban-icon {
+    color: #f44336; /* Brighter Red */
+    font-size: 5.0em; /* Larger Ban Icon */
+     z-index: 3;
+    animation: banAppear 1.5s 0.5s ease-in-out forwards; /* Delay, then appear */
+}
+
+@keyframes banAppear {
+    0%   { transform: scale(0); opacity: 0; }
+    20%  { transform: scale(1.5); opacity: 1; } /* Overshoot for emphasis */
+    80%  { transform: scale(1.3); opacity: 1; } /* Slightly smaller, stay visible */
+    100% { transform: scale(0.8) translateY(-20px); opacity: 0; } /* Shrink, move, fade */
+}
+/* Dove flying*/
+ .peace-dove {
+     font-size: 3.0em;
+    color: #4CAF50;
+    animation: flyingDove 5s linear infinite;
+    transform-origin: 50% 50%;
+
+}
+
+@keyframes flyingDove {
+    0% {
+        transform: translateX(-200px) translateY(50px) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+    10%{
+         transform: translateX(-100px) translateY(0px) scale(0.8) rotate(-20deg);
+        opacity: 1;
+    }
+    30%{
+       transform: translateX(0px) translateY(0px) scale(1.0) rotate(-20deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateX(0px) translateY(0px) scale(1.0) rotate(20deg);
+        opacity: 1;
+    }
+   90%{
+       transform: translateX(100px) translateY(0px) scale(0.8) rotate(20deg);
+        opacity: 1;
+   }
+    100% {
+        transform: translateX(200px) translateY(50px) scale(0.5) rotate(30deg);
+        opacity: 0;
+    }
+}
+/* Animation Showcase Container */
+.animation-showcase {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    height: 200px;
+    position: relative;
+}
+
+.animation-scene {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+/* Lightning Animation */
+.scene-1 {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.lightning {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 0;
+    background: #FFD700;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 10px #FFD700);
+    animation: lightning-strike 3s infinite;
+}
+
+.spam-phone {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: #ff4444;
+    animation: phone-shake 3s infinite;
+}
+
+.spam-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5em;
+    background: #ff4444;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Delivery Animation */
+.delivery-person {
+    position: absolute;
+    bottom: 20%;
+    left: -50px;
+    font-size: 2em;
+    color: #4CAF50;
+    animation: delivery-run 4s infinite linear;
+}
+
+.delivery-label {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFA726;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.4em;
+    white-space: nowrap;
+}
+
+/* Auto-Answer Animation */
+.phone-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+.answer-shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #4CAF50;
+    animation: shield-protect 3s infinite;
+}
+
+/* Keyframe Animations */
+@keyframes lightning-strike {
+    0%, 100% { height: 0; opacity: 0; }
+    48% { height: 0; opacity: 0; }
+    50% { height: 100%; opacity: 1; }
+    52% { height: 100%; opacity: 0; }
+    54% { height: 0; opacity: 0; }
+}
+
+@keyframes phone-shake {
+    0%, 45%, 100% { transform: translateX(-50%) rotate(0); }
+    48%, 52% { transform: translateX(-50%) rotate(15deg); }
+    50% { transform: translateX(-50%) rotate(-15deg); opacity: 1; }
+    55% { transform: translateX(-50%) rotate(0); opacity: 0; }
+    95% { opacity: 0; }
+}
+
+@keyframes delivery-run {
+    0% { left: -50px; }
+    50% { left: 150%; }
+    50.01% { left: -50px; }
+    100% { left: -50px; }
+}
+
+@keyframes shield-protect {
+    0%, 100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+    80% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+}
 }
