@@ -41,6 +41,56 @@ body.red-theme {
     border-radius: 25px;
 }
 
+/* --- Language Switcher Styles --- */
+.language-switcher {
+    position: relative; /*  positioning */
+}
+
+#language-selector {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px; /*  Rounded corners */
+    background-color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none; /* Remove default dropdown arrow (we'll add our own) */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none;    /* For Firefox */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow (SVG) */
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center; /* Position of the arrow */
+    background-size: 16px 12px; /* Size of the arrow */
+    padding-right: 2.25rem;     /*  space for the arrow */
+}
+
+/*  Style the flag icons */
+#language-selector .flag-icon {
+    margin-right: 8px; /* Space between flag and text */
+    vertical-align: middle; /* Align flag vertically */
+}
+
+/*  Style the option text (optional)*/
+#language-selector option {
+    padding: 0.5rem;
+}
+/* Hover and focus styles for the dropdown */
+#language-selector:hover,
+#language-selector:focus {
+    border-color: var(--accent-yellow); /* Or any color from your palette */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+/* Style for selected option */
+#language-selector option:checked {
+    background-color: var(--light-red); /* Or any color you like */
+    color: #fff;
+}
+/* Hide the flag of selected option, it's not necessary*/
+#language-selector option:checked .flag-icon{
+     display: none;
+}
+
+
 /* Header Styles */
 header {
     background: rgba(198, 40, 40, 0.95);
