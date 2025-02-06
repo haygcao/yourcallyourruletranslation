@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourCallYourRule - Stop Spam Calls & Protect Your Peace</title>
-    <meta name="description" content="Block spam calls, scam calls, and unwanted messages. Advanced call blocking app with automatic spam detection, custom filters, and smart protection.">
-    <meta name="keywords" content="call blocker, spam calls, scam calls, unwanted calls, phone protection, call filter, SMS blocker, spam protection, call privacy, automatic call blocking">
+    <title>YourCallYourRule - Stop Spam Calls Forever! FREE Call Blocker</title>
+    <meta name="description" content="Block spam calls, scam calls, and unwanted messages for FREE.  YourCallYourRule is the best, advanced call blocking app with automatic spam detection, custom filters, and powerful protection for your Android phone.">
+    <meta name="keywords" content="call blocker, spam calls, scam calls, unwanted calls, block calls, phone protection, call filter, SMS blocker, spam protection, call privacy, automatic call blocking, free call blocker, best call blocker, Android call blocker, stop robocalls">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,11 +20,18 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#download">Download</a></li>
-                    <li><a href="#community">Community</a></li>
+                    <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                    <li><a href="#download" data-i18n="nav_download">Download</a></li>
+                    <li><a href="#community" data-i18n="nav_community">Community</a></li>
                 </ul>
             </nav>
+            <!-- Language Switcher (Buttons) -->
+            <div class="language-switcher">
+                <button class="language-button" data-lang="en">EN</button>  <!--  USE BUTTON, not a -->
+                <button class="language-button" data-lang="es">ES</button>  <!--  USE BUTTON, not a -->
+                <button class="language-button" data-lang="fr">FR</button>  <!--  USE BUTTON, not a -->
+                <button class="language-button" data-lang="zh">ZH</button>  <!--  USE BUTTON, not a -->
+            </div>
         </div>
     </header>
 
@@ -32,11 +39,63 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Stop Spam Calls Forever</h1>
-                    <p class="hero-subtitle">Smart Protection Against Unwanted Calls</p>
-                    
-                    <!-- Animation Container -->
-                    <div class="animation-showcase">
+                   <div class="title-background-container">
+                        <i class="fas fa-shield-alt title-background-shield"></i>
+                        <h1 class="hero-title">
+                                <span class="title-line">
+                                    <span class="title-word" data-i18n="hero_title_stop">Stop</span>
+                                    <span class="animated-spam-wrapper">
+                                       <span class="spam-word" data-i18n="hero_title_spam">Spam</span>
+                                        <i class="fas fa-phone-slash phone-strike"></i>
+                                         <i class="fas fa-ban ban-icon"></i>
+                                    </span>
+                                    <span class="title-word" data-i18n="hero_title_calls">Calls</span>.
+                               </span>
+                                <span class="title-line title-line2">
+                                     <span class="title-word" data-i18n="hero_title_reclaim">Reclaim</span>
+                                      <span class="title-word" data-i18n="hero_title_your">Your</span>
+                                      <span class="title-word animated-word" data-i18n="hero_title_peace">
+                                            Peace
+                                           <i class="fas fa-dove peace-dove"></i>
+                                      </span>.
+
+                                </span>
+                            </h1>
+
+                    </div>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">
+
+                    </p>
+                    <p class="hero-description" data-i18n="hero_description">
+
+                    </p>
+                    <div class="hero-button-area">
+                        <a href="#" class="button primary hero-get-started" data-i18n="hero_button">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="swiper hero-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
+                            <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
+                            <div class="swiper-slide"><img src="assets/mockup3.png" alt="Mockup 3"></div>
+                            <div class="swiper-slide"><img src="assets/mockup4.png" alt="Mockup 4"></div>
+                            <div class="swiper-slide"><img src="assets/mockup5.png" alt="Mockup 5"></div>
+                            <div class="swiper-slide"><img src="assets/mockup6.png" alt="Mockup 6"></div>
+                            <div class="swiper-slide"><img src="assets/mockup7.png" alt="Mockup 7"></div>
+                            <div class="swiper-slide"><img src="assets/mockup8.png" alt="Mockup 8"></div>
+                            <div class="swiper-slide"><img src="assets/mockup9.png" alt="Mockup 9"></div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary google-play-button"><i class="fab fa-google-play"></i> <span data-i18n="download_google_play">Google Play</span></a>
+                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary github-button"><i class="fab fa-github"></i> <span data-i18n="download_github">GitHub</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animation-showcase">
                         <!-- Lightning Animation -->
                         <div class="animation-scene scene-1">
                             <div class="lightning"></div>
@@ -45,7 +104,7 @@
                                 <span class="spam-label">SPAM</span>
                             </div>
                         </div>
-                        
+
                         <!-- Delivery Animation -->
                         <div class="animation-scene scene-2">
                             <div class="delivery-person">
@@ -55,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Auto-Answer Animation -->
                         <div class="animation-scene scene-3">
                             <div class="phone-ring">
@@ -66,27 +125,122 @@
                             </div>
                         </div>
                     </div>
-                </div>
+        </div>
+    </section>
 
-                <!-- Existing Swiper -->
-                <div class="hero-visual">
-                    <div class="swiper hero-swiper">
-                        <!-- Original swiper content -->
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#" class="button primary google-play-button">
-                            <i class="fab fa-google-play"></i> Google Play
-                        </a>
-                        <a href="#" class="button secondary github-button">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+    <!-- Features Section -->
+   <section id="features">
+        <div class="container features-container">
+            <div class="section-heading features-heading">
+                <h2 data-i18n="features_heading">Key Features</h2>
+                <p data-i18n="features_description">Take control with these powerful features:</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item feature-card">
+                    <i class="fas fa-phone-slash feature-icon"></i>
+                    <h3 data-i18n="feature_block_title">Intelligent Call Blocking</h3>
+                    <p data-i18n="feature_block_desc">Automatically blocks spam and robocalls.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-sms-slash feature-icon"></i>
+                    <h3 data-i18n="feature_filter_title">SMS Spam Filtering</h3>
+                    <p data-i18n="feature_filter_desc">Filters unwanted text messages.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-list-alt feature-icon"></i>
+                    <h3 data-i18n="feature_list_title">Customizable Blocklists</h3>
+                    <p data-i18n="feature_list_desc">Create personal blocklists and whitelists.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3 data-i18n="feature_rules_title">Flexible Blocking Rules</h3>
+                    <p data-i18n="feature_rules_desc">Set rules based on numbers, keywords, and time.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3 data-i18n="feature_privacy_title">Privacy Focused</h3>
+                    <p data-i18n="feature_privacy_desc">Your data stays on your device.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-cloud-download-alt feature-icon"></i>
+                    <h3 data-i18n="feature_database_title">Online Spam Database (Optional)</h3>
+                    <p data-i18n="feature_database_desc">Enhance blocking with a real-time database.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3 data-i18n="feature_regex_title">Regular Expression Support</h3>
+                    <p data-i18n="feature_regex_desc">Create complex rules with regular expressions.</p>
+                </div>
+                <div class="feature-item feature-card">
+                    <i class="fas fa-expand-arrows-alt feature-icon"></i>
+                    <h3 data-i18n="feature_plugin_title">Plugin Extensibility</h3>
+                    <p data-i18n="feature_plugin_desc">Expand functionality with custom plugins.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Keep existing Features, Download, and Community sections -->
-    
+    <!-- Download Section -->
+ <section id="download">
+        <div class="container download-container">
+            <div class="section-heading download-heading">
+                <h2 data-i18n="download_heading">Get YourCallYourRule Now</h2>
+                <p data-i18n="download_description">Download and protect your peace today!</p>
+            </div>
+            <div class="download-options">
+                <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card download-google-play">
+                    <i class="fab fa-google-play"></i>
+                    <h3 data-i18n="download_google_play">Google Play</h3>
+                    <p data-i18n="download_google_play_desc">Easy installation and updates.</p>
+                </a>
+                <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card download-github">
+                    <i class="fab fa-github"></i>
+                    <h3 data-i18n="download_github">GitHub</h3>
+                    <p data-i18n="download_github_desc">For advanced features and SMS filtering.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community">
+        <div class="container community-container">
+            <div class="section-heading community-heading">
+                <h2 data-i18n="community_heading">Join Our Community</h2>
+                <p data-i18n="community_description">Connect, share tips, and get support.</p>
+            </div>
+            <div class="community-links">
+                <a href="https://t.me/yourcallyourrule" class="community-link community-telegram">
+                    <i class="fab fa-telegram"></i> <span data-i18n="community_telegram_channel">Telegram Channel</span>
+                </a>
+                <a href="https://t.me/+GHoPy6xwQEU1ZThh" class="community-link community-telegram">
+                    <i class="fab fa-telegram"></i> <span data-i18n="community_telegram_group">Telegram Group</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <p data-i18n="footer_copyright">© 2024 YourCallYourRule. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.hero-swiper', {
+            loop: true,
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            speed: 800,
+        });
+    </script>
+      <script src="script.js"></script>
 </body>
 </html>
