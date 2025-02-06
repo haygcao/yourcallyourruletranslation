@@ -1,492 +1,205 @@
+/* Color Variables */
+:root {
+    --primary-red: #c62828;
+    --secondary-red: #ef5350;
+    --light-red: #ffcdd2;
+    --accent-yellow: #ffd700;
+    --accent-green: #4caf50;
+    --white: #ffffff;
+    --text-dark: #212121;
+    --text-light: #757575;
+}
+
 /* Global Styles */
 body.red-theme {
     font-family: 'Sora', sans-serif;
     margin: 0;
-    background-color: #ffebee;  /* 60% - Very Light Red */
-    color: #424242;
-    line-height: 1.7;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--primary-red);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
 .container {
-    width: 85%;
     max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
     padding: 0 20px;
-}
-
-/* --- Red Theme Color Palette --- */
-/* 60% - #ffebee (Very Light Red - Background) */
-/* 30% - #ef9a9a (Light Red - Secondary) */
-/* 10% - #d32f2f (Deep Red - Accent) */
-/*  +  #4CAF50 (Green - Complementary) */
-/*  + #FFC107 (Yellow - for some highlights/buttons) */
-
-/* Rounded Corners */
-.header-container, .hero-container, .features-container, .features-heading,
-.feature-card, .download-container, .download-heading, .download-card,
-.community-container, .community-heading, .community-link, .community-telegram,
-.footer-container, .hero-swiper, header nav ul li a, .hero-button-area .button,
-#hero .button, #features .feature-item, #download .download-card,
-#community .community-link, .google-play-button, .github-button,
-.download-google-play, .download-github {
-    border-radius: 25px;
 }
 
 /* Header Styles */
 header {
-    background-color: #ffebee; /* Match Background */
-    color: #424242;
-    padding: 30px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 2px solid rgba(211, 47, 47, 0.5); /* Red Border */
-}
-
-header .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img { height: 45px; }
-
-header nav ul { padding: 0; margin: 0; list-style: none; display: flex; }
-header nav ul li { margin-left: 35px; }
-
-header nav ul li a {
-    color: #424242; text-decoration: none;
-    font-weight: 600; transition: color 0.3s ease;
-    position: relative; padding-bottom: 5px;
-}
-header nav ul li a:hover { color: #d32f2f; } /* Deep Red Hover */
-header nav ul li a::after {
-    content: ''; position: absolute;
-    left: 0; bottom: 0; width: 0; height: 3px;
-    background-color: #d32f2f; transition: width 0.3s ease;
-}
-header nav ul li a:hover::after { width: 100%; }
-
-/* Hero Section */
-#hero {
-    background-color: #ffebee; padding: 120px 0;
-    position: relative; overflow: hidden;
-}
-
-#hero .hero-container {
-    padding: 80px 50px;
-    background-color: #ef9a9a; /* 30% - Light Red */
-    box-shadow: 0 0 30px rgba(211, 47, 47, 0.3);
-}
-
-#hero .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-    max-width: 1200px;
-}
-#hero .hero-text-column, #hero .hero-visual-column{
-   text-align: left;
-}
-
-#hero .hero-text { margin-bottom: 0; }
-
-/* --- Hero Title (Structure for Animation) --- */
-/* --- Hero Title (Structure for Animation) --- */
-/* ... (All the title-related styles from previous response are correct) ... */
-.hero-title {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 4.2em;
-    color: #d32f2f; /* Deep Red */
-    margin-bottom: 15px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
-    display: flex;
-    flex-direction: column; /* Stack lines vertically */
-    gap: 5px;               /* Space between lines */
-}
-
-.title-line {
-    display: flex; /* Align words horizontally within each line */
-    align-items: center; /* Vertically center within line */
-    flex-wrap: wrap; /* Allow wrapping if needed */
-    gap: 12px;       /* Space between words */
-}
-.title-line2{
-   margin-left: 50px;
-}
-.title-word {
-    display: inline-block;
-    position: relative; /* For absolute positioning of icons */
-    z-index: 2; /* Ensure text is above animations */
-}
-
-.animated-spam-wrapper {
+/* Hero Section Animations */
+.animation-scene {
+    height: 400px;
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    z-index: 1; /*  above other animations */
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-bottom: 30px;
 }
 
-.spam-word{
-   color: #d32f2f
-}
-.spam-icons, .title-icons {
+/* Lightning Animation */
+.lightning-scene {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none; /* Click-through */
 }
 
-.phone-strike, .ban-icon, .peace-dove {
-    position: absolute; /* Position absolutely within their containers*/
-    opacity: 0;      /* Initially hidden*/
-    pointer-events: none;
-}
-
-
-.hero-title .highlight { color: #4CAF50; } /* Green Highlight */
-
-/* --- Subtitle and Description --- */
-.hero-subtitle {
-  font-size: 1.3em;
-  color: #555;
-  margin-bottom: 25px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  position: relative; /*  not strictly needed here anymore, but good practice */
-  display: flex;      /*  not strictly needed, kept for consistency */
-  align-items: center; /*  not strictly needed, kept for consistency*/
-  white-space: nowrap;
-}
-
-#hero .hero-description {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 40px;
-    line-height: 1.8; /*  THIS WAS THE MISSING LINE! */
-}
-
-/* --- Hero Button Area --- */
-.hero-button-area {
-    margin-top: 25px;
-}
-
-.hero-button-area .button.primary.hero-get-started {
-    background-color: #4CAF50; /* Green Button */
-    color: #fff;
-    padding: 16px 40px;
-    font-size: 1.1em;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 25px; /*  Make sure rounded corners are consistent! */
-}
-
-.hero-button-area .button.primary.hero-get-started:hover {
-    transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* ... (Rest of the Hero Visual Column and Button Styles - correct from previous response) ... */
-
-/* Hero Visual Column, Swiper, and Buttons */
-#hero .hero-visual-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-#hero .hero-swiper {
-    width: 100%; max-width: 380px; height: 550px;
-    margin-bottom: 25px; overflow: hidden;
-    box-shadow: 8px 8px 25px rgba(211, 47, 47, 0.2); /* Red Shadow */
-    border-radius: 25px;
-}
-
-#hero .swiper-slide img {
-    border-radius: 25px; display: block;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease-out;
-}
-#hero .swiper-slide:hover img { transform: scale(1.04); }
-
-#hero .hero-buttons {
-    display: flex;
-    justify-content: flex-start;
-}
-
-/* Buttons in Hero (Download Buttons) - Red Theme */
-#hero .button {
-    padding: 15px 35px; border-radius: 20px;
-    font-size: 1.05em;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
-    margin: 0 18px 18px 0;
-    font-weight: 600; letter-spacing: 0.3px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: none; cursor: pointer; outline: none;
-}
-#hero .button.primary.google-play-button {
-    background-color: #FFC107; /* Yellow */
-    color: #424242;
-}
-#hero .button.secondary.github-button {
-    background-color: #d32f2f; /* Deep Red */
-    color: #fff;
-}
-#hero .button:hover {
-    transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
-}
-#hero .button:active {
-    transform: translateY(0);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Hero Background Art */
-.hero-bg-art {
+.lightning {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('assets/hero-bg-pattern.svg'); /* Your SVG */
-    opacity: 0.1; pointer-events: none; z-index: -1;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 0;
+    background: var(--accent-yellow);
+    filter: drop-shadow(0 0 20px var(--accent-yellow));
+    animation: lightning-strike 3s infinite;
 }
 
-/* ... (Rest of the style.css - Features, Download, Community, Footer, Responsive) ... */
-/* Features Section */
-#features {
-    padding: 100px 0;
-    background-color: #ffebee;
+@keyframes lightning-strike {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    10% {
+        height: 200px;
+        opacity: 1;
+    }
+    20% {
+        height: 200px;
+        opacity: 0;
+    }
+    100% {
+        height: 200px;
+        opacity: 0;
+    }
 }
 
-#features .features-container {
-    padding: 80px 50px;
-    background-color: #ef9a9a; /* Light Red */
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
-    border-radius: 25px;
-}
-#features .features-heading {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    border-radius: 25px;
-}
-#features .features-heading h2 {
-    font-family: 'Sora', serif;
-    font-weight: 700;
-    font-size: 2.6em;
-    color: #d32f2f;
-    margin-bottom: 15px;
-    letter-spacing: -0.3px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
+.spam-call {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: var(--secondary-red);
+    animation: spam-call-destroy 3s infinite;
 }
 
-#features .features-heading p,
-#features .feature-item p {
-    font-size: 1.1em;
-    color: #666;
-}
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 45px;
-}
-
-#features .feature-item {
-    padding: 40px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 6px 6px 15px rgba(211, 47, 47, 0.1); /* Red Shadow */
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(6px);
-    border-radius: 25px;
-}
-#features .feature-item:hover {
-    box-shadow: 8px 8px 20px rgba(211, 47, 47, 0.2);
-    transform: translateY(-5px);
+@keyframes spam-call-destroy {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(-50%) scale(1.5) rotate(45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1.5) rotate(45deg);
+        opacity: 0;
+    }
 }
 
-#features .feature-item .feature-icon {
-    font-size: 3.8em;
-    margin-bottom: 25px;
-    color: #4CAF50;
-    opacity: 0.9;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-}
-#features .feature-item h3 {
-    color: #d32f2f;
-    margin-bottom: 18px;
-    font-size: 1.5em;
-    font-weight: 600;
-    letter-spacing: 0.1px;
+/* Delivery Animation */
+.delivery-scene {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
 }
 
-/* Download, Community, Footer Sections - Similar structure, adjust colors */
-
-#download {
-    padding: 100px 0;
-    background-color: #ffebee;
+.delivery-person, .food-delivery {
+    position: absolute;
+    font-size: 2em;
+    color: var(--accent-yellow);
+    animation: run-across 8s infinite linear;
 }
 
-#download .download-container {
-    padding: 80px 50px;
-    background-color: #e57373; /* Lighter Red */
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
-    border-radius: 25px;
-}
-#download .download-heading,
-#community .community-heading {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    border-radius: 25px;
-}
-#download .download-heading h2,
-#community .community-heading h2 {
-    font-family: 'Sora', serif;
-    font-weight: 700;
-    font-size: 2.6em;
-    color: #d32f2f;
-    margin-bottom: 15px;
-    letter-spacing: -0.3px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
+.delivery-person {
+    bottom: 20px;
+    animation-delay: 3s;
 }
 
-#download .download-heading p,
-#community .community-heading p{
-    font-size: 1.1em;
-    color: #666;
-}
-.download-options {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
-}
-#download .download-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(6px);
-    text-decoration: none;
-    color: #555;
-    box-shadow: 6px 6px 15px rgba(211, 47, 47, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
-    text-align: center;
-    border-radius: 25px;
+.food-delivery {
+    bottom: 80px;
 }
 
-#download .download-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 8px 8px 20px rgba(211, 47, 47, 0.2);
+@keyframes run-across {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
 }
 
-#download .download-card i {
-    font-size: 3.0em;
-    margin-bottom: 20px;
-    color: #FFC107;
-    opacity: 0.8;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+.delivery-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-yellow);
+    color: var(--text-dark);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.4em;
+    white-space: nowrap;
 }
 
-#download .download-card h3,
-#community .community-link{
-   font-size: 1.4em;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #d32f2f;
+/* Auto Answer Animation */
+.auto-answer-scene {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
 }
 
-#download .download-card p {
-    font-size: 1.0em;
-    color: #666;
-    line-height: 1.6;
+.phone-ring {
+    font-size: 3em;
+    color: var(--accent-green);
+    animation: phone-ring 2s infinite;
 }
 
-/* Community Section */
-#community {
-    padding: 100px 0;
-    background-color: #ffebee;
+@keyframes phone-ring {
+    0%, 100% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
 }
 
-#community .community-container {
-    padding: 80px 50px;
-    background-color: #ef9a9a; /* Light Red */
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
-    border-radius: 25px;
-}
-.community-links {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
+.shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    color: var(--accent-yellow);
+    animation: shield-protect 2s infinite;
 }
 
-#community .community-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 32px;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(6px);
-    color: #555;
-    text-decoration: none;
-    font-size: 1.05em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 5px 5px 10px rgba(211, 47, 47, 0.08); /* Red Shadow */
-    border-radius: 25px;
-}
-#community .community-link:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-3px);
-    box-shadow: 5px 8px 15px rgba(211, 47, 47, 0.15); /* Red Shadow */
-}
-#community .community-link i {
-    margin-right: 12px;
-    font-size: 1.2em;
-    opacity: 0.8;
+@keyframes shield-protect {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
 }
 
-/* Footer Styles */
-footer {
-    background-color: #ffebee;
-    color: #777;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9em;
-    opacity: 0.7;
-    border-top: 2px solid rgba(211, 47, 47, 0.4);
-}
-
-.footer-container {
-    padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-}
+/* Rest of your styles... */
