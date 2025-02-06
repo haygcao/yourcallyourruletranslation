@@ -1,9 +1,9 @@
 /* Global Styles */
-body.dark-mode {
+body.warm-mode {
     font-family: 'Sora', sans-serif;
     margin: 0;
-    background-color: #1E1E1E; /* Dark Gray Background - matches example */
-    color: #ffffff;
+    background-color: #FFF3E0; /* Light Beige Background - Warm */
+    color: #555; /* Darker Text for Contrast */
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@ body.dark-mode {
     padding: 0 20px;
 }
 
-/* Rounded Corners - Applied to many elements */
+/* Rounded Corners - Consistent */
 .header-container,
 .hero-container,
 .features-container,
@@ -38,31 +38,36 @@ header nav ul li a,
 #hero .button,
 #features .feature-item,
 #download .download-card,
-#community .community-link {
-    border-radius: 20px; /* Consistent rounded corners */
+#community .community-link,
+.google-play-button,
+.github-button,
+.download-google-play,
+.download-github {
+    border-radius: 25px; /* Slightly increased roundness */
 }
-
 
 /* Header Styles */
 header {
-    background-color: #1E1E1E; /* Match background color */
-    color: #ffffff;
+    background-color: #FFF3E0; /* Match Background */
+    color: #555;
     padding: 30px 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 2px solid rgba(255, 204, 153, 0.3); /* Light Orange Border */
 }
 
-header .header-container { /* Target rounded header container */
+header .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px; /* Add padding inside rounded header */
-    background-color: #2C2C2C; /* Slightly darker header background */
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-Transparent White Header */
+    backdrop-filter: blur(10px); /* Subtle Blur */
 }
 
 header .logo img {
-    height: 40px; /* Slightly smaller logo */
+    height: 45px; /* Adjusted Logo Size */
 }
 
 header nav ul {
@@ -73,11 +78,11 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 30px; /* Reduced nav item spacing */
+    margin-left: 35px; /* Adjusted Nav Spacing */
 }
 
 header nav ul li a {
-    color: #ffffff;
+    color: #555;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -86,7 +91,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #C0C0C0; /* Light Gray Hover */
+    color: #E64A19; /* Deep Orange Hover */
 }
 
 header nav ul li a::after {
@@ -95,8 +100,8 @@ header nav ul li a::after {
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
-    background-color: #C0C0C0;
+    height: 3px; /* Thicker Underline */
+    background-color: #E64A19;
     transition: width 0.3s ease;
 }
 
@@ -104,28 +109,27 @@ header nav ul li a:hover::after {
     width: 100%;
 }
 
-
 /* Hero Section */
 #hero {
-    background-color: #1E1E1E;
+    background-color: #FFF3E0;
     padding: 120px 0;
     position: relative;
     overflow: hidden;
 }
 
-#hero .hero-container { /* Target rounded hero container */
-    padding: 80px 50px; /* Add padding inside rounded hero */
-    background-color: #2C2C2C; /* Slightly darker hero background */
+#hero .hero-container {
+    padding: 80px 50px;
+    background-color: #FFF8E1; /* Light Yellow Hero Background */
+    box-shadow: 0 0 30px rgba(255, 204, 153, 0.2); /* Soft Orange Shadow */
 }
 
 #hero .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px; /* Reduced gap */
+    gap: 70px; /* Adjusted Gap */
     align-items: center;
     max-width: 1200px;
 }
-
 
 #hero .hero-text-column {
     text-align: left;
@@ -135,62 +139,60 @@ header nav ul li a:hover::after {
     margin-bottom: 0;
 }
 
-
-/* Hero Title - Example Style */
+/* Hero Title - Warm Palette */
 .hero-title {
     font-family: 'Sora', sans-serif;
     font-weight: 700;
-    font-size: 4.0em; /* Adjusted size */
-    color: #ffffff;
-    margin-bottom: 10px; /* Reduced margin */
+    font-size: 4.2em; /* Adjusted Size */
+    color: #E64A19; /* Deep Orange Title */
+    margin-bottom: 15px;
     line-height: 1.2;
     letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05); /* Soft Shadow */
 }
 
 .hero-title .highlight {
-    color: #A0E98F; /* Green Highlight - matches example */
+    color: #4CAF50; /* Green Highlight - Wood Element */
 }
 
-/* Hero Subtitle - Example Style */
+/* Hero Subtitle - Warm Palette */
 .hero-subtitle {
-    font-size: 1.1em;
-    color: #C0C0C0; /* Light Gray Subtitle */
-    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 25px;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-
 #hero .hero-description {
     font-size: 1.1em;
-    color: #AAAAAA;
-    margin-bottom: 30px;
-    line-height: 1.7;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.8;
 }
 
-/* Hero Button Area - Example Style */
+/* Hero Button Area - Warm Palette */
 .hero-button-area {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .hero-button-area .button.primary.hero-get-started {
-    background-color: #A0E98F; /* Green Button - matches example */
-    color: #1E1E1E; /* Dark text on green button */
-    padding: 15px 35px;
+    background-color: #4CAF50; /* Green Button - Wood Element */
+    color: #fff;
+    padding: 16px 40px;
     font-size: 1.1em;
     font-weight: 600;
     border: none;
     cursor: pointer;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-button-area .button.primary.hero-get-started:hover {
     transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 #hero .hero-visual-column {
     display: flex;
@@ -198,17 +200,17 @@ header nav ul li a:hover::after {
     align-items: flex-start;
 }
 
-
-#hero .hero-swiper { /* Target rounded hero swiper */
+#hero .hero-swiper {
     width: 100%;
-    max-width: 350px; /* Adjusted Swiper width */
-    height: 500px; /* Adjusted Swiper height */
-    margin-bottom: 20px; /* Reduced margin below swiper */
+    max-width: 380px; /* Adjusted Swiper Width */
+    height: 550px; /* Adjusted Swiper Height */
+    margin-bottom: 25px;
     overflow: hidden;
+    box-shadow: 8px 8px 25px rgba(255, 204, 153, 0.2); /* Soft Orange Shadow */
 }
 
 #hero .swiper-slide img {
-    border-radius: 20px; /* Match slide image corners */
+    border-radius: 25px;
     display: block;
     width: 100%;
     height: 100%;
@@ -217,23 +219,21 @@ header nav ul li a:hover::after {
 }
 
 #hero .swiper-slide:hover img {
-    transform: scale(1.03); /* Less zoom on hover */
+    transform: scale(1.04); /* Subtle Zoom */
 }
-
 
 #hero .hero-buttons {
     display: flex;
     justify-content: flex-start;
 }
 
-
-/* Buttons in Hero (Download Buttons) */
+/* Buttons in Hero (Download Buttons) - Warm Palette */
 #hero .button {
-    padding: 14px 30px; /* Adjusted button padding */
-    border-radius: 15px;
-    font-size: 1.0em; /* Slightly smaller font */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-    margin: 0 15px 15px 0; /* Adjusted button margins */
+    padding: 15px 35px;
+    border-radius: 20px;
+    font-size: 1.05em;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08); /* Softer Shadow */
+    margin: 0 18px 18px 0;
     font-weight: 600;
     letter-spacing: 0.3px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -242,265 +242,283 @@ header nav ul li a:hover::after {
     outline: none;
 }
 
-#hero .button.primary {
-    background-color: #6A6AFF; /* Purple Button - matches example */
-    color: #ffffff;
+#hero .button.primary.google-play-button { /* Google Play Button - Warm */
+    background-color: #FFC107; /* Yellow - Fire Element */
+    color: #555;
 }
 
-#hero .button.secondary {
-    background-color: #333333; /* Dark Gray Secondary Button */
-    color: #ffffff;
+#hero .button.secondary.github-button { /* GitHub Button - Muted Warm */
+    background-color: #FF7043; /* Light Red/Orange - Fire Element */
+    color: #fff;
 }
 
 #hero .button:hover {
     transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1); /* Slightly Enhanced Shadow */
 }
 
 #hero .button:active {
     transform: translateY(0);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05); /* Even Softer Shadow on Active */
+}
+
+/* Hero Background Art - Decorative Element */
+.hero-bg-art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/hero-bg-pattern.svg'); /* Replace with your SVG pattern */
+    opacity: 0.1; /* Very Subtle Pattern */
+    pointer-events: none; /* Make it non-interactive */
+    z-index: -1; /* Behind content */
 }
 
 
 /* Features Section */
 #features {
     padding: 100px 0;
-    background-color: #1E1E1E;
+    background-color: #FFF3E0;
 }
 
-#features .features-container { /* Target rounded features container */
-    padding: 80px 50px; /* Add padding inside rounded features */
-    background-color: #2C2C2C;
+#features .features-container {
+    padding: 80px 50px;
+    background-color: #FFFDE7; /* Very Light Yellow Feature Background */
+    box-shadow: 0 0 20px rgba(255, 204, 153, 0.15); /* Softer Shadow */
 }
 
-
-#features .features-heading { /* Target rounded features heading */
+#features .features-heading {
     text-align: center;
-    margin-bottom: 60px; /* Reduced margin */
-    padding: 30px; /* Add padding to heading container */
-    background-color: #383838; /* Slightly darker heading background */
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-Transparent White Heading */
+    backdrop-filter: blur(8px); /* Blur for Heading */
 }
 
 #features .features-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 2.5em; /* Adjusted size */
-    color: #ffffff;
+    font-size: 2.6em; /* Adjusted Size */
+    color: #E64A19; /* Deep Orange Feature Title */
     margin-bottom: 15px;
     letter-spacing: -0.3px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03); /* Subtle Shadow */
 }
 
 #features .features-heading p {
     font-size: 1.1em;
-    color: #AAAAAA;
+    color: #777;
 }
-
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
-    gap: 40px; /* Reduced gap */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted Minmax */
+    gap: 45px; /* Adjusted Gap */
 }
 
-#features .feature-item { /* Target rounded feature items */
+#features .feature-item {
     padding: 40px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
-    background-color: #383838; /* Feature item background */
+    box-shadow: 6px 6px 15px rgba(255, 204, 153, 0.1); /* Even Softer Shadow */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-Transparent White Feature Item */
+    backdrop-filter: blur(6px); /* Blur for Feature Items */
 }
 
 #features .feature-item:hover {
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 8px 8px 20px rgba(255, 204, 153, 0.15); /* Slightly Enhanced Shadow on Hover */
     transform: translateY(-5px);
 }
 
-#features .feature-item i {
-    font-size: 3.5em; /* Adjusted size */
+#features .feature-item .feature-icon { /* Feature Icon Style - Green */
+    font-size: 3.8em; /* Adjusted Size */
     margin-bottom: 25px;
-    color: #A0E98F; /* Green Feature Icon */
-    opacity: 0.8;
+    color: #4CAF50; /* Green Icon - Wood Element */
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle Icon Shadow */
 }
 
 #features .feature-item h3 {
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-size: 1.4em; /* Adjusted size */
+    color: #E64A19; /* Deep Orange Feature Title */
+    margin-bottom: 18px;
+    font-size: 1.5em; /* Adjusted Size */
     font-weight: 600;
     letter-spacing: 0.1px;
 }
 
 #features .feature-item p {
     font-size: 1.0em;
-    color: #BBBBBB;
+    color: #666;
     line-height: 1.6;
 }
-
 
 /* Download Section */
 #download {
     padding: 100px 0;
-    background-color: #1E1E1E;
+    background-color: #FFF3E0;
 }
 
-#download .download-container { /* Target rounded download container */
-    padding: 80px 50px; /* Add padding inside rounded download */
-    background-color: #2C2C2C;
+#download .download-container {
+    padding: 80px 50px;
+    background-color: #FFECB3; /* Light Yellow Download Background */
+    box-shadow: 0 0 20px rgba(255, 204, 153, 0.15); /* Softer Shadow */
 }
 
-
-#download .download-heading { /* Target rounded download heading */
+#download .download-heading {
     text-align: center;
     margin-bottom: 60px;
     padding: 30px;
-    background-color: #383838;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-Transparent White Heading */
+    backdrop-filter: blur(8px); /* Blur for Heading */
 }
 
 #download .download-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 2.5em;
-    color: #ffffff;
+    font-size: 2.6em; /* Adjusted Size */
+    color: #E64A19; /* Deep Orange Download Title */
     margin-bottom: 15px;
     letter-spacing: -0.3px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03); /* Subtle Shadow */
 }
 
 #download .download-heading p {
     font-size: 1.1em;
-    color: #AAAAAA;
+    color: #777;
 }
-
 
 .download-options {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Reduced gap */
+    gap: 35px; /* Adjusted Gap */
     flex-wrap: wrap;
 }
 
-#download .download-card { /* Target rounded download cards */
+#download .download-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background-color: #383838;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-Transparent White Download Card */
+    backdrop-filter: blur(6px); /* Blur for Download Cards */
     text-decoration: none;
-    color: #ffffff;
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+    color: #555;
+    box-shadow: 6px 6px 15px rgba(255, 204, 153, 0.1); /* Even Softer Shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 280px; /* Adjusted width */
+    width: 300px; /* Adjusted Width */
     text-align: center;
 }
 
 #download .download-card:hover {
     transform: translateY(-5px);
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 8px 8px 20px rgba(255, 204, 153, 0.15); /* Slightly Enhanced Shadow on Hover */
 }
 
 #download .download-card i {
-    font-size: 2.8em; /* Adjusted size */
+    font-size: 3.0em; /* Adjusted Size */
     margin-bottom: 20px;
-    color: #6A6AFF; /* Purple Download Icon */
+    color: #FFC107; /* Yellow Download Icon - Fire Element */
     opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle Icon Shadow */
 }
 
 #download .download-card h3 {
-    font-size: 1.3em; /* Adjusted size */
+    font-size: 1.4em; /* Adjusted Size */
     margin-bottom: 15px;
     font-weight: 600;
-    color: #ffffff;
+    color: #E64A19; /* Deep Orange Download Card Title */
 }
 
 #download .download-card p {
     font-size: 1.0em;
-    color: #BBBBBB;
+    color: #666;
     line-height: 1.6;
 }
-
 
 /* Community Section */
 #community {
     padding: 100px 0;
-    background-color: #1E1E1E;
+    background-color: #FFF3E0;
 }
 
-#community .community-container { /* Target rounded community container */
-    padding: 80px 50px; /* Add padding inside rounded community */
-    background-color: #2C2C2C;
+#community .community-container {
+    padding: 80px 50px;
+    background-color: #FFE0B2; /* Light Orange Community Background */
+    box-shadow: 0 0 20px rgba(255, 204, 153, 0.15); /* Softer Shadow */
 }
 
-
-#community .community-heading { /* Target rounded community heading */
+#community .community-heading {
     text-align: center;
     margin-bottom: 60px;
     padding: 30px;
-    background-color: #383838;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-Transparent White Heading */
+    backdrop-filter: blur(8px); /* Blur for Heading */
 }
 
 #community .community-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 2.5em;
-    color: #ffffff;
+    font-size: 2.6em; /* Adjusted Size */
+    color: #E64A19; /* Deep Orange Community Title */
     margin-bottom: 15px;
     letter-spacing: -0.3px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03); /* Subtle Shadow */
 }
 
 #community .community-heading p {
     font-size: 1.1em;
-    color: #AAAAAA;
+    color: #777;
 }
-
 
 .community-links {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Reduced gap */
+    gap: 35px; /* Adjusted Gap */
     flex-wrap: wrap;
 }
 
-
-#community .community-link { /* Target rounded community links */
+#community .community-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px; /* Adjusted padding */
-    background-color: #383838;
-    color: #ffffff;
+    padding: 16px 32px; /* Adjusted Padding */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-Transparent White Community Link */
+    backdrop-filter: blur(6px); /* Blur for Community Links */
+    color: #555;
     text-decoration: none;
-    font-size: 1.0em; /* Adjusted size */
+    font-size: 1.05em; /* Adjusted Size */
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px rgba(255, 204, 153, 0.08); /* Very Soft Shadow */
 }
 
 #community .community-link:hover {
-    background-color: #444444; /* Slightly darker hover */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly Lighter Hover */
     transform: translateY(-3px);
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 5px 8px 15px rgba(255, 204, 153, 0.1); /* Slightly Enhanced Shadow on Hover */
 }
 
 #community .community-link i {
-    margin-right: 10px;
-    font-size: 1.1em; /* Adjusted size */
+    margin-right: 12px;
+    font-size: 1.2em;
     opacity: 0.8;
 }
 
-
 /* Footer Styles */
 footer {
-    background-color: #1E1E1E;
-    color: #BBBBBB;
+    background-color: #FFF3E0;
+    color: #777;
     text-align: center;
-    padding: 30px 0; /* Reduced vertical padding */
+    padding: 30px 0;
     font-size: 0.9em;
     opacity: 0.7;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 2px solid rgba(255, 204, 153, 0.3); /* Light Orange Border */
 }
 
-.footer-container { /* Target rounded footer container */
-    padding: 20px 30px; /* Add padding to footer container */
-    background-color: #2C2C2C;
+.footer-container {
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-Transparent White Footer */
+    backdrop-filter: blur(10px); /* Blur for Footer */
 }
 
 
@@ -535,17 +553,17 @@ footer {
     }
 
     .hero-title {
-        font-size: 3.2em; /* Adjusted title size */
+        font-size: 3.4em; /* Adjusted Title Size */
     }
 
     #hero h2 {
-        font-size: 1.6em;
+        font-size: 1.7em;
     }
 
     #features .feature-grid,
     #download .download-options,
     #community .community-links {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Further adjusted minmax */
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Further Adjusted Minmax */
     }
 
     #download .download-card {
@@ -561,21 +579,21 @@ footer {
     .community-container,
     .community-heading,
     .footer-container {
-        padding: 40px 30px; /* Adjust container padding on smaller screens */
+        padding: 40px 30px; /* Adjusted Container Padding */
     }
 }
 
 @media (max-width: 768px) {
     header nav ul li {
-        margin-left: 20px; /* Further reduced nav spacing */
+        margin-left: 25px; /* Further Reduced Nav Spacing */
     }
 
     .hero-title {
-        font-size: 2.8em; /* Even smaller title on very small screens */
+        font-size: 2.8em; /* Even Smaller Title on Very Small Screens */
     }
 
     #hero h2 {
-        font-size: 1.4em;
+        font-size: 1.5em;
     }
 
     #hero p {
@@ -585,7 +603,7 @@ footer {
     #features .feature-item,
     #download .download-card,
     #community .community-link {
-        padding: 30px; /* Reduce padding on smaller feature items/cards */
+        padding: 30px; /* Reduce Padding on Smaller Items */
     }
 
     .header-container,
@@ -597,6 +615,6 @@ footer {
     .community-container,
     .community-heading,
     .footer-container {
-        padding: 30px 20px; /* Further reduce container padding on very small screens */
+        padding: 30px 20px; /* Further Reduced Container Padding */
     }
 }
