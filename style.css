@@ -1,16 +1,18 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Global Styles */
+body.dark-mode {
+    font-family: 'Sora', sans-serif; /* Modern, clean font */
     margin: 0;
-    background: #fef5f3; /* Very light orange background */
-    color: #333;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
     line-height: 1.7;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS */
+    -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox */
 }
 
 .container {
     width: 85%;
-    max-width: 1200px; /* Increased max-width for wider screens */
+    max-width: 1200px;
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
@@ -18,11 +20,11 @@ body {
 
 /* Header Styles */
 header {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    color: #e67e22; /* Orange header color */
-    padding: 25px 0;
-    border-bottom: 1px solid rgba(230, 126, 34, 0.2);
+    background-color: rgba(20, 20, 20, 0.9); /* Darker, slightly transparent header */
+    backdrop-filter: blur(12px); /* Stronger blur effect */
+    color: #ffffff;
+    padding: 30px 0; /* Increased header padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -35,7 +37,7 @@ header .container {
 }
 
 header .logo img {
-    height: 45px; /* Slightly larger logo */
+    height: 50px; /* Larger logo */
 }
 
 header nav ul {
@@ -46,277 +48,341 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 35px; /* Increased spacing */
+    margin-left: 40px; /* Increased nav item spacing */
 }
 
 header nav ul li a {
-    color: #e67e22;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600; /* Bolder navigation links */
     transition: color 0.3s ease;
+    position: relative; /* For hover underline effect */
+    padding-bottom: 5px; /* Space for underline */
 }
 
 header nav ul li a:hover {
-    color: #f39c12;
+    color: #e0e0e0; /* Lighter hover color */
 }
+
+header nav ul li a::after { /* Hover underline effect */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e0e0e0;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
 
 /* Hero Section */
 #hero {
-    background: #fef5f3; /* Keep hero background same as body */
-    padding: 120px 0; /* Increased padding */
+    background-color: #121212; /* Hero background same as body */
+    padding: 150px 0; /* Increased hero padding */
     position: relative;
     overflow: hidden;
 }
 
 #hero .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribute space between text and actions */
+    justify-content: center; /* Center content in hero */
 }
 
-#hero .hero-content-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Evenly space text and actions */
-    width: 100%; /* Take full width of container */
+#hero .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 80px; /* Increased gap between columns */
+    align-items: center; /* Vertically align grid items */
+    max-width: 1200px; /* Limit grid width */
 }
 
-#hero .hero-text {
-    width: 50%; /* Text takes half the space */
-    padding-right: 50px; /* Spacing between text and actions */
+
+#hero .hero-text-column {
     text-align: left; /* Align text to the left */
 }
 
+#hero .hero-text {
+    margin-bottom: 0; /* Remove default margin */
+}
+
+
 #hero h1 {
-    font-family: 'Playfair Display', serif; /* Elegant serif font for title */
-    font-size: 4.5em; /* Even larger title */
-    color: #e67e22;
-    margin-bottom: 20px;
+    font-family: 'Sora', sans-serif; /* Modern, bold font */
+    font-weight: 700; /* Extra bold */
+    font-size: 5.5em; /* Even larger title */
+    color: #ffffff;
+    margin-bottom: 25px;
     line-height: 1.1;
+    letter-spacing: -1px; /* Slightly reduce letter spacing for boldness */
 }
 
 #hero h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 30px;
-    font-weight: 500;
+    font-size: 2.2em;
+    color: #e0e0e0; /* Lighter subtitle color */
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 #hero p {
-    font-size: 1.15em;
-    color: #555;
-    margin-bottom: 40px;
+    font-size: 1.2em;
+    color: #aaaaaa; /* Muted paragraph color */
+    margin-bottom: 50px; /* Increased paragraph margin */
+    line-height: 1.8;
 }
 
-#hero .hero-actions {
-    width: 45%; /* Actions (swiper and buttons) take slightly less than half */
+
+#hero .hero-visual-column {
     display: flex;
-    flex-direction: column; /* Stack swiper and buttons vertically within actions */
-    align-items: flex-start; /* Align items to the start of the container */
+    flex-direction: column;
+    align-items: flex-start; /* Align items to start of column */
 }
+
 
 #hero .swiper {
-    width: 100%; /* Swiper takes full width of hero-actions */
-    max-width: 350px; /* Limit swiper width */
-    height: 550px; /* Increased height */
-    border-radius: 25px; /* More rounded corners */
-    box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.18); /* Stronger shadow */
+    width: 100%; /* Swiper takes full column width */
+    max-width: 400px; /* Limit swiper width */
+    height: 600px; /* Increased height */
+    border-radius: 30px; /* Even more rounded corners */
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3); /* Deeper shadow */
     margin-bottom: 30px; /* Space between swiper and buttons */
     overflow: hidden;
 }
 
 #hero .swiper-slide img {
-    border-radius: 25px; /* Match slide image corners to swiper */
+    border-radius: 30px; /* Match slide image corners */
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-out; /* Smooth zoom transition */
+}
+
+#hero .swiper-slide:hover img {
+    transform: scale(1.05); /* Subtle zoom on hover */
 }
 
 
-#hero .buttons {
-    display: flex; /* Arrange buttons horizontally */
-    justify-content: flex-start; /* Align buttons to the start */
+#hero .hero-buttons {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to start */
 }
 
 
 /* Buttons in Hero */
 #hero .button {
-    padding: 16px 40px; /* Larger button padding */
-    border-radius: 12px; /* More rounded buttons */
-    font-size: 1.1em; /* Slightly larger font */
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.15);
-    margin: 0 15px 15px 0; /* Adjust margins for horizontal buttons */
+    padding: 18px 45px; /* Larger button padding */
+    border-radius: 15px; /* More rounded buttons */
+    font-size: 1.15em; /* Slightly larger font */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2); /* Stronger button shadow */
+    margin: 0 20px 20px 0; /* Adjust button margins */
+    font-weight: 600;
+    letter-spacing: 0.5px; /* Slight letter spacing */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Remove default focus outline */
 }
 
 #hero .button.primary {
-    background-color: #e67e22;
+    background-color: #e67e22; /* Vibrant orange */
+    color: #ffffff;
 }
 
 #hero .button.secondary {
-    background-color: #f39c12;
+    background-color: #333333; /* Dark gray */
+    color: #ffffff;
 }
 
+#hero .button:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 10px 15px 35px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+#hero .button:active { /* Active state for click feedback */
+    transform: translateY(0);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
 
 /* Features Section */
 #features {
-    padding: 100px 0;
-    background: #fff; /* White background for features */
+    padding: 120px 0;
+    background-color: #1a1a1a; /* Slightly lighter dark background */
 }
 
 #features .section-heading {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 #features .section-heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2em;
-    color: #e67e22;
-    margin-bottom: 15px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 3.5em; /* Larger feature section title */
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 #features .section-heading p {
     font-size: 1.2em;
-    color: #777;
+    color: #aaaaaa;
 }
 
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider feature items */
+    gap: 70px;
 }
 
 .feature-item {
-    padding: 45px;
-    border-radius: 20px;
+    padding: 50px;
+    border-radius: 25px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
-    background: #fef5f3; /* Light orange feature item background */
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.15); /* Feature item shadow */
+    background-color: #222222; /* Darker feature item background */
 }
 
 .feature-item:hover {
-    box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.14);
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
     transform: translateY(-8px);
 }
 
 .feature-item i {
-    font-size: 4.5em;
-    margin-bottom: 30px;
+    font-size: 5em; /* Larger feature icons */
+    margin-bottom: 35px;
     color: #e67e22;
+    opacity: 0.9; /* Slightly transparent icon */
 }
 
 .feature-item h3 {
-    color: #e67e22;
-    margin-bottom: 18px;
-    font-size: 1.6em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.7em; /* Larger feature titles */
     font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
 .feature-item p {
-    font-size: 1.1em;
-    color: #666;
+    font-size: 1.15em;
+    color: #bbbbbb;
+    line-height: 1.7;
 }
 
 
 /* Download Section */
 #download {
-    padding: 100px 0;
-    background: #fef5f3; /* Light orange background */
+    padding: 120px 0;
+    background-color: #121212; /* Download section same as body */
     text-align: center;
 }
 
 #download .section-heading {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 #download .section-heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2em;
-    color: #e67e22;
-    margin-bottom: 15px;
+    font-family: 'Sora', serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 #download .section-heading p {
     font-size: 1.2em;
-    color: #777;
+    color: #aaaaaa;
 }
 
 
 .download-options {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 .download-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
-    background: #fff;
-    border-radius: 20px;
+    padding: 50px;
+    background-color: #222222; /* Darker download card background */
+    border-radius: 25px;
     text-decoration: none;
-    color: #333;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.15); /* Download card shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px; /* Fixed width for download cards */
+    width: 350px; /* Fixed width for download cards */
     text-align: center;
 }
 
 .download-card:hover {
     transform: translateY(-8px);
-    box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.14);
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .download-card i {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 3.5em;
+    margin-bottom: 25px;
     color: #e67e22;
+    opacity: 0.9;
 }
 
 .download-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    font-size: 1.6em;
+    margin-bottom: 20px;
     font-weight: 600;
-    color: #e67e22;
+    color: #ffffff;
 }
 
 .download-card p {
-    font-size: 1.1em;
-    color: #666;
+    font-size: 1.15em;
+    color: #bbbbbb;
+    line-height: 1.7;
 }
 
 
 /* Community Section */
 #community {
-    background-color: #e67e22; /* Orange community section background */
-    color: #fff;
-    padding: 100px 0;
+    background-color: #1a1a1a; /* Community section background */
+    color: #ffffff;
+    padding: 120px 0;
     text-align: center;
 }
 
 #community .section-heading {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 #community .section-heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2em;
-    color: #fff;
-    margin-bottom: 15px;
+    font-family: 'Sora', serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 #community .section-heading p {
     font-size: 1.2em;
-    color: rgba(255, 255, 255, 0.8);
+    color: #aaaaaa;
 }
 
 
 .community-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap; /* Allow links to wrap */
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 
@@ -324,81 +390,82 @@ header nav ul li a:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    color: #fff;
+    padding: 18px 35px;
+    background-color: #222222; /* Darker community link background */
+    border-radius: 15px;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.15em;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1); /* Community link shadow */
 }
 
 .community-link:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
+    background-color: #333333;
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .community-link i {
-    margin-right: 10px;
-    font-size: 1.2em;
+    margin-right: 12px;
+    font-size: 1.3em;
+    opacity: 0.9;
 }
 
 
 /* Footer Styles */
 footer {
-    background: #d35400; /* Darker orange footer */
-    color: #fff;
+    background-color: #080808; /* Even darker footer */
+    color: #bbbbbb;
     text-align: center;
-    padding: 35px;
+    padding: 40px;
     font-size: 0.95em;
-    opacity: 0.9;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle top border */
 }
 
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    #hero .container {
-        flex-direction: column;
+    #hero .hero-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
         text-align: center;
     }
 
-    #hero .hero-content-wrapper {
-        flex-direction: column; /* Stack text and actions vertically */
-        align-items: center; /* Center align items */
-    }
-
-    #hero .hero-text {
-        width: 90%; /* Full width for text */
+    #hero .hero-text-column,
+    #hero .hero-visual-column {
+        width: 90%; /* Full width for columns on smaller screens */
         padding-right: 0;
-        margin-bottom: 50px; /* Space between text and actions */
         text-align: center; /* Center text on smaller screens */
     }
 
-    #hero .hero-actions {
-        width: 90%; /* Full width for actions */
-        align-items: center; /* Center align actions */
-    }
-
-    #hero .buttons {
-        justify-content: center; /* Center buttons */
-    }
-
-    #hero h1 {
-        font-size: 3.8em;
+    #hero .hero-visual-column {
+        align-items: center; /* Center align visual column */
     }
 
     #hero .swiper {
         max-width: 80%; /* Adjust swiper width for smaller screens */
-        height: auto; /* Adjust height to auto for responsiveness */
-        aspect-ratio: 9/16; /* Maintain vertical phone aspect ratio */
-        width: auto; /* Let width adjust based on max-width */
+        height: auto;
+        aspect-ratio: 9/16;
+        width: auto;
+        margin-bottom: 40px; /* Increased margin below swiper */
     }
 
-    .swiper-slide img {
-        border-radius: 20px; /* Adjust slide image corners for smaller screens */
+    #hero .hero-buttons {
+        justify-content: center; /* Center buttons */
     }
 
-    .feature-grid, .download-options, .community-links {
+    #hero h1 {
+        font-size: 4em; /* Adjust title size on smaller screens */
+    }
+
+    #hero h2 {
+        font-size: 1.8em;
+    }
+
+    #features .feature-grid,
+    #download .download-options,
+    #community .community-links {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid for smaller screens */
     }
 
@@ -409,18 +476,22 @@ footer {
 
 @media (max-width: 768px) {
     header nav ul li {
-        margin-left: 25px; /* Reduce nav item spacing */
+        margin-left: 30px; /* Reduce nav item spacing further */
     }
+
     #hero h1 {
-        font-size: 3em; /* Further reduce title size on very small screens */
+        font-size: 3.2em; /* Further reduce title size on very small screens */
     }
+
     #hero h2 {
         font-size: 1.6em;
     }
+
     #hero p {
-        font-size: 1em;
+        font-size: 1.1em;
     }
+
     .feature-item {
-        padding: 30px; /* Reduce feature item padding */
+        padding: 40px; /* Reduce feature item padding */
     }
 }
