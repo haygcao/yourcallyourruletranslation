@@ -1,0 +1,98 @@
+/* --- Animations for "Spam Calls" Title --- */
+
+/* Phone Slash through "Spam" */
+.spam-icons .fa-phone-slash {
+  animation: phoneSlash 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  transform-origin: 50% 50%; /* Center the rotation */
+
+}
+
+@keyframes phoneSlash {
+  0%   { transform: rotate(0deg) scale(0); opacity: 0; }  /* Start small and rotated */
+  20%  { transform: rotate(-45deg) scale(1.3); opacity: 1;} /* Rotate and enlarge */
+  80%  { transform: rotate(-45deg) scale(1.3); opacity: 1;}
+  100% { transform: rotate(-75deg) scale(0.8); opacity: 0;} /* Fade out while rotating */
+}
+
+/* Ban Icon over "Spam" */
+ .spam-icons .fa-ban {
+    animation: banSpam 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes banSpam {
+    0% {
+       transform:  scale(0);
+        opacity: 0;
+    }
+    20%{
+        transform:  scale(1.2);
+        opacity: 1;
+    }
+    80%{
+        transform:  scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform:  scale(0.5);
+        opacity: 0;
+    }
+}
+/* --- "Your Call, Your Rule" Animations --- */
+/* Delivery Animation */
+.title-icons::before {
+    content: '\f0d1'; /* Font Awesome - fa-truck */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 2.0em;
+    color: #4CAF50; /* Green Truck*/
+    animation: deliverPackage 4s linear infinite;
+    position: absolute; /*  overlap text */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+}
+
+
+@keyframes deliverPackage {
+    0%   { transform: translateX(-120%); opacity: 0;}
+    15%  { transform: translateX(-50%); opacity: 1;}/* Move towards center*/
+    30%  { transform: translateX(0%);    opacity: 1; }   /* Arrive center */
+    70%  { transform: translateX(0%);    opacity: 1; }    /* Stay */
+    85%  { transform: translateX(120%);  opacity: 0;}/* Exit */
+    100% { transform: translateX(120%);  opacity: 0; } /* Fully off-screen*/
+
+}
+/* Auto Answer (and hang up) */
+.title-icons::after {
+    content: '\f2b5'; /* Font Awesome - fa-phone-volume */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 2.0em;
+    color:  #4CAF50; /* Green color for the phone */
+    animation: autoAnswer 4s 2s infinite; /* 2s delay */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+}
+
+@keyframes autoAnswer {
+  0%    { transform: scale(0.8) rotate(0deg); opacity: 0; } /* Start small */
+  15%   { transform: scale(1.2) rotate(-20deg); opacity: 1;} /* Enlarge and tilt*/
+  30%  { transform: scale(1)   rotate(20deg);  opacity: 1;}  /* Return to normal*/
+  70%  { transform: scale(1)   rotate(20deg);  opacity: 1;}  /* Stay */
+  85% {transform: scale(0.6)   rotate(-40deg); opacity: 0;} /*  move away*/
+  100%  { transform: scale(0.6) rotate(-40deg); opacity: 0; } /* Fully disappear*/
+}
