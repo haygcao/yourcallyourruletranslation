@@ -1,9 +1,9 @@
 /* Global Styles */
-body.warm-mode {
+body.red-theme {
     font-family: 'Sora', sans-serif;
     margin: 0;
-    background-color: #FFF8E1; /* 60% - Light Beige (Primary Background) */
-    color: #424242; /* Dark Gray for Text (for better contrast) */
+    background-color: #f8bbd0;  /* Light Pink - Red Theme Base (60%) */
+    color: #424242;
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -18,49 +18,32 @@ body.warm-mode {
     padding: 0 20px;
 }
 
-/* --- 6-3-1 Color Principle --- */
-/* 60% - #FFF8E1 (Light Beige - Primary Background) */
-/* 30% - #FFD54F (Warm Yellow - Secondary Background/Cards) */
-/* 10% - #FF6F00 (Deep Orange - Accent Color) */
-/*  +  #4CAF50 (Green - Complementary Accent for "Wood" element) */
+/* --- Red Theme Color Palette (Example) --- */
+/* 60% - #f8bbd0 (Light Pink) */
+/* 30% - #f48fb1 (Medium Pink) */
+/* 10% - #d32f2f (Deep Red - Accent) */
+/*  +  #4CAF50 (Green - Complementary) */
 
-/* Rounded Corners - Consistent */
-.header-container,
-.hero-container,
-.features-container,
-.features-heading,
-.feature-card,
-.download-container,
-.download-heading,
-.download-card,
-.community-container,
-.community-heading,
-.community-link,
-.community-telegram,
-.footer-container,
-.hero-swiper,
-header nav ul li a,
-.hero-button-area .button,
-#hero .button,
-#features .feature-item,
-#download .download-card,
-#community .community-link,
-.google-play-button,
-.github-button,
-.download-google-play,
-.download-github {
-    border-radius: 25px; /* Slightly increased roundness */
+/* Rounded Corners */
+.header-container, .hero-container, .features-container, .features-heading,
+.feature-card, .download-container, .download-heading, .download-card,
+.community-container, .community-heading, .community-link, .community-telegram,
+.footer-container, .hero-swiper, header nav ul li a, .hero-button-area .button,
+#hero .button, #features .feature-item, #download .download-card,
+#community .community-link, .google-play-button, .github-button,
+.download-google-play, .download-github {
+    border-radius: 25px;
 }
 
 /* Header Styles */
 header {
-    background-color: #FFF8E1; /* Match Background */
-    color: #424242; /* Dark Gray */
+    background-color: #f8bbd0; /* Match Background */
+    color: #424242;
     padding: 30px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid rgba(255, 183, 77, 0.4); /* Orange Border - 10% Color */
+    border-bottom: 2px solid rgba(211, 47, 47, 0.4); /* Red Border */
 }
 
 header .header-container {
@@ -73,21 +56,21 @@ header .header-container {
 }
 
 header .logo img {
-    height: 45px; /* Adjusted Logo Size */
+    height: 45px;
 }
 
 header nav ul {
-    padding: 0;
-    margin: 0;
+    padding: 0; margin: 0;
     list-style: none;
     display: flex;
 }
+
 header nav ul li {
-    margin-left: 35px; /* Adjusted Nav Spacing */
+    margin-left: 35px;
 }
 
 header nav ul li a {
-    color: #555;
+    color: #424242;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -96,26 +79,23 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #FF6F00; /* Deep Orange Hover - 10% Color*/
+    color: #d32f2f; /* Deep Red Hover */
 }
 
 header nav ul li a::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 3px; /* Thicker Underline */
-    background-color: #FF6F00;
+    left: 0; bottom: 0;
+    width: 0; height: 3px;
+    background-color: #d32f2f;
     transition: width 0.3s ease;
 }
-header nav ul li a:hover::after {
-    width: 100%;
-}
+
+header nav ul li a:hover::after { width: 100%; }
 
 /* Hero Section */
 #hero {
-    background-color: #FFF8E1;
+    background-color: #f8bbd0;
     padding: 120px 0;
     position: relative;
     overflow: hidden;
@@ -123,8 +103,8 @@ header nav ul li a:hover::after {
 
 #hero .hero-container {
     padding: 80px 50px;
-    background-color: #FFD54F; /* 30% - Warm Yellow Hero Background */
-    box-shadow: 0 0 30px rgba(255, 183, 77, 0.3);
+    background-color: #f48fb1; /* 30% - Medium Pink */
+    box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
 }
 
 #hero .hero-grid {
@@ -135,78 +115,50 @@ header nav ul li a:hover::after {
     max-width: 1200px;
 }
 
-#hero .hero-text-column {
-    text-align: left;
-}
+#hero .hero-text-column, #hero .hero-visual-column { text-align: left; }
+#hero .hero-text { margin-bottom: 0; }
 
-#hero .hero-text {
-    margin-bottom: 0;
-}
-
-/* Hero Title - Warm Palette */
+/* --- Hero Title with Animation Hooks --- */
 .hero-title {
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 4.2em;
-    color: #FF6F00; /* 10% - Deep Orange Title */
+    color: #d32f2f; /* Deep Red */
     margin-bottom: 15px;
     line-height: 1.2;
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex; /* Allows for inline-block parts */
-    flex-wrap: wrap; /* Wrap parts to the next line if needed */
-    gap: 10px;       /* Spacing between parts */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.title-part {
-    display: inline-block; /* Treat each word/phrase as a block */
-}
+.title-part, .spam-word { display: inline-block; }
 
-/* "Spam" Word and Icon Animations */
-.animated-spam {
-    position: relative; /* For positioning the icons */
-    display: inline-flex; /* Keep "Spam Calls" together */
-    align-items: center; /* Vertically align "Spam" and "Calls" */
-    gap: 8px;             /* Space between "Spam" and "Calls" */
-}
-
-.spam-word {
-    color: #e53935;  /* Red color for "Spam" */
+.animated-title, .animated-spam {
     position: relative;
-    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
 }
-.spam-icons {
-    display: flex; /* Horizontal layout */
+
+.title-icons, .spam-icons {
     position: absolute;
-    top: -10px; /* Icons slightly above the word */
-    left: 0;  /* Start from left edge */
-    width: 100%; /* Cover the entire "Spam" word */
-    justify-content: center; /* Center the icons horizontally */
-    gap: 10px; /* Space between slash and ban icons */
-    z-index: 0;    /* Place behind text */
-    animation: spam-block 2s infinite;
-    opacity: 0; /* Initially hidden */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
 }
-.spam-icons .fa-phone-slash{
-     color: #FF6F00;
-}
-.spam-icons .fa-ban{
-      color: #e53935; /* Red for the ban icon */
-
+.spam-icons{
+   gap: 10px;
 }
 
-@keyframes spam-block {
-  0%    { transform: translateY(20px) scale(0.5); opacity: 0; } /* Start small and below */
-  20%   { transform: translateY(0)    scale(1.2); opacity: 1; }  /* Pop up and enlarge */
-  80%   { transform: translateY(0)    scale(1.2); opacity: 1; }  /* Stay visible */
-  100%  { transform: translateY(-30px) scale(0.8); opacity: 0; } /* Fade out and move up */
-}
+.hero-title .highlight { color: #4CAF50; }
 
-
-.hero-title .highlight {
-    color: #4CAF50; /* Green - kept from before */
-}
-
+/* Subtitle and Description */
 .hero-subtitle {
     font-size: 1.3em;
     color: #555;
@@ -218,38 +170,28 @@ header nav ul li a:hover::after {
     align-items: center;
     white-space: nowrap;
 }
-
-
 #hero .hero-description {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 40px;
-    line-height: 1.8;
+    font-size: 1.1em; color: #666;
+    margin-bottom: 40px; line-height: 1.8;
 }
 
-/* Hero Button */
-/* ... (Same as before, adjust colors if needed) ... */
-.hero-button-area {
-    margin-top: 25px;
-}
+/* Hero Button Area */
+.hero-button-area { margin-top: 25px; }
 
 .hero-button-area .button.primary.hero-get-started {
-    background-color: #4CAF50; /* Green Button - Wood Element */
-    color: #fff;
-    padding: 16px 40px;
-    font-size: 1.1em;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
+    background-color: #4CAF50; /* Green Button */
+    color: #fff; padding: 16px 40px;
+    font-size: 1.1em; font-weight: 600;
+    border: none; cursor: pointer;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .hero-button-area .button.primary.hero-get-started:hover {
     transform: translateY(-3px);
     box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Hero Visual Column, Swiper, and Buttons */
 #hero .hero-visual-column {
     display: flex;
     flex-direction: column;
@@ -257,95 +199,70 @@ header nav ul li a:hover::after {
 }
 
 #hero .hero-swiper {
-    width: 100%;
-    max-width: 380px;
-    height: 550px;
-    margin-bottom: 25px;
-    overflow: hidden;
+    width: 100%; max-width: 380px; height: 550px;
+    margin-bottom: 25px; overflow: hidden;
     box-shadow: 8px 8px 25px rgba(255, 204, 153, 0.2);
 }
 
 #hero .swiper-slide img {
-    border-radius: 25px;
-    display: block;
-    width: 100%;
-    height: 100%;
+    border-radius: 25px; display: block;
+    width: 100%; height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease-out;
 }
+#hero .swiper-slide:hover img { transform: scale(1.04); }
 
-#hero .swiper-slide:hover img {
-    transform: scale(1.04);
-}
-
-#hero .hero-buttons {
+#hero .hero-buttons, #hero .button {
     display: flex;
     justify-content: flex-start;
 }
 
-/* Buttons in Hero (Download Buttons) - Warm Palette */
 #hero .button {
-    padding: 15px 35px;
-    border-radius: 20px;
+    padding: 15px 35px; border-radius: 20px;
     font-size: 1.05em;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     margin: 0 18px 18px 0;
-    font-weight: 600;
-    letter-spacing: 0.3px;
+    font-weight: 600; letter-spacing: 0.3px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: none;
-    cursor: pointer;
-    outline: none;
+    border: none; cursor: pointer; outline: none;
 }
 
 #hero .button.primary.google-play-button {
-    background-color: #FFC107;
-    color: #555;
+    background-color: #FFC107; color: #555;
 }
-
 #hero .button.secondary.github-button {
-    background-color: #FF7043;
-    color: #fff;
+    background-color: #FF7043; color: #fff;
 }
-
 #hero .button:hover {
     transform: translateY(-3px);
     box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
 }
-
 #hero .button:active {
     transform: translateY(0);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Hero Background Art - Decorative Element */
+/* Hero Background Art */
 .hero-bg-art {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('assets/hero-bg-pattern.svg'); /* Replace with SVG */
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: -1;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('assets/hero-bg-pattern.svg'); /* Your SVG */
+    opacity: 0.1; pointer-events: none; z-index: -1;
 }
 
 /* Features Section */
 #features {
-    padding: 100px 0;
-    background-color: #FFF8E1; /* 60% - Light Beige */
+    padding: 100px 0; background-color: #f8bbd0;
 }
 
 #features .features-container {
-    padding: 80px 50px;
-    background-color: #FFD54F; /* 30% - Warm Yellow */
-    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
+    padding: 80px 50px; background-color: #f48fb1;
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
 }
 
 #features .features-heading {
-    text-align: center;
-    margin-bottom: 60px;
+    text-align: center; margin-bottom: 60px;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(8px);
@@ -353,18 +270,12 @@ header nav ul li a:hover::after {
 
 #features .features-heading h2 {
     font-family: 'Sora', serif;
-    font-weight: 700;
-    font-size: 2.6em;
-    color: #FF6F00; /* 10% - Deep Orange */
-    margin-bottom: 15px;
+    font-weight: 700; font-size: 2.6em;
+    color: #d32f2f; margin-bottom: 15px;
     letter-spacing: -0.3px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
 }
-
-#features .features-heading p {
-    font-size: 1.1em;
-    color: #666;
-}
+#features .features-heading p, #features .feature-item p { font-size: 1.1em; color: #666; }
 
 .feature-grid {
     display: grid;
@@ -373,201 +284,119 @@ header nav ul li a:hover::after {
 }
 
 #features .feature-item {
-    padding: 40px;
-    text-align: center;
+    padding: 40px; text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 6px 6px 15px rgba(255, 204, 153, 0.1);
+    box-shadow: 6px 6px 15px rgba(255, 99, 71, 0.1); /* Tomato-ish shadow */
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(6px);
 }
-
 #features .feature-item:hover {
-    box-shadow: 8px 8px 20px rgba(255, 204, 153, 0.15);
+    box-shadow: 8px 8px 20px rgba(255, 99, 71, 0.2);
     transform: translateY(-5px);
 }
 
 #features .feature-item .feature-icon {
-    font-size: 3.8em;
-    margin-bottom: 25px;
-    color: #4CAF50; /* Green - Wood Element */
-    opacity: 0.9;
+    font-size: 3.8em; margin-bottom: 25px;
+    color: #4CAF50; opacity: 0.9;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
-
 #features .feature-item h3 {
-    color: #FF6F00; /* 10% - Deep Orange */
-    margin-bottom: 18px;
-    font-size: 1.5em;
-    font-weight: 600;
+    color: #d32f2f; margin-bottom: 18px;
+    font-size: 1.5em; font-weight: 600;
     letter-spacing: 0.1px;
-}
-
-#features .feature-item p {
-    font-size: 1.0em;
-    color: #666;
-    line-height: 1.6;
 }
 
 /* Download Section */
 #download {
-    padding: 100px 0;
-    background-color: #FFF8E1; /* 60% - Light Beige */
+    padding: 100px 0; background-color: #f8bbd0;
 }
 
 #download .download-container {
-    padding: 80px 50px;
-    background-color: #FFCC80; /* Lighter Warm Yellow */
-    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
+    padding: 80px 50px; background-color: #e9967a; /* Lighter Red */
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
 }
 
-#download .download-heading {
-    text-align: center;
-    margin-bottom: 60px;
+#download .download-heading, #community .community-heading {
+    text-align: center; margin-bottom: 60px;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(8px);
 }
-
-#download .download-heading h2 {
+#download .download-heading h2, #community .community-heading h2 {
     font-family: 'Sora', serif;
-    font-weight: 700;
-    font-size: 2.6em;
-    color: #FF6F00; /* 10% - Deep Orange */
-    margin-bottom: 15px;
+    font-weight: 700; font-size: 2.6em;
+    color: #d32f2f; margin-bottom: 15px;
     letter-spacing: -0.3px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
 }
-
-#download .download-heading p {
-    font-size: 1.1em;
-    color: #666;
-}
+#download .download-heading p, #community .community-heading p { font-size: 1.1em; color: #666; }
 
 .download-options {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
+    display: flex; justify-content: center;
+    gap: 35px; flex-wrap: wrap;
 }
 
 #download .download-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
+    display: flex; flex-direction: column;
+    align-items: center; padding: 40px;
     background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(6px);
-    text-decoration: none;
+    backdrop-filter: blur(6px); text-decoration: none;
     color: #555;
-    box-shadow: 6px 6px 15px rgba(255, 204, 153, 0.1);
+    box-shadow: 6px 6px 15px rgba(255, 99, 71, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
-    text-align: center;
+    width: 300px; text-align: center;
 }
-
 #download .download-card:hover {
     transform: translateY(-5px);
-    box-shadow: 8px 8px 20px rgba(255, 204, 153, 0.15);
+    box-shadow: 8px 8px 20px rgba(255, 99, 71, 0.2);
 }
 
 #download .download-card i {
-    font-size: 3.0em;
-    margin-bottom: 20px;
-    color: #FFC107; /* Yellow */
-    opacity: 0.8;
+    font-size: 3.0em; margin-bottom: 20px;
+    color: #FFC107; opacity: 0.8;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
-
-#download .download-card h3 {
-    font-size: 1.4em;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #FF6F00; /* 10% - Deep Orange */
+#download .download-card h3, #community .community-link {
+    font-size: 1.4em; margin-bottom: 15px;
+    font-weight: 600; color: #d32f2f;
 }
-
-#download .download-card p {
-    font-size: 1.0em;
-    color: #666;
-    line-height: 1.6;
-}
+#download .download-card p { font-size: 1.0em; color: #666; line-height: 1.6; }
 
 /* Community Section */
-#community {
-    padding: 100px 0;
-    background-color: #FFF8E1; /* 60% - Light Beige */
-}
+#community { padding: 100px 0; background-color: #f8bbd0; }
 
 #community .community-container {
-    padding: 80px 50px;
-    background-color: #FFD54F; /* 30% - Warm Yellow */
-    box-shadow: 0 0 20px rgba(255, 183, 77, 0.2);
-}
-
-#community .community-heading {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(8px);
-}
-
-#community .community-heading h2 {
-    font-family: 'Sora', serif;
-    font-weight: 700;
-    font-size: 2.6em;
-    color: #FF6F00; /* 10% - Deep Orange */
-    margin-bottom: 15px;
-    letter-spacing: -0.3px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03);
-}
-
-#community .community-heading p {
-    font-size: 1.1em;
-    color: #666;
+    padding: 80px 50px; background-color: #f48fb1;
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
 }
 
 .community-links {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
+    display: flex; justify-content: center;
+    gap: 35px; flex-wrap: wrap;
 }
 
 #community .community-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 32px;
+    display: inline-flex; align-items: center;
+    justify-content: center; padding: 16px 32px;
     background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(6px);
-    color: #555;
-    text-decoration: none;
-    font-size: 1.05em;
+    backdrop-filter: blur(6px); color: #555;
+    text-decoration: none; font-size: 1.05em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 5px 5px 10px rgba(255, 204, 153, 0.08);
+    box-shadow: 5px 5px 10px rgba(255, 99, 71, 0.08);
 }
-
 #community .community-link:hover {
     background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-3px);
-    box-shadow: 5px 8px 15px rgba(255, 204, 153, 0.1);
+    box-shadow: 5px 8px 15px rgba(255, 99, 71, 0.15);
 }
-
-#community .community-link i {
-    margin-right: 12px;
-    font-size: 1.2em;
-    opacity: 0.8;
-}
+#community .community-link i { margin-right: 12px; font-size: 1.2em; opacity: 0.8; }
 
 /* Footer Styles */
 footer {
-    background-color: #FFF8E1; /* 60% - Light Beige */
-    color: #777;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9em;
-    opacity: 0.7;
-    border-top: 2px solid rgba(255, 183, 77, 0.4);
+    background-color: #f8bbd0; color: #777;
+    text-align: center; padding: 30px 0;
+    font-size: 0.9em; opacity: 0.7;
+    border-top: 2px solid rgba(211, 47, 47, 0.4);
 }
 
 .footer-container {
@@ -578,119 +407,36 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    #hero .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    #hero .hero-text-column,
-    #hero .hero-visual-column {
-        width: 90%;
-        padding-right: 0;
-        text-align: center;
-    }
-
-    #hero .hero-visual-column {
-        align-items: center;
-    }
-
-    #hero .hero-swiper {
-        max-width: 80%;
-        height: auto;
-        aspect-ratio: 9/16;
-        width: auto;
-        margin-bottom: 30px;
-    }
-
-    #hero .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-title {
-        font-size: 3.4em; /* Adjusted Title Size */
-     }
-    .spam-icons {
-        top: -8px; /* Adjust icon position on smaller screens */
-    }
-
-    #hero h2 {
-        font-size: 1.7em;
-    }
-
-    #features .feature-grid,
-    #download .download-options,
-    #community .community-links {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    #download .download-card {
-        width: 100%;
-    }
-
-    .header-container,
-    .hero-container,
-    .features-container,
-    .features-heading,
-    .download-container,
-    .download-heading,
-    .community-container,
-    .community-heading,
-    .footer-container {
-        padding: 40px 30px;
-    }
+    #hero .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    #hero .hero-text-column, #hero .hero-visual-column { width: 90%; padding-right: 0; text-align: center; }
+    #hero .hero-visual-column { align-items: center; }
+    #hero .hero-swiper { max-width: 80%; height: auto; aspect-ratio: 9/16; width: auto; margin-bottom: 30px; }
+    #hero .hero-buttons { justify-content: center; }
+    .hero-title { font-size: 3.4em; }
+    .spam-icons { top: -8px; }
+    #hero h2 { font-size: 1.7em; }
+    #features .feature-grid, #download .download-options, #community .community-links { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    #download .download-card { width: 100%; }
+    .header-container, .hero-container, .features-container, .features-heading,
+    .download-container, .download-heading, .community-container, .community-heading,
+    .footer-container { padding: 40px 30px; }
 }
 
 @media (max-width: 768px) {
-    header nav ul li {
-        margin-left: 25px;
-    }
-
-    .hero-title {
-        font-size: 2.8em; /* Even Smaller Title */
-    }
-
-    .spam-icons {
-        top: -6px; /* Further adjust icon position */
-    }
-
-    #hero h2 {
-        font-size: 1.5em;
-    }
-
-    #hero p {
-        font-size: 0.95em;
-    }
-
-    #features .feature-item,
-    #download .download-card,
-    #community .community-link {
-        padding: 30px;
-    }
-
-    .header-container,
-    .hero-container,
-    .features-container,
-    .features-heading,
-    .download-container,
-    .download-heading,
-    .community-container,
-    .community-heading,
-    .footer-container {
-        padding: 30px 20px;
-    }
+    header nav ul li { margin-left: 25px; }
+    .hero-title { font-size: 2.8em; }
+    .spam-icons { top: -6px; }
+    #hero h2 { font-size: 1.5em; }
+    #hero p { font-size: 0.95em; }
+    #features .feature-item, #download .download-card, #community .community-link { padding: 30px; }
+    .header-container, .hero-container, .features-container, .features-heading,
+    .download-container, .download-heading, .community-container, .community-heading,
+    .footer-container { padding: 30px 20px; }
 }
 
-/* Very Small Screens (e.g., older phones) */
+/* Very Small Screens */
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.5em; /* Even Smaller Title on very small screens*/
-  }
-
-  .spam-icons {
-        top: -5px;
-    }
-
-    #hero .hero-swiper {
-      max-width: 95%; /* Allow Swiper to almost fill width on very small screen */
-  }
+    .hero-title { font-size: 2.5em; }
+    .spam-icons { top: -5px; }
+    #hero .hero-swiper { max-width: 95%; }
 }
