@@ -2,7 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: #fcebe8; /* Light pink background */
+    background: #fef5f3; /* Very light orange background */
     color: #333;
     line-height: 1.7;
     overflow-x: hidden;
@@ -10,6 +10,7 @@ body {
 
 .container {
     width: 85%;
+    max-width: 1200px; /* Increased max-width for wider screens */
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
@@ -17,11 +18,11 @@ body {
 
 /* Header Styles */
 header {
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white header */
-    backdrop-filter: blur(10px); /* Apply blur for glassmorphism effect */
-    color: #e74c3c; /* Red header text color */
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(231, 76, 60, 0.2); /* Light red border */
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    color: #e67e22; /* Orange header color */
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(230, 126, 34, 0.2);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -34,7 +35,7 @@ header .container {
 }
 
 header .logo img {
-    height: 40px;
+    height: 45px; /* Slightly larger logo */
 }
 
 header nav ul {
@@ -45,179 +46,169 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 30px;
+    margin-left: 35px; /* Increased spacing */
 }
 
 header nav ul li a {
-    color: #e74c3c; /* Red navigation links */
+    color: #e67e22;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #f39c12; /* Yellow hover color */
+    color: #f39c12;
 }
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(to bottom right, #fcebe8, #fdd8d4); /* Warm gradient background */
-    padding: 100px 0;
+    background: #fef5f3; /* Keep hero background same as body */
+    padding: 120px 0; /* Increased padding */
     position: relative;
     overflow: hidden;
-    text-align: center; /* Center align text and swiper */
 }
 
 #hero .container {
     display: flex;
-    flex-direction: column; /* Stack text and swiper vertically */
-    align-items: center; /* Center items horizontally */
+    align-items: center;
+    justify-content: space-between; /* Distribute space between text and actions */
+}
+
+#hero .hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Evenly space text and actions */
+    width: 100%; /* Take full width of container */
 }
 
 #hero .hero-text {
-    width: 80%; /* Adjust text width */
-    padding-right: 0; /* Remove right padding */
-    margin-bottom: 50px; /* Space between text and swiper */
+    width: 50%; /* Text takes half the space */
+    padding-right: 50px; /* Spacing between text and actions */
+    text-align: left; /* Align text to the left */
 }
 
 #hero h1 {
-    font-size: 4em; /* Increased font size */
-    color: #e74c3c; /* Red title color */
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.1); /* Text shadow for depth */
+    font-family: 'Playfair Display', serif; /* Elegant serif font for title */
+    font-size: 4.5em; /* Even larger title */
+    color: #e67e22;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
 #hero h2 {
-    font-size: 1.8em;
-    color: #f39c12; /* Yellow subtitle color */
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Text shadow for depth */
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 500;
 }
 
 #hero p {
-    font-size: 1.2em;
-    color: #777;
+    font-size: 1.15em;
+    color: #555;
     margin-bottom: 40px;
 }
 
-/* Swiper Styles */
-.swiper {
-    width: 300px; /* Narrower width for vertical phone look */
-    height: 500px; /* Increased height for vertical phone look */
-    border-radius: 20px; /* More rounded corners */
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-    overflow: hidden; /* Clip images to rounded corners */
-    margin: 20px auto; /* Center swiper */
+#hero .hero-actions {
+    width: 45%; /* Actions (swiper and buttons) take slightly less than half */
+    display: flex;
+    flex-direction: column; /* Stack swiper and buttons vertically within actions */
+    align-items: flex-start; /* Align items to the start of the container */
 }
 
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    overflow: hidden; /* Ensure images are clipped */
+#hero .swiper {
+    width: 100%; /* Swiper takes full width of hero-actions */
+    max-width: 350px; /* Limit swiper width */
+    height: 550px; /* Increased height */
+    border-radius: 25px; /* More rounded corners */
+    box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.18); /* Stronger shadow */
+    margin-bottom: 30px; /* Space between swiper and buttons */
+    overflow: hidden;
 }
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease; /* Smooth zoom transition */
-}
-
-.swiper-slide:hover img {
-    transform: scale(1.1); /* Zoom effect on hover */
+#hero .swiper-slide img {
+    border-radius: 25px; /* Match slide image corners to swiper */
 }
 
 
-.swiper-pagination-bullet-active {
-    background: #e74c3c; /* Red active bullet */
+#hero .buttons {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: flex-start; /* Align buttons to the start */
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    color: #e74c3c; /* Red navigation arrows */
+
+/* Buttons in Hero */
+#hero .button {
+    padding: 16px 40px; /* Larger button padding */
+    border-radius: 12px; /* More rounded buttons */
+    font-size: 1.1em; /* Slightly larger font */
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.15);
+    margin: 0 15px 15px 0; /* Adjust margins for horizontal buttons */
 }
 
-/* Buttons */
-.button {
-    display: inline-block;
-    padding: 15px 35px; /* Larger buttons */
-    background-color: #e74c3c; /* Red button color */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px; /* More rounded buttons */
-    margin: 10px;
-    font-weight: 600;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15); /* Button shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    border: none; /* Remove default border */
-    cursor: pointer; /* Indicate button is clickable */
+#hero .button.primary {
+    background-color: #e67e22;
 }
 
-.button.primary {
-    background-color: #e74c3c;
+#hero .button.secondary {
+    background-color: #f39c12;
 }
 
-.button.secondary {
-    background-color: #f39c12; /* Yellow secondary button */
-}
-
-.button:hover {
-    background-color: #c0392b; /* Darker red on hover */
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-.buttons a i {
-    margin-right: 10px;
-}
 
 /* Features Section */
 #features {
-    padding: 80px 0;
-    background: #fff8f7; /* Very light pink feature section */
+    padding: 100px 0;
+    background: #fff; /* White background for features */
 }
 
-#features h2 {
+#features .section-heading {
     text-align: center;
-    margin-bottom: 60px;
-    color: #e74c3c; /* Red feature section title */
-    font-size: 2.8em; /* Larger title */
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.05); /* Title shadow */
+    margin-bottom: 70px;
 }
+
+#features .section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+#features .section-heading p {
+    font-size: 1.2em;
+    color: #777;
+}
+
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider feature items */
-    gap: 50px; /* Increased gap */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px;
 }
 
 .feature-item {
-    padding: 40px; /* Larger padding */
-    border-radius: 15px; /* More rounded feature items */
+    padding: 45px;
+    border-radius: 20px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.08); /* Feature item shadow */
-    background: #fff; /* White feature item background */
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fef5f3; /* Light orange feature item background */
 }
 
 .feature-item:hover {
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
-    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.14);
+    transform: translateY(-8px);
 }
 
 .feature-item i {
-    font-size: 4em; /* Larger icons */
-    margin-bottom: 25px;
-    color: #e74c3c; /* Red feature icons */
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.05); /* Icon shadow */
+    font-size: 4.5em;
+    margin-bottom: 30px;
+    color: #e67e22;
 }
 
 .feature-item h3 {
-    color: #e74c3c; /* Red feature titles */
-    margin-bottom: 15px;
-    font-size: 1.5em; /* Larger feature titles */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Title shadow */
+    color: #e67e22;
+    margin-bottom: 18px;
+    font-size: 1.6em;
+    font-weight: 600;
 }
 
 .feature-item p {
@@ -225,111 +216,211 @@ header nav ul li a:hover {
     color: #666;
 }
 
+
 /* Download Section */
 #download {
-    background: linear-gradient(to bottom right, #fdd8d4, #fcebe8); /* Warm gradient download section */
-    padding: 80px 0;
+    padding: 100px 0;
+    background: #fef5f3; /* Light orange background */
     text-align: center;
 }
 
-#download h2 {
-    color: #e74c3c; /* Red download section title */
-    font-size: 2.8em;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.05); /* Title shadow */
+#download .section-heading {
+    margin-bottom: 70px;
 }
 
-#download p {
+#download .section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+#download .section-heading p {
     font-size: 1.2em;
     color: #777;
-    margin-bottom: 40px;
 }
 
-#download .github-version-info {
-    font-size: 1.1rem;
-    color: #777;
-    margin-top: 20px;
+
+.download-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.download-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Fixed width for download cards */
+    text-align: center;
+}
+
+.download-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.14);
+}
+
+.download-card i {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #e67e22;
+}
+
+.download-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #e67e22;
+}
+
+.download-card p {
+    font-size: 1.1em;
+    color: #666;
 }
 
 
 /* Community Section */
 #community {
-    background-color: #e74c3c; /* Red community section background */
+    background-color: #e67e22; /* Orange community section background */
     color: #fff;
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
 }
 
-#community h2 {
-    margin-bottom: 40px;
-    font-size: 2.8em;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.1); /* Title shadow */
+#community .section-heading {
+    margin-bottom: 70px;
 }
 
-#community p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    opacity: 0.9; /* Slightly transparent text */
+#community .section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    color: #fff;
+    margin-bottom: 15px;
 }
+
+#community .section-heading p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.community-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow links to wrap */
+}
+
+
+.community-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.community-link:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.community-link i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
 
 /* Footer Styles */
 footer {
-    background: #c0392b; /* Darker red footer */
+    background: #d35400; /* Darker orange footer */
     color: #fff;
     text-align: center;
-    padding: 30px;
-    font-size: 0.9em;
-    opacity: 0.9; /* Slightly transparent footer text */
+    padding: 35px;
+    font-size: 0.95em;
+    opacity: 0.9;
 }
 
+
 /* Responsive Design */
-@media (max-width: 960px) {
-    .container {
-        width: 95%;
-    }
-
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav {
-        margin-top: 20px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
+@media (max-width: 1024px) {
     #hero .container {
         flex-direction: column;
         text-align: center;
     }
 
+    #hero .hero-content-wrapper {
+        flex-direction: column; /* Stack text and actions vertically */
+        align-items: center; /* Center align items */
+    }
+
     #hero .hero-text {
-        width: 100%;
+        width: 90%; /* Full width for text */
         padding-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 50px; /* Space between text and actions */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    #hero .hero-actions {
+        width: 90%; /* Full width for actions */
+        align-items: center; /* Center align actions */
+    }
+
+    #hero .buttons {
+        justify-content: center; /* Center buttons */
     }
 
     #hero h1 {
-        font-size: 3em;
+        font-size: 3.8em;
     }
 
     #hero .swiper {
-        width: 80%; /* Adjust swiper width for smaller screens */
-        height: 400px; /* Adjust swiper height for smaller screens */
+        max-width: 80%; /* Adjust swiper width for smaller screens */
+        height: auto; /* Adjust height to auto for responsiveness */
+        aspect-ratio: 9/16; /* Maintain vertical phone aspect ratio */
+        width: auto; /* Let width adjust based on max-width */
     }
 
-    .feature-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .swiper-slide img {
+        border-radius: 20px; /* Adjust slide image corners for smaller screens */
     }
 
+    .feature-grid, .download-options, .community-links {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .download-card {
+        width: 100%; /* Full width download cards on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul li {
+        margin-left: 25px; /* Reduce nav item spacing */
+    }
+    #hero h1 {
+        font-size: 3em; /* Further reduce title size on very small screens */
+    }
+    #hero h2 {
+        font-size: 1.6em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
     .feature-item {
-        padding: 30px; /* Adjust feature item padding for smaller screens */
+        padding: 30px; /* Reduce feature item padding */
     }
 }
