@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourCallYourRule - Take Control of Your Calls & SMS</title>
+    <title>YourCallYourRule - Reclaim Your Communication</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Modern, clean font -->
 </head>
-<body>
+<body class="dark-mode"> <!-- Added dark-mode class for overall theme -->
 
     <header>
         <div class="container">
             <div class="logo">
-                <img src="assets/yourcall-logo.png" alt="YourCallYourRule Logo">
+                <img src="assets/yourcall-logo-white.png" alt="YourCallYourRule Logo"> <!-- White logo for dark background -->
             </div>
             <nav>
                 <ul>
@@ -31,14 +30,16 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content-wrapper">
-                <div class="hero-text">
-                    <h1>YourCallYourRule</h1>
-                    <h2>Silence the Noise. Own Your Communication.</h2>
-                    <p>The ultimate Android app for customizable call and SMS blocking, putting you in control.</p>
+            <div class="hero-grid"> <!-- Using Grid for structured layout -->
+                <div class="hero-text-column">
+                    <div class="hero-text">
+                        <h1>YourCallYourRule</h1>
+                        <h2>Experience Communication, Redefined.</h2>
+                        <p>Unleash the power to control your calls and SMS like never before. Your privacy, your rules.</p>
+                    </div>
                 </div>
 
-                <div class="hero-actions">
+                <div class="hero-visual-column">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
@@ -51,65 +52,62 @@
                             <div class="swiper-slide"><img src="assets/mockup8.png" alt="Mockup 8"></div>
                             <div class="swiper-slide"><img src="assets/mockup9.png" alt="Mockup 9"></div>
                         </div>
-                        <div class="swiper-pagination"></div>
                     </div>
-
-                    <div class="buttons">
-                        <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Get it on Google Play</a>
-                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> Download from GitHub</a>
+                    <div class="hero-buttons"> <!-- Container for buttons next to Swiper -->
+                        <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="button primary"><i class="fab fa-google-play"></i> Google Play</a>
+                        <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="button secondary"><i class="fab fa-github"></i> GitHub Download</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-bg-pattern"></div>
     </section>
 
     <section id="features">
         <div class="container">
             <div class="section-heading">
-                <h2>Key Features</h2>
-                <p>Explore the powerful functionalities that make YourCallYourRule stand out.</p>
+                <h2>Core Features</h2>
+                <p>Delve into the capabilities that set YourCallYourRule apart.</p>
             </div>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <i class="fas fa-phone-slash"></i>
-                    <h3>Intelligent Call Blocking</h3>
-                    <p>Advanced algorithms to block unwanted calls effectively.</p>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Advanced Blocking Technology</h3>
+                    <p>Sophisticated algorithms for unparalleled call and SMS filtering.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-sms-slash"></i>
-                    <h3>Smart SMS Filtering</h3>
-                    <p>Filter out spam and unwanted SMS messages with ease.</p>
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Personalized Rule Sets</h3>
+                    <p>Craft custom rules tailored to your exact communication preferences.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>Privacy Protection</h3>
-                    <p>Keep your communication private and secure.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Customizable Rules</h3>
-                    <p>Tailor blocking rules to your specific needs.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-list-alt"></i>
-                    <h3>Whitelist & Blacklist</h3>
-                    <p>Manage your contacts with personalized lists.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-cloud-download-alt"></i>
-                    <h3>Online Spam Lists</h3>
-                    <p>Leverage online databases for enhanced protection.</p>
+                    <i class="fas fa-database"></i>
+                    <h3>Real-time Spam Intelligence</h3>
+                    <p>Option to integrate with online databases for cutting-edge spam detection.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-code"></i>
-                    <h3>Regex Support</h3>
-                    <p>Powerful blocking with regular expressions.</p>
+                    <h3>Regex-Powered Precision</h3>
+                    <p>Unleash the power of regular expressions for intricate blocking logic.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-expand-plugins"></i>
-                    <h3>Plugin Extensibility</h3>
-                    <p>Extend functionality with custom plugins.</p>
+                    <i class="fas fa-sim-card"></i>
+                    <h3>Dual SIM Optimization</h3>
+                    <p>Seamlessly manage calls across multiple SIM cards with intelligent filtering.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Privacy-Centric Architecture</h3>
+                    <p>Your data remains exclusively on your device, ensuring maximum confidentiality.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Plugin-Based Expansion</h3>
+                    <p>Extend functionality and connect to external services with versatile plugins.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Secure Cloud Backup</h3>
+                    <p>Effortlessly backup and restore your settings via leading cloud platforms.</p>
                 </div>
             </div>
         </div>
@@ -118,19 +116,19 @@
     <section id="download">
         <div class="container">
             <div class="section-heading">
-                <h2>Download & Get Started</h2>
-                <p>Choose your preferred platform and download YourCallYourRule today.</p>
+                <h2>Get Started Today</h2>
+                <p>Choose your platform and download YourCallYourRule now.</p>
             </div>
             <div class="download-options">
                 <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card google-play">
                     <i class="fab fa-google-play"></i>
-                    <h3>Get it on Google Play</h3>
-                    <p>Easy installation and updates.</p>
+                    <h3>Download from Google Play</h3>
+                    <p>Effortless installation and automatic updates.</p>
                 </a>
                 <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card github">
                     <i class="fab fa-github"></i>
-                    <h3>Download from GitHub</h3>
-                    <p>For advanced users and SMS filtering.</p>
+                    <h3>Get it on GitHub</h3>
+                    <p>For advanced customization and SMS filtering capabilities.</p>
                 </a>
             </div>
         </div>
@@ -140,7 +138,7 @@
         <div class="container">
             <div class="section-heading">
                 <h2>Join the Community</h2>
-                <p>Connect, share, and get support from our community channels.</p>
+                <p>Connect with users, share insights, and access support through our community channels.</p>
             </div>
             <div class="community-links">
                 <a href="https://t.me/yourcallyourrule" class="community-link telegram-channel">
@@ -155,7 +153,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 YourCallYourRule. All rights reserved.</p>
+            <p>© 2024 YourCallYourRule. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -165,12 +163,13 @@
             loop: true,
             direction: 'vertical',
             slidesPerView: 'auto',
-            spaceBetween: 10,
+            spaceBetween: 15,
             centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
+            autoplay: {  // Enable autoplay
+                delay: 3000, // Slide every 3 seconds
+                disableOnInteraction: false, // Allow interaction without stopping autoplay
             },
+            speed: 800, // Transition speed
         });
     </script>
 
