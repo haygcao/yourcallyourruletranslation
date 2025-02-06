@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script> <!--  ADD 'defer' HERE -->
 </head>
 <body class="red-theme">
     <header>
@@ -27,15 +28,23 @@
             </nav>
             <!-- Language Switcher (Buttons) -->
             <div class="language-switcher">
-                <button class="language-button" data-lang="en">EN</button>  <!--  USE BUTTON, not a -->
-                <button class="language-button" data-lang="es">ES</button>  <!--  USE BUTTON, not a -->
-                <button class="language-button" data-lang="fr">FR</button>  <!--  USE BUTTON, not a -->
-                <button class="language-button" data-lang="zh">ZH</button>  <!--  USE BUTTON, not a -->
+                <button class="language-button" data-lang="en">EN</button>
+                <button class="language-button" data-lang="es">ES</button>
+                <button class="language-button" data-lang="fr">Français</button>
+                <button class="language-button" data-lang="zh">简体</button>
+                <button class="language-button" data-lang="zh-td">繁體</button>
+                <button class="language-button" data-lang="ja">日本語</button>
+                <button class="language-button" data-lang="de">Deutsch</button>
+                <button class="language-button" data-lang="kr">한국어</button>
+                <button class="language-button" data-lang="ru">Русский</button>
+             
             </div>
         </div>
     </header>
 
-    <section id="hero">
+   <!-- ... (Rest of your HTML - Hero, Features, Download, Community, Footer) ... -->
+   <!-- ... (All the sections remain the SAME as before, with data-i18n attributes) ... -->
+     <section id="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -64,10 +73,10 @@
 
                     </div>
                     <p class="hero-subtitle" data-i18n="hero_subtitle">
-
+                        <!-- The <b> tags are handled *within* the JSON -->
                     </p>
                     <p class="hero-description" data-i18n="hero_description">
-
+                         <!-- The <b> tags are handled *within* the JSON -->
                     </p>
                     <div class="hero-button-area">
                         <a href="#" class="button primary hero-get-started" data-i18n="hero_button">Get Started <i class="fas fa-arrow-right"></i></a>
