@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourCallYourRule - Stop Spam Calls</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animations.css">  <!-- Separate CSS for animations! -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="red-theme">  <!-- Changed class to red-theme -->
+<body class="red-theme">
 
     <header>
         <div class="container header-container">
@@ -35,30 +35,27 @@
                 <div class="hero-text-column">
                     <div class="hero-text">
                         <h1 class="hero-title">
-                            <span class="title-part">Your</span>
-                            <span class="title-part animated-title">
-                                <span class="title-word">Call</span>,
-                                 <span class="title-icons">
-                                    <!-- Animations will be inserted here via CSS -->
+                            <span class="title-line">
+                                <span class="title-word">Stop</span>
+                                <span class="animated-spam-wrapper">
+                                   <span class="spam-word">Spam</span>
+                                    <i class="fas fa-phone-slash phone-strike"></i>
+                                     <i class="fas fa-ban ban-icon"></i>
                                 </span>
-                                 <span class="title-word">Your Rule</span>
+                                <span class="title-word">Calls</span>.
+                           </span>
+                            <span class="title-line title-line2">
+                                 <span class="title-word">Reclaim</span>
+                                  <span class="title-word">Your</span>
+                                  <span class="title-word animated-word" >
+                                        Peace
+                                       <i class="fas fa-dove peace-dove"></i>
+                                  </span>.
 
-                            </span>
-
-                            <span class="title-part">.</span>
-
-                             <span class="title-part animated-spam">
-                                <span class="spam-word">Stop Spam</span>
-                                 <span class="spam-icons">
-                                     <!-- Spam Block Animations -->
-                                 </span>
-                                Calls
                             </span>
                         </h1>
-                         <p class="hero-subtitle">
-                            <!--  Subtitle text  -->
-                        </p>
-                        <p class="hero-description">Take back control. Block unwanted calls and SMS.</p>
+                         <p class="hero-subtitle">YourCallYourRule: Customizable Call & SMS Blocking</p>
+                        <p class="hero-description">Take back control. Block unwanted calls.</p>
                         <div class="hero-button-area">
                             <a href="#" class="button primary hero-get-started">Get Started <i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -66,9 +63,10 @@
                 </div>
 
                 <div class="hero-visual-column">
-                    <div class="swiper hero-swiper">
+                    <!-- Swiper (same as before) -->
+                     <div class="swiper hero-swiper">
                         <div class="swiper-wrapper">
-                            <!-- ... Swiper Slides (same) ... -->
+                            <!-- Swiper Slides (same as before) -->
                             <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
                             <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
                             <div class="swiper-slide"><img src="assets/mockup3.png" alt="Mockup 3"></div>
@@ -90,8 +88,8 @@
         </div>
     </section>
 
-    <!-- Rest of the sections (Features, Download, Community, Footer) - same -->
- <section id="features">
+    <!-- ... Rest of the sections (Features, Download, Community, Footer - same content) ... -->
+  <section id="features">
         <div class="container features-container">
             <div class="section-heading features-heading">
                 <h2>Key Features</h2>
@@ -185,7 +183,7 @@
             <p>© 2024 YourCallYourRule. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.hero-swiper', {
             loop: true,
@@ -200,6 +198,5 @@
             speed: 800,
         });
     </script>
-
 </body>
 </html>
