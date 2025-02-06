@@ -1,13 +1,13 @@
 /* Global Styles */
 body.dark-mode {
-    font-family: 'Sora', sans-serif; /* Modern, clean font */
+    font-family: 'Sora', sans-serif;
     margin: 0;
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* Light text */
+    background-color: #1E1E1E; /* Dark Gray Background - matches example */
+    color: #ffffff;
     line-height: 1.7;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS */
-    -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -18,26 +18,51 @@ body.dark-mode {
     padding: 0 20px;
 }
 
+/* Rounded Corners - Applied to many elements */
+.header-container,
+.hero-container,
+.features-container,
+.features-heading,
+.feature-card,
+.download-container,
+.download-heading,
+.download-card,
+.community-container,
+.community-heading,
+.community-link,
+.community-telegram,
+.footer-container,
+.hero-swiper,
+header nav ul li a,
+.hero-button-area .button,
+#hero .button,
+#features .feature-item,
+#download .download-card,
+#community .community-link {
+    border-radius: 20px; /* Consistent rounded corners */
+}
+
+
 /* Header Styles */
 header {
-    background-color: rgba(20, 20, 20, 0.9); /* Darker, slightly transparent header */
-    backdrop-filter: blur(12px); /* Stronger blur effect */
+    background-color: #1E1E1E; /* Match background color */
     color: #ffffff;
-    padding: 30px 0; /* Increased header padding */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    padding: 30px 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-header .container {
+header .header-container { /* Target rounded header container */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 30px; /* Add padding inside rounded header */
+    background-color: #2C2C2C; /* Slightly darker header background */
 }
 
 header .logo img {
-    height: 50px; /* Larger logo */
+    height: 40px; /* Slightly smaller logo */
 }
 
 header nav ul {
@@ -48,30 +73,30 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 40px; /* Increased nav item spacing */
+    margin-left: 30px; /* Reduced nav item spacing */
 }
 
 header nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600; /* Bolder navigation links */
+    font-weight: 600;
     transition: color 0.3s ease;
-    position: relative; /* For hover underline effect */
-    padding-bottom: 5px; /* Space for underline */
+    position: relative;
+    padding-bottom: 5px;
 }
 
 header nav ul li a:hover {
-    color: #e0e0e0; /* Lighter hover color */
+    color: #C0C0C0; /* Light Gray Hover */
 }
 
-header nav ul li a::after { /* Hover underline effect */
+header nav ul li a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #e0e0e0;
+    background-color: #C0C0C0;
     transition: width 0.3s ease;
 }
 
@@ -82,416 +107,496 @@ header nav ul li a:hover::after {
 
 /* Hero Section */
 #hero {
-    background-color: #121212; /* Hero background same as body */
-    padding: 150px 0; /* Increased hero padding */
+    background-color: #1E1E1E;
+    padding: 120px 0;
     position: relative;
     overflow: hidden;
 }
 
-#hero .container {
-    display: flex;
-    justify-content: center; /* Center content in hero */
+#hero .hero-container { /* Target rounded hero container */
+    padding: 80px 50px; /* Add padding inside rounded hero */
+    background-color: #2C2C2C; /* Slightly darker hero background */
 }
 
 #hero .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 80px; /* Increased gap between columns */
-    align-items: center; /* Vertically align grid items */
-    max-width: 1200px; /* Limit grid width */
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; /* Reduced gap */
+    align-items: center;
+    max-width: 1200px;
 }
 
 
 #hero .hero-text-column {
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 #hero .hero-text {
-    margin-bottom: 0; /* Remove default margin */
+    margin-bottom: 0;
 }
 
 
-#hero h1 {
-    font-family: 'Sora', sans-serif; /* Modern, bold font */
-    font-weight: 700; /* Extra bold */
-    font-size: 5.5em; /* Even larger title */
+/* Hero Title - Example Style */
+.hero-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 4.0em; /* Adjusted size */
     color: #ffffff;
-    margin-bottom: 25px;
-    line-height: 1.1;
-    letter-spacing: -1px; /* Slightly reduce letter spacing for boldness */
+    margin-bottom: 10px; /* Reduced margin */
+    line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
-#hero h2 {
-    font-size: 2.2em;
-    color: #e0e0e0; /* Lighter subtitle color */
-    margin-bottom: 40px;
+.hero-title .highlight {
+    color: #A0E98F; /* Green Highlight - matches example */
+}
+
+/* Hero Subtitle - Example Style */
+.hero-subtitle {
+    font-size: 1.1em;
+    color: #C0C0C0; /* Light Gray Subtitle */
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+#hero .hero-description {
+    font-size: 1.1em;
+    color: #AAAAAA;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* Hero Button Area - Example Style */
+.hero-button-area {
+    margin-top: 20px;
+}
+
+.hero-button-area .button.primary.hero-get-started {
+    background-color: #A0E98F; /* Green Button - matches example */
+    color: #1E1E1E; /* Dark text on green button */
+    padding: 15px 35px;
+    font-size: 1.1em;
     font-weight: 600;
-    line-height: 1.3;
+    border: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-#hero p {
-    font-size: 1.2em;
-    color: #aaaaaa; /* Muted paragraph color */
-    margin-bottom: 50px; /* Increased paragraph margin */
-    line-height: 1.8;
+.hero-button-area .button.primary.hero-get-started:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 8px 20px rgba(0,0,0,0.3);
 }
 
 
 #hero .hero-visual-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to start of column */
+    align-items: flex-start;
 }
 
 
-#hero .swiper {
-    width: 100%; /* Swiper takes full column width */
-    max-width: 400px; /* Limit swiper width */
-    height: 600px; /* Increased height */
-    border-radius: 30px; /* Even more rounded corners */
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3); /* Deeper shadow */
-    margin-bottom: 30px; /* Space between swiper and buttons */
+#hero .hero-swiper { /* Target rounded hero swiper */
+    width: 100%;
+    max-width: 350px; /* Adjusted Swiper width */
+    height: 500px; /* Adjusted Swiper height */
+    margin-bottom: 20px; /* Reduced margin below swiper */
     overflow: hidden;
 }
 
 #hero .swiper-slide img {
-    border-radius: 30px; /* Match slide image corners */
+    border-radius: 20px; /* Match slide image corners */
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease-out; /* Smooth zoom transition */
+    transition: transform 0.6s ease-out;
 }
 
 #hero .swiper-slide:hover img {
-    transform: scale(1.05); /* Subtle zoom on hover */
+    transform: scale(1.03); /* Less zoom on hover */
 }
 
 
 #hero .hero-buttons {
     display: flex;
-    justify-content: flex-start; /* Align buttons to start */
+    justify-content: flex-start;
 }
 
 
-/* Buttons in Hero */
+/* Buttons in Hero (Download Buttons) */
 #hero .button {
-    padding: 18px 45px; /* Larger button padding */
-    border-radius: 15px; /* More rounded buttons */
-    font-size: 1.15em; /* Slightly larger font */
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2); /* Stronger button shadow */
-    margin: 0 20px 20px 0; /* Adjust button margins */
+    padding: 14px 30px; /* Adjusted button padding */
+    border-radius: 15px;
+    font-size: 1.0em; /* Slightly smaller font */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 0 15px 15px 0; /* Adjusted button margins */
     font-weight: 600;
-    letter-spacing: 0.5px; /* Slight letter spacing */
+    letter-spacing: 0.3px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: none;
     cursor: pointer;
-    outline: none; /* Remove default focus outline */
+    outline: none;
 }
 
 #hero .button.primary {
-    background-color: #e67e22; /* Vibrant orange */
+    background-color: #6A6AFF; /* Purple Button - matches example */
     color: #ffffff;
 }
 
 #hero .button.secondary {
-    background-color: #333333; /* Dark gray */
+    background-color: #333333; /* Dark Gray Secondary Button */
     color: #ffffff;
 }
 
 #hero .button:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 10px 15px 35px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-3px);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-#hero .button:active { /* Active state for click feedback */
+#hero .button:active {
     transform: translateY(0);
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Features Section */
 #features {
-    padding: 120px 0;
-    background-color: #1a1a1a; /* Slightly lighter dark background */
+    padding: 100px 0;
+    background-color: #1E1E1E;
 }
 
-#features .section-heading {
+#features .features-container { /* Target rounded features container */
+    padding: 80px 50px; /* Add padding inside rounded features */
+    background-color: #2C2C2C;
+}
+
+
+#features .features-heading { /* Target rounded features heading */
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px; /* Reduced margin */
+    padding: 30px; /* Add padding to heading container */
+    background-color: #383838; /* Slightly darker heading background */
 }
 
-#features .section-heading h2 {
-    font-family: 'Sora', sans-serif;
+#features .features-heading h2 {
+    font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 3.5em; /* Larger feature section title */
+    font-size: 2.5em; /* Adjusted size */
     color: #ffffff;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
 }
 
-#features .section-heading p {
-    font-size: 1.2em;
-    color: #aaaaaa;
+#features .features-heading p {
+    font-size: 1.1em;
+    color: #AAAAAA;
 }
 
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider feature items */
-    gap: 70px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
+    gap: 40px; /* Reduced gap */
 }
 
-.feature-item {
-    padding: 50px;
-    border-radius: 25px;
+#features .feature-item { /* Target rounded feature items */
+    padding: 40px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.15); /* Feature item shadow */
-    background-color: #222222; /* Darker feature item background */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #383838; /* Feature item background */
 }
 
-.feature-item:hover {
-    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: translateY(-8px);
+#features .feature-item:hover {
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
-.feature-item i {
-    font-size: 5em; /* Larger feature icons */
-    margin-bottom: 35px;
-    color: #e67e22;
-    opacity: 0.9; /* Slightly transparent icon */
+#features .feature-item i {
+    font-size: 3.5em; /* Adjusted size */
+    margin-bottom: 25px;
+    color: #A0E98F; /* Green Feature Icon */
+    opacity: 0.8;
 }
 
-.feature-item h3 {
+#features .feature-item h3 {
     color: #ffffff;
-    margin-bottom: 20px;
-    font-size: 1.7em; /* Larger feature titles */
+    margin-bottom: 15px;
+    font-size: 1.4em; /* Adjusted size */
     font-weight: 600;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
 }
 
-.feature-item p {
-    font-size: 1.15em;
-    color: #bbbbbb;
-    line-height: 1.7;
+#features .feature-item p {
+    font-size: 1.0em;
+    color: #BBBBBB;
+    line-height: 1.6;
 }
 
 
 /* Download Section */
 #download {
-    padding: 120px 0;
-    background-color: #121212; /* Download section same as body */
+    padding: 100px 0;
+    background-color: #1E1E1E;
+}
+
+#download .download-container { /* Target rounded download container */
+    padding: 80px 50px; /* Add padding inside rounded download */
+    background-color: #2C2C2C;
+}
+
+
+#download .download-heading { /* Target rounded download heading */
     text-align: center;
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: #383838;
 }
 
-#download .section-heading {
-    margin-bottom: 80px;
-}
-
-#download .section-heading h2 {
+#download .download-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: #ffffff;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
 }
 
-#download .section-heading p {
-    font-size: 1.2em;
-    color: #aaaaaa;
+#download .download-heading p {
+    font-size: 1.1em;
+    color: #AAAAAA;
 }
 
 
 .download-options {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 30px; /* Reduced gap */
     flex-wrap: wrap;
 }
 
-.download-card {
+#download .download-card { /* Target rounded download cards */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
-    background-color: #222222; /* Darker download card background */
-    border-radius: 25px;
+    padding: 40px;
+    background-color: #383838;
     text-decoration: none;
     color: #ffffff;
-    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.15); /* Download card shadow */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 350px; /* Fixed width for download cards */
+    width: 280px; /* Adjusted width */
     text-align: center;
 }
 
-.download-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2);
+#download .download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.download-card i {
-    font-size: 3.5em;
-    margin-bottom: 25px;
-    color: #e67e22;
-    opacity: 0.9;
-}
-
-.download-card h3 {
-    font-size: 1.6em;
+#download .download-card i {
+    font-size: 2.8em; /* Adjusted size */
     margin-bottom: 20px;
+    color: #6A6AFF; /* Purple Download Icon */
+    opacity: 0.8;
+}
+
+#download .download-card h3 {
+    font-size: 1.3em; /* Adjusted size */
+    margin-bottom: 15px;
     font-weight: 600;
     color: #ffffff;
 }
 
-.download-card p {
-    font-size: 1.15em;
-    color: #bbbbbb;
-    line-height: 1.7;
+#download .download-card p {
+    font-size: 1.0em;
+    color: #BBBBBB;
+    line-height: 1.6;
 }
 
 
 /* Community Section */
 #community {
-    background-color: #1a1a1a; /* Community section background */
-    color: #ffffff;
-    padding: 120px 0;
+    padding: 100px 0;
+    background-color: #1E1E1E;
+}
+
+#community .community-container { /* Target rounded community container */
+    padding: 80px 50px; /* Add padding inside rounded community */
+    background-color: #2C2C2C;
+}
+
+
+#community .community-heading { /* Target rounded community heading */
     text-align: center;
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: #383838;
 }
 
-#community .section-heading {
-    margin-bottom: 80px;
-}
-
-#community .section-heading h2 {
+#community .community-heading h2 {
     font-family: 'Sora', serif;
     font-weight: 700;
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: #ffffff;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
 }
 
-#community .section-heading p {
-    font-size: 1.2em;
-    color: #aaaaaa;
+#community .community-heading p {
+    font-size: 1.1em;
+    color: #AAAAAA;
 }
 
 
 .community-links {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 30px; /* Reduced gap */
     flex-wrap: wrap;
 }
 
 
-.community-link {
+#community .community-link { /* Target rounded community links */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 18px 35px;
-    background-color: #222222; /* Darker community link background */
-    border-radius: 15px;
+    padding: 15px 30px; /* Adjusted padding */
+    background-color: #383838;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.15em;
+    font-size: 1.0em; /* Adjusted size */
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1); /* Community link shadow */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.community-link:hover {
-    background-color: #333333;
-    transform: translateY(-5px);
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
+#community .community-link:hover {
+    background-color: #444444; /* Slightly darker hover */
+    transform: translateY(-3px);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.community-link i {
-    margin-right: 12px;
-    font-size: 1.3em;
-    opacity: 0.9;
+#community .community-link i {
+    margin-right: 10px;
+    font-size: 1.1em; /* Adjusted size */
+    opacity: 0.8;
 }
 
 
 /* Footer Styles */
 footer {
-    background-color: #080808; /* Even darker footer */
-    color: #bbbbbb;
+    background-color: #1E1E1E;
+    color: #BBBBBB;
     text-align: center;
-    padding: 40px;
-    font-size: 0.95em;
-    opacity: 0.8;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle top border */
+    padding: 30px 0; /* Reduced vertical padding */
+    font-size: 0.9em;
+    opacity: 0.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-container { /* Target rounded footer container */
+    padding: 20px 30px; /* Add padding to footer container */
+    background-color: #2C2C2C;
 }
 
 
 /* Responsive Design */
 @media (max-width: 1024px) {
     #hero .hero-grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
     #hero .hero-text-column,
     #hero .hero-visual-column {
-        width: 90%; /* Full width for columns on smaller screens */
+        width: 90%;
         padding-right: 0;
-        text-align: center; /* Center text on smaller screens */
+        text-align: center;
     }
 
     #hero .hero-visual-column {
-        align-items: center; /* Center align visual column */
+        align-items: center;
     }
 
-    #hero .swiper {
-        max-width: 80%; /* Adjust swiper width for smaller screens */
+    #hero .hero-swiper {
+        max-width: 80%;
         height: auto;
         aspect-ratio: 9/16;
         width: auto;
-        margin-bottom: 40px; /* Increased margin below swiper */
+        margin-bottom: 30px;
     }
 
     #hero .hero-buttons {
-        justify-content: center; /* Center buttons */
+        justify-content: center;
     }
 
-    #hero h1 {
-        font-size: 4em; /* Adjust title size on smaller screens */
-    }
-
-    #hero h2 {
-        font-size: 1.8em;
-    }
-
-    #features .feature-grid,
-    #download .download-options,
-    #community .community-links {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid for smaller screens */
-    }
-
-    .download-card {
-        width: 100%; /* Full width download cards on smaller screens */
-    }
-}
-
-@media (max-width: 768px) {
-    header nav ul li {
-        margin-left: 30px; /* Reduce nav item spacing further */
-    }
-
-    #hero h1 {
-        font-size: 3.2em; /* Further reduce title size on very small screens */
+    .hero-title {
+        font-size: 3.2em; /* Adjusted title size */
     }
 
     #hero h2 {
         font-size: 1.6em;
     }
 
-    #hero p {
-        font-size: 1.1em;
+    #features .feature-grid,
+    #download .download-options,
+    #community .community-links {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Further adjusted minmax */
     }
 
-    .feature-item {
-        padding: 40px; /* Reduce feature item padding */
+    #download .download-card {
+        width: 100%;
+    }
+
+    .header-container,
+    .hero-container,
+    .features-container,
+    .features-heading,
+    .download-container,
+    .download-heading,
+    .community-container,
+    .community-heading,
+    .footer-container {
+        padding: 40px 30px; /* Adjust container padding on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul li {
+        margin-left: 20px; /* Further reduced nav spacing */
+    }
+
+    .hero-title {
+        font-size: 2.8em; /* Even smaller title on very small screens */
+    }
+
+    #hero h2 {
+        font-size: 1.4em;
+    }
+
+    #hero p {
+        font-size: 0.95em;
+    }
+
+    #features .feature-item,
+    #download .download-card,
+    #community .community-link {
+        padding: 30px; /* Reduce padding on smaller feature items/cards */
+    }
+
+    .header-container,
+    .hero-container,
+    .features-container,
+    .features-heading,
+    .download-container,
+    .download-heading,
+    .community-container,
+    .community-heading,
+    .footer-container {
+        padding: 30px 20px; /* Further reduce container padding on very small screens */
     }
 }
