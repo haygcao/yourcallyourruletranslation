@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourCallYourRule - 告别骚扰电话</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,16 +33,17 @@
             <div class="hero-grid">
                 <div class="hero-text-column">
                     <div class="hero-text">
-                        <h1 class="hero-title">拦截<span class="highlight">骚扰电话</span>，还您清净！</h1>
-                        <p class="hero-subtitle">YourCallYourRule：定制化来电和短信拦截</p>
-                        <p class="hero-description">掌控您的手机，告别骚扰电话和垃圾短信。享受更安静、更专注的移动体验。</p>
+                        <h1 class="hero-title">拦截 <span class="highlight">骚扰电话</span>，<br>还你清净！</h1>
+                        <!-- 动画容器 -->
+                        <div class="hero-animation-container">
+                            <div class="animation-scene lightning-strike"></div>
+                            <div class="animation-scene delivery-person"></div>
+                            <div class="animation-scene auto-hangup"></div>
+                        </div>
+                        <p class="hero-subtitle">YourCallYourRule: 自定义来电 & 短信拦截</p>
+                        <p class="hero-description">掌控你的手机，拦截不想接的电话和短信。享受更安静、更舒心的移动体验。</p>
                         <div class="hero-button-area">
                             <a href="#" class="button primary hero-get-started">立即体验 <i class="fas fa-phone-slash"></i></a>
-                        </div>
-                         <!-- 闪电动画 -->
-                        <div class="lightning-animation">
-                            <i class="fas fa-phone-slash blocked-call"></i>
-                            <i class="fas fa-bolt lightning-bolt"></i>
                         </div>
                     </div>
                 </div>
@@ -50,6 +51,7 @@
                 <div class="hero-visual-column">
                     <div class="swiper hero-swiper">
                         <div class="swiper-wrapper">
+                            <!-- Swiper slides (mockups) -->
                             <div class="swiper-slide"><img src="assets/mockup1.png" alt="Mockup 1"></div>
                             <div class="swiper-slide"><img src="assets/mockup2.png" alt="Mockup 2"></div>
                             <div class="swiper-slide"><img src="assets/mockup3.png" alt="Mockup 3"></div>
@@ -67,27 +69,23 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-bg-art"></div>
+            <div class="hero-bg-art"></div> <!-- Background art (optional) -->
         </div>
     </section>
 
+    <!-- Features, Download, Community, Footer sections (using your previous HTML with minor class updates) -->
+    <!-- ... (Rest of your HTML - Feature, Download, Community sections) ... -->
     <section id="features">
         <div class="container features-container">
             <div class="section-heading features-heading">
-                <h2>核心功能：拦截噪音，掌控通信</h2>
-                <p>了解 YourCallYourRule 如何帮助您控制您的通信。</p>
+                <h2>核心功能，屏蔽噪音</h2>
+                <p>了解 YourCallYourRule 如何让您掌控您的通信。</p>
             </div>
             <div class="feature-grid">
                 <div class="feature-item feature-card">
                     <i class="fas fa-phone-slash feature-icon"></i>
                     <h3>智能来电拦截</h3>
-                    <p>通过智能规则有效拦截骚扰电话和未知号码。</p>
-                      <!-- 自动挂断动画 -->
-                     <div class="hang-up-animation">
-                        <i class="fas fa-phone-volume"></i>
-                        <i class="fas fa-arrow-down"></i>
-                        <i class="fas fa-phone-slash"></i>
-                    </div>
+                    <p>使用智能规则有效阻止垃圾来电和不需要的号码。</p>
                 </div>
                 <div class="feature-item feature-card">
                     <i class="fas fa-sms-slash feature-icon"></i>
@@ -96,35 +94,33 @@
                 </div>
                 <div class="feature-item feature-card">
                     <i class="fas fa-list-alt feature-icon"></i>
-                    <h3>自定义拦截列表</h3>
-                    <p>创建和管理个性化的黑名单和白名单，实现完全控制。</p>
+                    <h3>自定义阻止列表</h3>
+                    <p>创建和管理个性化的阻止列表和白名单，以实现终极控制。</p>
                 </div>
                 <div class="feature-item feature-card">
-                    <i class="fas fa-cogs feature-icon"></i>
-                    <h3>灵活的拦截规则</h3>
-                    <p>根据号码、关键字、模式等设置拦截规则。</p>
+                     <i class="fas fa-cogs feature-icon"></i>
+                    <h3>灵活的阻止规则</h3>
+                    <p>根据号码、关键词、模式等设置阻止规则。</p>
                 </div>
                 <div class="feature-item feature-card">
                     <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>增强隐私保护</h3>
+                    <h3>增强隐私</h3>
                     <p>通过本地数据管理和安全功能保护您的隐私和数据。</p>
                 </div>
                 <div class="feature-item feature-card">
-                    <i class="fas fa-cloud-download-alt feature-icon"></i>
-                    <h3>在线号码库（可选）</h3>
-                    <p>可选择订阅在线号码库，以增强垃圾电话检测。</p>
+                  <i class="fas fa-cloud-download-alt feature-icon"></i>
+                    <h3>在线垃圾数据库（可选）</h3>
+                    <p>可选择订阅在线数据库以增强垃圾邮件检测。</p>
                 </div>
                 <div class="feature-item feature-card">
                     <i class="fas fa-code feature-icon"></i>
                     <h3>正则表达式支持</h3>
-                    <p>利用正则表达式实现强大而复杂的拦截规则。</p>
+                    <p>利用正则表达式实现强大而复杂的阻止规则。</p>
                 </div>
                 <div class="feature-item feature-card">
-                     <!-- 快递/外卖小人动画 -->
-                    <i class="fas fa-truck feature-icon delivery-animation"></i>
-                    <h3>扩展插件</h3>
+                   <i class="fas fa-expand-plugins feature-icon"></i>
+                    <h3>插件可扩展性</h3>
                     <p>使用自定义插件和集成扩展应用程序的功能。</p>
-
                 </div>
             </div>
         </div>
@@ -134,18 +130,18 @@
         <div class="container download-container">
             <div class="section-heading download-heading">
                 <h2>立即下载 YourCallYourRule</h2>
-                <p>开始拦截垃圾电话，享受更清静的手机体验。</p>
+                <p>立即开始阻止垃圾邮件并享受宁静的手机体验。</p>
             </div>
             <div class="download-options">
                 <a href="https://play.google.com/apps/testing/com.yours.yourcallyourrule" class="download-card download-google-play">
                     <i class="fab fa-google-play"></i>
-                    <h3>Google Play 下载</h3>
-                    <p>安装和更新更方便。</p>
+                    <h3>在 Google Play 上获取</h3>
+                    <p>对于大多数用户来说，易于安装和更新。</p>
                 </a>
                 <a href="https://github.com/haygcao/yourcallyourruletranslation/releases" class="download-card download-github">
                     <i class="fab fa-github"></i>
-                    <h3>GitHub 下载</h3>
-                    <p>支持短信过滤和高级选项。</p>
+                    <h3>从 GitHub 下载</h3>
+                    <p>用于短信过滤和高级选项。</p>
                 </a>
             </div>
         </div>
@@ -170,7 +166,7 @@
 
     <footer>
         <div class="container footer-container">
-            <p>© 2024 YourCallYourRule. 版权所有.</p>
+            <p>© 2024 YourCallYourRule. 版权所有。</p>
         </div>
     </footer>
 
@@ -188,6 +184,22 @@
             },
             speed: 800,
         });
+
+        // 动画场景切换 (更简洁的实现)
+        const animationScenes = document.querySelectorAll('.animation-scene');
+        let currentSceneIndex = 0;
+
+        function showNextScene() {
+            animationScenes[currentSceneIndex].classList.remove('active');
+            currentSceneIndex = (currentSceneIndex + 1) % animationScenes.length;
+            animationScenes[currentSceneIndex].classList.add('active');
+        }
+
+        // 初始显示第一个场景
+        animationScenes[0].classList.add('active');
+        // 定时切换场景
+        setInterval(showNextScene, 4000); // 每 4 秒切换一次
+
     </script>
 
 </body>
