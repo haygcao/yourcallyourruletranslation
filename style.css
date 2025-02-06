@@ -1,0 +1,255 @@
+/*  General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: #35424a;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: 3px solid #e8491d;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+}
+
+header .branding {
+    float: left;
+}
+
+header .branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #ccc;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #e9e9e9;
+    color: #333;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#hero img {
+    width: 40%;
+    max-width: 400px; /* Adjust as needed */
+}
+
+#hero div {
+    width: 50%;
+    padding: 20px;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #35424a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button.primary {
+    background-color: #e8491d;
+}
+
+.button.secondary {
+    background-color: #6c757d; /* Grayish */
+}
+
+.button:hover {
+    background-color: #e8491d;
+}
+
+.buttons a i {
+    margin-right: 5px;
+}
+/* Features Section */
+#features {
+    padding: 30px;
+    background: #fff;
+}
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #35424a;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #e8491d;
+}
+
+.feature-item h3 {
+    color: #35424a;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* SMS Filtering Section */
+#sms-filtering {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#sms-filtering h2 {
+    color: #35424a;
+    margin-bottom: 20px;
+}
+
+#sms-filtering p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Extend Section */
+#extend {
+    padding: 40px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+#extend h2 {
+    color: #35424a;
+    margin-bottom: 20px;
+}
+
+#extend p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Community Section */
+#community {
+    background-color: #35424a;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#community h2 {
+    margin-bottom: 20px;
+}
+
+#community p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Footer Styles */
+footer {
+    background: #35424a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    header .branding,
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav li {
+        float: none;
+        display: inline;
+    }
+
+    #hero .container {
+        flex-direction: column;
+    }
+
+    #hero img {
+        width: 80%;
+    }
+
+    #hero div {
+        width: 100%;
+        padding: 10px;
+    }
+}
