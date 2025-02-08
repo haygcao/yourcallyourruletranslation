@@ -1,0 +1,2047 @@
+{
+  "@@last_modified": "2024-09-28T15:11:18.421825",
+  "fraudScamLikely": "Fraud Scam Likely",
+  "@fraudScamLikely": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "spamLikely": "Spam Likely",
+  "@spamLikely": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "telemarketing": "Telemarketing",
+  "@telemarketing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "robocall": "Robocall",
+  "@robocall": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delivery": "Delivery",
+  "@delivery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "takeaway": "Takeaway",
+  "@takeaway": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ridesharing": "Ridesharing",
+  "@ridesharing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "insurance": "Insurance",
+  "@insurance": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loan": "Loan",
+  "@loan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "customerService": "Customer Service",
+  "@customerService": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unknown": "Unknown",
+  "@unknown": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "financial": "Financial",
+  "@financial": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bank": "Bank",
+  "@bank": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "education": "Education",
+  "@education": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "medical": "Medical",
+  "@medical": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "charity": "Charity",
+  "@charity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "other": "Other",
+  "@other": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "collection": "Collection",
+  "@collection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "survey": "Survey",
+  "@survey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "political": "Political",
+  "@political": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ecommerce": "Ecommerce",
+  "@ecommerce": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "risk": "Risk",
+  "@risk": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeFixedLineOrMobile": "Fixed Line or Mobile",
+  "@phoneNumberTypeFixedLineOrMobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeMobile": "Mobile",
+  "@phoneNumberTypeMobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeFixedLine": "Fixed Line",
+  "@phoneNumberTypeFixedLine": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeTollFree": "Toll Free",
+  "@phoneNumberTypeTollFree": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypePremiumRate": "Premium Rate",
+  "@phoneNumberTypePremiumRate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeSharedCost": "Shared Cost",
+  "@phoneNumberTypeSharedCost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypePersonalNumber": "Personal Number",
+  "@phoneNumberTypePersonalNumber": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypePager": "Pager",
+  "@phoneNumberTypePager": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeUan": "UAN",
+  "@phoneNumberTypeUan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeVoicemail": "Voicemail",
+  "@phoneNumberTypeVoicemail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumberTypeUnknown": "Unknown",
+  "@phoneNumberTypeUnknown": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "customizeCallerID": "Customize Caller ID",
+  "@customizeCallerID": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "windowSize": "Window Size",
+  "@windowSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "width": "Width",
+  "@width": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "height": "Height",
+  "@height": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "backgroundGradient": "Background Gradient",
+  "@backgroundGradient": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "startColor": "Start Color",
+  "@startColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "endColor": "End Color",
+  "@endColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "textAndLabelColors": "Text & Label Colors",
+  "@textAndLabelColors": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelIconColor": "Label Icon Color",
+  "@labelIconColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationIconColor": "Location Icon Color",
+  "@locationIconColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callTypeIconColor": "CallType Icon Color",
+  "@callTypeIconColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarBorderColor": "Avatar Border Color",
+  "@avatarBorderColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameColor": "Name Color",
+  "@nameColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberColor": "Number Color",
+  "@numberColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationColor": "Location Color",
+  "@locationColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "carrierColor": "Carrier Color",
+  "@carrierColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countryNameColor": "Country Name Color",
+  "@countryNameColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelsColor": "Labels Color",
+  "@labelsColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countColor": "Count Color",
+  "@countColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberTypeColor": "Number Type Color",
+  "@numberTypeColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "stirColor": "Stir Color",
+  "@stirColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "simCardColor": "SIM Card Color",
+  "@simCardColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectColor": "Select Color",
+  "@selectColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fontSizes": "Font Sizes",
+  "@fontSizes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameFontSize": "Name Font Size",
+  "@nameFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "carrierFontSize": "Carrier Font Size",
+  "@carrierFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countryNameFontSize": "Country Name Font Size",
+  "@countryNameFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelsFontSize": "Labels Font Size",
+  "@labelsFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countFontSize": "Count Font Size",
+  "@countFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberTypeFontSize": "Number Type Font Size",
+  "@numberTypeFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberFontSize": "Number Font Size",
+  "@numberFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationFontSize": "Location Font Size",
+  "@locationFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "stirFontSize": "Stir Font Size",
+  "@stirFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "simCardFontSize": "SIM Card Font Size",
+  "@simCardFontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarAndIconSizes": "Avatar and Icon Sizes",
+  "@avatarAndIconSizes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarSize": "Avatar Size",
+  "@avatarSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarBorderSize": "Avatar Border Size",
+  "@avatarBorderSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "iconSize": "Icon Size",
+  "@iconSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "elementPositions": "Element Positions",
+  "@elementPositions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarPosition": "Avatar Position",
+  "@avatarPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "namePosition": "Name Position",
+  "@namePosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "carrierPosition": "Carrier Position",
+  "@carrierPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countryNamePosition": "Country Name Position",
+  "@countryNamePosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelsPosition": "Labels Position",
+  "@labelsPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countPosition": "Count Position",
+  "@countPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberTypePosition": "Number Type Position",
+  "@numberTypePosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberPosition": "Number Position",
+  "@numberPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationPosition": "Location Position",
+  "@locationPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "stirPosition": "Stir Position",
+  "@stirPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "simCardPosition": "Sim Card Position",
+  "@simCardPosition": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importStr": "Import",
+  "@importStr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportStr": "Export",
+  "@exportStr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "saveStr": "Save",
+  "@saveStr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "configurationImportedSuccessfully": "Configuration imported Successfully",
+  "@configurationImportedSuccessfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidJSONFormat": "Invalid JSON format",
+  "@invalidJSONFormat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "configurationExportedToFile": "Configuration exported to file!",
+  "@configurationExportedToFile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "configurationSaved": "Configuration Saved!",
+  "@configurationSaved": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markedBy": "Marked by",
+  "@markedBy": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verified": "Verified",
+  "@verified": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notVerified": "Not Verified",
+  "@notVerified": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "failed": "Failed",
+  "@failed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "localCard1Title": "Local Card 1",
+  "@localCard1Title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "localCard1Content": "This is the content of local card 1",
+  "@localCard1Content": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blockedCallsStatistics": "Blocked Calls Statistics",
+  "@blockedCallsStatistics": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callerIdStyle": "Caller ID Style",
+  "@callerIdStyle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callerIdStyleContent": "This is to customize the caller ID style",
+  "@callerIdStyleContent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subscribe": "Subscribe",
+  "@subscribe": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contacts": "Contacts",
+  "@contacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whitelist": "Whitelist",
+  "@whitelist": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blacklist": "Blacklist",
+  "@blacklist": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowed": "Allowed",
+  "@allowed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blocked": "Blocked",
+  "@blocked": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "regex": "Regex",
+  "@regex": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sync": "Sync",
+  "@sync": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "label": "Label",
+  "@label": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "plugins": "Plugins",
+  "@plugins": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "manageRules": "Manage Rules",
+  "@manageRules": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowAllAllowedNumbers": "Allow All Allowed Numbers",
+  "@allowAllAllowedNumbers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowRegexBlacklistedPatterns": "Allow Regex Blacklisted Patterns",
+  "@allowRegexBlacklistedPatterns": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowAllWhitelistedNumbers": "Allow All Whitelisted Numbers",
+  "@allowAllWhitelistedNumbers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowBlockedNumbers": "Allow Blocked Numbers",
+  "@allowBlockedNumbers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowRegexWhitelistedPatterns": "Allow Regex Whitelisted Patterns",
+  "@allowRegexWhitelistedPatterns": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowAllBlacklistedNumbers": "Allow All Blacklisted Numbers",
+  "@allowAllBlacklistedNumbers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rejectAllNumbers": "Reject All Numbers",
+  "@rejectAllNumbers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeatedBlockedCallsInMins": "Repeated Blocked Calls in {minutes} mins",
+  "@repeatedBlockedCallsInMins": {
+    "type": "text",
+    "placeholders": {
+      "minutes": {}
+    }
+  },
+  "accept": "Accept",
+  "@accept": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reject": "Reject",
+  "@reject": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "initializingDatabase": "Initializing database... {percentage}%",
+  "@initializingDatabase": {
+    "type": "text",
+    "placeholders": {
+      "percentage": {}
+    }
+  },
+  "pleaseWaitForDatabaseInitializationToComplete": "Please wait for database initialization to complete.",
+  "@pleaseWaitForDatabaseInitializationToComplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseYourLanguage": "Choose Your Language",
+  "@chooseYourLanguage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableOverlayPermission": "Enable Overlay Permission",
+  "@enableOverlayPermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "overlayPermissionDescription": "This permission is required for our app to display important information on top of other apps.\n\nPlease tap \"Grant Permission\" and allow the permission in the next screen.",
+  "@overlayPermissionDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "grantPermission": "Grant Permission",
+  "@grantPermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youHaveEnabledThePermission": "You have enabled the permission.",
+  "@youHaveEnabledThePermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "overlayPermissionNotGranted": "Overlay permission not granted, which may affect the caller ID display function. You can enable the permission in the app settings.",
+  "@overlayPermissionNotGranted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setUpDefaultCallerIdApp": "SetUp Default Caller ID APP",
+  "@setUpDefaultCallerIdApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "defaultCallerIdPermissionDescription": "This permission is required for our app to be the default caller id app.\n\nPlease tap \"SetUp Default\" and allow the permission in the next screen.",
+  "@defaultCallerIdPermissionDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setUpDefault": "SetUp Default",
+  "@setUpDefault": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callScreeningRoleRequestSuccessful": "Call screening role request successful!",
+  "@callScreeningRoleRequestSuccessful": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callScreeningRoleRequestFailed": "Call screening role request failed!",
+  "@callScreeningRoleRequestFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorRequestingCallScreeningRole": "Error requesting call screening role: {error}",
+  "@errorRequestingCallScreeningRole": {
+    "type": "text",
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "feature": "Feature {index}",
+  "@feature": {
+    "type": "text",
+    "placeholders": {
+      "index": {}
+    }
+  },
+  "feature1Description": "This is the description for Feature 1.",
+  "@feature1Description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "feature3Description": "This is the description for Feature 3.",
+  "@feature3Description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "feature5Description": "This is the description for Feature 5.",
+  "@feature5Description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "featureDescription": "This is feature description {index}.",
+  "@featureDescription": {
+    "type": "text",
+    "placeholders": {
+      "index": {}
+    }
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "next": "Next",
+  "@next": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "skip": "Skip",
+  "@skip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settingsSaved": "Settings saved",
+  "@settingsSaved": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "adEnabled": "Ad Enabled:",
+  "@adEnabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enabled": "Enabled",
+  "@enabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disabled": "Disabled",
+  "@disabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeAdsAndEnableOnlineBackup": "Remove ADs and Enable Online Backup",
+  "@removeAdsAndEnableOnlineBackup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableToRemoveAds": "Enable to remove ads",
+  "@enableToRemoveAds": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inAppPurchasesEnabled": "In-app purchases enabled",
+  "@inAppPurchasesEnabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blockedCallAction": "Blocked Call Action",
+  "@blockedCallAction": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incomingCallInterceptAction": "Incoming Call Intercept Action",
+  "@incomingCallInterceptAction": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseTheDefaultInterceptAction": "Choose the default Intercept Action",
+  "@chooseTheDefaultInterceptAction": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "endCall": "EndCall",
+  "@endCall": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "answerThenHangup": "AnswerThenHangup",
+  "@answerThenHangup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "silenceNoAnswer": "SilenceNoAnswer",
+  "@silenceNoAnswer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blockedCallNotification": "Blocked Call Notification",
+  "@blockedCallNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableBlockedCallNotification": "Enable Blocked Call Notification",
+  "@enableBlockedCallNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disableBlockedCallNotification": "Disable Blocked Call Notification",
+  "@disableBlockedCallNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "autoCloseLocalNotification": "Auto Close Local Notification",
+  "@autoCloseLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlyOriginalCallAppNotification": "Only Original Call App Notification",
+  "@onlyOriginalCallAppNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bothOriginalCallAppAndLocalNotification": "Both Original Call App & Local Notification",
+  "@bothOriginalCallAppAndLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeatedCalls": "Repeated Calls",
+  "@repeatedCalls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsTimeRangeMinutes": "Statistics Time Range (minutes):",
+  "@statisticsTimeRangeMinutes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "interceptRepeatedIncomingCallsWithinTheTimeRange": "Intercept repeated incoming calls within the time range",
+  "@interceptRepeatedIncomingCallsWithinTheTimeRange": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowRepeatedIncomingCalls": "Allow Repeated incoming calls",
+  "@allowRepeatedIncomingCalls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filterRepeatedIncomingCalls": "Filter Repeated incoming calls",
+  "@filterRepeatedIncomingCalls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsNotification": "SMS Notification",
+  "@smsNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsFiltering": "SMS Filtering",
+  "@smsFiltering": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filterIncomingSmsMessages": "Filter incoming SMS messages",
+  "@filterIncomingSmsMessages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noIncomingSmsMessagesFilter": "No incoming SMS messages Filter",
+  "@noIncomingSmsMessagesFilter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsLocalNotification": "SMS Local Notification",
+  "@smsLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableSmsLocalNotification": "Enable SMS Local Notification",
+  "@enableSmsLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disableSmsLocalNotification": "Disable SMS Local Notification",
+  "@disableSmsLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlyRingLocalNotification": "Only Ring Local Notification",
+  "@onlyRingLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlyUseOriginalSmsNotification": "Only Use Original SMS Notification",
+  "@onlyUseOriginalSmsNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bothOriginalSmsAndLocalNotification": "Both Original SMS & Local Notification",
+  "@bothOriginalSmsAndLocalNotification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "permissionsRequired": "Permissions Required",
+  "@permissionsRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsFilteringRequiresSmsNotificationAndPhonePermissionsPleaseGrantThesePermissionsToEnableThisFeature": "SMS filtering requires SMS, notification, and phone permissions. Please grant these permissions to enable this feature.",
+  "@smsFilteringRequiresSmsNotificationAndPhonePermissionsPleaseGrantThesePermissionsToEnableThisFeature": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "OK",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "serviceUpdateIntervalsDays": "Service Update Intervals (days)",
+  "@serviceUpdateIntervalsDays": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowThisAppToShowCallerId": "Allow This App To Show Caller ID",
+  "@allowThisAppToShowCallerId": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disableThisAppToShowCallerId": "Disable This App To Show Caller ID",
+  "@disableThisAppToShowCallerId": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "permissions": "Permissions",
+  "@permissions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callLog": "Call Log",
+  "@callLog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "overlay": "Overlay",
+  "@overlay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sms": "SMS",
+  "@sms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "storage": "Storage",
+  "@storage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "batteryOptimization": "Battery Optimization",
+  "@batteryOptimization": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorGettingPermissionStatus": "Error getting permission status",
+  "@errorGettingPermissionStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disablePermission": "Disable Permission",
+  "@disablePermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youNeedToManuallyDisableThePermissionNamePermissionInTheAppSettings": "You need to manually disable the {permissionName} permission in the app settings.",
+  "@youNeedToManuallyDisableThePermissionNamePermissionInTheAppSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "permissionDenied": "Permission Denied",
+  "@permissionDenied": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "permissionNamePermissionWasNotGranted": "permission was not granted.",
+  "@permissionNamePermissionWasNotGranted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableDarkModeBasedOnTime": "Enable dark mode based on time",
+  "@enableDarkModeBasedOnTime": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "system": "System",
+  "@system": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "light": "Light",
+  "@light": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dark": "Dark",
+  "@dark": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editAvatar": "Edit Avatar",
+  "@editAvatar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noImageSelected": "No image selected",
+  "@noImageSelected": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseFromGallery": "Choose from Gallery",
+  "@chooseFromGallery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "useNetworkImage": "Use Network Image",
+  "@useNetworkImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "save": "Save",
+  "@save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorPickingImage": "Error picking image: $e",
+  "@errorPickingImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterImageUrl": "Enter Image URL",
+  "@enterImageUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cropAvatar": "Crop Avatar",
+  "@cropAvatar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorCroppingImage": "Error cropping image: $e",
+  "@errorCroppingImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "Error",
+  "@error": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameCannotBeEmpty": "Name cannot be empty",
+  "@nameCannotBeEmpty": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterAPhoneNumber": "Please enter a phone number",
+  "@pleaseEnterAPhoneNumber": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseSelectALabel": "Please select a label",
+  "@pleaseSelectALabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "entryAddedSuccessfully": "entry added successfully",
+  "@entryAddedSuccessfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addAllowedEntryPage": "Add Allowed Entry Page",
+  "@addAllowedEntryPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportAllowedEntryPage": "Export Allowed Entry Page",
+  "@exportAllowedEntryPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importAllowedEntryPage": "Import Allowed Entry Page",
+  "@importAllowedEntryPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allowedPageView": "AllowedPageView",
+  "@allowedPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "export": "Export",
+  "@export": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "add": "Add",
+  "@add": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "import": "Import",
+  "@import": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "Delete",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "urlFormatIsIncorrect": "URL format is incorrect",
+  "@urlFormatIsIncorrect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseSelectAFileOrInputAUrl": "Please select a file or input a URL",
+  "@pleaseSelectAFileOrInputAUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addBlacklistPage": "Add Blacklist Page",
+  "@addBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportBlacklistPage": "Export Blacklist Page",
+  "@exportBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importBlacklistPage": "Import Blacklist Page",
+  "@importBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blacklistPageView": "BlacklistPageView",
+  "@blacklistPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addBlockedPage": "Add Blocked Page",
+  "@addBlockedPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportBlockedPage": "Export Blocked Page",
+  "@exportBlockedPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importBlockedPage": "Import Blocked Page",
+  "@importBlockedPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blockedPageView": "BlockedPageView",
+  "@blockedPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "permissionGranted": "Permission granted",
+  "@permissionGranted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "thisAppNeedsAccessToYourCallLogInformationToFunctionProperlyPleaseGrantPermission": "This app needs access to your call log information to function properly. Please grant permission.",
+  "@thisAppNeedsAccessToYourCallLogInformationToFunctionProperlyPleaseGrantPermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youHaveDeniedPermissionYouCanManuallyEnablePermissionInSettings": "You have denied permission. You can manually enable permission in Settings.",
+  "@youHaveDeniedPermissionYouCanManuallyEnablePermissionInSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callHistory": "Call History",
+  "@callHistory": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callLogPermissionDenied": "Call log permission denied",
+  "@callLogPermissionDenied": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToAllowed": "Add to Allowed",
+  "@addToAllowed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeAllowed": "Remove Allowed",
+  "@removeAllowed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToBlocked": "Add to Blocked",
+  "@addToBlocked": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeBlocked": "Remove Blocked",
+  "@removeBlocked": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseAvatarLocalOrNetwork": "Choose Avatar (Local or Network):",
+  "@chooseAvatarLocalOrNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarUrlOrPath": "Avatar URL or Path",
+  "@avatarUrlOrPath": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "name": "Name",
+  "@name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addContact": "Add Contact",
+  "@addContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Settings",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showContactButton": "Show Contact Button",
+  "@showContactButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showContactIconButton": "Show Contact Icon Button",
+  "@showContactIconButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "close": "Close",
+  "@close": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectALabel": "Select a label:",
+  "@selectALabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectedLabel": "Selected Label",
+  "@selectedLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationOther": "locationOther",
+  "@locationOther": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otherUnknown": "OtherUnknown",
+  "@otherUnknown": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "video": "Video",
+  "@video": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "call": "Call",
+  "@call": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "message": "Message",
+  "@message": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatsApp": "WhatsApp",
+  "@whatsApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "telegram": "Telegram",
+  "@telegram": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "edit": "Edit",
+  "@edit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToLabel": "Add to Label",
+  "@addToLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "Email",
+  "@email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "group": "Group",
+  "@group": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "website": "Website",
+  "@website": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subscribedLink": "Subscribed link",
+  "@subscribedLink": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteContact": "Delete Contact",
+  "@deleteContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "areYouSureYouWantToDeleteThisContact": "Are you sure you want to delete this contact?",
+  "@areYouSureYouWantToDeleteThisContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importContacts": "Import Contacts",
+  "@importContacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importFromVcf": "Import from VCF",
+  "@importFromVcf": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importFromCsv": "Import from CSV",
+  "@importFromCsv": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importFromJson": "Import from JSON",
+  "@importFromJson": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importFromYaml": "Import from YAML",
+  "@importFromYaml": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importFromUrl": "Import from URL",
+  "@importFromUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactsImportedSuccessfully": "Contacts imported successfully",
+  "@contactsImportedSuccessfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorImportingContacts": "Error importing contacts:",
+  "@errorImportingContacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterUrl": "Enter URL",
+  "@enterUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactsImportedSuccessfullyFromUrl": "Contacts imported successfully from URL",
+  "@contactsImportedSuccessfullyFromUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactsPage": "Contacts Page",
+  "@contactsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchContacts": "Search contacts",
+  "@searchContacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showingResultsFor": "Showing results for ",
+  "@showingResultsFor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mergeContacts": "Merge Contacts",
+  "@mergeContacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mergeContactCountContactsWithNumberPhoneNumber": "Merge {contactCount} contacts with number {phoneNumber}",
+  "@mergeContactCountContactsWithNumberPhoneNumber": {
+    "type": "text",
+    "placeholders": {
+      "contactCount": {},
+      "phoneNumber": {}
+    }
+  },
+  "mergeSelected": "Merge Selected",
+  "@mergeSelected": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectedContactsMergedSuccessfully": "Selected contacts merged successfully",
+  "@selectedContactsMergedSuccessfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showWhatsApp": "Show WhatsApp",
+  "@showWhatsApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showTelegram": "Show Telegram",
+  "@showTelegram": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportContacts": "Export Contacts",
+  "@exportContacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addContactSubscriptionPage": "Add Contact Subscription Page",
+  "@addContactSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactSubscriptionListView": "ContactSubscriptionListView",
+  "@contactSubscriptionListView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterAnUrl": "Please enter an url",
+  "@pleaseEnterAnUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "modelAddedSuccessfully": "model added successfully",
+  "@modelAddedSuccessfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addLabelPage": "Add Label Page",
+  "@addLabelPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportLabelPage": "Export Label Page",
+  "@exportLabelPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importLabelPage": "Import Label Page",
+  "@importLabelPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "labelPageView": "LabelPageView",
+  "@labelPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "failedToAddEntry": "Failed to add entry: $e",
+  "@failedToAddEntry": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addPluginPage": "Add Plugin Page",
+  "@addPluginPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pluginsPageView": "PluginsPageView",
+  "@pluginsPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openLocalFolder": "Open Local Folder",
+  "@openLocalFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "link": "Link",
+  "@link": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseOnlyLinkOrFile": "Choose only link or file",
+  "@chooseOnlyLinkOrFile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectEntries": "Select Entries",
+  "@selectEntries": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchEntries": "Search Entries",
+  "@searchEntries": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectAll": "Select All",
+  "@selectAll": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "all": "All",
+  "@all": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subscribed": "Subscribed",
+  "@subscribed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unsubscribed": "Unsubscribed",
+  "@unsubscribed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectEntriesToExport": "Select entries to export",
+  "@selectEntriesToExport": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectingExportFolder": "selecting export folder",
+  "@selectingExportFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportFormat": "export format:",
+  "@exportFormat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseSelectAnExportFolder": "Please select an export folder",
+  "@pleaseSelectAnExportFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseSelectEntriesToExport": "Please select entries to export",
+  "@pleaseSelectEntriesToExport": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSuccessful": "Export successful",
+  "@exportSuccessful": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportFailed": "Export failed",
+  "@exportFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmDeletion": "Confirm Deletion",
+  "@confirmDeletion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "areYouSureYouWantToDeleteTheItemDisplayText": "Are you sure you want to delete the item {displayText}?",
+  "@areYouSureYouWantToDeleteTheItemDisplayText": {
+    "type": "text",
+    "placeholders": {
+      "displayText": {}
+    }
+  },
+  "deletedDisplayTextSuccessfully": "Deleted successfully",
+  "@deletedDisplayTextSuccessfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneNumber": "PhoneNumber",
+  "@phoneNumber": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "keyword": "Keyword",
+  "@keyword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pattern": "Pattern",
+  "@pattern": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToType": "Add to $type",
+  "@addToType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeFromType": "Remove $type",
+  "@removeFromType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "autoUpdateEnabled": "Auto Update Enabled",
+  "@autoUpdateEnabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "autoUpdateDisabled": "Auto Update Disabled",
+  "@autoUpdateDisabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberType": "Number Type",
+  "@numberType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "textType": "Text Type",
+  "@textType": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "isSubscribed": "is Subscribed",
+  "@isSubscribed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "isNotSubscribed": "is not Subscribed",
+  "@isNotSubscribed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addSmsBlacklistPage": "Add SMS Blacklist Page",
+  "@addSmsBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSmsBlacklistPage": "Export SMS Blacklist Page",
+  "@exportSmsBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importSmsBlacklistPage": "Import SMS Blacklist Page",
+  "@importSmsBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsBlacklistPageView": "SmsBlacklistPageView",
+  "@smsBlacklistPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addSmsWhitelistPage": "Add SMS Whitelist Page",
+  "@addSmsWhitelistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSmsWhitelistPage": "Export SMS Whitelist Page",
+  "@exportSmsWhitelistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importSmsWhitelistPage": "Import SMS Whitelist Page",
+  "@importSmsWhitelistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsWhitelistPageView": "SmsWhitelistPageView",
+  "@smsWhitelistPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addSmsSubscriptionPage": "Add SMS Subscription Page",
+  "@addSmsSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSmsSubscriptionPage": "Export SMS Subscription Page",
+  "@exportSmsSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importSmsSubscriptionPage": "Import SMS Subscription Page",
+  "@importSmsSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsSubscriptionListView": "SmsSubscriptionListView",
+  "@smsSubscriptionListView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToWhitelist": "Add to Whitelist",
+  "@addToWhitelist": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeWhitelist": "Remove Whitelist",
+  "@removeWhitelist": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToBlacklist": "Add to Blacklist",
+  "@addToBlacklist": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeBlacklist": "Remove Blacklist",
+  "@removeBlacklist": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "failedToAddModel": "Failed to add  model: $e",
+  "@failedToAddModel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addSmsTextBlacklistPage": "Add SMS Text Blacklist Page",
+  "@addSmsTextBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSmsTextBlacklistPage": "Export SMS Text Blacklist Page",
+  "@exportSmsTextBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importSmsTextBlacklistPage": "Import SMS Text Blacklist Page",
+  "@importSmsTextBlacklistPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsTextBlacklistPageView": "SmsTextBlacklistPageView",
+  "@smsTextBlacklistPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addSmsTextWhitelistsPage": "Add SMS Text Whitelists Page",
+  "@addSmsTextWhitelistsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSmsTextWhitelistsPage": "Export SMS Text Whitelists Page",
+  "@exportSmsTextWhitelistsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importSmsTextWhitelistsPage": "Import SMS Text Whitelists Page",
+  "@importSmsTextWhitelistsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsTextWhitelistPageView": "SmsTextWhitelistPageView",
+  "@smsTextWhitelistPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addSubscriptionPage": "Add Subscription Page",
+  "@addSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportSubscriptionPage": "Export Subscription Page",
+  "@exportSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importSubscriptionPage": "Add Subscription Page",
+  "@importSubscriptionPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "subscriptionListView": "SubscriptionListView",
+  "@subscriptionListView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addWhitelistsPage": "Add Whitelists Page",
+  "@addWhitelistsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportWhitelistsPage": "Export Whitelists Page",
+  "@exportWhitelistsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importWhitelistsPage": "Import Whitelists Page",
+  "@importWhitelistsPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whitelistPageView": "WhitelistPageView",
+  "@whitelistPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addRegexPage": "Add Regex Page",
+  "@addRegexPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exportRegexPage": "Export Regex Page",
+  "@exportRegexPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importRegexPage": "Import Regex Page",
+  "@importRegexPage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "regexPageView": "RegexPageView",
+  "@regexPageView": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterAnPattern": "Please enter an pattern",
+  "@pleaseEnterAnPattern": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectCountryCodeOptional": "Select Country Code (Optional)",
+  "@selectCountryCodeOptional": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Home",
+  "@home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "history": "History",
+  "@history": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "service": "Service",
+  "@service": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "search": "Search...",
+  "@search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "importConfiguration": "Import Configuration",
+  "pasteJson": "Paste JSON",
+  "importFromFile": "Import from file",
+  "customizeCallerId": "Customize Caller ID",
+  "pasteJsonConfiguration": "Paste JSON Configuration",
+  "pasteJsonHere": "Paste JSON here",
+  "configurationImported": "Configuration imported",
+  "textLabelColors": "Text & Label Colors",
+  "invalidJsonFormat": "Invalid JSON format",
+  "calltypeIconColor": "CallType Icon Color",
+  "localCard1": "Local Card 1",
+  "repeatedBlockedCallsIn": "Repeated Blocked Calls in",
+  "mins": "mins",
+  "endcall": "endCall",
+  "initializing": "Initializing...",
+  "thisPermissionIsRequiredForOurAppToDisplayImportant": "This permission is required for our app to display important information on top of other apps.\\n\\n",
+  "pleaseTapGrantPermissionAndAllowThePermissionInThe": "Please tap \"Grant Permission\" and allow the permission in the next screen.",
+  "overlayPermissionNotGrantedWhichMayAffectTheCallerId": "Overlay permission not granted, which may affect the caller ID display function. You can enable the permission in the app settings.",
+  "thisPermissionIsRequiredForOurAppToBeThe": "This permission is required for our app to be the default caller id app.",
+  "pleaseTapSetupDefaultAndAllowThePermissionInThe": "Please tap \"SetUp Default\" and allow the permission in the next screen.",
+  "setupDefault": "SetUp Default",
+  "feature1": "Feature 1.",
+  "feature2": "Feature 2.",
+  "feature3": "Feature 3.",
+  "about": "About",
+  "inappPurchasesEnabled": "In-app purchases enabled",
+  "answerthenhangup": "AnswerThenHangup",
+  "silencenoanswer": "SilenceNoAnswer",
+  "bothOriginalCallAppLocalNotification": "Both Original Call App & Local Notification",
+  "bothOriginalSmsLocalNotification": "Both Original SMS & Local Notification",
+  "smsFilteringRequiresSmsNotificationAndPhonePermissionsPleaseGrant": "SMS filtering requires SMS, notification, and phone permissions. Please grant these permissions to enable this feature.",
+  "setupDefaultCallerIdApp": "SetUp Default Caller ID APP",
+  "youNeedToManuallyDisableThePermissionnamePermissionInThe": "You need to manually disable the {permissionName} permission in the app settings.",
+  "youNeedToManuallyDisableThe": "You need to manually disable the",
+  "permissionInTheAppSettings": "permission in the app settings.",
+  "permissionInAppSetting": ":You need to manually disable the permission in the app settings.",
+  "permissionWasNotGranted": "permission was not granted.",
+  "dynamiclabel": "dynamicLabel",
+  "labelmap": "labelMap",
+  "labelMap": "labelMap",
+  "PermissionWasNotGranted": "$permissionName permission was not granted.",
+  "manuallyDisablePermissionInAppSetting": "You need to manually disable the {permissionName} permission in the app settings.",
+  "phonenumber": "PhoneNumber",
+  "url": "Url",
+  "areYouSureYouWantToDeleteTheItem": "Are you sure you want to delete the item",
+  "deleted": "Deleted",
+  "successfully": "successfully",
+  "country": "Country:",
+  "region": "Region:",
+  "carrier": "Carrier:",
+  "remove": "Remove",
+  "entry": "Entry",
+  "page": "Page",
+  "allowedpageview": "AllowedPageView",
+  "allowedEntryPage": "Allowed Entry Page",
+  "blacklistpageview": "BlacklistPageView",
+  "importBlacklistsPage": "Import Blacklists Page",
+  "blacklistPage": "Blacklist Page",
+  "failedToAdd": "Failed to add:",
+  "addedSuccessfully": "added successfully",
+  "labelpageview": "LabelPageView",
+  "pluginspageview": "PluginsPageView",
+  "blockedpageview": "BlockedPageView",
+  "regexpageview": "RegexPageView",
+  "whitelistpageview": "WhitelistPageView",
+  "subscriptionlistview": "SubscriptionListView",
+  "smstextwhitelistpageview": "SmsTextWhitelistPageView",
+  "smstextblacklistpageview": "SmsTextBlacklistPageView",
+  "smswhitelistpageview": "SmsWhitelistPageView",
+  "smssubscriptionlistview": "SmsSubscriptionListView",
+  "smsblacklistpageview": "SmsBlacklistPageView",
+  "regexPage": "Regex Page",
+  "whitelistPage": "Whitelist Page",
+  "importBlockedentriesPage": "Import BlockedEntries Page",
+  "subscriptionListPage": "Subscription List Page",
+  "smsTextWhitelistPage": "SMS Text Whitelist Page",
+  "smsBlacklistPage": "SMS Blacklist Page",
+  "smsSubscriptionPage": "SMS Subscription Page",
+  "pluginPage": "Plugin Page",
+  "editCode": "Edit Code",
+  "enterPluginCodeHere": "Enter plugin code here",
+  "editPluginCode": "Edit Plugin Code",
+  "labelPage": "Label Page",
+  "contactSubscriptionPage": "Contact Subscription Page",
+  "contactsubscriptionlistview": "ContactSubscriptionListView",
+  "youHaveDeniedPermissionYouCanManuallyEnablePermissionIn": "You have denied permission. You can manually enable permission in Settings.",
+  "deniedPermissionCanManuallyEnablePermissionInSetting": "You have denied permission. You can manually enable permission in Settings.",
+  "thisAppNeedsAccessToYourCallLogInformation": "This app needs access to your call log information to function properly. Please grant permission.",
+  "blockedPage": "Blocked Page",
+  "whatsapp": "WhatsApp",
+  "sharing": "Sharing",
+  "contactFile": "Contact File",
+  "errorExportingContacts": "Error exporting contacts:",
+  "contactsExportedSuccessfully": "Contacts exported successfully",
+  "pleaseSelectAnOutputFile": "Please select an output file:",
+  "exportAsYaml": "Export as YAML",
+  "exportAsJson": "Export as JSON",
+  "exportAsCsv": "Export as CSV",
+  "exportAsVcf": "Export as VCF",
+  "editContact": "Edit Contact",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "phone": "Phone",
+  "pleaseEnter": "Please enter",
+  "errorImporting": "Error importing",
+  "importedSuccessfullyFromUrl": "Imported successfully from URL",
+  "merge": "Merge",
+  "contactsWithNumber": "contacts with number",
+  "showWhatsapp": "Show WhatsApp",
+  "exportContactSubscriptionPage": "Export Contact Subscription Page",
+  "exportPluginPage": "Export Plugin Page",
+  "importPluginPage": "Import Plugin Page",
+  "exportSmsBlacklistsPage": "Export SMS Blacklists Page",
+  "exportSmsWhitelistsPage": "Export SMS Whitelists Page",
+  "exportSmsTextBlacklistsPage": "Export SMS Text Blacklists Page",
+  "importSmsTextBlacklistsPage": "Import SMS Text Blacklists Page",
+  "exportSubscriptionsPage": "Export Subscriptions Page",
+  "importSubscriptionsPage": "Import Subscriptions Page",
+  "localBackupDirectoryOnlyUnderDownloadFolder": "Local Backup Directory only under Download folder",
+  "keepOnlyLatestBackup": "Keep Only Latest Backup",
+  "cloudBackupDirectoryName": "Cloud Backup Directory Name",
+  "cloudServices": "Cloud Services",
+  "backup": "Backup",
+  "cloudBackupRequiresAutoBackup": "Cloud backup requires Auto backup",
+  "backupAndRestore": "Backup and Restore",
+  "manualBackup": "Manual Backup",
+  "restoreFromLocal": "Restore from Local",
+  "restoreFromWebdav": "Restore from WebDAV",
+  "restoreFromGoogleDrive": "Restore from Google Drive",
+  "restoreFromOnedrive": "Restore from OneDrive",
+  "webdav": "WebDAV Setting",
+  "webdavUrl": "WebDAV URL",
+  "userName": "User Name",
+  "password": "Password",
+  "test": "Test",
+  "googleDriveSetting": "Google Drive Setting",
+  "loginlogoutGoogleDrive": "Login/Logout Google Drive",
+  "logoutGoogleDrive": "Logout Google Drive",
+  "loginGoogleDrive": "Login Google Drive",
+  "googleDriveLoginFailed": "Google Drive Login Failed",
+  "googleDriveLoginSuccessfully": "Google Drive Login Successfully",
+  "login": "Login",
+  "redirectUrl": "Redirect URL",
+  "clientId": "Client ID",
+  "inputOnedriveCredentials": "Input OneDrive Credentials",
+  "onedriveSetting": "OneDrive Setting",
+  "inputClientIdRedirectUrl": "Input Client ID & Redirect URL",
+  "loginFailed": "Login failed",
+  "regexPatternExplanation": "Regex Pattern Explanation",
+  "regexPatternsAreRegularExpressionsUsedToMatchPhoneNumbers": "Regex patterns are regular expressions used to match phone numbers.",
+  "youCanUseStandardRegularExpressionSyntaxToDefinePatterns": "You can use standard regular expression syntax to define patterns, or Asking AI to generate the pattern for Flutter. Use a double one'\\\\' not a single '\\' one",
+  "blockInternationalCalls": "Block international calls:",
+  "useThePatternToMatchAllPhoneNumbersStartingWith": "Use the pattern '^\\\\+' to match all phone numbers starting with a plus sign, which typically indicates an international number.",
+  "blockCallsFromSpecificAreaCodes": "Block calls from specific area codes:",
+  "useThePattern0d23ToMatchPhoneNumbersStartingWith": "Use the pattern '^0[0-9]{2,3}' to match phone numbers starting with '0' followed by 2 or 3 digits, which typically represents an area code.\nUse the pattern '^010' to block calls from Beijing area code (010).\n Use the pattern '^202' to block calls from Washington area code (202).\nReplace the '^0[0-9]{2,3}' area code with the specific one you want to block.",
+  "matchPhoneNumbersContainingSpecificDigits": "Match phone numbers containing specific digits:",
+  "useThePatternD3d4d4ToMatchPhoneNumbersInThe": "Use the pattern '\\\\d{3}-\\\\d{4}-\\\\d{4}' to match phone numbers in the format 'XXX-XXXX-XXXX'. \nReplace 'X' with the specific digits you want to match.",
+  "matchPhoneNumbersWithSpecificCharactersInTheMiddle": "Match phone numbers with specific characters in the middle:",
+  "useThePatternD3d4d4ToMatchPhoneNumbersWithHyphens": "Use the pattern '\\\\d{3}-\\\\d{4}-\\\\d{4}' to match phone numbers with hyphens in the middle, like 123-4567-8901.\nUse the pattern '\\\\d{3} \\\\d{4} \\\\d{4}' to match phone numbers with spaces in the middle, like 123 4567 8901.\nReplace '-' or ' ' with the specific character you want to match.",
+  "matchAnyCharacter": "Match any character:",
+  "useTheCharacterToMatchAnySingleCharacterforExampleThe": "Use the '.' character to match any single character.For example, the pattern '123.456' matches '123-456', '123.456', '123a456', etc.",
+  "callerIdApp": "Caller ID App",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "This app is a powerful caller ID tool that allows you to identify unknown callers and block unwanted calls. It features:",
+  "tutorial": "Tutorial",
+  "contactUs": "Contact Us",
+  "onlineCallerIdSubscription": "Online caller ID subscription",
+  "wildcardSupportForFlexibleFiltering": "Wildcard support for flexible filtering",
+  "blacklistingAndWhitelisting": "Blacklisting and whitelisting",
+  "joinTheTelegramChannelAndGroupForMoreInfo": "Join the Telegram Channel and Group for more Info",
+  "phonenumbertypefixedlineormobile": "PhoneNumberType.fixedLineOrMobile",
+  "phonenumbertypemobile": "phoneNumberTypeMobile",
+  "phonenumbertypefixedline": "phoneNumberTypeFixedLine",
+  "phoneNumberTypeVoip": "VoIP",
+  "phoneNumberTypePpersonalNumber": "Personal Number"
+}
