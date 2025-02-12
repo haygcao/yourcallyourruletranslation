@@ -5,7 +5,8 @@
 **YourCallYourRule** is a powerful and flexible Android application designed to give you complete control over incoming calls and SMS messages. It empowers you to create personalized blocking rules based on phone numbers, keywords, and more.
 Due to Google Play's policies, the Play Store version omits the SMS filtering feature. If you need SMS filtering, you can choose the corresponding version from the GitHub release. Note that you can't have both versions installed simultaneously.The GitHub release provides two versions: one with SMS filtering and one without.
 
-* **Link：** https://play.google.com/apps/testing/com.yours.yourcallyourrule
+* **Test Link：** https://play.google.com/apps/testing/com.yours.yourcallyourrule
+* **Link：** https://play.google.com/store/apps/details?id=com.yours.yourcallyourrule
 * **Telegram Channel：** https://t.me/yourcallyourrule
 * **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
 * **Plugins & Database:** If anyone can take the advantage the link to develop and plugins and csv database. It will be great, I really appreciate you can share it with others.  
