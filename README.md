@@ -23,7 +23,7 @@ Due to Google Play's policies, the Play Store version omits the SMS filtering fe
 
  ## Plugin Ports
 ## Creating Website Plugins
-To create a plugin from any website, use the [Plugin Test framework](https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugintest). Open the target website in Chrome, With Chrome's Developer Tools (`Ctrl`+`Shift`+`I`), select the relevant website elements. Provide these elements and the [JavaScript template](https://github.com/haygcao/yourcallyourruletranslation/blob/main/plugintest/lib/english.js) to an AI. Instruct the AI to modify `manualMapping` and the `extractDataFromDOM(doc, phoneNumber)` function within the template to extract the desired data.
+To create a plugin from any website,  Open the target website in Chrome, With Chrome's Developer Tools (`Ctrl`+`Shift`+`I`), select the relevant website elements. Provide these elements and the [JavaScript template](https://github.com/haygcao/yourcallyourruletranslation/blob/main/plugintest/lib/english.js) to an AI. Instruct the AI to modify `manualMapping` and the `extractDataFromDOM(doc, phoneNumber)` function within the template to extract the desired data.
 
 ## Features
 
