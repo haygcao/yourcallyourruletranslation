@@ -20,7 +20,8 @@ Due to Google Play's policies, the Play Store version omits the SMS filtering fe
 | [CN](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/soo.js) [CN2](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/bd.js) 注意这两个label的手动匹配标签可能不完整，可能需要自行补充| China       |
 | [meiwakucheck](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/meiwakucheck.js) | Japan        |
 | [Callfilter](https://github.com/haygcao/yourcallyourruletranslation/raw/refs/heads/main/plugins/callfilter.js)| 🇦🇷 🇦🇺 🇧🇪 🇧🇷 🇧🇾 🇨🇦 🇨🇭 🇨🇱 🇩🇪 🇪🇪 🇬🇧 🇪🇸 🇫🇷 🇮🇪 🇮🇳 🇮🇹 🇰🇿 🇲🇽 🇳🇱 🇵🇱 🇷🇴 🇷🇺 🇹🇷 🇺🇦 🇺🇸 🇿🇦     |
-
+| [doisjerepondre](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/tellows.js)| France FR     |
+| [tellows](https://raw.githubusercontent.com/haygcao/yourcallyourruletranslation/refs/heads/main/plugins/tellows.js)| any works     |
  ## Plugin Ports
 ## Creating Website Plugins
 To create a plugin from any website,  Open the target website in Chrome, With Chrome's Developer Tools (`Ctrl`+`Shift`+`I`), select the relevant website elements. Provide these elements and the [JavaScript template](https://github.com/haygcao/yourcallyourruletranslation/blob/main/plugintest/lib/english.js) to an AI. Instruct the AI to modify `manualMapping` and the `extractDataFromDOM(doc, phoneNumber)` function within the template to extract the desired data.
