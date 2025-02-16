@@ -1,12 +1,12 @@
 // Plugin ID, each plugin must be unique, changed to shouldianswer
-const pluginId = 'cleverdialerPlugin';
+const pluginId = 'cleverdialeresPlugin';
 
 // Plugin information
 const pluginInfo = {
   // Plugin information
   info: {
-    id: 'cleverdialerPlugin', // Plugin ID, must be unique, changed to shouldianswer
-    name: 'cleverdialer', // Plugin name, changed to Should I Answer (based on the website name)
+    id: 'cleverdialeresPlugin', // Plugin ID, must be unique, changed to shouldianswer
+    name: 'cleverdialerES', // Plugin name, changed to Should I Answer (based on the website name)
     version: '1.2.0', // Plugin version
     description: 'This plugin retrieves information about phone numbers from shouldianswer.com.', // Plugin description, updated description
     author: 'Your Name', // Plugin author
