@@ -1,12 +1,12 @@
 // Plugin ID, each plugin must be unique
-const pluginId = 'callfilterPlugin';
+const pluginId = 'tellowsPlugin';
 
 // Plugin information
 const pluginInfo = {
   // Plugin information
   info: {
-    id: 'callfilterPlugin', // Plugin ID, must be unique
-    name: 'Call Filter', // Plugin name
+    id: 'tellowsPlugin', // Plugin ID, must be unique
+    name: 'Tellows', // Plugin name
     version: '1.2.0', // Plugin version
     description: 'This plugin retrieves information about phone numbers from shouldianswer.com.', // Plugin description
     author: 'Your Name', // Plugin author
