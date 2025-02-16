@@ -32,12 +32,15 @@ const predefinedLabels = [
     {'label': 'Medical'},
     {'label': 'Charity'},
     {'label': 'Other'},
-    {'label': 'Collection'},
+    {'label': 'Debt Collection'},
     {'label': 'Survey'},
     {'label': 'Political'},
     {'label': 'Ecommerce'},
     {'label': 'Risk'},
-    {'label': 'company'}, // Added company from the example HTML
+    {'label': 'Agent'},
+    {'label': 'Recruiter'},
+    {'label': 'Headhunter'},
+    {'label': 'Silent Call(Voice Clone?)'},
 
 ];
 
