@@ -32,7 +32,7 @@ const predefinedLabels = [
     {'label': 'Medical'},
     {'label': 'Charity'},
     {'label': 'Other'},
-    {'label': 'Collection'},
+    {'label': 'Debt Collection'},
     {'label': 'Survey'},
     {'label': 'Political'},
     {'label': 'Ecommerce'},
