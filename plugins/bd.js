@@ -40,6 +40,7 @@ const predefinedLabels = [
     {'label': 'Agent'},
     {'label': 'Recruiter'},
     {'label': 'Headhunter'},  
+    {'label': 'Silent Call(Voice Clone?)'},
 ];
 
 // 手动映射表，将 source label 映射到预设标签
