@@ -1,11 +1,11 @@
 // Plugin ID, each plugin must be unique, changed to shouldianswer
-const pluginId = 'listaspamesPlugin';
+const pluginId = 'listaspamPlugin';
 
 // Plugin information
 const pluginInfo = {
   // Plugin information
   info: {
-    id: 'listaspamesPlugin', // Plugin ID, must be unique, changed to shouldianswer
+    id: 'listaspamPlugin', // Plugin ID, must be unique, changed to shouldianswer
     name: 'ListaspamES', // Plugin name, changed to Should I Answer (based on the website name)
     version: '1.2.0', // Plugin version
     description: 'This plugin retrieves information about phone numbers from shouldianswer.com.', // Plugin description, updated description
