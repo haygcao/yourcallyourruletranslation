@@ -62,7 +62,7 @@ const manualMapping = {
     'Other': 'Other',
     'NEGATIVE TELEMARKETER': 'Telemarketing', // From previous examples
     'Unknown': 'Unknown',
-    'company': 'company', // Added from the example HTML
+    'company': 'Unknown', // Added from the example HTML
 
 
 };
