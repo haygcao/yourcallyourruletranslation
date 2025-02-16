@@ -1,12 +1,12 @@
 // Plugin ID, each plugin must be unique, changed to shouldianswer
-const pluginId = 'listaspamPlugin';
+const pluginId = 'listaspamesPlugin';
 
 // Plugin information
 const pluginInfo = {
   // Plugin information
   info: {
-    id: 'listaspam', // Plugin ID, must be unique, changed to shouldianswer
-    name: 'Listaspam', // Plugin name, changed to Should I Answer (based on the website name)
+    id: 'listaspamesPlugin', // Plugin ID, must be unique, changed to shouldianswer
+    name: 'ListaspamES', // Plugin name, changed to Should I Answer (based on the website name)
     version: '1.2.0', // Plugin version
     description: 'This plugin retrieves information about phone numbers from shouldianswer.com.', // Plugin description, updated description
     author: 'Your Name', // Plugin author
@@ -59,6 +59,50 @@ const manualMapping = {
     'Sin especificar': 'Unknown',
     'Unknown' : 'Unknown',
     'Spam Call' : 'Spam Likely', // Add mapping from 'Spam Call'
+    'Beratung': 'Other',           // Counsel - Could be Financial, Legal, etc.
+    'Crypto Betrug': 'Fraud Scam Likely', // Crypto Fraud
+    'Daueranrufe': 'Spam Likely',      // Continuous calls
+    'Dienstleistung': 'Customer Service', // Service provision
+    'Gastronomie': 'Other',          // Hospitality industry
+    'Geschäft': 'Other',             // Business - Could be many things
+    'Gesundheit': 'Medical',
+    'Gewinnspiel': 'Other',      // Sweepstake - Often spam/scam related
+    'Inkassounternehmen': 'Debt Collection',
+    'Kostenfalle': 'Fraud Scam Likely',  // Cost trap
+    'Kundendienst': 'Customer Service',
+    'Mailbox': 'Other',              // Voicemail
+    'Phishing': 'Fraud Scam Likely',
+    'Ping Anruf': 'Spam Likely',       // Ping Call
+    'Spam': 'Spam Likely',
+    'Spenden': 'Charity',
+    'Support': 'Customer Service',    // Support
+    'Umfrage': 'Survey',
+    'Unseriös': 'Spam Likely',        // Dubious
+    'Verkauf': 'Telemarketing',         // Sales
+    'Werbung': 'Telemarketing',         // Commercial = advertising
+    'Unknown': 'Unknown',            // Always map Unknown to Unknown
+    'Business': 'Other', //  Could be 'Customer Service', 'Sales', etc.
+    'Charity': 'Charity',
+    'Commercial': 'Telemarketing', // Advertising
+    'Continuous calls': 'Spam Likely',
+    'Cost trap': 'Fraud Scam Likely',
+    'Counsel': 'Other', // Could be Financial, Legal, etc.
+    'Crypto fraud': 'Fraud Scam Likely',
+    'Customer Service': 'Customer Service',
+    'Debt collection agency': 'Debt Collection',
+    'Dubious': 'Spam Likely',
+    'Health': 'Medical',
+    'Hospitality industry': 'Other', //  Could be 'Takeaway', 'Delivery'
+    'Mailbox': 'Other', // Voicemail
+    'Phishing': 'Fraud Scam Likely',
+    'Ping call': 'Spam Likely',
+    'Sales': 'Telemarketing',
+    'Service': 'Customer Service',
+    'Spam': 'Spam Likely',
+    'Support': 'Customer Service', // Support
+    'Survey': 'Survey',
+    'Sweepstake': 'Other', //  Often spam/scam, could be 'Risk'
+    'Unknown': 'Unknown',  // Always map Unknown  
 };
 
 // Using a Map object to store pending Promises
@@ -71,7 +115,7 @@ function queryPhoneInfo(phoneNumber, requestId) {
     pluginId: pluginId,
     method: 'GET',
     requestId: requestId,
-    url: `https://www.listaspam.com/busca.php?Telefono=${phoneNumber}`,
+    url: `https://www.cleverdialer.es/numero/${phoneNumber}`,
     headers: {
       "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
     },
