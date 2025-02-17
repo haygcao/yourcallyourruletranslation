@@ -341,16 +341,17 @@ async function generateOutput(phoneNumber, nationalNumber, e164Number, externalR
       matchedLabel = 'Unknown';
     }
 
-    const finalResult = {
-      phoneNumber: result.phoneNumber,
-      sourceLabel: result.sourceLabel,
-      count: result.count,
-      province: result.province,
-      city: result.city,
-      carrier: result.carrier,
-      predefinedLabel: matchedLabel, // Use the matched label
-      source: pluginInfo.info.name,
-    };
+        const finalResult = {
+            phoneNumber: result.phoneNumber,
+            sourceLabel: result.sourceLabel,
+            count: result.count,
+            province: result.province,
+            city: result.city,
+            carrier: result.carrier,
+            name: result.name,
+            predefinedLabel: matchedLabel, // Use the matched label
+            source: pluginInfo.info.name,
+        };
 
     // Send the result via FlutterChannel
     FlutterChannel.postMessage(JSON.stringify({
