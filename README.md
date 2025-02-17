@@ -11,7 +11,7 @@ Due to Google Play's policies, the Play Store version omits the SMS filtering fe
 * **Telegram Group：** https://t.me/+GHoPy6xwQEU1ZThh
 * **Plugins & Database:** If anyone can take the advantage the link to develop and plugins and csv database. It will be great, I really appreciate you can share it with others.  
 
-## Plugins
+## Plugins Please go to this page to check more (https://github.com/haygcao/yourcallyourruletranslation/tree/main/plugins)
 
 | URL                                                      | Country       |
 | :------------------------------------------------------- | :------------ |
