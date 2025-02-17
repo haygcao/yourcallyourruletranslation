@@ -143,11 +143,21 @@ function extractDataFromDOM(doc, phoneNumber) {
               }
        }
         // --- Extract Label --- (Corrected, using the correct table structure)
-        const labelElement = doc.querySelector('table.table-bordered.table-condensed small > b');  // Target the <b> tag within <small>
-        if (labelElement) {
-            jsonObject.sourceLabel = labelElement.textContent.trim();
-        }
+       // --- Extract Label --- (Corrected, finds *all* labels)
+        const labelElements = doc.querySelectorAll('table.table-bordered.table-condensed i.icon-comment + u > b');
+        if (labelElements.length > 0) {
+            // Get the *first* label.  If you need all labels, you'd use a different approach.
+            jsonObject.sourceLabel = labelElements[0].textContent.trim();
 
+            // If you want to get *all* labels as a comma-separated string:
+            // const labels = Array.from(labelElements).map(el => el.textContent.trim());
+            // jsonObject.sourceLabel = labels.join(', ');
+
+             // If you want *all* labels, each in its own property (sourceLabel1, sourceLabel2, etc.):
+            // for (let i = 0; i < labelElements.length; i++) {
+            //     jsonObject[`sourceLabel${i + 1}`] = labelElements[i].textContent.trim();
+            // }
+        }
 
     } catch (error) {
         console.error('Error extracting data:', error);
