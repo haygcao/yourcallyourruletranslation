@@ -162,18 +162,31 @@ function extractDataFromDOM(doc, phoneNumber) {
                 }
             }
         }
-
-      // Extract Count (only if we're in Priority 2)
-      const countSpan = doc.querySelector('.rating-text .nowrap');
-      if (countSpan) {
-        const countMatch = countSpan.textContent.match(/(\d+)\s+valoración/); // Match digits before "valoración"
-        if (countMatch) {
-          jsonObject.count = parseInt(countMatch[1], 10) || 0;
-        }
-      }
     }
 
+// --- Extract Count (Handle both numbers and words) ---
+const countSpan = doc.querySelector('.rating-text .nowrap');
+if (countSpan) {
+    const countText = countSpan.textContent.trim();
+    let count = 0; // Default count
 
+    // Try to match a number word (e.g., "One", "Two")
+    const wordMatch = countText.match(/\b(One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten)\b/i);
+    if (wordMatch) {
+        const wordToNumber = { // Mapping of number words to numbers
+            'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+            'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10
+        };
+        count = wordToNumber[wordMatch[1].toLowerCase()] || 0; // Convert to lowercase for matching
+    } else {
+        // Try to match numeric digits (e.g., "1", "2", "35")
+        const numberMatch = countText.match(/(\d+)\s+rating/i);
+        if (numberMatch) {
+            count = parseInt(numberMatch[1], 10) || 0;
+        }
+    }
+    jsonObject.count = count;
+}
     // --- Extract City ---
     const cityH4 = doc.querySelector('.list-text h4');
     if (cityH4) {
