@@ -165,6 +165,8 @@ function extractDataFromDOM(doc, phoneNumber) {
             }
         }
 
+
+    }
       // Extract Count (only if we're in Priority 2)
       const countSpan = doc.querySelector('.rating-text .nowrap');
       if (countSpan) {
@@ -173,8 +175,6 @@ function extractDataFromDOM(doc, phoneNumber) {
           jsonObject.count = parseInt(countMatch[1], 10) || 0;
         }
       }
-    }
-
 
     // --- Extract City ---
     const cityH4 = doc.querySelector('.list-text h4');
