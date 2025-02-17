@@ -71,108 +71,91 @@ function queryPhoneInfo(phoneNumber, requestId) {
 
 // Function to extract data using DOMParser API
 function extractDataFromDOM(doc, phoneNumber) {
-  const jsonObject = {
-    count: 0,
-    sourceLabel: "",
-    province: "",
-    city: "",
-    carrier: "",
-    phoneNumber: phoneNumber,
-    name: "Unknown"
-  };
+    const jsonObject = {
+        count: 0,
+        sourceLabel: "",
+        province: "",
+        city: "",
+        carrier: "",
+        phoneNumber: phoneNumber,
+        name: "unknown"
+    };
 
-  try {
-    console.log('Document Object:', doc);
+    try {
+        console.log('Document Object:', doc);
 
-    const bodyElement = doc.body;
-    console.log('Body Element:', bodyElement);
-    if (!bodyElement) {
-      console.error('Error: Could not find body element.');
-      return jsonObject;
-    }
-
-    // Extract phone number
-    const phoneNumberElement = doc.querySelector('.span9 h3');
-    if (phoneNumberElement) {
-      const phoneNumberText = phoneNumberElement.textContent.trim().replace('検索結果：', '');
-      jsonObject.phoneNumber = phoneNumberText;
-    }
-    
-// Extract name
-const nameElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(1) td');
-
-jsonObject.name = "unknown"; // Initialize to "unknown"
-
-if (nameElement) {
-  let nameText = nameElement.textContent.trim();
-
-  if (nameText) { // Check for empty string
-    // Remove "[▼詳細を見る]" and anything after it
-    const detailIndex = nameText.indexOf('[▼詳細を見る]');
-    if (detailIndex !== -1) {
-      nameText = nameText.substring(0, detailIndex).trim();
-    }
-
-    // Check against the specific text content, not just the tag structure.
-    const thElement = nameElement.parentElement.querySelector('th');
-    if (thElement && thElement.textContent.trim() === '利用事業者')
-        {
-          jsonObject.name = nameText === '？' ? 'Unknown' : (nameText === '---' ? 'unknown' : nameText);
+        const bodyElement = doc.body;
+        console.log('Body Element:', bodyElement);
+        if (!bodyElement) {
+            console.error('Error: Could not find body element.');
+            return jsonObject;
         }
 
-  }
-}
-
-// Extract province and city
-const locationElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(3) td:nth-child(2)');
-
-jsonObject.province = "unknown"; // Initialize to "unknown"
-jsonObject.city = "unknown";     // Initialize to "unknown"
-
-if (locationElement) {
-  const locationText = locationElement.textContent.trim();
-
-  if (locationText && locationText !== '---') {  // Check for empty string and "---"
-    const parts = locationText.split(',').map(part => part.trim()); // Split by comma, trim each part
-
-    if (parts.length > 0) {
-        jsonObject.province = parts[0];
-        jsonObject.city = parts[1] || parts[0];   // if parts[1] not exist，city=provice
-      }
-    }
-  }
-
-console.log(jsonObject);
-
-// --- Extract Count ---
-const countElement = doc.querySelector('table.table-bordered.table-condensed th:contains("アクセス数")');
-if (countElement) {
-    const countText = countElement.nextSibling?.textContent.trim(); // Get text of the next sibling (td)
-    if (countText) {
-        const countMatch = countText.match(/(\d+)/); // Extract the first number
-        if (countMatch) {
-            jsonObject.count = parseInt(countMatch[1], 10) || 0;
-        } else {
-            jsonObject.count = 0; // Default to 0 if no number found
+        // --- Extract Phone Number --- (Corrected)
+        const phoneNumberElement = doc.querySelector('.span9 h3');
+        if (phoneNumberElement) {
+            const phoneNumberText = phoneNumberElement.textContent.trim().replace('検索結果：', '');
+            jsonObject.phoneNumber = phoneNumberText;
         }
-    } else {
-        jsonObject.count = 0; //Default to 0 if no sibling.
+
+
+        // --- Extract Name --- (Corrected, using the correct table)
+        const nameElement = doc.querySelector('table.table-bordered.table-condensed tr:first-child td'); // Select the first td in the first tr
+
+        if (nameElement) {
+            let nameText = nameElement.textContent.trim();
+
+             // Remove "[▼詳細を見る]" and anything after it (Corrected)
+            const detailIndex = nameText.indexOf('[▼詳細を見る]');
+            if (detailIndex !== -1) {
+              nameText = nameText.substring(0, detailIndex).trim();
+            }
+
+            const thElement = nameElement.parentElement.querySelector('th');
+            if (thElement && thElement.textContent.trim() === '利用事業者') {
+                jsonObject.name = nameText === '？' ? 'Unknown' : (nameText === '---' ? 'unknown' : nameText);
+            }
+
+        }
+
+
+        // --- Extract Count --- (Corrected, using the correct table and structure)
+        const countElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(2) td strong'); // Target the <strong> tag
+        if (countElement) {
+            const countText = countElement.textContent.trim();
+            jsonObject.count = parseInt(countText, 10) || 0; // Directly parse the number.  Use 0 as default.
+        }
+
+
+        // --- Extract Province and City --- (Corrected)
+       const locationElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(5) td:nth-child(2)');
+       if (locationElement)
+       {
+          const locationText = locationElement.textContent.trim();
+          if (locationText === '---')
+            {
+                 jsonObject.province = "unknown";
+                 jsonObject.city = "unknown";
+            }
+          else{
+                jsonObject.province = locationText;
+                jsonObject.city = locationText; // if parts[1] not exist，city=provice
+              }
+       }
+        // --- Extract Label --- (Corrected, using the correct table structure)
+        const labelElement = doc.querySelector('table.table-bordered.table-condensed small > b');  // Target the <b> tag within <small>
+        if (labelElement) {
+            jsonObject.sourceLabel = labelElement.textContent.trim();
+        }
+
+
+    } catch (error) {
+        console.error('Error extracting data:', error);
     }
-}
 
-    // Extract label
-    const labelElement = doc.querySelector('table.table-bordered.table-condensed i.icon-comment + u > b');
-    if (labelElement) {
-        jsonObject.sourceLabel = labelElement.textContent.trim();
-    }
-
-  } catch (error) {
-    console.error('Error extracting data:', error);
-  }
-
-  console.log('Final jsonObject:', jsonObject);
-  console.log('Final jsonObject type:', typeof jsonObject);
-  return jsonObject;
+    console.log('Final jsonObject:', jsonObject);
+    // console.log('Final jsonObject type:', typeof jsonObject); // You can uncomment this if needed
+    return jsonObject;
 }
 
 // Function to generate output information
