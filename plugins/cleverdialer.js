@@ -188,10 +188,11 @@ if (countSpan) {
     jsonObject.count = count;
 }
     // --- Extract City ---
-    const cityH4 = doc.querySelector('.list-text h4');
-    if (cityH4) {
-      jsonObject.city = cityH4.textContent.trim();
-    }
+// --- Extract City ---
+const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
+if (cityElement) {
+    jsonObject.city = cityElement.textContent.trim();
+}
 
     console.log('Final jsonObject:', jsonObject);
     return jsonObject;
