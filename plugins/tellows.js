@@ -136,24 +136,11 @@ function extractDataFromDOM(doc, phoneNumber) {
         }
 
         // 3. Extract Name (Caller ID) - ROBUST METHOD
-        const callerNameAnchor = findElementByText('b', "Caller Name:");
-        console.log("Caller Name Anchor:", callerNameAnchor); // LOG
-
-        if (callerNameAnchor) {
-            const parent = callerNameAnchor.parentNode;
-            console.log("Parent of Anchor:", parent);  // LOG
-
-            const callerIdSpan = parent.querySelector('span.callerId');
-            console.log("Caller ID Span (within parent):", callerIdSpan); // LOG
-
-            if (callerIdSpan) {
-                jsonObject.name = callerIdSpan.textContent.trim();
-            } else {
-                console.error("Could not find span.callerId within the parent.");
-            }
-        } else {
-            console.error("Could not find the 'Caller Name:' anchor.");
-        }
+    // 3. Extract Name (Caller ID) - Corrected: Directly select the span.callerId
+    const callerIdElement = doc.querySelector('span.callerId');
+    if (callerIdElement) {
+        jsonObject.name = callerIdElement.textContent.trim();
+    }
 
 
         // 4. Extract Rate and Count (using Ratings)
