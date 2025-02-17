@@ -78,7 +78,6 @@ function queryPhoneInfo(phoneNumber, requestId) {
   }));
 }
 
-// Function to extract data using DOMParser API
 function extractDataFromDOM(doc, phoneNumber) {
     const jsonObject = {
         count: 0,
@@ -144,31 +143,48 @@ function extractDataFromDOM(doc, phoneNumber) {
 
 
         // 4. Extract Rate and Count (using Ratings)
-        const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span');
+        // const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span'); // Original selector
+        const ratingsElement = findElementByText('strong', "Ratings:"); // More robust way to locate
+
         if (ratingsElement) {
-            const rateValue = parseInt(ratingsElement.textContent.trim(), 10) || 0;
+          const spanElement = ratingsElement.querySelector('span');
+          if (spanElement) {
+            const rateValue = parseInt(spanElement.textContent.trim(), 10) || 0;
             jsonObject.rate = rateValue;
             jsonObject.count = rateValue;
+          }
         }
-
         // 5. Extract City and Province - Corrected Splitting Logic
-        const cityElement = findElementByText('strong', "City:");
-        if (cityElement) {
-            const cityText = cityElement.nextSibling;
-            if (cityText && cityText.nodeType === Node.TEXT_NODE) {
-                const cityValue = cityText.textContent.trim();
-                const parts = cityValue.split('-'); // Split by hyphen first
-                if (parts.length > 1) {
-                    const locationParts = parts[1].trim().split(',').map(part => part.trim()); // Split by comma, trim each part
-                    if (locationParts.length > 0) {
-                        jsonObject.city = locationParts[0]; // First part is city
-                        if (locationParts.length > 1) {
-                            jsonObject.province = locationParts[1]; // Second part is province/country
-                        }
-                    }
-                }
+      //const cityElement = findElementByText('strong', "City:"); //Original
+         const cityElement = doc.querySelector('strong:has( ~ text):-soup-contains("City:")');
+         if (cityElement) {
+             let cityText = "";
+
+              // Find the next sibling that is text node
+            let nextNode = cityElement.nextSibling;
+              while(nextNode){
+               if (nextNode.nodeType === Node.TEXT_NODE){
+                   cityText += nextNode.textContent;
+               }
+               nextNode = nextNode.nextSibling
+              }
+
+             cityText = cityText.trim()
+             const parts = cityText.split('-'); // Split by hyphen first
+            if (parts.length > 1) {
+              const locationParts = parts[0].trim(); //first part new Mexico
+                jsonObject.city = locationParts;
+              const country = parts[1].trim().split(',').map(s=>s.trim())
+              if(country.length >0){
+                  jsonObject.province = country.join(",") // if there are more than one country names
+
+              }
+
+            }else{
+                jsonObject.city = parts[0].trim() //if city doesn't have hyphen.
             }
         }
+
 
     } catch (error) {
         console.error('Error extracting data:', error);
@@ -178,6 +194,8 @@ function extractDataFromDOM(doc, phoneNumber) {
     console.log('Final jsonObject type:', typeof jsonObject);
     return jsonObject;
 }
+
+//update
 
 // Function to generate output information
 async function generateOutput(phoneNumber, nationalNumber, e164Number, externalRequestId) {
