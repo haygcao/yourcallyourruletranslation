@@ -62,7 +62,7 @@ function queryPhoneInfo(phoneNumber, requestId) {
     pluginId: pluginId,
     method: 'GET',
     requestId: requestId,
-    url: `https://www.meiwakucheck.com/search?tel=${phoneNumber}`,
+    url: `https://meiwakucheck.com/search?tel_no=${phoneNumber}`,
     headers: {
       "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
     },
