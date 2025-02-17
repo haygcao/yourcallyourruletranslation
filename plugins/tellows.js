@@ -124,7 +124,6 @@ function extractDataFromDOM(doc, phoneNumber) {
             }
         }
 
-
         // 2. Extract Label (Priority 2: Score Image) - Only if sourceLabel is empty
         if (!jsonObject.sourceLabel) {
             const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
@@ -137,14 +136,12 @@ function extractDataFromDOM(doc, phoneNumber) {
             }
         }
 
-        // 3. Extract Name (Caller ID)
-        const callerIdElement = findElementByText('b', "Caller Name:"); // Find <b> containing the text
+        // 3. Extract Name (Caller ID) - Corrected: Directly select the span.callerId
+        const callerIdElement = doc.querySelector('span.callerId');
         if (callerIdElement) {
-            const callerIdSpan = callerIdElement.nextElementSibling; // Assuming it's the next sibling <span>
-            if (callerIdSpan && callerIdSpan.classList.contains('callerId')) {
-                jsonObject.name = callerIdSpan.textContent.trim();
-            }
+            jsonObject.name = callerIdElement.textContent.trim();
         }
+
 
         // 4. Extract Rate and Count (using Ratings)
         const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span');
@@ -154,33 +151,24 @@ function extractDataFromDOM(doc, phoneNumber) {
             jsonObject.count = rateValue;
         }
 
-        // 5. Extract City and Province
-        const cityElement = findElementByText('strong', "City:"); // Find <strong> containing the text
+        // 5. Extract City and Province - Corrected Splitting Logic
+        const cityElement = findElementByText('strong', "City:");
         if (cityElement) {
             const cityText = cityElement.nextSibling;
             if (cityText && cityText.nodeType === Node.TEXT_NODE) {
                 const cityValue = cityText.textContent.trim();
-                const cityParts = cityValue.split('-');
-                if (cityParts.length > 1) {
-                    const locationParts = cityParts[1].trim().split(',');
+                const parts = cityValue.split('-'); // Split by hyphen first
+                if (parts.length > 1) {
+                    const locationParts = parts[1].trim().split(',').map(part => part.trim()); // Split by comma, trim each part
                     if (locationParts.length > 0) {
-                        jsonObject.city = locationParts[0].trim();
+                        jsonObject.city = locationParts[0]; // First part is city
                         if (locationParts.length > 1) {
-                            jsonObject.province = locationParts[1].trim();
-                        }
-                    }
-                } else {
-                    const locationParts = cityValue.trim().split(',');
-                    if (locationParts.length > 0) {
-                        jsonObject.city = locationParts[0].trim();
-                        if (locationParts.length > 1) {
-                            jsonObject.province = locationParts[1].trim();
+                            jsonObject.province = locationParts[1]; // Second part is province/country
                         }
                     }
                 }
             }
         }
-
 
     } catch (error) {
         console.error('Error extracting data:', error);
@@ -190,7 +178,6 @@ function extractDataFromDOM(doc, phoneNumber) {
     console.log('Final jsonObject type:', typeof jsonObject);
     return jsonObject;
 }
-
 
 // Function to generate output information
 async function generateOutput(phoneNumber, nationalNumber, e164Number, externalRequestId) {
