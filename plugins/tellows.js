@@ -136,17 +136,23 @@ function extractDataFromDOM(doc, phoneNumber) {
         }
 
         // 3. Extract Name (Caller ID) - ROBUST METHOD
-        const callerNameElement = findElementByText('b', "Caller Name:");
-        if (callerNameElement) {
-            // Find the *next* sibling element that is a <span> with class "callerId"
-            let nextSibling = callerNameElement.nextElementSibling; // Use nextElementSibling!
-            while (nextSibling) {
-                if (nextSibling.tagName === 'SPAN' && nextSibling.classList.contains('callerId')) {
-                    jsonObject.name = nextSibling.textContent.trim();
-                    break; // Exit the loop once we've found it!
-                }
-                nextSibling = nextSibling.nextElementSibling;
+        const callerNameAnchor = findElementByText('b', "Caller Name:");
+        console.log("Caller Name Anchor:", callerNameAnchor); // LOG
+
+        if (callerNameAnchor) {
+            const parent = callerNameAnchor.parentNode;
+            console.log("Parent of Anchor:", parent);  // LOG
+
+            const callerIdSpan = parent.querySelector('span.callerId');
+            console.log("Caller ID Span (within parent):", callerIdSpan); // LOG
+
+            if (callerIdSpan) {
+                jsonObject.name = callerIdSpan.textContent.trim();
+            } else {
+                console.error("Could not find span.callerId within the parent.");
             }
+        } else {
+            console.error("Could not find the 'Caller Name:' anchor.");
         }
 
 
