@@ -95,17 +95,15 @@ function queryPhoneInfo(phoneNumber, requestId) {
 // Function to extract data using DOMParser API
 function extractDataFromDOM(doc, phoneNumber) {
   const jsonObject = {
-    phoneNumber: phoneNumber,
-    label: "",
-    name: "",
-    rate: 0,
-    city: "",
     count: 0,
     sourceLabel: "",
     province: "",
+    city: "",
     carrier: "",
+    phoneNumber: phoneNumber,
+    name: "Unknown"
   };
-
+  
   try {
     console.log('Document Object:', doc);
 
