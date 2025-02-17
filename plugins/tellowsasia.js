@@ -58,6 +58,19 @@ const manualMapping = {
     'Ping Call': 'Spam Likely', // Often associated with scams
     'SMS spam': 'Spam Likely',
     'Spam Call': 'Spam Likely', // Added, map label extracted "spam call" to predefined "Spam Likely"
+    '未知來電': 'Unknown',
+    '可信賴來電': 'Other', // Could map to a "Safe" category if you have one
+    '贈獎活動': 'Spam Likely', // Sweepstakes - often scam/spam
+    '討債公司': 'Debt Collection',
+    '煩人廣告': 'Telemarketing', // Annoying advertising
+    '市場調查': 'Survey',
+    '電話恐嚇': 'Fraud Scam Likely', // Phone threats - high risk
+    '付費電話': 'Other', // Cost trap / premium rate number - could be 'Risk'
+    '銷售專線': 'Telemarketing', // Sales line
+    'Ping通话': 'Spam Likely',    // Ping Call
+    '詐騙短信': 'Spam Likely',   // Scam SMS
+    'Spam Call': 'Spam Likely', //From score
+    'Unknown': 'Unknown',  
 };
 
 
@@ -66,114 +79,148 @@ const pendingPromises = new Map();
 
 // Function to query phone number information
 function queryPhoneInfo(phoneNumber, requestId) {
-  console.log('queryPhoneInfo called with phoneNumber:', phoneNumber, 'and requestId:', requestId);
-  FlutterChannel.postMessage(JSON.stringify({
-    pluginId: pluginId,
-    method: 'GET',
-    requestId: requestId,
-    url: `https://www.tellows.com/num/${phoneNumber}`, // Updated URL
-    headers: {
-      "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
-    },
-  }));
+    console.log('queryPhoneInfo called with phoneNumber:', phoneNumber, 'and requestId:', requestId);
+    FlutterChannel.postMessage(JSON.stringify({
+        pluginId: pluginId,
+        method: 'GET',
+        requestId: requestId,
+        url: `https://www.tellows.com/num/${phoneNumber}`, // Use tellows.com as base, language detection below
+        headers: {
+            "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
+        },
+    }));
 }
 
 // Function to extract data using DOMParser API
 function extractDataFromDOM(doc, phoneNumber) {
-  const jsonObject = {
-    phoneNumber: phoneNumber,
-    label: "",
-    name: "",
-    rate: 0,
-    city: "",
-    count: 0, //Added count
-    sourceLabel: "",  // Keep sourceLabel if needed for other purposes
-    province: "", //keep province
-    carrier: "", // keep carrier
-  };
+    const jsonObject = {
+        phoneNumber: phoneNumber,
+        label: "",
+        name: "",
+        rate: 0,
+        city: "",
+        count: 0,
+        sourceLabel: "",
+        province: "",
+        carrier: "",
+    };
 
-  try {
-    console.log('Document Object:', doc);
+    try {
+        console.log('Document Object:', doc);
 
-    const bodyElement = doc.body;
-    if (!bodyElement) {
-      console.error('Error: Could not find body element.');
-      return jsonObject;
-    }
+        const bodyElement = doc.body;
+        if (!bodyElement) {
+            console.error('Error: Could not find body element.');
+            return jsonObject;
+        }
+      // --- Language Detection (use URL if possible, fallback to doc.documentElement.lang) ---
+        let baseUrl = "https://www.tellows.com";  //Default
+        let currentManualMapping = manualMapping; // Default to tellows.tw (Traditional Chinese)
 
-    // 1. Extract Label (Priority 1: Types of call)
-    const typesOfCallElement = doc.querySelector('b:contains("Types of call:")');
-    if (typesOfCallElement) {
-      const nextSibling = typesOfCallElement.nextSibling;
-       if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
-          let labelText = nextSibling.textContent.trim();
-          if (labelText) {
-            jsonObject.label = labelText;
-          }
-          
-      }
-    }
+        // Check the URL for language/country codes (MOST RELIABLE)
+        const currentURL = doc.location.href; // Get the *actual* URL of the loaded page
+        if (currentURL.includes("tellows.tw")) {
+          baseUrl = "https://www.tellows.tw";
+          currentManualMapping = manualMapping;
+        } else if (currentURL.includes("tellows.com.hk")) { //example
+          baseUrl = "https://www.tellows.com.hk";
+            //currentManualMapping = manualMappingHongKong;  // You'd need a separate mapping for Hong Kong
+        } else if (currentURL.includes("tellows.com")) {
+          baseUrl = "https://www.tellows.com";
+           // currentManualMapping = manualMappingEnglish;  // Use English as default for .com
+        } // ... add other tellows domains as needed ...
+
+        // Fallback to doc.documentElement.lang (LESS RELIABLE)
+        else if (doc.documentElement.lang.startsWith('zh-TW')) {
+            baseUrl = "https://www.tellows.tw";
+            currentManualMapping = manualMapping;
+        } else if (doc.documentElement.lang.startsWith('zh-HK')) { //example
+             baseUrl = "https://www.tellows.com.hk";
+           // currentManualMapping = manualMappingHongKong;
+        }
 
 
-      // 2. Extract Label (Priority 2: Score Image)
-      if (!jsonObject.label) { // Only check if label is not already set
-        const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
-        if (scoreImage) {
-          const altText = scoreImage.alt;
-          const scoreMatch = altText.match(/Score\s([789])/);
-          if (scoreMatch) {
-            jsonObject.label = "Spam Call";
+        // --- Priority 1: Label from "來電種類" ---
+        const callTypeElement = doc.querySelector('b:contains("來電種類:")'); // Find the <b> tag
+        if (callTypeElement) {
+            const nextSibling = callTypeElement.nextSibling;
+            if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
+                let labelText = nextSibling.textContent.trim();
+                 if (labelText) {
+                     jsonObject.sourceLabel = labelText;
+                    jsonObject.label = currentManualMapping[labelText] || 'Unknown'; // Use the correct mapping
+                }
+            }
+        }
+
+        // --- Priority 2: Label from Score Image (if Priority 1 fails) ---
+        if (!jsonObject.label) {
+            const scoreImage = doc.querySelector('.scorepic a img.scoreimage');
+            if (scoreImage) {
+                const altText = scoreImage.alt;
+                const scoreMatch = altText.match(/Score\s([789])/);
+                if (scoreMatch) {
+                   jsonObject.sourceLabel = "Spam Call";
+                    jsonObject.label = 'Spam Likely'; // Map scores 7, 8, or 9 to "Spam Call"
+                }
+            }
+        }
+
+        // --- Extract Name (Caller ID) ---
+        const callerIdSpan = doc.querySelector('.callerId');
+        if (callerIdSpan) {
+            jsonObject.name = callerIdSpan.textContent.trim();
+        }
+
+        // --- Extract Count ---
+        const countElement = doc.querySelector('a[href="#complaint_list"] strong span');
+        if (countElement) {
+            jsonObject.count = parseInt(countElement.textContent.trim(), 10) || 0;
+        }
+
+        // --- Extract City ---
+       const cityElement = doc.querySelector('strong:contains("城市:")');
+        if (cityElement) {
+          const cityText = cityElement.nextSibling;
+
+          if (cityText && cityText.nodeType === Node.TEXT_NODE)
+          {
+             const cityValue = cityText.textContent.trim().split('-')[0].trim();
+             const cityParts = cityValue.split(','); // Split by comma
+                if (cityParts.length > 1) {
+                  jsonObject.city = cityParts[0].trim();   // Use the first part (city name)
+                } else {
+                   jsonObject.city = cityParts[0].trim();
+                }
           }
         }
-      }
+       //try get city from 區域號碼
+        if(!jsonObject.city){
+            const areaCodeElement = doc.querySelector('strong:contains("區域號碼:")');
+             if (areaCodeElement) {
+                  const cityText = areaCodeElement.nextSibling;
 
-    // 3. Extract Name (Caller ID)
-    const callerIdElement = doc.querySelector('b:contains("Caller Name:")');
-    if (callerIdElement) {
-      const callerIdSpan = callerIdElement.nextElementSibling; // Assuming it's the next sibling <span>
-      if (callerIdSpan && callerIdSpan.classList.contains('callerId')) {
-        jsonObject.name = callerIdSpan.textContent.trim();
-      }
+                  if (cityText && cityText.nodeType === Node.TEXT_NODE)
+                  {
+                     const cityValue = cityText.textContent.trim().split('-')[0].trim();
+                     const cityParts = cityValue.split(','); // Split by comma
+                        if (cityParts.length > 1) {
+                          jsonObject.city = cityParts[0].trim();   // Use the first part (city name)
+                        } else {
+                           jsonObject.city = cityParts[0].trim();
+                        }
+                  }
+              }
+        }
+
+    } catch (error) {
+        console.error('Error extracting data:', error);
+        return jsonObject; // Return object even on error
     }
 
-    // 4. Extract Rate
-    const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span');
-    if (ratingsElement) {
-      jsonObject.rate = parseInt(ratingsElement.textContent.trim(), 10) || 0; // Default to 0 if parsing fails
-    }
-
-
-      // 5. Extract count (using Ratings as count source)
-      if (ratingsElement) { // Re-use the ratings element
-        jsonObject.count = parseInt(ratingsElement.textContent.trim(), 10) || 0;
-      }
-    // 6. Extract City
-    const cityElement = doc.querySelector('strong:contains("City:")');
-    if (cityElement) {
-      const cityText = cityElement.nextSibling;
-
-      if (cityText && cityText.nodeType === Node.TEXT_NODE)
-      {
-         const cityValue = cityText.textContent.trim().split('-')[0].trim();
-         const cityParts = cityValue.split(','); // Split by comma
-            if (cityParts.length > 1) {
-              jsonObject.city = cityParts[0].trim();   // Use the first part (city name)
-            } else {
-               jsonObject.city = cityParts[0].trim();
-            }
-      }
-    }
-
-
-  } catch (error) {
-    console.error('Error extracting data:', error);
-  }
-
-  console.log('Final jsonObject:', jsonObject);
-  console.log('Final jsonObject type:', typeof jsonObject);
-  return jsonObject;
+    console.log('Final jsonObject:', jsonObject);
+    return jsonObject;
 }
-
 
 
 // Function to generate output information
