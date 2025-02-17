@@ -218,216 +218,224 @@ function extractDataFromDOM(doc, phoneNumber) {
 
 
 
-
-// Function to generate output information (remains largely unchanged)
+//update
+// Function to generate output information
 async function generateOutput(phoneNumber, nationalNumber, e164Number, externalRequestId) {
   console.log('generateOutput called with:', phoneNumber, nationalNumber, e164Number, externalRequestId);
 
+  // Rest of the generateOutput function remains the same...
+  // ... (No changes needed here because manualMapping is now correctly defined)
     // Function to handle a single number query (returns a Promise)
     function handleNumberQuery(number, requestId) {
-    return new Promise((resolve, reject) => {
-      queryPhoneInfo(number, requestId);
-      pendingPromises.set(requestId, resolve);
+        return new Promise((resolve, reject) => {
+            queryPhoneInfo(number, requestId);
+            pendingPromises.set(requestId, resolve);
 
-      // Set timeout
-      const timeoutId = setTimeout(() => {
-        if (pendingPromises.has(requestId)) {
-          reject(new Error('Timeout waiting for response'));
-          pendingPromises.delete(requestId);
-          window.removeEventListener('message', messageListener);
-        }
-      }, 5000); // 5 seconds timeout
+            // Set timeout
+            const timeoutId = setTimeout(() => {
+                if (pendingPromises.has(requestId)) {
+                    reject(new Error('Timeout waiting for response'));
+                    pendingPromises.delete(requestId);
+                    window.removeEventListener('message', messageListener);
+                }
+            }, 5000); // 5 seconds timeout
 
-      // Listen for message events
-      function messageListener(event) {
-        console.log('Received message in event listener:', event.data);
-        console.log('Received message event.data.type:', event.data.type);
+            // Listen for message events
+            function messageListener(event) {
+                console.log('Received message in event listener:', event.data);
+                console.log('Received message event.data.type:', event.data.type);
 
-        if (event.data.type === `xhrResponse_${pluginId}`) {
-          const detail = event.data.detail;
-          const response = detail.response;
-          const receivedRequestId = detail.requestId;
+                if (event.data.type === `xhrResponse_${pluginId}`) {
+                    const detail = event.data.detail;
+                    const response = detail.response;
+                    const receivedRequestId = detail.requestId;
 
-          console.log('requestId from detail:', receivedRequestId);
-          console.log('event.data.detail.response:', response);
+                    console.log('requestId from detail:', receivedRequestId);
+                    console.log('event.data.detail.response:', response);
 
-          // Check if requestId matches
-          if (receivedRequestId === requestId) {
-            if (response.status >= 200 && response.status < 300) {
-              console.log('response.responseText length:', response.responseText.length);
-              console.log('response.responseText:', response.responseText);
+                    // Check if requestId matches
+                    if (receivedRequestId === requestId) {
+                        if (response.status >= 200 && response.status < 300) {
+                            console.log('response.responseText length:', response.responseText.length);
+                            console.log('response.responseText:', response.responseText);
 
-              // Parse HTML
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(response.responseText, 'text/html');
+                            // Parse HTML
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(response.responseText, 'text/html');
 
-              // Use JavaScript code to extract data
-              const jsonObject = extractDataFromDOM(doc, number); // Pass the number
-              console.log('Extracted information:', jsonObject);
+                            // Use JavaScript code to extract data
+                            const jsonObject = extractDataFromDOM(doc, number); // Pass the number to extractDataFromDOM
+                            console.log('Extracted information:', jsonObject);
+                            console.log('Extracted information type:', typeof jsonObject);
 
-              // Cleanup
-              clearTimeout(timeoutId);
-              pendingPromises.delete(requestId);
-              window.removeEventListener('message', messageListener);
+                            // Cleanup
+                            clearTimeout(timeoutId);
+                            pendingPromises.delete(requestId);
+                            window.removeEventListener('message', messageListener);
 
-              // Resolve with the extracted data
-              resolve(jsonObject);
-            } else {
-              console.error(`HTTP error! status: ${response.status}`);
-              reject(new Error(`HTTP error! status: ${response.status}`));
-                // Cleanup
-                clearTimeout(timeoutId);
-                pendingPromises.delete(requestId);
-                window.removeEventListener('message', messageListener);
+                            // Resolve the promise with the extracted data
+                            resolve(jsonObject);
+                        } else {
+                            console.error(`HTTP error! status: ${response.status}`);
+                            reject(new Error(`HTTP error! status: ${response.status}`));
+
+                            // Cleanup
+                            clearTimeout(timeoutId);
+                            pendingPromises.delete(requestId);
+                            window.removeEventListener('message', messageListener);
+                        }
+                    } else {
+                        console.log('Received response for a different requestId:', receivedRequestId);
+                    }
+                } else {
+                    console.log('Received unknown message type:', event.data.type);
+                }
             }
-          }
+
+            window.addEventListener('message', messageListener);
+        });
+    }
+
+    // Process each number sequentially, use whichever returns a valid result first
+    try {
+        let result;
+
+        if (phoneNumber) {
+            const phoneRequestId = Math.random().toString(36).substring(2);
+            try {
+                result = await handleNumberQuery(phoneNumber, phoneRequestId);
+                console.log('Query result for phoneNumber:', result);
+            } catch (error) {
+                console.error('Error querying phoneNumber:', error);
+            }
         }
-      }
 
-      window.addEventListener('message', messageListener);
-    });
-  }
-}
+        if (nationalNumber) {
+            const nationalRequestId = Math.random().toString(36).substring(2);
+            try {
+                result = await handleNumberQuery(nationalNumber, nationalRequestId);
+                console.log('Query result for nationalNumber:', result);
+            } catch (error) {
+                console.error('Error querying nationalNumber:', error);
+            }
+        }
 
-  // Process each number sequentially, use whichever returns a valid result first
-  try {
-    let result;
+        if (e164Number) {
+            const e164RequestId = Math.random().toString(36).substring(2);
+            try {
+                result = await handleNumberQuery(e164Number, e164RequestId);
+                console.log('Query result for e164Number:', result);
+            } catch (error) {
+                console.error('Error querying e164Number:', error);
+            }
+        }
 
-    if (phoneNumber) {
-      const phoneRequestId = Math.random().toString(36).substring(2);
-      try {
-        result = await handleNumberQuery(phoneNumber, phoneRequestId);
-        console.log('Query result for phoneNumber:', result);
-      } catch (error) {
-        console.error('Error querying phoneNumber:', error);
-      }
-    }
+        console.log('First successful query completed:', result);
+        console.log('First successful query completed type:', typeof result);
 
-    if (nationalNumber) {
-      const nationalRequestId = Math.random().toString(36).substring(2);
-      try {
-        result = await handleNumberQuery(nationalNumber, nationalRequestId);
-        console.log('Query result for nationalNumber:', result);
-      } catch (error) {
-        console.error('Error querying nationalNumber:', error);
-      }
-    }
+        // Ensure result is not null
+        if (!result) {
+            // Send error message via FlutterChannel
+            FlutterChannel.postMessage(JSON.stringify({
+                type: 'pluginError',
+                pluginId: pluginId,
+                error: 'All attempts failed or timed out.',
+            }));
+            return { error: 'All attempts failed or timed out.' }; // Also return the error information
+        }
 
-    if (e164Number) {
-      const e164RequestId = Math.random().toString(36).substring(2);
-      try {
-        result = await handleNumberQuery(e164Number, e164RequestId);
-        console.log('Query result for e164Number:', result);
-      } catch (error) {
-        console.error('Error querying e164Number:', error);
-      }
-    }
+        // Find a matching predefined label using the found sourceLabel
+        let matchedLabel = predefinedLabels.find(label => label.label === result.sourceLabel)?.label;
 
-    console.log('First successful query completed:', result);
-    console.log('First successful query completed type:', typeof result);
+        // If no direct match is found, try to find one in manualMapping
+        if (!matchedLabel) {
+            matchedLabel = manualMapping[result.sourceLabel];
+        }
 
-    // Ensure result is not null
-    if (!result) {
-      // Send error message via FlutterChannel
-      FlutterChannel.postMessage(JSON.stringify({
-        type: 'pluginError',
-        pluginId: pluginId,
-        error: 'All attempts failed or timed out.',
-      }));
-      return { error: 'All attempts failed or timed out.' }; // Also return the error information
-    }
+        // If no match is found in manualMapping, use 'Unknown'
+        if (!matchedLabel) {
+            matchedLabel = 'Unknown';
+        }
 
-    // Find a matching predefined label using the found sourceLabel
-    let matchedLabel = predefinedLabels.find(label => label.label === result.sourceLabel)?.label;
+        const finalResult = {
+            phoneNumber: result.phoneNumber,
+            sourceLabel: result.sourceLabel,
+            count: result.count,
+            province: result.province,
+            city: result.city,
+            carrier: result.carrier,
+            name: result.name,
+            predefinedLabel: matchedLabel, // Use the matched label
+            source: pluginInfo.info.name,
+        };
 
-    // If no direct match is found, try to find one in manualMapping
-    if (!matchedLabel) {
-      matchedLabel = manualMapping[result.sourceLabel];
-    }
-
-    // If no match is found in manualMapping, use 'Unknown'
-    if (!matchedLabel) {
-      matchedLabel = 'Unknown';
-    }
-
-    const finalResult = {
-      phoneNumber: result.phoneNumber,
-      sourceLabel: result.sourceLabel,
-      count: result.count,
-      province: result.province,
-      city: result.city,
-      carrier: result.carrier,
-      predefinedLabel: matchedLabel, // Use the matched label
-      source: pluginInfo.info.name,
-    };
-
-    // Send the result via FlutterChannel
-    FlutterChannel.postMessage(JSON.stringify({
-      type: 'pluginResult',
-      requestId: externalRequestId,
-      pluginId: pluginId,
-      data: finalResult,
-    }));
-
-    // Send the result via window.parent.postMessage (this part might need adjustment based on your environment)
-    console.log(`Plugin ${pluginId} - Sending result via window.currentPluginChannel`);
-    if (typeof PluginResultChannel !== 'undefined') {
-        PluginResultChannel.postMessage(JSON.stringify({
+        // Send the result via FlutterChannel
+        FlutterChannel.postMessage(JSON.stringify({
             type: 'pluginResult',
             requestId: externalRequestId,
             pluginId: pluginId,
             data: finalResult,
         }));
-    } else {
-        console.error('PluginResultChannel is not defined');
-    }
 
-    return finalResult; // Also return the result
-  } catch (error) {
-    console.error('Error in generateOutput:', error);
-    // Send error message via FlutterChannel
-    FlutterChannel.postMessage(JSON.stringify({
-      type: 'pluginError',
-      pluginId: pluginId,
-      error: error.message || 'Unknown error occurred during phone number lookup.',
-    }));
-    return {
-      error: error.message || 'Unknown error occurred during phone number lookup.',
-    };
-  }
+        // Send the result via window.parent.postMessage (this part might need adjustment based on your environment)
+        console.log(`Plugin ${pluginId} - Sending result via window.currentPluginChannel`);
+        if (typeof PluginResultChannel !== 'undefined') {
+            PluginResultChannel.postMessage(JSON.stringify({
+                type: 'pluginResult',
+                requestId: externalRequestId,
+                pluginId: pluginId,
+                data: finalResult,
+            }));
+        } else {
+            console.error('PluginResultChannel is not defined');
+        }
+
+        return finalResult; // Also return the result
+    } catch (error) {
+        console.error('Error in generateOutput:', error);
+        // Send error message via FlutterChannel
+        FlutterChannel.postMessage(JSON.stringify({
+            type: 'pluginError',
+            pluginId: pluginId,
+            error: error.message || 'Unknown error occurred during phone number lookup.',
+        }));
+        return {
+            error: error.message || 'Unknown error occurred during phone number lookup.',
+        };
+    }
 }
 
 // Initialize plugin
 async function initializePlugin() {
-  window.plugin = {};
-  const thisPlugin = {
-    id: pluginInfo.info.id,
-    pluginId: pluginId,
-    version: pluginInfo.info.version,
-    queryPhoneInfo: queryPhoneInfo,
-    generateOutput: generateOutput,
-    test: function () {
-      console.log('Plugin test function called');
-      return 'Plugin is working';
+    window.plugin = {};
+    const thisPlugin = {
+        id: pluginInfo.info.id,
+        pluginId: pluginId,
+        version: pluginInfo.info.version,
+        queryPhoneInfo: queryPhoneInfo,
+        generateOutput: generateOutput,
+        test: function () {
+            console.log('Plugin test function called');
+            return 'Plugin is working';
+        }
+    };
+
+    window.plugin[pluginId] = thisPlugin;
+
+    if (typeof TestPageChannel !== 'undefined') {
+        TestPageChannel.postMessage(JSON.stringify({
+            type: 'pluginLoaded',
+            pluginId: pluginId,
+        }));
+        console.log('Notified Flutter that plugin is loaded');
+        TestPageChannel.postMessage(JSON.stringify({
+            type: 'pluginReady',
+            pluginId: pluginId,
+        }));
+        console.log('Notified Flutter that plugin is ready');
+    } else {
+        console.error('TestPageChannel is not defined');
     }
-  };
-
-  window.plugin[pluginId] = thisPlugin;
-
-  if (typeof TestPageChannel !== 'undefined') {
-    TestPageChannel.postMessage(JSON.stringify({
-      type: 'pluginLoaded',
-      pluginId: pluginId,
-    }));
-    console.log('Notified Flutter that plugin is loaded');
-    TestPageChannel.postMessage(JSON.stringify({
-      type: 'pluginReady',
-      pluginId: pluginId,
-    }));
-    console.log('Notified Flutter that plugin is ready');
-  } else {
-    console.error('TestPageChannel is not defined');
-  }
 }
 
 // Initialize plugin
