@@ -98,29 +98,67 @@ function extractDataFromDOM(doc, phoneNumber) {
       jsonObject.phoneNumber = phoneNumberText;
     }
     
-    // Extract name
-    const nameElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(1) td');
-    if (nameElement) {
-      const nameText = nameElement.textContent.trim();
-      jsonObject.name = nameText === '？' ? 'Unknown' : nameText;
+// Extract name
+const nameElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(1) td');
+
+jsonObject.name = "unknown"; // Initialize to "unknown"
+
+if (nameElement) {
+  let nameText = nameElement.textContent.trim();
+
+  if (nameText) { // Check for empty string
+    // Remove "[▼詳細を見る]" and anything after it
+    const detailIndex = nameText.indexOf('[▼詳細を見る]');
+    if (detailIndex !== -1) {
+      nameText = nameText.substring(0, detailIndex).trim();
     }
 
-    // Extract province and city
-    const locationElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(3) td:nth-child(2)');
-    if (locationElement) {
-        const locationText = locationElement.textContent.trim();
-        if (locationText !== '---') {
-            jsonObject.province = locationText;
-            jsonObject.city = locationText;
+    // Check against the specific text content, not just the tag structure.
+    const thElement = nameElement.parentElement.querySelector('th');
+    if (thElement && thElement.textContent.trim() === '利用事業者')
+        {
+          jsonObject.name = nameText === '？' ? 'Unknown' : (nameText === '---' ? 'unknown' : nameText);
         }
-    }
 
-    // Extract count
-    const countElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(4) th:nth-child(1) strong');
-      if (countElement) {
-          const countText = countElement.textContent.trim();
-          jsonObject.count = parseInt(countText, 10) || 0;
+  }
+}
+
+// Extract province and city
+const locationElement = doc.querySelector('table.table-bordered.table-condensed tr:nth-child(3) td:nth-child(2)');
+
+jsonObject.province = "unknown"; // Initialize to "unknown"
+jsonObject.city = "unknown";     // Initialize to "unknown"
+
+if (locationElement) {
+  const locationText = locationElement.textContent.trim();
+
+  if (locationText && locationText !== '---') {  // Check for empty string and "---"
+    const parts = locationText.split(',').map(part => part.trim()); // Split by comma, trim each part
+
+    if (parts.length > 0) {
+        jsonObject.province = parts[0];
+        jsonObject.city = parts[1] || parts[0];   // if parts[1] not exist，city=provice
       }
+    }
+  }
+
+console.log(jsonObject);
+
+// --- Extract Count ---
+const countElement = doc.querySelector('table.table-bordered.table-condensed th:contains("アクセス数")');
+if (countElement) {
+    const countText = countElement.nextSibling?.textContent.trim(); // Get text of the next sibling (td)
+    if (countText) {
+        const countMatch = countText.match(/(\d+)/); // Extract the first number
+        if (countMatch) {
+            jsonObject.count = parseInt(countMatch[1], 10) || 0;
+        } else {
+            jsonObject.count = 0; // Default to 0 if no number found
+        }
+    } else {
+        jsonObject.count = 0; //Default to 0 if no sibling.
+    }
+}
 
     // Extract label
     const labelElement = doc.querySelector('table.table-bordered.table-condensed i.icon-comment + u > b');
