@@ -82,13 +82,13 @@ function queryPhoneInfo(phoneNumber, requestId) {
 function extractDataFromDOM(doc, phoneNumber) {
     const jsonObject = {
         count: 0,
-        sourceLabel: "",  // Renamed to sourceLabel to match other code
+        sourceLabel: "",
         province: "",
         city: "",
         carrier: "",
         phoneNumber: phoneNumber,
         name: "unknown",
-        rate: 0  // Added rate, as it seems to be intended
+        rate: 0
     };
 
     try {
@@ -101,33 +101,44 @@ function extractDataFromDOM(doc, phoneNumber) {
             return jsonObject;
         }
 
+        // --- Helper Function to find element by text ---
+        function findElementByText(selector, text) {
+            const elements = doc.querySelectorAll(selector);
+            for (const element of elements) {
+                if (element.textContent.includes(text)) {
+                    return element;
+                }
+            }
+            return null;
+        }
+
         // 1. Extract Label (Priority 1: Types of call)
-        const typesOfCallElement = doc.querySelector('b:contains("Types of call:")');  // Corrected selector
+        const typesOfCallElement = findElementByText('b', "Types of call:"); // Find <b> containing the text
         if (typesOfCallElement) {
             const nextSibling = typesOfCallElement.nextSibling;
             if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
                 let labelText = nextSibling.textContent.trim();
                 if (labelText) {
-                    jsonObject.sourceLabel = labelText; // Use sourceLabel
+                    jsonObject.sourceLabel = labelText;
                 }
             }
         }
 
 
-        // 2. Extract Label (Priority 2: Score Image) -  Only if sourceLabel is empty
+        // 2. Extract Label (Priority 2: Score Image) - Only if sourceLabel is empty
         if (!jsonObject.sourceLabel) {
             const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
             if (scoreImage) {
                 const altText = scoreImage.alt;
                 const scoreMatch = altText.match(/Score\s([789])/); //checks for 7, 8, or 9
                 if (scoreMatch) {
-                    jsonObject.sourceLabel = "Spam Call";  // Use sourceLabel.
+                    jsonObject.sourceLabel = "Spam Call";
                 }
             }
         }
 
         // 3. Extract Name (Caller ID)
-        const callerIdElement = doc.querySelector('b:contains("Caller Name:")'); // Corrected selector
+        const callerIdElement = findElementByText('b', "Caller Name:"); // Find <b> containing the text
         if (callerIdElement) {
             const callerIdSpan = callerIdElement.nextElementSibling; // Assuming it's the next sibling <span>
             if (callerIdSpan && callerIdSpan.classList.contains('callerId')) {
@@ -138,43 +149,38 @@ function extractDataFromDOM(doc, phoneNumber) {
         // 4. Extract Rate and Count (using Ratings)
         const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span');
         if (ratingsElement) {
-            const rateValue = parseInt(ratingsElement.textContent.trim(), 10) || 0; // Get rate/count value
+            const rateValue = parseInt(ratingsElement.textContent.trim(), 10) || 0;
             jsonObject.rate = rateValue;
-            jsonObject.count = rateValue; // Use same value for count
+            jsonObject.count = rateValue;
         }
-      // 5. Extract City
-       const cityElement = doc.querySelector('strong:contains("City:")');
-       if (cityElement)
-        {
+
+        // 5. Extract City and Province
+        const cityElement = findElementByText('strong', "City:"); // Find <strong> containing the text
+        if (cityElement) {
             const cityText = cityElement.nextSibling;
             if (cityText && cityText.nodeType === Node.TEXT_NODE) {
-              const cityValue = cityText.textContent.trim();
-              const cityParts = cityValue.split('-');
-              if (cityParts.length > 1) {
-                const locationParts = cityParts[1].trim().split(',');
-                if (locationParts.length > 0)
-                  {
-                    jsonObject.city = locationParts[0].trim();
-                    if (locationParts.length > 1)
-                      {
-                        jsonObject.province = locationParts[1].trim();
-                      }
-
-                  }
-              }
-              else{
-               const locationParts = cityValue.trim().split(',');
-                if (locationParts.length > 0)
-                  {
-                    jsonObject.city = locationParts[0].trim();
-                    if (locationParts.length > 1)
-                      {
-                        jsonObject.province = locationParts[1].trim();
-                      }
-                  }
-              }
+                const cityValue = cityText.textContent.trim();
+                const cityParts = cityValue.split('-');
+                if (cityParts.length > 1) {
+                    const locationParts = cityParts[1].trim().split(',');
+                    if (locationParts.length > 0) {
+                        jsonObject.city = locationParts[0].trim();
+                        if (locationParts.length > 1) {
+                            jsonObject.province = locationParts[1].trim();
+                        }
+                    }
+                } else {
+                    const locationParts = cityValue.trim().split(',');
+                    if (locationParts.length > 0) {
+                        jsonObject.city = locationParts[0].trim();
+                        if (locationParts.length > 1) {
+                            jsonObject.province = locationParts[1].trim();
+                        }
+                    }
+                }
             }
         }
+
 
     } catch (error) {
         console.error('Error extracting data:', error);
