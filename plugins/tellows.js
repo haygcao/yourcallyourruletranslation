@@ -80,95 +80,109 @@ function queryPhoneInfo(phoneNumber, requestId) {
 
 // Function to extract data using DOMParser API
 function extractDataFromDOM(doc, phoneNumber) {
-  const jsonObject = {
-    count: 0,
-    sourceLabel: "",
-    province: "",
-    city: "",
-    carrier: "",
-    phoneNumber: phoneNumber
-  };
+    const jsonObject = {
+        count: 0,
+        sourceLabel: "",  // Renamed to sourceLabel to match other code
+        province: "",
+        city: "",
+        carrier: "",
+        phoneNumber: phoneNumber,
+        name: "unknown",
+        rate: 0  // Added rate, as it seems to be intended
+    };
 
-  try {
-    console.log('Document Object:', doc);
+    try {
+        console.log('Document Object:', doc);
 
-    const bodyElement = doc.body;
-    if (!bodyElement) {
-      console.error('Error: Could not find body element.');
-      return jsonObject;
-    }
-
-    // 1. Extract Label (Priority 1: Types of call)
-    const typesOfCallElement = doc.querySelector('b:contains("Types of call:")');
-    if (typesOfCallElement) {
-      const nextSibling = typesOfCallElement.nextSibling;
-       if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
-          let labelText = nextSibling.textContent.trim();
-          if (labelText) {
-            jsonObject.label = labelText;
-          }
-          
-      }
-    }
-
-
-      // 2. Extract Label (Priority 2: Score Image)
-      if (!jsonObject.label) { // Only check if label is not already set
-        const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
-        if (scoreImage) {
-          const altText = scoreImage.alt;
-          const scoreMatch = altText.match(/Score\s([789])/);
-          if (scoreMatch) {
-            jsonObject.label = "Spam Call";
-          }
+        const bodyElement = doc.body;
+        console.log('Body Element:', bodyElement);
+        if (!bodyElement) {
+            console.error('Error: Could not find body element.');
+            return jsonObject;
         }
-      }
 
-    // 3. Extract Name (Caller ID)
-    const callerIdElement = doc.querySelector('b:contains("Caller Name:")');
-    if (callerIdElement) {
-      const callerIdSpan = callerIdElement.nextElementSibling; // Assuming it's the next sibling <span>
-      if (callerIdSpan && callerIdSpan.classList.contains('callerId')) {
-        jsonObject.name = callerIdSpan.textContent.trim();
-      }
-    }
-
-    // 4. Extract Rate
-    const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span');
-    if (ratingsElement) {
-      jsonObject.rate = parseInt(ratingsElement.textContent.trim(), 10) || 0; // Default to 0 if parsing fails
-    }
-
-
-      // 5. Extract count (using Ratings as count source)
-      if (ratingsElement) { // Re-use the ratings element
-        jsonObject.count = parseInt(ratingsElement.textContent.trim(), 10) || 0;
-      }
-    // 6. Extract City
-    const cityElement = doc.querySelector('strong:contains("City:")');
-    if (cityElement) {
-      const cityText = cityElement.nextSibling;
-
-      if (cityText && cityText.nodeType === Node.TEXT_NODE)
-      {
-         const cityValue = cityText.textContent.trim().split('-')[0].trim();
-         const cityParts = cityValue.split(','); // Split by comma
-            if (cityParts.length > 1) {
-              jsonObject.city = cityParts[0].trim();   // Use the first part (city name)
-            } else {
-               jsonObject.city = cityParts[0].trim();
+        // 1. Extract Label (Priority 1: Types of call)
+        const typesOfCallElement = doc.querySelector('b:contains("Types of call:")');  // Corrected selector
+        if (typesOfCallElement) {
+            const nextSibling = typesOfCallElement.nextSibling;
+            if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
+                let labelText = nextSibling.textContent.trim();
+                if (labelText) {
+                    jsonObject.sourceLabel = labelText; // Use sourceLabel
+                }
             }
-      }
+        }
+
+
+        // 2. Extract Label (Priority 2: Score Image) -  Only if sourceLabel is empty
+        if (!jsonObject.sourceLabel) {
+            const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
+            if (scoreImage) {
+                const altText = scoreImage.alt;
+                const scoreMatch = altText.match(/Score\s([789])/); //checks for 7, 8, or 9
+                if (scoreMatch) {
+                    jsonObject.sourceLabel = "Spam Call";  // Use sourceLabel.
+                }
+            }
+        }
+
+        // 3. Extract Name (Caller ID)
+        const callerIdElement = doc.querySelector('b:contains("Caller Name:")'); // Corrected selector
+        if (callerIdElement) {
+            const callerIdSpan = callerIdElement.nextElementSibling; // Assuming it's the next sibling <span>
+            if (callerIdSpan && callerIdSpan.classList.contains('callerId')) {
+                jsonObject.name = callerIdSpan.textContent.trim();
+            }
+        }
+
+        // 4. Extract Rate and Count (using Ratings)
+        const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span');
+        if (ratingsElement) {
+            const rateValue = parseInt(ratingsElement.textContent.trim(), 10) || 0; // Get rate/count value
+            jsonObject.rate = rateValue;
+            jsonObject.count = rateValue; // Use same value for count
+        }
+      // 5. Extract City
+       const cityElement = doc.querySelector('strong:contains("City:")');
+       if (cityElement)
+        {
+            const cityText = cityElement.nextSibling;
+            if (cityText && cityText.nodeType === Node.TEXT_NODE) {
+              const cityValue = cityText.textContent.trim();
+              const cityParts = cityValue.split('-');
+              if (cityParts.length > 1) {
+                const locationParts = cityParts[1].trim().split(',');
+                if (locationParts.length > 0)
+                  {
+                    jsonObject.city = locationParts[0].trim();
+                    if (locationParts.length > 1)
+                      {
+                        jsonObject.province = locationParts[1].trim();
+                      }
+
+                  }
+              }
+              else{
+               const locationParts = cityValue.trim().split(',');
+                if (locationParts.length > 0)
+                  {
+                    jsonObject.city = locationParts[0].trim();
+                    if (locationParts.length > 1)
+                      {
+                        jsonObject.province = locationParts[1].trim();
+                      }
+                  }
+              }
+            }
+        }
+
+    } catch (error) {
+        console.error('Error extracting data:', error);
     }
 
-
-  } catch (error) {
-    console.error('Error extracting data:', error);
-  }
-
-  console.log('Final jsonObject:', jsonObject);
-  console.log('Final jsonObject type:', typeof jsonObject);
-  return jsonObject;
+    console.log('Final jsonObject:', jsonObject);
+    console.log('Final jsonObject type:', typeof jsonObject);
+    return jsonObject;
 }
 
 
