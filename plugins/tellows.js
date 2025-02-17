@@ -135,10 +135,18 @@ function extractDataFromDOM(doc, phoneNumber) {
             }
         }
 
-        // 3. Extract Name (Caller ID) - Corrected: Directly select the span.callerId
-        const callerIdElement = doc.querySelector('span.callerId');
-        if (callerIdElement) {
-            jsonObject.name = callerIdElement.textContent.trim();
+        // 3. Extract Name (Caller ID) - ROBUST METHOD
+        const callerNameElement = findElementByText('b', "Caller Name:");
+        if (callerNameElement) {
+            // Find the *next* sibling element that is a <span> with class "callerId"
+            let nextSibling = callerNameElement.nextElementSibling; // Use nextElementSibling!
+            while (nextSibling) {
+                if (nextSibling.tagName === 'SPAN' && nextSibling.classList.contains('callerId')) {
+                    jsonObject.name = nextSibling.textContent.trim();
+                    break; // Exit the loop once we've found it!
+                }
+                nextSibling = nextSibling.nextElementSibling;
+            }
         }
 
 
@@ -154,34 +162,28 @@ function extractDataFromDOM(doc, phoneNumber) {
             jsonObject.count = rateValue;
           }
         }
-        // 5. Extract City and Province - Corrected Splitting Logic
-      //const cityElement = findElementByText('strong', "City:"); //Original
-         const cityElement = doc.querySelector('strong:has( ~ text):-soup-contains("City:")');
-         if (cityElement) {
-             let cityText = "";
+        // 5. Extract City and Province - CORRECTED LOGIC
+        const cityElement = findElementByText('strong', "City:");
+        if (cityElement) {
+            let nextSibling = cityElement.nextSibling;
+            while (nextSibling) {
+                if (nextSibling.nodeType === Node.TEXT_NODE) {
+                    let cityText = nextSibling.textContent.trim();
 
-              // Find the next sibling that is text node
-            let nextNode = cityElement.nextSibling;
-              while(nextNode){
-               if (nextNode.nodeType === Node.TEXT_NODE){
-                   cityText += nextNode.textContent;
-               }
-               nextNode = nextNode.nextSibling
-              }
+                    // Split by " - " to get "City" and "Country" parts
+                    const parts = cityText.split('-');
+                    if (parts.length > 0) {
+                        jsonObject.city = parts[0].trim(); // The FIRST part is the city
 
-             cityText = cityText.trim()
-             const parts = cityText.split('-'); // Split by hyphen first
-            if (parts.length > 1) {
-              const locationParts = parts[0].trim(); //first part new Mexico
-                jsonObject.city = locationParts;
-              const country = parts[1].trim().split(',').map(s=>s.trim())
-              if(country.length >0){
-                  jsonObject.province = country.join(",") // if there are more than one country names
-
-              }
-
-            }else{
-                jsonObject.city = parts[0].trim() //if city doesn't have hyphen.
+                        // If there's a second part (countries), handle it
+                        if (parts.length > 1) {
+                            const countries = parts[1].trim().split(',').map(c => c.trim());
+                            jsonObject.province = countries.join(", "); // Join with ", " for multiple countries
+                        }
+                    }
+                    break; // Exit the loop once we've found the city text.
+                }
+                nextSibling = nextSibling.nextSibling;
             }
         }
 
