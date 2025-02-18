@@ -450,5 +450,3 @@ async function initializePlugin() {
 // Initialize plugin
 initializePlugin();
 
-// Initialize plugin
-initializePlugin();
