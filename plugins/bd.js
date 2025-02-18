@@ -44,7 +44,7 @@ const predefinedLabels = [
 ];
 
 // 手动映射表，将 source label 映射到预设标签
-    const manualMappingForChineseCategories = {
+    const manualMapping = {
     '中介': 'Agent',             // 含义较广，包括房产中介等
     '房产中介': 'Agent',         // 细化为房地产经纪人
     '违规催收': 'Debt Collection',
