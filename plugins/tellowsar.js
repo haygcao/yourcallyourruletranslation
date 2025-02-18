@@ -96,115 +96,134 @@ const manualMapping = {
 // Using a Map object to store pending Promises
 const pendingPromises = new Map();
 
-// Function to query phone number information (remains unchanged)
+// Function to query phone number information
 function queryPhoneInfo(phoneNumber, requestId) {
-    console.log('queryPhoneInfo called with phoneNumber:', phoneNumber, 'and requestId:', requestId);
-    FlutterChannel.postMessage(JSON.stringify({
-        pluginId: pluginId,
-        method: 'GET',
-        requestId: requestId,
-        url: `https://ae.tellows.net/num/${phoneNumber}`,
-        headers: {
-            "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
-        },
-    }));
+  console.log('queryPhoneInfo called with phoneNumber:', phoneNumber, 'and requestId:', requestId);
+  FlutterChannel.postMessage(JSON.stringify({
+    pluginId: pluginId,
+    method: 'GET',
+    requestId: requestId,
+    url: `https://sa.tellows.net/num/${phoneNumber}?lang=en`, // Updated URL
+    headers: {
+      "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
+      "Accept-Language": 'en', // Request English
+    },
+  }));
 }
 
-// Function to extract data using DOMParser API (no major changes, just uses new mapping)
 function extractDataFromDOM(doc, phoneNumber) {
     const jsonObject = {
-        phoneNumber: phoneNumber,
-        label: "",
-        name: "",
-        rate: 0,
-        city: "",
         count: 0,
         sourceLabel: "",
         province: "",
+        city: "",
         carrier: "",
+        phoneNumber: phoneNumber,
+        name: "unknown",
+        rate: 0
     };
 
     try {
         console.log('Document Object:', doc);
 
         const bodyElement = doc.body;
+        console.log('Body Element:', bodyElement);
         if (!bodyElement) {
             console.error('Error: Could not find body element.');
             return jsonObject;
         }
 
-        let currentManualMapping = manualMappingArabic;
+        // --- Helper Function to find element by text ---
+        function findElementByText(selector, text) {
+            const elements = doc.querySelectorAll(selector);
+            for (const element of elements) {
+                if (element.textContent.includes(text)) {
+                    return element;
+                }
+            }
+            return null;
+        }
 
-        // --- Priority 1: Label from "أنواع الإتصال" ---
-        const callTypeElement = doc.querySelector('b:contains("أنواع الإتصال:")');
-        if (callTypeElement) {
-            const nextSibling = callTypeElement.nextSibling;
+        // 1. Extract Label (Priority 1: Types of call)
+        const typesOfCallElement = findElementByText('b', "Types of call:"); // Find <b> containing the text
+        if (typesOfCallElement) {
+            const nextSibling = typesOfCallElement.nextSibling;
             if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
                 let labelText = nextSibling.textContent.trim();
                 if (labelText) {
                     jsonObject.sourceLabel = labelText;
-                    jsonObject.label = currentManualMapping[labelText] || 'Unknown'; // Use Arabic mapping
                 }
             }
         }
 
-        // --- Priority 2: Label from Score Image (if Priority 1 fails) ---
-        if (!jsonObject.label) {
-            const scoreImage = doc.querySelector('.scorepic a img.scoreimage');
+        // 2. Extract Label (Priority 2: Score Image) - Only if sourceLabel is empty
+        if (!jsonObject.sourceLabel) {
+            const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
             if (scoreImage) {
                 const altText = scoreImage.alt;
-                const scoreMatch = altText.match(/Score\s([789])/);
+                const scoreMatch = altText.match(/Score\s([789])/); //checks for 7, 8, or 9
                 if (scoreMatch) {
-                     jsonObject.sourceLabel = "Spam Call";
-                    jsonObject.label = 'Spam Likely'; // Scores 7, 8, or 9 are spam
+                    jsonObject.sourceLabel = "Spam Call";
                 }
             }
         }
 
-        // --- Extract Name (Caller ID) ---
-        const callerIdSpan = doc.querySelector('.callerId');
-        if (callerIdSpan) {
-            jsonObject.name = callerIdSpan.textContent.trim();
-        }
+        // 3. Extract Name (Caller ID) - ROBUST METHOD
+    // 3. Extract Name (Caller ID) - Corrected: Directly select the span.callerId
+    const callerIdElement = doc.querySelector('span.callerId');
+    if (callerIdElement) {
+        jsonObject.name = callerIdElement.textContent.trim();
+    }
 
-        // --- Extract Count ---
-        const countElement = doc.querySelector('a[href="#complaint_list"] strong span');
-        if (countElement) {
-            jsonObject.count = parseInt(countElement.textContent.trim(), 10) || 0;
-        }
 
-           // --- Extract City ---
-       const cityElement = doc.querySelector('strong:contains("المدينة:")');
-        if (cityElement) {
-          const cityText = cityElement.nextSibling;
+        // 4. Extract Rate and Count (using Ratings)
+        // const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span'); // Original selector
+        const ratingsElement = findElementByText('strong', "Ratings:"); // More robust way to locate
 
-          if (cityText && cityText.nodeType === Node.TEXT_NODE)
-          {
-             let cityValue = cityText.textContent.trim();
-                // Remove the country part if present, handles multiple hyphens
-                const countryIndex = cityValue.indexOf(' - ');
-                if (countryIndex !== -1) {
-                    cityValue = cityValue.substring(0, countryIndex);
-                }
-             const cityParts = cityValue.split(','); // Split by comma
-                if (cityParts.length > 1) {
-                  jsonObject.city = cityParts[0].trim();   // Use the first part (city name)
-                } else {
-                   jsonObject.city = cityParts[0].trim();
-                }
+        if (ratingsElement) {
+          const spanElement = ratingsElement.querySelector('span');
+          if (spanElement) {
+            const rateValue = parseInt(spanElement.textContent.trim(), 10) || 0;
+            jsonObject.rate = rateValue;
+            jsonObject.count = rateValue;
           }
+        }
+        // 5. Extract City and Province - CORRECTED LOGIC
+        const cityElement = findElementByText('strong', "City:");
+        if (cityElement) {
+            let nextSibling = cityElement.nextSibling;
+            while (nextSibling) {
+                if (nextSibling.nodeType === Node.TEXT_NODE) {
+                    let cityText = nextSibling.textContent.trim();
+
+                    // Split by " - " to get "City" and "Country" parts
+                    const parts = cityText.split('-');
+                    if (parts.length > 0) {
+                        jsonObject.city = parts[0].trim(); // The FIRST part is the city
+
+                        // If there's a second part (countries), handle it
+                        if (parts.length > 1) {
+                            const countries = parts[1].trim().split(',').map(c => c.trim());
+                            jsonObject.province = countries.join(", "); // Join with ", " for multiple countries
+                        }
+                    }
+                    break; // Exit the loop once we've found the city text.
+                }
+                nextSibling = nextSibling.nextSibling;
+            }
         }
 
 
     } catch (error) {
         console.error('Error extracting data:', error);
-        return jsonObject;
     }
 
     console.log('Final jsonObject:', jsonObject);
+    console.log('Final jsonObject type:', typeof jsonObject);
     return jsonObject;
 }
 
+//update
 
 // Function to generate output information
 async function generateOutput(phoneNumber, nationalNumber, e164Number, externalRequestId) {
@@ -342,16 +361,17 @@ async function generateOutput(phoneNumber, nationalNumber, e164Number, externalR
       matchedLabel = 'Unknown';
     }
 
-    const finalResult = {
-      phoneNumber: result.phoneNumber,
-      sourceLabel: result.sourceLabel,
-      count: result.count,
-      province: result.province,
-      city: result.city,
-      carrier: result.carrier,
-      predefinedLabel: matchedLabel, // Use the matched label
-      source: pluginInfo.info.name,
-    };
+        const finalResult = {
+            phoneNumber: result.phoneNumber,
+            sourceLabel: result.sourceLabel,
+            count: result.count,
+            province: result.province,
+            city: result.city,
+            carrier: result.carrier,
+            name: result.name,
+            predefinedLabel: matchedLabel, // Use the matched label
+            source: pluginInfo.info.name,
+        };
 
     // Send the result via FlutterChannel
     FlutterChannel.postMessage(JSON.stringify({
