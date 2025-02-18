@@ -43,7 +43,7 @@ const predefinedLabels = [
 ];
 
 // 手动映射表，将 source label 映射到预设标签
-const manualMappingForChineseCategories = {
+const manualMapping = {
     '骚扰电话': 'Fraud Scam Likely', // 对应预设标签 "Fraud Scam Likely"
     '非应邀商业电话': 'Spam Likely', // 对应预设标签 "Spam Likely"
     '保险推销': 'Insurance',
