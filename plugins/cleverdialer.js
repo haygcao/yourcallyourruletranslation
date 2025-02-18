@@ -13,7 +13,7 @@ const pluginInfo = {
   },
 };
 
-// Predefined label list (you can adjust this list based on your needs)
+// Predefined label list (you can not adjust this list  )
 const predefinedLabels = [
     {'label': 'Fraud Scam Likely'},
     {'label': 'Spam Likely'},
@@ -44,7 +44,7 @@ const predefinedLabels = [
     {'label': 'Silent Call(Voice Clone?)'},
 ];
 
-// Manual mapping table to map source labels to predefined labels (updated based on shouldianswer.com labels)
+// Manual mapping table to map source labels to predefined labels 
 const manualMapping = {
     'Agencia de cobranza': 'Debt Collection',
     'Apuestas': 'Other', // Or 'Risk', depending on context
@@ -94,6 +94,25 @@ const manualMapping = {
     'SUPPORT': 'Customer Service', // Or 'Support'
     'SURVEY': 'Survey',
     'SWEEPSTAKE': 'Other', // Could be 'Risk' if it involves gambling
+              'Beratung': 'Other',               // German mappings
+            'Crypto Betrug': 'Fraud Scam Likely',
+            'Daueranrufe': 'Spam Likely',
+            'Dienstleistung': 'Customer Service',
+            'Geschäft': 'Other', // Could be more specific
+            'Gesundheit': 'Medical',
+            'Gewinnspiel': 'Other', // Could be 'Risk'
+            'Inkassounternehmen': 'Debt Collection',
+            'Kostenfalle': 'Fraud Scam Likely',
+            'Kundendienst': 'Customer Service',
+            'Mailbox': 'Other',
+            'Ping Anruf': 'Spam Likely',
+            'Spenden': 'Charity',
+            'Support': 'Customer Service',
+            'Umfrage': 'Survey',
+            'Unseriös': 'Spam Likely',
+            'Verkauf': 'Telemarketing',
+            'Werbung': 'Telemarketing',
+            'Bitte auswählen': 'Unknown'
 };
 
 // Using a Map object to store pending Promises
