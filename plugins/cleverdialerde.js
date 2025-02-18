@@ -72,8 +72,49 @@ const manualMapping = {
     'Enervante': 'Spam Likely',     // Map 'Enervante'
     'Neutral': 'Unknown',         // Map 'Neutral'
     'Positivo': 'Other',         // Map 'Positivo'
-    'Excelente': 'Other'        // Map 'Excelente'
+    'Excelente': 'Other',        // Map 'Excelente'
+    'BUSINESS': 'Telemarketing',
+    'CHARITY': 'Charity',
+    'COMMERCIAL': 'Telemarketing', // Or 'Sales', depending on your preference
+    'CONTINUOUS_CALLS': 'Spam Likely', // Or 'Robocall', if it fits better
+    'COST_TRAP': 'Fraud Scam Likely',
+    'COUNSEL': 'Other', // Could be 'Financial', 'Legal', etc. - context-dependent
+    'CRYPTO_FRAUD': 'Fraud Scam Likely',
+    'CUSTOMER_SERVICE': 'Customer Service',
+    'DEBT_COLLECTION_AGENCY': 'Debt Collection',
+    'DUBIOUS': 'Spam Likely',
+    'HEALTH': 'Medical',
+    'HOSPITALITY': 'Other',  // Or 'Takeaway', 'Delivery' (if mostly food-related)
+    'MAILBOX': 'Other',     // Voicemail
+    'PHISHING': 'Fraud Scam Likely',
+    'SILENT_CALL': 'Silent Call(Voice Clone?)',
+    'SALES': 'Telemarketing', // Or 'Sales'
+    'SERVICE': 'Customer Service', // Could also be just 'Service'
+    'SPAM': 'Spam Likely',
+    'SUPPORT': 'Customer Service', // Or 'Support'
+    'SURVEY': 'Survey',
+    'SWEEPSTAKE': 'Other', // Could be 'Risk' if it involves gambling
+    'Beratung': 'Other',               // German mappings
+    'Crypto Betrug': 'Fraud Scam Likely',
+    'Daueranrufe': 'Spam Likely',
+    'Dienstleistung': 'Customer Service',
+    'Geschäft': 'Other', // Could be more specific
+    'Gesundheit': 'Medical',
+    'Gewinnspiel': 'Other', // Could be 'Risk'
+    'Inkassounternehmen': 'Debt Collection',
+    'Kostenfalle': 'Fraud Scam Likely',
+    'Kundendienst': 'Customer Service',
+    'Mailbox': 'Other',
+    'Ping Anruf': 'Spam Likely',
+    'Spenden': 'Charity',
+    'Support': 'Customer Service',
+    'Umfrage': 'Survey',
+    'Unseriös': 'Spam Likely',
+    'Verkauf': 'Telemarketing',
+    'Werbung': 'Telemarketing',
+    'Bitte auswählen': 'Unknown'
 };
+
 
 // Using a Map object to store pending Promises
 const pendingPromises = new Map();
