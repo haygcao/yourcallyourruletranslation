@@ -99,7 +99,7 @@ function queryPhoneInfo(phoneNumber, requestId) {
     requestId: requestId,
     url: `https://www.baidu.com/s?wd=${phoneNumber}`,
     headers: {
-      "User-Agent": 'Mozilla/5.0 (Linux; Android 13; SM-S901B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
+      "User-Agent": 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36',
     },
   }));
 }
