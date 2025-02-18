@@ -328,7 +328,7 @@ async function generateOutput(phoneNumber, nationalNumber, e164Number, externalR
       matchedLabel = manualMapping[result.sourceLabel] || 'Unknown';
     }
 
-    const finalResult1 = {
+    const finalResult = {
       phoneNumber: result.phoneNumber,
       sourceLabel: result.sourceLabel,
       count: result.count,
