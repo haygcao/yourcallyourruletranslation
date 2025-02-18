@@ -165,28 +165,51 @@ function extractDataFromDOM(doc, phoneNumber) {
     }
 
 // --- Extract Count (Handle both numbers and words) ---
-const countSpan = doc.querySelector('.rating-text .nowrap');
-if (countSpan) {
-    const countText = countSpan.textContent.trim();
-    let count = 0; // Default count
+    // --- Extract Count (Primary: Number of Ratings, Fallback: Blocked Count) ---
+    const countSpan = doc.querySelector('.rating-text .nowrap');
+    let count = 0;
+    if (countSpan) {
+        const countText = countSpan.textContent.trim();
 
-    // Try to match a number word (e.g., "One", "Two")
-    const wordMatch = countText.match(/\b(One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten)\b/i);
-    if (wordMatch) {
-        const wordToNumber = { // Mapping of number words to numbers
+
+        // 数字单词映射 (英语, 西班牙语, 德语)
+        const wordToNumber = {
             'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
-            'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10
+            'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+            'uno': 1, 'dos': 2, 'tres': 3, 'cuatro': 4, 'cinco': 5,
+            'seis': 6, 'siete': 7, 'ocho': 8, 'nueve': 9, 'diez': 10,
+            'ein': 1, 'eine': 1, 'einer': 1,'eins':1, 'zwei': 2, 'drei': 3, 'vier': 4, 'fünf': 5,
+            'sechs': 6, 'sieben': 7, 'acht': 8, 'neun': 9, 'zehn': 10
         };
-        count = wordToNumber[wordMatch[1].toLowerCase()] || 0; // Convert to lowercase for matching
-    } else {
-        // Try to match numeric digits (e.g., "1", "2", "35")
-        const numberMatch = countText.match(/(\d+)\s+rating/i);
-        if (numberMatch) {
-            count = parseInt(numberMatch[1], 10) || 0;
+
+        // 优先尝试匹配数字单词
+        const wordMatch = countText.match(/\b(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)\b/i);
+        if (wordMatch) {
+            count = wordToNumber[wordMatch[1].toLowerCase()] || 0;
+        } else {
+            // 如果没有匹配到数字单词, 尝试匹配数字
+            const numberMatch = countText.match(/(\d+)\s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
+            if (numberMatch) {
+                count = parseInt(numberMatch[1], 10) || 0;
+            }
         }
     }
-    jsonObject.count = count;
-}
+
+    // 如果 count 仍然是 0, 尝试从 blocked count (h4) 获取
+    if (count === 0) {
+        const blockedCountH4 = doc.querySelector('.list-element-information .text-blocked');
+        if (blockedCountH4) {
+            const blockedCountText = blockedCountH4.textContent.trim();
+            const blockedNumberMatch = blockedCountText.match(/(\d+)/);
+            if (blockedNumberMatch) {
+                count = parseInt(blockedNumberMatch[1], 10) || 0;
+            }
+        }
+    }
+
+   jsonObject.count = count; // Assign the final count (either primary or fallback)
+
+    
     // --- Extract City ---
 // --- Extract City ---
 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
