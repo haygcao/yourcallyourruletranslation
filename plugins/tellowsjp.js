@@ -1,12 +1,12 @@
 // Plugin ID, each plugin must be unique
-const pluginId = 'tellowsuniversialPlugin';
+const pluginId = 'tellowsjpPlugin';
 
 // Plugin information
 const pluginInfo = {
   // Plugin information
   info: {
-    id: 'tellowsuniversialPlugin', // Plugin ID, must be unique
-    name: 'TellowsUniversial', // Plugin name
+    id: 'tellowsjpPlugin', // Plugin ID, must be unique
+    name: 'TellowsJP', // Plugin name
     version: '1.2.0', // Plugin version
     description: 'This plugin retrieves information about phone numbers from shouldianswer.com.', // Plugin description
     author: 'Your Name', // Plugin author
@@ -58,190 +58,140 @@ const manualMapping = {
     'Ping Call': 'Spam Likely', // Often associated with scams
     'SMS spam': 'Spam Likely',
     'Spam Call': 'Spam Likely', // Added, map label extracted "spam call" to predefined "Spam Likely"
-    '未知來電': 'Unknown',
-    '可信賴來電': 'Other', // Could map to a "Safe" category if you have one
-    '贈獎活動': 'Spam Likely', // Sweepstakes - often scam/spam
-    '討債公司': 'Debt Collection',
-    '煩人廣告': 'Telemarketing', // Annoying advertising
-    '市場調查': 'Survey',
-    '電話恐嚇': 'Fraud Scam Likely', // Phone threats - high risk
-    '付費電話': 'Other', // Cost trap / premium rate number - could be 'Risk'
-    '銷售專線': 'Telemarketing', // Sales line
-    'Ping通话': 'Spam Likely',    // Ping Call
-    '詐騙短信': 'Spam Likely',   // Scam SMS
-    'Spam Call': 'Spam Likely', //From score
-    'Unknown': 'Unknown',  
 };
 
 
 // Using a Map object to store pending Promises
 const pendingPromises = new Map();
 
-// Country URL mapping (from your provided array)
-var countryurl = new Array();
-countryurl["eg"] = "https://eg.tellows.net";
-countryurl["dz"] = "https://dz.tellows.net";
-countryurl["ae"] = "https://ae.tellows.net";
-countryurl["ar"] = "https://ar.tellows.net";
-countryurl["-au.com"] = "https://www.tellows-au.com";
-countryurl["be"] = "https://www.tellows.be";
-countryurl["com.br"] = "https://www.tellows.com.br";
-countryurl["cl"] = "https://cl.tellows.net";
-countryurl["cn"] = "https://cn.tellows.net";
-countryurl["dk"] = "https://dk.tellows.net";
-countryurl["de"] = "https://www.tellows.de";
-countryurl["-fi.com"] = "https://www.tellows-fi.com";
-countryurl["fr"] = "https://www.tellows.fr";
-countryurl["gr"] = "https://www.tellows.gr";
-countryurl["co.uk"] = "https://www.tellows.co.uk";
-countryurl["hk"] = "https://hk.tellows.asia";
-countryurl["in"] = "https://www.tellows.in";
-countryurl["id"] = "https://id.tellows.net";
-countryurl["ir"] = "https://ir.tellows.net";
-countryurl["ie"] = "https://ie.tellows.net";
-countryurl["il"] = "https://il.tellows.org";
-countryurl["it"] = "https://www.tellows.it";
-countryurl["jp"] = "https://www.tellows.jp";
-countryurl["co"] = "https://www.tellows.co";
-countryurl["mx"] = "https://www.tellows.mx";
-countryurl["co.nz"] = "https://www.tellows.co.nz";
-countryurl["nl"] = "https://www.tellows.nl";
-countryurl["-ng.com"] = "https://www.tellows-ng.com";
-countryurl["no"] = "https://no.tellows.net";
-countryurl["at"] = "https://www.tellows.at";
-countryurl["pk"] = "https://pk.tellows.net";
-countryurl["pe"] = "https://pe.tellows.net";
-countryurl["ph"] = "https://ph.tellows.net";
-countryurl["pl"] = "https://www.tellows.pl";
-countryurl["pt"] = "https://www.tellows.pt";
-countryurl["ru"] = "https://www.tellows.ru";
-countryurl["sa"] = "https://sa.tellows.net";
-countryurl["se"] = "https://www.tellows.se";
-countryurl["ch"] = "https://www.tellows.ch";
-countryurl["sg"] = "https://sg.tellows.asia";
-countryurl["si"] = "https://si.tellows.org";
-countryurl["es"] = "https://www.tellows.es";
-countryurl["co.za"] = "https://www.tellows.co.za";
-countryurl["kr"] = "https://kr.tellows.asia";
-countryurl["tw"] = "https://www.tellows.tw";
-countryurl["cz"] = "https://www.tellows.cz";
-countryurl["-tr.com"] = "https://www.tellows-tr.com";
-countryurl["ua"] = "https://ua.tellows.org";
-countryurl["hu"] = "https://www.tellows.hu";
-countryurl["com"] = "https://www.tellows.com";
-countryurl["ve"] = "https://ve.tellows.net";
-countryurl["by"] = "https://by.tellows.org";
-
-// Modified queryPhoneInfo (takes countryCode, adds Accept-Language)
-function queryPhoneInfo(phoneNumber, requestId, countryCode) {
-    console.log('queryPhoneInfo called with:', phoneNumber, requestId, countryCode);
-
-    let baseUrl = countryurl[countryCode] || "https://www.tellows.com"; // Default to .com
-    let url = `${baseUrl}/num/${phoneNumber}`;
-
-    console.log('Constructed URL:', url);
-
-    FlutterChannel.postMessage(JSON.stringify({
-        pluginId: pluginId,
-        method: 'GET',
-        requestId: requestId,
-        url: url,
-        headers: {
-            "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
-            "Accept-Language": 'en,en-US;q=0.9', // Request English
-        },
-    }));
+// Function to query phone number information
+function queryPhoneInfo(phoneNumber, requestId) {
+  console.log('queryPhoneInfo called with phoneNumber:', phoneNumber, 'and requestId:', requestId);
+  FlutterChannel.postMessage(JSON.stringify({
+    pluginId: pluginId,
+    method: 'GET',
+    requestId: requestId,
+    url: `https://www.tellows.jp/num/${phoneNumber}?lang=en`, // Updated URL
+    headers: {
+      "User-Agent": 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36',
+      "Accept-Language": 'en', // Request English
+    },
+  }));
 }
 
-// English-specific extraction function (Simplified Language Check)
 function extractDataFromDOM(doc, phoneNumber) {
     const jsonObject = {
-        phoneNumber: phoneNumber,
-        label: "",
-        name: "",
-        rate: 0,
-        city: "",
         count: 0,
         sourceLabel: "",
         province: "",
+        city: "",
         carrier: "",
+        phoneNumber: phoneNumber,
+        name: "unknown",
+        rate: 0
     };
 
     try {
         console.log('Document Object:', doc);
 
-        // --- Language Detection (Simplified - ONLY check lang attribute) ---
-        let isEnglish = doc.documentElement.lang === 'en';
-
-        if (!isEnglish) {
-            console.warn('The language is not English', doc.documentElement.lang);
-            return { // Return a default object
-                phoneNumber: phoneNumber,
-                label: "Unknown",
-                name: "",
-                rate: 0,
-                city: "",
-                count: 0,
-                sourceLabel: "",
-                province: "",
-                carrier: "",
-            };
+        const bodyElement = doc.body;
+        console.log('Body Element:', bodyElement);
+        if (!bodyElement) {
+            console.error('Error: Could not find body element.');
+            return jsonObject;
         }
 
-        // --- Data Extraction (ONLY if English) ---
-        // --- Priority 1: Label from "Types of call" ---
-        const callTypeElement = doc.querySelector('b:contains("Types of call:")');
-        if (callTypeElement) {
-            const nextSibling = callTypeElement.nextSibling;
+        // --- Helper Function to find element by text ---
+        function findElementByText(selector, text) {
+            const elements = doc.querySelectorAll(selector);
+            for (const element of elements) {
+                if (element.textContent.includes(text)) {
+                    return element;
+                }
+            }
+            return null;
+        }
+
+        // 1. Extract Label (Priority 1: Types of call)
+        const typesOfCallElement = findElementByText('b', "Types of call:"); // Find <b> containing the text
+        if (typesOfCallElement) {
+            const nextSibling = typesOfCallElement.nextSibling;
             if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
                 let labelText = nextSibling.textContent.trim();
                 if (labelText) {
                     jsonObject.sourceLabel = labelText;
-                    jsonObject.label = manualMappingEnglish[labelText] || 'Unknown'; // Use English mapping
                 }
             }
         }
 
-        // --- Priority 2: Label from Score Image ---
-        if (!jsonObject.label) {
-            const scoreImage = doc.querySelector('.scorepic a img.scoreimage');
+        // 2. Extract Label (Priority 2: Score Image) - Only if sourceLabel is empty
+        if (!jsonObject.sourceLabel) {
+            const scoreImage = doc.querySelector('a[href*="tellows_score"] img.scoreimage');
             if (scoreImage) {
                 const altText = scoreImage.alt;
-                const scoreMatch = altText.match(/Score\s([789])/);
+                const scoreMatch = altText.match(/Score\s([789])/); //checks for 7, 8, or 9
                 if (scoreMatch) {
                     jsonObject.sourceLabel = "Spam Call";
-                    jsonObject.label = 'Spam Likely';
                 }
             }
         }
 
-        // --- Extract Name, Count, City ---
-        const callerIdSpan = doc.querySelector('.callerId');
-        if (callerIdSpan) {
-            jsonObject.name = callerIdSpan.textContent.trim();
+        // 3. Extract Name (Caller ID) - ROBUST METHOD
+    // 3. Extract Name (Caller ID) - Corrected: Directly select the span.callerId
+    const callerIdElement = doc.querySelector('span.callerId');
+    if (callerIdElement) {
+        jsonObject.name = callerIdElement.textContent.trim();
+    }
+
+
+        // 4. Extract Rate and Count (using Ratings)
+        // const ratingsElement = doc.querySelector('a[href="#complaint_list"] strong span'); // Original selector
+        const ratingsElement = findElementByText('strong', "Ratings:"); // More robust way to locate
+
+        if (ratingsElement) {
+          const spanElement = ratingsElement.querySelector('span');
+          if (spanElement) {
+            const rateValue = parseInt(spanElement.textContent.trim(), 10) || 0;
+            jsonObject.rate = rateValue;
+            jsonObject.count = rateValue;
+          }
         }
-        const countElement = doc.querySelector('a[href="#complaint_list"] strong span');
-        if (countElement) {
-            jsonObject.count = parseInt(countElement.textContent.trim(), 10) || 0;
-        }
-        const cityElement = doc.querySelector('strong:contains("City:")');
+        // 5. Extract City and Province - CORRECTED LOGIC
+        const cityElement = findElementByText('strong', "City:");
         if (cityElement) {
-            const cityText = cityElement.nextSibling;
-            if (cityText && cityText.nodeType === Node.TEXT_NODE) {
-                const cityValue = cityText.textContent.trim().split('-')[0].trim();
-                jsonObject.city = cityValue.split(',')[0].trim();
+            let nextSibling = cityElement.nextSibling;
+            while (nextSibling) {
+                if (nextSibling.nodeType === Node.TEXT_NODE) {
+                    let cityText = nextSibling.textContent.trim();
+
+                    // Split by " - " to get "City" and "Country" parts
+                    const parts = cityText.split('-');
+                    if (parts.length > 0) {
+                        jsonObject.city = parts[0].trim(); // The FIRST part is the city
+
+                        // If there's a second part (countries), handle it
+                        if (parts.length > 1) {
+                            const countries = parts[1].trim().split(',').map(c => c.trim());
+                            jsonObject.province = countries.join(", "); // Join with ", " for multiple countries
+                        }
+                    }
+                    break; // Exit the loop once we've found the city text.
+                }
+                nextSibling = nextSibling.nextSibling;
             }
         }
+
 
     } catch (error) {
         console.error('Error extracting data:', error);
-        return jsonObject; // Return even on error
     }
 
     console.log('Final jsonObject:', jsonObject);
+    console.log('Final jsonObject type:', typeof jsonObject);
     return jsonObject;
 }
 
+//update
 
 // Function to generate output information
 async function generateOutput(phoneNumber, nationalNumber, e164Number, externalRequestId) {
@@ -379,16 +329,17 @@ async function generateOutput(phoneNumber, nationalNumber, e164Number, externalR
       matchedLabel = 'Unknown';
     }
 
-    const finalResult = {
-      phoneNumber: result.phoneNumber,
-      sourceLabel: result.sourceLabel,
-      count: result.count,
-      province: result.province,
-      city: result.city,
-      carrier: result.carrier,
-      predefinedLabel: matchedLabel, // Use the matched label
-      source: pluginInfo.info.name,
-    };
+        const finalResult = {
+            phoneNumber: result.phoneNumber,
+            sourceLabel: result.sourceLabel,
+            count: result.count,
+            province: result.province,
+            city: result.city,
+            carrier: result.carrier,
+            name: result.name,
+            predefinedLabel: matchedLabel, // Use the matched label
+            source: pluginInfo.info.name,
+        };
 
     // Send the result via FlutterChannel
     FlutterChannel.postMessage(JSON.stringify({
