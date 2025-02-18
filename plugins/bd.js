@@ -97,7 +97,7 @@ function queryPhoneInfo(phoneNumber, requestId) {
     pluginId: pluginId,
     method: 'GET',
     requestId: requestId,
-    url: `https://www.baidu.com/s?wd=${phoneNumber}&ie=utf-8`,
+    url: `https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=${phoneNumber}&fenlei=257&rqlang=cn&rsv_enter=1&rsv_dl=ib&rsv_sug3=1`,
     headers: {
       "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
     },
