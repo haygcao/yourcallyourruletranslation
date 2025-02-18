@@ -97,7 +97,7 @@ function queryPhoneInfo(phoneNumber, requestId) {
     pluginId: pluginId,
     method: 'GET',
     requestId: requestId,
-    url: `https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=${phoneNumber}&fenlei=257&rqlang=cn&rsv_enter=1&rsv_dl=ib&rsv_sug3=1`,
+    url: `https://haoma.baidu.com/phoneSearch?search=${phoneNumber}&srcid=8757`,
     headers: {
       "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
     },
@@ -127,48 +127,46 @@ function extractDataFromDOM(doc, phoneNumber) {
       return jsonObject;
     }
 
-    // 提取 sourceLabel
-    const sourceLabelElement = doc.querySelector('.c-row.c-gap-top-cc.cc-title_31ypU');
-    console.log('sourceLabelElement:', sourceLabelElement);
+    // 提取 sourceLabel 和 count
+    const infoRightElement = doc.querySelector('.info-right');
+    console.log('infoRightElement:', infoRightElement);
 
-    if (sourceLabelElement) {
-      // 提取 sourceLabel 文本
-      jsonObject.sourceLabel = sourceLabelElement.textContent.trim();
-      console.log('jsonObject.sourceLabel:', jsonObject.sourceLabel);
+    if (infoRightElement) {
+      const reportWrapper = infoRightElement.querySelector('.report-wrapper');
+      console.log('reportWrapper:', reportWrapper);
 
-      // 检查是否存在 "用户标记" 或 "网络收录仅供参考"，如果存在，则 count 设置为 1
-      const markerElement = sourceLabelElement.querySelector('.c-text-red-border.c-text.marker-color_3IDoi, .c-text-gray-border.c-text.marker-color_3IDoi');
-      console.log('markerElement:', markerElement);
-      if (markerElement) {
+      if (reportWrapper) {
+        const reportNameElement = reportWrapper.querySelector('.report-name');
+        console.log('reportNameElement:', reportNameElement);
+        if (reportNameElement) {
+          jsonObject.sourceLabel = reportNameElement.textContent.trim();
+          console.log('jsonObject.sourceLabel:', jsonObject.sourceLabel);
+        }
+
+        const reportTypeElement = reportWrapper.querySelector('.report-type');
+        console.log('reportTypeElement:', reportTypeElement);
+        if (reportTypeElement && reportTypeElement.textContent.trim() === '用户标记') {
           jsonObject.count = 1;
           console.log('jsonObject.count:', jsonObject.count);
-      }
-    }
-      // 只有在没有 sourceLabelElement 的情况下，才检查 "用户标记"
-     else{
-       const countElement = doc.querySelector('.c-text-red-border.c-text.marker-color_3IDoi');
-        console.log('countElement:', countElement);
-        if (countElement) {
-            jsonObject.count = 1;
-            console.log('jsonObject.count:', jsonObject.count);
         }
-     }
-    
-
-    // 提取 province 和 city
-    const locationElement = doc.querySelector('.c-row.c-gap-top.c-gap-top-cc.cc-row_dDm_G');
-    console.log('locationElement:', locationElement);
-    if (locationElement) {
-      const locationText = locationElement.textContent.trim();
-      console.log('locationText:', locationText);
-      const match = locationText.match(/([\u4e00-\u9fa5]+)[\s ]*([\u4e00-\u9fa5]+)?/);
-      if (match) {
-        jsonObject.province = match[1] || '';
-        jsonObject.city = match[2] || '';
       }
-      console.log('jsonObject.province:', jsonObject.province);
-      console.log('jsonObject.city:', jsonObject.city);
+
+      // 提取 province 和 city
+      const locationElement = infoRightElement.querySelector('.location');
+      console.log('locationElement:', locationElement);
+      if (locationElement) {
+        const locationText = locationElement.textContent.trim();
+        console.log('locationText:', locationText);
+        const match = locationText.match(/([\u4e00-\u9fa5]+)[\s ]*([\u4e00-\u9fa5]+)?/);
+        if (match) {
+          jsonObject.province = match[1] || '';
+          jsonObject.city = match[2] || '';
+        }
+        console.log('jsonObject.province:', jsonObject.province);
+        console.log('jsonObject.city:', jsonObject.city);
+      }
     }
+
 
   } catch (error) {
     console.error('Error extracting data:', error);
