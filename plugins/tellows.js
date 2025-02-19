@@ -393,19 +393,20 @@ async function initializePlugin() {
 
   window.plugin[pluginId] = thisPlugin;
 
-  if (typeof TestPageChannel !== 'undefined') {
-    TestPageChannel.postMessage(JSON.stringify({
+  if (window.flutter_inappwebview && window.flutter_inappwebview.callHandler) {
+    window.flutter_inappwebview.callHandler('TestPageChannel', JSON.stringify({
       type: 'pluginLoaded',
       pluginId: pluginId,
     }));
     console.log('Notified Flutter that plugin is loaded');
-    TestPageChannel.postMessage(JSON.stringify({
+
+    window.flutter_inappwebview.callHandler('TestPageChannel', JSON.stringify({
       type: 'pluginReady',
       pluginId: pluginId,
     }));
     console.log('Notified Flutter that plugin is ready');
   } else {
-    console.error('TestPageChannel is not defined');
+    console.error('TestPageChannel (flutter_inappwebview) is not defined');
   }
 }
 
