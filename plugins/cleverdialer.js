@@ -165,13 +165,13 @@
                       phoneNumber: PHONE_NUMBER,
                       name: "Unknown"
                     };
-                    
+
                     const bodyElement = doc.body;
                     if (!bodyElement) {
                       console.error('[Iframe-Parser] Error: Could not find body element.');
                       return null;
                     }
-                
+
                     // --- Priority 1: Label from *FIRST* Recent Comment ---
                     const callTypeCell = doc.querySelector('#comments .container-recent-comments td.callertype'); // Directly get the FIRST td.callertype
                     if (callTypeCell) {
@@ -179,41 +179,41 @@
                         jsonObject.sourceLabel = labelText;
                         jsonObject.predefinedLabel = manualMapping[labelText] || 'Unknown';
                     }
-                
+
                     // --- Priority 2: Label and Count from Rating ---
                     if (!jsonObject.predefinedLabel) { // Only if Priority 1 didn't find a label
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
                             const starMatch = classValue.match(/stars-(\d)/); // Extract the number
-                
+
                             if (starMatch) {
                                  const starRating = parseInt(starMatch[1], 10);
-                
+
                                 // Extract star rating from text for comparison (more robust)
                                 const ratingTextSpan = doc.querySelector('.rating-text span:first-child');
                                 if (ratingTextSpan) {
                                     const textRatingMatch = ratingTextSpan.textContent.match(/(\d)\s+de\s+5/);
                                     if (textRatingMatch) {
                                         const textRating = parseInt(textRatingMatch[1], 10);
-                
+
                                          //Compare ratings
                                         if(starRating === textRating){
                                             // Map star rating to label
                                             if (starRating === 1) {
-                                                 jsonObject.sourceLabel = `stars-${starRating}`;
+                                                 jsonObject.sourceLabel = 'stars-' + starRating;
                                                 jsonObject.predefinedLabel = 'Spam Likely';
                                             } else if (starRating === 2) {
-                                                jsonObject.sourceLabel = `stars-${starRating}`;
+                                                jsonObject.sourceLabel = 'stars-' + starRating;
                                                 jsonObject.predefinedLabel = 'Spam Likely'; //"Enervante"
                                             } else if (starRating === 3) {
-                                                jsonObject.sourceLabel = `stars-${starRating}`;
+                                                jsonObject.sourceLabel = 'stars-' + starRating;
                                                 jsonObject.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 jsonObject.sourceLabel = `stars-${starRating}`;
+                                                 jsonObject.sourceLabel = 'stars-' + starRating;
                                                 jsonObject.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 jsonObject.sourceLabel = `stars-${starRating}`;
+                                                 jsonObject.sourceLabel = 'stars-' + starRating;
                                                 jsonObject.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
@@ -222,15 +222,15 @@
                             }
                         }
                     }
-                
+
                 // --- Extract Count (Handle both numbers and words) ---
                     // --- Extract Count (Primary: Number of Ratings, Fallback: Blocked Count) ---
                     const countSpan = doc.querySelector('.rating-text .nowrap');
                     let count = 0;
                     if (countSpan) {
                         const countText = countSpan.textContent.trim();
-                
-                
+
+
                         // 数字单词映射 (英语, 西班牙语, 德语)
                         const wordToNumber = {
                             'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
@@ -240,7 +240,7 @@
                             'ein': 1, 'eine': 1, 'einer': 1,'eins':1, 'zwei': 2, 'drei': 3, 'vier': 4, 'fünf': 5,
                             'sechs': 6, 'sieben': 7, 'acht': 8, 'neun': 9, 'zehn': 10
                         };
-                
+
                         // 优先尝试匹配数字单词
                         const wordMatch = countText.match(/(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)/i);
                         if (wordMatch) {
@@ -253,7 +253,7 @@
                             }
                         }
                     }
-                
+
                     // 如果 count 仍然是 0, 尝试从 blocked count (h4) 获取
                     if (count === 0) {
                         const blockedCountH4 = doc.querySelector('.list-element-information .text-blocked');
@@ -265,7 +265,7 @@
                             }
                         }
                     }
-                
+
                    jsonObject.count = count; // Assign the final count (either primary or fallback)
                     // --- Extract City ---
                 // --- Extract City ---
@@ -273,7 +273,7 @@
                 if (cityElement) {
                     jsonObject.city = cityElement.textContent.trim();
                 }
-                
+
                     console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
                     return jsonObject;
 
