@@ -9,20 +9,46 @@
   };
 
   const predefinedLabels = [
-      { label: 'Fraud Scam Likely' }, { label: 'Spam Likely' }, { label: 'Telemarketing' },
-      { label: 'Robocall' }, { label: 'Delivery' }, { label: 'Takeaway' },
-      { label: 'Ridesharing' }, { label: 'Insurance' }, { label: 'Loan' },
-      { label: 'Customer Service' }, { label: 'Unknown' }, { label: 'Financial' },
-      { label: 'Bank' }, { label: 'Education' }, { label: 'Medical' },
-      { label: 'Charity' }, { label: 'Other' }, { label: 'Debt Collection' },
-      { label: 'Survey' }, { label: 'Political' }, { label: 'Ecommerce' },
-      { label: 'Risk' }, { label: 'Agent' }, { label: 'Recruiter' },
-      { label: 'Headhunter' }, { label: 'Silent Call(Voice Clone?)' },
-  ];
+    { 'label': 'Fraud Scam Likely' },
+    { 'label': 'Spam Likely' },
+    { 'label': 'Telemarketing' },
+    { 'label': 'Robocall' },
+    { 'label': 'Delivery' },
+    { 'label': 'Takeaway' },
+    { 'label': 'Ridesharing' },
+    { 'label': 'Insurance' },
+    { 'label': 'Loan' },
+    { 'label': 'Customer Service' },
+    { 'label': 'Unknown' },
+    { 'label': 'Financial' },
+    { 'label': 'Bank' },
+    { 'label': 'Education' },
+    { 'label': 'Medical' },
+    { 'label': 'Charity' },
+    { 'label': 'Other' },
+    { 'label': 'Debt Collection' },
+    { 'label': 'Survey' },
+    { 'label': 'Political' },
+    { 'label': 'Ecommerce' },
+    { 'label': 'Risk' },
+    { 'label': 'Agent' },
+    { 'label': 'Recruiter' },
+    { 'label': 'Headhunter' },
+    { 'label': 'Silent Call Voice Clone' },
+    { 'label': 'Internet' },
+    { 'label': 'Travel & Ticketing' },
+    { 'label': 'Application Software' },
+    { 'label': 'Entertainment' },
+    { 'label': 'Government' },
+    { 'label': 'Local Services' },
+    { 'label': 'Automotive Industry' },
+    { 'label': 'Car Rental' },
+    { 'label': 'Telecommunication' },
+];
 
   const manualMapping = {
       'Agencia de cobranza': 'Debt Collection',
-      'Apuestas': 'Other', // Or 'Risk', depending on context
+      'Apuestas': 'Risk', // Or 'Risk', depending on context
       'Asesoría': 'Other',  // Could be 'Financial', 'Legal', etc. - context-dependent
       'Buzón': 'Other',       // Voicemail
       'Donación': 'Charity',
@@ -62,7 +88,7 @@
       'HOSPITALITY': 'Other',  // Or 'Takeaway', 'Delivery' (if mostly food-related)
       'MAILBOX': 'Other',     // Voicemail
       'PHISHING': 'Fraud Scam Likely',
-      'SILENT_CALL': 'Silent Call(Voice Clone?)', // Assuming this is friendly
+      'SILENT_CALL': 'Silent Call Voice Clone', // Assuming this is friendly
       'SALES': 'Telemarketing', // Or 'Sales'
       'SERVICE': 'Customer Service', // Could also be just 'Service'
       'SPAM': 'Spam Likely',
