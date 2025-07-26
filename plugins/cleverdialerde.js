@@ -36,7 +36,7 @@
     { 'label': 'Headhunter' },
     { 'label': 'Silent Call Voice Clone' },
     { 'label': 'Internet' },
-    { 'label': 'Travel & Ticketing' },
+    { 'label': 'Travel Ticketing' },
     { 'label': 'Application Software' },
     { 'label': 'Entertainment' },
     { 'label': 'Government' },
