@@ -1,120 +1,169 @@
-// Slick.ly Phone Query Plugin - Iframe Proxy Solution
+// Slick.ly Phone Query Plugin - Iframe Proxy Solution (Spanish)
 (function() {
     // --- Plugin Configuration ---
     const PLUGIN_CONFIG = {
-        id: 'slicklyPhoneNumberPlugin', // Unique ID for this plugin
-        name: 'Slick.ly Phone Lookup (iframe Proxy)',
-        version: '1.0.5', // Updated version for country code extraction from e164Number
-        description: 'Queries Slick.ly for phone number information and maps to fixed predefined labels, extracting country code from e164Number.'
+        id: 'slicklyEsPhoneNumberPlugin', // Unique ID for this plugin (specifically for Spanish-speaking countries)
+        name: 'Slick.ly ES Phone Lookup (iframe Proxy)',
+        version: '1.0.0', // Initial version for ES
+        description: 'Queries Slick.ly for Spanish-speaking countries phone number information and maps to fixed predefined labels.'
     };
 
     // --- Our application's FIXED predefined labels (provided by the user) ---
     const predefinedLabels = [
-        { 'label': 'Fraud Scam Likely' },
-        { 'label': 'Spam Likely' },
-        { 'label': 'Telemarketing' },
-        { 'label': 'Robocall' },
-        { 'label': 'Delivery' },
-        { 'label': 'Takeaway' },
-        { 'label': 'Ridesharing' },
-        { 'label': 'Insurance' },
-        { 'label': 'Loan' },
-        { 'label': 'Customer Service' },
-        { 'label': 'Unknown' },
-        { 'label': 'Financial' },
-        { 'label': 'Bank' },
-        { 'label': 'Education' },
-        { 'label': 'Medical' },
-        { 'label': 'Charity' },
-        { 'label': 'Other' },
-        { 'label': 'Debt Collection' },
-        { 'label': 'Survey' },
-        { 'label': 'Political' },
-        { 'label': 'Ecommerce' },
-        { 'label': 'Risk' },
-        { 'label': 'Agent' },
-        { 'label': 'Recruiter' },
-        { 'label': 'Headhunter' },
-        { 'label': 'Silent Call Voice Clone' },
-        { 'label': 'Internet' },
-        { 'label': 'Travel & Ticketing' },
-        { 'label': 'Application Software' },
-        { 'label': 'Entertainment' },
-        { 'label': 'Government' },
-        { 'label': 'Local Services' },
-        { 'label': 'Automotive Industry' },
-        { 'label': 'Car Rental' },
-        { 'label': 'Telecommunication' },
+        { label: 'Fraud Scam Likely' },
+        { label: 'Spam Likely' },
+        { label: 'Telemarketing' },
+        { label: 'Robocall' },
+        { label: 'Delivery' },
+        { label: 'Takeaway' },
+        { label: 'Ridesharing' },
+        { label: 'Insurance' },
+        { label: 'Loan' },
+        { label: 'Customer Service' },
+        { label: 'Unknown' },
+        { label: 'Financial' },
+        { label: 'Bank' },
+        { label: 'Education' },
+        { label: 'Medical' },
+        { label: 'Charity' },
+        { label: 'Other' },
+        { label: 'Debt Collection' },
+        { label: 'Survey' },
+        { label: 'Political' },
+        { label: 'Ecommerce' },
+        { label: 'Risk' },
+        { label: 'Agent' },
+        { label: 'Recruiter' },
+        { label: 'Headhunter' },
+        { label: 'Silent Call Voice Clone' },
+        { label: 'Internet' },
+        { label: 'Travel & Ticketing' },
+        { label: 'Application Software' },
+        { label: 'Entertainment' },
+        { label: 'Government' },
+        { label: 'Local Services' },
+        { label: 'Automotive Industry' },
+        { label: 'Car Rental' },
+        { label: 'Telecommunication' },
+        // Note: 'Nuisance' from the previous list is not in the updated predefinedLabels, mapping it to 'Spam Likely'
     ];
 
-     // --- Keyword list provided by the user for mapping and sourceLabel detection ---
-    const slicklyKeywords = [
-        'Fraud', 'Scam', 'Spam', 'Harassment', 'Telemarketing', 'Robocall',
-        'Delivery', 'Takeaway', 'Ridesharing', 'Insurance', 'Loan',
-        'Customer Service', 'Unknown', 'Financial', 'Bank', 'Education',
-        'Medical', 'Charity', 'Other', 'Debt Collection', 'Survey',
-        'Political', 'Ecommerce', 'Risk', 'Agent', 'Recruiter',
-        'Headhunter', 'Silent Call Voice Clone', 'Internet',
-        'Travel & Ticketing', 'Application Software', 'Entertainment',
-        'Government', 'Local Services', 'Automotive Industry','scandals','Fake',
-        'Car Rental', 'Telecommunication', 'Nuisance'
+     // --- Keyword list (English base) translated to Spanish (based on common usage and examples) ---
+     // This list is used for mapping and sourceLabel detection.
+     // Please verify the translations and add/adjust mappings as needed.
+    const slicklyKeywords_es_ES = [
+        'Estafa', 'Fraude', 'Sospechoso', 'Engaño', 'Datos falsos', 'Información falsa',
+        'Spam', 'Molestia', 'Telemarketing', 'Llamada automática',
+        'Entrega', 'Comida para llevar', 'Viaje compartido', 'Seguro', 'Préstamo',
+        'Servicio al cliente', 'Desconocido', 'Financiero', 'Banco', 'Educación',
+        'Médico', 'Caridad', 'Otros', 'Cobro de deudas', 'Encuesta',
+        'Político', 'Comercio electrónico', 'Riesgo', 'Agente', 'Reclutador',
+        'Cazatalentos', 'Llamada silenciosa', 'Clon de voz', 'Internet',
+        'Viajes y boletos', 'Software de aplicación', 'Entretenimiento',
+        'Gobierno', 'Servicios locales', 'Industria automotriz',
+        'Alquiler de coches', 'Telecomunicaciones',
+
+        // Keywords from the Spanish HTML examples
+        'Peligroso', // Dangerous (from Summary)
+        'Suspicious', // Suspicious (from Summary - sometimes English is present)
+        'SCAM', 'Swindle', 'Offer', 'Deception', 'Scammer', // From Peru example Keywords
+         '$#%@!la', 'jajajaja', // From Chile example Keywords and Comments (consider if these are relevant)
+         'Datos falsos', 'Provides false information', // From Peru example Comments
+         'Llamadas y cortan', // Calls and hang up (common phrase)
+         'Mismo cuento', // Same story (common scam phrase)
+         'Envío código no solicitado', // Sending unsolicited code (related to scams)
+         'Hackear cuentas', // Hacking accounts (related to scams)
+         'Ganado un premio', // Won a prize (common scam phrase)
+         'Ofreciendo productos', // Offering products (related to telemarketing/scam)
+         'Venta al por mayor', // Wholesale (related to business calls)
+         'Extorsión', // Extortion
+         'Extorsionador', // Extortion
+         'Acosador', // Stalker
+
+         // Add other common Spanish keywords/phrases from reports if needed
     ];
 
 
-    // --- Mapping from Slick.ly specific terms/labels to our FIXED predefinedLabels (exact match) ---
-    // Keys are the exact text from Slick.ly (Summary labels, Keywords, terms found in comments).
+    // --- Mapping from Slick.ly specific terms/labels (es-ES) to our FIXED predefinedLabels (exact match) ---
+    // Keys are the exact text from Slick.ly (Summary labels, Keywords, terms found in comments) in Spanish or English.
     // Values are the corresponding labels from our FIXED predefinedLabels list.
     const manualMapping = {
-         // Mappings for Summary labels
-         'Suspicious': 'Spam Likely', // Example mapping
-         'Dangerous': 'Risk', // Example mapping
+         // Mappings for Summary labels (es-ES and English)
+         'Peligroso': 'Risk', // Mapping 'Peligroso' (Dangerous) to 'Risk'
+         'Dangerous': 'Risk', // Mapping 'Dangerous' to 'Risk'
+         'Sospechoso': 'Spam Likely', // Mapping 'Sospechoso' (Suspicious) to 'Spam Likely'
+         'Suspicious': 'Spam Likely', // Mapping 'Suspicious' to 'Spam Likely'
 
-         // Mappings for Keywords and terms found in comments (based on slicklyKeywords list)
-         'Fraud': 'Fraud Scam Likely',
-         'Scam': 'Fraud Scam Likely',
-         'Fake': 'Fraud Scam Likely',
+         // Mappings from the slicklyKeywords_es_ES list
+         'Estafa': 'Fraud Scam Likely', // Scam
+         'Fraude': 'Fraud Scam Likely', // Fraud
+         'Sospechoso': 'Spam Likely', // Suspicious (already mapped, but good to have for keywords too)
+         'Engaño': 'Fraud Scam Likely', // Deception
+         'Datos falsos': 'Fraud Scam Likely', // False data
+         'Información falsa': 'Fraud Scam Likely', // False information
+
          'Spam': 'Spam Likely',
-         'Harassment': 'Spam Likely', // Or Risk
+         'Molestia': 'Spam Likely', // Annoyance/Nuisance
          'Telemarketing': 'Telemarketing',
-         'Robocall': 'Robocall',
-         'Delivery': 'Delivery',
-         'Takeaway': 'Takeaway',
-         'Ridesharing': 'Ridesharing',
-         'Insurance': 'Insurance',
-         'Loan': 'Loan',
-         'Customer Service': 'Customer Service',
-         'Unknown': 'Unknown',
-         'Financial': 'Financial',
-         'Bank': 'Bank',
-         'Education': 'Education',
-         'Medical': 'Medical',
-         'Charity': 'Charity',
-         'Other': 'Other',
-         'Debt Collection': 'Debt Collection',
-         'Survey': 'Survey',
-         'Political': 'Political',
-         'Ecommerce': 'Ecommerce',
-         'Risk': 'Risk',
-         'Agent': 'Agent',
-         'Recruiter': 'Recruiter',
-         'Headhunter': 'Headhunter',
-         'Silent Call Voice Clone': 'Silent Call Voice Clone', // Mapping to our predefined label
-         'Internet': 'Other', // Example mapping
-         'Travel & Ticketing': 'Travel Ticketing', // Example mapping
-         'Application Software': 'Application Software', // Example mapping
-         'Entertainment': 'Entertainment', // Example mapping
-         'Government': 'Government', // Example mapping
-         'Local Services': 'Local Services', // Example mapping
-         'Automotive Industry': 'Automotive Industry', // Example mapping
-         'Car Rental': 'Car Rental', // Example mapping
-         'Telecommunication': 'Telecommunication', // Example mapping
-         'Nuisance': 'Spam Likely', // Example mapping
-         'Scandals': 'Spam Likely', // Example mapping
-         // Add other specific phrases from comments if needed and map them
-         // 'Random person': 'Other', // Example
-         // 'wanting to ask questions': 'Spam Likely', // Example
-         // 'Disturbing': 'Risk', // Example
-         // 'looking around her property': 'Risk' // Example
+         'Llamada automática': 'Robocall', // Automatic call
+
+         'Entrega': 'Delivery',
+         'Comida para llevar': 'Takeaway',
+         'Viaje compartido': 'Ridesharing',
+         'Seguro': 'Insurance',
+         'Préstamo': 'Loan',
+         'Servicio al cliente': 'Customer Service',
+         'Desconocido': 'Unknown',
+         'Financiero': 'Financial',
+         'Banco': 'Bank',
+         'Educación': 'Education',
+         'Médico': 'Medical',
+         'Caridad': 'Charity',
+         'Otros': 'Other',
+         'Cobro de deudas': 'Debt Collection', // Debt collection
+         'Encuesta': 'Survey',
+         'Político': 'Political',
+         'Comercio electrónico': 'Ecommerce',
+         'Riesgo': 'Risk',
+         'Agente': 'Agent',
+         'Reclutador': 'Recruiter',
+         'Cazatalentos': 'Headhunter',
+         'Llamada silenciosa': 'Silent Call Voice Clone', // Silent call
+         'Clon de voz': 'Silent Call Voice Clone', // Voice clone
+
+         'Internet': 'Internet',
+         'Viajes y boletos': 'Travel & Ticketing',
+         'Software de aplicación': 'Application Software',
+         'Entretenimiento': 'Entertainment',
+         'Gobierno': 'Government',
+         'Servicios locales': 'Local Services',
+         'Industria automotriz': 'Automotive Industry',
+         'Alquiler de coches': 'Car Rental',
+         'Telecomunicaciones': 'Telecommunication',
+
+         // Mappings for keywords from the Spanish HTML examples
+         'SCAM': 'Fraud Scam Likely', // From Peru example (English in Spanish page)
+         'Swindle': 'Fraud Scam Likely',
+         'Offer': 'Telemarketing', // Offer could be Telemarketing
+         'Deception': 'Fraud Scam Likely',
+         'Scammer': 'Fraud Scam Likely',
+         '$#%@!la': 'Other', // Mapping unusual characters/phrases
+         'jajajaja': 'Other', // Mapping colloquial/unrelated text
+         'Provides false information': 'Fraud Scam Likely', // Mapping phrase from comment
+
+         // Mappings for common Spanish keywords/phrases
+         'Estafadores': 'Fraud Scam Likely', // Scammers
+         'Llamadas y cortan': 'Spam Likely', // Calls and hang up
+         'Mismo cuento': 'Fraud Scam Likely', // Same story
+         'Envío código no solicitado': 'Fraud Scam Likely', // Sending unsolicited code
+         'Hackear cuentas': 'Fraud Scam Likely', // Hacking accounts
+         'Ganado un premio': 'Fraud Scam Likely', // Won a prize
+         'Ofreciendo productos': 'Telemarketing', // Offering products
+         'Venta al por mayor': 'Other', // Wholesale
+         'Extorsión': 'Risk', // Extortion
+         'Extorsionador': 'Risk', // Extortion
+         'Acosador': 'Risk',
+         // Add any other relevant mappings
     };
 
 
@@ -155,7 +204,7 @@
     }
 
     /**
-     * Parses the Slick.ly page content.
+     * Parses the Slick.ly page content (Spanish).
      */
     function getParsingScript(pluginId, phoneNumberToQuery) {
         return `
@@ -164,7 +213,7 @@
                 const PHONE_NUMBER = '${phoneNumberToQuery}';
                 const manualMapping = ${JSON.stringify(manualMapping)}; // Use the corrected mapping
                 const predefinedLabels = ${JSON.stringify(predefinedLabels)}; // Make predefinedLabels available in iframe for validation
-                 const slicklyKeywords = ${JSON.stringify(slicklyKeywords)}; // Make keywords available
+                 const slicklyKeywords_es_ES = ${JSON.stringify(slicklyKeywords_es_ES)}; // Make keywords available
 
                 let parsingCompleted = false;
 
@@ -180,12 +229,12 @@
                     return predefinedLabels.some(predefined => predefined.label === label);
                 }
 
-                 // Helper to find the first matching keyword (case-insensitive, whole word)
-                 function findMatchingKeyword(text) {
-                     for (const keyword of slicklyKeywords) {
-                         // Create a regex to find the whole word or exact phrase match, case-insensitive
-                         const regex = new RegExp('\\b' + keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + '\\b', 'i');
-                         if (regex.test(text)) {
+                 // Helper to find the first matching keyword (case-insensitive) in Spanish
+                 // This version looks for inclusion, not necessarily whole word for better matching.
+                 function findMatchingKeyword_es_ES(text) {
+                     const lowerText = text.toLowerCase();
+                     for (const keyword of slicklyKeywords_es_ES) {
+                          if (lowerText.includes(keyword.toLowerCase())) {
                              return keyword; // Return the original keyword from the list
                          }
                      }
@@ -204,51 +253,69 @@
                         // --- Extract Comments Count (Count) ---
                         const commentsCountElement = doc.querySelector('.comments-count');
                         if (commentsCountElement) {
-                            const countMatch = commentsCountElement.textContent.match(/Comments\\s*\\((\\d+)\\)/i);
+                            // Match "Comentarios" (Spanish)
+                            const countMatch = commentsCountElement.textContent.match(/Comentarios\\s*\\((\\d+)\\)/i);
                             if (countMatch && countMatch[1]) {
                                  result.count = parseInt(countMatch[1], 10) || 0;
-                                 console.log('[Iframe-Parser] Found Comments count:', result.count);
+                                 console.log('[Iframe-Parser] Found Comments count (Comentarios):', result.count);
                             }
                         }
 
 
-                        // --- Extract Summary Label and set initial sourceLabel ---
-                        const summaryLabelElement = doc.querySelector('.summary-keywords .summary span');
+                        // --- Extract Summary Label (es-ES/English) and set initial sourceLabel ---
+                        const summaryLabelElement = doc.querySelector('.summary-keywords .summary span.summary-result'); // Target the span with result class
                         let initialSourceLabel = '';
                         if (summaryLabelElement) {
                             const summaryLabelText = summaryLabelElement.textContent.trim();
-                            if (summaryLabelText.toLowerCase() === 'suspicious' || summaryLabelText.toLowerCase() === 'dangerous') {
-                                 initialSourceLabel = summaryLabelText; // Set initial sourceLabel
+                            // Match "Peligroso", "Dangerous", "Sospechoso", or "Suspicious" (case-insensitive)
+                            const lowerSummaryLabel = summaryLabelText.toLowerCase();
+                            if (lowerSummaryLabel === 'peligroso' || lowerSummaryLabel === 'dangerous' || lowerSummaryLabel === 'sospechoso' || lowerSummaryLabel === 'suspicious') {
+                                 initialSourceLabel = summaryLabelText; // Set initial sourceLabel (keep original casing)
                                  result.sourceLabel = initialSourceLabel; // Also set sourceLabel for display
                                  console.log('[Iframe-Parser] Found Summary label (initial sourceLabel):', initialSourceLabel);
                             }
                         }
 
-                        // --- Check Keywords for a more specific sourceLabel ---
+                        // --- Check Keywords (es-ES/English) for a more specific sourceLabel ---
                         let specificSourceLabel = null;
                         const keywordsElement = doc.querySelector('.summary-keywords .keywords span');
                         if (keywordsElement) {
                              const keywordsText = keywordsElement.textContent.trim();
-                             console.log('[Iframe-Parser] Keywords text:', keywordsText);
-                             const matchingKeyword = findMatchingKeyword(keywordsText);
-                             if (matchingKeyword) {
-                                  specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
-                                  console.log('[Iframe-Parser] Found matching keyword in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                             console.log('[Iframe-Parser] Keywords text (es-ES/English):', keywordsText);
+                             // Directly check if the Keywords text is an exact match for a manualMapping key
+                             if (manualMapping.hasOwnProperty(keywordsText)) {
+                                  specificSourceLabel = keywordsText;
+                                   console.log('[Iframe-Parser] Found exact manual mapping key in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                             } else {
+                                  // If not an exact manual mapping key, check for matching keywords from the list
+                                   const matchingKeyword = findMatchingKeyword_es_ES(keywordsText);
+                                   if (matchingKeyword) {
+                                        specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
+                                       console.log('[Iframe-Parser] Found matching keyword in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                                   }
                              }
                         }
 
-                        // --- Check Comments for an even more specific sourceLabel ---
+                        // --- Check Comments (es-ES/English) for an even more specific sourceLabel ---
                          if (!specificSourceLabel) { // Only check comments if no specific keyword found in Keywords
                              const commentContentElements = doc.querySelectorAll('.comments .comment .content p');
                              for (const commentElement of commentContentElements) {
                                   const commentText = commentElement.textContent.trim();
-                                   console.log('[Iframe-Parser] Checking comment text for keywords:', commentText);
-                                  const matchingKeyword = findMatchingKeyword(commentText);
-                                  if (matchingKeyword) {
-                                       specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
-                                      console.log('[Iframe-Parser] Found matching keyword in Comments (setting specificSourceLabel):', specificSourceLabel);
-                                      break; // Stop checking comments after the first match
-                                  }
+                                   console.log('[Iframe-Parser] Checking comment text (es-ES/English) for keywords:', commentText);
+                                  // Directly check if the Comment text is an exact match for a manualMapping key
+                                   if (manualMapping.hasOwnProperty(commentText)) {
+                                        specificSourceLabel = commentText;
+                                         console.log('[Iframe-Parser] Found exact manual mapping key in Comment (setting specificSourceLabel):', specificSourceLabel);
+                                        break; // Stop checking comments after the first match
+                                   } else {
+                                        // If not an exact manual mapping key, check for matching keywords from the list
+                                        const matchingKeyword = findMatchingKeyword_es_ES(commentText);
+                                        if (matchingKeyword) {
+                                             specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
+                                            console.log('[Iframe-Parser] Found matching keyword in Comments (setting specificSourceLabel):', specificSourceLabel);
+                                            break; // Stop checking comments after the first match
+                                        }
+                                   }
                              }
                         }
 
@@ -395,40 +462,36 @@
              // Attempt to extract country code (basic: assumes 1-3 digits after +)
              const match = e164Number.match(/^\\+(\\d{1,3})/);
              if (match && match[1]) {
-                 // Map the country code digits to a Slick.ly country identifier (e.g., 1 -> us)
-                 // This requires a mapping from country calling code to Slick.ly country short code.
-                 // For simplicity here, I'll just log the extracted digits.
-                 // You will need a proper mapping mechanism here.
                  const extractedCountryCodeDigits = match[1];
                   console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
-                  // *** IMPORTANT: Implement mapping from extractedCountryCodeDigits to Slick.ly country short code (e.g., 'us', 'gb', 'au', 'my') ***
-                  // For now, I'll use a placeholder or a simple hardcoded example if applicable to your testing.
-                  // Replace the following line with your actual mapping logic.
-                  // Example placeholder mapping (replace with your actual mapping):
+
+                  // Map the country code digits to a Slick.ly country identifier (e.g., 51 -> pe, 56 -> cl, 34 -> es)
                   const countryCodeMap = {
-                      '1': 'us',  // United States
-                      '44': 'gb', // United Kingdom
-                      '61': 'au', // Australia
-                      '60': 'my',  // Malaysia
-                      '65': 'sg',  // Singapore
-                      '64': 'nz',  // New Zealand
-                      '234': 'ng'  // Nigeria
+                      '51': 'pe', // Peru
+                      '52': 'mx', // Mexico
+                      '54': 'ar', // Argentina (+54)
+                      '58': 've', // Venezuela (+58)
+                      '57': 'co', // Colombia (+57)
+                      '56': 'cl', // Chile
+                      '34': 'es' // Spain
+                      
+
                       // Add more mappings as needed
                   };
                   countryCode = countryCodeMap[extractedCountryCodeDigits];
+
                    if (!countryCode) {
                        logError(`Could not map country code digits "${extractedCountryCodeDigits}" to a Slick.ly country.`);
                        // You might still proceed with a default or return an error
-                       // For now, I'll proceed without a country code, which will likely fail the Slick.ly query
                        sendPluginResult({ requestId, success: false, error: `Unsupported country code: ${extractedCountryCodeDigits}` });
                        return; // Exit if country code is required and not found
                    }
-                    console.log('[Slickly Plugin] Mapped country code digits to Slick.ly country code:', countryCode);
+                    console.log('[Iframe-Parser] Mapped country code digits to Slick.ly country code:', countryCode);
 
              } else {
                  logError('Could not extract country code digits from e164Number:', e164Number);
                  // You might proceed without a country code or return an error
-                  sendPluginResult({ requestId, success: false, error: `Could not extract country code from e164Number: ${e164Number}` });
+                  sendPluginResult({ requestId, success: false, error: 'Could not extract country code from e164Number: ' + e164Number });
                  return;
              }
          } else {

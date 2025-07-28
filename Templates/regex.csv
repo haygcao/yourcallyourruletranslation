@@ -1,2 +1,0 @@
-pattern,name,isWhitelist,isBlacklist,enabled//delete first line black whitlist either which one is true othersise false
-required,required,false,false,true

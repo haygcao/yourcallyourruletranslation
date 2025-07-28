@@ -61,7 +61,7 @@
         '政府', '在地服務', '汽車產業',
         '汽車租賃', '電信', '滋擾'
         // Add other common keywords/phrases from TW/HK reports if needed
-         , '補習班', '補習', '假扮', '掛斷', '無聲', '問明對方如何取得資料', '掛你電話', '掛', '推銷', '理財', '融資', '推銷', '賣飛騙子', '騙錢勿上當', '上當' // Examples from your HTML
+         , '補習班', '補習', '假扮', '掛斷', '無聲', '問明對方如何取得資料', '掛你電話', '掛', '推銷', '理財', '融資', '推銷', '賣飛騙子', '騙案', '騙錢勿上當', '上當' // Examples from your HTML
     ];
 
 
@@ -83,6 +83,8 @@
         '騙': 'Fraud Scam Likely', // Mapping '騙'
         '騙人': 'Fraud Scam Likely', // Mapping '騙人'
         '騙子': 'Fraud Scam Likely', // Mapping '騙子'
+        '騙案': 'Fraud Scam Likely', // Mapping '騙子'
+        
         '送貨': 'Delivery',
         '外賣': 'Takeaway',
         '叫車服務': 'Ridesharing',

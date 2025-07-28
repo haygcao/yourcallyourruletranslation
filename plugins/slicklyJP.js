@@ -1,120 +1,182 @@
-// Slick.ly Phone Query Plugin - Iframe Proxy Solution
+// Slick.ly Phone Query Plugin - Iframe Proxy Solution (Japanese)
 (function() {
     // --- Plugin Configuration ---
     const PLUGIN_CONFIG = {
-        id: 'slicklyPhoneNumberPlugin', // Unique ID for this plugin
-        name: 'Slick.ly Phone Lookup (iframe Proxy)',
-        version: '1.0.5', // Updated version for country code extraction from e164Number
-        description: 'Queries Slick.ly for phone number information and maps to fixed predefined labels, extracting country code from e164Number.'
+        id: 'slicklyJpPhoneNumberPlugin', // Unique ID for this plugin (specifically for JP)
+        name: 'Slick.ly JP Phone Lookup (iframe Proxy)',
+        version: '1.0.0', // Initial version for JP
+        description: 'Queries Slick.ly for JP phone number information and maps to fixed predefined labels.'
     };
 
     // --- Our application's FIXED predefined labels (provided by the user) ---
     const predefinedLabels = [
-        { 'label': 'Fraud Scam Likely' },
-        { 'label': 'Spam Likely' },
-        { 'label': 'Telemarketing' },
-        { 'label': 'Robocall' },
-        { 'label': 'Delivery' },
-        { 'label': 'Takeaway' },
-        { 'label': 'Ridesharing' },
-        { 'label': 'Insurance' },
-        { 'label': 'Loan' },
-        { 'label': 'Customer Service' },
-        { 'label': 'Unknown' },
-        { 'label': 'Financial' },
-        { 'label': 'Bank' },
-        { 'label': 'Education' },
-        { 'label': 'Medical' },
-        { 'label': 'Charity' },
-        { 'label': 'Other' },
-        { 'label': 'Debt Collection' },
-        { 'label': 'Survey' },
-        { 'label': 'Political' },
-        { 'label': 'Ecommerce' },
-        { 'label': 'Risk' },
-        { 'label': 'Agent' },
-        { 'label': 'Recruiter' },
-        { 'label': 'Headhunter' },
-        { 'label': 'Silent Call Voice Clone' },
-        { 'label': 'Internet' },
-        { 'label': 'Travel & Ticketing' },
-        { 'label': 'Application Software' },
-        { 'label': 'Entertainment' },
-        { 'label': 'Government' },
-        { 'label': 'Local Services' },
-        { 'label': 'Automotive Industry' },
-        { 'label': 'Car Rental' },
-        { 'label': 'Telecommunication' },
+        { label: 'Fraud Scam Likely' },
+        { label: 'Spam Likely' },
+        { label: 'Telemarketing' },
+        { label: 'Robocall' },
+        { label: 'Delivery' },
+        { label: 'Takeaway' },
+        { label: 'Ridesharing' },
+        { label: 'Insurance' },
+        { label: 'Loan' },
+        { label: 'Customer Service' },
+        { label: 'Unknown' },
+        { label: 'Financial' },
+        { label: 'Bank' },
+        { label: 'Education' },
+        { label: 'Medical' },
+        { label: 'Charity' },
+        { label: 'Other' },
+        { label: 'Debt Collection' },
+        { label: 'Survey' },
+        { label: 'Political' },
+        { label: 'Ecommerce' },
+        { label: 'Risk' },
+        { label: 'Agent' },
+        { label: 'Recruiter' },
+        { label: 'Headhunter' },
+        { label: 'Silent Call Voice Clone' },
+        { label: 'Internet' },
+        { label: 'Travel & Ticketing' },
+        { label: 'Application Software' },
+        { label: 'Entertainment' },
+        { label: 'Government' },
+        { label: 'Local Services' },
+        { label: 'Automotive Industry' },
+        { label: 'Car Rental' },
+        { label: 'Telecommunication' },
+        // Note: 'Nuisance' from the previous list is not in the updated predefinedLabels, mapping it to 'Spam Likely'
     ];
 
-     // --- Keyword list provided by the user for mapping and sourceLabel detection ---
-    const slicklyKeywords = [
-        'Fraud', 'Scam', 'Spam', 'Harassment', 'Telemarketing', 'Robocall',
-        'Delivery', 'Takeaway', 'Ridesharing', 'Insurance', 'Loan',
-        'Customer Service', 'Unknown', 'Financial', 'Bank', 'Education',
-        'Medical', 'Charity', 'Other', 'Debt Collection', 'Survey',
-        'Political', 'Ecommerce', 'Risk', 'Agent', 'Recruiter',
-        'Headhunter', 'Silent Call Voice Clone', 'Internet',
-        'Travel & Ticketing', 'Application Software', 'Entertainment',
-        'Government', 'Local Services', 'Automotive Industry','scandals','Fake',
-        'Car Rental', 'Telecommunication', 'Nuisance'
+     // --- Keyword list provided by the user, translated to Japanese (based on common usage and examples) ---
+     // This list is used for mapping and sourceLabel detection.
+     // Please verify the translations and add/adjust mappings as needed.
+    const slicklyKeywords_ja_JP = [
+        '詐欺', 'フィッシング詐欺', 'スパム', '嫌がらせ', 'テレマーケティング', 'ロボコール',
+        '配送', '出前', 'ライドシェア', '保険', 'ローン',
+        'カスタマーサービス', '不明', '金融', '銀行', '教育',
+        '医療', '慈善', 'その他', '借金取り立て', '調査',
+        '政治', 'Eコマース', 'リスク', 'エージェント', 'リクルーター',
+        'ヘッドハンター', '無音電話', 'インターネット',
+        '旅行・チケット', 'アプリケーションソフト', 'エンターテイメント',
+        '政府', '地域サービス', '自動車産業',
+        'レンタカー', '電気通信', '迷惑電話', // Mapping 'Nuisance' to '迷惑電話'
+
+        // Keywords from the JP HTML example
+        '電力会社なりすまし詐欺', // Electricity company impersonation scam
+         'あなたが対応しているのでは', // Perhaps you are handling this? (Phrase from comment)
+         'あなたの名前は', // Your name is... (Phrase from comment)
+         'さんの戸籍謄本と印鑑証明が必要と言っているが', // Says 's family register and seal certificate are needed, but... (Phrase from comment)
+         'その人とは知り合いでもなく関わりがない旨伝えた', // Conveyed that I don't know that person and have no connection with them (Phrase from comment)
+         'その同僚の方のお名前は', // That colleague's name is... (Phrase from comment)
+
+         // Add other common Japanese keywords/phrases from reports if needed
+         // Examples based on common phone scams in Japan:
+         'オレオレ詐欺', // Ore Ore fraud (It's me, it's me fraud)
+         '還付金詐欺', // Refund fraud
+         '架空請求詐欺', // Fabricated billing fraud
+         'ワンクリック詐欺', // One-click fraud
+         '個人情報', // Personal information
+         '登録料', // Registration fee
+         '当選しました', // You have won
+         '未納料金', // Unpaid fees
+         '裁判', // Lawsuit
+         '警察', // Police
+         '消費者センター', // Consumer center
+         'SMS', // SMS
+         'ショートメール', // Short mail (SMS)
+         '折り返し電話', // Call back
+         '〇〇ですが', // This is XX... (Common opening)
+         '不審な電話', // Suspicious call
+         '怪しい電話', // Suspicious call
+         '注意喚起', // Warning/Heads-up
+         '詐欺注意', // Scam warning
+         '不明な番号', // Unknown number
+         '無言電話', // Silent call
     ];
 
 
-    // --- Mapping from Slick.ly specific terms/labels to our FIXED predefinedLabels (exact match) ---
-    // Keys are the exact text from Slick.ly (Summary labels, Keywords, terms found in comments).
+    // --- Mapping from Slick.ly specific terms/labels (ja-JP) to our FIXED predefinedLabels (exact match) ---
+    // Keys are the exact text from Slick.ly (Summary labels, Keywords, terms found in comments) in Japanese.
     // Values are the corresponding labels from our FIXED predefinedLabels list.
     const manualMapping = {
-         // Mappings for Summary labels
-         'Suspicious': 'Spam Likely', // Example mapping
-         'Dangerous': 'Risk', // Example mapping
+         // Mappings for Summary labels (ja-JP)
+         '疑わしい': 'Spam Likely', // Mapping '疑わしい' (Suspicious) to 'Spam Likely'
+         '危険な': 'Risk', // Mapping '危険な' (Dangerous) to 'Risk'
 
-         // Mappings for Keywords and terms found in comments (based on slicklyKeywords list)
-         'Fraud': 'Fraud Scam Likely',
-         'Scam': 'Fraud Scam Likely',
-         'Fake': 'Fraud Scam Likely',
-         'Spam': 'Spam Likely',
-         'Harassment': 'Spam Likely', // Or Risk
-         'Telemarketing': 'Telemarketing',
-         'Robocall': 'Robocall',
-         'Delivery': 'Delivery',
-         'Takeaway': 'Takeaway',
-         'Ridesharing': 'Ridesharing',
-         'Insurance': 'Insurance',
-         'Loan': 'Loan',
-         'Customer Service': 'Customer Service',
-         'Unknown': 'Unknown',
-         'Financial': 'Financial',
-         'Bank': 'Bank',
-         'Education': 'Education',
-         'Medical': 'Medical',
-         'Charity': 'Charity',
-         'Other': 'Other',
-         'Debt Collection': 'Debt Collection',
-         'Survey': 'Survey',
-         'Political': 'Political',
-         'Ecommerce': 'Ecommerce',
-         'Risk': 'Risk',
-         'Agent': 'Agent',
-         'Recruiter': 'Recruiter',
-         'Headhunter': 'Headhunter',
-         'Silent Call Voice Clone': 'Silent Call Voice Clone', // Mapping to our predefined label
-         'Internet': 'Other', // Example mapping
-         'Travel & Ticketing': 'Travel Ticketing', // Example mapping
-         'Application Software': 'Application Software', // Example mapping
-         'Entertainment': 'Entertainment', // Example mapping
-         'Government': 'Government', // Example mapping
-         'Local Services': 'Local Services', // Example mapping
-         'Automotive Industry': 'Automotive Industry', // Example mapping
-         'Car Rental': 'Car Rental', // Example mapping
-         'Telecommunication': 'Telecommunication', // Example mapping
-         'Nuisance': 'Spam Likely', // Example mapping
-         'Scandals': 'Spam Likely', // Example mapping
-         // Add other specific phrases from comments if needed and map them
-         // 'Random person': 'Other', // Example
-         // 'wanting to ask questions': 'Spam Likely', // Example
-         // 'Disturbing': 'Risk', // Example
-         // 'looking around her property': 'Risk' // Example
+         // Mappings from the slicklyKeywords_ja_JP list
+         '詐欺': 'Fraud Scam Likely',
+         'フィッシング詐欺': 'Fraud Scam Likely', // Phishing scam
+         'スパム': 'Spam Likely',
+         '嫌がらせ': 'Spam Likely', // Harassment
+         'テレマーケティング': 'Telemarketing',
+         'ロボコール': 'Robocall',
+         '配送': 'Delivery',
+         '出前': 'Takeaway', // Delivery (food)
+         'ライドシェア': 'Ridesharing',
+         '保険': 'Insurance',
+         'ローン': 'Loan',
+         'カスタマーサービス': 'Customer Service',
+         '不明': 'Unknown',
+         '金融': 'Financial',
+         '銀行': 'Bank',
+         '教育': 'Education',
+         '医療': 'Medical',
+         '慈善': 'Charity',
+         'その他': 'Other',
+         '借金取り立て': 'Debt Collection', // Debt collection
+         '調査': 'Survey',
+         '政治': 'Political',
+         'Eコマース': 'Ecommerce',
+         'リスク': 'Risk',
+         'エージェント': 'Agent',
+         'リクルーター': 'Recruiter',
+         'ヘッドハンター': 'Headhunter',
+         '無音電話': 'Silent Call Voice Clone', // Silent call
+
+         'インターネット': 'Internet',
+         '旅行・チケット': 'Travel & Ticketing',
+         'アプリケーションソフト': 'Application Software',
+         'エンターテイメント': 'Entertainment',
+         '政府': 'Government',
+         '地域サービス': 'Local Services',
+         '自動車産業': 'Automotive Industry',
+         'レンタカー': 'Car Rental',
+         '電気通信': 'Telecommunication',
+         '迷惑電話': 'Spam Likely', // Mapping '迷惑電話' (Nuisance/Annoyance call) to Spam Likely
+
+         // Mappings for keywords from the JP HTML example
+         '電力会社なりすまし詐欺': 'Fraud Scam Likely', // Electricity company impersonation scam
+         'あなたが対応しているのでは': 'Other', // Example mapping for a phrase
+         'あなたの名前は': 'Other', // Example mapping for a phrase
+         'さんの戸籍謄本と印鑑証明が必要と言っているが': 'Fraud Scam Likely', // Example mapping for a scam phrase
+         'その人とは知り合いでもなく関わりがない旨伝えた': 'Other', // Example mapping for a phrase
+         'その同僚の方のお名前は': 'Other', // Example mapping for a phrase
+
+         // Mappings for other common Japanese keywords/phrases
+         'オレオレ詐欺': 'Fraud Scam Likely',
+         '還付金詐欺': 'Fraud Scam Likely',
+         '架空請求詐欺': 'Fraud Scam Likely',
+         'ワンクリック詐欺': 'Fraud Scam Likely',
+         '個人情報': 'Risk', // Personal information (often related to scams)
+         '登録料': 'Fraud Scam Likely', // Registration fee (often related to scams)
+         '当選しました': 'Fraud Scam Likely', // You have won (common scam phrase)
+         '未納料金': 'Debt Collection', // Unpaid fees (can be legitimate or scam) - mapping to Debt Collection
+         '裁判': 'Debt Collection', // Lawsuit (can be legitimate or scam) - mapping to Debt Collection
+         '警察': 'Other', // Police (can be legitimate or scam) - mapping to Other or Risk
+         '消費者センター': 'Other', // Consumer center
+         'SMS': 'Other', // SMS
+         'ショートメール': 'Other', // Short mail (SMS)
+         '折り返し電話': 'Other', // Call back (can be legitimate or suspicious)
+         '〇〇ですが': 'Other', // This is XX... (common opening, map to Other)
+         '不審な電話': 'Spam Likely', // Suspicious call
+         '怪しい電話': 'Spam Likely', // Suspicious call
+         '注意喚起': 'Other', // Warning/Heads-up
+         '詐欺注意': 'Fraud Scam Likely', // Scam warning
+         '不明な番号': 'Unknown', // Unknown number
+         '無言電話': 'Silent Call Voice Clone', // Silent call
+
+         // Add any other relevant mappings
     };
 
 
@@ -155,7 +217,7 @@
     }
 
     /**
-     * Parses the Slick.ly page content.
+     * Parses the Slick.ly page content (Japanese).
      */
     function getParsingScript(pluginId, phoneNumberToQuery) {
         return `
@@ -164,7 +226,7 @@
                 const PHONE_NUMBER = '${phoneNumberToQuery}';
                 const manualMapping = ${JSON.stringify(manualMapping)}; // Use the corrected mapping
                 const predefinedLabels = ${JSON.stringify(predefinedLabels)}; // Make predefinedLabels available in iframe for validation
-                 const slicklyKeywords = ${JSON.stringify(slicklyKeywords)}; // Make keywords available
+                 const slicklyKeywords_ja_JP = ${JSON.stringify(slicklyKeywords_ja_JP)}; // Make keywords available
 
                 let parsingCompleted = false;
 
@@ -180,12 +242,12 @@
                     return predefinedLabels.some(predefined => predefined.label === label);
                 }
 
-                 // Helper to find the first matching keyword (case-insensitive, whole word)
-                 function findMatchingKeyword(text) {
-                     for (const keyword of slicklyKeywords) {
-                         // Create a regex to find the whole word or exact phrase match, case-insensitive
-                         const regex = new RegExp('\\b' + keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + '\\b', 'i');
-                         if (regex.test(text)) {
+                 // Helper to find the first matching keyword (case-insensitive) in Japanese
+                 // This version looks for inclusion, not necessarily whole word for better Japanese matching.
+                 function findMatchingKeyword_ja_JP(text) {
+                     const lowerText = text.toLowerCase();
+                     for (const keyword of slicklyKeywords_ja_JP) {
+                          if (lowerText.includes(keyword.toLowerCase())) {
                              return keyword; // Return the original keyword from the list
                          }
                      }
@@ -204,51 +266,67 @@
                         // --- Extract Comments Count (Count) ---
                         const commentsCountElement = doc.querySelector('.comments-count');
                         if (commentsCountElement) {
-                            const countMatch = commentsCountElement.textContent.match(/Comments\\s*\\((\\d+)\\)/i);
+                            const countMatch = commentsCountElement.textContent.match(/注釈\\s*\\((\\d+)\\)/i); // Match "注釈"
                             if (countMatch && countMatch[1]) {
                                  result.count = parseInt(countMatch[1], 10) || 0;
-                                 console.log('[Iframe-Parser] Found Comments count:', result.count);
+                                 console.log('[Iframe-Parser] Found Comments count (注釈):', result.count);
                             }
                         }
 
 
-                        // --- Extract Summary Label and set initial sourceLabel ---
-                        const summaryLabelElement = doc.querySelector('.summary-keywords .summary span');
+                        // --- Extract Summary Label (ja-JP) and set initial sourceLabel ---
+                        const summaryLabelElement = doc.querySelector('.summary-keywords .summary span.summary-result'); // Target the span with result class
                         let initialSourceLabel = '';
                         if (summaryLabelElement) {
                             const summaryLabelText = summaryLabelElement.textContent.trim();
-                            if (summaryLabelText.toLowerCase() === 'suspicious' || summaryLabelText.toLowerCase() === 'dangerous') {
+                            // Match "危険な" or "疑わしい"
+                            if (summaryLabelText === '危険な' || summaryLabelText === '疑わしい') {
                                  initialSourceLabel = summaryLabelText; // Set initial sourceLabel
                                  result.sourceLabel = initialSourceLabel; // Also set sourceLabel for display
                                  console.log('[Iframe-Parser] Found Summary label (initial sourceLabel):', initialSourceLabel);
                             }
                         }
 
-                        // --- Check Keywords for a more specific sourceLabel ---
+                        // --- Check Keywords (ja-JP) for a more specific sourceLabel ---
                         let specificSourceLabel = null;
                         const keywordsElement = doc.querySelector('.summary-keywords .keywords span');
                         if (keywordsElement) {
                              const keywordsText = keywordsElement.textContent.trim();
-                             console.log('[Iframe-Parser] Keywords text:', keywordsText);
-                             const matchingKeyword = findMatchingKeyword(keywordsText);
-                             if (matchingKeyword) {
-                                  specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
-                                  console.log('[Iframe-Parser] Found matching keyword in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                             console.log('[Iframe-Parser] Keywords text (ja-JP):', keywordsText);
+                             // Directly check if the Keywords text is an exact match for a manualMapping key
+                             if (manualMapping.hasOwnProperty(keywordsText)) {
+                                  specificSourceLabel = keywordsText;
+                                   console.log('[Iframe-Parser] Found exact manual mapping key in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                             } else {
+                                  // If not an exact manual mapping key, check for matching keywords from the list
+                                   const matchingKeyword = findMatchingKeyword_ja_JP(keywordsText);
+                                   if (matchingKeyword) {
+                                        specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
+                                       console.log('[Iframe-Parser] Found matching keyword in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                                   }
                              }
                         }
 
-                        // --- Check Comments for an even more specific sourceLabel ---
+                        // --- Check Comments (ja-JP) for an even more specific sourceLabel ---
                          if (!specificSourceLabel) { // Only check comments if no specific keyword found in Keywords
                              const commentContentElements = doc.querySelectorAll('.comments .comment .content p');
                              for (const commentElement of commentContentElements) {
                                   const commentText = commentElement.textContent.trim();
-                                   console.log('[Iframe-Parser] Checking comment text for keywords:', commentText);
-                                  const matchingKeyword = findMatchingKeyword(commentText);
-                                  if (matchingKeyword) {
-                                       specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
-                                      console.log('[Iframe-Parser] Found matching keyword in Comments (setting specificSourceLabel):', specificSourceLabel);
-                                      break; // Stop checking comments after the first match
-                                  }
+                                   console.log('[Iframe-Parser] Checking comment text (ja-JP) for keywords:', commentText);
+                                  // Directly check if the Comment text is an exact match for a manualMapping key
+                                   if (manualMapping.hasOwnProperty(commentText)) {
+                                        specificSourceLabel = commentText;
+                                         console.log('[Iframe-Parser] Found exact manual mapping key in Comment (setting specificSourceLabel):', specificSourceLabel);
+                                        break; // Stop checking comments after the first match
+                                   } else {
+                                        // If not an exact manual mapping key, check for matching keywords from the list
+                                        const matchingKeyword = findMatchingKeyword_ja_JP(commentText);
+                                        if (matchingKeyword) {
+                                             specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
+                                            console.log('[Iframe-Parser] Found matching keyword in Comments (setting specificSourceLabel):', specificSourceLabel);
+                                            break; // Stop checking comments after the first match
+                                        }
+                                   }
                              }
                         }
 
@@ -392,43 +470,38 @@
          // This is a basic implementation and might need refinement
          let countryCode = null;
          if (e164Number && e164Number.startsWith('+')) {
-             // Attempt to extract country code (basic: assumes 1-3 digits after +)
+             // Attempt to extract country code digits (basic: assumes 1-3 digits after +)
              const match = e164Number.match(/^\\+(\\d{1,3})/);
              if (match && match[1]) {
-                 // Map the country code digits to a Slick.ly country identifier (e.g., 1 -> us)
-                 // This requires a mapping from country calling code to Slick.ly country short code.
-                 // For simplicity here, I'll just log the extracted digits.
-                 // You will need a proper mapping mechanism here.
                  const extractedCountryCodeDigits = match[1];
                   console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
-                  // *** IMPORTANT: Implement mapping from extractedCountryCodeDigits to Slick.ly country short code (e.g., 'us', 'gb', 'au', 'my') ***
-                  // For now, I'll use a placeholder or a simple hardcoded example if applicable to your testing.
-                  // Replace the following line with your actual mapping logic.
-                  // Example placeholder mapping (replace with your actual mapping):
+
+                  // Map the country code digits to a Slick.ly country identifier (e.g., 81 -> jp)
                   const countryCodeMap = {
-                      '1': 'us',  // United States
-                      '44': 'gb', // United Kingdom
-                      '61': 'au', // Australia
-                      '60': 'my',  // Malaysia
-                      '65': 'sg',  // Singapore
-                      '64': 'nz',  // New Zealand
-                      '234': 'ng'  // Nigeria
+                      '81': 'jp', // Japan
+                      '86': 'cn', // China
+                      '886': 'tw', // Taiwan
+                      '852': 'hk', // Hong Kong
+                       '853': 'mo',  // Macau
+                       '44': 'gb', // United Kingdom
+                       '61': 'au', // Australia
+                       '60': 'my'  // Malaysia
                       // Add more mappings as needed
                   };
                   countryCode = countryCodeMap[extractedCountryCodeDigits];
+
                    if (!countryCode) {
                        logError(`Could not map country code digits "${extractedCountryCodeDigits}" to a Slick.ly country.`);
                        // You might still proceed with a default or return an error
-                       // For now, I'll proceed without a country code, which will likely fail the Slick.ly query
                        sendPluginResult({ requestId, success: false, error: `Unsupported country code: ${extractedCountryCodeDigits}` });
                        return; // Exit if country code is required and not found
                    }
-                    console.log('[Slickly Plugin] Mapped country code digits to Slick.ly country code:', countryCode);
+                    console.log('[Iframe-Parser] Mapped country code digits to Slick.ly country code:', countryCode);
 
              } else {
                  logError('Could not extract country code digits from e164Number:', e164Number);
                  // You might proceed without a country code or return an error
-                  sendPluginResult({ requestId, success: false, error: `Could not extract country code from e164Number: ${e164Number}` });
+                  sendPluginResult({ requestId, success: false, error: 'Could not extract country code from e164Number: ' + e164Number });
                  return;
              }
          } else {
