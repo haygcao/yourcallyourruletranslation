@@ -152,7 +152,8 @@ const manualMapping = {
                   city: "",
                   carrier: "",
                   phoneNumber: PHONE_NUMBER,
-                  name: "unknown"
+                  name: "unknown",
+                  action: 'none' // Add action field
                 };
 
                 try {
@@ -256,6 +257,29 @@ const manualMapping = {
 
                   // Determine success based on whether a label or count was found
                   jsonObject.success = jsonObject.sourceLabel !== "" || jsonObject.count > 0;
+
+                  // --- Action Mapping Based on sourceLabel ---
+                  if (jsonObject.success && jsonObject.sourceLabel) {
+                      const blockKeywords = ['推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款'];
+                      const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步'];
+
+                      let action = 'none';
+                      for (const keyword of blockKeywords) {
+                          if (jsonObject.sourceLabel.includes(keyword)) {
+                              action = 'block';
+                              break;
+                          }
+                      }
+                      if (action === 'none') { // Only check allow if not already blocked
+                          for (const keyword of allowKeywords) {
+                              if (jsonObject.sourceLabel.includes(keyword)) {
+                                  action = 'allow';
+                                  break;
+                              }
+                          }
+                      }
+                      jsonObject.action = action;
+                  }
 
                   console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
                   return jsonObject;
