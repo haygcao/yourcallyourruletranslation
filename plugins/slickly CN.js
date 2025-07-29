@@ -4,7 +4,7 @@
     const PLUGIN_CONFIG = {
         id: 'slicklyCnPhoneNumberPlugin', // Unique ID for this plugin (specifically for CN)
         name: 'Slick.ly CN Phone Lookup (iframe Proxy)',
-        version: '1.0.0', // Initial version for CN
+        version: '1.0.1', // Initial version for CN
         description: 'Queries Slick.ly for CN phone number information and maps to fixed predefined labels.'
     };
 
@@ -359,12 +359,14 @@
                             result.success = true;
                         }
 
-                        // --- Action Mapping Based on sourceLabel ---
-                        if (result.success && result.sourceLabel) {
+                        // --- Determine Action based on combined logic ---
+                        let action = 'none';
+
+                        // 1. Prioritize action based on Keywords (existing logic)
+                        if (result.sourceLabel) {
                             const blockKeywords = ['推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款', '欺诈', '敲诈', '起诉', '老赖', '卖', '借钱', '上当'];
                             const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步', '送货'];
 
-                            let action = 'none';
                             for (const keyword of blockKeywords) {
                                 if (result.sourceLabel.includes(keyword)) {
                                     action = 'block';
@@ -379,8 +381,36 @@
                                     }
                                 }
                             }
-                            result.action = action;
                         }
+
+                        // 2. If no action determined by keywords, check Summary Label
+                        if (action === 'none' && initialSourceLabel) {
+                             if (initialSourceLabel === '可疑' || initialSourceLabel === '危险') {
+                                 action = 'block';
+                             } else if (initialSourceLabel === '安全') {
+                                 action = 'allow';
+                             }
+                        }
+
+                        // 3. If no action determined by keywords or summary, check Votes
+                        if (action === 'none') {
+                             const negativeVotesElement = doc.querySelector('.vote .negative-count');
+                             const positiveVotesElement = doc.querySelector('.vote .positive-count');
+
+                             if (negativeVotesElement && positiveVotesElement) {
+                                  const negativeVotes = parseInt(negativeVotesElement.textContent.trim(), 10) || 0;
+                                  const positiveVotes = parseInt(positiveVotesElement.textContent.trim(), 10) || 0;
+                                   console.log('[Iframe-Parser] Negative votes:', negativeVotes, ', Positive votes:', positiveVotes);
+
+                                 if (negativeVotes > positiveVotes) {
+                                     action = 'block';
+                                 } else if (positiveVotes > negativeVotes) {
+                                     action = 'allow';
+                                 }
+                             }
+                        }
+
+                        result.action = action;
 
 
                         if (result.success) {
