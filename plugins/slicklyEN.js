@@ -56,7 +56,7 @@
         'Political', 'Ecommerce', 'Risk', 'Agent', 'Recruiter',
         'Headhunter', 'Silent Call Voice Clone', 'Internet',
         'Travel & Ticketing', 'Application Software', 'Entertainment',
-        'Government', 'Local Services', 'Automotive Industry','scandals','Fake',
+        'Government', 'Local Services', 'Automotive Industry','scandals','Fake','Pretending',
         'Car Rental', 'Telecommunication', 'Nuisance'
     ];
 

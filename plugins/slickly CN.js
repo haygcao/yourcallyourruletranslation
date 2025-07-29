@@ -1,5 +1,5 @@
 // Slick.ly Phone Query Plugin - Iframe Proxy Solution (Simplified Chinese)
-(function() {
+(function () {
     // --- Plugin Configuration ---
     const PLUGIN_CONFIG = {
         id: 'slicklyCnPhoneNumberPlugin', // Unique ID for this plugin (specifically for CN)
@@ -48,12 +48,12 @@
         // Note: 'Nuisance' from the previous list is not in the updated predefinedLabels, mapping it to 'Spam Likely'
     ];
 
-     // --- Keyword list provided by the user, translated to Simplified Chinese and merged ---
-     // This list is used for mapping and sourceLabel detection.
-     // It includes keywords from the CN HTML example and previous bd.js Simplified Chinese keywords.
-     // Please verify the list and add/adjust mappings as needed.
+    // --- Keyword list provided by the user, translated to Simplified Chinese and merged ---
+    // This list is used for mapping and sourceLabel detection.
+    // It includes keywords from the CN HTML example and previous bd.js Simplified Chinese keywords.
+    // Please verify the list and add/adjust mappings as needed.
     const slicklyKeywords_zh_CN = [
-        '诈骗', '骗局', '垃圾邮件', '骚扰', '电话营销', '自动拨号','骗','骗人','骗子',
+        '诈骗', '骗局', '垃圾邮件', '骚扰', '电话营销', '自动拨号', '骗', '骗人', '骗子',
         '送货', '外卖', '叫车服务', '保险', '贷款',
         '客户服务', '未知', '金融', '银行', '教育',
         '医疗', '慈善', '其他', '催收', '调查',
@@ -64,12 +64,12 @@
         '汽车租赁', '电信', '滋扰', // 汽車租賃 -> 汽车租赁, 電信 -> 电信 (common Mainland usage)
         // Keywords from the CN HTML example
         '诈骗电话', '借钱', '欺诈', '敲诈', '起诉', '老赖', '卖',
-         // Keywords from previous bd.js manual mapping (Simplified Chinese)
-         '中介', '房产中介', '违规催收', '快递物流', '快递', '教育培训', '股票证券', '保险理财', '涉诈电话',
-         '招聘', '猎头招聘', '招聘猎头', '保险推销', '贷款理财', '医疗卫生', '送餐外卖', '美团', '饿了么',
-         '滴滴/优步', '出租车', '网约车', '违法', '淫秽色情', '反动谣言', '发票办证', '客服热线',
-         '非应邀商业电话', '广告', '骚扰电话', '商业营销', '广告推销', '旅游推广', '食药推销', '推销', '理财', '融资', '上当'
-         // Add any other relevant keywords from CN reports
+        // Keywords from previous bd.js manual mapping (Simplified Chinese)
+        '中介', '房产中介', '违规催收', '快递物流', '快递', '教育培训', '股票证券', '保险理财', '涉诈电话',
+        '招聘', '猎头招聘', '招聘猎头', '保险推销', '贷款理财', '医疗卫生', '送餐外卖', '美团', '饿了么',
+        '滴滴/优步', '出租车', '网约车', '违法', '淫秽色情', '反动谣言', '发票办证', '客服热线',
+        '非应邀商业电话', '广告', '骚扰电话', '商业营销', '广告推销', '旅游推广', '食药推销', '推销', '理财', '融资', '上当'
+        // Add any other relevant keywords from CN reports
     ];
 
 
@@ -77,101 +77,101 @@
     // Keys are the exact text from Slick.ly (Summary labels, Keywords, terms found in comments) in Simplified Chinese.
     // Values are the corresponding labels from our FIXED predefinedLabels list.
     const manualMapping = {
-         // Mappings for Summary labels (zh-CN)
-         '可疑': 'Spam Likely', // Mapping '可疑' (Suspicious) to 'Spam Likely'
-         '安全': 'Other', // Mapping '安全' (Safe) to 'Other' or a 'Safe' predefined label if you add one
-         '危险': 'Risk', // Mapping '危险' (Dangerous) to 'Risk'
+        // Mappings for Summary labels (zh-CN)
+        '可疑': 'Spam Likely', // Mapping '可疑' (Suspicious) to 'Spam Likely'
+        '安全': 'Other', // Mapping '安全' (Safe) to 'Other' or a 'Safe' predefined label if you add one
+        '危险': 'Risk', // Mapping '危险' (Dangerous) to 'Risk'
 
-         // Mappings from the merged slicklyKeywords_zh_CN list
-         '诈骗': 'Fraud Scam Likely',
-         '骗局': 'Fraud Scam Likely',
-         '垃圾邮件': 'Spam Likely',
-         '骚扰': 'Spam Likely',
-         '电话营销': 'Telemarketing',
-         '自动拨号': 'Robocall',
-         '骗': 'Fraud Scam Likely',
-         '骗人': 'Fraud Scam Likely',
-         '骗子': 'Fraud Scam Likely',
-         '送货': 'Delivery',
-         '外卖': 'Takeaway',
-         '叫车服务': 'Ridesharing',
-         '保险': 'Insurance',
-         '贷款': 'Loan',
-         '客户服务': 'Customer Service',
-         '未知': 'Unknown',
-         '金融': 'Financial',
-         '银行': 'Bank',
-         '教育': 'Education',
-         '医疗': 'Medical',
-         '慈善': 'Charity',
-         '其他': 'Other',
-         '催收': 'Debt Collection',
-         '调查': 'Survey',
-         '政治': 'Political',
-         '电子商务': 'Ecommerce',
-         '风险': 'Risk',
-         '代理人': 'Agent',
-         '招聘者': 'Recruiter',
-         '猎头': 'Headhunter',
-         '无声电话 语音复制': 'Silent Call Voice Clone',
-         '互联网': 'Internet',
-         '旅游与票务': 'Travel & Ticketing',
-         '应用软件': 'Application Software',
-         '娱乐': 'Entertainment',
-         '政府': 'Government',
-         '本地服务': 'Local Services',
-         '汽车行业': 'Automotive Industry',
-         '汽车租赁': 'Car Rental',
-         '电信': 'Telecommunication',
-         '滋扰': 'Spam Likely', // Mapping '滋扰' to Spam Likely
+        // Mappings from the merged slicklyKeywords_zh_CN list
+        '诈骗': 'Fraud Scam Likely',
+        '骗局': 'Fraud Scam Likely',
+        '垃圾邮件': 'Spam Likely',
+        '骚扰': 'Spam Likely',
+        '电话营销': 'Telemarketing',
+        '自动拨号': 'Robocall',
+        '骗': 'Fraud Scam Likely',
+        '骗人': 'Fraud Scam Likely',
+        '骗子': 'Fraud Scam Likely',
+        '送货': 'Delivery',
+        '外卖': 'Takeaway',
+        '叫车服务': 'Ridesharing',
+        '保险': 'Insurance',
+        '贷款': 'Loan',
+        '客户服务': 'Customer Service',
+        '未知': 'Unknown',
+        '金融': 'Financial',
+        '银行': 'Bank',
+        '教育': 'Education',
+        '医疗': 'Medical',
+        '慈善': 'Charity',
+        '其他': 'Other',
+        '催收': 'Debt Collection',
+        '调查': 'Survey',
+        '政治': 'Political',
+        '电子商务': 'Ecommerce',
+        '风险': 'Risk',
+        '代理人': 'Agent',
+        '招聘者': 'Recruiter',
+        '猎头': 'Headhunter',
+        '无声电话 语音复制': 'Silent Call Voice Clone',
+        '互联网': 'Internet',
+        '旅游与票务': 'Travel & Ticketing',
+        '应用软件': 'Application Software',
+        '娱乐': 'Entertainment',
+        '政府': 'Government',
+        '本地服务': 'Local Services',
+        '汽车行业': 'Automotive Industry',
+        '汽车租赁': 'Car Rental',
+        '电信': 'Telecommunication',
+        '滋扰': 'Spam Likely', // Mapping '滋扰' to Spam Likely
 
-         // Mappings from the CN HTML example keywords
-         '诈骗电话': 'Fraud Scam Likely',
-         '借钱': 'Loan', // Mapping '借钱' to Loan or Fraud Scam Likely depending on context
-         '欺诈': 'Fraud Scam Likely',
-         '敲诈': 'Risk', // Mapping '敲诈' (Blackmail/Extortion) to Risk
-         '起诉': 'Debt Collection', // Mapping '起诉' (Sue) to Debt Collection or Legal
-         '老赖': 'Debt Collection', // Mapping '老赖' (Deadbeat/Debtor) to Debt Collection
-         '卖': 'Risk', // Mapping '卖' (Sell) - might be telemarketing or other, mapping to Other
-         // Mappings from previous bd.js manual mapping (Simplified Chinese)
-         '中介': 'Agent',
-         '房产中介': 'Agent',
-         '违规催收': 'Debt Collection',
-         '快递物流': 'Delivery',
-         '快递': 'Delivery',
-         '教育培训': 'Education',
-         '股票证券': 'Financial',
-         '保险理财': 'Financial',
-         '涉诈电话': 'Fraud Scam Likely',
-         '招聘': 'Recruiter',
-         '猎头招聘': 'Headhunter',
-         '招聘猎头': 'Headhunter',
-         '保险推销': 'Insurance',
-         '贷款理财': 'Loan',
-         '医疗卫生': 'Medical',
-         '送餐外卖': 'Takeaway',
-         '美团': 'Takeaway',
-         '饿了么': 'Takeaway',
-         '滴滴/优步': 'Ridesharing',
-         '出租车': 'Ridesharing',
-         '网约车': 'Ridesharing',
-         '违法': 'Risk',
-         '淫秽色情': 'Risk',
-         '反动谣言': 'Risk',
-         '发票办证': 'Fraud Scam Likely', // Mapping '发票办证' to Fraud Scam Likely
-         '客服热线': 'Customer Service',
-         '非应邀商业电话': 'Spam Likely',
-         '广告': 'Spam Likely',
-         '骚扰电话': 'Spam Likely',
-         '商业营销': 'Telemarketing',
-         '广告推销': 'Telemarketing',
-         '旅游推广': 'Telemarketing',
-         '食药推销': 'Telemarketing',
-         '推销': 'Telemarketing',
-         '理财': 'Financial',
-         '融资': 'Loan',
-         '上当': 'Fraud Scam Likely', // Mapping '上当'
-         // Add any other relevant mappings
+        // Mappings from the CN HTML example keywords
+        '诈骗电话': 'Fraud Scam Likely',
+        '借钱': 'Loan', // Mapping '借钱' to Loan or Fraud Scam Likely depending on context
+        '欺诈': 'Fraud Scam Likely',
+        '敲诈': 'Risk', // Mapping '敲诈' (Blackmail/Extortion) to Risk
+        '起诉': 'Debt Collection', // Mapping '起诉' (Sue) to Debt Collection or Legal
+        '老赖': 'Debt Collection', // Mapping '老赖' (Deadbeat/Debtor) to Debt Collection
+        '卖': 'Risk', // Mapping '卖' (Sell) - might be telemarketing or other, mapping to Other
+        // Mappings from previous bd.js manual mapping (Simplified Chinese)
+        '中介': 'Agent',
+        '房产中介': 'Agent',
+        '违规催收': 'Debt Collection',
+        '快递物流': 'Delivery',
+        '快递': 'Delivery',
+        '教育培训': 'Education',
+        '股票证券': 'Financial',
+        '保险理财': 'Financial',
+        '涉诈电话': 'Fraud Scam Likely',
+        '招聘': 'Recruiter',
+        '猎头招聘': 'Headhunter',
+        '招聘猎头': 'Headhunter',
+        '保险推销': 'Insurance',
+        '贷款理财': 'Loan',
+        '医疗卫生': 'Medical',
+        '送餐外卖': 'Takeaway',
+        '美团': 'Takeaway',
+        '饿了么': 'Takeaway',
+        '滴滴/优步': 'Ridesharing',
+        '出租车': 'Ridesharing',
+        '网约车': 'Ridesharing',
+        '违法': 'Risk',
+        '淫秽色情': 'Risk',
+        '反动谣言': 'Risk',
+        '发票办证': 'Fraud Scam Likely', // Mapping '发票办证' to Fraud Scam Likely
+        '客服热线': 'Customer Service',
+        '非应邀商业电话': 'Spam Likely',
+        '广告': 'Spam Likely',
+        '骚扰电话': 'Spam Likely',
+        '商业营销': 'Telemarketing',
+        '广告推销': 'Telemarketing',
+        '旅游推广': 'Telemarketing',
+        '食药推销': 'Telemarketing',
+        '推销': 'Telemarketing',
+        '理财': 'Financial',
+        '融资': 'Loan',
+        '上当': 'Fraud Scam Likely', // Mapping '上当'
+        // Add any other relevant mappings
     };
 
 
@@ -242,7 +242,11 @@
                  function findMatchingKeyword_zh_CN(text) {
                      const lowerText = text.toLowerCase();
                      for (const keyword of slicklyKeywords_zh_CN) {
-                          if (lowerText.includes(keyword.toLowerCase())) {
+                         // Create a regex to find the whole word or exact phrase match, case-insensitive
+                         // Handling Traditional Chinese characters in regex word boundaries might require careful consideration.
+                         // For simplicity, we'll use a basic regex here.
+                         const regex = new RegExp(keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'i'); // Basic match
+                         if (regex.test(text)) {
                              return keyword; // Return the original keyword from the list
                          }
                      }
@@ -353,6 +357,40 @@
                         // Set the final predefinedLabel
                         result.predefinedLabel = foundPredefinedLabel || 'Unknown'; // Default to 'Unknown' if no valid mapping found
 
+                    // --- Extract Province and City ---
+                    const basicInfoElement = doc.querySelector('.basic span');
+                    if (basicInfoElement) {
+                        const basicInfoText = basicInfoElement.textContent.trim();
+                        console.log('[Iframe-Parser] Basic Info text:', basicInfoText);
+                        // Regex to capture location information before "(中国)"
+                        const locationMatch = basicInfoText.match(/(.+?)\s*\(中国\)/);
+
+                        if (locationMatch && locationMatch[1]) {
+                            const locationInfo = locationMatch[1].trim();
+                            console.log('[Iframe-Parser] Extracted location info before (中国):', locationInfo);
+
+                            // Attempt to split into province and city based on common patterns
+                            // This regex looks for a potential province name followed by a city name
+                            const provinceCitySplitMatch = locationInfo.match(/^(.+?[省自治区])?(.+?市)/);
+
+                            if (provinceCitySplitMatch) {
+                                result.province = provinceCitySplitMatch[1] ? provinceCitySplitMatch[1].trim() : '';
+                                result.city = provinceCitySplitMatch[2] ? provinceCitySplitMatch[2].trim() : '';
+                                console.log('[Iframe-Parser] Split into Province:', result.province, ', City:', result.city);
+                            } else {
+                                // If the split regex doesn't match, assume the whole locationInfo is the city
+                                 result.city = locationInfo;
+                                 result.province = ''; // Set province to empty
+                                 console.log('[Iframe-Parser] Treated as City only:', result.city);
+                            }
+
+                        } else {
+                             console.log('[Iframe-Parser] Could not extract location info before (中国).');
+                        }
+                    } else {
+                         console.log('[Iframe-Parser] Basic info element not found.');
+                    }
+
 
                         // --- Set success to true if we found at least a count or a sourceLabel ---
                         if (result.count > 0 || result.sourceLabel) {
@@ -365,7 +403,7 @@
                         // 1. Prioritize action based on Keywords (existing logic)
                         if (result.sourceLabel) {
                             const blockKeywords = ['推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款', '欺诈', '敲诈', '起诉', '老赖', '卖', '借钱', '上当'];
-                            const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步', '送货'];
+                            const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步', '网约车', '送货'];
 
                             for (const keyword of blockKeywords) {
                                 if (result.sourceLabel.includes(keyword)) {
@@ -446,62 +484,62 @@
         `;
     }
 
-     function initiateQuery(phoneNumber, requestId, countryCode) {
-         log(`Initiating query for '${phoneNumber}' (requestId: ${requestId}, countryCode: ${countryCode})`);
-         try {
-             // Construct Slick.ly search URL based on country code
-             const baseUrl = `https://slick.ly/${countryCode.toLowerCase()}/`;
-             const targetSearchUrl = `${baseUrl}${encodeURIComponent(phoneNumber)}`;
-             const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' }; // Using a common user agent
-             const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
-             log(`Iframe proxy URL: ${proxyUrl}`);
+    function initiateQuery(phoneNumber, requestId, countryCode) {
+        log(`Initiating query for '${phoneNumber}' (requestId: ${requestId}, countryCode: ${countryCode})`);
+        try {
+            // Construct Slick.ly search URL based on country code
+            const baseUrl = `https://slick.ly/${countryCode.toLowerCase()}/`;
+            const targetSearchUrl = `${baseUrl}${encodeURIComponent(phoneNumber)}`;
+            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' }; // Using a common user agent
+            const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+            log(`Iframe proxy URL: ${proxyUrl}`);
 
-             const iframe = document.createElement('iframe');
-             iframe.id = `query-iframe-${requestId}`;
-             iframe.style.display = 'none';
-             iframe.sandbox = 'allow-scripts allow-same-origin'; // Keep sandbox for security
-             activeIFrames.set(requestId, iframe);
+            const iframe = document.createElement('iframe');
+            iframe.id = `query-iframe-${requestId}`;
+            iframe.style.display = 'none';
+            iframe.sandbox = 'allow-scripts allow-same-origin'; // Keep sandbox for security
+            activeIFrames.set(requestId, iframe);
 
-             iframe.onload = function() {
-                 log(`Iframe loaded for requestId ${requestId}. Posting parsing script.`);
-                 try {
-                     const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                     // We need to execute the script within the iframe's context
-                     iframe.contentWindow.postMessage({
-                         type: 'executeScript',
-                         script: parsingScript
-                     }, '*'); // Use '*' as targetOrigin or a specific origin if known
-                     log(`Parsing script post message sent for requestId: ${requestId}`);
-                 } catch (e) {
-                     logError(`Error posting script to iframe for requestId ${requestId}:`, e);
-                     sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
-                     cleanupIframe(requestId);
-                 }
-             };
+            iframe.onload = function () {
+                log(`Iframe loaded for requestId ${requestId}. Posting parsing script.`);
+                try {
+                    const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                    // We need to execute the script within the iframe's context
+                    iframe.contentWindow.postMessage({
+                        type: 'executeScript',
+                        script: parsingScript
+                    }, '*'); // Use '*' as targetOrigin or a specific origin if known
+                    log(`Parsing script post message sent for requestId: ${requestId}`);
+                } catch (e) {
+                    logError(`Error posting script to iframe for requestId ${requestId}:`, e);
+                    sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
+                    cleanupIframe(requestId);
+                }
+            };
 
-             iframe.onerror = function() {
-                 logError(`Iframe error for requestId ${requestId}`);
-                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-                 cleanupIframe(requestId);
-             };
+            iframe.onerror = function () {
+                logError(`Iframe error for requestId ${requestId}`);
+                sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+                cleanupIframe(requestId);
+            };
 
-             document.body.appendChild(iframe);
-             iframe.src = proxyUrl;
+            document.body.appendChild(iframe);
+            iframe.src = proxyUrl;
 
-             // Set a timeout for the query
-             setTimeout(() => {
-                 if (activeIFrames.has(requestId)) {
-                     logError(`Query timeout for requestId: ${requestId}`);
-                     sendPluginResult({ requestId, success: false, error: 'Query timed out after 45 seconds' }); // Increased timeout
-                     cleanupIframe(requestId);
-                 }
-             }, 45000); // Increased timeout duration
+            // Set a timeout for the query
+            setTimeout(() => {
+                if (activeIFrames.has(requestId)) {
+                    logError(`Query timeout for requestId: ${requestId}`);
+                    sendPluginResult({ requestId, success: false, error: 'Query timed out after 45 seconds' }); // Increased timeout
+                    cleanupIframe(requestId);
+                }
+            }, 45000); // Increased timeout duration
 
-         } catch (error) {
-             logError(`Error in initiateQuery for requestId ${requestId}:`, error);
-             sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
-         }
-     }
+        } catch (error) {
+            logError(`Error in initiateQuery for requestId ${requestId}:`, error);
+            sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
+        }
+    }
 
 
     // Modified generateOutput to extract country code from e164Number
@@ -514,49 +552,49 @@
             return;
         }
 
-         // Extract country code from e164Number if available
-         // This is a basic implementation and might need refinement
-         let countryCode = null;
-         if (e164Number && e164Number.startsWith('+')) {
-             // Attempt to extract country code digits (basic: assumes 1-3 digits after +)
-             const match = e164Number.match(/^\+(\d{1,3})/);
-             if (match && match[1]) {
-                 const extractedCountryCodeDigits = match[1];
-                  console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
+        // Extract country code from e164Number if available
+        // This is a basic implementation and might need refinement
+        let countryCode = null;
+        if (e164Number && e164Number.startsWith('+')) {
+            // Attempt to extract country code digits (basic: assumes 1-3 digits after +)
+            const match = e164Number.match(/^\+(\d{1,3})/);
+            if (match && match[1]) {
+                const extractedCountryCodeDigits = match[1];
+                console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
 
-                  // Map the country code digits to a Slick.ly country identifier (e.g., 86 -> cn)
-                  const countryCodeMap = {
-                      '86': 'cn', // China
-                      '886': 'tw', // Taiwan
-                      '852': 'hk', // Hong Kong
-                       '853': 'mo',  // Macau
-                       '44': 'gb', // United Kingdom
-                       '61': 'au', // Australia
-                       '60': 'my'  // Malaysia
-                      // Add more mappings as needed
-                  };
-                  countryCode = countryCodeMap[extractedCountryCodeDigits];
+                // Map the country code digits to a Slick.ly country identifier (e.g., 86 -> cn)
+                const countryCodeMap = {
+                    '86': 'cn', // China
+                    '886': 'tw', // Taiwan
+                    '852': 'hk', // Hong Kong
+                    '853': 'mo',  // Macau
+                    '44': 'gb', // United Kingdom
+                    '61': 'au', // Australia
+                    '60': 'my'  // Malaysia
+                    // Add more mappings as needed
+                };
+                countryCode = countryCodeMap[extractedCountryCodeDigits];
 
-                   if (!countryCode) {
-                       logError(`Could not map country code digits "${extractedCountryCodeDigits}" to a Slick.ly country.`);
-                       // You might still proceed with a default or return an error
-                       sendPluginResult({ requestId, success: false, error: `Unsupported country code: ${extractedCountryCodeDigits}` });
-                       return; // Exit if country code is required and not found
-                   }
-                    console.log('[Iframe-Parser] Mapped country code digits to Slick.ly country code:', countryCode);
+                if (!countryCode) {
+                    logError(`Could not map country code digits "${extractedCountryCodeDigits}" to a Slick.ly country.`);
+                    // You might still proceed with a default or return an error
+                    sendPluginResult({ requestId, success: false, error: `Unsupported country code: ${extractedCountryCodeDigits}` });
+                    return; // Exit if country code is required and not found
+                }
+                console.log('[Iframe-Parser] Mapped country code digits to Slick.ly country code:', countryCode);
 
-             } else {
-                 logError('Could not extract country code digits from e164Number:', e164Number);
-                 // You might proceed without a country code or return an error
-                  sendPluginResult({ requestId, success: false, error: 'Could not extract country code from e164Number: ' + e164Number });
-                 return;
-             }
-         } else {
-             logError('e164Number is not available or does not start with "+". Cannot extract country code.');
-             // You might proceed without a country code or return an error
-              sendPluginResult({ requestId, success: false, error: 'e164Number is required to extract country code.' });
-             return;
-         }
+            } else {
+                logError('Could not extract country code digits from e164Number:', e164Number);
+                // You might proceed without a country code or return an error
+                sendPluginResult({ requestId, success: false, error: 'Could not extract country code from e164Number: ' + e164Number });
+                return;
+            }
+        } else {
+            logError('e164Number is not available or does not start with "+". Cannot extract country code.');
+            // You might proceed without a country code or return an error
+            sendPluginResult({ requestId, success: false, error: 'e164Number is required to extract country code.' });
+            return;
+        }
 
 
         // Format the number for Slick.ly (usually just the digits)
@@ -564,16 +602,16 @@
 
         // Proceed with the query only if a country code was successfully extracted
         if (countryCode) {
-             initiateQuery(formattedNumber, requestId, countryCode);
+            initiateQuery(formattedNumber, requestId, countryCode);
         } else {
-             // This case should ideally be handled by the country code extraction logic above
-             logError('Country code is missing after extraction attempt.');
-             sendPluginResult({ requestId, success: false, error: 'Country code could not be determined.' });
+            // This case should ideally be handled by the country code extraction logic above
+            logError('Country code is missing after extraction attempt.');
+            sendPluginResult({ requestId, success: false, error: 'Country code could not be determined.' });
         }
     }
 
     // --- Message Listener (similar to bd.js) ---
-    window.addEventListener('message', function(event) {
+    window.addEventListener('message', function (event) {
         // Check if the message is from our iframe proxy and contains the expected data
         if (!event.data || event.data.type !== 'phoneQueryResult' || !event.data.data) {
             return;

@@ -4,7 +4,7 @@
     const PLUGIN_CONFIG = {
         id: 'slicklyTwHkPhoneNumberPlugin', // Unique ID for this plugin (specifically for TW/HK)
         name: 'Slick.ly TW/HK Phone Lookup (iframe Proxy)',
-        version: '1.0.0', // Initial version for TW/HK
+        version: '1.0.2', // Incrementing version due to correction
         description: 'Queries Slick.ly for TW/HK phone number information and maps to fixed predefined labels.'
     };
 
@@ -217,7 +217,7 @@
                     console.log('[Iframe-Parser] Attempting to parse content in document with title:', doc.title);
                     const result = {
                         phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: ''
+                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: '', action: 'none'
                     };
 
                     try {
@@ -251,7 +251,7 @@
                         if (keywordsElement) {
                              const keywordsText = keywordsElement.textContent.trim();
                              console.log('[Iframe-Parser] Keywords text (zh-TW):', keywordsText);
-                             const matchingKeyword = findMatchingKeyword_zh_TW(keywordsText);
+                             const matchingKeyword = findMatchingKeyword_zh_TW(keywordsText); // Use the CORRECT finding function
                              if (matchingKeyword) {
                                   specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
                                   console.log('[Iframe-Parser] Found matching keyword in Keywords (overriding sourceLabel):', specificSourceLabel);
@@ -264,7 +264,7 @@
                              for (const commentElement of commentContentElements) {
                                   const commentText = commentElement.textContent.trim();
                                    console.log('[Iframe-Parser] Checking comment text (zh-TW) for keywords:', commentText);
-                                  const matchingKeyword = findMatchingKeyword_zh_TW(commentText);
+                                  const matchingKeyword = findMatchingKeyword_zh_TW(commentText); // Use the CORRECT finding function
                                   if (matchingKeyword) {
                                        specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
                                       console.log('[Iframe-Parser] Found matching keyword in Comments (overriding sourceLabel):', specificSourceLabel);
@@ -306,6 +306,60 @@
                         if (result.count > 0 || result.sourceLabel) {
                             result.success = true;
                         }
+
+                        // --- Determine Action based on combined logic ---
+                        let action = 'none';
+
+                        // 1. Prioritize action based on the final sourceLabel checking block/allow keywords (CORRECTED LOGIC)
+                         const blockKeywords = ['推銷', '推廣', '廣告', '廣', '違規', '詐騙', '騙局', '反動', '行銷', '商業電話', '貸款', '欺詐', '敲詐', '起訴', '假扮', '掛斷', '無聲', '問明對方如何取得資料', '掛你電話', '掛', '推銷', '詐騙', '騙局', '垃圾郵件', '滋擾', '騷擾', '電話行銷', '自動撥號','騙','騙人','騙子', '推銷', '賣飛騙子', '騙案', '騙錢勿上當', '上當', '賣', '借錢', '上當', '騙案', '騙錢勿上當', '假扮'];
+                         const allowKeywords = ['外賣', '送貨', '快遞', '叫車', '叫車服務','出租', '滴滴', '優步', '安全'];
+
+                         if (result.sourceLabel) {
+                             const lowerSourceLabel = result.sourceLabel.toLowerCase();
+                             for (const keyword of blockKeywords) {
+                                 if (lowerSourceLabel.includes(keyword.toLowerCase())) {
+                                     action = 'block';
+                                     break;
+                                 }
+                             }
+                             if (action === 'none') { // Only check allow if not already blocked
+                                 for (const keyword of allowKeywords) {
+                                     if (lowerSourceLabel.includes(keyword.toLowerCase())) {
+                                         action = 'allow';
+                                         break;
+                                     }
+                                 }
+                             }
+                         }
+
+                        // 2. If no action determined by keywords, check Summary Label (existing logic - lower priority)
+                        if (action === 'none' && initialSourceLabel) {
+                             if (initialSourceLabel === '危險' || initialSourceLabel === '可疑') { // Added '可疑' '危險' implies block in Traditional Chinese
+                                 action = 'block';
+                             } else if (initialSourceLabel === '安全') {
+                                 action = 'allow';
+                             }
+                        }
+
+                        // 3. If no action determined by keywords or summary, check Votes (existing logic - lowest priority)
+                        if (action === 'none') {
+                             const negativeVotesElement = doc.querySelector('.vote .negative-count');
+                             const positiveVotesElement = doc.querySelector('.vote .positive-count');
+
+                             if (negativeVotesElement && positiveVotesElement) {
+                                  const negativeVotes = parseInt(negativeVotesElement.textContent.trim(), 10) || 0;
+                                  const positiveVotes = parseInt(positiveVotesElement.textContent.trim(), 10) || 0;
+                                   console.log('[Iframe-Parser] Negative votes:', negativeVotes, ', Positive votes:', positiveVotes);
+
+                                 if (negativeVotes > positiveVotes) {
+                                     action = 'block';
+                                 } else if (positiveVotes > negativeVotes) {
+                                     action = 'allow';
+                                 }
+                             }
+                        }
+
+                        result.action = action;
 
 
                         if (result.success) {

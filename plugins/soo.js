@@ -145,7 +145,7 @@ const manualMapping = {
               }
 
               function parseContent(doc) {
-                const jsonObject = {
+                const result = { // Changed variable name to result
                   count: 0,
                   sourceLabel: "",
                   province: "",
@@ -153,7 +153,9 @@ const manualMapping = {
                   carrier: "",
                   phoneNumber: PHONE_NUMBER,
                   name: "unknown",
-                  action: 'none' // Add action field
+                  action: 'none', // Add action field
+                  success: false, // Add success field
+                  error: '' // Add error field
                 };
 
                 try {
@@ -163,7 +165,7 @@ const manualMapping = {
                   console.log('[Iframe-Parser] Body Element:', bodyElement);
                   if (!bodyElement) {
                     console.error('[Iframe-Parser] Error: Could not find body element.');
-                    return jsonObject;
+                    return result;
                   }
 
                   // Extract data from the page content (adapt selectors based on soo.com structure)
@@ -181,13 +183,13 @@ const manualMapping = {
                   if (countElement && sourceLabelElement) {
                       const countText = countElement.textContent.trim();
                       console.log('[Iframe-Parser] countText:', countText);
-                      jsonObject.count = parseInt(countText, 10) || 0;
-                      console.log('[Iframe-Parser] jsonObject.count:', jsonObject.count);
+                      result.count = parseInt(countText, 10) || 0; // Changed jsonObject to result
+                      console.log('[Iframe-Parser] result.count:', result.count); // Changed jsonObject to result
 
                       let sourceLabelText = sourceLabelElement.textContent.trim();
                       sourceLabelText = sourceLabelText.replace(/此号码近期被|d+位|360手机卫士|用户标记，疑似为|！/g, '').replace(/，/g, '').trim();
-                      jsonObject.sourceLabel = sourceLabelText;
-                      console.log('[Iframe-Parser] jsonObject.sourceLabel:', jsonObject.sourceLabel);
+                      result.sourceLabel = sourceLabelText; // Changed jsonObject to result
+                      console.log('[Iframe-Parser] result.sourceLabel:', result.sourceLabel); // Changed jsonObject to result
                   } else {
                       // 尝试提取结构二的标记次数和标签
                       const countElement2 = doc.querySelector('.mh-tel-desc b');
@@ -198,14 +200,14 @@ const manualMapping = {
                       if (countElement2) {
                           const countText = countElement2.textContent.trim();
                           console.log('[Iframe-Parser] countText:', countText);
-                          jsonObject.count = parseInt(countText, 10) || 0;
-                          console.log('[Iframe-Parser] jsonObject.count:', jsonObject.count);
+                          result.count = parseInt(countText, 10) || 0; // Changed jsonObject to result
+                          console.log('[Iframe-Parser] result.count:', result.count); // Changed jsonObject to result
                       }
 
                       if (sourceLabelElement2) {
                           let sourceLabelText = sourceLabelElement2.textContent.trim();
-                          jsonObject.sourceLabel = sourceLabelText;
-                          console.log('[Iframe-Parser] jsonObject.sourceLabel:', jsonObject.sourceLabel);
+                          result.sourceLabel = sourceLabelText; // Changed jsonObject to result
+                          console.log('[Iframe-Parser] result.sourceLabel:', result.sourceLabel); // Changed jsonObject to result
                       }
                   }
 
@@ -216,13 +218,13 @@ const manualMapping = {
                     const spans = detailElement.querySelectorAll('span');
                     console.log('[Iframe-Parser] spans:', spans);
                     if (spans.length >= 2) {
-                      jsonObject.phoneNumber = spans[0].textContent.trim();
+                      result.phoneNumber = spans[0].textContent.trim(); // Changed jsonObject to result
                       const locationCarrierText = spans[1].textContent.trim();
                       const match = locationCarrierText.match(/([一-龥]+)[s ]*([一-龥]+)?[s ]*([一-龥]+)?/);
                       if (match) {
-                        jsonObject.province = match[1] || '';
-                        jsonObject.city = match[2] || '';
-                        jsonObject.carrier = match[3] || '';
+                        result.province = match[1] || ''; // Changed jsonObject to result
+                        result.city = match[2] || ''; // Changed jsonObject to result
+                        result.carrier = match[3] || ''; // Changed jsonObject to result
                       }
                     }
                   } else {
@@ -233,8 +235,8 @@ const manualMapping = {
                     console.log('[Iframe-Parser] locationElement:', locationElement);
 
                     if (phoneNumberElement) {
-                      jsonObject.phoneNumber = phoneNumberElement.textContent.trim();
-                      console.log('[Iframe-Parser] jsonObject.phoneNumber:', jsonObject.phoneNumber);
+                      result.phoneNumber = phoneNumberElement.textContent.trim(); // Changed jsonObject to result
+                      console.log('[Iframe-Parser] result.phoneNumber:', result.phoneNumber); // Changed jsonObject to result
                     }
 
                     if (locationElement) {
@@ -242,61 +244,61 @@ const manualMapping = {
                       console.log('[Iframe-Parser] locationText:', locationText);
                       const match = locationText.match(/([一-龥]+)[s ]*([一-龥]+)?[s ]*([一-龥]+)?/);
                       if (match) {
-                        jsonObject.province = match[1] || '';
-                        jsonObject.city = match[2] || '';
-                        jsonObject.carrier = match[3] || '';
+                        result.province = match[1] || ''; // Changed jsonObject to result
+                        result.city = match[2] || ''; // Changed jsonObject to result
+                        result.carrier = match[3] || ''; // Changed jsonObject to result
                       }
-                      console.log('[Iframe-Parser] jsonObject.province:', jsonObject.province);
-                      console.log('[Iframe-Parser] jsonObject.city:', jsonObject.city);
-                      console.log('[Iframe-Parser] jsonObject.carrier:', jsonObject.carrier);
+                      console.log('[Iframe-Parser] result.province:', result.province); // Changed jsonObject to result
+                      console.log('[Iframe-Parser] result.city:', result.city); // Changed jsonObject to result
+                      console.log('[Iframe-Parser] result.carrier:', result.carrier); // Changed jsonObject to result
                     }
                   }
 
                   // --- Map sourceLabel to predefinedLabel ---
-                  jsonObject.predefinedLabel = manualMapping[jsonObject.sourceLabel] || 'Unknown';
+                  result.predefinedLabel = manualMapping[result.sourceLabel] || 'Unknown'; // Changed jsonObject to result
 
                   // Determine success based on whether a label or count was found
-                  jsonObject.success = jsonObject.sourceLabel !== "" || jsonObject.count > 0;
+                  result.success = result.sourceLabel !== "" || result.count > 0; // Changed jsonObject to result
 
                   // --- Action Mapping Based on sourceLabel ---
-                  if (jsonObject.success && jsonObject.sourceLabel) {
+                  if (result.success && result.sourceLabel) { // Changed jsonObject to result
                       const blockKeywords = ['推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款'];
                       const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步'];
 
                       let action = 'none';
                       for (const keyword of blockKeywords) {
-                          if (jsonObject.sourceLabel.includes(keyword)) {
+                          if (result.sourceLabel.includes(keyword)) { // Changed jsonObject to result
                               action = 'block';
                               break;
                           }
                       }
                       if (action === 'none') { // Only check allow if not already blocked
                           for (const keyword of allowKeywords) {
-                              if (jsonObject.sourceLabel.includes(keyword)) {
+                              if (result.sourceLabel.includes(keyword)) { // Changed jsonObject to result
                                   action = 'allow';
                                   break;
                               }
                           }
                       }
-                      jsonObject.action = action;
+                      result.action = action; // Changed jsonObject to result
                   }
 
-                  console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
-                  return jsonObject;
+                  console.log('[Iframe-Parser] Final result:', result); // Changed jsonObject to result
+                  return result;
 
                 } catch (e) {
                   console.error('[Iframe-Parser] Error extracting data:', e);
-                  jsonObject.error = e.toString();
-                  jsonObject.success = false;
-                  return jsonObject;
+                  result.error = e.toString(); // Changed jsonObject to result
+                  result.success = false; // Changed jsonObject to result
+                  return result;
                 }
               }
 
               // Use MutationObserver to wait for relevant content
               const observer = new MutationObserver((mutations, obs) => {
-                  const result = parseContent(document);
-                  if (result && result.success) {
-                      sendResult(result);
+                  const result = parseContent(document); // Changed jsonObject to result
+                  if (result && result.success) { // Changed jsonObject to result
+                      sendResult(result); // Changed jsonObject to result
                       obs.disconnect(); // Stop observing once content is found and parsed
                   } else {
                       // Additional checks or fallback if initial parse fails
