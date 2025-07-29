@@ -254,7 +254,7 @@
                     console.log('[Iframe-Parser] Attempting to parse content in document with title:', doc.title);
                     const result = {
                         phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: ''
+                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: '', action: 'none'
                     };
 
                     try {
@@ -357,6 +357,29 @@
                         // --- Set success to true if we found at least a count or a sourceLabel ---
                         if (result.count > 0 || result.sourceLabel) {
                             result.success = true;
+                        }
+
+                        // --- Action Mapping Based on sourceLabel ---
+                        if (result.success && result.sourceLabel) {
+                            const blockKeywords = ['推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款', '欺诈', '敲诈', '起诉', '老赖', '卖', '借钱', '上当'];
+                            const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步', '送货'];
+
+                            let action = 'none';
+                            for (const keyword of blockKeywords) {
+                                if (result.sourceLabel.includes(keyword)) {
+                                    action = 'block';
+                                    break;
+                                }
+                            }
+                            if (action === 'none') { // Only check allow if not already blocked
+                                for (const keyword of allowKeywords) {
+                                    if (result.sourceLabel.includes(keyword)) {
+                                        action = 'allow';
+                                        break;
+                                    }
+                                }
+                            }
+                            result.action = action;
                         }
 
 
@@ -466,7 +489,7 @@
          let countryCode = null;
          if (e164Number && e164Number.startsWith('+')) {
              // Attempt to extract country code digits (basic: assumes 1-3 digits after +)
-             const match = e164Number.match(/^\\+(\\d{1,3})/);
+             const match = e164Number.match(/^\+(\d{1,3})/);
              if (match && match[1]) {
                  const extractedCountryCodeDigits = match[1];
                   console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
