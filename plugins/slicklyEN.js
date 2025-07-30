@@ -409,7 +409,7 @@
                       '1': 'us',  // United States
                       '44': 'gb', // United Kingdom
                       '61': 'au', // Australia
-                      '60': 'my',  // Malaysia
+                    
                       '65': 'sg',  // Singapore
                       '64': 'nz',  // New Zealand
                       '234': 'ng'  // Nigeria

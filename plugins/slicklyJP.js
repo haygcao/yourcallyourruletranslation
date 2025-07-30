@@ -4,7 +4,7 @@
     const PLUGIN_CONFIG = {
         id: 'slicklyJpPhoneNumberPlugin', // Unique ID for this plugin (specifically for JP)
         name: 'Slick.ly JP Phone Lookup (iframe Proxy)',
-        version: '1.0.0', // Initial version for JP
+        version: '1.0.1', // Increased version for JP
         description: 'Queries Slick.ly for JP phone number information and maps to fixed predefined labels.'
     };
 
@@ -55,7 +55,7 @@
         '詐欺', 'フィッシング詐欺', 'スパム', '嫌がらせ', 'テレマーケティング', 'ロボコール',
         '配送', '出前', 'ライドシェア', '保険', 'ローン',
         'カスタマーサービス', '不明', '金融', '銀行', '教育',
-        '医療', '慈善', 'その他', '借金取り立て', '調査',
+        '医療', '慈善', 'その他', '借金取り立て', '調査', 
         '政治', 'Eコマース', 'リスク', 'エージェント', 'リクルーター',
         'ヘッドハンター', '無音電話', 'インターネット',
         '旅行・チケット', 'アプリケーションソフト', 'エンターテイメント',
@@ -69,6 +69,7 @@
          'さんの戸籍謄本と印鑑証明が必要と言っているが', // Says 's family register and seal certificate are needed, but... (Phrase from comment)
          'その人とは知り合いでもなく関わりがない旨伝えた', // Conveyed that I don't know that person and have no connection with them (Phrase from comment)
          'その同僚の方のお名前は', // That colleague's name is... (Phrase from comment)
+         '危険番号', // Added from user request
 
          // Add other common Japanese keywords/phrases from reports if needed
          // Examples based on common phone scams in Japan:
@@ -152,6 +153,7 @@
          'さんの戸籍謄本と印鑑証明が必要と言っているが': 'Fraud Scam Likely', // Example mapping for a scam phrase
          'その人とは知り合いでもなく関わりがない旨伝えた': 'Other', // Example mapping for a phrase
          'その同僚の方のお名前は': 'Other', // Example mapping for a phrase
+         '危険番号': 'Risk', // Added mapping for 危険番号
 
          // Mappings for other common Japanese keywords/phrases
          'オレオレ詐欺': 'Fraud Scam Likely',
@@ -259,7 +261,7 @@
                     console.log('[Iframe-Parser] Attempting to parse content in document with title:', doc.title);
                     const result = {
                         phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: ''
+                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: '', action: 'none'
                     };
 
                     try {
@@ -358,11 +360,74 @@
                         // Set the final predefinedLabel
                         result.predefinedLabel = foundPredefinedLabel || 'Unknown'; // Default to 'Unknown' if no valid mapping found
 
+                    // --- Extract Province and City --- NO PROVINCE AND CITY IN JP HTML
 
                         // --- Set success to true if we found at least a count or a sourceLabel ---
                         if (result.count > 0 || result.sourceLabel) {
                             result.success = true;
                         }
+
+                        // --- Determine Action based on combined logic ---
+                        let action = 'none';
+
+
+
+                        // 1. If no action determined by summary, check Keywords and Comments
+                         if (action === 'none' && result.sourceLabel && result.sourceLabel !== initialSourceLabel) { // Only check if sourceLabel was updated from keywords/comments
+                            const blockKeywords = ['詐欺', '危険番号', '悪徳押し買い業者', '訪問詐欺', '詐', '欺', '迷惑', '迷惑詐欺', 'フィッシング詐欺', 'スパム', '嫌がらせ', 'テレマーケティング', 'ロボコール', 'ローン', '借金取り立て', '調査', '政治', 'Eコマース', 'リスク', '無音電話', '電力会社なりすまし詐欺', 'オレオレ詐欺', '還付金詐欺', '架空請求詐欺', 'ワンクリック詐欺', '個人情報', '登録料', '当選しました', '未納料金', '裁判', '不審な電話', '怪しい電話', '詐欺注意', '無言電話']; // Updated relevant JP block keywords
+                            const allowKeywords = ['配送', '出前', 'ライドシェア']; // Updated relevant JP allow keywords
+
+
+                             for (const keyword of blockKeywords) {
+                                if (result.sourceLabel.includes(keyword)) {
+                                     action = 'block';
+                                     break;
+                                } else if (findMatchingKeyword_ja_JP(result.sourceLabel) === keyword) { // Check if sourceLabel is a mapped keyword
+                                    action = 'block';
+                                     break;
+                                }
+                             }
+                             if (action === 'none') { // Only check allow if not already blocked
+                                  for (const keyword of allowKeywords) {
+                                     if (result.sourceLabel.includes(keyword)) {
+                                         action = 'allow';
+                                         break;
+                                     } else if (findMatchingKeyword_ja_JP(result.sourceLabel) === keyword) { // Check if sourceLabel is a mapped keyword
+                                         action = 'allow';
+                                         break;
+                                     }
+                                  }
+                             }
+                        }
+
+                        // 2. Check Summary Label
+                         if (initialSourceLabel) {
+                             if (initialSourceLabel === '疑わしい' || initialSourceLabel === '危険な') {
+                                 action = 'block';
+                             } else if (initialSourceLabel === '安全') {
+                                 action = 'allow';
+                             }
+                        }
+
+                        // 3. If no action determined by summary or keywords/comments, check Votes
+                        if (action === 'none') {
+                             const negativeVotesElement = doc.querySelector('.vote .negative-count');
+                             const positiveVotesElement = doc.querySelector('.vote .positive-count');
+
+                             if (negativeVotesElement && positiveVotesElement) {
+                                  const negativeVotes = parseInt(negativeVotesElement.textContent.trim(), 10) || 0;
+                                  const positiveVotes = parseInt(positiveVotesElement.textContent.trim(), 10) || 0;
+                                   console.log('[Iframe-Parser] Negative votes:', negativeVotes, ', Positive votes:', positiveVotes);
+
+                                 if (negativeVotes > positiveVotes) {
+                                     action = 'block';
+                                 } else if (positiveVotes > negativeVotes) {
+                                     action = 'allow';
+                                 }
+                             }
+                        }
+
+                        result.action = action;
 
 
                         if (result.success) {
@@ -471,7 +536,7 @@
          let countryCode = null;
          if (e164Number && e164Number.startsWith('+')) {
              // Attempt to extract country code digits (basic: assumes 1-3 digits after +)
-             const match = e164Number.match(/^\\+(\\d{1,3})/);
+             const match = e164Number.match(/^+(d{1,3})/);
              if (match && match[1]) {
                  const extractedCountryCodeDigits = match[1];
                   console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
