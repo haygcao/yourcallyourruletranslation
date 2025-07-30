@@ -191,25 +191,26 @@
                            result.predefinedLabel = 'Customer Service';
                         }
                         
-                        // --- STRATEGY 2: Marked Number Card (Spam/Telemarketing etc.) ---
-                        if (!result.success) {
-                            console.log('[Iframe-Parser] No official card found, checking for marked number card.');
-                            const labelEl = mainContainer.querySelector('.op_mobilephone_label, .cc-title_31ypU');
-                            if (labelEl) {
-                                result.sourceLabel = labelEl.textContent.replace(/标记：|标记为：|网络收录仅供参考/, '').trim().split(/s+/)[0];
-                                if (result.sourceLabel) {
-                                    console.log('[Iframe-Parser] Found marked number card with label:', result.sourceLabel);
-                                    result.count = 1; 
-                                    const locationEl = mainContainer.querySelector('.op_mobilephone_location, .cc-row_dDm_G');
-                                    if (locationEl) {
-                                        const locText = locationEl.textContent.replace(/归属地：/, '').trim();
-                                        const [province, city, carrier] = locText.split(/s+/);
-                                        result.province = province || ''; result.city = city || ''; result.carrier = carrier || '';
-                                    }
-                                    result.success = true;
-                                }
-                            }
-                        }
+
+                      // --- STRATEGY 2: Marked Number Card (Spam/Telemarketing etc.) ---
+                      if (!result.success) {
+                          console.log('[Iframe-Parser] No official card found, checking for marked number card.');
+                          const labelEl = mainContainer.querySelector('.op_mobilephone_label, .cc-title_31ypU');
+                          if (labelEl) {
+                              result.sourceLabel = labelEl.textContent.replace(/标记：|标记为：|网络收录仅供参考/, '').trim().split(/\\s+/)[0];
+                              if (result.sourceLabel) {
+                                  console.log('[Iframe-Parser] Found marked number card with label:', result.sourceLabel);
+                                  result.count = 1; 
+                                  const locationEl = mainContainer.querySelector('.op_mobilephone_location, .cc-row_dDm_G');
+                                  if (locationEl) {
+                                      const locText = locationEl.textContent.replace(/归属地：/, '').trim();
+                                      const [province, city, carrier] = locText.split(/\\s+/);
+                                      result.province = province || ''; result.city = city || ''; result.carrier = carrier || '';
+                                  }
+                                  result.success = true;
+                              }
+                          }
+                      }
   
                         // --- FINAL LABEL MAPPING (applies to marked numbers) ---
                         if (result.success && !result.predefinedLabel && result.sourceLabel) {
@@ -223,8 +224,12 @@
 
                         // --- Action Mapping Based on sourceLabel ---
                         if (result.success && result.sourceLabel) {
-                            const blockKeywords = ['推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款'];
-                            const allowKeywords = ['外卖', '快递', '美团', '出租', '滴滴', '优步'];
+                      const blockKeywords = ['骚扰电话', '非应邀商业电话', '保险推销', '贷款理财', 
+                  '广告营销', '淫秽色情', '发票办证', '反动谣言', '违规催收', '旅游推广',
+                  '食药推销', '涉诈电话', '广告推销', '广告', '骚扰', '诈骗', '违法',
+                  '推销', '推销', '推广', '广告', '广', '违规', '诈', '反动', '营销', '商业电话', '贷款'];
+                      const allowKeywords = ['送餐外卖', '快递物流', '网约车', '滴滴/优步', '出租车',
+                  '美团', '饿了么', '快递', '外卖', '快递', '美团', '出租', '滴滴', '优步'];
 
                             let action = 'none';
                             for (const keyword of blockKeywords) {

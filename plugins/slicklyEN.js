@@ -4,8 +4,8 @@
     const PLUGIN_CONFIG = {
         id: 'slicklyPhoneNumberPlugin', // Unique ID for this plugin
         name: 'Slick.ly Phone Lookup (iframe Proxy)',
-        version: '1.0.5', // Updated version for country code extraction from e164Number
-        description: 'Queries Slick.ly for phone number information and maps to fixed predefined labels, extracting country code from e164Number.'
+        version: '1.0.7', // Updated version for improved province/city parsing
+        description: 'Queries Slick.ly for phone number information and maps to fixed predefined labels, extracting country code from e164Number, and determines an action.'
     };
 
     // --- Our application's FIXED predefined labels (provided by the user) ---
@@ -73,6 +73,7 @@
          'Fraud': 'Fraud Scam Likely',
          'Scam': 'Fraud Scam Likely',
          'Fake': 'Fraud Scam Likely',
+         'Pretending': 'Fraud Scam Likely',
          'Spam': 'Spam Likely',
          'Harassment': 'Spam Likely', // Or Risk
          'Telemarketing': 'Telemarketing',
@@ -111,10 +112,10 @@
          'Nuisance': 'Spam Likely', // Example mapping
          'Scandals': 'Spam Likely', // Example mapping
          // Add other specific phrases from comments if needed and map them
-         // 'Random person': 'Other', // Example
-         // 'wanting to ask questions': 'Spam Likely', // Example
-         // 'Disturbing': 'Risk', // Example
-         // 'looking around her property': 'Risk' // Example
+         'Random person': 'Other', // Example
+         'wanting to ask questions': 'Spam Likely', // Example
+         'Disturbing': 'Risk', // Example
+         'looking around her property': 'Risk' // Example
     };
 
 
@@ -164,7 +165,7 @@
                 const PHONE_NUMBER = '${phoneNumberToQuery}';
                 const manualMapping = ${JSON.stringify(manualMapping)}; // Use the corrected mapping
                 const predefinedLabels = ${JSON.stringify(predefinedLabels)}; // Make predefinedLabels available in iframe for validation
-                 const slicklyKeywords = ${JSON.stringify(slicklyKeywords)}; // Make keywords available
+                const slicklyKeywords = ${JSON.stringify(slicklyKeywords)}; // Make keywords available
 
                 let parsingCompleted = false;
 
@@ -197,7 +198,7 @@
                     console.log('[Iframe-Parser] Attempting to parse content in document with title:', doc.title);
                     const result = {
                         phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: ''
+                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: '', action: 'none' // Added action field
                     };
 
                     try {
@@ -213,11 +214,11 @@
 
 
                         // --- Extract Summary Label and set initial sourceLabel ---
-                        const summaryLabelElement = doc.querySelector('.summary-keywords .summary span');
+                        const summaryLabelElement = doc.querySelector('.summary-keywords .summary span.summary-result'); // Target the span with result class
                         let initialSourceLabel = '';
                         if (summaryLabelElement) {
                             const summaryLabelText = summaryLabelElement.textContent.trim();
-                            if (summaryLabelText.toLowerCase() === 'suspicious' || summaryLabelText.toLowerCase() === 'dangerous') {
+                            if (summaryLabelText.toLowerCase() === 'suspicious' || summaryLabelText.toLowerCase() === 'dangerous' || summaryLabelText.toLowerCase() === 'safe') {
                                  initialSourceLabel = summaryLabelText; // Set initial sourceLabel
                                  result.sourceLabel = initialSourceLabel; // Also set sourceLabel for display
                                  console.log('[Iframe-Parser] Found Summary label (initial sourceLabel):', initialSourceLabel);
@@ -230,10 +231,17 @@
                         if (keywordsElement) {
                              const keywordsText = keywordsElement.textContent.trim();
                              console.log('[Iframe-Parser] Keywords text:', keywordsText);
-                             const matchingKeyword = findMatchingKeyword(keywordsText);
-                             if (matchingKeyword) {
-                                  specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
-                                  console.log('[Iframe-Parser] Found matching keyword in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                             // Directly check if the Keywords text is an exact match for a manualMapping key
+                             if (manualMapping.hasOwnProperty(keywordsText)) {
+                                  specificSourceLabel = keywordsText;
+                                  console.log('[Iframe-Parser] Found exact manual mapping key in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                             } else {
+                                  // If not an exact manual mapping key, check for matching keywords from the list
+                                   const matchingKeyword = findMatchingKeyword(keywordsText);
+                                   if (matchingKeyword) {
+                                        specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword
+                                        console.log('[Iframe-Parser] Found matching keyword in Keywords (setting specificSourceLabel):', specificSourceLabel);
+                                   }
                              }
                         }
 
@@ -243,12 +251,20 @@
                              for (const commentElement of commentContentElements) {
                                   const commentText = commentElement.textContent.trim();
                                    console.log('[Iframe-Parser] Checking comment text for keywords:', commentText);
-                                  const matchingKeyword = findMatchingKeyword(commentText);
-                                  if (matchingKeyword) {
-                                       specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
-                                      console.log('[Iframe-Parser] Found matching keyword in Comments (setting specificSourceLabel):', specificSourceLabel);
-                                      break; // Stop checking comments after the first match
-                                  }
+                                  // Directly check if the Comment text is an exact match for a manualMapping key
+                                   if (manualMapping.hasOwnProperty(commentText)) {
+                                        specificSourceLabel = commentText;
+                                        console.log('[Iframe-Parser] Found exact manual mapping key in Comment (setting specificSourceLabel):', specificSourceLabel);
+                                        break; // Stop checking comments after the first match
+                                   } else {
+                                        // If not an exact manual mapping key, check for matching keywords from the list
+                                        const matchingKeyword = findMatchingKeyword(commentText);
+                                        if (matchingKeyword) {
+                                            specificSourceLabel = matchingKeyword; // Override sourceLabel with the matched keyword from comments
+                                            console.log('[Iframe-Parser] Found matching keyword in Comments (setting specificSourceLabel):', specificSourceLabel);
+                                            break; // Stop checking comments after the first match
+                                        }
+                                   }
                              }
                         }
 
@@ -280,6 +296,122 @@
                         // Set the final predefinedLabel
                         result.predefinedLabel = foundPredefinedLabel || 'Unknown'; // Default to 'Unknown' if no valid mapping found
 
+                        // --- Extract Province and City ---
+                        const basicInfoElement = doc.querySelector('.basic span');
+                        if (basicInfoElement) {
+                            const basicInfoText = basicInfoElement.textContent.trim();
+                            console.log('[Iframe-Parser] Basic Info text:', basicInfoText);
+                            
+                            // Extract the part before "· Fixed Line or Mobile" or similar service info
+                            const serviceInfoIndex = basicInfoText.indexOf(' · ');
+                            let locationInfo = basicInfoText;
+                            if (serviceInfoIndex !== -1) {
+                                locationInfo = basicInfoText.substring(0, serviceInfoIndex).trim();
+                            }
+
+                            console.log('[Iframe-Parser] Extracted locationInfo for parsing:', locationInfo);
+
+                            // Regex to capture "City, State (Country)" or "State (Country)" or "City (Country)"
+                            // This regex aims to extract the main location part and the country in parentheses.
+                            const locationMatch = locationInfo.match(/^(.+?)\\s*\\((.+?)\\)$/);
+
+                            if (locationMatch && locationMatch[1]) {
+                                const mainLocationPart = locationMatch[1].trim(); // e.g., "Iowa" or "New York City, NY" or "London"
+                                const countryPart = locationMatch[2].trim(); // e.g., "United States" or "United Kingdom"
+                                console.log('[Iframe-Parser] mainLocationPart:', mainLocationPart, ', countryPart:', countryPart);
+
+                                if (mainLocationPart.includes(',')) {
+                                    // Likely "City, State" format
+                                    const parts = mainLocationPart.split(',').map(p => p.trim());
+                                    if (parts.length >= 2) {
+                                        result.city = parts[0];
+                                        result.province = parts[1];
+                                        console.log('[Iframe-Parser] Split into City:', result.city, ', Province (State):', result.province);
+                                    } else {
+                                        // Fallback if comma exists but split is unexpected
+                                        result.city = mainLocationPart;
+                                        console.log('[Iframe-Parser] Treated as City only (comma present):', result.city);
+                                    }
+                                } else {
+                                    // Assume it's either a State or a City.
+                                    // For simplicity, we can assign it to province for states or city for cities,
+                                    // or just set one if the distinction is not critical.
+                                    // Aligning with CN's fallback, if no clear split, treat as city.
+                                    result.city = mainLocationPart;
+                                    console.log('[Iframe-Parser] Treated as City only (no comma):', result.city);
+                                }
+
+                            } else {
+                                 console.log('[Iframe-Parser] Could not parse location info with (Country) format. Storing raw text to city:', locationInfo);
+                                 result.city = locationInfo; // Store the whole thing in city if format is unexpected
+                            }
+                        } else {
+                             console.log('[Iframe-Parser] Basic info element not found.');
+                        }
+
+
+                        // --- Determine Action based on combined logic ---
+                        let action = 'none';
+
+                        // 1. Prioritize action based on Keywords (existing logic)
+                        if (result.sourceLabel) {
+                        
+                // Define block and allow keywords for action determination
+                const blockKeywords = [
+                    'Fraud', 'Scam', 'Spam', 'Harassment', 'Telemarketing', 'Robocall',
+                    'Loan', 'Risk', 'Fake', 'Pretending', 'Nuisance', 'Scandals', 'call',
+                    'Debt Collection', 'Silent Call Voice Clone'
+                ];
+                const allowKeywords = [
+                    'Delivery', 'Takeaway', 'Ridesharing', 'Customer Service', 'Insurance',
+                    'Bank', 'Education', 'Medical', 'Charity', 'Government',
+                    'Local Services', 'Automotive Industry', 'Car Rental', 'Telecommunication'
+                ];
+
+                            for (const keyword of blockKeywords) {
+                                if (result.sourceLabel.toLowerCase().includes(keyword.toLowerCase())) {
+                                    action = 'block';
+                                    break;
+                                }
+                            }
+                            if (action === 'none') { // Only check allow if not already blocked
+                                for (const keyword of allowKeywords) {
+                                    if (result.sourceLabel.toLowerCase().includes(keyword.toLowerCase())) {
+                                        action = 'allow';
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        // 2. If no action determined by keywords, check Summary Label
+                        if (action === 'none' && initialSourceLabel) {
+                             if (initialSourceLabel.toLowerCase() === 'suspicious' || initialSourceLabel.toLowerCase() === 'dangerous') {
+                                 action = 'block';
+                             } else if (initialSourceLabel.toLowerCase() === 'safe') {
+                                 action = 'allow';
+                             }
+                        }
+
+                        // 3. If no action determined by keywords or summary, check Votes
+                        if (action === 'none') {
+                             const negativeVotesElement = doc.querySelector('.vote .negative-count');
+                             const positiveVotesElement = doc.querySelector('.vote .positive-count');
+
+                             if (negativeVotesElement && positiveVotesElement) {
+                                  const negativeVotes = parseInt(negativeVotesElement.textContent.trim(), 10) || 0;
+                                  const positiveVotes = parseInt(positiveVotesElement.textContent.trim(), 10) || 0;
+                                   console.log('[Iframe-Parser] Negative votes:', negativeVotes, ', Positive votes:', positiveVotes);
+
+                                 if (negativeVotes > positiveVotes) {
+                                     action = 'block';
+                                 } else if (positiveVotes > negativeVotes) {
+                                     action = 'allow';
+                                 }
+                             }
+                        }
+
+                        result.action = action; // Set the determined action
 
                         // --- Set success to true if we found at least a count or a sourceLabel ---
                         if (result.count > 0 || result.sourceLabel) {
@@ -293,7 +425,7 @@
 
                         console.log('[Iframe-Parser] Could not extract required information from the page.');
                          // Return a basic result even if parsing failed to indicate the process finished
-                         return { phoneNumber: PHONE_NUMBER, success: false, error: 'Could not parse content from the page.' };
+                         return { phoneNumber: PHONE_NUMBER, success: false, error: 'Could not parse content from the page.', action: 'none' };
 
 
                     } catch (e) {
@@ -309,7 +441,7 @@
                     console.log('[Iframe-Parser] Starting parse attempt...');
                     const finalResult = parseContent(window.document);
                      // Ensure sendResult is called even if parsing fails
-                    sendResult(finalResult || { phoneNumber: PHONE_NUMBER, success: false, error: 'Parsing logic returned null.' });
+                    sendResult(finalResult || { phoneNumber: PHONE_NUMBER, success: false, error: 'Parsing logic returned null.', action: 'none' });
                 }
 
                 console.log('[Iframe-Parser] Parsing script has started execution for phone: ' + PHONE_NUMBER);
@@ -409,7 +541,6 @@
                       '1': 'us',  // United States
                       '44': 'gb', // United Kingdom
                       '61': 'au', // Australia
-                    
                       '65': 'sg',  // Singapore
                       '64': 'nz',  // New Zealand
                       '234': 'ng'  // Nigeria
