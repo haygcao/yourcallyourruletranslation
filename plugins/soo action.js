@@ -4,8 +4,8 @@
   const PLUGIN_CONFIG = {
       id: 'sooPhoneNumberPlugin', // Changed ID to be unique for soo.js
       name: 'Soo', // Changed name to Soo
-      version: '5.5.0', // Adjusted version to match bd.js structure versioning
-      description: 'Queries soo.com for phone number information using an iframe proxy.', // Updated description
+      version: '5.5.1', // Updated version to reflect changes
+      description: 'Queries soo.com for phone number information using an iframe proxy and determines an action.', // Updated description
   };
 
   const predefinedLabels = [
@@ -145,7 +145,7 @@ const manualMapping = {
               }
 
               function parseContent(doc) {
-                const result = { // Changed variable name to result
+                const result = { 
                   count: 0,
                   sourceLabel: "",
                   province: "",
@@ -153,9 +153,10 @@ const manualMapping = {
                   carrier: "",
                   phoneNumber: PHONE_NUMBER,
                   name: "unknown",
-                  action: 'none', // Add action field
-                  success: false, // Add success field
-                  error: '' // Add error field
+                  action: 'none', 
+                  predefinedLabel: '', // Initialize here
+                  success: false, 
+                  error: '' 
                 };
 
                 try {
@@ -168,12 +169,6 @@ const manualMapping = {
                     return result;
                   }
 
-                  // Extract data from the page content (adapt selectors based on soo.com structure)
-                  // This part needs to be adapted to parse soo.com's HTML structure
-                  // For now, keeping the structure from the original soo.js extractDataFromDOM
-                  // as a placeholder. You will need to inspect soo.com's page structure
-                  // and update the selectors accordingly.
-
                   // 尝试提取结构一的标记次数和标签
                   const countElement = doc.querySelector('.mohe-tips-zp b');
                   console.log('[Iframe-Parser] countElement:', countElement);
@@ -183,31 +178,31 @@ const manualMapping = {
                   if (countElement && sourceLabelElement) {
                       const countText = countElement.textContent.trim();
                       console.log('[Iframe-Parser] countText:', countText);
-                      result.count = parseInt(countText, 10) || 0; // Changed jsonObject to result
-                      console.log('[Iframe-Parser] result.count:', result.count); // Changed jsonObject to result
+                      result.count = parseInt(countText, 10) || 0; 
+                      console.log('[Iframe-Parser] result.count:', result.count); 
 
                       let sourceLabelText = sourceLabelElement.textContent.trim();
-                      sourceLabelText = sourceLabelText.replace(/此号码近期被|d+位|360手机卫士|用户标记，疑似为|！/g, '').replace(/，/g, '').trim();
-                      result.sourceLabel = sourceLabelText; // Changed jsonObject to result
-                      console.log('[Iframe-Parser] result.sourceLabel:', result.sourceLabel); // Changed jsonObject to result
+                      sourceLabelText = sourceLabelText.replace(/此号码近期被|\d+位|360手机卫士|用户标记，疑似为|！/g, '').replace(/，/g, '').trim();
+                      result.sourceLabel = sourceLabelText; 
+                      console.log('[Iframe-Parser] result.sourceLabel:', result.sourceLabel); 
                   } else {
                       // 尝试提取结构二的标记次数和标签
                       const countElement2 = doc.querySelector('.mh-tel-desc b');
                       console.log('[Iframe-Parser] countElement2:', countElement2);
-                      const sourceLabelElement2 = doc.querySelector('.mh-tel-mark'); //尝试根据新的结构进行选择
+                      const sourceLabelElement2 = doc.querySelector('.mh-tel-mark'); 
                       console.log('[Iframe-Parser] sourceLabelElement2:', sourceLabelElement2);
 
                       if (countElement2) {
                           const countText = countElement2.textContent.trim();
                           console.log('[Iframe-Parser] countText:', countText);
-                          result.count = parseInt(countText, 10) || 0; // Changed jsonObject to result
-                          console.log('[Iframe-Parser] result.count:', result.count); // Changed jsonObject to result
+                          result.count = parseInt(countText, 10) || 0; 
+                          console.log('[Iframe-Parser] result.count:', result.count); 
                       }
 
                       if (sourceLabelElement2) {
                           let sourceLabelText = sourceLabelElement2.textContent.trim();
-                          result.sourceLabel = sourceLabelText; // Changed jsonObject to result
-                          console.log('[Iframe-Parser] result.sourceLabel:', result.sourceLabel); // Changed jsonObject to result
+                          result.sourceLabel = sourceLabelText; 
+                          console.log('[Iframe-Parser] result.sourceLabel:', result.sourceLabel); 
                       }
                   }
 
@@ -218,13 +213,14 @@ const manualMapping = {
                     const spans = detailElement.querySelectorAll('span');
                     console.log('[Iframe-Parser] spans:', spans);
                     if (spans.length >= 2) {
-                      result.phoneNumber = spans[0].textContent.trim(); // Changed jsonObject to result
+                      result.phoneNumber = spans[0].textContent.trim(); 
                       const locationCarrierText = spans[1].textContent.trim();
-                      const match = locationCarrierText.match(/([\u4e00-\u9fa5]+)[\s ]*([\u4e00-\u9fa5]+)?[\s ]*([\u4e00-\u9fa5]+)?/);
+                      // Corrected regex escaping for \s and Chinese characters
+                      const match = locationCarrierText.match(/([\u4e00-\u9fa5]+)[\s\u00a0]*([\u4e00-\u9fa5]+)?[\s\u00a0]*([\u4e00-\u9fa5]+)?/);
                       if (match) {
-                        result.province = match[1] || ''; // Changed jsonObject to result
-                        result.city = match[2] || ''; // Changed jsonObject to result
-                        result.carrier = match[3] || ''; // Changed jsonObject to result
+                        result.province = match[1] || ''; 
+                        result.city = match[2] || ''; 
+                        result.carrier = match[3] || ''; 
                       }
                     }
                   } else {
@@ -235,30 +231,31 @@ const manualMapping = {
                     console.log('[Iframe-Parser] locationElement:', locationElement);
 
                     if (phoneNumberElement) {
-                      result.phoneNumber = phoneNumberElement.textContent.trim(); // Changed jsonObject to result
-                      console.log('[Iframe-Parser] result.phoneNumber:', result.phoneNumber); // Changed jsonObject to result
+                      result.phoneNumber = phoneNumberElement.textContent.trim(); 
+                      console.log('[Iframe-Parser] result.phoneNumber:', result.phoneNumber); 
                     }
 
                     if (locationElement) {
                       const locationText = locationElement.textContent.trim();
                       console.log('[Iframe-Parser] locationText:', locationText);
-                      const match = locationText.match(/([\u4e00-\u9fa5]+)[\s ]*([\u4e00-\u9fa5]+)?[\s ]*([\u4e00-\u9fa5]+)?/);
+                      // Corrected regex escaping for \s and Chinese characters
+                      const match = locationText.match(/([\u4e00-\u9fa5]+)[\s\u00a0]*([\u4e00-\u9fa5]+)?[\s\u00a0]*([\u4e00-\u9fa5]+)?/);
                       if (match) {
-                        result.province = match[1] || ''; // Changed jsonObject to result
-                        result.city = match[2] || ''; // Changed jsonObject to result
-                        result.carrier = match[3] || ''; // Changed jsonObject to result
+                        result.province = match[1] || ''; 
+                        result.city = match[2] || ''; 
+                        result.carrier = match[3] || ''; 
                       }
-                      console.log('[Iframe-Parser] result.province:', result.province); // Changed jsonObject to result
-                      console.log('[Iframe-Parser] result.city:', result.city); // Changed jsonObject to result
-                      console.log('[Iframe-Parser] result.carrier:', result.carrier); // Changed jsonObject to result
+                      console.log('[Iframe-Parser] result.province:', result.province); 
+                      console.log('[Iframe-Parser] result.city:', result.city); 
+                      console.log('[Iframe-Parser] result.carrier:', result.carrier); 
                     }
                   }
 
                   // --- Map sourceLabel to predefinedLabel ---
-                  result.predefinedLabel = manualMapping[result.sourceLabel] || 'Unknown'; // Changed jsonObject to result
+                  result.predefinedLabel = manualMapping[result.sourceLabel] || 'Unknown'; 
 
                   // Determine success based on whether a label or count was found
-                  result.success = result.sourceLabel !== "" || result.count > 0; // Changed jsonObject to result
+                  result.success = result.sourceLabel !== "" || result.count > 0; 
 
                   // --- Action Mapping Based on sourceLabel ---
                   if (result.success && result.sourceLabel) { // Changed jsonObject to result
@@ -271,44 +268,44 @@ const manualMapping = {
 
                       let action = 'none';
                       for (const keyword of blockKeywords) {
-                          if (result.sourceLabel.includes(keyword)) { // Changed jsonObject to result
+                          if (result.sourceLabel.includes(keyword)) { 
                               action = 'block';
                               break;
                           }
                       }
-                      if (action === 'none') { // Only check allow if not already blocked
+                      if (action === 'none') { 
                           for (const keyword of allowKeywords) {
-                              if (result.sourceLabel.includes(keyword)) { // Changed jsonObject to result
+                              if (result.sourceLabel.includes(keyword)) { 
                                   action = 'allow';
                                   break;
                               }
                           }
                       }
-                      result.action = action; // Changed jsonObject to result
+                      result.action = action; 
                   }
 
-                  console.log('[Iframe-Parser] Final result:', result); // Changed jsonObject to result
+                  console.log('[Iframe-Parser] Final result:', result); 
                   return result;
 
                 } catch (e) {
                   console.error('[Iframe-Parser] Error extracting data:', e);
-                  result.error = e.toString(); // Changed jsonObject to result
-                  result.success = false; // Changed jsonObject to result
+                  result.error = e.toString(); 
+                  result.success = false; 
                   return result;
                 }
               }
 
               // Use MutationObserver to wait for relevant content
               const observer = new MutationObserver((mutations, obs) => {
-                  const result = parseContent(document); // Changed jsonObject to result
-                  if (result && result.success) { // Changed jsonObject to result
-                      sendResult(result); // Changed jsonObject to result
-                      obs.disconnect(); // Stop observing once content is found and parsed
+                  const result = parseContent(document); 
+                  if (result && result.success) { 
+                      sendResult(result); 
+                      obs.disconnect(); 
                   } else {
                       // Additional checks or fallback if initial parse fails
                        const pageTitle = document.title;
-                      if (pageTitle.includes('电话号码查询') || pageTitle.includes('Error')) { // Assuming the title indicates results
-                          console.log('[Iframe-Parser] Search results or error page detected, attempting final parse.');
+                      if (pageTitle.includes('电话号码查询') || pageTitle.includes('Error')) { 
+                           console.log('[Iframe-Parser] Search results or error page detected, attempting final parse.');
                            const finalAttemptResult = parseContent(document);
                            sendResult(finalAttemptResult);
                            obs.disconnect();
