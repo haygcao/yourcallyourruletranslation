@@ -207,7 +207,20 @@
             // You might need to experiment with the exact format usphonebook.com expects.
             // For now, let's use the provided phoneNumber as is, assuming it's already formatted correctly for the search URL.
             // If not, add formatting logic here.
-            const formattedNumber = numberToQuery.replace(/[^0-9]/g, ''); // Example: remove non-digits
+            const digitsOnly = numberToQuery.replace(/[^0-9]/g, ''); // Example: remove non-digits
+            // Format the 10-digit number into xxx-xxx-xxxx format
+            let formattedNumber = digitsOnly;
+            if (digitsOnly.length === 10) {
+                formattedNumber = digitsOnly.substring(0, 3) + '-' + digitsOnly.substring(3, 6) + '-' + digitsOnly.substring(6);
+            } else {
+                 logError(`Input number is not 10 digits long. Cannot format to xxx-xxx-xxxx: ${numberToQuery}`);
+                 // Decide if you want to proceed with the unformatted number or return an error
+                 // For now, we'll proceed with the digits only, but usphonebook.com might not accept it
+                 formattedNumber = digitsOnly; // Or handle as an error
+                 // sendPluginResult({ requestId, success: false, error: 'Input number must be 10 digits for formatting.' });
+                 // return;
+            }
+
 
             initiateQuery(formattedNumber, requestId);
         } else {
