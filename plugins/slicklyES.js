@@ -511,8 +511,8 @@
     // Modified generateOutput to extract country code from e164Number
     function generateOutput(phoneNumber, nationalNumber, e164Number, requestId) {
         log(`generateOutput called for requestId: ${requestId}`);
-        const numberToQuery = phoneNumber || nationalNumber || e164Number;
-
+        //const numberToQuery = phoneNumber || nationalNumber || e164Number;
+        //const numberToQuery = phoneNumber; //only phonenumber works for this
         if (!numberToQuery) {
             sendPluginResult({ requestId, success: false, error: 'No valid phone number provided.' });
             return;
