@@ -246,7 +246,7 @@
                     console.log('[Iframe-Parser] Attempting to parse content in document with title:', doc.title);
                     const result = {
                         phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: ''
+                        name: '', predefinedLabel: '', source: PLUGIN_CONFIG.id, numbers: [], success: false, error: '', action: 'none' // Added action field
                     };
 
                     try {
@@ -347,6 +347,69 @@
                         // Set the final predefinedLabel
                         result.predefinedLabel = foundPredefinedLabel || 'Unknown'; // Default to 'Unknown' if no valid mapping found
 
+                        // --- Determine Action based on combined logic ---
+                        let action = 'none';
+
+                        // 1. Prioritize action based on Keywords (existing logic)
+                        if (result.sourceLabel) {
+
+                            // Define block and allow keywords for action determination
+                            const blockKeywords = [
+                                'Estafa', 'Fraude', 'Sospechoso', 'Engaño', 'Datos falsos', 'Información falsa',
+                                'Spam', 'Molestia', 'Telemarketing', 'Llamada automática',
+                                'Préstamo', 'Riesgo', 'Estafadores', 'Mismo cuento', 'Envío código no solicitado', 'Hackear cuentas',
+                                'Extorsión', 'Extorsionador', 'Acosador'
+                            ];
+                            const allowKeywords = [
+                                'Entrega', 'Comida para llevar', 'Viaje compartido', 'Seguro',
+                                'Servicio al cliente', 'Desconocido', 'Financiero', 'Banco', 'Educación',
+                                'Médico', 'Caridad', 'Otros', 'Venta al por mayor'
+                            ];
+
+                            for (const keyword of blockKeywords) {
+                                if (result.sourceLabel.toLowerCase().includes(keyword.toLowerCase())) {
+                                    action = 'block';
+                                    break;
+                                }
+                            }
+                            if (action === 'none') { // Only check allow if not already blocked
+                                for (const keyword of allowKeywords) {
+                                    if (result.sourceLabel.toLowerCase().includes(keyword.toLowerCase())) {
+                                        action = 'allow';
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        // 2. If no action determined by keywords, check Summary Label
+                        if (action === 'none' && initialSourceLabel) {
+                            if (initialSourceLabel.toLowerCase() === 'peligroso' || initialSourceLabel.toLowerCase() === 'dangerous' || initialSourceLabel.toLowerCase() === 'sospechoso' || initialSourceLabel.toLowerCase() === 'suspicious') {
+                                action = 'block';
+                             } else if (initialSourceLabel.toLowerCase() === 'Seguro') {
+                                 action = 'allow';
+                             }
+                        }
+
+                        // 3. If no action determined by keywords or summary, check Votes
+                        if (action === 'none') {
+                            const negativeVotesElement = doc.querySelector('.vote .negative-count');
+                            const positiveVotesElement = doc.querySelector('.vote .positive-count');
+
+                            if (negativeVotesElement && positiveVotesElement) {
+                                const negativeVotes = parseInt(negativeVotesElement.textContent.trim(), 10) || 0;
+                                const positiveVotes = parseInt(positiveVotesElement.textContent.trim(), 10) || 0;
+
+                                if (negativeVotes > positiveVotes) {
+                                    action = 'block';
+                                } else if (positiveVotes > negativeVotes) {
+                                    action = 'allow';
+                                }
+                            }
+                        }
+
+                        result.action = action; // Set the determined action
+
 
                         // --- Set success to true if we found at least a count or a sourceLabel ---
                         if (result.count > 0 || result.sourceLabel) {
@@ -360,7 +423,7 @@
 
                         console.log('[Iframe-Parser] Could not extract required information from the page.');
                          // Return a basic result even if parsing failed to indicate the process finished
-                         return { phoneNumber: PHONE_NUMBER, success: false, error: 'Could not parse content from the page.' };
+                         return { phoneNumber: PHONE_NUMBER, success: false, error: 'Could not parse content from the page.', action: 'none' };
 
 
                     } catch (e) {
@@ -376,7 +439,7 @@
                     console.log('[Iframe-Parser] Starting parse attempt...');
                     const finalResult = parseContent(window.document);
                      // Ensure sendResult is called even if parsing fails
-                    sendResult(finalResult || { phoneNumber: PHONE_NUMBER, success: false, error: 'Parsing logic returned null.' });
+                    sendResult(finalResult || { phoneNumber: PHONE_NUMBER, success: false, error: 'Parsing logic returned null.', action: 'none' });
                 }
 
                 console.log('[Iframe-Parser] Parsing script has started execution for phone: ' + PHONE_NUMBER);
@@ -460,7 +523,7 @@
          let countryCode = null;
          if (e164Number && e164Number.startsWith('+')) {
              // Attempt to extract country code (basic: assumes 1-3 digits after +)
-             const match = e164Number.match(/^\\+(\\d{1,3})/);
+             const match = e164Number.match(/^\+(\d{1,2})/);
              if (match && match[1]) {
                  const extractedCountryCodeDigits = match[1];
                   console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
