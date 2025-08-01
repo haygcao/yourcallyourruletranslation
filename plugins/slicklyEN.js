@@ -37,7 +37,7 @@
         { 'label': 'Headhunter' },
         { 'label': 'Silent Call Voice Clone' },
         { 'label': 'Internet' },
-        { 'label': 'Travel & Ticketing' },
+        { 'label': 'TravelTicketing' },
         { 'label': 'Application Software' },
         { 'label': 'Entertainment' },
         { 'label': 'Government' },
@@ -55,7 +55,7 @@
         'Medical', 'Charity', 'Other', 'Debt Collection', 'Survey',
         'Political', 'Ecommerce', 'Risk', 'Agent', 'Recruiter',
         'Headhunter', 'Silent Call Voice Clone', 'Internet',
-        'Travel & Ticketing', 'Application Software', 'Entertainment',
+        'Travel Ticketing', 'Application Software', 'Entertainment',
         'Government', 'Local Services', 'Automotive Industry','scandals','Fake','Pretending',
         'Car Rental', 'Telecommunication', 'Nuisance'
     ];
@@ -101,7 +101,7 @@
          'Headhunter': 'Headhunter',
          'Silent Call Voice Clone': 'Silent Call Voice Clone', // Mapping to our predefined label
          'Internet': 'Other', // Example mapping
-         'Travel & Ticketing': 'Travel Ticketing', // Example mapping
+         'Travel Ticketing': 'Travel Ticketing', // Example mapping
          'Application Software': 'Application Software', // Example mapping
          'Entertainment': 'Entertainment', // Example mapping
          'Government': 'Government', // Example mapping

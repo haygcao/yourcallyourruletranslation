@@ -37,7 +37,7 @@
         { 'label': 'Headhunter' },
         { 'label': 'Silent Call Voice Clone' },
         { 'label': 'Internet' },
-        { 'label': 'Travel & Ticketing' },
+        { 'label': 'Travel Ticketing' },
         { 'label': 'Application Software' },
         { 'label': 'Entertainment' },
         { 'label': 'Government' },
@@ -108,7 +108,7 @@
         '獵頭': 'Headhunter',
         '無聲電話 語音複製': 'Silent Call Voice Clone', // Mapping to updated predefined label
         '互聯網': 'Internet', // Mapping to Internet
-        '旅遊與票務': 'Travel & Ticketing', // Mapping to Travel & Ticketing
+        '旅遊與票務': 'Travel Ticketing', // Mapping to Travel Ticketing
         '應用程式軟體': 'Application Software', // Mapping to Application Software
         '娛樂': 'Entertainment', // Mapping to Entertainment
         '政府': 'Government', // Mapping to Government

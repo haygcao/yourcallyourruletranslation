@@ -37,7 +37,7 @@
         { label: 'Headhunter' },
         { label: 'Silent Call Voice Clone' },
         { label: 'Internet' },
-        { label: 'Travel & Ticketing' },
+        { label: 'Travel Ticketing' },
         { label: 'Application Software' },
         { label: 'Entertainment' },
         { label: 'Government' },
@@ -132,7 +132,7 @@
          'Clon de voz': 'Silent Call Voice Clone', // Voice clone
 
          'Internet': 'Internet',
-         'Viajes y boletos': 'Travel & Ticketing',
+         'Viajes y boletos': 'Travel Ticketing',
          'Software de aplicación': 'Application Software',
          'Entretenimiento': 'Entertainment',
          'Gobierno': 'Government',

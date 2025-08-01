@@ -37,7 +37,7 @@
         { label: 'Headhunter' },
         { label: 'Silent Call Voice Clone' },
         { label: 'Internet' },
-        { label: 'Travel & Ticketing' },
+        { label: 'Travel Ticketing' },
         { label: 'Application Software' },
         { label: 'Entertainment' },
         { label: 'Government' },
@@ -136,7 +136,7 @@
          '無音電話': 'Silent Call Voice Clone', // Silent call
 
          'インターネット': 'Internet',
-         '旅行・チケット': 'Travel & Ticketing',
+         '旅行・チケット': 'Travel Ticketing',
          'アプリケーションソフト': 'Application Software',
          'エンターテイメント': 'Entertainment',
          '政府': 'Government',
