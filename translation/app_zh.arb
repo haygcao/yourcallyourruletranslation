@@ -41,7 +41,6 @@
   "@addBlockSubscription": {
     "description": "Add block subscription dialog title"
   },
-  
   "addContactButton": "Add Contact",
   "addContactFailed": "Failed to add contact: {error}",
   "addedToAllowedRules": "Added to Allowed Rules",
@@ -91,7 +90,9 @@
   "@addSubscriptionFailed": {
     "description": "Failed to add subscription error message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "addSubscriptionTooltip": "Add Subscription",
@@ -143,10 +144,12 @@
   "@allUpdateSuccess": {
     "description": "Full update success message",
     "placeholders": {
-      "count": {"type": "Object"}
+      "count": {
+        "type": "Object"
+      }
     }
   },
-  "answerThenHangup": "Answer then hang up", 
+  "answerThenHangup": "Answer then hang up",
   "appLegalese": "© 2023 Your Call Your Rule. All rights reserved.",
   "applicationSoftware": "Application Software",
   "apply": "Apply",
@@ -260,7 +263,9 @@
   "@callerIdMarkedByCount": {
     "description": "Mark count display",
     "placeholders": {
-      "count": {"type": "Object"}
+      "count": {
+        "type": "Object"
+      }
     }
   },
   "callerIdPreview": "Caller ID Preview",
@@ -278,14 +283,18 @@
   "@callHistoryInitFailed": {
     "description": "Call history initialization failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "callHistoryRefreshFailed": "Failed to refresh call history: {error}",
   "@callHistoryRefreshFailed": {
     "description": "Call history refresh failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "callHistoryTab": "Call History",
@@ -305,7 +314,6 @@
   "callTypeOutgoing": "Outgoing",
   "callTypePosition": "Call Type Position",
   "callTypeUnknown": "Unknown",
-  "cancel": "Cancel",
   "cancelButton": "Cancel",
   "carRental": "Car Rental",
   "carrier": "Carrier",
@@ -318,7 +326,9 @@
   "@changeSubscriptionStatusFailed": {
     "description": "Failed to change subscription status error message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "changeTag": "Change Tag",
@@ -476,7 +486,9 @@
   "@dataLoadFailure": {
     "description": "Data loading failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "dataLoadingFailed": "Failed to load data: {error}",
@@ -490,7 +502,9 @@
   "@days": {
     "description": "Day count display",
     "placeholders": {
-      "count": {"type": "num"}
+      "count": {
+        "type": "num"
+      }
     }
   },
   "daysVip": "{days} Days VIP",
@@ -523,14 +537,18 @@
   "@deleteSubscriptionConfirm": {
     "description": "Delete subscription confirmation message",
     "placeholders": {
-      "name": {"type": "Object"}
+      "name": {
+        "type": "Object"
+      }
     }
   },
   "deleteSubscriptionFailed": "Failed to delete subscription: {error}",
   "@deleteSubscriptionFailed": {
     "description": "Failed to delete subscription error message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "deleteSuccess": "Delete successful",
@@ -786,8 +804,12 @@
   "@filterToggleStatus": {
     "description": "Filter enable/disable status change notification",
     "placeholders": {
-      "status": {"type": "Object"},
-      "filterName": {"type": "Object"}
+      "status": {
+        "type": "Object"
+      },
+      "filterName": {
+        "type": "Object"
+      }
     }
   },
   "filterType": "Filter Type",
@@ -805,7 +827,9 @@
   "@generalUpdateFailure": {
     "description": "General update failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "getFree": "Get Free",
@@ -888,8 +912,12 @@
   "@intervalSetSuccess": {
     "description": "Update interval confirmation message",
     "placeholders": {
-      "service": {"type": "Object"},
-      "days": {"type": "Object"}
+      "service": {
+        "type": "Object"
+      },
+      "days": {
+        "type": "Object"
+      }
     }
   },
   "invalidContentRegex": "Invalid content regex",
@@ -919,7 +947,9 @@
   "@labelRemoveFailed": {
     "description": "Label removal failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "labels": "Labels",
@@ -935,7 +965,9 @@
   "@labelUpdateFailed": {
     "description": "Label update failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "labelUpdateSuccess": "Label \"$labelText\" updated successfully",
@@ -949,7 +981,9 @@
   "@lastUpdated": {
     "description": "Last updated label",
     "placeholders": {
-      "date": {"type": "Object"}
+      "date": {
+        "type": "Object"
+      }
     }
   },
   "lifetimeMembership": "Lifetime Membership",
@@ -975,7 +1009,9 @@
   "@loadSubscriptionsFailed": {
     "description": "Failed to load subscriptions error message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "loan": "Loan",
@@ -1066,7 +1102,9 @@
   "@nameLabel": {
     "description": "Caller ID name label",
     "placeholders": {
-      "name": {"type": "Object"}
+      "name": {
+        "type": "Object"
+      }
     }
   },
   "namePosition": "Name Position",
@@ -1344,7 +1382,9 @@
   "@ruleAddFailure": {
     "description": "Rule creation failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "ruleAddSuccess": "Rule added successfully",
@@ -1357,7 +1397,9 @@
   "@ruleDeleteFailure": {
     "description": "Rule deletion failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "ruleDeleteSuccess": "Rule deleted successfully",
@@ -1450,7 +1492,9 @@
   "@serviceUpdateFailure": {
     "description": "Service update failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "setButton": "Set",
@@ -1490,8 +1534,12 @@
   "@simInfo": {
     "description": "SIM Card information",
     "placeholders": {
-      "slotNumber": {"type": "Object"},
-      "countryIso": {"type": "Object"}
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
     }
   },
   "simInfoLoadFailure": "Failed to load SIM card information: {error}",
@@ -1532,7 +1580,9 @@
   "@simSlotFilterSettingsTitle": {
     "description": "Title for SIM slot filter settings",
     "placeholders": {
-      "slotNumber": {"type": "Object"}
+      "slotNumber": {
+        "type": "Object"
+      }
     }
   },
   "simSlotLoadFailed": "Failed to load SIM slots: {error}",
@@ -1541,7 +1591,9 @@
   "@simSlotOperationFailed": {
     "description": "SIM slot operation failure message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "simSlotPosition": "SIM Slot Position {slotNumber}",
@@ -1614,7 +1666,9 @@
   "@subscriptionAddSuccess": {
     "description": "Subscription added success message",
     "placeholders": {
-      "name": {"type": "Object"}
+      "name": {
+        "type": "Object"
+      }
     }
   },
   "subscriptionDeleteConfirmContent": "Are you sure you want to delete this subscription?",
@@ -1766,15 +1820,21 @@
   "@updateSubscriptionFailed": {
     "description": "Failed to update subscription error message",
     "placeholders": {
-      "error": {"type": "Object"}
+      "error": {
+        "type": "Object"
+      }
     }
   },
   "updateSuccess": "{service} updated successfully ({count} rules)",
   "@updateSuccess": {
     "description": "Single service update success message",
     "placeholders": {
-      "service": {"type": "Object"},
-      "count": {"type": "Object"}
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
     }
   },
   "updateTags": "Update Tags",
@@ -1827,7 +1887,7 @@
   "year": "Year",
   "yearly": "Yearly",
   "yearlyChartTitle": "Yearly Blocked Calls",
-    "noSimCardsDetected": "No SIM cards detected",
+  "noSimCardsDetected": "No SIM cards detected",
   "filterManagementDescription": "Set Call Filters",
   "yesterday": "Yesterday"
 }
