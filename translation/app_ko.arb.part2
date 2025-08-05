@@ -1,4 +1,3 @@
-{
   "days": "{count, plural, =1{1일} other{{count}일}}",
   "@days": {
     "description": "일 수 표시",

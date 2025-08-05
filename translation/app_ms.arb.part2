@@ -1,4 +1,3 @@
-{
   "days": "{count, plural, =1{1 hari} other{{count} hari}}",
   "@days": {
     "description": "Paparan kiraan hari",

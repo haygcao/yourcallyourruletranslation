@@ -1,9 +1,3 @@
-translation/app_ja.arb.part1 (Japanese)
-translation/app_ko.arb.part1 (Korean)
-translation/app_de.arb.part1 (German)
-translation/app_fr.arb.part1 (French)
-translation/app_es.arb.part1 (Spanish)
-translation/app_it.arb.part1 (Italian){
   "setEncryptionPassword": "設定加密密碼",
   "setEncryptionPasswordDescription": "設定加密密碼以進行備份和還原",
   "setEncryptionPasswordLabel": "設定加密密碼",

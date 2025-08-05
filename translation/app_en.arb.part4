@@ -389,5 +389,6 @@
   "yearlyChartTitle": "Yearly Blocked Calls",
   "noSimCardsDetected": "No SIM cards detected",
   "filterManagementDescription": "Set Call Filters",
+      "callerIdCustomizationSubtitle": "Customize Caller ID Layout",
   "yesterday": "Yesterday"
 }

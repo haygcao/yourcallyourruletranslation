@@ -1,0 +1,393 @@
+  "setEncryptionPassword": "암호화 비밀번호 설정",
+  "setEncryptionPasswordDescription": "백업 및 복원을 위한 암호화 비밀번호 설정",
+  "setEncryptionPasswordLabel": "암호화 비밀번호 설정",
+  "setEncryptionPasswordTitle": "암호화 비밀번호 설정",
+  "setPasswordButton": "설정",
+  "settings": "설정",
+  "settingsBackedUpTo": "설정이 다음 위치에 백업되었습니다: {path}",
+  "settingsLoaded": "설정이 로드되었습니다",
+  "settingsLoadFailed": "설정 로드 실패: {error}",
+  "settingsRestoredSuccessfully": "설정이 성공적으로 복원되었습니다. 변경 사항을 적용하려면 앱을 다시 시작하십시오.",
+  "settingsSaved": "설정이 저장되었습니다",
+  "@settingsSaved": {
+    "description": "설정 저장 확인 메시지"
+  },
+  "settingsSaveFailed": "설정 저장 실패: {error}",
+  "settingsTab": "설정",
+  "settingsTitle": "설정",
+  "setup": "설치",
+  "showContactEditDialogStaticMethod": "연락처 편집 대화 상자를 표시하는 정적 메서드",
+  "showExplanation": "설명 보기",
+  "silence": "무음",
+  "silenceAndNoAnswer": "무음 및 응답 없음",
+  "silenceNoAnswer": "무음 응답 없음",
+  "silentCallVoiceClone": "자동 응답 음성 복제",
+  "silentRules": "무음 규칙",
+  "simCard": "SIM 카드 {simNumber}",
+  "simCardColor": "SIM 카드 색상",
+  "simCardConfigurationExplanation": "• SIM 카드 구성: 각 SIM 카드에 대한 독립적인 필터링 규칙 설정",
+  "simCardFilterRules": "SIM 카드 필터 규칙",
+  "simCardFilterRulesDescription": "SIM 카드 슬롯을 기반으로 다른 필터링 규칙 설정",
+  "simCardFontSize": "SIM 카드 글꼴 크기",
+  "simCardPosition": "SIM 카드 위치",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM 카드 정보",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "SIM 카드 정보 로드 실패: {error}",
+  "simRuleInstructions": "SIM 슬롯 규칙을 사용하면 각 SIM 슬롯에 대해 독립적인 필터링 규칙을 구성할 수 있습니다.",
+  "simRuleInstructionsTitle": "SIM 슬롯 규칙",
+  "@simRuleInstructionsTitle": {
+    "description": "SIM 슬롯 규칙 지침에 대한 섹션 제목"
+  },
+  "simRuleManagement": "SIM 슬롯 규칙 관리",
+  "@simRuleManagement": {
+    "description": "SIM 슬롯 규칙 관리 섹션 제목"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "국가 ISO 코드가 있는 SIM 슬롯 1을 표시하는 텍스트",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "국가 ISO 코드가 있는 SIM 슬롯 2를 표시하는 텍스트",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "SIM 데이터 로드 실패: {error}",
+  "simSlotFilterConfiguration": "SIM 슬롯 필터 구성",
+  "simSlotFilterConfigurationDescription": "SIM 슬롯별로 필터 규칙을 설정할 수 있도록 허용",
+  "simSlotFilterDescription": "각 SIM 카드에 대해 독립적인 필터링 규칙 구성:",
+  "simSlotFilterSettingsTitle": "SIM 슬롯 {slotNumber} 필터 설정",
+  "@simSlotFilterSettingsTitle": {
+    "description": "SIM 슬롯 필터 설정 제목",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "SIM 슬롯 로드 실패: {error}",
+  "simSlotManagement": "SIM 슬롯 관리",
+  "simSlotOperationFailed": "SIM 슬롯 작업 실패: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM 슬롯 작업 실패 메시지",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIM 슬롯 위치 {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM 슬롯 위치 표시",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM 슬롯 규칙: SIM별 독립 필터링 전략",
+  "simSlotRuleListTitle": "SIM 슬롯 규칙 목록",
+  "simSlotRuleManagement": "SIM 슬롯 규칙",
+  "simSlotRuleManagementTitle": "규칙 관리",
+  "simSlotSettings": "SIM 슬롯 설정",
+  "@simSlotSettings": {
+    "description": "SIM 슬롯 설정 페이지 제목"
+  },
+  "simSlotTitle": "SIM 슬롯 {slotNumber}",
+  "skip": "건너뛰기",
+  "smartCallerId": "스마트 발신자 ID",
+  "sms": "SMS",
+  "smsFilterDescription": "SMS 필터링은 스팸 메시지를 자동으로 필터링하고 메시지 목록을 깨끗하게 유지하는 데 도움이 됩니다. 필터 규칙 및 알림 방법을 설정할 수 있습니다.",
+  "smsFilterDisabled": "SMS 필터링 비활성화됨",
+  "smsFilterEnabled": "SMS 필터링 활성화됨",
+  "smsFilterRuleAddedSuccessfully": "SMS 필터 규칙이 성공적으로 추가되었습니다",
+  "smsFilterRules": "SMS 필터 규칙",
+  "smsFilterSettings": "SMS 필터 설정",
+  "smsHistory": "SMS 기록",
+  "smsManagement": "SMS 관리",
+  "smsPermission": "SMS 권한",
+  "smsPermissionDescription": "스팸 메시지를 필터링하는 데 사용됩니다.",
+  "smsRuleAddedSuccessfully": "SMS 규칙이 성공적으로 추가되었습니다",
+  "smsRuleDeletedSuccessfully": "SMS 규칙이 성공적으로 삭제되었습니다",
+  "smsRuleLoadFailed": "SMS 규칙 로드 실패: {error}",
+  "smsRuleManagement": "SMS 규칙 관리",
+  "smsRulesExportedSuccessfully": "SMS 규칙이 {filePath}로 성공적으로 내보내졌습니다",
+  "smsRulesImportedSuccessfully": "SMS 규칙이 성공적으로 가져왔습니다",
+  "smsRuleSubscription": "SMS 규칙 구독",
+  "smsRuleUpdatedSuccessfully": "SMS 규칙이 성공적으로 업데이트되었습니다",
+  "smsSettingsSubtitle": "SMS 필터링 및 키워드 차단",
+  "smsSettingsTitle": "SMS 설정",
+  "smsSubscription": "SMS 구독",
+  "smsSubscriptionAddedSuccessfully": "SMS 구독이 성공적으로 추가되었습니다",
+  "smsSubscriptionRulesDescription": "정규식 일치를 지원하는 URL을 통해 SMS 규칙 목록을 구독합니다. 차단 또는 허용 작업을 설정할 수 있습니다.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "일부 권한 요청이 거부되었습니다",
+  "spamLikely": "스팸 가능성 높음",
+  "startColor": "시작 색상",
+  "startDate": "시작 날짜",
+  "startUsing": "시작하기",
+  "statAnswered": "응답됨",
+  "statBlocked": "차단됨",
+  "staticMethodShowCallerIdDialog": "발신자 ID 정보 대화 상자를 표시하는 정적 메서드",
+  "staticMethodToDisplayCountrySelectionDialog": "국가 선택 대화 상자를 표시하는 정적 메서드",
+  "staticMethodToDisplayDialog": "대화 상자를 표시하는 정적 메서드",
+  "statistics": "통계",
+  "statisticsExportFeatureComingSoon": "통계 내보내기 기능이 곧 제공될 예정입니다",
+  "statisticsGrid": "통계 그리드",
+  "statisticsPageTitle": "데이터 분석",
+  "stirColor": "STIR 색상",
+  "stirFontSize": "STIR 글꼴 크기",
+  "stirPosition": "STIR 위치",
+  "storagePermission": "저장소 권한",
+  "storagePermissionDescription": "설정 및 규칙을 저장하는 데 사용됩니다.",
+  "subscribe": "구독",
+  "subscriptionAddSuccess": "구독 \"{name}\"이(가) 성공적으로 추가되었습니다",
+  "@subscriptionAddSuccess": {
+    "description": "구독 추가 성공 메시지",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "이 구독을 삭제하시겠습니까?",
+  "subscriptionDeleteConfirmTitle": "구독 삭제",
+  "subscriptionDeleted": "구독 삭제됨",
+  "@subscriptionDeleted": {
+    "description": "구독 삭제 성공 메시지"
+  },
+  "subscriptionDeletedSuccessfully": "구독이 성공적으로 삭제되었습니다",
+  "subscriptionDeleteFailed": "구독 삭제 실패: {error}",
+  "subscriptionDeleteSuccess": "구독 삭제됨",
+  "subscriptionEmptyState": "사용 가능한 구독이 없습니다",
+  "subscriptionEmptyText": "아직 구독이 없습니다",
+  "subscriptionLoadFailed": "구독 로드 실패: {error}",
+  "subscriptionLoadingFailed": "구독 로드 실패: {error}",
+  "subscriptionManagementTitle": "구독 관리",
+  "subscriptionName": "구독 이름",
+  "@subscriptionName": {
+    "description": "구독 이름 필드 라벨"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "구독 이름과 URL은 비워 둘 수 없습니다",
+  "subscriptionNameHint": "구독 이름 입력",
+  "subscriptionPageTitle": "구독 관리",
+  "subscriptionStatusChangeFailed": "구독 상태 변경 실패: {error}",
+  "subscriptionToggleFailed": "구독 상태 전환 실패: {error}",
+  "subscriptionUpdateFailed": "구독 업데이트 실패: {error}",
+  "subscriptionUpdateSuccess": "구독이 성공적으로 업데이트되었습니다",
+  "@subscriptionUpdateSuccess": {
+    "description": "구독 업데이트 성공 메시지",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "구독 URL",
+  "@subscriptionUrl": {
+    "description": "구독 URL 필드 라벨"
+  },
+  "subscriptionUrlHint": "구독 URL 입력",
+  "successfullyImportedRules": "{count}개의 규칙이 성공적으로 가져왔습니다",
+  "supportSync": "동기화 지원",
+  "survey": "설문 조사",
+  "syncDevicesButton": "장치 동기화",
+  "synced": "동기화됨",
+  "@synced": {
+    "description": "동기화된 상태 라벨"
+  },
+  "syncFailed": "동기화 실패",
+  "syncFailedMessage": "동기화 실패",
+  "syncFolderNameHint": "동기화 폴더 이름을 입력하십시오(기본값: NotificationManager)",
+  "syncFolderNameLabel": "동기화 폴더 이름",
+  "synchronized": "동기화됨",
+  "@synchronized": {
+    "description": "동기화된 상태 라벨"
+  },
+  "syncing": "동기화 중...",
+  "syncNow": "지금 동기화",
+  "@syncNow": {
+    "description": "지금 동기화 버튼 텍스트"
+  },
+  "syncNowButton": "지금 동기화",
+  "syncStatusTitle": "동기화 상태",
+  "syncStatusUpdatedMessage": "동기화 상태 업데이트됨",
+  "syncSuccessful": "동기화 성공",
+  "syncSuccessMessage": "동기화 성공",
+  "syncWithCloudStorage": "클라우드 스토리지와 동기화",
+  "syncWithCloudStorageSubtitle": "클라우드 스토리지와 동기화",
+  "systemFeatures": "시스템 기능:",
+  "systemSettingsTitle": "시스템 설정",
+  "tabAll": "모두",
+  "tabAnswered": "응답됨",
+  "tabBlocked": "차단됨",
+  "tabMissed": "부재중",
+  "tabOutgoing": "발신",
+  "tagLabel": "태그: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "태그 업데이트됨",
+  "takeaway": "테이크 아웃",
+  "telecommunication": "통신",
+  "telegram": "Telegram",
+  "telemarketing": "텔레마케팅",
+  "testButton": "테스트",
+  "testButtonLabel": "테스트",
+  "testConnectionButton": "연결 테스트",
+  "textColorsSetting": "텍스트 및 라벨 색상",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "이 앱은 원치 않는 통화를 식별하고 차단할 수 있는 강력한 발신자 ID 도구입니다.",
+  "thisWeek": "이번 주",
+  "timeInterceptor": "시간 인터셉터",
+  "timeInterceptorDescription": "통화 빈도를 기준으로 잠재적인 스팸 통화를 자동으로 가로챕니다",
+  "timeInterceptorExplanation": "• 시간 인터셉터: 짧은 시간 내에 반복된 통화 가로채기",
+  "timeInterceptorExplanationContent": "통화 빈도 가로채기 기능은 통화 빈도를 분석하여 빈번한 스팸 통화를 자동으로 식별하고 가로챕니다.",
+  "timeInterceptorExplanationTitle": "통화 빈도 가로채기 설명",
+  "timeInterceptorSettingsTitle": "통화 빈도 가로채기 설정",
+  "timeInterceptorSubtitle": "통화 빈도를 기준으로 잠재적인 스팸 통화를 자동으로 가로챕니다",
+  "timeInterceptorTitle": "통화 빈도 가로채기 활성화",
+  "timeWindowDescription": "반복 통화 가로채기에 대한 시간 창 크기를 설정합니다. 이 창 내에서 동일한 번호에서 걸려오는 통화가 가로채집니다",
+  "timeWindowLabel": "가로채기 시간 창(분): {minutes}",
+  "@timeWindowLabel": {
+    "description": "분 단위의 지속 시간이 있는 시간 창 레이블",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "반복 통화 가로채기에 대한 시간 창 크기를 설정합니다. 이 창 내에서 동일한 번호에서 걸려오는 통화가 가로채집니다",
+  "today": "오늘",
+  "total": "합계",
+  "totalBlocked": "총 차단됨",
+  "totalFiltered": "총 필터링됨",
+  "transferDataBetweenDevicesOrPlatforms": "장치 또는 플랫폼 간에 데이터 전송",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "장치 또는 플랫폼 간에 데이터 전송",
+  "travelTicketing": "여행 티켓팅",
+  "trend": "추세",
+  "trendChart": "추세 차트",
+  "tutorial": "튜토리얼",
+  "type": "유형",
+  "unassignedSIMCard": "할당되지 않은 SIM 카드",
+  "unknown": "알 수 없음",
+  "@unknown": {
+    "description": "알 수 없는 상태에 대한 표시 텍스트"
+  },
+  "unknownAction": "알 수 없는 작업",
+  "unknownLabel": "알 수 없는 라벨",
+  "unknownTag": "태그: 알 수 없음",
+  "unregisterButton": "등록 취소",
+  "unregisterDeviceConfirmationMessage": "{deviceName}을(를) 등록 취소하시겠습니까?",
+  "unregisterDeviceTitle": "장치 등록 취소",
+  "unsupportedFileFormat": "지원되지 않는 파일 형식",
+  "update": "업데이트",
+  "updateAllNow": "지금 모두 업데이트",
+  "updateCallFilterConfig": "통화 필터 구성 업데이트",
+  "@updateCallFilterConfig": {
+    "description": "통화 필터 구성 업데이트에 대한 버튼 텍스트"
+  },
+  "updateContactFailed": "연락처 업데이트 실패: {error}",
+  "updateFavoriteStatus": "즐겨찾기 상태 업데이트",
+  "updateFavoriteStatusFailed": "즐겨찾기 상태 업데이트 실패: {error}",
+  "updateInterval": "업데이트 간격",
+  "updateLabelFailed": "라벨 업데이트 실패",
+  "updateNow": "지금 업데이트",
+  "updatePlugin": "플러그인 업데이트",
+  "updatePluginFailed": "플러그인 업데이트 실패: {error}",
+  "updateRuleFailed": "규칙 업데이트 실패: {error}",
+  "updateSubscriptionFailed": "구독 업데이트 실패: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "구독 업데이트 실패 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service}이(가) 성공적으로 업데이트되었습니다({count}개 규칙)",
+  "@updateSuccess": {
+    "description": "단일 서비스 업데이트 성공 메시지",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "태그 업데이트",
+  "useCasesPoint1": "• 자동 재다이얼 스팸 통화 식별",
+  "useCasesPoint2": "• 단기간에 여러 번 전화하는 마케팅 통화 가로채기",
+  "useCasesPoint3": "• 전화 폭탄 및 괴롭힘 방지",
+  "useCasesTitle": "사용 사례:",
+  "useGlobalSettings": "전역 설정 사용",
+  "userEmail": "user@example.com",
+  "usernameLabel": "사용자 이름",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "표준 Regex 구문을 사용하여 패턴을 정의하십시오. 예:",
+  "validateRegex": "Regex 유효성 검사",
+  "verificationFailedText": "실패",
+  "verifiedText": "확인됨",
+  "verify": "확인",
+  "version": "버전: {version}",
+  "vipExchangeDescription": "전화 번호 마킹 횟수로 VIP 멤버십 교환",
+  "vipExchangeTitle": "마크 교환 VIP",
+  "watchAd": "광고 시청",
+  "watchAdForTemp": "임시 권한을 위해 광고 시청",
+  "watchAdForTempDescription": "일부 프리미엄 기능을 일시적으로 잠금 해제하려면 짧은 광고를 시청하십시오",
+  "webDAVConfigTitle": "WebDAV 구성",
+  "webdavConfigurationTitle": "WebDAV 구성",
+  "webdavPasswordHint": "WebDAV 비밀번호를 입력하십시오",
+  "webdavServerAddressHint": "WebDAV 서버 주소를 입력하십시오",
+  "webdavUsernameHint": "WebDAV 사용자 이름을 입력하십시오",
+  "week": "주",
+  "weekly": "매주",
+  "weeklyBlockedCallsSummary": "주간 차단된 통화 요약",
+  "weeklyChartTitle": "주간 차단된 통화",
+  "weeklyReport": "주간 보고서",
+  "@weeklyReport": {
+    "description": "주간 보고서 알림 옵션"
+  },
+  "weeklyReportDesc": "통화 차단 활동에 대한 주간 요약 보고서 수신",
+  "@weeklyReportDesc": {
+    "description": "주간 보고서 옵션에 대한 설명"
+  },
+  "welcome": "환영합니다",
+  "whitelist": "화이트리스트",
+  "@whitelist": {
+    "description": "화이트리스트 라벨"
+  },
+  "whitelistLabel": "화이트리스트",
+  "width": "너비",
+  "wildcardMatchingDescription": "'.'을(를) 사용하여 모든 문자와 일치시킵니다(예: '123.456'은(는) 123-456과(와) 일치함)",
+  "wildcardMatchingTitle": "와일드카드 일치:",
+  "wildcardSupportForFlexibleFiltering": "유연한 필터링을 위한 와일드카드 지원",
+  "windowSizeSetting": "창 크기",
+  "year": "년",
+  "yearly": "매년",
+  "yearlyChartTitle": "연간 차단된 통화",
+  "noSimCardsDetected": "SIM 카드가 감지되지 않았습니다",
+  "filterManagementDescription": "통화 필터 설정",
+  "yesterday": "어제"
+}
