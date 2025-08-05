@@ -1,0 +1,365 @@
+{
+  "simCardFontSize": "Размер шрифта SIM-карты",
+  "simCardPosition": "Положение SIM-карты",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "Информация о SIM-карте",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Не удалось загрузить информацию о SIM-карте: {error}",
+  "simRuleInstructions": "Правила слота SIM позволяют настраивать независимые правила фильтрации для каждого слота SIM.",
+  "simRuleInstructionsTitle": "Правила слота SIM",
+  "@simRuleInstructionsTitle": {
+    "description": "Заголовок раздела для инструкций по правилам слота SIM"
+  },
+  "simRuleManagement": "Управление правилами слота SIM",
+  "@simRuleManagement": {
+    "description": "Заголовок раздела управления правилами слота SIM"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Текст, показывающий слот SIM 1 с кодом ISO страны",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Текст, показывающий слот SIM 2 с кодом ISO страны",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Не удалось загрузить данные SIM: {error}",
+  "simSlotFilterConfiguration": "Конфигурация фильтра слота SIM",
+  "simSlotFilterConfigurationDescription": "Разрешение на установку правил фильтрации по слоту SIM",
+  "simSlotFilterDescription": "Настройте независимые правила фильтрации для каждой SIM-карты:",
+  "simSlotFilterSettingsTitle": "Настройки фильтра слота SIM {slotNumber}",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Заголовок для настроек фильтра слота SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Не удалось загрузить слоты SIM: {error}",
+  "simSlotManagement": "Управление слотами SIM",
+  "simSlotOperationFailed": "Не удалось выполнить операцию слота SIM: {error}",
+  "@simSlotOperationFailed": {
+    "description": "Сообщение о сбое операции слота SIM",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "Положение слота SIM {slotNumber}",
+  "@simSlotPosition": {
+    "description": "Отображение положения слота SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• Правила слота SIM: Независимые стратегии фильтрации для каждой SIM",
+  "simSlotRuleListTitle": "Список правил слота SIM",
+  "simSlotRuleManagement": "Управление правилами слота SIM",
+  "simSlotRuleManagementTitle": "Управление правилами",
+  "simSlotSettings": "Настройки слота SIM",
+  "@simSlotSettings": {
+    "description": "Заголовок страницы настроек слота SIM"
+  },
+  "simSlotTitle": "Слот SIM {slotNumber}",
+  "skip": "Пропустить",
+  "smartCallerId": "Интеллектуальный идентификатор вызывающего абонента",
+  "sms": "SMS",
+  "smsFilterDescription": "Фильтрация SMS помогает автоматически фильтровать спам-сообщения и поддерживать чистоту вашего списка сообщений. Вы можете установить правила фильтрации и методы уведомлений.",
+  "smsFilterDisabled": "Фильтрация SMS отключена",
+  "smsFilterEnabled": "Фильтрация SMS включена",
+  "smsFilterRuleAddedSuccessfully": "Правило фильтрации SMS успешно добавлено",
+  "smsFilterRules": "Правила фильтрации SMS",
+  "smsFilterSettings": "Настройки фильтрации SMS",
+  "smsHistory": "История SMS",
+  "smsManagement": "Управление SMS",
+  "smsPermission": "Разрешение SMS",
+  "smsPermissionDescription": "Используется для фильтрации спам-сообщений.",
+  "smsRuleAddedSuccessfully": "Правило SMS успешно добавлено",
+  "smsRuleDeletedSuccessfully": "Правило SMS успешно удалено",
+  "smsRuleLoadFailed": "Не удалось загрузить правила SMS: {error}",
+  "smsRuleManagement": "Управление правилами SMS",
+  "smsRulesExportedSuccessfully": "Правила SMS успешно экспортированы в {filePath}",
+  "smsRulesImportedSuccessfully": "Правила SMS успешно импортированы",
+  "smsRuleSubscription": "Подписка на правила SMS",
+  "smsRuleUpdatedSuccessfully": "Правило SMS успешно обновлено",
+  "smsSettingsSubtitle": "Фильтрация SMS и блокировка ключевых слов",
+  "smsSettingsTitle": "Настройки SMS",
+  "smsSubscription": "Подписка SMS",
+  "smsSubscriptionAddedSuccessfully": "Подписка SMS успешно добавлена",
+  "smsSubscriptionRulesDescription": "Подпишитесь на списки правил SMS через URL, поддерживая сопоставление регулярных выражений. Вы можете установить действия блокировки или разрешения.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "В некоторых запросах разрешений отказано",
+  "spamLikely": "Вероятно, спам",
+  "startColor": "Начальный цвет",
+  "startDate": "Дата начала",
+  "startUsing": "Начать использование",
+  "statAnswered": "Отвечено",
+  "statBlocked": "Заблокировано",
+  "staticMethodShowCallerIdDialog": "Статический метод для отображения диалогового окна информации об идентификаторе вызывающего абонента",
+  "staticMethodToDisplayCountrySelectionDialog": "Статический метод для отображения диалогового окна выбора страны",
+  "staticMethodToDisplayDialog": "Статический метод для отображения диалогового окна",
+  "statistics": "Статистика",
+  "statisticsExportFeatureComingSoon": "Функция экспорта статистики скоро появится",
+  "statisticsGrid": "Сетка статистики",
+  "statisticsPageTitle": "Анализ данных",
+  "stirColor": "Цвет STIR",
+  "stirFontSize": "Размер шрифта STIR",
+  "stirPosition": "Положение STIR",
+  "storagePermission": "Разрешение на хранение",
+  "storagePermissionDescription": "Используется для сохранения настроек и правил.",
+  "subscribe": "Подписаться",
+  "subscriptionAddSuccess": "Подписка \"{name}\" успешно добавлена",
+  "@subscriptionAddSuccess": {
+    "description": "Сообщение об успехе добавления подписки",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Вы уверены, что хотите удалить эту подписку?",
+  "subscriptionDeleteConfirmTitle": "Удалить подписку",
+  "subscriptionDeleted": "Подписка удалена",
+  "@subscriptionDeleted": {
+    "description": "Сообщение об успехе удаления подписки"
+  },
+  "subscriptionDeletedSuccessfully": "Подписка успешно удалена",
+  "subscriptionDeleteFailed": "Не удалось удалить подписку: {error}",
+  "subscriptionDeleteSuccess": "Подписка удалена",
+  "subscriptionEmptyState": "Нет доступных подписок",
+  "subscriptionEmptyText": "Пока нет подписок",
+  "subscriptionLoadFailed": "Не удалось загрузить подписки: {error}",
+  "subscriptionLoadingFailed": "Не удалось загрузить подписки: {error}",
+  "subscriptionManagementTitle": "Управление подписками",
+  "subscriptionName": "Имя подписки",
+  "@subscriptionName": {
+    "description": "Метка поля имени подписки"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Имя и URL-адрес подписки не должны быть пустыми",
+  "subscriptionNameHint": "Введите имя подписки",
+  "subscriptionPageTitle": "Управление подписками",
+  "subscriptionStatusChangeFailed": "Не удалось изменить статус подписки: {error}",
+  "subscriptionToggleFailed": "Не удалось переключить статус подписки: {error}",
+  "subscriptionUpdateFailed": "Не удалось обновить подписку: {error}",
+  "subscriptionUpdateSuccess": "Подписка успешно обновлена",
+  "@subscriptionUpdateSuccess": {
+    "description": "Сообщение об успехе обновления подписки",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "URL-адрес подписки",
+  "@subscriptionUrl": {
+    "description": "Метка поля URL-адреса подписки"
+  },
+  "subscriptionUrlHint": "Введите URL-адрес подписки",
+  "successfullyImportedRules": "Успешно импортировано {count} правил",
+  "supportSync": "Поддержка синхронизации",
+  "survey": "Опрос",
+  "syncDevicesButton": "Синхронизировать устройства",
+  "synced": "Синхронизировано",
+  "@synced": {
+    "description": "Метка статуса синхронизации"
+  },
+  "syncFailed": "Синхронизация не удалась",
+  "syncFailedMessage": "Синхронизация не удалась",
+  "syncFolderNameHint": "Введите имя папки синхронизации (по умолчанию: NotificationManager)",
+  "syncFolderNameLabel": "Имя папки синхронизации",
+  "synchronized": "Синхронизировано",
+  "@synchronized": {
+    "description": "Метка статуса синхронизации"
+  },
+  "syncing": "Синхронизация...",
+  "syncNow": "Синхронизировать сейчас",
+  "@syncNow": {
+    "description": "Текст кнопки Синхронизировать сейчас"
+  },
+  "syncNowButton": "Синхронизировать сейчас",
+  "syncStatusTitle": "Статус синхронизации",
+  "syncStatusUpdatedMessage": "Статус синхронизации обновлен",
+  "syncSuccessful": "Синхронизация прошла успешно",
+  "syncSuccessMessage": "Синхронизация прошла успешно",
+  "syncWithCloudStorage": "Синхронизация с облачным хранилищем",
+  "syncWithCloudStorageSubtitle": "Синхронизация с облачным хранилищем",
+  "systemFeatures": "Возможности системы:",
+  "systemSettingsTitle": "Системные настройки",
+  "tabAll": "Все",
+  "tabAnswered": "Отвечено",
+  "tabBlocked": "Заблокировано",
+  "tabMissed": "Пропущено",
+  "tabOutgoing": "Исходящие",
+  "tagLabel": "Тег: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Теги обновлены",
+  "takeaway": "На вынос",
+  "telecommunication": "Электросвязь",
+  "telegram": "Telegram",
+  "telemarketing": "Телемаркетинг",
+  "testButton": "ТЕСТ",
+  "testButtonLabel": "ТЕСТ",
+  "testConnectionButton": "Проверить соединение",
+  "textColorsSetting": "Цвета текста и меток",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Это приложение — мощный инструмент идентификации вызывающего абонента, который позволяет идентифицировать и блокировать нежелательные звонки.",
+  "thisWeek": "На этой неделе",
+  "timeInterceptor": "Перехватчик времени",
+  "timeInterceptorDescription": "Автоматически перехватывать потенциальные спам-звонки на основе частоты звонков",
+  "timeInterceptorExplanation": "• Перехватчик времени: перехватывать повторные звонки в течение короткого времени",
+  "timeInterceptorExplanationContent": "Функция перехвата частоты звонков анализирует частоту звонков для автоматического выявления и перехвата частых спам-звонков.",
+  "timeInterceptorExplanationTitle": "Объяснение перехвата частоты звонков",
+  "timeInterceptorSettingsTitle": "Настройки перехватчика времени",
+  "timeInterceptorSubtitle": "Автоматически перехватывать потенциальные спам-звонки на основе частоты звонков",
+  "timeInterceptorTitle": "Включить перехватчик времени",
+  "timeWindowDescription": "Установите размер временного окна для перехвата повторных звонков. Звонки с одного и того же номера в течение этого окна будут перехвачены",
+  "timeWindowLabel": "Временное окно перехвата (минуты): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Метка временного окна с указанием продолжительности в минутах",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Установите размер временного окна для перехвата повторных звонков. Звонки с одного и того же номера в течение этого окна будут перехвачены",
+  "today": "Сегодня",
+  "total": "Всего",
+  "totalBlocked": "Всего заблокировано",
+  "totalFiltered": "Всего отфильтровано",
+  "transferDataBetweenDevicesOrPlatforms": "Передача данных между устройствами или платформами",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Передача данных между устройствами или платформами",
+  "travelTicketing": "Продажа билетов на транспорт",
+  "trend": "Тенденция",
+  "trendChart": "Диаграмма тенденций",
+  "tutorial": "Руководство",
+  "type": "Тип",
+  "unassignedSIMCard": "Неназначенная SIM-карта",
+  "unknown": "Неизвестно",
+  "@unknown": {
+    "description": "Отображать текст для неизвестного статуса"
+  },
+  "unknownAction": "Неизвестное действие",
+  "unknownLabel": "Неизвестная метка",
+  "unknownTag": "Тег: Неизвестно",
+  "unregisterButton": "Отменить регистрацию",
+  "unregisterDeviceConfirmationMessage": "Вы уверены, что хотите отменить регистрацию {deviceName}?",
+  "unregisterDeviceTitle": "Отменить регистрацию устройства",
+  "unsupportedFileFormat": "Неподдерживаемый формат файла",
+  "update": "Обновить",
+  "updateAllNow": "Обновить все сейчас",
+  "updateCallFilterConfig": "Обновить конфигурацию фильтра звонков",
+  "@updateCallFilterConfig": {
+    "description": "Текст кнопки для обновления конфигурации фильтра звонков"
+  },
+  "updateContactFailed": "Не удалось обновить контакт: {error}",
+  "updateFavoriteStatus": "Обновить статус избранного",
+  "updateFavoriteStatusFailed": "Не удалось обновить статус избранного: {error}",
+  "updateInterval": "Интервал обновления",
+  "updateLabelFailed": "Не удалось обновить метку",
+  "updateNow": "Обновить сейчас",
+  "updatePlugin": "Обновить плагин",
+  "updatePluginFailed": "Не удалось обновить плагин: {error}",
+  "updateRuleFailed": "Не удалось обновить правило: {error}",
+  "updateSubscriptionFailed": "Не удалось обновить подписку: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Сообщение об ошибке, возникшей при обновлении подписки",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} успешно обновлен ({count} правил)",
+  "@updateSuccess": {
+    "description": "Сообщение об успехе обновления отдельной службы",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "Обновить теги",
+  "useCasesPoint1": "• Идентифицировать спам-звонки с автоматическим повторным набором",
+  "useCasesPoint2": "• Перехватывать маркетинговые звонки, которые поступают несколько раз за короткий период времени",
+  "useCasesPoint3": "• Предотвращать телефонные бомбардировки и преследования",
+  "useCasesTitle": "Варианты использования:",
+  "useGlobalSettings": "Использовать глобальные настройки",
+  "userEmail": "user@example.com",
+  "usernameLabel": "Имя пользователя",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Используйте стандартный синтаксис регулярных выражений для определения шаблонов. Примеры:",
+  "validateRegex": "Проверить регулярное выражение",
+  "verificationFailedText": "Не удалось",
+  "verifiedText": "Проверено",
+  "verify": "Проверить",
+  "version": "Версия: {version}",
+  "vipExchangeDescription": "Обменяйте VIP-членство на количество отметок телефонных номеров",
+  "vipExchangeTitle": "VIP-обмен отметками",
+  "watchAd": "Смотреть рекламу",
+  "watchAdForTemp": "Смотреть рекламу для получения временных привилегий",
+  "watchAdForTempDescription": "Посмотрите короткую рекламу, чтобы временно разблокировать некоторые премиум-функции",
+  "webDAVConfigTitle": "Конфигурация WebDAV",
+  "webdavConfigurationTitle": "Конфигурация WebDAV",
+  "webdavPasswordHint": "Введите пароль WebDAV",
+  "webdavServerAddressHint": "Введите адрес сервера WebDAV",
+  "webdavUsernameHint": "Введите имя пользователя WebDAV",
+  "week": "Неделя",
+  "weekly": "Еженедельно",
+  "weeklyBlockedCallsSummary": "Еженедельная сводка заблокированных звонков",
+  "weeklyChartTitle": "Еженедельные заблокированные звонки",
+  "weeklyReport": "Еженедельный отчет",
+  "@weeklyReport": {
+    "description": "Параметр уведомлений о еженедельном отчете"
+  },
+  "weeklyReportDesc": "Получать еженедельный сводный отчет о деятельности по блокировке звонков",
+  "@weeklyReportDesc": {
+    "description": "Описание параметра еженедельного отчета"
+  },
+  "welcome": "Добро пожаловать",
+  "whitelist": "Белый список",
+  "@whitelist": {
+    "description": "Метка белого списка"
+  },
+  "whitelistLabel": "Белый список",
+  "width": "Ширина",
+  "wildcardMatchingDescription": "Используйте '.', чтобы соответствовать любому символу (например, '123.456' соответствует 123-456)",
+  "wildcardMatchingTitle": "Сопоставление с подстановочными знаками:",
+  "wildcardSupportForFlexibleFiltering": "Поддержка подстановочных знаков для гибкой фильтрации",
+  "windowSizeSetting": "Размер окна",
+  "year": "Год",
+  "yearly": "Ежегодно",
+  "yearlyChartTitle": "Ежегодные заблокированные звонки",
+  "noSimCardsDetected": "SIM-карты не обнаружены",
+  "filterManagementDescription": "Установить фильтры звонков",
+  "callerIdCustomizationSubtitle": "Настроить макет идентификатора вызывающего абонента",
+  "yesterday": "Вчера"
+}

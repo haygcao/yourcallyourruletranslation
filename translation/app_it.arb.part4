@@ -1,0 +1,365 @@
+{
+  "simCardFontSize": "Dimensione del carattere della SIM",
+  "simCardPosition": "Posizione della SIM",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "Informazioni sulla SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Impossibile caricare le informazioni della SIM: {error}",
+  "simRuleInstructions": "Le regole dello slot SIM consentono di configurare regole di filtro indipendenti per ciascuno slot SIM.",
+  "simRuleInstructionsTitle": "Regole dello slot SIM",
+  "@simRuleInstructionsTitle": {
+    "description": "Titolo della sezione per le istruzioni delle regole dello slot SIM"
+  },
+  "simRuleManagement": "Gestione delle regole dello slot SIM",
+  "@simRuleManagement": {
+    "description": "Titolo della sezione di gestione delle regole dello slot SIM"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Testo che mostra lo slot SIM 1 con il codice ISO del paese",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Testo che mostra lo slot SIM 2 con il codice ISO del paese",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Impossibile caricare i dati della SIM: {error}",
+  "simSlotFilterConfiguration": "Configurazione del filtro dello slot SIM",
+  "simSlotFilterConfigurationDescription": "Consente di impostare regole di filtro per slot SIM",
+  "simSlotFilterDescription": "Configura regole di filtro indipendenti per ciascuna SIM:",
+  "simSlotFilterSettingsTitle": "Impostazioni del filtro dello slot SIM {slotNumber}",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Titolo per le impostazioni del filtro dello slot SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Impossibile caricare gli slot SIM: {error}",
+  "simSlotManagement": "Gestione degli slot SIM",
+  "simSlotOperationFailed": "Operazione sullo slot SIM non riuscita: {error}",
+  "@simSlotOperationFailed": {
+    "description": "Messaggio di errore di operazione sullo slot SIM",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "Posizione dello slot SIM {slotNumber}",
+  "@simSlotPosition": {
+    "description": "Visualizzazione della posizione dello slot SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• Regole dello slot SIM: strategie di filtro indipendenti per SIM",
+  "simSlotRuleListTitle": "Elenco delle regole dello slot SIM",
+  "simSlotRuleManagement": "Regole dello slot SIM",
+  "simSlotRuleManagementTitle": "Gestione regole",
+  "simSlotSettings": "Impostazioni dello slot SIM",
+  "@simSlotSettings": {
+    "description": "Titolo per la pagina delle impostazioni dello slot SIM"
+  },
+  "simSlotTitle": "Slot SIM {slotNumber}",
+  "skip": "Salta",
+  "smartCallerId": "ID chiamante intelligente",
+  "sms": "SMS",
+  "smsFilterDescription": "Il filtro SMS ti aiuta a filtrare automaticamente i messaggi spam e a mantenere pulito il tuo elenco di messaggi. Puoi impostare regole di filtro e metodi di notifica.",
+  "smsFilterDisabled": "Filtro SMS disabilitato",
+  "smsFilterEnabled": "Filtro SMS abilitato",
+  "smsFilterRuleAddedSuccessfully": "Regola filtro SMS aggiunta correttamente",
+  "smsFilterRules": "Regole filtro SMS",
+  "smsFilterSettings": "Impostazioni filtro SMS",
+  "smsHistory": "Cronologia SMS",
+  "smsManagement": "Gestione SMS",
+  "smsPermission": "Autorizzazione SMS",
+  "smsPermissionDescription": "Utilizzato per filtrare i messaggi spam.",
+  "smsRuleAddedSuccessfully": "Regola SMS aggiunta correttamente",
+  "smsRuleDeletedSuccessfully": "Regola SMS eliminata correttamente",
+  "smsRuleLoadFailed": "Impossibile caricare le regole SMS: {error}",
+  "smsRuleManagement": "Gestione regole SMS",
+  "smsRulesExportedSuccessfully": "Regole SMS esportate correttamente in {filePath}",
+  "smsRulesImportedSuccessfully": "Regole SMS importate correttamente",
+  "smsRuleSubscription": "Abbonamento regole SMS",
+  "smsRuleUpdatedSuccessfully": "Regola SMS aggiornata correttamente",
+  "smsSettingsSubtitle": "Filtro SMS e blocco parole chiave",
+  "smsSettingsTitle": "Impostazioni SMS",
+  "smsSubscription": "Abbonamento SMS",
+  "smsSubscriptionAddedSuccessfully": "Abbonamento SMS aggiunto correttamente",
+  "smsSubscriptionRulesDescription": "Iscriviti a elenchi di regole SMS tramite URL, supportando la corrispondenza di espressioni regolari. Puoi impostare azioni di blocco o autorizzazione.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Alcune richieste di autorizzazione sono state negate",
+  "spamLikely": "Probabile spam",
+  "startColor": "Colore iniziale",
+  "startDate": "Data di inizio",
+  "startUsing": "Inizia",
+  "statAnswered": "Risposto",
+  "statBlocked": "Bloccato",
+  "staticMethodShowCallerIdDialog": "Metodo statico per mostrare la finestra di dialogo delle informazioni sull'ID chiamante",
+  "staticMethodToDisplayCountrySelectionDialog": "Metodo statico per visualizzare la finestra di dialogo di selezione del paese",
+  "staticMethodToDisplayDialog": "Metodo statico per visualizzare la finestra di dialogo",
+  "statistics": "Statistiche",
+  "statisticsExportFeatureComingSoon": "Funzionalità di esportazione statistiche in arrivo",
+  "statisticsGrid": "Griglia statistiche",
+  "statisticsPageTitle": "Analisi dei dati",
+  "stirColor": "Colore STIR",
+  "stirFontSize": "Dimensione del carattere STIR",
+  "stirPosition": "Posizione STIR",
+  "storagePermission": "Autorizzazione di archiviazione",
+  "storagePermissionDescription": "Utilizzato per salvare impostazioni e regole.",
+  "subscribe": "Iscriviti",
+  "subscriptionAddSuccess": "Abbonamento \"{name}\" aggiunto correttamente",
+  "@subscriptionAddSuccess": {
+    "description": "Messaggio di successo dell'abbonamento aggiunto",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Sei sicuro di voler eliminare questo abbonamento?",
+  "subscriptionDeleteConfirmTitle": "Elimina abbonamento",
+  "subscriptionDeleted": "Abbonamento eliminato",
+  "@subscriptionDeleted": {
+    "description": "Messaggio di successo dell'abbonamento eliminato"
+  },
+  "subscriptionDeletedSuccessfully": "Abbonamento eliminato correttamente",
+  "subscriptionDeleteFailed": "Impossibile eliminare l'abbonamento: {error}",
+  "subscriptionDeleteSuccess": "Abbonamento eliminato",
+  "subscriptionEmptyState": "Nessun abbonamento disponibile",
+  "subscriptionEmptyText": "Ancora nessun abbonamento",
+  "subscriptionLoadFailed": "Impossibile caricare gli abbonamenti: {error}",
+  "subscriptionLoadingFailed": "Impossibile caricare gli abbonamenti: {error}",
+  "subscriptionManagementTitle": "Gestione abbonamenti",
+  "subscriptionName": "Nome abbonamento",
+  "@subscriptionName": {
+    "description": "Etichetta del campo Nome abbonamento"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Il nome e l'URL dell'abbonamento non possono essere vuoti",
+  "subscriptionNameHint": "Inserisci il nome dell'abbonamento",
+  "subscriptionPageTitle": "Gestione abbonamenti",
+  "subscriptionStatusChangeFailed": "Impossibile modificare lo stato dell'abbonamento: {error}",
+  "subscriptionToggleFailed": "Impossibile attivare/disattivare lo stato dell'abbonamento: {error}",
+  "subscriptionUpdateFailed": "Impossibile aggiornare l'abbonamento: {error}",
+  "subscriptionUpdateSuccess": "Abbonamento aggiornato correttamente",
+  "@subscriptionUpdateSuccess": {
+    "description": "Messaggio di successo dell'aggiornamento dell'abbonamento",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "URL dell'abbonamento",
+  "@subscriptionUrl": {
+    "description": "Etichetta del campo URL dell'abbonamento"
+  },
+  "subscriptionUrlHint": "Inserisci l'URL dell'abbonamento",
+  "successfullyImportedRules": "{count} regole importate correttamente",
+  "supportSync": "Supporto sincronizzazione",
+  "survey": "Sondaggio",
+  "syncDevicesButton": "Sincronizza dispositivi",
+  "synced": "Sincronizzato",
+  "@synced": {
+    "description": "Etichetta stato sincronizzato"
+  },
+  "syncFailed": "Sincronizzazione non riuscita",
+  "syncFailedMessage": "Sincronizzazione non riuscita",
+  "syncFolderNameHint": "Inserisci il nome della cartella di sincronizzazione (predefinito: NotificationManager)",
+  "syncFolderNameLabel": "Nome cartella di sincronizzazione",
+  "synchronized": "Sincronizzato",
+  "@synchronized": {
+    "description": "Etichetta stato sincronizzato"
+  },
+  "syncing": "Sincronizzazione in corso...",
+  "syncNow": "Sincronizza ora",
+  "@syncNow": {
+    "description": "Testo del pulsante Sincronizza ora"
+  },
+  "syncNowButton": "Sincronizza ora",
+  "syncStatusTitle": "Stato sincronizzazione",
+  "syncStatusUpdatedMessage": "Stato sincronizzazione aggiornato",
+  "syncSuccessful": "Sincronizzazione riuscita",
+  "syncSuccessMessage": "Sincronizzazione riuscita",
+  "syncWithCloudStorage": "Sincronizza con l'archiviazione cloud",
+  "syncWithCloudStorageSubtitle": "Sincronizza con l'archiviazione cloud",
+  "systemFeatures": "Funzionalità del sistema:",
+  "systemSettingsTitle": "Impostazioni di sistema",
+  "tabAll": "Tutti",
+  "tabAnswered": "Risposto",
+  "tabBlocked": "Bloccato",
+  "tabMissed": "Perso",
+  "tabOutgoing": "In uscita",
+  "tagLabel": "Etichetta: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Tag aggiornati",
+  "takeaway": "Da asporto",
+  "telecommunication": "Telecomunicazioni",
+  "telegram": "Telegram",
+  "telemarketing": "Telemarketing",
+  "testButton": "TEST",
+  "testButtonLabel": "TEST",
+  "testConnectionButton": "Testa connessione",
+  "textColorsSetting": "Colori testo ed etichette",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Questa app è un potente strumento di identificazione del chiamante che ti consente di identificare e bloccare le chiamate indesiderate.",
+  "thisWeek": "Questa settimana",
+  "timeInterceptor": "Intercettatore temporale",
+  "timeInterceptorDescription": "Intercetta automaticamente le potenziali chiamate indesiderate in base alla frequenza delle chiamate",
+  "timeInterceptorExplanation": "• Intercettatore temporale: intercetta le chiamate ripetute in un breve periodo di tempo",
+  "timeInterceptorExplanationContent": "La funzione di intercettazione della frequenza delle chiamate analizza la frequenza delle chiamate per identificare e intercettare automaticamente le chiamate indesiderate frequenti.",
+  "timeInterceptorExplanationTitle": "Spiegazione dell'intercettazione della frequenza delle chiamate",
+  "timeInterceptorSettingsTitle": "Impostazioni dell'intercettatore temporale",
+  "timeInterceptorSubtitle": "Intercetta automaticamente le potenziali chiamate indesiderate in base alla frequenza delle chiamate",
+  "timeInterceptorTitle": "Abilita l'intercettatore temporale",
+  "timeWindowDescription": "Imposta la dimensione della finestra temporale per intercettare le chiamate ripetute. Le chiamate dallo stesso numero all'interno di questa finestra verranno intercettate",
+  "timeWindowLabel": "Finestra temporale di intercettazione (minuti): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Etichetta della finestra temporale con la durata in minuti",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Imposta la dimensione della finestra temporale per intercettare le chiamate ripetute. Le chiamate dallo stesso numero all'interno di questa finestra verranno intercettate",
+  "today": "Oggi",
+  "total": "Totale",
+  "totalBlocked": "Totale bloccate",
+  "totalFiltered": "Totale filtrate",
+  "transferDataBetweenDevicesOrPlatforms": "Trasferisci dati tra dispositivi o piattaforme",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Trasferisci dati tra dispositivi o piattaforme",
+  "travelTicketing": "Biglietteria viaggi",
+  "trend": "Tendenza",
+  "trendChart": "Grafico di tendenza",
+  "tutorial": "Tutorial",
+  "type": "Tipo",
+  "unassignedSIMCard": "SIM non assegnata",
+  "unknown": "Sconosciuto",
+  "@unknown": {
+    "description": "Mostra testo per stato sconosciuto"
+  },
+  "unknownAction": "Azione sconosciuta",
+  "unknownLabel": "Etichetta sconosciuta",
+  "unknownTag": "Etichetta: Sconosciuto",
+  "unregisterButton": "Annulla registrazione",
+  "unregisterDeviceConfirmationMessage": "Sei sicuro di voler annullare la registrazione di {deviceName}?",
+  "unregisterDeviceTitle": "Annulla registrazione dispositivo",
+  "unsupportedFileFormat": "Formato file non supportato",
+  "update": "Aggiorna",
+  "updateAllNow": "Aggiorna tutto ora",
+  "updateCallFilterConfig": "Aggiorna la configurazione del filtro chiamate",
+  "@updateCallFilterConfig": {
+    "description": "Testo del pulsante per aggiornare la configurazione del filtro chiamate"
+  },
+  "updateContactFailed": "Impossibile aggiornare il contatto: {error}",
+  "updateFavoriteStatus": "Aggiorna lo stato dei preferiti",
+  "updateFavoriteStatusFailed": "Impossibile aggiornare lo stato dei preferiti: {error}",
+  "updateInterval": "Intervallo di aggiornamento",
+  "updateLabelFailed": "Impossibile aggiornare l'etichetta",
+  "updateNow": "Aggiorna ora",
+  "updatePlugin": "Aggiorna plugin",
+  "updatePluginFailed": "Impossibile aggiornare il plugin: {error}",
+  "updateRuleFailed": "Impossibile aggiornare la regola: {error}",
+  "updateSubscriptionFailed": "Impossibile aggiornare l'abbonamento: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Messaggio di errore di mancato aggiornamento dell'abbonamento",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} aggiornato correttamente ({count} regole)",
+  "@updateSuccess": {
+    "description": "Messaggio di successo dell'aggiornamento di un singolo servizio",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "Aggiorna tag",
+  "useCasesPoint1": "• Identifica le chiamate indesiderate con ricomposizione automatica",
+  "useCasesPoint2": "• Intercetta le chiamate di marketing che chiamano più volte in un breve periodo di tempo",
+  "useCasesPoint3": "• Impedisci il bombardamento telefonico e le molestie",
+  "useCasesTitle": "Casi d'uso:",
+  "useGlobalSettings": "Usa impostazioni globali",
+  "userEmail": "utente@esempio.com",
+  "usernameLabel": "Nome utente",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Utilizza la sintassi regex standard per definire i modelli. Esempi:",
+  "validateRegex": "Valida Regex",
+  "verificationFailedText": "Non riuscito",
+  "verifiedText": "Verificato",
+  "verify": "Verifica",
+  "version": "Versione: {version}",
+  "vipExchangeDescription": "Scambia l'abbonamento VIP con il numero di contrassegni del numero di telefono",
+  "vipExchangeTitle": "VIP scambio contrassegni",
+  "watchAd": "Guarda l'annuncio",
+  "watchAdForTemp": "Guarda l'annuncio per privilegi temporanei",
+  "watchAdForTempDescription": "Guarda un breve annuncio per sbloccare temporaneamente alcune funzionalità premium",
+  "webDAVConfigTitle": "Configurazione WebDAV",
+  "webdavConfigurationTitle": "Configurazione WebDAV",
+  "webdavPasswordHint": "Inserisci la password WebDAV",
+  "webdavServerAddressHint": "Inserisci l'indirizzo del server WebDAV",
+  "webdavUsernameHint": "Inserisci il nome utente WebDAV",
+  "week": "Settimana",
+  "weekly": "Settimanale",
+  "weeklyBlockedCallsSummary": "Riepilogo settimanale delle chiamate bloccate",
+  "weeklyChartTitle": "Chiamate bloccate settimanali",
+  "weeklyReport": "Rapporto settimanale",
+  "@weeklyReport": {
+    "description": "Opzione di notifica del rapporto settimanale"
+  },
+  "weeklyReportDesc": "Ricevi un rapporto riepilogativo settimanale dell'attività di blocco delle chiamate",
+  "@weeklyReportDesc": {
+    "description": "Descrizione dell'opzione del rapporto settimanale"
+  },
+  "welcome": "Benvenuto",
+  "whitelist": "Lista bianca",
+  "@whitelist": {
+    "description": "Etichetta della lista bianca"
+  },
+  "whitelistLabel": "Lista bianca",
+  "width": "Larghezza",
+  "wildcardMatchingDescription": "Utilizza '.' per trovare qualsiasi carattere (ad esempio, '123.456' corrisponde a 123-456)",
+  "wildcardMatchingTitle": "Corrispondenza con caratteri jolly:",
+  "wildcardSupportForFlexibleFiltering": "Supporto dei caratteri jolly per un filtro flessibile",
+  "windowSizeSetting": "Dimensione della finestra",
+  "year": "Anno",
+  "yearly": "Annuale",
+  "yearlyChartTitle": "Chiamate bloccate annuali",
+  "noSimCardsDetected": "Nessuna SIM rilevata",
+  "filterManagementDescription": "Imposta filtri chiamata",
+  "callerIdCustomizationSubtitle": "Personalizza il layout dell'ID chiamante",
+  "yesterday": "Ieri"
+}

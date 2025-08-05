@@ -1,0 +1,365 @@
+{
+  "simCardFontSize": "ขนาดตัวอักษรของซิมการ์ด",
+  "simCardPosition": "ตำแหน่งของซิมการ์ด",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "ข้อมูลซิมการ์ด",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "ไม่สามารถโหลดข้อมูลซิมการ์ด: {error}",
+  "simRuleInstructions": "กฎช่องใส่ซิมช่วยให้คุณกำหนดค่ากฎการกรองอิสระสำหรับแต่ละช่องใส่ซิม",
+  "simRuleInstructionsTitle": "กฎช่องใส่ซิม",
+  "@simRuleInstructionsTitle": {
+    "description": "ชื่อส่วนสำหรับคำแนะนำกฎช่องใส่ซิม"
+  },
+  "simRuleManagement": "การจัดการกฎช่องใส่ซิม",
+  "@simRuleManagement": {
+    "description": "ชื่อส่วนการจัดการกฎช่องใส่ซิม"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "ข้อความที่แสดงช่องใส่ซิม 1 พร้อมรหัส ISO ประเทศ",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "ข้อความที่แสดงช่องใส่ซิม 2 พร้อมรหัส ISO ประเทศ",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "ไม่สามารถโหลดข้อมูล SIM: {error}",
+  "simSlotFilterConfiguration": "การกำหนดค่าตัวกรองช่องใส่ซิม",
+  "simSlotFilterConfigurationDescription": "อนุญาตให้ตั้งค่ากฎตัวกรองตามช่องใส่ SIM",
+  "simSlotFilterDescription": "กำหนดค่ากฎการกรองอิสระสำหรับแต่ละซิมการ์ด:",
+  "simSlotFilterSettingsTitle": "การตั้งค่าตัวกรองช่องใส่ซิม {slotNumber}",
+  "@simSlotFilterSettingsTitle": {
+    "description": "ชื่อสำหรับการตั้งค่าตัวกรองช่องใส่ซิม",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "ไม่สามารถโหลดช่องใส่ซิม: {error}",
+  "simSlotManagement": "การจัดการช่องใส่ซิม",
+  "simSlotOperationFailed": "การดำเนินการช่องใส่ซิมล้มเหลว: {error}",
+  "@simSlotOperationFailed": {
+    "description": "ข้อความแสดงข้อผิดพลาดในการดำเนินการช่องใส่ซิม",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "ตำแหน่งช่องใส่ซิม {slotNumber}",
+  "@simSlotPosition": {
+    "description": "การแสดงตำแหน่งช่องใส่ซิม",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• กฎช่องใส่ซิม: กลยุทธ์การกรองอิสระต่อ SIM",
+  "simSlotRuleListTitle": "รายการกฎช่องใส่ซิม",
+  "simSlotRuleManagement": "กฎช่องใส่ซิม",
+  "simSlotRuleManagementTitle": "การจัดการกฎ",
+  "simSlotSettings": "การตั้งค่าช่องใส่ซิม",
+  "@simSlotSettings": {
+    "description": "ชื่อสำหรับหน้าการตั้งค่าช่องใส่ซิม"
+  },
+  "simSlotTitle": "ช่องใส่ซิม {slotNumber}",
+  "skip": "ข้าม",
+  "smartCallerId": "รหัสผู้โทรอัจฉริยะ",
+  "sms": "SMS",
+  "smsFilterDescription": "การกรอง SMS ช่วยให้คุณกรองข้อความสแปมโดยอัตโนมัติและทำให้รายการข้อความของคุณสะอาด คุณสามารถตั้งค่ากฎการกรองและวิธีการแจ้งเตือนได้",
+  "smsFilterDisabled": "ปิดใช้งานการกรอง SMS",
+  "smsFilterEnabled": "เปิดใช้งานการกรอง SMS",
+  "smsFilterRuleAddedSuccessfully": "เพิ่มกฎตัวกรอง SMS สำเร็จแล้ว",
+  "smsFilterRules": "กฎตัวกรอง SMS",
+  "smsFilterSettings": "การตั้งค่าตัวกรอง SMS",
+  "smsHistory": "ประวัติ SMS",
+  "smsManagement": "การจัดการ SMS",
+  "smsPermission": "การอนุญาต SMS",
+  "smsPermissionDescription": "ใช้เพื่อกรองข้อความสแปม",
+  "smsRuleAddedSuccessfully": "เพิ่มกฎ SMS สำเร็จแล้ว",
+  "smsRuleDeletedSuccessfully": "ลบกฎ SMS สำเร็จแล้ว",
+  "smsRuleLoadFailed": "ไม่สามารถโหลดกฎ SMS: {error}",
+  "smsRuleManagement": "การจัดการกฎ SMS",
+  "smsRulesExportedSuccessfully": "ส่งออกกฎ SMS ไปยัง {filePath} สำเร็จแล้ว",
+  "smsRulesImportedSuccessfully": "นำเข้ากฎ SMS สำเร็จแล้ว",
+  "smsRuleSubscription": "การสมัครสมาชิกกฎ SMS",
+  "smsRuleUpdatedSuccessfully": "อัปเดตกฎ SMS สำเร็จแล้ว",
+  "smsSettingsSubtitle": "การกรอง SMS และการบล็อกคำหลัก",
+  "smsSettingsTitle": "การตั้งค่า SMS",
+  "smsSubscription": "การสมัครสมาชิก SMS",
+  "smsSubscriptionAddedSuccessfully": "เพิ่มการสมัครสมาชิก SMS สำเร็จแล้ว",
+  "smsSubscriptionRulesDescription": "สมัครสมาชิกรายการกฎ SMS ผ่าน URL โดยรองรับการจับคู่Regular Expression คุณสามารถตั้งค่าการบล็อกหรืออนุญาตการกระทำได้",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "คำขออนุญาตบางรายการถูกปฏิเสธ",
+  "spamLikely": "สแปม",
+  "startColor": "สีเริ่มต้น",
+  "startDate": "วันที่เริ่มต้น",
+  "startUsing": "เริ่มต้นใช้งาน",
+  "statAnswered": "รับสาย",
+  "statBlocked": "บล็อก",
+  "staticMethodShowCallerIdDialog": "วิธีการคงที่เพื่อแสดงกล่องโต้ตอบข้อมูล ID ผู้โทร",
+  "staticMethodToDisplayCountrySelectionDialog": "วิธีการคงที่เพื่อแสดงกล่องโต้ตอบการเลือกประเทศ",
+  "staticMethodToDisplayDialog": "วิธีการคงที่เพื่อแสดงกล่องโต้ตอบ",
+  "statistics": "สถิติ",
+  "statisticsExportFeatureComingSoon": "คุณสมบัติการส่งออกสถิติเร็ว ๆ นี้",
+  "statisticsGrid": "ตารางสถิติ",
+  "statisticsPageTitle": "การวิเคราะห์ข้อมูล",
+  "stirColor": "สี STIR",
+  "stirFontSize": "ขนาดตัวอักษร STIR",
+  "stirPosition": "ตำแหน่ง STIR",
+  "storagePermission": "การอนุญาตพื้นที่จัดเก็บข้อมูล",
+  "storagePermissionDescription": "ใช้เพื่อบันทึกการตั้งค่าและกฎ",
+  "subscribe": "สมัครสมาชิก",
+  "subscriptionAddSuccess": "เพิ่มการสมัครสมาชิก \"{name}\" สำเร็จแล้ว",
+  "@subscriptionAddSuccess": {
+    "description": "ข้อความแสดงความสำเร็จในการเพิ่มการสมัครสมาชิก",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "คุณแน่ใจหรือไม่ว่าต้องการลบการสมัครสมาชิกนี้",
+  "subscriptionDeleteConfirmTitle": "ลบการสมัครสมาชิก",
+  "subscriptionDeleted": "ลบการสมัครสมาชิกแล้ว",
+  "@subscriptionDeleted": {
+    "description": "ข้อความแสดงความสำเร็จในการลบการสมัครสมาชิก"
+  },
+  "subscriptionDeletedSuccessfully": "ลบการสมัครสมาชิกสำเร็จแล้ว",
+  "subscriptionDeleteFailed": "ไม่สามารถลบการสมัครสมาชิก: {error}",
+  "subscriptionDeleteSuccess": "ลบการสมัครสมาชิกแล้ว",
+  "subscriptionEmptyState": "ไม่มีการสมัครสมาชิก",
+  "subscriptionEmptyText": "ยังไม่มีการสมัครสมาชิก",
+  "subscriptionLoadFailed": "ไม่สามารถโหลดการสมัครสมาชิก: {error}",
+  "subscriptionLoadingFailed": "ไม่สามารถโหลดการสมัครสมาชิก: {error}",
+  "subscriptionManagementTitle": "การจัดการการสมัครสมาชิก",
+  "subscriptionName": "ชื่อการสมัครสมาชิก",
+  "@subscriptionName": {
+    "description": "ป้ายกำกับช่องชื่อการสมัครสมาชิก"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "ชื่อและการสมัครสมาชิกต้องไม่ว่างเปล่า",
+  "subscriptionNameHint": "ป้อนชื่อการสมัครสมาชิก",
+  "subscriptionPageTitle": "การจัดการการสมัครสมาชิก",
+  "subscriptionStatusChangeFailed": "ไม่สามารถเปลี่ยนสถานะการสมัครสมาชิก: {error}",
+  "subscriptionToggleFailed": "ไม่สามารถสลับสถานะการสมัครสมาชิก: {error}",
+  "subscriptionUpdateFailed": "ไม่สามารถอัปเดตการสมัครสมาชิก: {error}",
+  "subscriptionUpdateSuccess": "อัปเดตการสมัครสมาชิกสำเร็จแล้ว",
+  "@subscriptionUpdateSuccess": {
+    "description": "ข้อความแสดงความสำเร็จในการอัปเดตการสมัครสมาชิก",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "URL การสมัครสมาชิก",
+  "@subscriptionUrl": {
+    "description": "ป้ายกำกับช่อง URL การสมัครสมาชิก"
+  },
+  "subscriptionUrlHint": "ป้อน URL การสมัครสมาชิก",
+  "successfullyImportedRules": "นำเข้า {count} กฎสำเร็จแล้ว",
+  "supportSync": "สนับสนุนการซิงค์",
+  "survey": "แบบสำรวจ",
+  "syncDevicesButton": "ซิงค์อุปกรณ์",
+  "synced": "ซิงค์แล้ว",
+  "@synced": {
+    "description": "ป้ายกำกับสถานะซิงค์แล้ว"
+  },
+  "syncFailed": "การซิงค์ล้มเหลว",
+  "syncFailedMessage": "การซิงค์ล้มเหลว",
+  "syncFolderNameHint": "โปรดป้อนชื่อโฟลเดอร์ซิงค์ (ค่าเริ่มต้น: NotificationManager)",
+  "syncFolderNameLabel": "ชื่อโฟลเดอร์ซิงค์",
+  "synchronized": "ซิงโครไนซ์แล้ว",
+  "@synchronized": {
+    "description": "ป้ายกำกับสถานะซิงโครไนซ์แล้ว"
+  },
+  "syncing": "กำลังซิงค์...",
+  "syncNow": "ซิงค์ทันที",
+  "@syncNow": {
+    "description": "ข้อความปุ่มซิงค์ทันที"
+  },
+  "syncNowButton": "ซิงค์ทันที",
+  "syncStatusTitle": "สถานะการซิงค์",
+  "syncStatusUpdatedMessage": "อัปเดตสถานะการซิงค์แล้ว",
+  "syncSuccessful": "การซิงค์สำเร็จ",
+  "syncSuccessMessage": "การซิงค์สำเร็จ",
+  "syncWithCloudStorage": "ซิงค์กับที่เก็บข้อมูลบนคลาวด์",
+  "syncWithCloudStorageSubtitle": "ซิงค์กับที่เก็บข้อมูลบนคลาวด์",
+  "systemFeatures": "คุณสมบัติของระบบ:",
+  "systemSettingsTitle": "การตั้งค่าระบบ",
+  "tabAll": "ทั้งหมด",
+  "tabAnswered": "รับสาย",
+  "tabBlocked": "บล็อก",
+  "tabMissed": "ไม่ได้รับสาย",
+  "tabOutgoing": "โทรออก",
+  "tagLabel": "แท็ก: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "อัปเดตแท็กแล้ว",
+  "takeaway": "ซื้อกลับบ้าน",
+  "telecommunication": "โทรคมนาคม",
+  "telegram": "Telegram",
+  "telemarketing": "การตลาดทางโทรศัพท์",
+  "testButton": "ทดสอบ",
+  "testButtonLabel": "ทดสอบ",
+  "testConnectionButton": "ทดสอบการเชื่อมต่อ",
+  "textColorsSetting": "สีของข้อความและป้ายกำกับ",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "แอปนี้เป็นเครื่องมือ ID ผู้โทรที่มีประสิทธิภาพซึ่งช่วยให้คุณสามารถระบุและบล็อกการโทรที่ไม่พึงประสงค์ได้",
+  "thisWeek": "สัปดาห์นี้",
+  "timeInterceptor": "ตัวสกัดกั้นเวลา",
+  "timeInterceptorDescription": "สกัดกั้นการโทรสแปมที่อาจเกิดขึ้นโดยอัตโนมัติตามความถี่ในการโทร",
+  "timeInterceptorExplanation": "• ตัวสกัดกั้นเวลา: สกัดกั้นการโทรซ้ำภายในระยะเวลาอันสั้น",
+  "timeInterceptorExplanationContent": "คุณสมบัติการสกัดกั้นความถี่ในการโทรจะวิเคราะห์ความถี่ในการโทรเพื่อระบุและสกัดกั้นการโทรสแปมบ่อย ๆ โดยอัตโนมัติ",
+  "timeInterceptorExplanationTitle": "คำอธิบายการสกัดกั้นความถี่ในการโทร",
+  "timeInterceptorSettingsTitle": "การตั้งค่าตัวสกัดกั้นเวลา",
+  "timeInterceptorSubtitle": "สกัดกั้นการโทรสแปมที่อาจเกิดขึ้นโดยอัตโนมัติตามความถี่ในการโทร",
+  "timeInterceptorTitle": "เปิดใช้งานตัวสกัดกั้นเวลา",
+  "timeWindowDescription": "ตั้งค่าขนาดหน้าต่างเวลาสำหรับการสกัดกั้นการโทรซ้ำ การโทรจากหมายเลขเดียวกันภายในหน้าต่างนี้จะถูกสกัดกั้น",
+  "timeWindowLabel": "หน้าต่างเวลาการสกัดกั้น (นาที): {minutes}",
+  "@timeWindowLabel": {
+    "description": "ป้ายกำกับหน้าต่างเวลาพร้อมระยะเวลาเป็นนาที",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "ตั้งค่าขนาดหน้าต่างเวลาสำหรับการสกัดกั้นการโทรซ้ำ การโทรจากหมายเลขเดียวกันภายในหน้าต่างนี้จะถูกสกัดกั้น",
+  "today": "วันนี้",
+  "total": "ทั้งหมด",
+  "totalBlocked": "บล็อกทั้งหมด",
+  "totalFiltered": "กรองทั้งหมด",
+  "transferDataBetweenDevicesOrPlatforms": "ถ่ายโอนข้อมูลระหว่างอุปกรณ์หรือแพลตฟอร์ม",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "ถ่ายโอนข้อมูลระหว่างอุปกรณ์หรือแพลตฟอร์ม",
+  "travelTicketing": "การออกตั๋วเดินทาง",
+  "trend": "แนวโน้ม",
+  "trendChart": "แผนภูมิแนวโน้ม",
+  "tutorial": "บทช่วยสอน",
+  "type": "ประเภท",
+  "unassignedSIMCard": "ซิมการ์ดที่ไม่ได้กำหนด",
+  "unknown": "ไม่รู้จัก",
+  "@unknown": {
+    "description": "แสดงข้อความสำหรับสถานะที่ไม่รู้จัก"
+  },
+  "unknownAction": "การกระทำที่ไม่รู้จัก",
+  "unknownLabel": "ป้ายกำกับที่ไม่รู้จัก",
+  "unknownTag": "แท็ก: ไม่รู้จัก",
+  "unregisterButton": "ยกเลิกการลงทะเบียน",
+  "unregisterDeviceConfirmationMessage": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการลงทะเบียน {deviceName}?",
+  "unregisterDeviceTitle": "ยกเลิกการลงทะเบียนอุปกรณ์",
+  "unsupportedFileFormat": "รูปแบบไฟล์ไม่รองรับ",
+  "update": "อัปเดต",
+  "updateAllNow": "อัปเดตทั้งหมดทันที",
+  "updateCallFilterConfig": "อัปเดตการกำหนดค่าตัวกรองการโทร",
+  "@updateCallFilterConfig": {
+    "description": "ข้อความปุ่มสำหรับอัปเดตการกำหนดค่าตัวกรองการโทร"
+  },
+  "updateContactFailed": "ไม่สามารถอัปเดตผู้ติดต่อ: {error}",
+  "updateFavoriteStatus": "อัปเดตสถานะรายการโปรด",
+  "updateFavoriteStatusFailed": "ไม่สามารถอัปเดตสถานะรายการโปรด: {error}",
+  "updateInterval": "ช่วงเวลาการอัปเดต",
+  "updateLabelFailed": "ไม่สามารถอัปเดตป้ายกำกับ",
+  "updateNow": "อัปเดตทันที",
+  "updatePlugin": "อัปเดตปลั๊กอิน",
+  "updatePluginFailed": "ไม่สามารถอัปเดตปลั๊กอิน: {error}",
+  "updateRuleFailed": "ไม่สามารถอัปเดตกฎ: {error}",
+  "updateSubscriptionFailed": "ไม่สามารถอัปเดตการสมัครสมาชิก: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "ข้อความแสดงข้อผิดพลาดที่ไม่สามารถอัปเดตการสมัครสมาชิก",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} อัปเดตสำเร็จแล้ว ({count} กฎ)",
+  "@updateSuccess": {
+    "description": "ข้อความแสดงความสำเร็จในการอัปเดตบริการเดียว",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "อัปเดตแท็ก",
+  "useCasesPoint1": "• ระบุการโทรสแปมแบบโทรซ้ำอัตโนมัติ",
+  "useCasesPoint2": "• สกัดกั้นการโทรทางการตลาดที่โทรหลายครั้งในช่วงเวลาสั้น ๆ",
+  "useCasesPoint3": "• ป้องกันการทิ้งระเบิดทางโทรศัพท์และการคุกคาม",
+  "useCasesTitle": "กรณีการใช้งาน:",
+  "useGlobalSettings": "ใช้การตั้งค่าส่วนกลาง",
+  "userEmail": "user@example.com",
+  "usernameLabel": "ชื่อผู้ใช้",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "ใช้ไวยากรณ์ regex มาตรฐานเพื่อกำหนดรูปแบบ ตัวอย่าง:",
+  "validateRegex": "ตรวจสอบ Regex",
+  "verificationFailedText": "ล้มเหลว",
+  "verifiedText": "ยืนยันแล้ว",
+  "verify": "ยืนยัน",
+  "version": "เวอร์ชัน: {version}",
+  "vipExchangeDescription": "แลกเปลี่ยนสมาชิก VIP กับจำนวนการทำเครื่องหมายหมายเลขโทรศัพท์",
+  "vipExchangeTitle": "VIP การแลกเปลี่ยนเครื่องหมาย",
+  "watchAd": "ดูโฆษณา",
+  "watchAdForTemp": "ดูโฆษณาสำหรับสิทธิ์ชั่วคราว",
+  "watchAdForTempDescription": "ดูโฆษณาสั้น ๆ เพื่อปลดล็อกคุณสมบัติพรีเมียมบางอย่างชั่วคราว",
+  "webDAVConfigTitle": "การกำหนดค่า WebDAV",
+  "webdavConfigurationTitle": "การกำหนดค่า WebDAV",
+  "webdavPasswordHint": "โปรดป้อนรหัสผ่าน WebDAV",
+  "webdavServerAddressHint": "โปรดป้อนที่อยู่เซิร์ฟเวอร์ WebDAV",
+  "webdavUsernameHint": "โปรดป้อนชื่อผู้ใช้ WebDAV",
+  "week": "สัปดาห์",
+  "weekly": "รายสัปดาห์",
+  "weeklyBlockedCallsSummary": "สรุปการโทรที่ถูกบล็อกรายสัปดาห์",
+  "weeklyChartTitle": "การโทรที่ถูกบล็อกรายสัปดาห์",
+  "weeklyReport": "รายงานรายสัปดาห์",
+  "@weeklyReport": {
+    "description": "ตัวเลือกการแจ้งเตือนรายงานรายสัปดาห์"
+  },
+  "weeklyReportDesc": "รับรายงานสรุปรายสัปดาห์ของกิจกรรมการบล็อกการโทร",
+  "@weeklyReportDesc": {
+    "description": "คำอธิบายสำหรับตัวเลือกรายงานรายสัปดาห์"
+  },
+  "welcome": "ยินดีต้อนรับ",
+  "whitelist": "รายการที่อนุญาต",
+  "@whitelist": {
+    "description": "ป้ายกำกับรายการที่อนุญาต"
+  },
+  "whitelistLabel": "รายการที่อนุญาต",
+  "width": "ความกว้าง",
+  "wildcardMatchingDescription": "ใช้ '.' เพื่อให้ตรงกับอักขระใด ๆ (เช่น '123.456' ตรงกับ 123-456)",
+  "wildcardMatchingTitle": "การจับคู่ไวลด์การ์ด:",
+  "wildcardSupportForFlexibleFiltering": "การสนับสนุนไวลด์การ์ดสำหรับการกรองที่ยืดหยุ่น",
+  "windowSizeSetting": "ขนาดหน้าต่าง",
+  "year": "ปี",
+  "yearly": "รายปี",
+  "yearlyChartTitle": "การโทรที่ถูกบล็อกรายปี",
+  "noSimCardsDetected": "ไม่พบซิมการ์ด",
+  "filterManagementDescription": "ตั้งค่าตัวกรองการโทร",
+  "callerIdCustomizationSubtitle": "ปรับแต่งเค้าโครง ID ผู้โทร",
+  "yesterday": "เมื่อวาน"
+}
