@@ -1,0 +1,394 @@
+{
+  "setEncryptionPassword": "Tetapkan Kata Laluan Penyulitan",
+  "setEncryptionPasswordDescription": "Tetapkan kata laluan penyulitan untuk sandaran dan pulihkan",
+  "setEncryptionPasswordLabel": "Tetapkan Kata Laluan Penyulitan",
+  "setEncryptionPasswordTitle": "Tetapkan Kata Laluan Penyulitan",
+  "setPasswordButton": "Tetapkan",
+  "settings": "Tetapan",
+  "settingsBackedUpTo": "Tetapan disandarkan ke: {path}",
+  "settingsLoaded": "Tetapan dimuatkan",
+  "settingsLoadFailed": "Gagal memuatkan tetapan: {error}",
+  "settingsRestoredSuccessfully": "Tetapan berjaya dipulihkan. Sila mulakan semula apl untuk perubahan berkuat kuasa.",
+  "settingsSaved": "Tetapan disimpan",
+  "@settingsSaved": {
+    "description": "Mesej pengesahan tetapan disimpan"
+  },
+  "settingsSaveFailed": "Gagal menyimpan tetapan: {error}",
+  "settingsTab": "Tetapan",
+  "settingsTitle": "Tetapan",
+  "setup": "Persediaan",
+  "showContactEditDialogStaticMethod": "Kaedah statik untuk memaparkan dialog edit kenalan",
+  "showExplanation": "Tunjukkan Penjelasan",
+  "silence": "Senyap",
+  "silenceAndNoAnswer": "Senyap dan tiada jawapan",
+  "silenceNoAnswer": "Senyap Tiada Jawapan",
+  "silentCallVoiceClone": "Klon Suara Panggilan Senyap",
+  "silentRules": "Peraturan Senyap",
+  "simCard": "Kad SIM {simNumber}",
+  "simCardColor": "Warna Kad SIM",
+  "simCardConfigurationExplanation": "• Konfigurasi Kad SIM: Tetapkan peraturan penapisan bebas untuk setiap kad SIM",
+  "simCardFilterRules": "Peraturan Penapis Kad SIM",
+  "simCardFilterRulesDescription": "Tetapkan peraturan penapisan yang berbeza berdasarkan slot kad SIM",
+  "simCardFontSize": "Saiz Fon Kad SIM",
+  "simCardPosition": "Kedudukan Kad SIM",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "Maklumat Kad SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Gagal memuatkan maklumat kad SIM: {error}",
+  "simRuleInstructions": "Peraturan slot SIM membolehkan anda mengkonfigurasi peraturan penapisan bebas untuk setiap slot SIM.",
+  "simRuleInstructionsTitle": "Peraturan Slot SIM",
+  "@simRuleInstructionsTitle": {
+    "description": "Tajuk bahagian untuk arahan peraturan slot SIM"
+  },
+  "simRuleManagement": "Pengurusan Peraturan Slot SIM",
+  "@simRuleManagement": {
+    "description": "Tajuk bahagian pengurusan peraturan slot SIM"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Teks yang menunjukkan slot SIM 1 dengan kod ISO negara",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Teks yang menunjukkan slot SIM 2 dengan kod ISO negara",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Gagal memuatkan data SIM: {error}",
+  "simSlotFilterConfiguration": "Konfigurasi Penapis Slot SIM",
+  "simSlotFilterConfigurationDescription": "Membenarkan untuk menetapkan peraturan penapis mengikut slot SIM",
+  "simSlotFilterDescription": "Konfigurasikan peraturan penapisan bebas untuk setiap kad SIM:",
+  "simSlotFilterSettingsTitle": "Tetapan Penapis Slot {slotNumber} SIM",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Tajuk untuk tetapan penapis slot SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Gagal memuatkan slot SIM: {error}",
+  "simSlotManagement": "Pengurusan Slot SIM",
+  "simSlotOperationFailed": "Operasi slot SIM gagal: {error}",
+  "@simSlotOperationFailed": {
+    "description": "Mesej kegagalan operasi slot SIM",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "Kedudukan Slot SIM {slotNumber}",
+  "@simSlotPosition": {
+    "description": "Paparan kedudukan slot SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• Ciri Peraturan Slot SIM: Strategi penapisan bebas setiap SIM",
+  "simSlotRuleListTitle": "Senarai Peraturan Slot SIM",
+  "simSlotRuleManagement": "Peraturan Slot SIM",
+  "simSlotRuleManagementTitle": "Pengurusan Peraturan",
+  "simSlotSettings": "Tetapan Slot SIM",
+  "@simSlotSettings": {
+    "description": "Tajuk untuk halaman tetapan slot SIM"
+  },
+  "simSlotTitle": "Slot SIM {slotNumber}",
+  "skip": "Langkau",
+  "smartCallerId": "Pengenalan Panggilan Pintar",
+  "sms": "SMS",
+  "smsFilterDescription": "Penapisan SMS membantu anda menapis mesej spam secara automatik dan memastikan senarai mesej anda bersih. Anda boleh menetapkan peraturan penapis dan kaedah pemberitahuan.",
+  "smsFilterDisabled": "Penapisan SMS dilumpuhkan",
+  "smsFilterEnabled": "Penapisan SMS didayakan",
+  "smsFilterRuleAddedSuccessfully": "Peraturan penapis SMS berjaya ditambah",
+  "smsFilterRules": "Peraturan Penapis SMS",
+  "smsFilterSettings": "Tetapan Penapis SMS",
+  "smsHistory": "Sejarah SMS",
+  "smsManagement": "Pengurusan SMS",
+  "smsPermission": "Kebenaran SMS",
+  "smsPermissionDescription": "Digunakan untuk menapis mesej spam.",
+  "smsRuleAddedSuccessfully": "Peraturan SMS berjaya ditambah",
+  "smsRuleDeletedSuccessfully": "Peraturan SMS berjaya dipadamkan",
+  "smsRuleLoadFailed": "Gagal memuatkan peraturan SMS: {error}",
+  "smsRuleManagement": "Pengurusan Peraturan SMS",
+  "smsRulesExportedSuccessfully": "Peraturan SMS berjaya dieksport ke {filePath}",
+  "smsRulesImportedSuccessfully": "Peraturan SMS berjaya diimport",
+  "smsRuleSubscription": "Langganan Peraturan SMS",
+  "smsRuleUpdatedSuccessfully": "Peraturan SMS berjaya dikemas kini",
+  "smsSettingsSubtitle": "Penapisan SMS dan penyekatan kata kunci",
+  "smsSettingsTitle": "Tetapan SMS",
+  "smsSubscription": "Langganan SMS",
+  "smsSubscriptionAddedSuccessfully": "Langganan SMS berjaya ditambah",
+  "smsSubscriptionRulesDescription": "Langgan senarai peraturan SMS melalui URL, menyokong pemadanan ungkapan biasa. Anda boleh menetapkan tindakan sekat atau benarkan.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Beberapa permintaan kebenaran ditolak",
+  "spamLikely": "Spam Mungkin",
+  "startColor": "Warna Mula",
+  "startDate": "Tarikh Mula",
+  "startUsing": "Mulakan Menggunakan",
+  "statAnswered": "Dijawab",
+  "statBlocked": "Disekat",
+  "staticMethodShowCallerIdDialog": "Kaedah statik untuk menunjukkan Dialog Maklumat ID Pemanggil",
+  "staticMethodToDisplayCountrySelectionDialog": "Kaedah statik untuk memaparkan dialog pemilihan negara",
+  "staticMethodToDisplayDialog": "Kaedah statik untuk memaparkan dialog",
+  "statistics": "Statistik",
+  "statisticsExportFeatureComingSoon": "Ciri eksport statistik akan datang tidak lama lagi",
+  "statisticsGrid": "Grid Statistik",
+  "statisticsPageTitle": "Analisis Data",
+  "stirColor": "Warna STIR",
+  "stirFontSize": "Saiz Fon STIR",
+  "stirPosition": "Kedudukan STIR",
+  "storagePermission": "Kebenaran Storan",
+  "storagePermissionDescription": "Digunakan untuk menyimpan tetapan dan peraturan.",
+  "subscribe": "Langgan",
+  "subscriptionAddSuccess": "Langganan \"{name}\" berjaya ditambah",
+  "@subscriptionAddSuccess": {
+    "description": "Mesej kejayaan langganan ditambah",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Adakah anda pasti mahu memadamkan langganan ini?",
+  "subscriptionDeleteConfirmTitle": "Padam Langganan",
+  "subscriptionDeleted": "Langganan dipadamkan",
+  "@subscriptionDeleted": {
+    "description": "Mesej kejayaan langganan dipadamkan"
+  },
+  "subscriptionDeletedSuccessfully": "Langganan dipadamkan dengan jayanya",
+  "subscriptionDeleteFailed": "Gagal memadamkan langganan: {error}",
+  "subscriptionDeleteSuccess": "Langganan dipadamkan",
+  "subscriptionEmptyState": "Tiada langganan tersedia",
+  "subscriptionEmptyText": "Tiada langganan lagi",
+  "subscriptionLoadFailed": "Gagal memuatkan langganan: {error}",
+  "subscriptionLoadingFailed": "Gagal memuatkan langganan: {error}",
+  "subscriptionManagementTitle": "Pengurusan Langganan",
+  "subscriptionName": "Nama Langganan",
+  "@subscriptionName": {
+    "description": "Label medan nama langganan"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Nama dan URL langganan tidak boleh kosong",
+  "subscriptionNameHint": "Masukkan nama langganan",
+  "subscriptionPageTitle": "Pengurusan Langganan",
+  "subscriptionStatusChangeFailed": "Gagal menukar status langganan: {error}",
+  "subscriptionToggleFailed": "Gagal menogol status langganan: {error}",
+  "subscriptionUpdateFailed": "Gagal mengemas kini langganan: {error}",
+  "subscriptionUpdateSuccess": "Langganan berjaya dikemas kini",
+  "@subscriptionUpdateSuccess": {
+    "description": "Mesej kejayaan kemas kini langganan",
+    "placeholders": {},
+  },
+  "subscriptionUrl": "URL Langganan",
+  "@subscriptionUrl": {
+    "description": "Label medan URL langganan"
+  },
+  "subscriptionUrlHint": "Masukkan URL langganan",
+  "successfullyImportedRules": "Berjaya mengimport {count} peraturan",
+  "supportSync": "Sokong Segerak",
+  "survey": "Tinjauan",
+  "syncDevicesButton": "Segerakkan Peranti",
+  "synced": "Disegerakkan",
+  "@synced": {
+    "description": "Label status disegerakkan"
+  },
+  "syncFailed": "Segerak gagal",
+  "syncFailedMessage": "Segerak gagal",
+  "syncFolderNameHint": "Sila masukkan nama folder penyegerakan (lalai: NotificationManager)",
+  "syncFolderNameLabel": "Label Nama Folder Segerak",
+  "synchronized": "Disegerakkan",
+  "@synchronized": {
+    "description": "Label status disegerakkan"
+  },
+  "syncing": "Menyegerakkan...",
+  "syncNow": "Segerak Sekarang",
+  "@syncNow": {
+    "description": "Segerak sekarang teks butang"
+  },
+  "syncNowButton": "Segerak Sekarang",
+  "syncStatusTitle": "Tajuk Status Segerak",
+  "syncStatusUpdatedMessage": "Status segerak dikemas kini",
+  "syncSuccessful": "Segerak berjaya",
+  "syncSuccessMessage": "Segerak berjaya",
+  "syncWithCloudStorage": "Segerak dengan Storan Awan",
+  "syncWithCloudStorageSubtitle": "Segerak dengan storan awan",
+  "systemFeatures": "Ciri Sistem:",
+  "systemSettingsTitle": "Tajuk Tetapan Sistem",
+  "tabAll": "Semua",
+  "tabAnswered": "Dijawab",
+  "tabBlocked": "Disekat",
+  "tabMissed": "Tidak Dijawab",
+  "tabOutgoing": "Panggilan Keluar",
+  "tagLabel": "Tag: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Tag dikemas kini",
+  "takeaway": "Bawa Pulang",
+  "telecommunication": "Telekomunikasi",
+  "telegram": "Telegram",
+  "telemarketing": "Telepemasaran",
+  "testButton": "UJI",
+  "testButtonLabel": "UJI",
+  "testConnectionButton": "Butang Uji Sambungan",
+  "textColorsSetting": "Tetapan Warna Teks & Label",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Apl ini ialah alat ID pemanggil berkuasa yang membolehkan anda mengenal pasti dan menyekat panggilan yang tidak diingini.",
+  "thisWeek": "Minggu Ini",
+  "timeInterceptor": "Pemintas Masa",
+  "timeInterceptorDescription": "Pintas panggilan spam potensi secara automatik berdasarkan kekerapan panggilan",
+  "timeInterceptorExplanation": "• Pemintas Masa: Pintas panggilan berulang dalam masa yang singkat",
+  "timeInterceptorExplanationContent": "Ciri pintasan kekerapan panggilan menganalisis kekerapan panggilan untuk mengenal pasti dan memintas panggilan spam yang kerap secara automatik.",
+  "timeInterceptorExplanationTitle": "Penjelasan Pintasan Kekerapan Panggilan",
+  "timeInterceptorSettingsTitle": "Tetapan Pintasan Kekerapan Panggilan",
+  "timeInterceptorSubtitle": "Pintas panggilan spam potensi secara automatik berdasarkan kekerapan panggilan",
+  "timeInterceptorTitle": "Dayakan Pintasan Kekerapan Panggilan",
+  "timeWindowDescription": "Tetapkan saiz tetingkap masa untuk memintas panggilan berulang. Panggilan daripada nombor yang sama dalam tetingkap ini akan dipintas",
+  "timeWindowLabel": "Tetingkap Masa Pintasan (minit): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Label tetingkap masa dengan tempoh dalam minit",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Tetapkan saiz tetingkap masa untuk memintas panggilan berulang. Panggilan daripada nombor yang sama dalam tetingkap ini akan dipintas",
+  "today": "Hari ini",
+  "total": "Jumlah",
+  "totalBlocked": "Jumlah Disekat",
+  "totalFiltered": "Jumlah Ditapis",
+  "transferDataBetweenDevicesOrPlatforms": "Pindahkan data antara peranti atau platform",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Pindahkan data antara peranti atau platform",
+  "travelTicketing": "Tiket Perjalanan",
+  "trend": "Trend",
+  "trendChart": "Carta Trend",
+  "tutorial": "Tutorial",
+  "type": "Jenis",
+  "unassignedSIMCard": "Kad SIM Tidak Ditugaskan",
+  "unknown": "Tidak Diketahui",
+  "@unknown": {
+    "description": "Paparkan teks untuk status tidak diketahui"
+  },
+  "unknownAction": "Tindakan Tidak Diketahui",
+  "unknownLabel": "Label Tidak Diketahui",
+  "unknownTag": "Tag: Tidak Diketahui",
+  "unregisterButton": "Nyahdaftar",
+  "unregisterDeviceConfirmationMessage": "Adakah anda pasti mahu menyahdaftar {deviceName}?",
+  "unregisterDeviceTitle": "Nyahdaftar Peranti",
+  "unsupportedFileFormat": "Format fail tidak disokong",
+  "update": "Kemas Kini",
+  "updateAllNow": "Kemas Kini Semua Sekarang",
+  "updateCallFilterConfig": "Kemas Kini Konfigurasi Penapis Panggilan",
+  "@updateCallFilterConfig": {
+    "description": "Teks butang untuk mengemas kini konfigurasi penapis panggilan"
+  },
+  "updateContactFailed": "Gagal mengemas kini kenalan: {error}",
+  "updateFavoriteStatus": "Kemas Kini Status Kegemaran",
+  "updateFavoriteStatusFailed": "Gagal mengemas kini status kegemaran: {error}",
+  "updateInterval": "Selang Kemas Kini",
+  "updateLabelFailed": "Gagal mengemas kini label",
+  "updateNow": "Kemas Kini Sekarang",
+  "updatePlugin": "Kemas Kini Plugin",
+  "updatePluginFailed": "Gagal mengemas kini plugin: {error}",
+  "updateRuleFailed": "Gagal mengemas kini peraturan: {error}",
+  "updateSubscriptionFailed": "Gagal mengemas kini langganan: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Mesej ralat gagal mengemas kini langganan",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} dikemas kini dengan jayanya ({count} peraturan)",
+  "@updateSuccess": {
+    "description": "Mesej kejayaan kemas kini perkhidmatan tunggal",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "Kemas Kini Tag",
+  "useCasesPoint1": "• Kenal pasti panggilan spam dail semula automatik",
+  "useCasesPoint2": "• Pintas panggilan pemasaran yang membuat panggilan berbilang kali dalam tempoh yang singkat",
+  "useCasesPoint3": "• Cegah pengeboman dan gangguan telefon",
+  "useCasesTitle": "Kes Penggunaan:",
+  "useGlobalSettings": "Gunakan Tetapan Global",
+  "userEmail": "user@example.com",
+  "usernameLabel": "Nama Pengguna",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Gunakan sintaks regex standard untuk mentakrifkan corak. Contoh:",
+  "validateRegex": "Sahkan Regex",
+  "verificationFailedText": "Gagal",
+  "verifiedText": "Disahkan",
+  "verify": "Sahkan",
+  "version": "Versi: {version}",
+  "vipExchangeDescription": "Tukar keahlian VIP dengan kiraan tanda nombor telefon",
+  "vipExchangeTitle": "Tukar VIP Tanda",
+  "watchAd": "Tonton Iklan",
+  "watchAdForTemp": "Tonton Iklan untuk Keistimewaan Sementara",
+  "watchAdForTempDescription": "Tonton iklan pendek untuk membuka kunci sementara beberapa ciri premium",
+  "webDAVConfigTitle": "Konfigurasi WebDAV",
+  "webdavConfigurationTitle": "Konfigurasi WebDAV",
+  "webdavPasswordHint": "Sila masukkan kata laluan WebDAV",
+  "webdavServerAddressHint": "Sila masukkan alamat pelayan WebDAV",
+  "webdavUsernameHint": "Sila masukkan nama pengguna WebDAV",
+  "week": "Minggu",
+  "weekly": "Mingguan",
+  "weeklyBlockedCallsSummary": "Ringkasan Panggilan Disekat Mingguan",
+  "weeklyChartTitle": "Panggilan Disekat Mingguan",
+  "weeklyReport": "Laporan Mingguan",
+  "@weeklyReport": {
+    "description": "Pilihan pemberitahuan laporan mingguan"
+  },
+  "weeklyReportDesc": "Terima laporan ringkasan mingguan aktiviti menyekat panggilan",
+  "@weeklyReportDesc": {
+    "description": "Penerangan untuk pilihan laporan mingguan"
+  },
+  "welcome": "Selamat Datang",
+  "whitelist": "Senarai Putih",
+  "@whitelist": {
+    "description": "Label senarai putih"
+  },
+  "whitelistLabel": "Senarai Putih",
+  "width": "Lebar",
+  "wildcardMatchingDescription": "Gunakan '.' untuk memadankan sebarang aksara (cth. '123.456' sepadan dengan 123-456)",
+  "wildcardMatchingTitle": "Pemadanan kad bebas:",
+  "wildcardSupportForFlexibleFiltering": "Sokongan Kad Bebas untuk Penapisan Fleksibel",
+  "windowSizeSetting": "Tetapan Saiz Tetingkap",
+  "year": "Tahun",
+  "yearly": "Tahunan",
+  "yearlyChartTitle": "Panggilan Disekat Tahunan",
+  "noSimCardsDetected": "Tiada kad SIM dikesan",
+  "filterManagementDescription": "Tetapkan Penapis Panggilan",
+  "yesterday": "Semalam"
+}

@@ -1,6 +1,6 @@
 ﻿{
   "@@locale": "zh",
-  "about": "About",
+
   "aboutContactSubscription": "About Contact Subscription",
   "@aboutContactSubscription": {
     "description": "About contact subscription title"
