@@ -1,4 +1,3 @@
-{
   "simCardFontSize": "Taille de la police de la carte SIM",
   "simCardPosition": "Position de la carte SIM",
   "simInfo": "SIM {slotNumber} - {countryIso}",

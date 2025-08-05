@@ -1,4 +1,3 @@
-{
   "setEncryptionPassword": "設定加密密碼",
   "setEncryptionPasswordDescription": "設定加密密碼以進行備份和還原",
   "setEncryptionPasswordLabel": "設定加密密碼",

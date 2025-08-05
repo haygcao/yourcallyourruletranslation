@@ -1,4 +1,3 @@
-{
   "setEncryptionPassword": "暗号化パスワードを設定",
   "setEncryptionPasswordDescription": "バックアップと復元のための暗号化パスワードを設定",
   "setEncryptionPasswordLabel": "暗号化パスワードの設定",
