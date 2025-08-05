@@ -1,0 +1,395 @@
+{
+  "setEncryptionPassword": "暗号化パスワードを設定",
+  "setEncryptionPasswordDescription": "バックアップと復元のための暗号化パスワードを設定",
+  "setEncryptionPasswordLabel": "暗号化パスワードの設定",
+  "setEncryptionPasswordTitle": "暗号化パスワードの設定",
+  "setPasswordButton": "設定",
+  "settings": "設定",
+  "settingsBackedUpTo": "設定は以下にバックアップされました：{path}",
+  "settingsLoaded": "設定が読み込まれました",
+  "settingsLoadFailed": "設定の読み込みに失敗しました：{error}",
+  "settingsRestoredSuccessfully": "設定が正常に復元されました。変更を有効にするには、アプリを再起動してください。",
+  "settingsSaved": "設定が保存されました",
+  "@settingsSaved": {
+    "description": "設定が保存されたことを確認するメッセージ"
+  },
+  "settingsSaveFailed": "設定の保存に失敗しました：{error}",
+  "settingsTab": "設定",
+  "settingsTitle": "設定",
+  "setup": "セットアップ",
+  "showContactEditDialogStaticMethod": "連絡先編集ダイアログを表示する静的メソッド",
+  "showExplanation": "説明を表示",
+  "silence": "ミュート",
+  "silenceAndNoAnswer": "ミュートして応答なし",
+  "silenceNoAnswer": "ミュートして応答なし",
+  "silentCallVoiceClone": "サイレント通話音声クローン",
+  "silentRules": "サイレントルール",
+  "simCard": "SIMカード {simNumber}",
+  "simCardColor": "SIMカードの色",
+  "simCardConfigurationExplanation": "• SIMカード構成：各SIMカードに個別のフィルタリングルールを設定します",
+  "simCardFilterRules": "SIMカードフィルタリングルール",
+  "simCardFilterRulesDescription": "SIMカードスロットに基づいて異なるフィルタリングルールを設定します",
+  "simCardFontSize": "SIMカードのフォントサイズ",
+  "simCardPosition": "SIMカードの位置",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIMカード情報",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "SIMカード情報の読み込みに失敗しました：{error}",
+  "simRuleInstructions": "SIMスロットルールを使用すると、各SIMスロットに個別のフィルタリングルールを設定できます。",
+  "simRuleInstructionsTitle": "SIMスロットルール",
+  "@simRuleInstructionsTitle": {
+    "description": "SIMスロットルールの説明のセクションタイトル"
+  },
+  "simRuleManagement": "SIMスロットルール管理",
+  "@simRuleManagement": {
+    "description": "SIMスロットルール管理セクションのタイトル"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "国ISOコード付きのSIMスロット1を示すテキスト",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "国ISOコード付きのSIMスロット2を示すテキスト",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "SIMデータの読み込みに失敗しました：{error}",
+  "simSlotFilterConfiguration": "SIMスロットフィルタ構成",
+  "simSlotFilterConfigurationDescription": "SIMスロットでフィルタリングルールを設定できるようにします",
+  "simSlotFilterDescription": "SIMカードごとに独立したフィルタリングルールを構成します：",
+  "simSlotFilterSettingsTitle": "SIMスロット{slotNumber}フィルタ設定",
+  "@simSlotFilterSettingsTitle": {
+    "description": "SIMスロットフィルタ設定のタイトル",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "SIMスロットの読み込みに失敗しました：{error}",
+  "simSlotManagement": "SIMスロット管理",
+  "simSlotOperationFailed": "SIMスロットの操作に失敗しました：{error}",
+  "@simSlotOperationFailed": {
+    "description": "SIMスロット操作の失敗メッセージ",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIMスロット位置{slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIMスロット位置の表示",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIMスロットルール：SIMごとの独立したフィルタリング戦略",
+  "simSlotRuleListTitle": "SIMスロットルールリスト",
+  "simSlotRuleManagement": "SIMスロットルール",
+  "simSlotRuleManagementTitle": "ルール管理",
+  "simSlotSettings": "SIMスロット設定",
+  "@simSlotSettings": {
+    "description": "SIMスロット設定ページのタイトル"
+  },
+  "simSlotTitle": "SIMスロット{slotNumber}",
+  "skip": "スキップ",
+  "smartCallerId": "スマート発信者ID",
+  "sms": "SMS",
+  "smsFilterDescription": "SMSフィルタリングは、スパムメッセージを自動的にフィルタリングし、メッセージリストをクリーンに保つのに役立ちます。フィルタリングルールと通知方法を設定できます。",
+  "smsFilterDisabled": "SMSフィルタリングが無効",
+  "smsFilterEnabled": "SMSフィルタリングが有効",
+  "smsFilterRuleAddedSuccessfully": "SMSフィルタールールが正常に追加されました",
+  "smsFilterRules": "SMSフィルタールール",
+  "smsFilterSettings": "SMSフィルター設定",
+  "smsHistory": "SMS履歴",
+  "smsManagement": "SMS管理",
+  "smsPermission": "SMS権限",
+  "smsPermissionDescription": "スパムメッセージをフィルタリングするために使用されます。",
+  "smsRuleAddedSuccessfully": "SMSルールが正常に追加されました",
+  "smsRuleDeletedSuccessfully": "SMSルールが正常に削除されました",
+  "smsRuleLoadFailed": "SMSルールの読み込みに失敗しました：{error}",
+  "smsRuleManagement": "SMSルール管理",
+  "smsRulesExportedSuccessfully": "SMSルールは{filePath}に正常にエクスポートされました",
+  "smsRulesImportedSuccessfully": "SMSルールは正常にインポートされました",
+  "smsRuleSubscription": "SMSルールサブスクリプション",
+  "smsRuleUpdatedSuccessfully": "SMSルールが正常に更新されました",
+  "smsSettingsSubtitle": "SMSフィルタリングとキーワードブロック",
+  "smsSettingsTitle": "SMS設定",
+  "smsSubscription": "SMSサブスクリプション",
+  "smsSubscriptionAddedSuccessfully": "SMSサブスクリプションが正常に追加されました",
+  "smsSubscriptionRulesDescription": "URL経由でSMSルールリストを購読し、正規表現マッチングをサポートします。ブロックまたは許可アクションを設定できます。",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "一部の権限リクエストが拒否されました",
+  "spamLikely": "スパムの可能性が高い",
+  "startColor": "開始色",
+  "startDate": "開始日",
+  "startUsing": "はじめに",
+  "statAnswered": "応答済み",
+  "statBlocked": "ブロック済み",
+  "staticMethodShowCallerIdDialog": "発信者ID情報ダイアログを表示する静的メソッド",
+  "staticMethodToDisplayCountrySelectionDialog": "国選択ダイアログを表示する静的メソッド",
+  "staticMethodToDisplayDialog": "ダイアログを表示する静的メソッド",
+  "statistics": "統計",
+  "statisticsExportFeatureComingSoon": "統計エクスポート機能は近日公開予定です",
+  "statisticsGrid": "統計グリッド",
+  "statisticsPageTitle": "データ分析",
+  "stirColor": "STIRカラー",
+  "stirFontSize": "STIRフォントサイズ",
+  "stirPosition": "STIR位置",
+  "storagePermission": "ストレージ権限",
+  "storagePermissionDescription": "設定とルールを保存するために使用されます。",
+  "subscribe": "購読",
+  "subscriptionAddSuccess": "サブスクリプション「{name}」が正常に追加されました",
+  "@subscriptionAddSuccess": {
+    "description": "サブスクリプションが追加されたことを示すメッセージ",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "このサブスクリプションを削除してもよろしいですか？",
+  "subscriptionDeleteConfirmTitle": "サブスクリプションの削除",
+  "subscriptionDeleted": "サブスクリプションが削除されました",
+  "@subscriptionDeleted": {
+    "description": "サブスクリプションが削除されたことを示すメッセージ"
+  },
+  "subscriptionDeletedSuccessfully": "サブスクリプションは正常に削除されました",
+  "subscriptionDeleteFailed": "サブスクリプションの削除に失敗しました：{error}",
+  "subscriptionDeleteSuccess": "サブスクリプションが削除されました",
+  "subscriptionEmptyState": "利用可能なサブスクリプションはありません",
+  "subscriptionEmptyText": "まだサブスクリプションはありません",
+  "subscriptionLoadFailed": "サブスクリプションの読み込みに失敗しました：{error}",
+  "subscriptionLoadingFailed": "サブスクリプションの読み込みに失敗しました：{error}",
+  "subscriptionManagementTitle": "サブスクリプション管理",
+  "subscriptionName": "サブスクリプション名",
+  "@subscriptionName": {
+    "description": "サブスクリプション名フィールドのラベル"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "サブスクリプション名とURLは空にできません",
+  "subscriptionNameHint": "サブスクリプション名を入力してください",
+  "subscriptionPageTitle": "サブスクリプション管理",
+  "subscriptionStatusChangeFailed": "サブスクリプションステータスの変更に失敗しました：{error}",
+  "subscriptionToggleFailed": "サブスクリプションステータスの切り替えに失敗しました：{error}",
+  "subscriptionUpdateFailed": "サブスクリプションの更新に失敗しました：{error}",
+  "subscriptionUpdateSuccess": "サブスクリプションは正常に更新されました",
+  "@subscriptionUpdateSuccess": {
+    "description": "サブスクリプションが正常に更新されたことを示すメッセージ",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "サブスクリプションURL",
+  "@subscriptionUrl": {
+    "description": "サブスクリプションURLフィールドのラベル"
+  },
+  "subscriptionUrlHint": "サブスクリプションURLを入力してください",
+  "successfullyImportedRules": "{count}個のルールが正常にインポートされました",
+  "supportSync": "同期のサポート",
+  "survey": "アンケート",
+  "syncDevicesButton": "デバイスの同期",
+  "synced": "同期済み",
+  "@synced": {
+    "description": "同期済みのステータスラベル"
+  },
+  "syncFailed": "同期に失敗しました",
+  "syncFailedMessage": "同期に失敗しました",
+  "syncFolderNameHint": "同期フォルダー名を入力してください（デフォルト：NotificationManager）",
+  "syncFolderNameLabel": "同期フォルダー名",
+  "synchronized": "同期済み",
+  "@synchronized": {
+    "description": "同期済みのステータスラベル"
+  },
+  "syncing": "同期中...",
+  "syncNow": "今すぐ同期",
+  "@syncNow": {
+    "description": "今すぐ同期ボタンのテキスト"
+  },
+  "syncNowButton": "今すぐ同期",
+  "syncStatusTitle": "同期ステータス",
+  "syncStatusUpdatedMessage": "同期ステータスが更新されました",
+  "syncSuccessful": "同期に成功しました",
+  "syncSuccessMessage": "同期に成功しました",
+  "syncWithCloudStorage": "クラウドストレージと同期",
+  "syncWithCloudStorageSubtitle": "クラウドストレージと同期",
+  "systemFeatures": "システム機能：",
+  "systemSettingsTitle": "システム設定",
+  "tabAll": "すべて",
+  "tabAnswered": "応答済み",
+  "tabBlocked": "ブロック済み",
+  "tabMissed": "不在着信",
+  "tabOutgoing": "発信",
+  "tagLabel": "タグ：{tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "タグが更新されました",
+  "takeaway": "テイクアウト",
+  "telecommunication": "電気通信",
+  "telegram": "Telegram",
+  "telemarketing": "テレマーケティング",
+  "testButton": "テスト",
+  "testButtonLabel": "テスト",
+  "testConnectionButton": "接続テスト",
+  "textColorsSetting": "テキストとラベルの色",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "このアプリは、不要な通話を識別してブロックできる強力な発信者IDツールです。",
+  "thisWeek": "今週",
+  "timeInterceptor": "時間インターセプター",
+  "timeInterceptorDescription": "通話頻度に基づいて潜在的なスパム通話を自動的に傍受します",
+  "timeInterceptorExplanation": "• 時間インターセプター：短時間での繰り返しの通話を傍受します",
+  "timeInterceptorExplanationContent": "通話頻度傍受機能は、通話頻度を分析して、頻繁なスパム通話を自動的に識別して傍受します。",
+  "timeInterceptorExplanationTitle": "通話頻度傍受の説明",
+  "timeInterceptorSettingsTitle": "通話頻度傍受の設定",
+  "timeInterceptorSubtitle": "通話頻度に基づいて潜在的なスパム通話を自動的に傍受します",
+  "timeInterceptorTitle": "通話頻度傍受を有効にする",
+  "timeWindowDescription": "繰り返しの通話を傍受する時間ウィンドウのサイズを設定します。このウィンドウ内の同じ番号からの通話は傍受されます",
+  "timeWindowLabel": "傍受時間ウィンドウ（分）：{minutes}",
+  "@timeWindowLabel": {
+    "description": "時間ウィンドウのラベル（分単位の期間）",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "繰り返しの通話を傍受する時間ウィンドウのサイズを設定します。このウィンドウ内の同じ番号からの通話は傍受されます",
+  "today": "今日",
+  "total": "合計",
+  "totalBlocked": "合計ブロック数",
+  "totalFiltered": "合計フィルター数",
+  "transferDataBetweenDevicesOrPlatforms": "デバイスまたはプラットフォーム間でデータを転送します",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "デバイスまたはプラットフォーム間でデータを転送します",
+  "travelTicketing": "旅行チケット",
+  "trend": "トレンド",
+  "trendChart": "トレンドチャート",
+  "tutorial": "チュートリアル",
+  "type": "タイプ",
+  "unassignedSIMCard": "未割り当てのSIMカード",
+  "unknown": "不明",
+  "@unknown": {
+    "description": "不明なステータスの表示テキスト"
+  },
+  "unknownAction": "不明なアクション",
+  "unknownLabel": "不明なラベル",
+  "unknownTag": "タグ：不明",
+  "unregisterButton": "登録解除",
+  "unregisterDeviceConfirmationMessage": "{deviceName}の登録を解除してもよろしいですか？",
+  "unregisterDeviceTitle": "デバイスの登録解除",
+  "unsupportedFileFormat": "サポートされていないファイル形式",
+  "update": "更新",
+  "updateAllNow": "すべて今すぐ更新",
+  "updateCallFilterConfig": "通話フィルター構成を更新",
+  "@updateCallFilterConfig": {
+    "description": "通話フィルター構成を更新するためのボタンテキスト"
+  },
+  "updateContactFailed": "連絡先の更新に失敗しました：{error}",
+  "updateFavoriteStatus": "お気に入りのステータスを更新",
+  "updateFavoriteStatusFailed": "お気に入りのステータスの更新に失敗しました：{error}",
+  "updateInterval": "更新間隔",
+  "updateLabelFailed": "ラベルの更新に失敗しました",
+  "updateNow": "今すぐ更新",
+  "updatePlugin": "プラグインを更新",
+  "updatePluginFailed": "プラグインの更新に失敗しました：{error}",
+  "updateRuleFailed": "ルールの更新に失敗しました：{error}",
+  "updateSubscriptionFailed": "サブスクリプションの更新に失敗しました：{error}",
+  "@updateSubscriptionFailed": {
+    "description": "サブスクリプションの更新に失敗したエラーメッセージ",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service}が正常に更新されました（{count}個のルール）",
+  "@updateSuccess": {
+    "description": "単一サービスの更新成功メッセージ",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "タグを更新",
+  "useCasesPoint1": "• 自動再ダイヤルスパム通話を識別する",
+  "useCasesPoint2": "• 短期間に複数回電話をかけるマーケティング電話を傍受する",
+  "useCasesPoint3": "• 電話爆撃とハラスメントを防ぐ",
+  "useCasesTitle": "ユースケース：",
+  "useGlobalSettings": "グローバル設定を使用する",
+  "userEmail": "user@example.com",
+  "usernameLabel": "ユーザー名",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "パターンを定義するには、標準の正規表現構文を使用します。例：",
+  "validateRegex": "正規表現を検証",
+  "verificationFailedText": "失敗",
+  "verifiedText": "検証済み",
+  "verify": "検証",
+  "version": "バージョン：{version}",
+  "vipExchangeDescription": "電話番号のマーク数とVIPメンバーシップを交換します",
+  "vipExchangeTitle": "マーク交換VIP",
+  "watchAd": "広告を見る",
+  "watchAdForTemp": "一時的な特権のために広告を見る",
+  "watchAdForTempDescription": "いくつかのプレミアム機能を一時的にロック解除するために短い広告を見る",
+  "webDAVConfigTitle": "WebDAV構成",
+  "webdavConfigurationTitle": "WebDAV構成",
+  "webdavPasswordHint": "WebDAVパスワードを入力してください",
+  "webdavServerAddressHint": "WebDAVサーバーアドレスを入力してください",
+  "webdavUsernameHint": "WebDAVユーザー名を入力してください",
+  "week": "週",
+  "weekly": "毎週",
+  "weeklyBlockedCallsSummary": "毎週のブロックされた通話の概要",
+  "weeklyChartTitle": "毎週のブロックされた通話",
+  "weeklyReport": "週間レポート",
+  "@weeklyReport": {
+    "description": "週間レポート通知オプション"
+  },
+  "weeklyReportDesc": "通話ブロックアクティビティの週間サマリーレポートを受信する",
+  "@weeklyReportDesc": {
+    "description": "週間レポートオプションの説明"
+  },
+  "welcome": "ようこそ",
+  "whitelist": "ホワイトリスト",
+  "@whitelist": {
+    "description": "ホワイトリストのラベル"
+  },
+  "whitelistLabel": "ホワイトリスト",
+  "width": "幅",
+  "wildcardMatchingDescription": "任意の文字に一致するには「.」を使用します（例：「123.456」は123-456に一致します）",
+  "wildcardMatchingTitle": "ワイルドカードマッチング：",
+  "wildcardSupportForFlexibleFiltering": "柔軟なフィルタリングのためのワイルドカードサポート",
+  "windowSizeSetting": "ウィンドウサイズ",
+  "year": "年",
+  "yearly": "毎年",
+  "yearlyChartTitle": "毎年のブロックされた通話",
+  "noSimCardsDetected": "SIMカードが検出されません",
+  "filterManagementDescription": "通話フィルターを設定",
+  "callerIdCustomizationSubtitle": "発信者IDレイアウトをカスタマイズ",
+  "yesterday": "昨日"
+}
