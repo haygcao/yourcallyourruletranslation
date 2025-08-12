@@ -1,0 +1,365 @@
+{
+  "simCardFontSize": "حجم خط بطاقة SIM",
+  "simCardPosition": "موضع بطاقة SIM",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "معلومات بطاقة SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "فشل تحميل معلومات بطاقة SIM: {error}",
+  "simRuleInstructions": "تتيح لك قواعد فتحة SIM تكوين قواعد تصفية مستقلة لكل فتحة SIM.",
+  "simRuleInstructionsTitle": "قواعد فتحة SIM",
+  "@simRuleInstructionsTitle": {
+    "description": "عنوان القسم لتعليمات قواعد فتحة SIM"
+  },
+  "simRuleManagement": "إدارة قواعد فتحة SIM",
+  "@simRuleManagement": {
+    "description": "عنوان قسم إدارة قواعد فتحة SIM"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "نص يعرض فتحة SIM 1 مع رمز ISO الخاص بالبلد",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "نص يعرض فتحة SIM 2 مع رمز ISO الخاص بالبلد",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "فشل تحميل بيانات SIM: {error}",
+  "simSlotFilterConfiguration": "تكوين فلتر فتحة SIM",
+  "simSlotFilterConfigurationDescription": "السماح بتعيين قواعد التصفية حسب فتحة SIM",
+  "simSlotFilterDescription": "تكوين قواعد تصفية مستقلة لكل بطاقة SIM:",
+  "simSlotFilterSettingsTitle": "إعدادات فلتر فتحة SIM {slotNumber}",
+  "@simSlotFilterSettingsTitle": {
+    "description": "عنوان إعدادات فلتر فتحة SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "فشل تحميل فتحات SIM: {error}",
+  "simSlotManagement": "إدارة فتحات SIM",
+  "simSlotOperationFailed": "فشلت عملية فتحة SIM: {error}",
+  "@simSlotOperationFailed": {
+    "description": "رسالة فشل عملية فتحة SIM",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "موضع فتحة SIM {slotNumber}",
+  "@simSlotPosition": {
+    "description": "عرض موضع فتحة SIM",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• قواعد فتحة SIM: استراتيجيات تصفية مستقلة لكل SIM",
+  "simSlotRuleListTitle": "قائمة قواعد فتحة SIM",
+  "simSlotRuleManagement": "قواعد فتحة SIM",
+  "simSlotRuleManagementTitle": "إدارة القواعد",
+  "simSlotSettings": "إعدادات فتحة SIM",
+  "@simSlotSettings": {
+    "description": "عنوان صفحة إعدادات فتحة SIM"
+  },
+  "simSlotTitle": "فتحة SIM {slotNumber}",
+  "skip": "تخط",
+  "smartCallerId": "معرف المتصل الذكي",
+  "sms": "SMS",
+  "smsFilterDescription": "تساعدك تصفية الرسائل النصية القصيرة على تصفية الرسائل غير المرغوب فيها تلقائيًا والحفاظ على قائمة رسائلك نظيفة. يمكنك تعيين قواعد التصفية وطرق الإشعارات.",
+  "smsFilterDisabled": "تم تعطيل تصفية الرسائل القصيرة",
+  "smsFilterEnabled": "تم تمكين تصفية الرسائل القصيرة",
+  "smsFilterRuleAddedSuccessfully": "تمت إضافة قاعدة تصفية الرسائل القصيرة بنجاح",
+  "smsFilterRules": "قواعد تصفية الرسائل القصيرة",
+  "smsFilterSettings": "إعدادات تصفية الرسائل القصيرة",
+  "smsHistory": "سجل الرسائل القصيرة",
+  "smsManagement": "إدارة الرسائل القصيرة",
+  "smsPermission": "إذن SMS",
+  "smsPermissionDescription": "يستخدم لتصفية الرسائل غير المرغوب فيها.",
+  "smsRuleAddedSuccessfully": "تمت إضافة قاعدة SMS بنجاح",
+  "smsRuleDeletedSuccessfully": "تم حذف قاعدة SMS بنجاح",
+  "smsRuleLoadFailed": "فشل تحميل قواعد SMS: {error}",
+  "smsRuleManagement": "إدارة قواعد SMS",
+  "smsRulesExportedSuccessfully": "تم تصدير قواعد SMS بنجاح إلى {filePath}",
+  "smsRulesImportedSuccessfully": "تم استيراد قواعد SMS بنجاح",
+  "smsRuleSubscription": "الاشتراك في قواعد SMS",
+  "smsRuleUpdatedSuccessfully": "تم تحديث قاعدة SMS بنجاح",
+  "smsSettingsSubtitle": "تصفية الرسائل النصية القصيرة وحظر الكلمات الرئيسية",
+  "smsSettingsTitle": "إعدادات الرسائل القصيرة",
+  "smsSubscription": "الاشتراك في الرسائل القصيرة",
+  "smsSubscriptionAddedSuccessfully": "تمت إضافة الاشتراك في الرسائل القصيرة بنجاح",
+  "smsSubscriptionRulesDescription": "اشترك في قوائم قواعد SMS عبر عنوان URL، مع دعم مطابقة التعبيرات العادية. يمكنك تعيين إجراءات الحظر أو السماح.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "تم رفض بعض طلبات الإذن",
+  "spamLikely": "من المحتمل أن تكون رسائل غير مرغوب فيها",
+  "startColor": "لون البدء",
+  "startDate": "تاريخ البدء",
+  "startUsing": "ابدأ الاستخدام",
+  "statAnswered": "تم الرد",
+  "statBlocked": "تم الحظر",
+  "staticMethodShowCallerIdDialog": "طريقة ثابتة لإظهار مربع حوار معلومات معرف المتصل",
+  "staticMethodToDisplayCountrySelectionDialog": "طريقة ثابتة لعرض مربع حوار تحديد الدولة",
+  "staticMethodToDisplayDialog": "طريقة ثابتة لعرض مربع حوار",
+  "statistics": "إحصائيات",
+  "statisticsExportFeatureComingSoon": "ميزة تصدير الإحصائيات قريباً",
+  "statisticsGrid": "شبكة الإحصائيات",
+  "statisticsPageTitle": "تحليل البيانات",
+  "stirColor": "لون STIR",
+  "stirFontSize": "حجم خط STIR",
+  "stirPosition": "موضع STIR",
+  "storagePermission": "إذن التخزين",
+  "storagePermissionDescription": "يستخدم لحفظ الإعدادات والقواعد.",
+  "subscribe": "اشترك",
+  "subscriptionAddSuccess": "تمت إضافة الاشتراك \"{name}\" بنجاح",
+  "@subscriptionAddSuccess": {
+    "description": "رسالة نجاح إضافة الاشتراك",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "هل أنت متأكد أنك تريد حذف هذا الاشتراك؟",
+  "subscriptionDeleteConfirmTitle": "حذف الاشتراك",
+  "subscriptionDeleted": "تم حذف الاشتراك",
+  "@subscriptionDeleted": {
+    "description": "رسالة نجاح حذف الاشتراك"
+  },
+  "subscriptionDeletedSuccessfully": "تم حذف الاشتراك بنجاح",
+  "subscriptionDeleteFailed": "فشل حذف الاشتراك: {error}",
+  "subscriptionDeleteSuccess": "تم حذف الاشتراك",
+  "subscriptionEmptyState": "لا توجد اشتراكات متاحة",
+  "subscriptionEmptyText": "لا توجد اشتراكات حتى الآن",
+  "subscriptionLoadFailed": "فشل تحميل الاشتراكات: {error}",
+  "subscriptionLoadingFailed": "فشل تحميل الاشتراكات: {error}",
+  "subscriptionManagementTitle": "إدارة الاشتراكات",
+  "subscriptionName": "اسم الاشتراك",
+  "@subscriptionName": {
+    "description": "تسمية حقل اسم الاشتراك"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "لا يمكن أن يكون اسم الاشتراك وعنوان URL فارغين",
+  "subscriptionNameHint": "أدخل اسم الاشتراك",
+  "subscriptionPageTitle": "إدارة الاشتراكات",
+  "subscriptionStatusChangeFailed": "فشل تغيير حالة الاشتراك: {error}",
+  "subscriptionToggleFailed": "فشل تبديل حالة الاشتراك: {error}",
+  "subscriptionUpdateFailed": "فشل تحديث الاشتراك: {error}",
+  "subscriptionUpdateSuccess": "تم تحديث الاشتراك بنجاح",
+  "@subscriptionUpdateSuccess": {
+    "description": "رسالة نجاح تحديث الاشتراك",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "عنوان URL للاشتراك",
+  "@subscriptionUrl": {
+    "description": "تسمية حقل عنوان URL للاشتراك"
+  },
+  "subscriptionUrlHint": "أدخل عنوان URL للاشتراك",
+  "successfullyImportedRules": "تم استيراد {count} من القواعد بنجاح",
+  "supportSync": "دعم المزامنة",
+  "survey": "استطلاع",
+  "syncDevicesButton": "مزامنة الأجهزة",
+  "synced": "متزامن",
+  "@synced": {
+    "description": "تسمية حالة متزامنة"
+  },
+  "syncFailed": "فشلت المزامنة",
+  "syncFailedMessage": "فشلت المزامنة",
+  "syncFolderNameHint": "الرجاء إدخال اسم مجلد المزامنة (افتراضي: NotificationManager)",
+  "syncFolderNameLabel": "اسم مجلد المزامنة",
+  "synchronized": "متزامن",
+  "@synchronized": {
+    "description": "تسمية حالة متزامنة"
+  },
+  "syncing": "تتم المزامنة...",
+  "syncNow": "المزامنة الآن",
+  "@syncNow": {
+    "description": "نص زر المزامنة الآن"
+  },
+  "syncNowButton": "المزامنة الآن",
+  "syncStatusTitle": "حالة المزامنة",
+  "syncStatusUpdatedMessage": "تم تحديث حالة المزامنة",
+  "syncSuccessful": "تمت المزامنة بنجاح",
+  "syncSuccessMessage": "تمت المزامنة بنجاح",
+  "syncWithCloudStorage": "المزامنة مع التخزين السحابي",
+  "syncWithCloudStorageSubtitle": "المزامنة مع التخزين السحابي",
+  "systemFeatures": "ميزات النظام:",
+  "systemSettingsTitle": "إعدادات النظام",
+  "tabAll": "الكل",
+  "tabAnswered": "تم الرد",
+  "tabBlocked": "تم الحظر",
+  "tabMissed": "تم الفائت",
+  "tabOutgoing": "صادرة",
+  "tagLabel": "التصنيف: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "تم تحديث العلامات",
+  "takeaway": "وجبات سفري",
+  "telecommunication": "اتصالات",
+  "telegram": "Telegram",
+  "telemarketing": "التسويق عبر الهاتف",
+  "testButton": "اختبار",
+  "testButtonLabel": "اختبار",
+  "testConnectionButton": "اختبار الاتصال",
+  "textColorsSetting": "ألوان النص والملصقات",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "هذا التطبيق هو أداة قوية لمعرف المتصل تتيح لك تحديد المكالمات غير المرغوب فيها وحظرها.",
+  "thisWeek": "هذا الأسبوع",
+  "timeInterceptor": "اعتراض الوقت",
+  "timeInterceptorDescription": "اعتراض المكالمات المزعجة المحتملة تلقائيًا بناءً على تكرار المكالمات",
+  "timeInterceptorExplanation": "• اعتراض الوقت: اعتراض المكالمات المتكررة في وقت قصير",
+  "timeInterceptorExplanationContent": "تحلل ميزة اعتراض تكرار المكالمات تكرار المكالمات لتحديد المكالمات المزعجة المتكررة واعتراضها تلقائيًا.",
+  "timeInterceptorExplanationTitle": "شرح اعتراض تكرار المكالمات",
+  "timeInterceptorSettingsTitle": "إعدادات اعتراض تكرار المكالمات",
+  "timeInterceptorSubtitle": "اعتراض المكالمات المزعجة المحتملة تلقائيًا بناءً على تكرار المكالمات",
+  "timeInterceptorTitle": "تمكين اعتراض تكرار المكالمات",
+  "timeWindowDescription": "تعيين حجم النافذة الزمنية لاعتراض المكالمات المتكررة. سيتم اعتراض المكالمات من نفس الرقم في هذه النافذة",
+  "timeWindowLabel": "نافذة وقت الاعتراض (بالدقائق): {minutes}",
+  "@timeWindowLabel": {
+    "description": "تسمية النافذة الزمنية مع المدة بالدقائق",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "تعيين حجم النافذة الزمنية لاعتراض المكالمات المتكررة. سيتم اعتراض المكالمات من نفس الرقم في هذه النافذة",
+  "today": "اليوم",
+  "total": "المجموع",
+  "totalBlocked": "إجمالي المحظورة",
+  "totalFiltered": "إجمالي التصفية",
+  "transferDataBetweenDevicesOrPlatforms": "نقل البيانات بين الأجهزة أو الأنظمة الأساسية",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "نقل البيانات بين الأجهزة أو الأنظمة الأساسية",
+  "travelTicketing": "حجز تذاكر السفر",
+  "trend": "اتجاه",
+  "trendChart": "مخطط الاتجاه",
+  "tutorial": "دليل تعليمي",
+  "type": "اكتب",
+  "unassignedSIMCard": "بطاقة SIM غير معينة",
+  "unknown": "غير معروف",
+  "@unknown": {
+    "description": "عرض نص للحالة غير المعروفة"
+  },
+  "unknownAction": "إجراء غير معروف",
+  "unknownLabel": "ملصق غير معروف",
+  "unknownTag": "التصنيف: غير معروف",
+  "unregisterButton": "إلغاء التسجيل",
+  "unregisterDeviceConfirmationMessage": "هل أنت متأكد من أنك تريد إلغاء تسجيل {deviceName}؟",
+  "unregisterDeviceTitle": "إلغاء تسجيل الجهاز",
+  "unsupportedFileFormat": "تنسيق ملف غير مدعوم",
+  "update": "تحديث",
+  "updateAllNow": "تحديث الكل الآن",
+  "updateCallFilterConfig": "تحديث تكوين فلتر المكالمات",
+  "@updateCallFilterConfig": {
+    "description": "نص الزر لتحديث تكوين فلتر المكالمات"
+  },
+  "updateContactFailed": "فشل تحديث جهة الاتصال: {error}",
+  "updateFavoriteStatus": "تحديث حالة المفضلة",
+  "updateFavoriteStatusFailed": "فشل تحديث حالة المفضلة: {error}",
+  "updateInterval": "تحديث الفاصل الزمني",
+  "updateLabelFailed": "فشل تحديث التسمية التوضيحية",
+  "updateNow": "تحديث الآن",
+  "updatePlugin": "تحديث البرنامج المساعد",
+  "updatePluginFailed": "فشل تحديث البرنامج المساعد: {error}",
+  "updateRuleFailed": "فشل تحديث القاعدة: {error}",
+  "updateSubscriptionFailed": "فشل تحديث الاشتراك: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "فشل تحديث رسالة خطأ الاشتراك",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "تم تحديث {service} بنجاح ({count} من القواعد)",
+  "@updateSuccess": {
+    "description": "رسالة نجاح تحديث خدمة واحدة",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "تحديث العلامات",
+  "useCasesPoint1": "• تحديد المكالمات المزعجة ذات إعادة الاتصال التلقائي",
+  "useCasesPoint2": "• اعتراض المكالمات التسويقية التي تتصل عدة مرات في فترة قصيرة",
+  "useCasesPoint3": "• منع التفجير بالهاتف والتحرش",
+  "useCasesTitle": "حالات الاستخدام:",
+  "useGlobalSettings": "استخدام الإعدادات العامة",
+  "userEmail": "user@example.com",
+  "usernameLabel": "اسم المستخدم",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "استخدم بناء جملة regex القياسي لتحديد الأنماط. أمثلة:",
+  "validateRegex": "التحقق من صحة Regex",
+  "verificationFailedText": "فشل",
+  "verifiedText": "تم التحقق",
+  "verify": "تحقق",
+  "version": "الإصدار: {version}",
+  "vipExchangeDescription": "تبادل عضوية VIP بعدد مرات وضع علامة على رقم الهاتف",
+  "vipExchangeTitle": "تعليم البورصة VIP",
+  "watchAd": "شاهد الإعلان",
+  "watchAdForTemp": "شاهد إعلانًا لامتيازات مؤقتة",
+  "watchAdForTempDescription": "شاهد إعلانًا قصيرًا لفتح بعض الميزات المميزة مؤقتًا",
+  "webDAVConfigTitle": "تكوين WebDAV",
+  "webdavConfigurationTitle": "تكوين WebDAV",
+  "webdavPasswordHint": "الرجاء إدخال كلمة مرور WebDAV",
+  "webdavServerAddressHint": "الرجاء إدخال عنوان خادم WebDAV",
+  "webdavUsernameHint": "الرجاء إدخال اسم مستخدم WebDAV",
+  "week": "أسبوع",
+  "weekly": "أسبوعيًا",
+  "weeklyBlockedCallsSummary": "ملخص المكالمات المحظورة الأسبوعية",
+  "weeklyChartTitle": "المكالمات المحظورة الأسبوعية",
+  "weeklyReport": "تقرير أسبوعي",
+  "@weeklyReport": {
+    "description": "خيار إشعار التقرير الأسبوعي"
+  },
+  "weeklyReportDesc": "تلقي تقرير موجز أسبوعي عن نشاط حظر المكالمات",
+  "@weeklyReportDesc": {
+    "description": "وصف لخيار التقرير الأسبوعي"
+  },
+  "welcome": "مرحبًا",
+  "whitelist": "القائمة البيضاء",
+  "@whitelist": {
+    "description": "ملصق القائمة البيضاء"
+  },
+  "whitelistLabel": "القائمة البيضاء",
+  "width": "عرض",
+  "wildcardMatchingDescription": "استخدم '.' لمطابقة أي حرف (على سبيل المثال، '123.456' يطابق 123-456)",
+  "wildcardMatchingTitle": "مطابقة حرف بدل:",
+  "wildcardSupportForFlexibleFiltering": "دعم حرف البدل للتصفية المرنة",
+  "windowSizeSetting": "حجم النافذة",
+  "year": "عام",
+  "yearly": "سنويًا",
+  "yearlyChartTitle": "المكالمات المحظورة السنوية",
+  "noSimCardsDetected": "لم يتم الكشف عن بطاقات SIM",
+  "filterManagementDescription": "تعيين فلاتر المكالمات",
+      "callerIdCustomizationSubtitle": "تخصيص تخطيط معرف المتصل",
+  "yesterday": "أمس"
+}
