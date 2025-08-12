@@ -1,0 +1,46 @@
+final List<Map<String, dynamic>> languages = [
+
+
+  {'name': 'English', 'code': const Locale('en')},
+
+
+
+
+ 
+
+
+  {'name': 'Dansk', 'code': const Locale('da', 'DK')},
+
+  {'name': 'English (UK)', 'code': const Locale('en', 'GB')},
+  {'name': 'English (US)', 'code': const Locale('en', 'US')},
+
+
+  
+  {'name': 'Nederlands', 'code': const Locale('nl', 'NL')},
+  {'name': 'Polski', 'code': const Locale('pl', 'PL')},
+  {'name': 'Português', 'code': const Locale('pt')},
+
+  {'name': 'Svenska', 'code': const Locale('sv', 'SE')},
+  {'name': 'Türkçe', 'code': const Locale('tr', 'TR')},
+  {'name': 'Ελληνικά', 'code': const Locale('el', 'GR')},
+  {'name': 'עברית', 'code': const Locale('he', 'IL')},
+  {'name': 'Українська', 'code': const Locale('uk', 'UA')},
+{'name': 'Hindi (India)', 'code': const Locale('hi', 'IN')}
+
+
+  {'name': 'မြန်မာ', 'code': const Locale('my', 'MM')},
+
+  {'name': 'Tiếng Việt', 'code': const Locale('vi', 'VN')},
+
+
+
+
+
+  // --- 新增的主要语言 ---
+  {'name': 'हिंदी', 'code': const Locale('hi', 'IN')},          // 印地语 (印度)
+  {'name': 'বাংলা', 'code': const Locale('bn', 'BD')},          // 孟加拉语 (孟加拉国)
+  {'name': 'اردو', 'code': const Locale('ur', 'PK')},            // 乌尔都语 (巴基斯坦)
+  {'name': 'Filipino', 'code': const Locale('fil', 'PH')},      // 菲律宾语 (菲律宾)
+  {'name': 'فارسی', 'code': const Locale('fa', 'IR')},           // 波斯语 (伊朗)
+  {'name': 'Kiswahili', 'code': const Locale('sw')},             // 斯瓦希里语 (东非)
+  {'name': 'Hausa', 'code': const Locale('ha')},                 // 豪萨语 (西非)

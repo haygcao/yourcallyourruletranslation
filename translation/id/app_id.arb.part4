@@ -1,0 +1,395 @@
+  "setEncryptionPassword": "Atur Kata Sandi Enkripsi",
+  "setEncryptionPasswordDescription": "Atur kata sandi enkripsi untuk pencadangan dan pemulihan",
+  "setEncryptionPasswordLabel": "Atur Kata Sandi Enkripsi",
+  "setEncryptionPasswordTitle": "Atur Kata Sandi Enkripsi",
+  "setPasswordButton": "Atur",
+  "settings": "Pengaturan",
+  "settingsBackedUpTo": "Pengaturan dicadangkan ke: {path}",
+  "settingsLoaded": "Pengaturan dimuat",
+  "settingsLoadFailed": "Gagal memuat pengaturan: {error}",
+  "settingsRestoredSuccessfully": "Pengaturan berhasil dipulihkan. Harap mulai ulang aplikasi agar perubahan diterapkan.",
+  "settingsSaved": "Pengaturan disimpan",
+  "@settingsSaved": {
+    "description": "Settings saved confirmation message"
+  },
+  "settingsSaveFailed": "Gagal menyimpan pengaturan: {error}",
+  "settingsTab": "Pengaturan",
+  "settingsTitle": "Pengaturan",
+  "setup": "Pengaturan",
+  "showContactEditDialogStaticMethod": "Metode statis untuk menampilkan dialog edit kontak",
+  "showExplanation": "Tampilkan Penjelasan",
+  "silence": "Senyap",
+  "silenceAndNoAnswer": "Senyap dan tidak ada jawaban",
+  "silenceNoAnswer": "Senyap Tidak Ada Jawaban",
+  "silentCallVoiceClone": "Kloning Suara Panggilan Senyap",
+  "silentRules": "Aturan Senyap",
+  "simCard": "Kartu SIM {simNumber}",
+  "simCardColor": "Warna Kartu SIM",
+  "simCardConfigurationExplanation": "• Konfigurasi Kartu SIM: Atur aturan penyaringan independen untuk setiap kartu SIM",
+  "simCardFilterRules": "Aturan Filter Kartu SIM",
+  "simCardFilterRulesDescription": "Atur aturan penyaringan yang berbeda berdasarkan slot kartu SIM",
+  "simCardFontSize": "Ukuran Font Kartu SIM",
+  "simCardPosition": "Posisi Kartu SIM",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM Card information",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Gagal memuat informasi kartu SIM: {error}",
+  "simRuleInstructions": "Aturan slot SIM memungkinkan Anda mengonfigurasi aturan penyaringan independen untuk setiap slot SIM.",
+  "simRuleInstructionsTitle": "Aturan Slot SIM",
+  "@simRuleInstructionsTitle": {
+    "description": "Section title for SIM slot rules instructions"
+  },
+  "simRuleManagement": "Manajemen Aturan Slot SIM",
+  "@simRuleManagement": {
+    "description": "SIM slot rule management section title"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Text showing SIM slot 1 with country ISO code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Text showing SIM slot 2 with country ISO code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Gagal memuat data SIM: {error}",
+  "simSlotFilterConfiguration": "Konfigurasi Filter Slot SIM",
+  "simSlotFilterConfigurationDescription": "Mengizinkan pengaturan aturan filter berdasarkan slot SIM",
+  "simSlotFilterDescription": "Konfigurasi aturan penyaringan independen untuk setiap kartu SIM:",
+  "simSlotFilterSettingsTitle": "Pengaturan Filter Slot SIM {slotNumber}",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Title for SIM slot filter settings",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Gagal memuat slot SIM: {error}",
+  "simSlotManagement": "Manajemen Slot SIM",
+  "simSlotOperationFailed": "Operasi slot SIM gagal: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM slot operation failure message",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "Posisi Slot SIM {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM slot position display",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• Aturan Slot SIM: Strategi penyaringan independen per SIM",
+  "simSlotRuleListTitle": "Daftar Aturan Slot SIM",
+  "simSlotRuleManagement": "Aturan Slot SIM",
+  "simSlotRuleManagementTitle": "Manajemen Aturan",
+  "simSlotSettings": "Pengaturan Slot SIM",
+  "@simSlotSettings": {
+    "description": "Title for SIM slot settings page"
+  },
+  "simSlotTitle": "Slot SIM {slotNumber}",
+  "skip": "Lewati",
+  "smartCallerId": "Identifikasi Panggilan Cerdas",
+  "sms": "SMS",
+  "smsFilterDescription": "Penyaringan SMS membantu Anda secara otomatis menyaring pesan spam dan menjaga daftar pesan Anda tetap bersih. Anda dapat mengatur aturan filter dan metode notifikasi.",
+  "smsFilterDisabled": "Penyaringan SMS dinonaktifkan",
+  "smsFilterEnabled": "Penyaringan SMS diaktifkan",
+  "smsFilterRuleAddedSuccessfully": "Aturan filter SMS berhasil ditambahkan",
+  "smsFilterRules": "Aturan Filter SMS",
+  "smsFilterSettings": "Pengaturan Filter SMS",
+  "smsHistory": "Riwayat SMS",
+  "smsManagement": "Manajemen SMS",
+  "smsPermission": "Izin SMS",
+  "smsPermissionDescription": "Digunakan untuk menyaring pesan spam.",
+  "smsRuleAddedSuccessfully": "Aturan SMS berhasil ditambahkan",
+  "smsRuleDeletedSuccessfully": "Aturan SMS berhasil dihapus",
+  "smsRuleLoadFailed": "Gagal memuat aturan SMS: {error}",
+  "smsRuleManagement": "Manajemen Aturan SMS",
+  "smsRulesExportedSuccessfully": "Aturan SMS berhasil diekspor ke {filePath}",
+  "smsRulesImportedSuccessfully": "Aturan SMS berhasil diimpor",
+  "smsRuleSubscription": "Langganan Aturan SMS",
+  "smsRuleUpdatedSuccessfully": "Aturan SMS berhasil diperbarui",
+  "smsSettingsSubtitle": "Penyaringan SMS dan pemblokiran kata kunci",
+  "smsSettingsTitle": "Pengaturan SMS",
+  "smsSubscription": "Langganan SMS",
+  "smsSubscriptionAddedSuccessfully": "Langganan SMS berhasil ditambahkan",
+  "smsSubscriptionRulesDescription": "Berlangganan daftar aturan SMS melalui URL, mendukung pencocokan ekspresi reguler. Anda dapat mengatur tindakan blokir atau izinkan.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Beberapa permintaan izin ditolak",
+  "spamLikely": "Kemungkinan Spam",
+  "startColor": "Warna Awal",
+  "startDate": "Tanggal Mulai",
+  "startUsing": "Mulai Menggunakan",
+  "statAnswered": "Terjawab",
+  "statBlocked": "Diblokir",
+  "staticMethodShowCallerIdDialog": "Metode statis untuk menampilkan Dialog Informasi ID Penelepon",
+  "staticMethodToDisplayCountrySelectionDialog": "Metode statis untuk menampilkan dialog pemilihan negara",
+  "staticMethodToDisplayDialog": "Metode statis untuk menampilkan dialog",
+  "statistics": "Statistik",
+  "statisticsExportFeatureComingSoon": "Fitur ekspor statistik segera hadir",
+  "statisticsGrid": "Kotak Statistik",
+  "statisticsPageTitle": "Analisis Data",
+  "stirColor": "Warna STIR",
+  "stirFontSize": "Ukuran Font STIR",
+  "stirPosition": "Posisi STIR",
+  "storagePermission": "Izin Penyimpanan",
+  "storagePermissionDescription": "Digunakan untuk menyimpan pengaturan dan aturan.",
+  "subscribe": "Berlangganan",
+  "subscriptionAddSuccess": "Langganan \"{name}\" berhasil ditambahkan",
+  "@subscriptionAddSuccess": {
+    "description": "Subscription added success message",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Apakah Anda yakin ingin menghapus langganan ini?",
+  "subscriptionDeleteConfirmTitle": "Hapus Langganan",
+  "subscriptionDeleted": "Langganan dihapus",
+  "@subscriptionDeleted": {
+    "description": "Subscription deleted success message"
+  },
+  "subscriptionDeletedSuccessfully": "Langganan berhasil dihapus",
+  "subscriptionDeleteFailed": "Gagal menghapus langganan: {error}",
+  "subscriptionDeleteSuccess": "Langganan dihapus",
+  "subscriptionEmptyState": "Tidak ada langganan tersedia",
+  "subscriptionEmptyText": "Belum ada langganan",
+  "subscriptionLoadFailed": "Gagal memuat langganan: {error}",
+  "subscriptionLoadingFailed": "Gagal memuat langganan: {error}",
+  "subscriptionManagementTitle": "Manajemen Langganan",
+  "subscriptionName": "Nama Langganan",
+  "@subscriptionName": {
+    "description": "Subscription name field label"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Nama langganan dan URL tidak boleh kosong",
+  "subscriptionNameHint": "Masukkan nama langganan",
+  "subscriptionPageTitle": "Manajemen Langganan",
+  "subscriptionStatusChangeFailed": "Gagal mengubah status langganan: {error}",
+  "subscriptionToggleFailed": "Gagal mengubah status langganan: {error}",
+  "subscriptionUpdateFailed": "Gagal memperbarui langganan: {error}",
+  "subscriptionUpdateSuccess": "Langganan berhasil diperbarui",
+  "@subscriptionUpdateSuccess": {
+    "description": "Subscription update success message",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "URL Langganan",
+  "@subscriptionUrl": {
+    "description": "Subscription URL field label"
+  },
+  "subscriptionUrlHint": "Masukkan URL langganan",
+  "successfullyImportedRules": "Berhasil mengimpor {count} aturan",
+  "supportSync": "Dukung Sinkronisasi",
+  "survey": "Survei",
+  "syncDevicesButton": "Sinkronkan Perangkat",
+  "synced": "Disinkronkan",
+  "@synced": {
+    "description": "Synced status label"
+  },
+  "syncFailed": "Sinkronisasi gagal",
+  "syncFailedMessage": "Sinkronisasi gagal",
+  "syncFolderNameHint": "Harap masukkan nama folder sinkronisasi (default: NotificationManager)",
+  "syncFolderNameLabel": "Nama Folder Sinkronisasi",
+  "synchronized": "Disinkronkan",
+  "@synchronized": {
+    "description": "Synchronized status label"
+  },
+  "syncing": "Menyinkronkan...",
+  "syncNow": "Sinkronkan Sekarang",
+  "@syncNow": {
+    "description": "Sync now button text"
+  },
+  "syncNowButton": "Sinkronkan Sekarang",
+  "syncStatusTitle": "Status Sinkronisasi",
+  "syncStatusUpdatedMessage": "Status sinkronisasi diperbarui",
+  "syncSuccessful": "Sinkronisasi berhasil",
+  "syncSuccessMessage": "Sinkronisasi berhasil",
+  "syncWithCloudStorage": "Sinkronkan dengan Penyimpanan Cloud",
+  "syncWithCloudStorageSubtitle": "Sinkronkan dengan penyimpanan cloud",
+  "systemFeatures": "Fitur Sistem:",
+  "systemSettingsTitle": "Pengaturan Sistem",
+  "tabAll": "Semua",
+  "tabAnswered": "Terjawab",
+  "tabBlocked": "Diblokir",
+  "tabMissed": "Tidak Terjawab",
+  "tabOutgoing": "Keluar",
+  "tagLabel": "Tag: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Tag diperbarui",
+  "takeaway": "Makanan Siap Saji",
+  "telecommunication": "Telekomunikasi",
+  "telegram": "Telegram",
+  "telemarketing": "Telemarketing",
+  "testButton": "UJI",
+  "testButtonLabel": "UJI",
+  "testConnectionButton": "Uji Koneksi",
+  "textColorsSetting": "Pengaturan Warna Teks & Label",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Aplikasi ini adalah alat ID penelepon yang kuat yang memungkinkan Anda mengidentifikasi dan memblokir panggilan yang tidak diinginkan.",
+  "thisWeek": "Minggu Ini",
+  "timeInterceptor": "Interseptor Waktu",
+  "timeInterceptorDescription": "Secara otomatis mencegat panggilan spam potensial berdasarkan frekuensi panggilan",
+  "timeInterceptorExplanation": "• Interseptor Waktu: Mencegat panggilan berulang dalam waktu singkat",
+  "timeInterceptorExplanationContent": "Fitur intersepsi frekuensi panggilan menganalisis frekuensi panggilan untuk secara otomatis mengidentifikasi dan mencegat panggilan spam yang sering.",
+  "timeInterceptorExplanationTitle": "Penjelasan Intersepsi Frekuensi Panggilan",
+  "timeInterceptorSettingsTitle": "Pengaturan Intersepsi Frekuensi Panggilan",
+  "timeInterceptorSubtitle": "Secara otomatis mencegat panggilan spam potensial berdasarkan frekuensi panggilan",
+  "timeInterceptorTitle": "Aktifkan Intersepsi Frekuensi Panggilan",
+  "timeWindowDescription": "Atur ukuran jendela waktu untuk mencegat panggilan berulang. Panggilan dari nomor yang sama dalam jendela ini akan dicegat",
+  "timeWindowLabel": "Jendela Waktu Intersepsi (menit): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Time window label with duration in minutes",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Atur ukuran jendela waktu untuk mencegat panggilan berulang. Panggilan dari nomor yang sama dalam jendela ini akan dicegat",
+  "today": "Hari Ini",
+  "total": "Total",
+  "totalBlocked": "Total Diblokir",
+  "totalFiltered": "Total Difilter",
+  "transferDataBetweenDevicesOrPlatforms": "Transfer data antar perangkat atau platform",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Transfer data antar perangkat atau platform",
+  "travelTicketing": "Tiket Perjalanan",
+  "trend": "Tren",
+  "trendChart": "Grafik Tren",
+  "tutorial": "Tutorial",
+  "type": "Jenis",
+  "unassignedSIMCard": "Kartu SIM Tidak Ditugaskan",
+  "unknown": "Tidak Diketahui",
+  "@unknown": {
+    "description": "Display text for unknown status"
+  },
+  "unknownAction": "Tindakan Tidak Diketahui",
+  "unknownLabel": "Label Tidak Diketahui",
+  "unknownTag": "Tag: Tidak Diketahui",
+  "unregisterButton": "Batalkan Pendaftaran",
+  "unregisterDeviceConfirmationMessage": "Apakah Anda yakin ingin membatalkan pendaftaran {deviceName}?",
+  "unregisterDeviceTitle": "Batalkan Pendaftaran Perangkat",
+  "unsupportedFileFormat": "Format file tidak didukung",
+  "update": "Perbarui",
+  "updateAllNow": "Perbarui Semua Sekarang",
+  "updateCallFilterConfig": "Perbarui Konfigurasi Filter Panggilan",
+  "@updateCallFilterConfig": {
+    "description": "Button text for updating call filter configuration"
+  },
+  "updateContactFailed": "Gagal memperbarui kontak: {error}",
+  "updateFavoriteStatus": "Perbarui Status Favorit",
+  "updateFavoriteStatusFailed": "Gagal memperbarui status favorit: {error}",
+  "updateInterval": "Interval Pembaruan",
+  "updateLabelFailed": "Gagal memperbarui label",
+  "updateNow": "Perbarui Sekarang",
+  "updatePlugin": "Perbarui Plugin",
+  "updatePluginFailed": "Gagal memperbarui plugin: {error}",
+  "updateRuleFailed": "Gagal memperbarui aturan: {error}",
+  "updateSubscriptionFailed": "Gagal memperbarui langganan: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Failed to update subscription error message",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} berhasil diperbarui ({count} aturan)",
+  "@updateSuccess": {
+    "description": "Single service update success message",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "Perbarui Tag",
+  "useCasesPoint1": "• Identifikasi panggilan spam yang diulang otomatis",
+  "useCasesPoint2": "• Mencegat panggilan pemasaran yang menelepon berkali-kali dalam waktu singkat",
+  "useCasesPoint3": "• Mencegah pemboman telepon dan pelecehan",
+  "useCasesTitle": "Kasus Penggunaan:",
+  "useGlobalSettings": "Gunakan Pengaturan Global",
+  "userEmail": "user@example.com",
+  "usernameLabel": "Nama Pengguna",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Gunakan sintaks regex standar untuk mendefinisikan pola. Contoh:",
+  "validateRegex": "Validasi Regex",
+  "verificationFailedText": "Gagal",
+  "verifiedText": "Terverifikasi",
+  "verify": "Verifikasi",
+  "version": "Versi: {version}",
+  "vipExchangeDescription": "Tukar keanggotaan VIP dengan jumlah penandaan nomor telepon",
+  "vipExchangeTitle": "Tukar Tanda VIP",
+  "watchAd": "Tonton Iklan",
+  "watchAdForTemp": "Tonton Iklan untuk Hak Istimewa Sementara",
+  "watchAdForTempDescription": "Tonton iklan singkat untuk sementara membuka beberapa fitur premium",
+  "webDAVConfigTitle": "Konfigurasi WebDAV",
+  "webdavConfigurationTitle": "Konfigurasi WebDAV",
+  "webdavPasswordHint": "Harap masukkan kata sandi WebDAV",
+  "webdavServerAddressHint": "Harap masukkan alamat server WebDAV",
+  "webdavUsernameHint": "Harap masukkan nama pengguna WebDAV",
+  "week": "Minggu",
+  "weekly": "Mingguan",
+  "weeklyBlockedCallsSummary": "Ringkasan Panggilan Diblokir Mingguan",
+  "weeklyChartTitle": "Panggilan Diblokir Mingguan",
+  "weeklyReport": "Laporan Mingguan",
+  "@weeklyReport": {
+    "description": "Weekly report notification option"
+  },
+  "weeklyReportDesc": "Terima laporan ringkasan mingguan aktivitas pemblokiran panggilan",
+  "@weeklyReportDesc": {
+    "description": "Description for weekly report option"
+  },
+  "welcome": "Selamat Datang",
+  "whitelist": "Daftar Putih",
+  "@whitelist": {
+    "description": "Whitelist label"
+  },
+  "whitelistLabel": "Daftar Putih",
+  "width": "Lebar",
+  "wildcardMatchingDescription": "Gunakan '.' untuk mencocokkan karakter apa pun (misalnya '123.456' cocok dengan 123-456)",
+  "wildcardMatchingTitle": "Pencocokan wildcard:",
+  "wildcardSupportForFlexibleFiltering": "Dukungan Wildcard untuk Penyaringan Fleksibel",
+  "windowSizeSetting": "Pengaturan Ukuran Jendela",
+  "year": "Tahun",
+  "yearly": "Tahunan",
+  "yearlyChartTitle": "Panggilan Diblokir Tahunan",
+  "noSimCardsDetected": "Tidak ada kartu SIM terdeteksi",
+  "filterManagementDescription": "Atur Filter Panggilan",
+      "callerIdCustomizationSubtitle": "Sesuaikan Tata Letak ID Penelepon",
+ 
+  "yesterday": "Kemarin"
+}

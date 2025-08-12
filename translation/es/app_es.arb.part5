@@ -1,0 +1,216 @@
+              "fraudAlerSettingTitle": "Configuración de alerta de fraude",
+              "fraudAlerSettingSubtitle": "Para configurar la alerta de fraude",
+  "enableFraudAlert": "Habilitar alerta de fraude",
+  "enableFraudAlertDescription": "Alerta para llamadas sospechosas de estafa",
+      "enableVibration": "Habilitar vibración",
+      "enableVibrationDescription": "Vibrar cuando se sospecha que una llamada es una estafa",
+  "notificationSettingsTitle": "Configuración de notificaciones",
+  "useLocalNotification": "Usar notificaciones locales",
+  "useLocalNotificationDescription": "Habilitar las notificaciones locales para las llamadas entrantes",
+  "cancelLocalNotification": "Cerrar notificaciones locales",
+  "useStirNotification": "Usar la notificación de STIR",
+  "useStirNotificationDescription": "Habilitar las notificaciones STIR para las llamadas entrantes",
+  "cancelLocalNotificationDescription": "Cerrar las notificaciones locales automáticamente",
+  "callerIdSettingsTitle": "Configuración del identificador de llamadas",
+    "callerIdSettingsSubtitle": "Para configurar el modo de visualización y la notificación de llamadas entrantes", 
+    "purchaseTitle": "Compra",
+    "purchaseSubtitle": "Para comprar el servicio",
+   "callerIdNotificationTitle": "Información de la llamada entrante",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "Número: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Llamada bloqueada",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "Llamada bloqueada de {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Verificado",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "No verificado",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "Verificación fallida",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "Estado de verificación desconocido",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "Verificación STIR/SHAKEN",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "{stirResultMessage} para el número {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Ajustes de mensajes de seguridad con desplazamiento",
+  "messageColor": "Color del mensaje",
+  "messageFontSize": "Tamaño de fuente del mensaje",
+  "messagePosition": "Posición del mensaje",
+  "containerWidth": "Ancho del contenedor",
+  "scrollSpeed": "Velocidad de desplazamiento",
+  "enableSecurityMessage": "Habilitar mensaje de seguridad",
+  "fraudAlertTitle": "Alerta de fraude",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "Posible llamada de fraude de {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "Error al cargar las reglas: {error}",
+ "loadCallLogFailed": "Error al cargar el registro de llamadas: {error}",
+ "noBlockedTypeData": "No hay datos de tipo bloqueado disponibles",
+"importEntity": "Importar {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} importado correctamente",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "Error al importar {entityTypeName}: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Exportar {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} exportado correctamente",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Error al exportar {entityTypeName}: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Servicio de sincronización en la nube",
+  "membershipCenter": "Centro de membresía",
+  "redeemVipWithMarks": "Canjear VIP con Marks",
+  "currentMarkCount": "Recuento de marcas actual",
+  "markMoreNumbersForMore": "Marcar más números para obtener más marcas",
+  "noAds": "Sin anuncios",
+  "cloudBackup": "Copia de seguridad en la nube",
+  "callerIdEnhancement": "Mejora del identificador de llamadas",
+  "voiceRecognition": "Reconocimiento de voz",
+  "feature": "Característica",
+  "normalUser": "Usuario normal",
+  "vipUser": "Usuario VIP",
+  "temporaryVip": "VIP temporal",
+  "removeAds": "Eliminar anuncios",
+
+  "unknownAction": "Acción desconocida",
+
+    "settingsBackup": "Copia de seguridad de la configuración",
+      "allServicesStatusTitle": "Estado actual del servicio",
+  "allServicesStatusSubtitle": "Estado actual de cada servicio en la nube",
+   
+  "redirect": "Redirigir",
+ "notify": "Notificar",
+ "log": "Registro",
+ "custom": "Personalizado",
+ "allowActionDescription": "Se permitirán las llamadas, incluso si el número está en la lista negra",
+ "blockActionDescription": "Las llamadas se bloquearán y se mostrarán en el registro de llamadas.",
+ "silenceActionDescription": "Las llamadas se silenciarán pero se mostrarán en el registro de llamadas.",
+ "noneActionDescription": "No se tomará ninguna acción especial para la llamada.",
+ "redirectActionDescription": "Redirigir la llamada a un número especificado.",
+ "labelActionDescription": "Añadir una etiqueta a la llamada para facilitar la identificación.",
+ "notifyActionDescription": "Enviar una notificación cuando se recibe una llamada.",
+ "logActionDescription": "Registrar la información de la llamada sin tomar ninguna otra acción",
+ "customActionDescription": "Realizar una acción personalizada.",
+ "synced": "Sincronizado",
+ "lastUpdated": "Última actualización: {date}",
+ 
+   "needVipAccess": "Necesita acceso VIP para utilizar esta función",
+"importExportDescription": "Importar o exportar datos de {entityTypeName}",
+
+   "importExportTitle": "Importar/Exportar",
+ "noPhoneRules": "No se encontraron reglas de teléfono",
+"noRegexRules": "No se encontraron reglas de expresiones regulares",
+ "noAllowedBlockedRules": "No se encontraron reglas permitidas/bloqueadas",
+   "importExport": "Importar/Exportar",
+   "filterByAction": "Filtrar por acción",
+  "upgradeToVip": "Actualizar a VIP",
+  "yesterday": "Ayer"

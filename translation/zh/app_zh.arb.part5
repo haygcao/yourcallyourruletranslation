@@ -1,0 +1,216 @@
+              "fraudAlerSettingTitle": "欺诈警报设置",
+              "fraudAlerSettingSubtitle": "设置欺诈警报",
+  "enableFraudAlert": "启用欺诈警报",
+  "enableFraudAlertDescription": "可疑诈骗电话的警报",
+      "enableVibration": "启用震动",
+      "enableVibrationDescription": "当呼叫疑似诈骗电话时振动",
+  "notificationSettingsTitle": "通知设置",
+  "useLocalNotification": "使用本地通知",
+  "useLocalNotificationDescription": "启用来电的本地通知",
+  "cancelLocalNotification": "关闭本地通知",
+  "useStirNotification": "使用 STIR 的通知",
+  "useStirNotificationDescription": "启用呼入电话的 STIR 通知",
+  "cancelLocalNotificationDescription": "自动关闭本地通知",
+  "callerIdSettingsTitle": "来电显示设置",
+    "callerIdSettingsSubtitle": "设置来电通知和显示模式", 
+    "purchaseTitle": "购买",
+    "purchaseSubtitle": "购买服务",
+   "callerIdNotificationTitle": "来电信息",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "号码: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "阻止的呼叫",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "阻止了来自 {phoneNumber} 的呼叫",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "已验证",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "未验证",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "验证失败",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "未知的验证状态",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN 验证",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "号码 {phoneNumber} 的 {stirResultMessage}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "滚动安全消息设置",
+  "messageColor": "消息颜色",
+  "messageFontSize": "消息字体大小",
+  "messagePosition": "消息位置",
+  "containerWidth": "容器宽度",
+  "scrollSpeed": "滚动速度",
+  "enableSecurityMessage": "启用安全消息",
+  "fraudAlertTitle": "欺诈警报",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "来自 {phoneNumber} 的潜在欺诈电话",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "加载规则失败: {error}",
+ "loadCallLogFailed": "加载呼叫日志失败: {error}",
+ "noBlockedTypeData": "没有被阻止的类型数据",
+"importEntity": "导入 {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "已成功导入 {entityTypeName}",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "导入 {entityTypeName} 失败: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "导出 {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "已成功导出 {entityTypeName}",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "导出 {entityTypeName} 失败: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "云同步服务",
+  "membershipCenter": "会员中心",
+  "redeemVipWithMarks": "用 Marks 兑换 VIP",
+  "currentMarkCount": "当前标记数",
+  "markMoreNumbersForMore": "标记更多号码以获得更多 Marks",
+  "noAds": "无广告",
+  "cloudBackup": "云备份",
+  "callerIdEnhancement": "来电显示增强",
+  "voiceRecognition": "语音识别",
+  "feature": "特点",
+  "normalUser": "普通用户",
+  "vipUser": "VIP 用户",
+  "temporaryVip": "临时 VIP",
+  "removeAds": "移除广告",
+
+  "unknownAction": "未知操作",
+
+    "settingsBackup": "设置备份",
+      "allServicesStatusTitle": "当前服务状态",
+  "allServicesStatusSubtitle": "每个云服务的当前状态",
+   
+  "redirect": "重定向",
+ "notify": "通知",
+ "log": "日志",
+ "custom": "自定义",
+ "allowActionDescription": "即使号码在黑名单上，也将允许呼叫",
+ "blockActionDescription": "呼叫将被阻止并在呼叫日志中显示.",
+ "silenceActionDescription": "呼叫将被静音但显示在呼叫日志中.",
+ "noneActionDescription": "不会对呼叫采取任何特殊操作.",
+ "redirectActionDescription": "将呼叫重定向到指定的号码.",
+ "labelActionDescription": "在呼叫中添加标签以便于识别.",
+ "notifyActionDescription": "收到呼叫时发送通知.",
+ "logActionDescription": "记录呼叫信息而不采取任何其他操作",
+ "customActionDescription": "执行自定义操作.",
+ "synced": "已同步",
+ "lastUpdated": "上次更新: {date}",
+ 
+   "needVipAccess": "您需要 VIP 访问权限才能使用此功能",
+"importExportDescription": "导入或导出 {entityTypeName} 数据",
+
+   "importExportTitle": "导入/导出",
+ "noPhoneRules": "未找到电话规则",
+"noRegexRules": "未找到正则表达式规则",
+ "noAllowedBlockedRules": "未找到允许/阻止的规则",
+   "importExport": "导入/导出",
+   "filterByAction": "按操作筛选",
+  "upgradeToVip": "升级到 VIP",
+  "yesterday": "昨天"

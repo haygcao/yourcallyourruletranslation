@@ -1,0 +1,216 @@
+              "fraudAlerSettingTitle": "Pengaturan Peringatan Penipuan",
+              "fraudAlerSettingSubtitle": "Untuk Mengatur Peringatan Penipuan",
+  "enableFraudAlert": "Aktifkan Peringatan Penipuan",
+  "enableFraudAlertDescription": "Peringatan untuk panggilan yang diduga penipuan",
+      "enableVibration": "Aktifkan Getar",
+      "enableVibrationDescription": "Bergetar ketika panggilan diduga penipuan",
+  "notificationSettingsTitle": "Pengaturan Notifikasi",
+  "useLocalNotification": "Gunakan Notifikasi Lokal",
+  "useLocalNotificationDescription": "Aktifkan notifikasi lokal untuk panggilan masuk",
+  "cancelLocalNotification": "Tutup Notifikasi Lokal",
+  "useStirNotification": "Gunakan Notifikasi dari STIR",
+  "useStirNotificationDescription": "Aktifkan notifikasi STIR untuk panggilan masuk",
+  "cancelLocalNotificationDescription": "Tutup Notifikasi Lokal Secara Otomatis",
+  "callerIdSettingsTitle": "Pengaturan ID Penelepon",
+    "callerIdSettingsSubtitle": "Untuk Mengatur Notifikasi & Mode Tampilan Panggilan Masuk", 
+    "purchaseTitle": "Pembelian",
+    "purchaseSubtitle": "Untuk Membeli Layanan",
+   "callerIdNotificationTitle": "Info Panggilan Masuk",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "Nomor: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Panggilan Diblokir",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "Panggilan diblokir dari {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Terverifikasi",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "Tidak Terverifikasi",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "Verifikasi Gagal",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "Status Verifikasi Tidak Diketahui",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "Verifikasi STIR/SHAKEN",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "{stirResultMessage} untuk nomor {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Pengaturan Pesan Keamanan Bergulir",
+  "messageColor": "Warna Pesan",
+  "messageFontSize": "Ukuran Font Pesan",
+  "messagePosition": "Posisi Pesan",
+  "containerWidth": "Lebar Wadah",
+  "scrollSpeed": "Kecepatan Gulir",
+  "enableSecurityMessage": "Aktifkan Pesan Keamanan",
+  "fraudAlertTitle": "Peringatan Penipuan",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "Panggilan penipuan potensial dari {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "Gagal memuat aturan: {error}",
+ "loadCallLogFailed": "Gagal memuat log panggilan: {error}",
+ "noBlockedTypeData": "Tidak ada data jenis yang diblokir",
+"importEntity": "Impor {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} berhasil diimpor, ke",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "Gagal mengimpor {entityTypeName}: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Ekspor {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} berhasil diekspor",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Gagal mengekspor {entityTypeName}: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Layanan Sinkronisasi Cloud",
+  "membershipCenter": "Pusat Keanggotaan",
+  "redeemVipWithMarks": "Tukar VIP dengan Tanda",
+  "currentMarkCount": "Jumlah Tanda Saat Ini",
+  "markMoreNumbersForMore": "Tandai lebih banyak nomor untuk lebih banyak tanda",
+  "noAds": "Tanpa Iklan",
+  "cloudBackup": "Cadangan Cloud",
+  "callerIdEnhancement": "Peningkatan ID Penelepon",
+  "voiceRecognition": "Pengenalan Suara",
+  "feature": "Fitur",
+  "normalUser": "Pengguna Normal",
+  "vipUser": "Pengguna VIP",
+  "temporaryVip": "VIP Sementara",
+  "removeAds": "Hapus Iklan",
+
+  "unknownAction": "Tindakan Tidak Diketahui",
+
+    "settingsBackup": "Cadangan Pengaturan ",
+      "allServicesStatusTitle": "Status Layanan Saat Ini",
+  "allServicesStatusSubtitle": "Status Saat Ini Setiap Layanan Cloud",
+   
+  "redirect": "Alihkan",
+ "notify": "Beritahu",
+ "log": "Catat",
+ "custom": "Kustom",
+ "allowActionDescription": "Panggilan akan diizinkan, meskipun nomor ada di daftar hitam",
+ "blockActionDescription": "Panggilan akan diblokir dan ditampilkan di log panggilan.",
+ "silenceActionDescription": "Panggilan akan dibisukan tetapi ditampilkan di log panggilan.",
+ "noneActionDescription": "Tidak ada tindakan khusus yang akan diambil untuk panggilan tersebut.",
+ "redirectActionDescription": "Alihkan panggilan ke nomor yang ditentukan.",
+ "labelActionDescription": "Tambahkan label ke panggilan untuk identifikasi mudah.",
+ "notifyActionDescription": "Kirim notifikasi ketika panggilan diterima.",
+ "logActionDescription": "Catat informasi panggilan tanpa mengambil tindakan lain",
+ "customActionDescription": "Lakukan tindakan khusus.",
+ "synced": "Disinkronkan",
+ "lastUpdated": "Terakhir Diperbarui: {date}",
+ 
+   "needVipAccess": "Anda memerlukan akses VIP untuk menggunakan fitur ini",
+"importExportDescription": "Impor atau ekspor data {entityTypeName}",
+
+   "importExportTitle": "Impor/Ekspor",
+ "noPhoneRules": "Tidak ada aturan telepon ditemukan",
+"noRegexRules": "Tidak ada aturan regex ditemukan",
+ "noAllowedBlockedRules": "Tidak ada aturan yang diizinkan/diblokir ditemukan",
+   "importExport": "Impor/Ekspor",
+   "filterByAction": "Filter berdasarkan Tindakan",
+  "upgradeToVip": "Tingkatkan ke VIP",
+  "yesterday": "Kemarin"

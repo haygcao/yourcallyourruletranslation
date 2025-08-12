@@ -1,0 +1,215 @@
+              "fraudAlerSettingTitle": "การตั้งค่าการแจ้งเตือนการฉ้อโกง",
+              "fraudAlerSettingSubtitle": "หากต้องการตั้งค่าการแจ้งเตือนการฉ้อโกง",
+  "enableFraudAlert": "เปิดใช้งานการแจ้งเตือนการฉ้อโกง",
+  "enableFraudAlertDescription": "แจ้งเตือนสำหรับการโทรที่น่าสงสัยว่าเป็นการหลอกลวง",
+      "enableVibration": "เปิดใช้งานการสั่น",
+      "enableVibrationDescription": "สั่นเมื่อสงสัยว่าเป็นการโทรหลอกลวง",
+  "notificationSettingsTitle": "การตั้งค่าการแจ้งเตือน",
+  "useLocalNotification": "ใช้การแจ้งเตือนในเครื่อง",
+  "useLocalNotificationDescription": "เปิดใช้งานการแจ้งเตือนในเครื่องสำหรับการโทรเข้า",
+  "cancelLocalNotification": "ปิดการแจ้งเตือนในเครื่อง",
+  "useStirNotification": "ใช้การแจ้งเตือนจาก STIR",
+  "useStirNotificationDescription": "เปิดใช้งานการแจ้งเตือน STIR สำหรับการโทรเข้า",
+  "cancelLocalNotificationDescription": "ปิดการแจ้งเตือนในเครื่องโดยอัตโนมัติ",
+  "callerIdSettingsTitle": "การตั้งค่ารหัสผู้โทร",
+    "callerIdSettingsSubtitle": "หากต้องการตั้งค่าการแจ้งเตือนสายโทรเข้าและโหมดการแสดงผล", 
+    "purchaseTitle": "ซื้อ",
+    "purchaseSubtitle": "หากต้องการซื้อบริการ",
+   "callerIdNotificationTitle": "ข้อมูลผู้โทร",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "หมายเลข: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "สายที่ถูกบล็อก",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "สายที่ถูกบล็อกจาก {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "ยืนยันแล้ว",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "ไม่ยืนยัน",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "การตรวจสอบล้มเหลว",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "สถานะการตรวจสอบที่ไม่รู้จัก",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "การตรวจสอบ STIR/SHAKEN",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "{stirResultMessage} สำหรับหมายเลข {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "การตั้งค่าข้อความรักษาความปลอดภัยแบบเลื่อน",
+  "messageColor": "สีข้อความ",
+  "messageFontSize": "ขนาดตัวอักษรข้อความ",
+  "messagePosition": "ตำแหน่งข้อความ",
+  "containerWidth": "ความกว้างของคอนเทนเนอร์",
+  "scrollSpeed": "ความเร็วในการเลื่อน",
+  "enableSecurityMessage": "เปิดใช้งานข้อความรักษาความปลอดภัย",
+  "fraudAlertTitle": "การแจ้งเตือนการฉ้อโกง",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "สายหลอกลวงที่อาจเกิดขึ้นจาก {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "โหลดกฎล้มเหลว: {error}",
+ "loadCallLogFailed": "โหลดบันทึกการโทรล้มเหลว: {error}",
+ "noBlockedTypeData": "ไม่มีข้อมูลประเภทที่ถูกบล็อก",
+"importEntity": "นำเข้า {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "นำเข้า {entityTypeName} สำเร็จแล้ว",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "นำเข้า {entityTypeName} ล้มเหลว: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "ส่งออก {entityTypeName}",
+ "@exportEntity": {\n   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "ส่งออก {entityTypeName} สำเร็จแล้ว",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "ส่งออก {entityTypeName} ล้มเหลว: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "บริการซิงค์คลาวด์",
+  "membershipCenter": "ศูนย์สมาชิก",
+  "redeemVipWithMarks": "แลก VIP ด้วย Marks",
+  "currentMarkCount": "จำนวน Marks ปัจจุบัน",
+  "markMoreNumbersForMore": "ทำเครื่องหมายหมายเลขเพิ่มเติมเพื่อรับ Marks เพิ่มเติม",
+  "noAds": "ไม่มีโฆษณา",
+  "cloudBackup": "สำรองข้อมูลบนคลาวด์",
+  "callerIdEnhancement": "การปรับปรุง ID ผู้โทร",
+  "voiceRecognition": "การจดจำเสียง",
+  "feature": "คุณสมบัติ",
+  "normalUser": "ผู้ใช้ทั่วไป",
+  "vipUser": "ผู้ใช้ VIP",
+  "temporaryVip": "VIP ชั่วคราว",
+  "removeAds": "ลบโฆษณา",
+
+  "unknownAction": "การกระทำที่ไม่รู้จัก",
+
+    "settingsBackup": "สำรองข้อมูลการตั้งค่า",
+      "allServicesStatusTitle": "สถานะบริการปัจจุบัน",
+  "allServicesStatusSubtitle": "สถานะปัจจุบันของแต่ละบริการคลาวด์",
+   
+  "redirect": "เปลี่ยนเส้นทาง",
+ "notify": "แจ้งให้ทราบ",
+ "log": "บันทึก",
+ "custom": "กำหนดเอง",
+ "allowActionDescription": "การโทรจะได้รับอนุญาต แม้ว่าหมายเลขจะอยู่ในบัญชีดำ",
+ "blockActionDescription": "การโทรจะถูกบล็อกและแสดงในบันทึกการโทร",
+ "silenceActionDescription": "การโทรจะถูกปิดเสียง แต่จะแสดงในบันทึกการโทร",
+ "noneActionDescription": "จะไม่มีการดำเนินการพิเศษใดๆ สำหรับการโทร",
+ "redirectActionDescription": "เปลี่ยนเส้นทางการโทรไปยังหมายเลขที่ระบุ",
+ "labelActionDescription": "เพิ่มป้ายกำกับในการโทรเพื่อง่ายต่อการระบุ",
+ "notifyActionDescription": "ส่งการแจ้งเตือนเมื่อได้รับสาย",
+ "logActionDescription": "บันทึกข้อมูลการโทรโดยไม่มีการดำเนินการอื่นใด",
+ "customActionDescription": "ดำเนินการที่กำหนดเอง",
+ "synced": "ซิงค์แล้ว",
+ "lastUpdated": "อัปเดตล่าสุด: {date}",
+ 
+   "needVipAccess": "คุณต้องมีสิทธิ์เข้าถึง VIP เพื่อใช้คุณสมบัตินี้",
+"importExportDescription": "นำเข้าหรือส่งออกข้อมูล {entityTypeName}",
+
+   "importExportTitle": "นำเข้า/ส่งออก",
+ "noPhoneRules": "ไม่พบกฎโทรศัพท์",
+"noRegexRules": "ไม่พบกฎนิพจน์ทั่วไป",
+ "noAllowedBlockedRules": "ไม่พบกฎที่อนุญาต/บล็อก",
+   "importExport": "นำเข้า/ส่งออก",
+   "filterByAction": "กรองตามการกระทำ",
+  "upgradeToVip": "อัปเกรดเป็น VIP",
+  "yesterday": "เมื่อวาน"

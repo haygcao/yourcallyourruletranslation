@@ -1,0 +1,215 @@
+              "fraudAlerSettingTitle": "詐欺アラート設定",
+              "fraudAlerSettingSubtitle": "詐欺アラートを設定するには",
+  "enableFraudAlert": "詐欺アラートを有効にする",
+  "enableFraudAlertDescription": "疑わしい詐欺電話のアラート",
+      "enableVibration": "バイブレーションを有効にする",
+      "enableVibrationDescription": "通話が疑わしい詐欺電話である場合に振動する",
+  "notificationSettingsTitle": "通知設定",
+  "useLocalNotification": "ローカル通知を使用する",
+  "useLocalNotificationDescription": "着信のローカル通知を有効にする",
+  "cancelLocalNotification": "ローカル通知を閉じる",
+  "useStirNotification": "STIR からの通知を使用する",
+  "useStirNotificationDescription": "着信の STIR 通知を有効にする",
+  "cancelLocalNotificationDescription": "ローカル通知を自動的に閉じる",
+  "callerIdSettingsTitle": "発信者 ID 設定",
+    "callerIdSettingsSubtitle": "着信通知と表示モードを設定するには", 
+    "purchaseTitle": "購入",
+    "purchaseSubtitle": "サービスを購入するには",
+   "callerIdNotificationTitle": "着信情報",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "番号: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "着信拒否",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "{phoneNumber} からの着信を拒否しました",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "確認済み",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "未検証",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "検証失敗",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "不明な検証ステータス",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN 検証",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "番号 {phoneNumber} の {stirResultMessage}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "スクロール セキュリティ メッセージの設定",
+  "messageColor": "メッセージの色",
+  "messageFontSize": "メッセージのフォント サイズ",
+  "messagePosition": "メッセージの位置",
+  "containerWidth": "コンテナの幅",
+  "scrollSpeed": "スクロール速度",
+  "enableSecurityMessage": "セキュリティ メッセージを有効にする",
+  "fraudAlertTitle": "詐欺アラート",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "{phoneNumber} からの可能性のある詐欺電話",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {\n        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "ルールをロードできませんでした: {error}",
+ "loadCallLogFailed": "通話履歴のロードに失敗しました: {error}",
+ "noBlockedTypeData": "ブロックされたタイプのデータはありません",
+"importEntity": "{entityTypeName} のインポート",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} が正常にインポートされました",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "{entityTypeName} のインポートに失敗しました: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "{entityTypeName} のエクスポート",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} が正常にエクスポートされました",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "{entityTypeName} のエクスポートに失敗しました: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "クラウド同期サービス",
+  "membershipCenter": "メンバーシップセンター",
+  "redeemVipWithMarks": "マークで VIP を利用する",
+  "currentMarkCount": "現在のマーク数",
+  "markMoreNumbersForMore": "より多くのマークを得るためにより多くの番号をマークする",
+  "noAds": "広告なし",
+  "cloudBackup": "クラウドバックアップ",
+  "callerIdEnhancement": "発信者 ID の強化",
+  "voiceRecognition": "音声認識",
+  "feature": "機能",
+  "normalUser": "通常のユーザー",
+  "vipUser": "VIP ユーザー",
+  "temporaryVip": "一時 VIP",
+  "removeAds": "広告を削除",
+
+  "unknownAction": "不明なアクション",
+
+    "settingsBackup": "設定のバックアップ",
+      "allServicesStatusTitle": "現在のサービス状況",
+  "allServicesStatusSubtitle": "各クラウドサービスの現在の状況",
+   
+  "redirect": "リダイレクト",
+ "notify": "通知",
+ "log": "ログ",
+ "custom": "カスタム",
+ "allowActionDescription": "番号がブラックリストに登録されていても、通話を許可します",
+ "blockActionDescription": "通話をブロックし、通話履歴に表示します.",
+ "silenceActionDescription": "通話をサイレントにし、通話履歴に表示します.",
+ "noneActionDescription": "通話に対して特別なアクションは実行されません.",
+ "redirectActionDescription": "通話を指定された番号にリダイレクトします.",
+ "labelActionDescription": "通話を簡単に識別できるようにラベルを追加します.",
+ "notifyActionDescription": "通話を受信したときに通知を送信します.",
+ "logActionDescription": "他のアクションを実行せずに通話情報をログに記録する",
+ "customActionDescription": "カスタムアクションを実行する.",
+ "synced": "同期済み",
+ "lastUpdated": "最終更新日: {date}",
+ 
+   "needVipAccess": "この機能を使用するには、VIP アクセスが必要です",
+"importExportDescription": "{entityTypeName} データをインポートまたはエクスポートする",
+
+   "importExportTitle": "インポート/エクスポート",
+ "noPhoneRules": "電話ルールが見つかりません",
+"noRegexRules": "正規表現ルールが見つかりません",
+ "noAllowedBlockedRules": "許可/ブロックされたルールが見つかりません",
+   "importExport": "インポート/エクスポート",
+   "filterByAction": "アクションでフィルタリング",
+  "upgradeToVip": "VIP にアップグレード",
+  "yesterday": "昨日"

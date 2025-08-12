@@ -1,0 +1,215 @@
+              "fraudAlerSettingTitle": "إعدادات تنبيه الاحتيال",
+              "fraudAlerSettingSubtitle": "لتعيين تنبيه الاحتيال",
+  "enableFraudAlert": "تمكين تنبيه الاحتيال",
+  "enableFraudAlertDescription": "تنبيه بشأن المكالمات الاحتيالية المشتبه بها",
+      "enableVibration": "تمكين الاهتزاز",
+      "enableVibrationDescription": "يهتز عند الاشتباه في أن المكالمة هي عملية احتيال",
+  "notificationSettingsTitle": "إعدادات الإشعارات",
+  "useLocalNotification": "استخدام الإشعارات المحلية",
+  "useLocalNotificationDescription": "تمكين الإشعارات المحلية للمكالمات الواردة",
+  "cancelLocalNotification": "إغلاق الإشعارات المحلية",
+  "useStirNotification": "استخدام الإشعارات من STIR",
+  "useStirNotificationDescription": "تمكين إشعارات STIR للمكالمات الواردة",
+  "cancelLocalNotificationDescription": "إغلاق الإشعارات المحلية تلقائيًا",
+  "callerIdSettingsTitle": "إعدادات معرف المتصل",
+    "callerIdSettingsSubtitle": "لإعداد إشعار المكالمات الواردة ووضع العرض", 
+    "purchaseTitle": "شراء",
+    "purchaseSubtitle": "لشراء الخدمة",
+   "callerIdNotificationTitle": "معلومات المكالمة الواردة",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "الرقم: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "المكالمة المحظورة",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "مكالمة محظورة من {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "تم التحقق",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "لم يتم التحقق",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "فشل التحقق",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "حالة التحقق غير معروفة",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "التحقق من STIR/SHAKEN",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "{stirResultMessage} للرقم {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String"
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String"
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "إعدادات رسائل الأمان المتحركة",
+  "messageColor": "لون الرسالة",
+  "messageFontSize": "حجم خط الرسالة",
+  "messagePosition": "موضع الرسالة",
+  "containerWidth": "عرض الحاوية",
+  "scrollSpeed": "سرعة التمرير",
+  "enableSecurityMessage": "تمكين رسالة الأمان",
+  "fraudAlertTitle": "تنبيه بالاحتيال",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "مكالمة احتيالية محتملة من {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "فشل تحميل القواعد: {error}",
+ "loadCallLogFailed": "فشل تحميل سجل المكالمات: {error}",
+ "noBlockedTypeData": "لا توجد بيانات من النوع المحظور",
+"importEntity": "استيراد {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "تم استيراد {entityTypeName} بنجاح",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportFailed": "فشل استيراد {entityTypeName}: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "تصدير {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "تم تصدير {entityTypeName} بنجاح",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "فشل تصدير {entityTypeName}: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "خدمة المزامنة السحابية",
+  "membershipCenter": "مركز العضوية",
+  "redeemVipWithMarks": "استبدل VIP بعلامات",
+  "currentMarkCount": "عدد العلامات الحالي",
+  "markMoreNumbersForMore": "ضع علامة على المزيد من الأرقام للحصول على المزيد من العلامات",
+  "noAds": "لا توجد إعلانات",
+  "cloudBackup": "نسخ احتياطي سحابي",
+  "callerIdEnhancement": "تحسين معرف المتصل",
+  "voiceRecognition": "التعرف على الصوت",
+  "feature": "ميزة",
+  "normalUser": "مستخدم عادي",
+  "vipUser": "مستخدم VIP",
+  "temporaryVip": "VIP مؤقت",
+  "removeAds": "إزالة الإعلانات",
+
+  "unknownAction": "إجراء غير معروف",
+
+    "settingsBackup": "نسخ احتياطي للإعدادات",
+      "allServicesStatusTitle": "حالة الخدمة الحالية",
+  "allServicesStatusSubtitle": "الحالة الحالية لكل خدمة سحابية",
+   
+  "redirect": "إعادة التوجيه",
+ "notify": "إعلام",
+ "log": "سجل",
+ "custom": "مخصص",
+ "allowActionDescription": "سيتم السماح بالمكالمات حتى إذا كان الرقم موجودًا في القائمة السوداء",
+ "blockActionDescription": "سيتم حظر المكالمات وعرضها في سجل المكالمات.",
+ "silenceActionDescription": "سيتم إسكات المكالمات ولكن سيتم عرضها في سجل المكالمات.",
+ "noneActionDescription": "لن يتم اتخاذ أي إجراء خاص للمكالمة.",
+ "redirectActionDescription": "إعادة توجيه المكالمة إلى رقم محدد.",
+ "labelActionDescription": "إضافة تسمية إلى المكالمة لتسهيل التعرف عليها.",
+ "notifyActionDescription": "إرسال إشعار عند استلام مكالمة.",
+ "logActionDescription": "تسجيل معلومات المكالمة دون اتخاذ أي إجراء آخر",
+ "customActionDescription": "تنفيذ إجراء مخصص.",
+ "synced": "متزامنة",
+ "lastUpdated": "آخر تحديث: {date}",
+ 
+   "needVipAccess": "أنت بحاجة إلى الوصول VIP لاستخدام هذه الميزة",
+"importExportDescription": "استيراد أو تصدير بيانات {entityTypeName}",
+
+   "importExportTitle": "استيراد/تصدير",
+ "noPhoneRules": "لا توجد قواعد هاتف",
+"noRegexRules": "لا توجد قواعد Regex",
+ "noAllowedBlockedRules": "لا توجد قواعد مسموح بها/محظورة",
+   "importExport": "استيراد/تصدير",
+   "filterByAction": "تصفية حسب الإجراء",
+  "upgradeToVip": "الترقية إلى VIP",
+  "yesterday": "أمس"

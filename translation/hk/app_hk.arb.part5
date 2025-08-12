@@ -1,0 +1,214 @@
+              "fraudAlerSettingTitle": "欺詐警報設定",
+              "fraudAlerSettingSubtitle": "設定欺詐警報",
+  "enableFraudAlert": "啟用欺詐警報",
+  "enableFraudAlertDescription": "可疑詐騙電話嘅警報",
+      "enableVibration": "啟用震動",
+      "enableVibrationDescription": "當呼叫疑似詐騙電話時震動",
+  "notificationSettingsTitle": "通知設定",
+  "useLocalNotification": "使用本地通知",
+  "useLocalNotificationDescription": "啟用來電嘅本地通知",
+  "cancelLocalNotification": "關閉本地通知",
+  "useStirNotification": "使用 STIR 嘅通知",
+  "useStirNotificationDescription": "啟用呼入電話嘅 STIR 通知",
+  "cancelLocalNotificationDescription": "自動關閉本地通知",
+  "callerIdSettingsTitle": "來電顯示設定",
+    "callerIdSettingsSubtitle": "設定來電通知同顯示模式", 
+    "purchaseTitle": "購買",
+    "purchaseSubtitle": "購買服務",
+   "callerIdNotificationTitle": "來電資訊",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "號碼: {phoneNumber}",
+  "@callerIdBody": {\n    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "封鎖嘅電話",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "已封鎖嚟自 {phoneNumber} 嘅電話",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "已驗證",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "未驗證",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "驗證失敗",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "未知嘅驗證狀態",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN 驗證",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "號碼 {phoneNumber} 嘅 {stirResultMessage}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "滾動安全訊息設定",
+  "messageColor": "訊息顏色",
+  "messageFontSize": "訊息字體大小",
+  "messagePosition": "訊息位置",
+  "containerWidth": "容器寬度",
+  "scrollSpeed": "滾動速度",
+  "enableSecurityMessage": "啟用安全訊息",
+  "fraudAlertTitle": "欺詐警報",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "嚟自 {phoneNumber} 嘅潛在欺詐電話",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "載入規則失敗: {error}",
+ "loadCallLogFailed": "載入通話記錄失敗: {error}",
+ "noBlockedTypeData": "冇被封鎖嘅類型資料",
+"importEntity": "匯入 {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "已成功匯入 {entityTypeName}",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "匯入 {entityTypeName} 失敗: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "匯出 {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "已成功匯出 {entityTypeName}",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "匯出 {entityTypeName} 失敗: {error}",
+ "@entityExportFailed": {\n   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "雲端同步服務",
+  "membershipCenter": "會員中心",
+  "redeemVipWithMarks": "用 Marks 兌換 VIP",
+  "currentMarkCount": "目前標記數",
+  "markMoreNumbersForMore": "標記更多號碼以獲得更多 Marks",
+  "noAds": "冇廣告",
+  "cloudBackup": "雲端備份",
+  "callerIdEnhancement": "來電顯示增強",
+  "voiceRecognition": "語音識別",
+  "feature": "特色",
+  "normalUser": "一般使用者",
+  "vipUser": "VIP 用戶",
+  "temporaryVip": "臨時 VIP",
+  "removeAds": "移除廣告",
+
+  "unknownAction": "未知操作",
+
+    "settingsBackup": "設定備份",
+      "allServicesStatusTitle": "目前服務狀態",
+  "allServicesStatusSubtitle": "每個雲端服務嘅目前狀態",
+   
+  "redirect": "重新導向",
+ "notify": "通知",
+ "log": "日誌",
+ "custom": "自訂",
+ "allowActionDescription": "即使號碼喺黑名單中，都將允許呼叫",
+ "blockActionDescription": "呼叫將會被封鎖並喺通話記錄中顯示.",
+ "silenceActionDescription": "呼叫將會被靜音但喺通話記錄中顯示.",
+ "noneActionDescription": "唔會對呼叫採取任何特殊操作.",
+ "redirectActionDescription": "將呼叫重新導向到指定嘅號碼.",
+ "labelActionDescription": "喺呼叫中新增標籤以便於識別.",
+ "notifyActionDescription": "收到呼叫時傳送通知.",
+ "logActionDescription": "記錄呼叫資訊而唔採取任何其他操作",
+ "customActionDescription": "執行自訂操作.",
+ "synced": "已同步",
+ "lastUpdated": "上次更新: {date}",
+ 
+   "needVipAccess": "您需要 VIP 存取權先可以使用此功能",
+"importExportDescription": "匯入或匯出 {entityTypeName} 資料",
+
+   "importExportTitle": "匯入/匯出",
+ "noPhoneRules": "未搵到電話規則",
+"noRegexRules": "未搵到正則表達式規則",
+ "noAllowedBlockedRules": "未搵到允許/封鎖嘅規則",
+   "importExport": "匯入/匯出",
+   "filterByAction": "按操作篩選",
+  "upgradeToVip": "升級到 VIP",
+  "yesterday": "尋日"

@@ -1,0 +1,216 @@
+              "fraudAlerSettingTitle": "Настройки оповещений о мошенничестве",
+              "fraudAlerSettingSubtitle": "Чтобы установить оповещение о мошенничестве",
+  "enableFraudAlert": "Включить оповещение о мошенничестве",
+  "enableFraudAlertDescription": "Оповещение о подозрительных мошеннических вызовах",
+      "enableVibration": "Включить вибрацию",
+      "enableVibrationDescription": "Вибрировать при подозрении, что вызов является мошенническим",
+  "notificationSettingsTitle": "Настройки уведомлений",
+  "useLocalNotification": "Использовать локальные уведомления",
+  "useLocalNotificationDescription": "Включить локальные уведомления для входящих вызовов",
+  "cancelLocalNotification": "Закрыть локальные уведомления",
+  "useStirNotification": "Использовать уведомление от STIR",
+  "useStirNotificationDescription": "Включить уведомления STIR для входящих вызовов",
+  "cancelLocalNotificationDescription": "Автоматически закрывать локальные уведомления",
+  "callerIdSettingsTitle": "Настройки идентификатора вызывающего абонента",
+    "callerIdSettingsSubtitle": "Настройка уведомлений о входящих вызовах и режима отображения", 
+    "purchaseTitle": "Купить",
+    "purchaseSubtitle": "Чтобы приобрести услугу",
+   "callerIdNotificationTitle": "Информация о входящем вызове",
+  "@callerIdNotificationTitle": {
+    "description": "Title for the Incoming Call Info"
+  },
+  "callerIdBody": "Номер: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Заблокированный вызов",
+  "@blockedCallTitle": {
+    "description": "Title for blocked call notification"
+  },
+  "blockedCallBody": "Заблокированный вызов от {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Подтверждено",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified"
+  },
+  "stirNotVerified": "Не подтверждено",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified"
+  },
+  "stirFailed": "Ошибка проверки",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed"
+  },
+  "stirUnknown": "Неизвестный статус проверки",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown"
+  },
+  "stirVerificationTitle": "Проверка STIR/SHAKEN",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "{stirResultMessage} для номера {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String"
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String"
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Настройки прокрутки сообщений безопасности",
+  "messageColor": "Цвет сообщения",
+  "messageFontSize": "Размер шрифта сообщения",
+  "messagePosition": "Положение сообщения",
+  "containerWidth": "Ширина контейнера",
+  "scrollSpeed": "Скорость прокрутки",
+  "enableSecurityMessage": "Включить сообщение безопасности",
+  "fraudAlertTitle": "Предупреждение о мошенничестве",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification"
+  },
+  "fraudAlertBody": "Возможный мошеннический вызов от {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+        "example": "+1234567890"
+      }
+    }
+  },
+   "loadRulesFailed": "Не удалось загрузить правила: {error}",
+ "loadCallLogFailed": "Не удалось загрузить журнал вызовов: {error}",
+ "noBlockedTypeData": "Нет данных о заблокированных типах",
+"importEntity": "Импортировать {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} успешно импортирован",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportFailed": "Не удалось импортировать {entityTypeName}: {error}",
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Экспортировать {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} успешно экспортирован",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Не удалось экспортировать {entityTypeName}: {error}",
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Сервис синхронизации с облаком",
+  "membershipCenter": "Центр членства",
+  "redeemVipWithMarks": "Обменять VIP на Marks",
+  "currentMarkCount": "Текущее количество Marks",
+  "markMoreNumbersForMore": "Отмечайте больше номеров, чтобы получить больше Marks",
+  "noAds": "Нет рекламы",
+  "cloudBackup": "Резервное копирование в облако",
+  "callerIdEnhancement": "Улучшение идентификатора вызывающего абонента",
+  "voiceRecognition": "Распознавание голоса",
+  "feature": "Функция",
+  "normalUser": "Обычный пользователь",
+  "vipUser": "VIP-пользователь",
+  "temporaryVip": "Временный VIP",
+  "removeAds": "Удалить рекламу",
+
+  "unknownAction": "Неизвестное действие",
+
+    "settingsBackup": "Резервное копирование настроек",
+      "allServicesStatusTitle": "Текущий статус сервиса",
+  "allServicesStatusSubtitle": "Текущий статус каждого облачного сервиса",
+   
+  "redirect": "Перенаправить",
+ "notify": "Уведомить",
+ "log": "Журнал",
+ "custom": "Пользовательский",
+ "allowActionDescription": "Вызовы будут разрешены, даже если номер находится в черном списке",
+ "blockActionDescription": "Вызовы будут заблокированы и отображены в журнале вызовов.",
+ "silenceActionDescription": "Вызовы будут заглушены, но отображены в журнале вызовов.",
+ "noneActionDescription": "Никаких специальных действий с вызовом не производится.",
+ "redirectActionDescription": "Перенаправить вызов на указанный номер.",
+ "labelActionDescription": "Добавить метку к вызову для упрощения идентификации.",
+ "notifyActionDescription": "Отправить уведомление при получении вызова.",
+ "logActionDescription": "Записывать информацию о вызове без каких-либо других действий",
+ "customActionDescription": "Выполнить пользовательское действие.",
+ "synced": "Синхронизировано",
+ "lastUpdated": "Последнее обновление: {date}",
+ 
+   "needVipAccess": "Для использования этой функции требуется VIP-доступ",
+"importExportDescription": "Импорт или экспорт данных {entityTypeName}",
+
+   "importExportTitle": "Импорт/Экспорт",
+ "noPhoneRules": "Нет правил для телефона",
+"noRegexRules": "Нет правил регулярных выражений",
+ "noAllowedBlockedRules": "Нет разрешенных/заблокированных правил",
+   "importExport": "Импорт/Экспорт",
+   "filterByAction": "Фильтровать по действию",
+  "upgradeToVip": "Перейти на VIP",
+  "yesterday": "Вчера"
