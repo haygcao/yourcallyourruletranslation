@@ -1,0 +1,226 @@
+{
+              "fraudAlerSettingTitle": "Fraud Alert Setting",
+              "fraudAlerSettingSubtitle": "To Set Fraud Alert",
+  "enableFraudAlert": "Enable Fraud Alert",
+  "enableFraudAlertDescription": "Alert for suspected scam calls",
+      "enableVibration": "Enable Vibration",
+      "enableVibrationDescription": "Vibrate when call is suspected scam calls",
+  "notificationSettingsTitle": "Notification Settings",
+  "useLocalNotification": "Use Local Notifications",
+  "useLocalNotificationDescription": "Enable local notifications for incoming calls",
+  "cancelLocalNotification": "Close Local Notifications",
+  "useStirNotification": "Use Notification from STIR",
+  "useStirNotificationDescription": "Enable STIR notifications for incoming calls",
+  "cancelLocalNotificationDescription": "Close Local Notifications Automatically",
+  "callerIdSettingsTitle": "Caller ID Settings",
+    "callerIdSettingsSubtitle": "To Set up Incoming Call Notification & Display Mode", 
+    "purchaseTitle": "Purchase",
+    "purchaseSubtitle": "To Purchase the Service",
+   "callerIdNotificationTitle": "Incoming Call Info",
+  "@callerIdNotificationTitle": {
+    "description": "Titel voor de informatie over inkomende oproepen",
+    "placeholders": { }
+  },
+  "callerIdBody": "Number: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Body for the caller ID notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Blocked Call",
+  "@blockedCallTitle": {
+    "description": "Titel voor melding van geblokkeerd gesprek",
+    "placeholders": { }
+  },
+  "blockedCallBody": "Blocked call from {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Body for blocked call notification, showing the phone number",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Verified",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verification status: Verified",
+    "placeholders": { }
+  },
+  "stirNotVerified": "Not Verified",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verification status: Not Verified",
+    "placeholders": { }
+  },
+  "stirFailed": "Verification Failed",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verification status: Verification Failed",
+        "placeholders": { }
+  },
+  "stirUnknown": "Unknown Verification Status",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verification status: Unknown",
+        "placeholders": { }
+  },
+  "stirVerificationTitle": "STIR/SHAKEN Verification",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification",
+        "placeholders": { }
+  },
+  "stirVerificationBody": "{stirResultMessage} for number {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Scrolling Security Message Settings",
+  "messageColor": "Message Color",
+  "messageFontSize": "Message Font Size",
+  "messagePosition": "Message Position",
+  "containerWidth": "Container Width",
+  "scrollSpeed": "Scroll Speed",
+  "enableSecurityMessage": "Enable Security Message",
+  "fraudAlertTitle": "Fraud Alert",
+  "@fraudAlertTitle": {
+    "description": "Title for the fraud alert notification",
+        "placeholders": { }
+  },
+  "fraudAlertBody": "Potential fraud call from {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Body for the fraud alert notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "loadRulesFailed": "Failed to load rules: {error}",
+ "loadCallLogFailed": "Failed to load call log: {error}",
+ "noBlockedTypeData": "No blocked type data available",
+"importEntity": "Import {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialog title for importing an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} imported successfully, to
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "Failed to import {entityTypeName}: {error}"
+ "@entityImportFailed": {
+   "description": "Error message when importing entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Export {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialog title for exporting an entity",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} exported successfully",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Failed to export {entityTypeName}: {error}"
+ "@entityExportFailed": {
+   "description": "Error message when exporting entities fails",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Cloud Sync Service",
+  "membershipCenter": "Membership Center",
+  "redeemVipWithMarks": "Redeem VIP with Marks",
+  "currentMarkCount": "Current Mark Count",
+  "markMoreNumbersForMore": "Mark more numbers for more marks",
+  "noAds": "No Ads",
+  "cloudBackup": "Cloud Backup",
+  "callerIdEnhancement": "Caller ID Enhancement",
+  "voiceRecognition": "Voice Recognition",
+  "feature": "Feature",
+  "normalUser": "Normal User",
+  "vipUser": "VIP User",
+  "temporaryVip": "Temporary VIP",
+  "removeAds": "Remove Ads",
+
+  "unknownAction": "Unknown Action",
+
+    "settingsBackup": "Settings Backup ",
+      "allServicesStatusTitle": "Current Service Status",
+  "allServicesStatusSubtitle": "Current Status of Each Cloud Service",
+   
+  "redirect": "Redirect",
+ "notify": "Notify",
+ "log": "Log",
+ "custom": "Custom",
+ "allowActionDescription": "Calls will be allowed, even if the number is on the bl",
+ "blockActionDescription": "Calls will be blocked and shown in the call log.",
+ "silenceActionDescription": "Calls will be silenced but shown in the call log.",
+ "noneActionDescription": "No special action will be taken for the call.",
+ "redirectActionDescription": "Redirect the call to a specified number.",
+ "labelActionDescription": "Add a label to the call for easy identification.",
+ "notifyActionDescription": "Send a notification when a call is received.",
+ "logActionDescription": "Log the call information without taking any other action",
+ "customActionDescription": "Perform a custom action.",
+ "synced": "Synced",
+ "lastUpdated": "Last Updated: {date}",
+ 
+   "needVipAccess": "You need VIP access to use this feature",
+"importExportDescription": "Import or export {entityTypeName} data",
+   "importExportTitle": "Import/Export",
+ "noPhoneRules": "No phone rules found",
+"noRegexRules": "No regex rules found",
+ "noAllowedBlockedRules": "No allowed/blocked rules found",
+   "importExport": "Import/Export",
+   "filterByAction": "Filter by Action",
+  "upgradeToVip": "Upgrade to VIP",
+  "yesterday": "Yesterday"
+}

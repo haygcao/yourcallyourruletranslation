@@ -1,0 +1,387 @@
+{
+  "setEncryptionPassword": "Indstil krypteringsadgangskode",
+  "setEncryptionPasswordDescription": "Indstil krypteringsadgangskode til sikkerhedskopiering og gendannelse",
+  "setEncryptionPasswordLabel": "Indstil krypteringsadgangskode",
+  "setEncryptionPasswordTitle": "Indstil krypteringsadgangskode",
+  "setPasswordButton": "Indstil",
+  "settings": "Indstillinger",
+  "settingsBackedUpTo": "Indstillinger sikkerhedskopieret til: {path}",
+  "settingsLoaded": "Indstillinger indlæst",
+  "settingsLoadFailed": "Kunne ikke indlæse indstillinger: {error}",
+  "settingsRestoredSuccessfully": "Indstillingerne er gendannet. Genstart appen for at ændringerne kan træde i kraft.",
+  "settingsSaved": "Indstillinger gemt",
+  "@settingsSaved": {
+    "description": "Settings saved confirmation message"
+  },
+  "settingsSaveFailed": "Kunne ikke gemme indstillinger: {error}",
+  "settingsTab": "Indstillinger",
+  "settingsTitle": "Indstillinger",
+  "setup": "Opsætning",
+  "showContactEditDialogStaticMethod": "Statisk metode til at vise kontaktredigeringsdialog",
+  "showExplanation": "Vis forklaring",
+  "silence": "Lydløs",
+  "silenceAndNoAnswer": "Lydløs og intet svar",
+  "silenceNoAnswer": "Lydløs intet svar",
+  "silentCallVoiceClone": "Lydløs opkaldsstemmeklon",
+  "silentRules": "Lydløse regler",
+  "simCard": "SIM-kort {simNumber}",
+  "simCardColor": "SIM-kortfarve",
+  "simCardConfigurationExplanation": "• SIM-kortkonfiguration: Indstil uafhængige filtreringsregler for hvert SIM-kort",
+  "simCardFilterRules": "SIM-kortfilterregler",
+  "simCardFilterRulesDescription": "Indstil forskellige filtreringsregler baseret på SIM-kortslots",
+  "simCardFontSize": "SIM-kortskriftstørrelse",
+  "simCardPosition": "SIM-kortposition",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM Card information",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Kunne ikke indlæse SIM-kortoplysninger: {error}",
+  "simRuleInstructions": "SIM-slotregler giver dig mulighed for at konfigurere uafhængige filtreringsregler for hver SIM-slot.",
+  "simRuleInstructionsTitle": "SIM-slotregler",
+  "@simRuleInstructionsTitle": {
+    "description": "Section title for SIM slot rules instructions"
+  },
+  "simRuleManagement": "SIM-slotregeladministration",
+  "@simRuleManagement": {
+    "description": "SIM slot rule management section title"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Text showing SIM slot 1 with country ISO code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Text showing SIM slot 2 with country ISO code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Kunne ikke indlæse SIM-data: {error}",
+  "simSlotFilterConfiguration": "SIM-slotfilterkonfiguration",
+  "simSlotFilterConfigurationDescription": "Tillader indstilling af filterregler efter SIM-slot",
+  "simSlotFilterDescription": "Konfigurér uafhængige filtreringsregler for hvert SIM-kort:",
+  "simSlotFilterSettingsTitle": "SIM-slot {slotNumber} filterindstillinger",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Title for SIM slot filter settings",
+    "placeholders": {
+      "slotNumber": {}
+    }
+  },
+  "simSlotLoadFailed": "Kunne ikke indlæse SIM-slots: {error}",
+  "simSlotManagement": "SIM-slotadministration",
+  "simSlotOperationFailed": "SIM-slotoperation mislykkedes: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM slot operation failure message",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIM-slotposition {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM slot position display",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM-slotregler: Uafhængige filtreringsstrategier pr. SIM",
+  "simSlotRuleListTitle": "SIM-slotregelliste",
+  "simSlotRuleManagement": "SIM-slotregler",
+  "simSlotRuleManagementTitle": "Regeladministration",
+  "simSlotSettings": "SIM-slotindstillinger",
+  "@simSlotSettings": {
+    "description": "Title for SIM slot settings page"
+  },
+  "simSlotTitle": "SIM-slot {slotNumber}",
+  "skip": "Spring over",
+  "smartCallerId": "Smart opkaldsidentifikation",
+  "sms": "SMS",
+  "smsFilterDescription": "SMS-filtrering hjælper dig automatisk med at filtrere spambeskeder og holde din meddelelsesliste ren. Du kan indstille filterregler og notifikationsmetoder.",
+  "smsFilterDisabled": "SMS-filtrering deaktiveret",
+  "smsFilterEnabled": "SMS-filtrering aktiveret",
+  "smsFilterRuleAddedSuccessfully": "SMS-filterregel tilføjet",
+  "smsFilterRules": "SMS-filterregler",
+  "smsFilterSettings": "SMS-filterindstillinger",
+  "smsHistory": "SMS-historik",
+  "smsManagement": "SMS-administration",
+  "smsPermission": "SMS-tilladelse",
+  "smsPermissionDescription": "Bruges til at filtrere spambeskeder.",
+  "smsRuleAddedSuccessfully": "SMS-regel tilføjet",
+  "smsRuleDeletedSuccessfully": "SMS-regel slettet",
+  "smsRuleLoadFailed": "Kunne ikke indlæse SMS-regler: {error}",
+  "smsRuleManagement": "SMS-regeladministration",
+  "smsRulesExportedSuccessfully": "SMS-regler er eksporteret til {filePath}",
+  "smsRulesImportedSuccessfully": "SMS-regler er importeret",
+  "smsRuleSubscription": "SMS-regelabonnement",
+  "smsRuleUpdatedSuccessfully": "SMS-regel opdateret",
+  "smsSettingsSubtitle": "SMS-filtrering og søgeordsblokering",
+  "smsSettingsTitle": "SMS-indstillinger",
+  "smsSubscription": "SMS-abonnement",
+  "smsSubscriptionAddedSuccessfully": "SMS-abonnement tilføjet",
+  "smsSubscriptionRulesDescription": "Abonner på SMS-regellister via URL, der understøtter regulært udtryksmatchning. Du kan indstille blokerings- eller tilladelseshandlinger.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Nogle tilladelsesanmodninger er blevet afvist",
+  "spamLikely": "Spam sandsynligt",
+  "startColor": "Startfarve",
+  "startDate": "Startdato",
+  "startUsing": "Kom i gang",
+  "statAnswered": "Besvaret",
+  "statBlocked": "Blokeret",
+  "staticMethodShowCallerIdDialog": "Statisk metode til at vise dialogboksen Opkalds-id-oplysninger",
+  "staticMethodToDisplayCountrySelectionDialog": "Statisk metode til at vise landevalgsdialogen",
+  "staticMethodToDisplayDialog": "Statisk metode til at vise dialogen",
+  "statistics": "Statistik",
+  "statisticsExportFeatureComingSoon": "Statistik eksport feature kommer snart",
+  "statisticsGrid": "Statistikgitter",
+  "statisticsPageTitle": "Dataanalyse",
+  "stirColor": "STIR-farve",
+  "stirFontSize": "STIR-skriftstørrelse",
+  "stirPosition": "STIR-position",
+  "storagePermission": "Lagertilladelse",
+  "storagePermissionDescription": "Bruges til at gemme indstillinger og regler.",
+  "subscribe": "Abonner",
+  "subscriptionAddSuccess": "Abonnement \"{name}\" tilføjet",
+  "@subscriptionAddSuccess": {
+    "description": "Subscription added success message",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Er du sikker på, at du vil slette dette abonnement?",
+  "subscriptionDeleteConfirmTitle": "Slet abonnement",
+  "subscriptionDeleted": "Abonnement slettet",
+  "@subscriptionDeleted": {
+    "description": "Subscription deleted success message"
+  },
+  "subscriptionDeletedSuccessfully": "Abonnement slettet",
+  "subscriptionDeleteFailed": "Kunne ikke slette abonnement: {error}",
+  "subscriptionDeleteSuccess": "Abonnement slettet",
+  "subscriptionEmptyState": "Ingen tilgængelige abonnementer",
+  "subscriptionEmptyText": "Ingen abonnementer endnu",
+  "subscriptionLoadFailed": "Kunne ikke indlæse abonnementer: {error}",
+  "subscriptionLoadingFailed": "Kunne ikke indlæse abonnementer: {error}",
+  "subscriptionManagementTitle": "Abonnementsadministration",
+  "subscriptionName": "Abonnementsnavn",
+  "@subscriptionName": {
+    "description": "Subscription name field label"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Abonnementsnavn og URL må ikke være tomt",
+  "subscriptionNameHint": "Indtast abonnementsnavn",
+  "subscriptionPageTitle": "Abonnementsadministration",
+  "subscriptionStatusChangeFailed": "Kunne ikke ændre abonnementsstatus: {error}",
+  "subscriptionToggleFailed": "Kunne ikke skifte abonnementsstatus: {error}",
+  "subscriptionUpdateFailed": "Kunne ikke opdatere abonnement: {error}",
+  "subscriptionUpdateSuccess": "Abonnement opdateret",
+  "@subscriptionUpdateSuccess": {
+    "description": "Subscription update success message",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "Abonnements-URL",
+  "@subscriptionUrl": {
+    "description": "Subscription URL field label"
+  },
+  "subscriptionUrlHint": "Indtast abonnements-URL",
+  "successfullyImportedRules": "{count} regler er blevet importeret",
+  "supportSync": "Understøtter synkronisering",
+  "survey": "Undersøgelse",
+  "syncDevicesButton": "Synkroniser enheder",
+  "synced": "Synkroniseret",
+  "@synced": {
+    "description": "Synced status label"
+  },
+  "syncFailed": "Synkronisering mislykkedes",
+  "syncFailedMessage": "Synkronisering mislykkedes",
+  "syncFolderNameHint": "Indtast synkroniseringsmappenavn (standard: NotificationManager)",
+  "syncFolderNameLabel": "Synkroniseringsmappenavn",
+  "synchronized": "Synkroniseret",
+  "@synchronized": {
+    "description": "Synchronized status label"
+  },
+  "syncing": "Synkroniserer...",
+  "syncNow": "Synkroniser nu",
+  "@syncNow": {
+    "description": "Sync now button text"
+  },
+  "syncNowButton": "Synkroniser nu",
+  "syncStatusTitle": "Synkroniseringsstatus",
+  "syncStatusUpdatedMessage": "Synkroniseringsstatus opdateret",
+  "syncSuccessful": "Synkronisering lykkedes",
+  "syncSuccessMessage": "Synkronisering lykkedes",
+  "syncWithCloudStorage": "Synkroniser med cloudlager",
+  "syncWithCloudStorageSubtitle": "Synkroniser med cloudlager",
+  "systemFeatures": "Systemfunktioner:",
+  "systemSettingsTitle": "Systemindstillinger",
+  "tabAll": "Alle",
+  "tabAnswered": "Besvaret",
+  "tabBlocked": "Blokeret",
+  "tabMissed": "Ubesvaret",
+  "tabOutgoing": "Udgående",
+  "tagLabel": "Etiket: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Etiketter opdateret",
+  "takeaway": "Takeaway",
+  "telecommunication": "Telekommunikation",
+  "telegram": "Telegram",
+  "telemarketing": "Telemarketing",
+  "testButton": "TEST",
+  "testButtonLabel": "TEST",
+  "testConnectionButton": "Test forbindelse",
+  "textColorsSetting": "Tekst- og etiketfarver",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Denne app er et kraftfuldt værktøj til opkalds-id, der giver dig mulighed for at identificere og blokere uønskede opkald.",
+  "thisWeek": "Denne uge",
+  "timeInterceptor": "Tidsopsnapper",
+  "timeInterceptorDescription": "Opsnap automatisk potentielle spamopkald baseret på opkaldsfrekvens",
+  "timeInterceptorExplanation": "• Tidsopsnapper: Opsnap gentagne opkald inden for kort tid",
+  "timeInterceptorExplanationContent": "Opkaldsfrekvensopsnapningsfunktionen analyserer opkaldsfrekvensen for automatisk at identificere og opsnappe hyppige spamopkald.",
+  "timeInterceptorExplanationTitle": "Forklaring af opkaldsfrekvensopsnapning",
+  "timeInterceptorSettingsTitle": "Indstillinger for opkaldsfrekvensopsnapning",
+  "timeInterceptorSubtitle": "Opsnap automatisk potentielle spamopkald baseret på opkaldsfrekvens",
+  "timeInterceptorTitle": "Aktivér opkaldsfrekvensopsnapning",
+  "timeWindowDescription": "Indstil tidsvinduestørrelsen til opsnapning af gentagne opkald. Opkald fra det samme nummer inden for dette vindue vil blive opsnappet",
+  "timeWindowLabel": "Tidsvindue for opsnapning (minutter): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Time window label with duration in minutes",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Indstil tidsvinduestørrelsen til opsnapning af gentagne opkald. Opkald fra det samme nummer inden for dette vindue vil blive opsnappet",
+  "today": "I dag",
+  "total": "Total",
+  "totalBlocked": "Total blokeret",
+  "totalFiltered": "Total filtreret",
+  "transferDataBetweenDevicesOrPlatforms": "Overfør data mellem enheder eller platforme",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Overfør data mellem enheder eller platforme",
+  "travelTicketing": "Rejsebilletter",
+  "trend": "Tendens",
+  "trendChart": "Tendensdiagram",
+  "tutorial": "Vejledning",
+  "type": "Type",
+  "unassignedSIMCard": "Ikke-tildelt SIM-kort",
+  "unknown": "Ukendt",
+  "@unknown": {
+    "description": "Display text for unknown status"
+  },
+  "unknownAction": "Ukendt handling",
+  "unknownLabel": "Ukendt etiket",
+  "unknownTag": "Etiket: Ukendt",
+  "unregisterButton": "Afregistrer",
+  "unregisterDeviceConfirmationMessage": "Er du sikker på, at du vil afregistrere {deviceName}?",
+  "unregisterDeviceTitle": "Afregistrer enhed",
+  "unsupportedFileFormat": "Ikke-understøttet filformat",
+  "update": "Opdatér",
+  "updateAllNow": "Opdatér alle nu",
+  "updateCallFilterConfig": "Opdatér opkaldsfilterkonfiguration",
+  "@updateCallFilterConfig": {
+    "description": "Button text for updating call filter configuration"
+  },
+  "updateContactFailed": "Kunne ikke opdatere kontakt: {error}",
+  "updateFavoriteStatus": "Opdatér foretrukken status",
+  "updateFavoriteStatusFailed": "Kunne ikke opdatere foretrukken status: {error}",
+  "updateInterval": "Opdateringsinterval",
+  "updateLabelFailed": "Kunne ikke opdatere etiket",
+  "updateNow": "Opdatér nu",
+  "updatePlugin": "Opdatér plugin",
+  "updatePluginFailed": "Kunne ikke opdatere plugin: {error}",
+  "updateRuleFailed": "Kunne ikke opdatere regel: {error}",
+  "updateSubscriptionFailed": "Kunne ikke opdatere abonnement: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Failed to update subscription error message",
+    "placeholders": {
+      "error": {"type": "Object"}
+    }
+  },
+  "updateSuccess": "{service} opdateret ({count} regler)",
+  "@updateSuccess": {
+    "description": "Single service update success message",
+    "placeholders": {
+      "service": {"type": "Object"},
+      "count": {"type": "Object"}
+    }
+  },
+  "updateTags": "Opdatér etiketter",
+  "useCasesPoint1": "• Identificer automatisk genopkaldte spamopkald",
+  "useCasesPoint2": "• Opsnap marketingopkald, der ringer flere gange på kort tid",
+  "useCasesPoint3": "• Forebyg telefonbombardementer og chikane",
+  "useCasesTitle": "Anvendelsestilfælde:",
+  "useGlobalSettings": "Brug globale indstillinger",
+  "userEmail": "user@example.com",
+  "usernameLabel": "Brugernavn",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Brug standard regex syntaks til at definere mønstre. Eksempler:",
+  "validateRegex": "Valider Regex",
+  "verificationFailedText": "Mislykkedes",
+  "verifiedText": "Bekræftet",
+  "verify": "Bekræft",
+  "version": "Version: {version}",
+  "vipExchangeDescription": "Udveksl VIP-medlemskab med telefonnummermarkeringsantal",
+  "vipExchangeTitle": "Markér udveksling VIP",
+  "watchAd": "Se annonce",
+  "watchAdForTemp": "Se annonce for midlertidige rettigheder",
+  "watchAdForTempDescription": "Se en kort annonce for midlertidigt at låse nogle premium-funktioner op",
+  "webDAVConfigTitle": "WebDAV-konfiguration",
+  "webdavConfigurationTitle": "WebDAV-konfiguration",
+  "webdavPasswordHint": "Indtast WebDAV-adgangskode",
+  "webdavServerAddressHint": "Indtast WebDAV-serveradresse",
+  "webdavUsernameHint": "Indtast WebDAV-brugernavn",
+  "week": "Uge",
+  "weekly": "Ugentlig",
+  "weeklyBlockedCallsSummary": "Ugentligt overblik over blokerede opkald",
+  "weeklyChartTitle": "Ugentlige blokerede opkald",
+  "weeklyReport": "Ugentlig rapport",
+  "@weeklyReport": {
+    "description": "Weekly report notification option"
+  },
+  "weeklyReportDesc": "Modtag ugentlig oversigtsrapport over aktivitet for opkaldsblokering",
+  "@weeklyReportDesc": {
+    "description": "Description for weekly report option"
+  },
+  "welcome": "Velkommen",
+  "whitelist": "Hvidliste",
+  "@whitelist": {
+    "description": "Whitelist label"
+  },
+  "whitelistLabel": "Hvidliste",
+  "width": "Bredde",
+  "wildcardMatchingDescription": "Brug '.' til at matche ethvert tegn (f.eks. '123.456' matcher 123-456)",
+  "wildcardMatchingTitle": "Jokertegnssammenligning:",
+  "wildcardSupportForFlexibleFiltering": "Jokertegnssupport til fleksibel filtrering",
+  "windowSizeSetting": "Vinduestørrelse",
+  "year": "År",
+  "yearly": "Årlig",
+  "yearlyChartTitle": "Årlige blokerede opkald",
+  "noSimCardsDetected": "Ingen SIM-kort registreret",
+  "filterManagementDescription": "Indstil opkaldsfiltre",
+  "yesterday": "I går",
+  "callerIdCustomizationSubtitle": "Tilpas layout for opkalds-id"
+}

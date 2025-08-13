@@ -1,0 +1,396 @@
+{
+  "setEncryptionPassword": "Versleutelingswachtwoord instellen",
+  "setEncryptionPasswordDescription": "Stel een versleutelingswachtwoord in voor back-up en herstel",
+  "setEncryptionPasswordLabel": "Versleutelingswachtwoord instellen",
+  "setEncryptionPasswordTitle": "Versleutelingswachtwoord instellen",
+  "setPasswordButton": "Instellen",
+  "settings": "Instellingen",
+  "settingsBackedUpTo": "Instellingen geback-upt naar: {path}",
+  "settingsLoaded": "Instellingen geladen",
+  "settingsLoadFailed": "Instellingen laden mislukt: {error}",
+  "settingsRestoredSuccessfully": "Instellingen succesvol hersteld. Start de app opnieuw om de wijzigingen door te voeren.",
+  "settingsSaved": "Instellingen opgeslagen",
+  "@settingsSaved": {
+    "description": "Bevestigingsbericht instellingen opgeslagen"
+  },
+  "settingsSaveFailed": "Instellingen opslaan mislukt: {error}",
+  "settingsTab": "Instellingen",
+  "settingsTitle": "Instellingen",
+  "setup": "Instellen",
+  "showContactEditDialogStaticMethod": "Statische methode om het dialoogvenster Nummer contactpersoon bewerken weer te geven",
+  "showExplanation": "Uitleg weergeven",
+  "silence": "Stilte",
+  "silenceAndNoAnswer": "Stilte en geen antwoord",
+  "silenceNoAnswer": "Stilte Geen antwoord",
+  "silentCallVoiceClone": "Stille oproep stem kloon",
+  "silentRules": "Stille regels",
+  "simCard": "Simkaart {simNumber}",
+  "simCardColor": "Simkaartkleur",
+  "simCardConfigurationExplanation": "• SIM-kaartconfiguratie: stel onafhankelijke filterregels in voor elke SIM-kaart",
+  "simCardFilterRules": "Filterregels voor simkaart",
+  "simCardFilterRulesDescription": "Stel verschillende filterregels in op basis van SIM-kaartsleuven",
+  "simCardFontSize": "Simkaartlettergrootte",
+  "simCardPosition": "Simkaartpositie",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM-kaarthinfaaltoegang",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Het laden van SIM-kaarthinfaaltoegang is mislukt: {error}",
+  "simRuleInstructions": "Met SIM-slotregels kunt u onafhankelijke filterregels configureren voor elke SIM-slot.",
+  "simRuleInstructionsTitle": "SIM-slotregels",
+  "@simRuleInstructionsTitle": {
+    "description": "Sectietitel voor instructies voor SIM-slotregels"
+  },
+  "simRuleManagement": "SIM-slotregelbeheer",
+  "@simRuleManagement": {
+    "description": "Sectietitel voor SIM-slotregelbeheer"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Tekst met SIM-slot 1 met land-ISO-code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Tekst met SIM-slot 2 met land-ISO-code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Het laden van SIM-gegevens is mislukt: {error}",
+  "simSlotFilterConfiguration": "SIM-slotfilterconfiguratie",
+  "simSlotFilterConfigurationDescription": "Filterregels per SIM-slot instellen toestaan",
+  "simSlotFilterDescription": "Configureer onafhankelijke filterregels voor elke SIM-kaart:",
+  "simSlotFilterSettingsTitle": "Filterinstellingen SIM-slot {slotNumber}",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Titel voor filterinstellingen SIM-slot",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Het laden van SIM-slots is mislukt: {error}",
+  "simSlotManagement": "SIM-slotbeheer",
+  "simSlotOperationFailed": "SIM-slotbewerking mislukt: {error}",
+  "@simSlotOperationFailed": {
+    "description": "Foutbericht SIM-slotbewerking",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+        }
+    }
+  },
+  "simSlotPosition": "SIM-slotpositie {slotNumber}",
+  "@simSlotPosition": {
+    "description": "Weergave SIM-slotpositie",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM-slotregels: Onafhankelijke filterstrategieën per SIM",
+  "simSlotRuleListTitle": "SIM-slotregellijst",
+  "simSlotRuleManagement": "SIM-slotregels",
+  "simSlotRuleManagementTitle": "Regelbeheer",
+  "simSlotSettings": "SIM-slotinstellingen",
+  "@simSlotSettings": {
+    "description": "Titel voor instellingenpagina SIM-slot"
+  },
+  "simSlotTitle": "SIM-slot {slotNumber}",
+  "skip": "Overslaan",
+  "smartCallerId": "Slimme nummerherkenning",
+  "sms": "SMS",
+  "smsFilterDescription": "SMS-filtering helpt u automatisch spam-berichten te filteren en uw berichtenlijst schoon te houden. U kunt filterregels en meldingsmethoden instellen.",
+  "smsFilterDisabled": "SMS-filtering uitgeschakeld",
+  "smsFilterEnabled": "SMS-filtering ingeschakeld",
+  "smsFilterRuleAddedSuccessfully": "SMS-filterregel succesvol toegevoegd",
+  "smsFilterRules": "SMS-filterregels",
+  "smsFilterSettings": "SMS-filterinstellingen",
+  "smsHistory": "SMS-geschiedenis",
+  "smsManagement": "SMS-beheer",
+  "smsPermission": "SMS-toestemming",
+  "smsPermissionDescription": "Wordt gebruikt om spam-berichten te filteren.",
+  "smsRuleAddedSuccessfully": "SMS-regel succesvol toegevoegd",
+  "smsRuleDeletedSuccessfully": "SMS-regel succesvol verwijderd",
+  "smsRuleLoadFailed": "Het laden van SMS-regels is mislukt: {error}",
+  "smsRuleManagement": "SMS-regelbeheer",
+  "smsRulesExportedSuccessfully": "SMS-regels succesvol geëxporteerd naar {filePath}",
+  "smsRulesImportedSuccessfully": "SMS-regels succesvol geïmporteerd",
+  "smsRuleSubscription": "SMS-regelabonnement",
+  "smsRuleUpdatedSuccessfully": "SMS-regel succesvol geüpdatet",
+  "smsSettingsSubtitle": "SMS-filtering en blokkeren op trefwoorden",
+  "smsSettingsTitle": "SMS-instellingen",
+  "smsSubscription": "SMS-abonnement",
+  "smsSubscriptionAddedSuccessfully": "SMS-abonnement succesvol toegevoegd",
+  "smsSubscriptionRulesDescription": "Abonneer u via URL op SMS-regellijsten die overeenkomsten met reguliere expressies ondersteunen. U kunt blokkeer- of toestaanacties instellen.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Sommige toestemmingsaanvragen geweigerd",
+  "spamLikely": "Spam waarschijnlijk",
+  "startColor": "Startkleur",
+  "startDate": "Startdatum",
+  "startUsing": "Aan de slag",
+  "statAnswered": "Beantwoord",
+  "statBlocked": "Geblokkeerd",
+  "staticMethodShowCallerIdDialog": "Statische methode om het dialoogvenster Nummerherkenning te tonen",
+  "staticMethodToDisplayCountrySelectionDialog": "Statische methode om het dialoogvenster voor landselectie weer te geven",
+  "staticMethodToDisplayDialog": "Statische methode om een dialoogvenster weer te geven",
+  "statistics": "Statistieken",
+  "statisticsExportFeatureComingSoon": "Statistieken export feature binnenkort beschikbaar",
+  "statisticsGrid": "Statistiekraster",
+  "statisticsPageTitle": "Gegevensanalyse",
+  "stirColor": "STIR-kleur",
+  "stirFontSize": "STIR-lettergrootte",
+  "stirPosition": "STIR-positie",
+  "storagePermission": "Opslagtoestemming",
+  "storagePermissionDescription": "Wordt gebruikt om instellingen en regels op te slaan.",
+  "subscribe": "Abonneren",
+  "subscriptionAddSuccess": "Abonnement \"{name}\" succesvol toegevoegd",
+  "@subscriptionAddSuccess": {
+    "description": "Bericht over succesvol toegevoegd abonnement",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+        }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Weet u zeker dat u dit abonnement wilt verwijderen?",
+  "subscriptionDeleteConfirmTitle": "Abonnement verwijderen",
+  "subscriptionDeleted": "Abonnement verwijderd",
+  "@subscriptionDeleted": {
+    "description": "Succesbericht abonnement verwijderd"
+  },
+  "subscriptionDeletedSuccessfully": "Abonnement succesvol verwijderd",
+  "subscriptionDeleteFailed": "Abonnement verwijderen mislukt: {error}",
+  "subscriptionDeleteSuccess": "Abonnement verwijderd",
+  "subscriptionEmptyState": "Geen abonnementen beschikbaar",
+  "subscriptionEmptyText": "Nog geen abonnementen",
+  "subscriptionLoadFailed": "Het laden van abonnementen is mislukt: {error}",
+  "subscriptionLoadingFailed": "Het laden van abonnementen is mislukt: {error}",
+  "subscriptionManagementTitle": "Abonnementenbeheer",
+  "subscriptionName": "Abonnementsnaam",
+  "@subscriptionName": {
+    "description": "Hint voor abonnementsnaamveld"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Abonnementsnaam en URL mogen niet leeg zijn",
+  "subscriptionNameHint": "Abonnementsnaam invoeren",
+  "subscriptionPageTitle": "Abonnementenbeheer",
+  "subscriptionStatusChangeFailed": "Het wijzigen van de abonnementsstatus is mislukt: {error}",
+  "subscriptionToggleFailed": "Het schakelen van de abonnementsstatus is mislukt: {error}",
+  "subscriptionUpdateFailed": "Het bijwerken van het abonnement is mislukt: {error}",
+  "subscriptionUpdateSuccess": "Abonnement succesvol bijgewerkt",
+  "@subscriptionUpdateSuccess": {
+    "description": "Succesbericht abonnement bijgewerkt",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "Abonnements-URL",
+  "@subscriptionUrl": {
+    "description": "Label voor abonnements-URL-veld"
+  },
+  "subscriptionUrlHint": "Abonnements-URL invoeren",
+  "successfullyImportedRules": "{count} regels succesvol geïmporteerd",
+  "supportSync": "Synchronisatie ondersteunen",
+  "survey": "Enquête",
+  "syncDevicesButton": "Apparaten synchroniseren",
+  "synced": "Gesynchroniseerd",
+  "@synced": {
+    "description": "Label Gesynchroniseerde status"
+  },
+  "syncFailed": "Synchronisatie mislukt",
+  "syncFailedMessage": "Synchronisatie mislukt",
+  "syncFolderNameHint": "Voer de naam van de synchronisatiemap in (standaard: NotificationManager)",
+  "syncFolderNameLabel": "Naam synchronisatiemap",
+  "synchronized": "Gesynchroniseerd",
+  "@synchronized": {
+    "description": "Label Gesynchroniseerde status"
+  },
+  "syncing": "Synchroniseren...",
+  "syncNow": "Nu synchroniseren",
+  "@syncNow": {
+    "description": "Tekst knop Nu synchroniseren"
+  },
+  "syncNowButton": "Nu synchroniseren",
+  "syncStatusTitle": "Synchronisatiestatus",
+  "syncStatusUpdatedMessage": "Synchronisatiestatus bijgewerkt",
+  "syncSuccessful": "Synchronisatie succesvol",
+  "syncSuccessMessage": "Synchronisatie succesvol",
+  "syncWithCloudStorage": "Synchroniseren met cloudopslag",
+  "syncWithCloudStorageSubtitle": "Synchroniseren met cloudopslag",
+  "systemFeatures": "Systeemfuncties:",
+  "systemSettingsTitle": "Systeeminstellingen",
+  "tabAll": "Alle",
+  "tabAnswered": "Beantwoord",
+  "tabBlocked": "Geblokkeerd",
+  "tabMissed": "Gemist",
+  "tabOutgoing": "Uitgaand",
+  "tagLabel": "Tag: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Tags bijgewerkt",
+  "takeaway": "Afhaalmaaltijden",
+  "telecommunication": "Telecommunicatie",
+  "telegram": "Telegram",
+  "telemarketing": "Telemarketing",
+  "testButton": "TEST",
+  "testButtonLabel": "TEST",
+  "testConnectionButton": "Testverbinding",
+  "textColorsSetting": "Tekst- en labelkleuren",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Deze app is een krachtig hulpmiddel voor nummerherkenning waarmee u ongewenste oproepen kunt identificeren en blokkeren.",
+  "thisWeek": "Deze week",
+  "timeInterceptor": "Tijdinterceptor",
+  "timeInterceptorDescription": "Potentiële spamoproepen automatisch onderscheppen op basis van de oproepfrequentie",
+  "timeInterceptorExplanation": "• Tijdinterceptor: herhaalde oproepen binnen korte tijd onderscheppen",
+  "timeInterceptorExplanationContent": "De oproepfrequentie-interceptorfunctie analyseert de oproepfrequentie om automatisch frequente spamoproepen te identificeren en te onderscheppen.",
+  "timeInterceptorExplanationTitle": "Uitleg interceptie van oproepfrequentie",
+  "timeInterceptorSettingsTitle": "Instellingen voor interceptie van oproepfrequentie",
+  "timeInterceptorSubtitle": "Potentiële spamoproepen automatisch onderscheppen op basis van de oproepfrequentie",
+  "timeInterceptorTitle": "Oproepfrequentie-interceptie inschakelen",
+  "timeWindowDescription": "Stel de grootte van het tijdvenster in voor het onderscheppen van herhaalde oproepen. Oproepen van hetzelfde nummer binnen dit venster worden onderschept",
+  "timeWindowLabel": "Tijdvenster voor interceptie (minuten): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Tijdvensterlabel met duur in minuten",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Stel de grootte van het tijdvenster in voor het onderscheppen van herhaalde oproepen. Oproepen van hetzelfde nummer binnen dit venster worden onderschept",
+  "today": "Vandaag",
+  "total": "Totaal",
+  "totalBlocked": "Totaal geblokkeerd",
+  "totalFiltered": "Totaal gefilterd",
+  "transferDataBetweenDevicesOrPlatforms": "Gegevens overzetten tussen apparaten of platforms",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Gegevens overzetten tussen apparaten of platforms",
+  "travelTicketing": "Reis-ticketing",
+  "trend": "Trend",
+  "trendChart": "Trendgrafiek",
+  "tutorial": "Tutorial",
+  "type": "Type",
+  "unassignedSIMCard": "Niet-toegewezen SIM-kaart",
+  "unknown": "Onbekend",
+  "@unknown": {
+    "description": "Weergavetekst voor onbekende status"
+  },
+  "unknownAction": "Onbekende actie",
+  "unknownLabel": "Onbekend label",
+  "unknownTag": "Tag: Onbekend",
+  "unregisterButton": "Afmelden",
+  "unregisterDeviceConfirmationMessage": "Weet u zeker dat u de registratie van {deviceName} wilt opheffen?",
+  "unregisterDeviceTitle": "Apparaat afmelden",
+  "unsupportedFileFormat": "Niet-ondersteund bestandsformaat",
+  "update": "Update",
+  "updateAllNow": "Alles nu bijwerken",
+  "updateCallFilterConfig": "Oproepfilterconfiguratie bijwerken",
+  "@updateCallFilterConfig": {
+    "description": "Knoptekst voor het bijwerken van de oproepfilterconfiguratie"
+  },
+  "updateContactFailed": "Contactpersoon bijwerken mislukt: {error}",
+  "updateFavoriteStatus": "Favorietenstatus bijwerken",
+  "updateFavoriteStatusFailed": "Favorietenstatus bijwerken mislukt: {error}",
+  "updateInterval": "Update-interval",
+  "updateLabelFailed": "Label bijwerken mislukt",
+  "updateNow": "Nu bijwerken",
+  "updatePlugin": "Plugin bijwerken",
+  "updatePluginFailed": "Plugin bijwerken mislukt: {error}",
+  "updateRuleFailed": "Regel bijwerken mislukt: {error}",
+  "updateSubscriptionFailed": "Abonnement bijwerken mislukt: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Foutbericht bij het bijwerken van het abonnement",
+    "placeholders": {
+      "error": {"type": "Object"}
+    }
+  },
+  "updateSuccess": "{service} succesvol bijgewerkt ({count} regels)",
+  "@updateSuccess": {
+    "description": "Succesbericht enkele service-update",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+        },
+      "count": {
+        "type": "Object"
+        }
+    }
+  },
+  "updateTags": "Tags bijwerken",
+  "useCasesPoint1": "• Identificeer automatisch herhaalde spamoproepen",
+  "useCasesPoint2": "• Onderschep marketingoproepen die meerdere keren in korte tijd bellen",
+  "useCasesPoint3": "• Voorkom telefoonbombardementen en intimidatie",
+  "useCasesTitle": "Gebruiksscenario's:",
+  "useGlobalSettings": "Algemene instellingen gebruiken",
+  "userEmail": "user@example.com",
+  "usernameLabel": "Gebruikersnaam",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Gebruik standaard regex-syntaxis om patronen te definiëren. Voorbeelden:",
+  "validateRegex": "Regex valideren",
+  "verificationFailedText": "Mislukt",
+  "verifiedText": "Geverifieerd",
+  "verify": "Verifiëren",
+  "version": "Versie: {version}",
+  "vipExchangeDescription": "VIP-lidmaatschap uitwisselen met het aantal markeringen van telefoonnummers",
+  "vipExchangeTitle": "Markeer uitwisseling VIP",
+  "watchAd": "Advertentie bekijken",
+  "watchAdForTemp": "Bekijk advertentie voor tijdelijke privileges",
+  "watchAdForTempDescription": "Bekijk een korte advertentie om tijdelijk premium-functies te ontgrendelen",
+  "webDAVConfigTitle": "WebDAV-configuratie",
+  "webdavConfigurationTitle": "WebDAV-configuratie",
+  "webdavPasswordHint": "WebDAV-wachtwoord invoeren",
+  "webdavServerAddressHint": "WebDAV-serveradres invoeren",
+  "webdavUsernameHint": "WebDAV-gebruikersnaam invoeren",
+  "week": "Week",
+  "weekly": "Wekelijks",
+  "weeklyBlockedCallsSummary": "Wekelijks overzicht van geblokkeerde oproepen",
+  "weeklyChartTitle": "Wekelijks geblokkeerde oproepen",
+  "weeklyReport": "Wekelijks rapport",
+  "@weeklyReport": {
+    "description": "Wekelijkse rapportmeldingsoptie"
+  },
+  "weeklyReportDesc": "Ontvang wekelijks overzichtsrapport van oproepblokkeringsactiviteit",
+  "@weeklyReportDesc": {
+    "description": "Beschrijving voor wekelijkse rapportoptie"
+  },
+  "welcome": "Welkom",
+  "whitelist": "Witte lijst",
+  "@whitelist": {
+    "description": "Label Witte lijst"
+  },
+  "whitelistLabel": "Witte lijst",
+  "width": "Breedte",
+  "wildcardMatchingDescription": "Gebruik '.' om een willekeurig teken te matchen (bijv. '123.456' komt overeen met 123-456)",
+  "wildcardMatchingTitle": "Jokertekensvergelijking:",
+  "wildcardSupportForFlexibleFiltering": "Jokertekenondersteuning voor flexibel filteren",
+  "windowSizeSetting": "Venstergrootte",
+  "year": "Jaar",
+  "yearly": "Jaarlijks",
+  "yearlyChartTitle": "Jaarlijks geblokkeerde oproepen",
+  "noSimCardsDetected": "Geen simkaarten gedetecteerd",
+  "filterManagementDescription": "Oproepfilters instellen",
+              "fraudAlerSettingTitle": "Instellingen voor fraudewaarschuwing",
+              "fraudAlerSettingSubtitle": "Om fraude-waarschuwing in te stellen",
+  
+              "callerIdCustomizationSubtitle": "Lay-out nummerherkenning aanpassen",
+  "yesterday": "Gisteren"
+}

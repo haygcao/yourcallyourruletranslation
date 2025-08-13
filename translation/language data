@@ -9,14 +9,13 @@ final List<Map<String, dynamic>> languages = [
  
 
 
-  {'name': 'Dansk', 'code': const Locale('da', 'DK')},
 
   {'name': 'English (UK)', 'code': const Locale('en', 'GB')},
   {'name': 'English (US)', 'code': const Locale('en', 'US')},
 
 
   
-  {'name': 'Nederlands', 'code': const Locale('nl', 'NL')},
+  
   {'name': 'Polski', 'code': const Locale('pl', 'PL')},
   {'name': 'Português', 'code': const Locale('pt')},
 

@@ -1,0 +1,396 @@
+{
+  "setEncryptionPassword": "设置加密密码",
+  "setEncryptionPasswordDescription": "设置用于备份和恢复的加密密码",
+  "setEncryptionPasswordLabel": "设置加密密码",
+  "setEncryptionPasswordTitle": "设置加密密码",
+  "setPasswordButton": "设置",
+  "settings": "设置",
+  "settingsBackedUpTo": "设置已备份到：{path}",
+  "settingsLoaded": "设置已加载",
+  "settingsLoadFailed": "加载设置失败: {error}",
+  "settingsRestoredSuccessfully": "设置已成功还原。请重新启动应用程序以使更改生效。",
+  "settingsSaved": "设置已保存",
+  "@settingsSaved": {
+    "description": "Settings saved confirmation message"
+  },
+  "settingsSaveFailed": "保存设置失败: {error}",
+  "settingsTab": "设置",
+  "settingsTitle": "设置",
+  "setup": "设置",
+  "showContactEditDialogStaticMethod": "用于显示联系人编辑对话框的静态方法",
+  "showExplanation": "显示说明",
+  "silence": "静音",
+  "silenceAndNoAnswer": "静音且不应答",
+  "silenceNoAnswer": "静音不应答",
+  "silentCallVoiceClone": "静默呼叫语音克隆",
+  "silentRules": "静默规则",
+  "simCard": "SIM 卡 {simNumber}",
+  "simCardColor": "SIM 卡颜色",
+  "simCardConfigurationExplanation": "• SIM 卡配置：为每张 SIM 卡设置独立的过滤规则",
+  "simCardFilterRules": "SIM 卡过滤规则",
+  "simCardFilterRulesDescription": "基于 SIM 卡插槽设置不同的过滤规则",
+  "simCardFontSize": "SIM 卡字体大小",
+  "simCardPosition": "SIM 卡位置",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM Card information",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "加载 SIM 卡信息失败: {error}",
+  "simRuleInstructions": "SIM 卡槽规则允许您为每个 SIM 卡槽配置独立的过滤规则。",
+  "simRuleInstructionsTitle": "SIM 卡槽规则",
+  "@simRuleInstructionsTitle": {
+    "description": "Section title for SIM slot rules instructions"
+  },
+  "simRuleManagement": "SIM 卡槽规则管理",
+  "@simRuleManagement": {
+    "description": "SIM slot rule management section title"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Text showing SIM slot 1 with country ISO code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Text showing SIM slot 2 with country ISO code",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "加载 SIM 卡数据失败: {error}",
+  "simSlotFilterConfiguration": "SIM 卡槽过滤器配置",
+  "simSlotFilterConfigurationDescription": "允许按 SIM 卡槽设置过滤规则",
+  "simSlotFilterDescription": "为每张 SIM 卡配置独立的过滤规则：",
+  "simSlotFilterSettingsTitle": "SIM 卡槽 {slotNumber} 过滤器设置",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Title for SIM slot filter settings",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "加载 SIM 卡槽失败: {error}",
+  "simSlotManagement": "SIM 卡槽管理",
+  "simSlotOperationFailed": "SIM 卡槽操作失败: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM slot operation failure message",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIM 卡槽位置 {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM slot position display",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM 卡槽规则：每个 SIM 卡独立的过滤策略",
+  "simSlotRuleListTitle": "SIM 卡槽规则列表",
+  "simSlotRuleManagement": "SIM 卡槽规则",
+  "simSlotRuleManagementTitle": "规则管理",
+  "simSlotSettings": "SIM 卡槽设置",
+  "@simSlotSettings": {
+    "description": "Title for SIM slot settings page"
+  },
+  "simSlotTitle": "SIM 卡槽 {slotNumber}",
+  "skip": "跳过",
+  "smartCallerId": "智能来电识别",
+  "sms": "短信",
+  "smsFilterDescription": "短信过滤可帮助您自动过滤垃圾短信并保持消息列表的清洁。您可以设置过滤规则和通知方法。",
+  "smsFilterDisabled": "短信过滤已禁用",
+  "smsFilterEnabled": "短信过滤已启用",
+  "smsFilterRuleAddedSuccessfully": "短信过滤规则添加成功",
+  "smsFilterRules": "短信过滤规则",
+  "smsFilterSettings": "短信过滤设置",
+  "smsHistory": "短信历史记录",
+  "smsManagement": "短信管理",
+  "smsPermission": "短信权限",
+  "smsPermissionDescription": "用于过滤垃圾短信。",
+  "smsRuleAddedSuccessfully": "短信规则添加成功",
+  "smsRuleDeletedSuccessfully": "短信规则删除成功",
+  "smsRuleLoadFailed": "加载短信规则失败: {error}",
+  "smsRuleManagement": "短信规则管理",
+  "smsRulesExportedSuccessfully": "短信规则已成功导出到 {filePath}",
+  "smsRulesImportedSuccessfully": "短信规则已成功导入",
+  "smsRuleSubscription": "短信规则订阅",
+  "smsRuleUpdatedSuccessfully": "短信规则更新成功",
+  "smsSettingsSubtitle": "短信过滤和关键字阻止",
+  "smsSettingsTitle": "短信设置",
+  "smsSubscription": "短信订阅",
+  "smsSubscriptionAddedSuccessfully": "短信订阅添加成功",
+  "smsSubscriptionRulesDescription": "通过 URL 订阅短信规则列表，支持正则表达式匹配。您可以设置阻止或允许操作。",
+  "smsTab": "短信",
+  "somePermissionsDenied": "某些权限请求被拒绝",
+  "spamLikely": "可能是垃圾邮件",
+  "startColor": "开始颜色",
+  "startDate": "开始日期",
+  "startUsing": "开始使用",
+  "statAnswered": "已接听",
+  "statBlocked": "已阻止",
+  "staticMethodShowCallerIdDialog": "显示来电显示信息对话框的静态方法",
+  "staticMethodToDisplayCountrySelectionDialog": "显示国家选择对话框的静态方法",
+  "staticMethodToDisplayDialog": "显示对话框的静态方法",
+  "statistics": "统计信息",
+  "statisticsExportFeatureComingSoon": "统计信息导出功能即将推出",
+  "statisticsGrid": "统计信息网格",
+  "statisticsPageTitle": "数据分析",
+  "stirColor": "STIR 颜色",
+  "stirFontSize": "STIR 字体大小",
+  "stirPosition": "STIR 位置",
+  "storagePermission": "存储权限",
+  "storagePermissionDescription": "用于保存设置和规则。",
+  "subscribe": "订阅",
+  "subscriptionAddSuccess": "订阅 "{name}" 添加成功",
+  "@subscriptionAddSuccess": {
+    "description": "Subscription added success message",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "确定要删除此订阅吗？",
+  "subscriptionDeleteConfirmTitle": "删除订阅",
+  "subscriptionDeleted": "订阅已删除",
+  "@subscriptionDeleted": {
+    "description": "Subscription deleted success message"
+  },
+  "subscriptionDeletedSuccessfully": "订阅删除成功",
+  "subscriptionDeleteFailed": "删除订阅失败: {error}",
+  "subscriptionDeleteSuccess": "订阅已删除",
+  "subscriptionEmptyState": "没有可用的订阅",
+  "subscriptionEmptyText": "还没有订阅",
+  "subscriptionLoadFailed": "加载订阅失败: {error}",
+  "subscriptionLoadingFailed": "加载订阅失败: {error}",
+  "subscriptionManagementTitle": "订阅管理",
+  "subscriptionName": "订阅名称",
+  "@subscriptionName": {
+    "description": "Subscription name field label"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "订阅名称和 URL 不能为空",
+  "subscriptionNameHint": "输入订阅名称",
+  "subscriptionPageTitle": "订阅管理",
+  "subscriptionStatusChangeFailed": "更改订阅状态失败: {error}",
+  "subscriptionToggleFailed": "切换订阅状态失败: {error}",
+  "subscriptionUpdateFailed": "更新订阅失败: {error}",
+  "subscriptionUpdateSuccess": "订阅更新成功",
+  "@subscriptionUpdateSuccess": {
+    "description": "Subscription update success message",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "订阅 URL",
+  "@subscriptionUrl": {
+    "description": "Subscription URL field label"
+  },
+  "subscriptionUrlHint": "输入订阅 URL",
+  "successfullyImportedRules": "成功导入 {count} 条规则",
+  "supportSync": "支持同步",
+  "survey": "调查",
+  "syncDevicesButton": "同步设备",
+  "synced": "已同步",
+  "@synced": {
+    "description": "Synced status label"
+  },
+  "syncFailed": "同步失败",
+  "syncFailedMessage": "同步失败",
+  "syncFolderNameHint": "请输入同步文件夹名称（默认：NotificationManager）",
+  "syncFolderNameLabel": "同步文件夹名称",
+  "synchronized": "已同步",
+  "@synchronized": {
+    "description": "Synchronized status label"
+  },
+  "syncing": "正在同步...",
+  "syncNow": "立即同步",
+  "@syncNow": {
+    "description": "Sync now button text"
+  },
+  "syncNowButton": "立即同步",
+  "syncStatusTitle": "同步状态",
+  "syncStatusUpdatedMessage": "同步状态已更新",
+  "syncSuccessful": "同步成功",
+  "syncSuccessMessage": "同步成功",
+  "syncWithCloudStorage": "与云存储同步",
+  "syncWithCloudStorageSubtitle": "与云存储同步",
+  "systemFeatures": "系统功能：",
+  "systemSettingsTitle": "系统设置",
+  "tabAll": "全部",
+  "tabAnswered": "已接听",
+  "tabBlocked": "已阻止",
+  "tabMissed": "未接",
+  "tabOutgoing": "已拨出",
+  "tagLabel": "标签：{tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "标签已更新",
+  "takeaway": "外卖",
+  "telecommunication": "电信",
+  "telegram": "Telegram",
+  "telemarketing": "电话营销",
+  "testButton": "测试",
+  "testButtonLabel": "测试",
+  "testConnectionButton": "测试连接",
+  "textColorsSetting": "文本和标签颜色",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "此应用程序是一款强大的来电显示工具，可让您识别和阻止不需要的电话。",
+  "thisWeek": "本周",
+  "timeInterceptor": "时间拦截器",
+  "timeInterceptorDescription": "根据呼叫频率自动拦截潜在的垃圾电话",
+  "timeInterceptorExplanation": "• 时间拦截器：在短时间内拦截重复呼叫",
+  "timeInterceptorExplanationContent": "呼叫频率拦截功能分析呼叫频率，以自动识别和拦截频繁的垃圾电话。",
+  "timeInterceptorExplanationTitle": "呼叫频率拦截说明",
+  "timeInterceptorSettingsTitle": "呼叫频率拦截设置",
+  "timeInterceptorSubtitle": "根据呼叫频率自动拦截潜在的垃圾电话",
+  "timeInterceptorTitle": "启用呼叫频率拦截",
+  "timeWindowDescription": "设置拦截重复呼叫的时间窗口大小。在此窗口内来自同一号码的呼叫将被拦截",
+  "timeWindowLabel": "拦截时间窗口（分钟）：{minutes}",
+  "@timeWindowLabel": {
+    "description": "Time window label with duration in minutes",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "设置拦截重复呼叫的时间窗口大小。在此窗口内来自同一号码的呼叫将被拦截",
+  "today": "今天",
+  "total": "总计",
+  "totalBlocked": "总阻止",
+  "totalFiltered": "总过滤",
+  "transferDataBetweenDevicesOrPlatforms": "在设备或平台之间传输数据",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "在设备或平台之间传输数据",
+  "travelTicketing": "旅游票务",
+  "trend": "趋势",
+  "trendChart": "趋势图",
+  "tutorial": "教程",
+  "type": "类型",
+  "unassignedSIMCard": "未分配的 SIM 卡",
+  "unknown": "未知",
+  "@unknown": {
+    "description": "Display text for unknown status"
+  },
+  "unknownAction": "未知操作",
+  "unknownLabel": "未知标签",
+  "unknownTag": "标签：未知",
+  "unregisterButton": "注销",
+  "unregisterDeviceConfirmationMessage": "您确定要注销 {deviceName} 吗？",
+  "unregisterDeviceTitle": "注销设备",
+  "unsupportedFileFormat": "不支持的文件格式",
+  "update": "更新",
+  "updateAllNow": "立即全部更新",
+  "updateCallFilterConfig": "更新呼叫过滤器配置",
+  "@updateCallFilterConfig": {
+    "description": "Button text for updating call filter configuration"
+  },
+  "updateContactFailed": "更新联系人失败: {error}",
+  "updateFavoriteStatus": "更新收藏状态",
+  "updateFavoriteStatusFailed": "更新收藏状态失败: {error}",
+  "updateInterval": "更新间隔",
+  "updateLabelFailed": "更新标签失败",
+  "updateNow": "立即更新",
+  "updatePlugin": "更新插件",
+  "updatePluginFailed": "更新插件失败: {error}",
+  "updateRuleFailed": "更新规则失败: {error}",
+  "updateSubscriptionFailed": "更新订阅失败: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Failed to update subscription error message",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} 更新成功（{count} 条规则）",
+  "@updateSuccess": {
+    "description": "Single service update success message",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "更新标签",
+  "useCasesPoint1": "• 识别自动重拨的垃圾电话",
+  "useCasesPoint2": "• 拦截在短时间内多次呼叫的营销电话",
+  "useCasesPoint3": "• 预防电话轰炸和骚扰",
+  "useCasesTitle": "用例：",
+  "useGlobalSettings": "使用全局设置",
+  "userEmail": "user@example.com",
+  "usernameLabel": "用户名",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "使用标准正则表达式语法来定义模式。例如：",
+  "validateRegex": "验证正则表达式",
+  "verificationFailedText": "失败",
+  "verifiedText": "已验证",
+  "verify": "验证",
+  "version": "版本：{version}",
+  "vipExchangeDescription": "使用电话号码标记计数兑换 VIP 会员资格",
+  "vipExchangeTitle": "标记兑换 VIP",
+  "watchAd": "观看广告",
+  "watchAdForTemp": "观看广告以获得临时权限",
+  "watchAdForTempDescription": "观看一段短广告以暂时解锁某些高级功能",
+  "webDAVConfigTitle": "WebDAV 配置",
+  "webdavConfigurationTitle": "WebDAV 配置",
+  "webdavPasswordHint": "请输入 WebDAV 密码",
+  "webdavServerAddressHint": "请输入 WebDAV 服务器地址",
+  "webdavUsernameHint": "请输入 WebDAV 用户名",
+  "week": "周",
+  "weekly": "每周",
+  "weeklyBlockedCallsSummary": "每周阻止的呼叫摘要",
+  "weeklyChartTitle": "每周阻止的呼叫",
+  "weeklyReport": "每周报告",
+  "@weeklyReport": {
+    "description": "Weekly report notification option"
+  },
+  "weeklyReportDesc": "接收每周呼叫阻止活动摘要报告",
+  "@weeklyReportDesc": {
+    "description": "Description for weekly report option"
+  },
+  "welcome": "欢迎",
+  "whitelist": "白名单",
+  "@whitelist": {
+    "description": "Whitelist label"
+  },
+  "whitelistLabel": "白名单",
+  "width": "宽度",
+  "wildcardMatchingDescription": "使用“.”匹配任何字符（例如，“123.456”匹配 123-456）",
+  "wildcardMatchingTitle": "通配符匹配：",
+  "wildcardSupportForFlexibleFiltering": "通配符支持灵活过滤",
+  "windowSizeSetting": "窗口大小",
+  "year": "年",
+  "yearly": "每年",
+  "yearlyChartTitle": "每年阻止的呼叫",
+    "callerIdCustomizationSubtitle": "Customize Caller ID Layout",
+
+  "noSimCardsDetected": "未检测到 SIM 卡",
+  "filterManagementDescription": "设置呼叫过滤器",
+  "yesterday": "昨天"
+}

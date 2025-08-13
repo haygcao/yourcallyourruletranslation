@@ -1,0 +1,222 @@
+{
+              "fraudAlerSettingTitle": "Indstilling for svindelalarm",
+              "fraudAlerSettingSubtitle": "For at indstille svindelalarm",
+  "enableFraudAlert": "Aktivér svindelalarm",
+  "enableFraudAlertDescription": "Alarm for mistænkte svindelopkald",
+      "enableVibration": "Aktivér vibration",
+      "enableVibrationDescription": "Vibrér, når opkald mistænkes for at være svindelopkald",
+  "notificationSettingsTitle": "Notifikationsindstillinger",
+  "useLocalNotification": "Brug lokale notifikationer",
+  "useLocalNotificationDescription": "Aktivér lokale notifikationer for indgående opkald",
+  "cancelLocalNotification": "Luk lokale notifikationer",
+  "useStirNotification": "Brug notifikation fra STIR",
+  "useStirNotificationDescription": "Aktivér STIR-notifikationer for indgående opkald",
+  "cancelLocalNotificationDescription": "Luk lokale notifikationer automatisk",
+  "callerIdSettingsTitle": "Indstillinger for opkalds-id",
+    "callerIdSettingsSubtitle": "For at konfigurere notifikation om indgående opkald og visningstilstand",
+    "purchaseTitle": "Køb",
+    "purchaseSubtitle": "For at købe tjenesten",
+   "callerIdNotificationTitle": "Info om indgående opkald",
+  "@callerIdNotificationTitle": {
+    "description": "Titel for opkalds-id-notifikation"
+  },
+  "callerIdBody": "Nummer: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Tekst i opkalds-id-notifikationen, viser telefonnummeret",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Blokeret opkald",
+  "@blockedCallTitle": {
+    "description": "Titel for notifikation om blokeret opkald"
+  },
+  "blockedCallBody": "Blokeret opkald fra {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Tekst i notifikation om blokeret opkald, viser telefonnummeret",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Bekræftet",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN-bekræftelsesstatus: Bekræftet"
+  },
+  "stirNotVerified": "Ikke bekræftet",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN-bekræftelsesstatus: Ikke bekræftet"
+  },
+  "stirFailed": "Bekræftelse mislykkedes",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN-bekræftelsesstatus: Bekræftelse mislykkedes"
+  },
+  "stirUnknown": "Ukendt bekræftelsesstatus",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN-bekræftelsesstatus: Ukendt"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN-bekræftelse",
+  "@stirVerificationTitle": {
+    "description": "Title for STIR/SHAKEN verification notification"
+  },
+  "stirVerificationBody": "{stirResultMessage} for nummer {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verified"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Indstillinger for rullende sikkerhedsbesked",
+  "messageColor": "Beskedfarve",
+  "messageFontSize": "Beskedskriftstørrelse",
+  "messagePosition": "Beskedposition",
+  "containerWidth": "Konteinerbredde",
+  "scrollSpeed": "Rullehastighed",
+  "enableSecurityMessage": "Aktivér sikkerhedsbesked",
+  "fraudAlertTitle": "Svindelalarm",
+  "@fraudAlertTitle": {
+    "description": "Titel for notifikationen om svindelalarm"
+  },
+  "fraudAlertBody": "Muligt svindelopkald fra {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Tekst i notifikationen om svindelalarm",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "loadRulesFailed": "Kunne ikke indlæse regler: {error}",
+ "loadCallLogFailed": "Kunne ikke indlæse opkaldslog: {error}",
+ "noBlockedTypeData": "Ingen tilgængelige data om blokeret type",
+"importEntity": "Importér {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialogtitel for import af en enhed",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} importeret, til {count}",
+ "@entityImportSuccess": {
+   "description": "Success message after importing entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "Kunne ikke importere {entityTypeName}: {error}"
+ "@entityImportFailed": {
+   "description": "Fejlmeddelelse, når import af enheder mislykkes",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Eksportér {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialogtitel for eksport af en enhed",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} eksporteret",
+ "@entityExportSuccess": {
+   "description": "Success message after exporting entities",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Kunne ikke eksportére {entityTypeName}: {error}"
+ "@entityExportFailed": {
+   "description": "Fejlmeddelelse, når eksport af enheder mislykkes",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Cloudsynkroniseringstjeneste",
+  "membershipCenter": "Medlemscenter",
+  "redeemVipWithMarks": "Indløs VIP med markeringer",
+  "currentMarkCount": "Nuværende markeringsantal",
+  "markMoreNumbersForMore": "Markér flere numre for flere markeringer",
+  "noAds": "Ingen annoncer",
+  "cloudBackup": "Cloudsikkerhedskopi",
+  "callerIdEnhancement": "Forbedring af opkalds-id",
+  "voiceRecognition": "Stemmegenkendelse",
+  "feature": "Funktion",
+  "normalUser": "Normal bruger",
+  "vipUser": "VIP-bruger",
+  "temporaryVip": "Midlertidig VIP",
+  "removeAds": "Fjern annoncer",
+
+  "unknownAction": "Ukendt handling",
+
+    "settingsBackup": "Sikkerhedskopi af indstillinger",
+      "allServicesStatusTitle": "Aktuel tjenestestatus",
+  "allServicesStatusSubtitle": "Aktuel status for hver cloudtjeneste",
+   
+  "redirect": "Omdiriger",
+ "notify": "Giv besked",
+ "log": "Log",
+ "custom": "Brugerdefineret",
+ "allowActionDescription": "Opkald vil blive tilladt, selvom nummeret er på bl",
+ "blockActionDescription": "Opkald vil blive blokeret og vist i opkaldsloggen.",
+ "silenceActionDescription": "Opkald vil blive gjort lydløse, men vist i opkaldsloggen.",
+ "noneActionDescription": "Der vil ikke blive foretaget nogen særlig handling for opkaldet.",
+ "redirectActionDescription": "Omdiriger opkaldet til et specificeret nummer.",
+ "labelActionDescription": "Tilføj en etiket til opkaldet for nem identifikation.",
+ "notifyActionDescription": "Send en notifikation, når et opkald modtages.",
+ "logActionDescription": "Log opkaldsoplysningerne uden at foretage nogen anden handling",
+ "customActionDescription": "Udfør en brugerdefineret handling.",
+ "synced": "Synkroniseret",
+ "lastUpdated": "Senest opdateret: {date}",
+  "needVipAccess": "Du skal have VIP-adgang for at bruge denne funktion",
+"importExportDescription": "Importér eller eksportér {entityTypeName}-data",
+   "importExportTitle": "Importér/eksportér",
+ "noPhoneRules": "Ingen telefonregler fundet",
+"noRegexRules": "Ingen regex-regler fundet",
+ "noAllowedBlockedRules": "Ingen tilladte/blokerede regler fundet",
+   "importExport": "Importér/eksportér",
+   "filterByAction": "Filtrer efter handling",
+  "upgradeToVip": "Opgradér til VIP",
+         "fraudAlerSettingTitle": "Indstillinger for svindelalarm",
+              "fraudAlerSettingSubtitle": "For at indstille svindelalarm",
+   
+              "callerIdCustomizationSubtitle": "Tilpas layout for opkalds-id",
+
+  "yesterday": "I går"
+}

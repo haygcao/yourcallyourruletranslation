@@ -213,4 +213,7 @@
    "importExport": "Import/Export",
    "filterByAction": "Filter by Action",
   "upgradeToVip": "Upgrade to VIP",
+  "batteryOptimizationPermission": "Battery Optimization",
+  "batteryOptimizationPermissionDescription": "Allow the app to run in the background to provide services like caller ID.",
+ 
   "yesterday": "Yesterday"
