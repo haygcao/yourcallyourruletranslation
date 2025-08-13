@@ -1,15 +1,15 @@
               "fraudAlerSettingTitle": "欺詐警報設定",
               "fraudAlerSettingSubtitle": "設定欺詐警報",
   "enableFraudAlert": "啟用欺詐警報",
-  "enableFraudAlertDescription": "可疑詐騙電話嘅警報",
+  "enableFraudAlertDescription": "懷疑詐騙電話嘅警報",
       "enableVibration": "啟用震動",
-      "enableVibrationDescription": "當呼叫疑似詐騙電話時震動",
+      "enableVibrationDescription": "當懷疑通話係詐騙電話嗰陣震動",
   "notificationSettingsTitle": "通知設定",
   "useLocalNotification": "使用本地通知",
   "useLocalNotificationDescription": "啟用來電嘅本地通知",
   "cancelLocalNotification": "關閉本地通知",
-  "useStirNotification": "使用 STIR 嘅通知",
-  "useStirNotificationDescription": "啟用呼入電話嘅 STIR 通知",
+  "useStirNotification": "使用嚟自 STIR 嘅通知",
+  "useStirNotificationDescription": "啟用嚟電嘅 STIR 通知",
   "cancelLocalNotificationDescription": "自動關閉本地通知",
   "callerIdSettingsTitle": "來電顯示設定",
     "callerIdSettingsSubtitle": "設定來電通知同顯示模式", 
@@ -79,10 +79,10 @@
   },
  
  
-  "scrollingSecurityMessageSettings": "Scrolling Security Message Settings",
-  "messageColor": "Message Color",
-  "messageFontSize": "Message Font Size",
-  "messagePosition": "Message Position",
+  "scrollingSecurityMessageSettings": "滾動安全訊息設定",
+  "messageColor": "訊息顏色",
+  "messageFontSize": "訊息字體大小",
+  "messagePosition": "訊息位置",
   "containerWidth": "Container Width",
   "scrollSpeed": "Scroll Speed",
   "enableSecurityMessage": "Enable Security Message",
@@ -90,7 +90,7 @@
   "@fraudAlertTitle": {
     "description": "Title for the fraud alert notification"
   },
-  "fraudAlertBody": "Potential fraud call from {phoneNumber}",
+  "fraudAlertBody": "嚟自 {phoneNumber} 嘅潛在欺詐電話",
   "@fraudAlertBody": {
     "description": "Body for the fraud alert notification",
     "placeholders": {
