@@ -1,0 +1,396 @@
+{
+  "@@locale": "zh_MO",
+  "setEncryptionPassword": "設定加密密碼",
+  "setEncryptionPasswordDescription": "設定備份和還原的加密密碼",
+  "setEncryptionPasswordLabel": "設定加密密碼",
+  "setEncryptionPasswordTitle": "設定加密密碼",
+  "setPasswordButton": "設定",
+  "settings": "設定",
+  "settingsBackedUpTo": "設定已備份到: {path}",
+  "settingsLoaded": "設定已載入",
+  "settingsLoadFailed": "載入設定失敗: {error}",
+  "settingsRestoredSuccessfully": "設定已成功還原。請重新啟動應用程式以使更改生效。",
+  "settingsSaved": "設定已儲存",
+  "@settingsSaved": {
+    "description": "設定儲存確認訊息"
+  },
+  "settingsSaveFailed": "儲存設定失敗: {error}",
+  "settingsTab": "設定",
+  "settingsTitle": "設定",
+  "setup": "設定",
+  "showContactEditDialogStaticMethod": "顯示聯絡人編輯對話框的靜態方法",
+  "showExplanation": "顯示說明",
+  "silence": "靜音",
+  "silenceAndNoAnswer": "靜音且不接聽",
+  "silenceNoAnswer": "靜音不接聽",
+  "silentCallVoiceClone": "靜音通話語音克隆",
+  "silentRules": "靜音規則",
+  "simCard": "SIM 卡 {simNumber}",
+  "simCardColor": "SIM 卡顏色",
+  "simCardConfigurationExplanation": "• SIM 卡配置：為每張 SIM 卡設定獨立的過濾規則",
+  "simCardFilterRules": "SIM 卡過濾規則",
+  "simCardFilterRulesDescription": "根據 SIM 卡槽設定不同的過濾規則",
+  "simCardFontSize": "SIM 卡字體大小",
+  "simCardPosition": "SIM 卡位置",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM 卡資訊",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "載入 SIM 卡資訊失敗: {error}",
+  "simRuleInstructions": "SIM 卡槽規則允許您為每個 SIM 卡槽配置獨立的過濾規則。",
+  "simRuleInstructionsTitle": "SIM 卡槽規則",
+  "@simRuleInstructionsTitle": {
+    "description": "SIM 卡槽規則說明部分標題"
+  },
+  "simRuleManagement": "SIM 卡槽規則管理",
+  "@simRuleManagement": {
+    "description": "SIM 卡槽規則管理部分標題"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "顯示 SIM 卡槽 1 及其國家/地區 ISO 代碼的文字",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "顯示 SIM 卡槽 2 及其國家/地區 ISO 代碼的文字",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "載入 SIM 資料失敗: {error}",
+  "simSlotFilterConfiguration": "SIM 卡槽過濾配置",
+  "simSlotFilterConfigurationDescription": "允許按 SIM 卡槽設定過濾規則",
+  "simSlotFilterDescription": "為每張 SIM 卡配置獨立的過濾規則：",
+  "simSlotFilterSettingsTitle": "SIM 卡槽 {slotNumber} 過濾設定",
+  "@simSlotFilterSettingsTitle": {
+    "description": "SIM 卡槽過濾設定標題",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "載入 SIM 卡槽失敗: {error}",
+  "simSlotManagement": "SIM 卡槽管理",
+  "simSlotOperationFailed": "SIM 卡槽操作失敗: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM 卡槽操作失敗訊息",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIM 卡槽位置 {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM 卡槽位置顯示",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM 卡槽規則：每個 SIM 卡獨立的過濾策略",
+  "simSlotRuleListTitle": "SIM 卡槽規則列表",
+  "simSlotRuleManagement": "SIM 卡槽規則",
+  "simSlotRuleManagementTitle": "規則管理",
+  "simSlotSettings": "SIM 卡槽設定",
+  "@simSlotSettings": {
+    "description": "SIM 卡槽設定頁面標題"
+  },
+  "simSlotTitle": "SIM 卡槽 {slotNumber}",
+  "skip": "跳過",
+  "smartCallerId": "智能來電識別",
+  "sms": "簡訊",
+  "smsFilterDescription": "簡訊過濾幫助您自動過濾垃圾簡訊並保持訊息列表乾淨。您可以設定過濾規則和通知方法。",
+  "smsFilterDisabled": "簡訊過濾已停用",
+  "smsFilterEnabled": "簡訊過濾已啟用",
+  "smsFilterRuleAddedSuccessfully": "簡訊過濾規則已成功添加",
+  "smsFilterRules": "簡訊過濾規則",
+  "smsFilterSettings": "簡訊過濾設定",
+  "smsHistory": "簡訊歷史",
+  "smsManagement": "簡訊管理",
+  "smsPermission": "簡訊權限",
+  "smsPermissionDescription": "用於過濾垃圾簡訊。",
+  "smsRuleAddedSuccessfully": "簡訊規則已成功添加",
+  "smsRuleDeletedSuccessfully": "簡訊規則已成功刪除",
+  "smsRuleLoadFailed": "載入簡訊規則失敗: {error}",
+  "smsRuleManagement": "簡訊規則管理",
+  "smsRulesExportedSuccessfully": "簡訊規則已成功匯出到 {filePath}",
+  "smsRulesImportedSuccessfully": "簡訊規則已成功匯入",
+  "smsRuleSubscription": "簡訊規則訂閱",
+  "smsRuleUpdatedSuccessfully": "簡訊規則已成功更新",
+  "smsSettingsSubtitle": "簡訊過濾和關鍵字攔截",
+  "smsSettingsTitle": "簡訊設定",
+  "smsSubscription": "簡訊訂閱",
+  "smsSubscriptionAddedSuccessfully": "簡訊訂閱已成功添加",
+  "smsSubscriptionRulesDescription": "透過 URL 訂閱簡訊規則列表，支援正則表達式匹配。您可以設定攔截或允許動作。",
+  "smsTab": "簡訊",
+  "somePermissionsDenied": "某些權限請求被拒絕",
+  "spamLikely": "可能是垃圾訊息",
+  "startColor": "開始顏色",
+  "startDate": "開始日期",
+  "startUsing": "開始使用",
+  "statAnswered": "已接聽",
+  "statBlocked": "已封鎖",
+  "staticMethodShowCallerIdDialog": "顯示來電顯示資訊對話框的靜態方法",
+  "staticMethodToDisplayCountrySelectionDialog": "顯示國家/地區選擇對話框的靜態方法",
+  "staticMethodToDisplayDialog": "顯示對話框的靜態方法",
+  "statistics": "統計",
+  "statisticsExportFeatureComingSoon": "統計匯出功能即將推出",
+  "statisticsGrid": "統計網格",
+  "statisticsPageTitle": "數據分析",
+  "stirColor": "STIR 顏色",
+  "stirFontSize": "STIR 字體大小",
+  "stirPosition": "STIR 位置",
+  "storagePermission": "儲存權限",
+  "storagePermissionDescription": "用於儲存設定和規則。",
+  "subscribe": "訂閱",
+  "subscriptionAddSuccess": "訂閱 \"{name}\" 已成功添加",
+  "@subscriptionAddSuccess": {
+    "description": "訂閱添加成功訊息",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "確定要刪除此訂閱嗎？",
+  "subscriptionDeleteConfirmTitle": "刪除訂閱",
+  "subscriptionDeleted": "訂閱已刪除",
+  "@subscriptionDeleted": {
+    "description": "訂閱刪除成功訊息"
+  },
+  "subscriptionDeletedSuccessfully": "訂閱已成功刪除",
+  "subscriptionDeleteFailed": "刪除訂閱失敗: {error}",
+  "subscriptionDeleteSuccess": "訂閱已刪除",
+  "subscriptionEmptyState": "沒有可用的訂閱",
+  "subscriptionEmptyText": "暫無訂閱",
+  "subscriptionLoadFailed": "載入訂閱失敗: {error}",
+  "subscriptionLoadingFailed": "載入訂閱失敗: {error}",
+  "subscriptionManagementTitle": "訂閱管理",
+  "subscriptionName": "訂閱名稱",
+  "@subscriptionName": {
+    "description": "訂閱名稱字段標籤"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "訂閱名稱和 URL 不能為空",
+  "subscriptionNameHint": "輸入訂閱名稱",
+  "subscriptionPageTitle": "訂閱管理",
+  "subscriptionStatusChangeFailed": "更改訂閱狀態失敗: {error}",
+  "subscriptionToggleFailed": "切換訂閱狀態失敗: {error}",
+  "subscriptionUpdateFailed": "更新訂閱失敗: {error}",
+  "subscriptionUpdateSuccess": "訂閱已成功更新",
+  "@subscriptionUpdateSuccess": {
+    "description": "訂閱更新成功訊息",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "訂閱 URL",
+  "@subscriptionUrl": {
+    "description": "訂閱 URL 字段標籤"
+  },
+  "subscriptionUrlHint": "輸入訂閱 URL",
+  "successfullyImportedRules": "已成功匯入 {count} 條規則",
+  "supportSync": "支援同步",
+  "survey": "調查",
+  "syncDevicesButton": "同步裝置",
+  "synced": "已同步",
+  "@synced": {
+    "description": "已同步狀態標籤"
+  },
+  "syncFailed": "同步失敗",
+  "syncFailedMessage": "同步失敗",
+  "syncFolderNameHint": "請輸入同步資料夾名稱 (預設: NotificationManager)",
+  "syncFolderNameLabel": "同步資料夾名稱",
+  "synchronized": "已同步",
+  "@synchronized": {
+    "description": "已同步狀態標籤"
+  },
+  "syncing": "正在同步...",
+  "syncNow": "立即同步",
+  "@syncNow": {
+    "description": "立即同步按鈕文字"
+  },
+  "syncNowButton": "立即同步",
+  "syncStatusTitle": "同步狀態",
+  "syncStatusUpdatedMessage": "同步狀態已更新",
+  "syncSuccessful": "同步成功",
+  "syncSuccessMessage": "同步成功",
+  "syncWithCloudStorage": "與雲端儲存同步",
+  "syncWithCloudStorageSubtitle": "與雲端儲存同步",
+  "systemFeatures": "系統功能：",
+  "systemSettingsTitle": "系統設定",
+  "tabAll": "所有",
+  "tabAnswered": "已接聽",
+  "tabBlocked": "已封鎖",
+  "tabMissed": "未接",
+  "tabOutgoing": "撥出",
+  "tagLabel": "標籤: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "標籤已更新",
+  "takeaway": "外賣",
+  "telecommunication": "電信",
+  "telegram": "Telegram",
+  "telemarketing": "電話營銷",
+  "testButton": "測試",
+  "testButtonLabel": "測試",
+  "testConnectionButton": "測試連線",
+  "textColorsSetting": "文字和標籤顏色",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "此應用程式是一個強大的來電顯示工具，可讓您識別和封鎖不需要的來電。",
+  "thisWeek": "本週",
+  "timeInterceptor": "時間攔截器",
+  "timeInterceptorDescription": "根據通話頻率自動攔截潛在的垃圾來電",
+  "timeInterceptorExplanation": "• 時間攔截器：在短時間內攔截重複來電",
+  "timeInterceptorExplanationContent": "通話頻率攔截功能分析通話頻率，自動識別和攔截頻繁的垃圾來電。",
+  "timeInterceptorExplanationTitle": "通話頻率攔截說明",
+  "timeInterceptorSettingsTitle": "通話頻率攔截設定",
+  "timeInterceptorSubtitle": "根據通話頻率自動攔截潛在的垃圾來電",
+  "timeInterceptorTitle": "啟用通話頻率攔截",
+  "timeWindowDescription": "設定攔截重複來電的時間窗大小。此時間窗內來自同一號碼的來電將被攔截",
+  "timeWindowLabel": "攔截時間窗 (分鐘): {minutes}",
+  "@timeWindowLabel": {
+    "description": "帶有持續時間（分鐘）的時間窗標籤",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "設定攔截重複來電的時間窗大小。此時間窗內來自同一號碼的來電將被攔截",
+  "today": "今天",
+  "total": "總計",
+  "totalBlocked": "總攔截",
+  "totalFiltered": "總過濾",
+  "transferDataBetweenDevicesOrPlatforms": "在裝置或平台之間傳輸數據",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "在裝置或平台之間傳輸數據",
+  "travelTicketing": "旅遊票務",
+  "trend": "趨勢",
+  "trendChart": "趨勢圖",
+  "tutorial": "教學",
+  "type": "類型",
+  "unassignedSIMCard": "未分配 SIM 卡",
+  "unknown": "未知",
+  "@unknown": {
+    "description": "未知狀態的顯示文字"
+  },
+  "unknownAction": "未知動作",
+  "unknownLabel": "未知標籤",
+  "unknownTag": "標籤: 未知",
+  "unregisterButton": "取消註冊",
+  "unregisterDeviceConfirmationMessage": "確定要取消註冊 {deviceName} 嗎？",
+  "unregisterDeviceTitle": "取消註冊裝置",
+  "unsupportedFileFormat": "不支援的檔案格式",
+  "update": "更新",
+  "updateAllNow": "立即全部更新",
+  "updateCallFilterConfig": "更新通話過濾配置",
+  "@updateCallFilterConfig": {
+    "description": "更新通話過濾配置的按鈕文字"
+  },
+  "updateContactFailed": "更新聯絡人失敗: {error}",
+  "updateFavoriteStatus": "更新收藏狀態",
+  "updateFavoriteStatusFailed": "更新收藏狀態失敗: {error}",
+  "updateInterval": "更新間隔",
+  "updateLabelFailed": "更新標籤失敗",
+  "updateNow": "立即更新",
+  "updatePlugin": "更新外掛程式",
+  "updatePluginFailed": "更新外掛程式失敗: {error}",
+  "updateRuleFailed": "更新規則失敗: {error}",
+  "updateSubscriptionFailed": "更新訂閱失敗: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "更新訂閱失敗錯誤訊息",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} 已成功更新 ({count} 條規則)",
+  "@updateSuccess": {
+    "description": "單一服務更新成功訊息",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "更新標籤",
+  "useCasesPoint1": "• 識別自動重撥垃圾電話",
+  "useCasesPoint2": "• 攔截短時間內多次撥打的營銷電話",
+  "useCasesPoint3": "• 防止電話轟炸和騷擾",
+  "useCasesTitle": "使用案例：",
+  "useGlobalSettings": "使用全局設定",
+  "userEmail": "user@example.com",
+  "usernameLabel": "使用者名稱",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "使用標準正則表達式語法定義模式。範例：",
+  "validateRegex": "驗證正則表達式",
+  "verificationFailedText": "失敗",
+  "verifiedText": "已驗證",
+  "verify": "驗證",
+  "version": "版本: {version}",
+  "vipExchangeDescription": "用電話號碼標記計數兌換 VIP 會員資格",
+  "vipExchangeTitle": "標記兌換 VIP",
+  "watchAd": "觀看廣告",
+  "watchAdForTemp": "觀看廣告以獲得臨時權限",
+  "watchAdForTempDescription": "觀看短廣告以暫時解鎖部分高級功能",
+  "webDAVConfigTitle": "WebDAV 配置",
+  "webdavConfigurationTitle": "WebDAV 配置",
+  "webdavPasswordHint": "請輸入 WebDAV 密碼",
+  "webdavServerAddressHint": "請輸入 WebDAV 伺服器地址",
+  "webdavUsernameHint": "請輸入 WebDAV 用戶名",
+  "week": "週",
+  "weekly": "每週",
+  "weeklyBlockedCallsSummary": "每週攔截通話摘要",
+  "weeklyChartTitle": "每週攔截通話",
+  "weeklyReport": "每週報告",
+  "@weeklyReport": {
+    "description": "每週報告通知選項"
+  },
+  "weeklyReportDesc": "接收每週通話攔截活動摘要報告",
+  "@weeklyReportDesc": {
+    "description": "每週報告選項的描述"
+  },
+  "welcome": "歡迎",
+  "whitelist": "白名單",
+  "@whitelist": {
+    "description": "白名單標籤"
+  },
+  "whitelistLabel": "白名單",
+  "width": "寬度",
+  "wildcardMatchingDescription": "使用 '.' 匹配任何字符（例如 '123.456' 匹配 123-456）",
+  "wildcardMatchingTitle": "通配符匹配：",
+  "wildcardSupportForFlexibleFiltering": "通配符支援靈活過濾",
+  "windowSizeSetting": "窗口大小",
+  "year": "年",
+  "yearly": "每年",
+  "yearlyChartTitle": "每年攔截通話",
+  "noSimCardsDetected": "未偵測到 SIM 卡",
+  "filterManagementDescription": "設定通話過濾器",
+  "callerIdCustomizationSubtitle": "自訂來電顯示佈局",
+  "yesterday": "昨天"
+}
