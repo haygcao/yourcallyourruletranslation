@@ -16,7 +16,7 @@ final List<Map<String, dynamic>> languages = [
 
   
   
-  {'name': 'Polski', 'code': const Locale('pl', 'PL')},
+ 
   {'name': 'Português', 'code': const Locale('pt')},
 
   {'name': 'Svenska', 'code': const Locale('sv', 'SE')},
