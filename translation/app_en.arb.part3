@@ -1,4 +1,5 @@
-﻿  "loadMore": "Load More",
+﻿{
+    "loadMore": "Load More",
   "loadPluginButton": "Load Plugin",
   "loadPluginsFailed": "Failed to load plugins: {error}",
   "loadRulesFailed": "Failed to load rules: {error}",

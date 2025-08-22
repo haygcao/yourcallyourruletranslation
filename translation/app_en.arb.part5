@@ -219,5 +219,7 @@
   "permissionSubtitle": "Manage overlay and battery optimization permissions",
   "themeSettingsTitle": "Theme Settings",
   "themeSettingsSubtitle": "Choose your favorite theme",
-
+"databaseSyncTitle": "Database Sync",
+  "countrySyncSettingsTitle": "Country Sync Settings",
+  "countrySyncSettingsSubtitle": "Select countries for data synchronization",
   "yesterday": "Yesterday"
