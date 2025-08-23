@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Cho phép ứng dụng chạy nền để cung cấp các dịch vụ như ID người gọi.",
+  "permissionTitle": "Quyền đặc biệt",
+  "permissionSubtitle": "Quản lý quyền lớp phủ và tối ưu hóa pin",
+  "themeSettingsTitle": "Cài đặt chủ đề",
+  "themeSettingsSubtitle": "Chọn chủ đề yêu thích của bạn",
+  "databaseSyncTitle": "Đồng bộ hóa cơ sở dữ liệu",
+  "countrySyncSettingsTitle": "Cài đặt đồng bộ hóa cơ sở dữ liệu theo quốc gia",
+  "countrySyncSettingsSubtitle": "Chọn quốc gia để đồng bộ hóa dữ liệu",
+  "countryDataDisclaimer": "Xin lưu ý: Cơ sở dữ liệu có thể không bao gồm dữ liệu cho tất cả các quốc gia hoặc khu vực cụ thể.",
+    "editSubscription": "Chỉnh sửa đăng ký",
+
+    "searchByNameOrPhoneNumber": "Tìm kiếm theo Tên hoặc Số điện thoại",
+"allowedBlockedRulesInfo": "Các quy tắc cho phép/chặn được sử dụng để khớp các cuộc gọi với các số điện thoại cụ thể, có ưu tiên cao nhất.",
+"searchPhoneRulesHint": "Tìm kiếm quy tắc điện thoại",
+"phoneRulesInfo": "Các quy tắc điện thoại được sử dụng để khớp các cuộc gọi với các số điện thoại cụ thể, có ưu tiên thấp hơn. Một số đến từ đăng ký quy tắc điện thoại",
+"searchSubscriptionsHint": "Tìm kiếm đăng ký",
+"searchPluginsHint": "Tìm kiếm plugin",
+"searchLabelsHint": "Tìm kiếm nhãn",
+  "pluginDescription": "Mô tả plugin",
+"enterPluginDescription": "Nhập mô tả plugin",
+"searchRegexRulesHint": "Tìm kiếm quy tắc regex",
+"regexRulesInfo": "Các quy tắc Regex được sử dụng để lọc cuộc gọi dựa trên Mẫu Regex.",
+"searchMarkedPhonesHint": "Tìm kiếm điện thoại đã đánh dấu",
+"searchContactSubscriptionsHint": "Tìm kiếm đăng ký liên hệ",
+"showAllContacts": "Hiển thị tất cả danh bạ",
+"showFavorites": "Hiển thị mục yêu thích"
+}

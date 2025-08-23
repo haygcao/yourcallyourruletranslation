@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "به برنامه اجازه دهید در پس‌زمینه اجرا شود تا خدماتی مانند شناسه تماس‌گیرنده را ارائه دهد.",
+  "permissionTitle": "مجوزهای ویژه",
+  "permissionSubtitle": "مدیریت مجوزهای همپوشانی و بهینه‌سازی باتری",
+  "themeSettingsTitle": "تنظیمات تم",
+  "themeSettingsSubtitle": "تم مورد علاقه خود را انتخاب کنید",
+  "databaseSyncTitle": "همگام‌سازی پایگاه داده",
+  "countrySyncSettingsTitle": "تنظیمات همگام‌سازی پایگاه داده بر اساس کشور",
+  "countrySyncSettingsSubtitle": "کشورها را برای همگام‌سازی داده‌ها انتخاب کنید",
+  "countryDataDisclaimer": "لطفاً توجه داشته باشید: پایگاه داده ممکن است شامل داده‌ها برای همه کشورها یا مناطق خاص نباشد.",
+    "editSubscription": "ویرایش اشتراک",
+
+    "searchByNameOrPhoneNumber": "جستجو بر اساس نام یا شماره تلفن",
+"allowedBlockedRulesInfo": "قوانین مجاز/مسدود شده برای تطبیق تماس‌ها با شماره‌های تلفن خاص استفاده می‌شوند که بالاترین اولویت را دارند.",
+"searchPhoneRulesHint": "جستجوی قوانین تلفن",
+"phoneRulesInfo": "قوانین تلفن برای تطبیق تماس‌ها با شماره‌های تلفن خاص استفاده می‌شوند که اولویت پایین‌تری دارند. برخی از آنها از اشتراک قوانین تلفن می‌آیند",
+"searchSubscriptionsHint": "جستجوی اشتراک‌ها",
+"searchPluginsHint": "جستجوی افزونه‌ها",
+"searchLabelsHint": "جستجوی برچسب‌ها",
+  "pluginDescription": "توضیحات افزونه",
+"enterPluginDescription": "توضیحات افزونه را وارد کنید",
+"searchRegexRulesHint": "جستجوی قوانین Regex",
+"regexRulesInfo": "قوانین Regex برای فیلتر کردن تماس‌ها بر اساس الگوهای Regex استفاده می‌شوند.",
+"searchMarkedPhonesHint": "جستجوی تلفن‌های علامت‌گذاری شده",
+"searchContactSubscriptionsHint": "جستجوی اشتراک‌های مخاطبین",
+"showAllContacts": "نمایش همه مخاطبین",
+"showFavorites": "نمایش موارد دلخواه"
+}

@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Payagan ang app na tumakbo sa background upang magbigay ng mga serbisyo tulad ng caller ID.",
+  "permissionTitle": "Mga Espesyal na Pahintulot",
+  "permissionSubtitle": "Pamahalaan ang mga pahintulot sa overlay at pag-optimize ng baterya",
+  "themeSettingsTitle": "Mga Setting ng Tema",
+  "themeSettingsSubtitle": "Piliin ang iyong paboritong tema",
+  "databaseSyncTitle": "Pag-sync ng Database",
+  "countrySyncSettingsTitle": "Mga Setting ng Pag-sync ng Database Batay sa Bansa",
+  "countrySyncSettingsSubtitle": "Pumili ng mga bansa para sa pag-synchronize ng data",
+  "countryDataDisclaimer": "Pakitandaan: Maaaring hindi kasama sa database ang data para sa lahat ng partikular na bansa o rehiyon.",
+    "editSubscription": "I-edit ang Subscription",
+
+    "searchByNameOrPhoneNumber": "Maghanap Ayon sa Pangalan o Numero ng Telepono",
+"allowedBlockedRulesInfo": "Ang mga pinapayagan/na-block na panuntunan ay ginagamit upang itugma ang mga tawag sa mga partikular na numero ng telepono, na may pinakamataas na priyoridad.",
+"searchPhoneRulesHint": "Maghanap ng mga panuntunan sa telepono",
+"phoneRulesInfo": "Ang mga panuntunan sa telepono ay ginagamit upang itugma ang mga tawag sa mga partikular na numero ng telepono, na may mas mababang priyoridad. Ang ilan ay nagmumula sa subscription ng panuntunan sa telepono",
+"searchSubscriptionsHint": "Maghanap ng mga subscription",
+"searchPluginsHint": "Maghanap ng mga plugin",
+"searchLabelsHint": "Maghanap ng mga label",
+  "pluginDescription": "Paglalarawan ng plugin",
+"enterPluginDescription": "Ilagay ang paglalarawan ng plugin",
+"searchRegexRulesHint": "Maghanap ng mga panuntunan sa regex",
+"regexRulesInfo": "Ang mga panuntunan sa Regex ay ginagamit upang i-filter ang mga tawag batay sa mga Pattern ng Regex.",
+"searchMarkedPhonesHint": "Maghanap ng mga minarkahang telepono",
+"searchContactSubscriptionsHint": "Maghanap ng mga subscription sa contact",
+"showAllContacts": "Ipakita ang Lahat ng Contact",
+"showFavorites": "Ipakita ang Mga Paborito"
+}

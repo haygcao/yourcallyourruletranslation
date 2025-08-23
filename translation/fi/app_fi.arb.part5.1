@@ -1,0 +1,201 @@
+{
+              "fraudAlerSettingSubtitle": "Petosvaroituksen asettaminen",
+  "enableFraudAlert": "Ota petosvaroitus käyttöön",
+  "enableFraudAlertDescription": "Varoitus epäillyistä huijauspuheluista",
+      "enableVibration": "Ota värinä käyttöön",
+      "enableVibrationDescription": "Värise, kun puhelu on epäilty huijauspuhelu",
+  "notificationSettingsTitle": "Ilmoitusasetukset",
+  "useLocalNotification": "Käytä paikallisia ilmoituksia",
+  "useLocalNotificationDescription": "Ota paikalliset ilmoitukset käyttöön saapuville puheluille",
+  "cancelLocalNotification": "Sulje paikalliset ilmoitukset",
+  "useStirNotification": "Käytä STIR-ilmoitusta",
+  "useStirNotificationDescription": "Ota STIR-ilmoitukset käyttöön saapuville puheluille",
+  "cancelLocalNotificationDescription": "Sulje paikalliset ilmoitukset automaattisesti",
+  "callerIdSettingsTitle": "Soittajan tunnusasetukset",
+    "callerIdSettingsSubtitle": "Saapuvan puhelun ilmoituksen ja näyttötilan asettaminen", 
+    "purchaseTitle": "Osto",
+    "purchaseSubtitle": "Palvelun ostaminen",
+   "callerIdNotificationTitle": "Saapuvan puhelun tiedot",
+  "@callerIdNotificationTitle": {
+    "description": "Saapuvan puhelun tietojen otsikko"
+  },
+  "callerIdBody": "Numero: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Soittajan tunnusilmoituksen runko, joka näyttää puhelinnumeron",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Estetty puhelu",
+  "@blockedCallTitle": {
+    "description": "Estetyn puhelun ilmoituksen otsikko"
+  },
+  "blockedCallBody": "Estetty puhelu numerosta {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Estetyn puhelun ilmoituksen runko, joka näyttää puhelinnumeron",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Vahvistettu",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN-vahvistuksen tila: Vahvistettu"
+  },
+  "stirNotVerified": "Ei vahvistettu",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN-vahvistuksen tila: Ei vahvistettu"
+  },
+  "stirFailed": "Vahvistus epäonnistui",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN-vahvistuksen tila: Vahvistus epäonnistui"
+  },
+  "stirUnknown": "Tuntematon vahvistustila",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN-vahvistuksen tila: Tuntematon"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN-vahvistus",
+  "@stirVerificationTitle": {
+    "description": "STIR/SHAKEN-vahvistusilmoituksen otsikko"
+  },
+  "stirVerificationBody": "{stirResultMessage} numerolle {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "STIR/SHAKEN-vahvistusilmoituksen runko, joka näyttää tuloksen ja puhelinnumeron",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Vahvistettu"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Vierivän turvallisuusviestin asetukset",
+  "messageColor": "Viestin väri",
+  "messageFontSize": "Viestin fonttikoko",
+  "messagePosition": "Viestin sijainti",
+  "containerWidth": "Säiliön leveys",
+  "scrollSpeed": "Vieritysnopeus",
+  "enableSecurityMessage": "Ota turvallisuusviesti käyttöön",
+  "fraudAlertTitle": "Petosvaroitus",
+  "@fraudAlertTitle": {
+    "description": "Petosvaroitusilmoituksen otsikko"
+  },
+  "fraudAlertBody": "Mahdollinen petospuhelu numerosta {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Petosvaroitusilmoituksen runko",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    },
+   "loadRulesFailed": "Sääntöjen lataus epäonnistui: {error}",
+ "loadCallLogFailed": "Puhelulokin lataus epäonnistui: {error}",
+ "noBlockedTypeData": "Estettyjen tyyppien tietoja ei saatavilla",
+"importEntity": "Tuo {entityTypeName}",
+ "@importEntity": {
+   "description": "Valintaikkunan otsikko entiteetin tuomiseen",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} tuotu onnistuneesti, kohteeseen",
+ "@entityImportSuccess": {
+   "description": "Onnistumisviesti entiteettien tuonnin jälkeen",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "{entityTypeName} tuonti epäonnistui: {error}",
+ "@entityImportFailed": {
+   "description": "Virheviesti entiteettien tuonnin epäonnistuessa",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Vie {entityTypeName}",
+ "@exportEntity": {
+   "description": "Valintaikkunan otsikko entiteetin viemiseen",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} viety onnistuneesti",
+ "@entityExportSuccess": {
+   "description": "Onnistumisviesti entiteettien viennin jälkeen",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "{entityTypeName} vienti epäonnistui: {error}",
+ "@entityExportFailed": {
+   "description": "Virheviesti entiteettien viennin epäonnistuessa",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Pilvisynkronointipalvelu",
+  "membershipCenter": "Jäsenkeskus",
+  "redeemVipWithMarks": "Lunasta VIP-jäsenyys merkeillä",
+  "currentMarkCount": "Nykyinen merkkimäärä",
+  "markMoreNumbersForMore": "Merkitse lisää numeroita saadaksesi lisää merkkejä",
+  "noAds": "Ei mainoksia",
+  "cloudBackup": "Pilvivarmuuskopiointi",
+  "callerIdEnhancement": "Soittajan tunnuksen parannus",
+  "voiceRecognition": "Puheentunnistus",
+  "feature": "Ominaisuus",
+  "normalUser": "Normaali käyttäjä",
+  "vipUser": "VIP-käyttäjä",
+  "temporaryVip": "Väliaikainen VIP",
+  "removeAds": "Poista mainokset",
+
+  "unknownAction": "Tuntematon toiminto",
+
+    "settingsBackup": "Asetusten varmuuskopiointi",
+      "allServicesStatusTitle": "Nykyinen palvelun tila",
+  "allServicesStatusSubtitle": "Kunkin pilvipalvelun nykyinen tila",
+   
+  "redirect": "Uudelleenohjaa",
+ "notify": "Ilmoita",
+ "log": "Loki",
+ "custom": "Mukautettu",
+ "allowActionDescription": "Puhelut sallitaan, vaikka numero olisi estolistalla.",
+ "blockActionDescription": "Puhelut estetään ja näytetään puhelulokissa.",
+ "silenceActionDescription": "Puhelut mykistetään, mutta näytetään puhelulokissa.",
+ "noneActionDescription": "Puheluun ei tehdä erityisiä toimenpiteitä.",
+ "redirectActionDescription": "Ohjaa puhelu uudelleen määritettyyn numeroon.",
+ "labelActionDescription": "Lisää tunniste puheluun helppoa tunnistamista varten.",
+ "notifyActionDescription": "Lähetä ilmoitus, kun puhelu vastaanotetaan."
+}

@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Bada izinin app ɗin ya gudana a bango don samar da ayyuka kamar ID mai kira.",
+  "permissionTitle": "Izini Na Musamman",
+  "permissionSubtitle": "Sarrafa izinin rufewa da inganta baturi",
+  "themeSettingsTitle": "Saitunan Jigo",
+  "themeSettingsSubtitle": "Zaɓi jigonka da kuka fi so",
+  "databaseSyncTitle": "Aiki tare na Database",
+  "countrySyncSettingsTitle": "Saitunan Aiki tare na Database na Kasa",
+  "countrySyncSettingsSubtitle": "Zaɓi ƙasashe don aiki tare na bayanai",
+  "countryDataDisclaimer": "Lura: Database ɗin bazai haɗa da bayanai don duk takamaiman ƙasashe ko yankuna ba.",
+    "editSubscription": "Shirya Biyan Kuɗi",
+
+    "searchByNameOrPhoneNumber": "Bincika ta Suna ko Lambar Waya",
+"allowedBlockedRulesInfo": "Ana amfani da ƙa'idodin da aka ba izini/an toshe su don daidaita kira zuwa takamaiman lambobin waya, waɗanda ke da fifiko mafi girma.",
+"searchPhoneRulesHint": "Bincika ƙa'idodin waya",
+"phoneRulesInfo": "Ana amfani da ƙa'idodin waya don daidaita kira zuwa takamaiman lambobin waya, waɗanda ke da fifiko mafi ƙasƙanci. Wasu sun fito ne daga biyan kuɗi na ƙa'idar waya",
+"searchSubscriptionsHint": "Bincika biyan kuɗi",
+"searchPluginsHint": "Bincika plugins",
+"searchLabelsHint": "Bincika alamomi",
+  "pluginDescription": "Bayanin plugin",
+"enterPluginDescription": "Shigar da bayanin plugin",
+"searchRegexRulesHint": "Bincika ƙa'idodin regex",
+"regexRulesInfo": "Ana amfani da ƙa'idodin Regex don tace kira bisa ga Tsarin Regex.",
+"searchMarkedPhonesHint": "Bincika wayoyin da aka yiwa alama",
+"searchContactSubscriptionsHint": "Bincika biyan kuɗi na lambar sadarwa",
+"showAllContacts": "Nuna Duk Lambobin Sadarwa",
+"showFavorites": "Nuna Abubuwan da Aka Fi So"
+}

@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Ruhusu programu kuendeshwa chinichini ili kutoa huduma kama vile kitambulisho cha mpigaji.",
+  "permissionTitle": "Ruhusa Maalum",
+  "permissionSubtitle": "Dhibiti ruhusa za kuweka juu na uboreshaji wa betri",
+  "themeSettingsTitle": "Mipangilio ya Mandhari",
+  "themeSettingsSubtitle": "Chagua mandhari unayopenda",
+  "databaseSyncTitle": "Usawazishaji wa Hifadhidata",
+  "countrySyncSettingsTitle": "Mipangilio ya Usawazishaji wa Hifadhidata Kulingana na Nchi",
+  "countrySyncSettingsSubtitle": "Chagua nchi za usawazishaji wa data",
+  "countryDataDisclaimer": "Tafadhali kumbuka: Hifadhidata inaweza isijumuishe data kwa nchi au mikoa yote maalum.",
+    "editSubscription": "Hariri Usajili",
+
+    "searchByNameOrPhoneNumber": "Tafuta kwa Jina au Nambari ya Simu",
+"allowedBlockedRulesInfo": "Sheria zinazoruhusiwa/zilizozuiwa hutumiwa kulinganisha simu na nambari maalum za simu, ambazo zina kipaumbele cha juu zaidi.",
+"searchPhoneRulesHint": "Tafuta sheria za simu",
+"phoneRulesInfo": "Sheria za simu hutumiwa kulinganisha simu na nambari maalum za simu, ambazo zina kipaumbele cha chini. Baadhi hutoka kwa usajili wa sheria za simu",
+"searchSubscriptionsHint": "Tafuta usajili",
+"searchPluginsHint": "Tafuta programu-jalizi",
+"searchLabelsHint": "Tafuta lebo",
+  "pluginDescription": "Maelezo ya programu-jalizi",
+"enterPluginDescription": "Weka maelezo ya programu-jalizi",
+"searchRegexRulesHint": "Tafuta sheria za regex",
+"regexRulesInfo": "Sheria za Regex hutumiwa kuchuja simu kulingana na Sampuli za Regex.",
+"searchMarkedPhonesHint": "Tafuta simu zilizowekwa alama",
+"searchContactSubscriptionsHint": "Tafuta usajili wa anwani",
+"showAllContacts": "Onyesha Anwani Zote",
+"showFavorites": "Onyesha Vipendwa"
+}

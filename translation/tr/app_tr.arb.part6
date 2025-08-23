@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Uygulamanın arayan kimliği gibi hizmetler sağlamak için arka planda çalışmasına izin verin.",
+  "permissionTitle": "Özel İzinler",
+  "permissionSubtitle": "Yer paylaşımı ve pil optimizasyonu izinlerini yönetin",
+  "themeSettingsTitle": "Tema Ayarları",
+  "themeSettingsSubtitle": "Favori temanızı seçin",
+  "databaseSyncTitle": "Veritabanı Senkronizasyonu",
+  "countrySyncSettingsTitle": "Ülke Bazlı Veritabanı Senkronizasyon Ayarları",
+  "countrySyncSettingsSubtitle": "Veri senkronizasyonu için ülkeleri seçin",
+  "countryDataDisclaimer": "Lütfen dikkat: Veritabanı tüm belirli ülkeler veya bölgeler için veri içermeyebilir.",
+    "editSubscription": "Aboneliği Düzenle",
+
+    "searchByNameOrPhoneNumber": "İsme veya Telefon Numarasına Göre Ara",
+"allowedBlockedRulesInfo": "İzin verilen/engellenen kurallar, belirli telefon numaralarına yapılan aramaları eşleştirmek için kullanılır ve en yüksek önceliğe sahiptir.",
+"searchPhoneRulesHint": "Telefon kurallarını ara",
+"phoneRulesInfo": "Telefon kuralları, belirli telefon numaralarına yapılan aramaları eşleştirmek için kullanılır ve daha düşük önceliğe sahiptir. Bazıları telefon kuralı aboneliğinden gelir",
+"searchSubscriptionsHint": "Abonelikleri ara",
+"searchPluginsHint": "Eklentileri ara",
+"searchLabelsHint": "Etiketleri ara",
+  "pluginDescription": "Eklenti açıklaması",
+"enterPluginDescription": "Eklenti açıklamasını girin",
+"searchRegexRulesHint": "Regex kurallarını ara",
+"regexRulesInfo": "Regex kuralları, Regex Desenlerine göre aramaları filtrelemek için kullanılır.",
+"searchMarkedPhonesHint": "İşaretli telefonları ara",
+"searchContactSubscriptionsHint": "Kişi aboneliklerini ara",
+"showAllContacts": "Tüm Kişileri Göster",
+"showFavorites": "Favorileri Göster"
+}

@@ -1,45 +1,89 @@
+import 'dart.ui';
+
 final List<Map<String, dynamic>> languages = [
-
-
-  {'name': 'English', 'code': const Locale('en')},
-
-
-
-
- 
-
-
-
-  {'name': 'English (UK)', 'code': const Locale('en', 'GB')},
-  {'name': 'English (US)', 'code': const Locale('en', 'US')},
-
-
-  
-  
- 
-  {'name': 'Português', 'code': const Locale('pt')},
-
-  {'name': 'Svenska', 'code': const Locale('sv', 'SE')},
-  {'name': 'Türkçe', 'code': const Locale('tr', 'TR')},
-  {'name': 'Ελληνικά', 'code': const Locale('el', 'GR')},
-  {'name': 'עברית', 'code': const Locale('he', 'IL')},
-  {'name': 'Українська', 'code': const Locale('uk', 'UA')},
-{'name': 'Hindi (India)', 'code': const Locale('hi', 'IN')}
-
-
+  // --- 亚洲 (Asia) ---
+  {'name': '中文简体 (中国)', 'code': const Locale('zh', 'CN')},
+  {'name': '中文 (简体)', 'code': const Locale('zh')},
+  {'name': '繁體中文 (台湾)', 'code': const Locale('zh', 'TW')},
+  {'name': '繁體中文 (香港)', 'code': const Locale('zh', 'HK')},
+  {'name': '繁體中文 (澳门)', 'code': const Locale('zh', 'MO')},
+  {'name': '日本語', 'code': const Locale('ja', 'JP')},
+  {'name': '한국어', 'code': const Locale('ko', 'KR')},
+  {'name': 'Bahasa Malaysia', 'code': const Locale('ms', 'MY')},
+  {'name': 'Bahasa Melayu (Brunei)', 'code': const Locale('ms', 'BN')}, // 无需新增翻译, 将自动回退至 'ms'
+  {'name': 'Bahasa Indonesia', 'code': const Locale('id', 'ID')},
+  {'name': 'ภาษาไทย', 'code': const Locale('th', 'TH')},
+  {'name': 'Tiếng Việt', 'code': const Locale('vi', 'VN')},
+  {'name': 'Filipino', 'code': const Locale('fil', 'PH')},
+  {'name': '高棉语', 'code': const Locale('km', 'KH')},
+  {'name': 'Oʻzbekcha', 'code': const Locale('uz', 'UZ')},
+  {'name': 'हिंदी', 'code': const Locale('hi', 'IN')},
+  {'name': 'বাংলা', 'code': const Locale('bn', 'BD')},
+  {'name': 'اردو', 'code': const Locale('ur', 'PK')},
   {'name': 'မြန်မာ', 'code': const Locale('my', 'MM')},
 
-  {'name': 'Tiếng Việt', 'code': const Locale('vi', 'VN')},
+  // --- 中东 (Middle East) ---
+  {'name': 'العربية', 'code': const Locale('ar')},
+  {'name': 'العربية (مصر)', 'code': const Locale('ar', 'EG')},        // 无需新增翻译, 将自动回退至 'ar'
+  {'name': 'العربية (السعودية)', 'code': const Locale('ar', 'SA')},  // 无需新增翻译, 将自动回退至 'ar'
+  {'name': 'العربية (الإمارات)', 'code': const Locale('ar', 'AE')}, // 无需新增翻译, 将自动回退至 'ar'
+  
+  {'name': 'فارسی', 'code': const Locale('fa', 'IR')},
+  {'name': 'עברית', 'code': const Locale('he', 'IL')},
+  {'name': 'Türkçe', 'code': const Locale('tr', 'TR')},
 
+  // --- 欧洲、美洲及大洋洲 (Europe, Americas & Oceania) ---
+  {'name': 'English', 'code': const Locale('en')},
+  {'name': 'English (US)', 'code': const Locale('en', 'US')},
+  {'name': 'English (UK)', 'code': const Locale('en', 'GB')},
+  {'name': 'English (Australia)', 'code': const Locale('en', 'AU')},   // 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (Canada)', 'code': const Locale('en', 'CA')},    // 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (New Zealand)', 'code': const Locale('en', 'NZ')}, // 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (India)', 'code': const Locale('en', 'IN')},      // 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (Singapore)', 'code': const Locale('en', 'SG')},  // 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (Malaysia)', 'code': const Locale('en', 'MY')},   // 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (Philippines)', 'code': const Locale('en', 'PH')},// 无需新增翻译, 将自动回退至 'en'
 
+  {'name': 'Español', 'code': const Locale('es')},
+  {'name': 'Español (España)', 'code': const Locale('es', 'ES')},    // 无需新增翻译, 将自动回退至 'es'
+  {'name': 'Español (México)', 'code': const Locale('es', 'MX')},    // 无需新增翻译, 将自动回退至 'es'
+  {'name': 'Español (Estados Unidos)', 'code': const Locale('es', 'US')}, // 无需新增翻译, 将自动回退至 'es'
+  {'name': 'Español (Argentina)', 'code': const Locale('es', 'AR')},  // 无需新增翻译, 将自动回退至 'es'
+  {'name': 'Español (Colombia)', 'code': const Locale('es', 'CO')},   // 无需新增翻译, 将自动回退至 'es'
 
+  {'name': 'Français', 'code': const Locale('fr')},
+  {'name': 'Français (France)', 'code': const Locale('fr', 'FR')},    // 无需新增翻译, 将自动回退至 'fr'
+  {'name': 'Français (Canada)', 'code': const Locale('fr', 'CA')},    // 无需新增翻译, 将自动回退至 'fr'
+  {'name': 'Français (Belgique)', 'code': const Locale('fr', 'BE')},  // 无需新增翻译, 将自动回退至 'fr'
 
+  {'name': 'Nederlands', 'code': const Locale('nl', 'NL')},
+  {'name': 'Nederlands (België)', 'code': const Locale('nl', 'BE')},   // 无需新增翻译, 将自动回退至 'nl'
 
-  // --- 新增的主要语言 ---
-  {'name': 'हिंदी', 'code': const Locale('hi', 'IN')},          // 印地语 (印度)
-  {'name': 'বাংলা', 'code': const Locale('bn', 'BD')},          // 孟加拉语 (孟加拉国)
-  {'name': 'اردو', 'code': const Locale('ur', 'PK')},            // 乌尔都语 (巴基斯坦)
-  {'name': 'Filipino', 'code': const Locale('fil', 'PH')},      // 菲律宾语 (菲律宾)
-  {'name': 'فارسی', 'code': const Locale('fa', 'IR')},           // 波斯语 (伊朗)
-  {'name': 'Kiswahili', 'code': const Locale('sw')},             // 斯瓦希里语 (东非)
-  {'name': 'Hausa', 'code': const Locale('ha')},                 // 豪萨语 (西非)
+  {'name': 'Português', 'code': const Locale('pt')},
+  {'name': 'Português (Brasil)', 'code': const Locale('pt', 'BR')},   // 无需新增翻译, 将自动回退至 'pt'
+  {'name': 'Português (Portugal)', 'code': const Locale('pt', 'PT')}, // 无需新增翻译, 将自动回退至 'pt'
+  
+  {'name': 'Русский', 'code': const Locale('ru')},
+  {'name': 'Русский (Россия)', 'code': const Locale('ru', 'RU')},
+  {'name': 'Русский (Беларусь)', 'code': const Locale('ru', 'BY')},   // 无需新增翻译, 将自动回退至 'ru'
+  {'name': 'Русский (Казахстан)', 'code': const Locale('ru', 'KZ')},  // 无需新增翻译, 将自动回退至 'ru'
+  
+  {'name': 'Dansk', 'code': const Locale('da', 'DK')},
+  {'name': 'Deutsch', 'code': const Locale('de')},
+  {'name': 'Italiano', 'code': const Locale('it')},
+  {'name': 'Polski', 'code': const Locale('pl', 'PL')},
+  {'name': 'Svenska', 'code': const Locale('sv', 'SE')},
+  {'name': 'Ελληνικά', 'code': const Locale('el', 'GR')},
+  {'name': 'Українська', 'code': const Locale('uk', 'UA')},
+  {'name': 'Norsk', 'code': const Locale('nb', 'NO')},
+  {'name':'Suomi', 'code': const Locale('fi', 'FI')},
+  {'name': 'Čeština', 'code': const Locale('cs', 'CZ')},
+  {'name': 'Română', 'code': const Locale('ro', 'RO')},
+
+  // --- 非洲 (Africa) ---
+  {'name': 'Kiswahili', 'code': const Locale('sw')},
+  {'name': 'Hausa', 'code': const Locale('ha')},
+  {'name': 'isiZulu', 'code': const Locale('zu', 'ZA')},
+  {'name': 'isiXhosa', 'code': const Locale('xh', 'ZA')},
+  {'name': 'Afrikaans', 'code': const Locale('af', 'ZA')},
+];

@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "کالر آئی ڈی جیسی خدمات فراہم کرنے کے لیے ایپ کو پس منظر میں چلانے کی اجازت دیں۔",
+  "permissionTitle": "خصوصی اجازتیں",
+  "permissionSubtitle": "اوورلے اور بیٹری آپٹیمائزیشن کی اجازتوں کا انتظام کریں",
+  "themeSettingsTitle": "تھیم کی ترتیبات",
+  "themeSettingsSubtitle": "اپنی پسندیدہ تھیم کا انتخاب کریں",
+  "databaseSyncTitle": "ڈیٹا بیس کی ہم آہنگی",
+  "countrySyncSettingsTitle": "ملک پر مبنی ڈیٹا بیس کی ہم آہنگی کی ترتیبات",
+  "countrySyncSettingsSubtitle": "ڈیٹا کی ہم آہنگی کے لیے ممالک کا انتخاب کریں",
+  "countryDataDisclaimer": "براہ کرم نوٹ کریں: ڈیٹا بیس میں تمام مخصوص ممالک یا علاقوں کے لیے ڈیٹا شامل نہیں ہو سکتا ہے۔",
+    "editSubscription": "سبسکرپشن میں ترمیم کریں",
+
+    "searchByNameOrPhoneNumber": "نام یا فون نمبر کے ذریعے تلاش کریں",
+"allowedBlockedRulesInfo": "اجازت یافتہ/مسدود قواعد مخصوص فون نمبروں پر کالوں کو ملانے کے لیے استعمال ہوتے ہیں، جن کی سب سے زیادہ ترجیح ہوتی ہے۔",
+"searchPhoneRulesHint": "فون کے قواعد تلاش کریں",
+"phoneRulesInfo": "فون کے قواعد مخصوص فون نمبروں پر کالوں کو ملانے کے لیے استعمال ہوتے ہیں، جن کی ترجیح کم ہوتی ہے۔ کچھ فون رول سبسکرپشن سے آتے ہیں",
+"searchSubscriptionsHint": "سبسکرپشنز تلاش کریں",
+"searchPluginsHint": "پلگ ان تلاش کریں",
+"searchLabelsHint": "لیبل تلاش کریں",
+  "pluginDescription": "پلگ ان کی تفصیل",
+"enterPluginDescription": "پلگ ان کی تفصیل درج کریں",
+"searchRegexRulesHint": "ریجیکس کے قواعد تلاش کریں",
+"regexRulesInfo": "ریجیکس کے قواعد ریجیکس پیٹرن کی بنیاد پر کالوں کو فلٹر کرنے کے لیے استعمال ہوتے ہیں۔",
+"searchMarkedPhonesHint": "نشان زدہ فون تلاش کریں",
+"searchContactSubscriptionsHint": "رابطہ سبسکرپشنز تلاش کریں",
+"showAllContacts": "تمام رابطے دکھائیں",
+"showFavorites": "پسندیدہ دکھائیں"
+}

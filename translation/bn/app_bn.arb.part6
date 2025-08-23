@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "কলার আইডি-এর মতো পরিষেবা প্রদানের জন্য অ্যাপটিকে ব্যাকগ্রাউন্ডে চলার অনুমতি দিন।",
+  "permissionTitle": "বিশেষ অনুমতি",
+  "permissionSubtitle": "ওভারলে এবং ব্যাটারি অপ্টিমাইজেশন অনুমতিগুলি পরিচালনা করুন",
+  "themeSettingsTitle": "থিম সেটিংস",
+  "themeSettingsSubtitle": "আপনার পছন্দের থিম নির্বাচন করুন",
+  "databaseSyncTitle": "ডাটাবেস সিঙ্ক",
+  "countrySyncSettingsTitle": "দেশ ভিত্তিক ডাটাবেস সিঙ্ক সেটিংস",
+  "countrySyncSettingsSubtitle": "ডেটা সিঙ্ক্রোনাইজেশনের জন্য দেশ নির্বাচন করুন",
+  "countryDataDisclaimer": "অনুগ্রহ করে মনে রাখবেন: ডাটাবেসে সমস্ত নির্দিষ্ট দেশ বা অঞ্চলের জন্য ডেটা নাও থাকতে পারে।",
+    "editSubscription": "সাবস্ক্রিপশন সম্পাদনা করুন",
+
+    "searchByNameOrPhoneNumber": "নাম বা ফোন নম্বর দ্বারা অনুসন্ধান করুন",
+"allowedBlockedRulesInfo": "অনুমতিপ্রাপ্ত/ব্লক করা নিয়মগুলি নির্দিষ্ট ফোন নম্বরে কল মেলানোর জন্য ব্যবহৃত হয়, যেগুলির সর্বোচ্চ অগ্রাধিকার রয়েছে।",
+"searchPhoneRulesHint": "ফোন নিয়ম অনুসন্ধান করুন",
+"phoneRulesInfo": "ফোন নিয়মগুলি নির্দিষ্ট ফোন নম্বরে কল মেলানোর জন্য ব্যবহৃত হয়, যেগুলির অগ্রাধিকার কম। কিছু ফোন নিয়ম সাবস্ক্রিপশন থেকে আসে",
+"searchSubscriptionsHint": "সাবস্ক্রিপশন অনুসন্ধান করুন",
+"searchPluginsHint": "প্লাগইন অনুসন্ধান করুন",
+"searchLabelsHint": "লেবেল অনুসন্ধান করুন",
+  "pluginDescription": "প্লাগইন বর্ণনা",
+"enterPluginDescription": "প্লাগইন বর্ণনা লিখুন",
+"searchRegexRulesHint": "রেজেক্স নিয়ম অনুসন্ধান করুন",
+"regexRulesInfo": "রেজেক্স নিয়মগুলি রেজেক্স প্যাটার্নের উপর ভিত্তি করে কল ফিল্টার করতে ব্যবহৃত হয়।",
+"searchMarkedPhonesHint": "চিহ্নিত ফোন অনুসন্ধান করুন",
+"searchContactSubscriptionsHint": "যোগাযোগ সাবস্ক্রিপশন অনুসন্ধান করুন",
+"showAllContacts": "সমস্ত পরিচিতি দেখান",
+"showFavorites": "পছন্দসই দেখান"
+}

@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Permiteți aplicației să ruleze în fundal pentru a oferi servicii precum ID-ul apelantului.",
+  "permissionTitle": "Permisiuni speciale",
+  "permissionSubtitle": "Gestionați permisiunile de suprapunere și optimizare a bateriei",
+  "themeSettingsTitle": "Setări temă",
+  "themeSettingsSubtitle": "Alegeți tema preferată",
+  "databaseSyncTitle": "Sincronizare bază de date",
+  "countrySyncSettingsTitle": "Setări sincronizare bază de date pe țară",
+  "countrySyncSettingsSubtitle": "Selectați țările pentru sincronizarea datelor",
+  "countryDataDisclaimer": "Vă rugăm să rețineți: Baza de date poate să nu includă date pentru toate țările sau regiunile specifice.",
+    "editSubscription": "Editați abonamentul",
+
+    "searchByNameOrPhoneNumber": "Căutați după nume sau număr de telefon",
+"allowedBlockedRulesInfo": "Regulile permise/blocate sunt utilizate pentru a potrivi apelurile cu anumite numere de telefon, care au cea mai mare prioritate.",
+"searchPhoneRulesHint": "Căutați reguli telefonice",
+"phoneRulesInfo": "Regulile telefonice sunt utilizate pentru a potrivi apelurile cu anumite numere de telefon, care au o prioritate mai mică. Unele provin din abonamentul de reguli telefonice",
+"searchSubscriptionsHint": "Căutați abonamente",
+"searchPluginsHint": "Căutați pluginuri",
+"searchLabelsHint": "Căutați etichete",
+  "pluginDescription": "Descrierea pluginului",
+"enterPluginDescription": "Introduceți descrierea pluginului",
+"searchRegexRulesHint": "Căutați reguli regex",
+"regexRulesInfo": "Regulile Regex sunt utilizate pentru a filtra apelurile pe baza modelelor Regex.",
+"searchMarkedPhonesHint": "Căutați telefoane marcate",
+"searchContactSubscriptionsHint": "Căutați abonamente de contact",
+"showAllContacts": "Afișați toate contactele",
+"showFavorites": "Afișați favoritele"
+}

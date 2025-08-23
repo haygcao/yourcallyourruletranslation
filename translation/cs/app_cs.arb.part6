@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Povolit aplikaci běžet na pozadí a poskytovat služby jako ID volajícího.",
+  "permissionTitle": "Speciální oprávnění",
+  "permissionSubtitle": "Spravovat oprávnění pro překrytí a optimalizaci baterie",
+  "themeSettingsTitle": "Nastavení motivu",
+  "themeSettingsSubtitle": "Vyberte si svůj oblíbený motiv",
+  "databaseSyncTitle": "Synchronizace databáze",
+  "countrySyncSettingsTitle": "Nastavení synchronizace databáze podle země",
+  "countrySyncSettingsSubtitle": "Vyberte země pro synchronizaci dat",
+  "countryDataDisclaimer": "Upozornění: Databáze nemusí obsahovat data pro všechny konkrétní země nebo regiony.",
+    "editSubscription": "Upravit předplatné",
+
+    "searchByNameOrPhoneNumber": "Hledat podle jména nebo telefonního čísla",
+"allowedBlockedRulesInfo": "Pravidla povolených/blokovaných se používají k porovnávání hovorů s konkrétními telefonními čísly, která mají nejvyšší prioritu.",
+"searchPhoneRulesHint": "Hledat pravidla telefonu",
+"phoneRulesInfo": "Pravidla telefonu se používají k porovnávání hovorů s konkrétními telefonními čísly, která mají nižší prioritu. Některá pocházejí z předplatného pravidel telefonu",
+"searchSubscriptionsHint": "Hledat předplatná",
+"searchPluginsHint": "Hledat pluginy",
+"searchLabelsHint": "Hledat štítky",
+  "pluginDescription": "Popis pluginu",
+"enterPluginDescription": "Zadejte popis pluginu",
+"searchRegexRulesHint": "Hledat pravidla regulárních výrazů",
+"regexRulesInfo": "Pravidla regulárních výrazů se používají k filtrování hovorů na základě vzorů regulárních výrazů.",
+"searchMarkedPhonesHint": "Hledat označené telefony",
+"searchContactSubscriptionsHint": "Hledat předplatná kontaktů",
+"showAllContacts": "Zobrazit všechny kontakty",
+"showFavorites": "Zobrazit oblíbené"
+}

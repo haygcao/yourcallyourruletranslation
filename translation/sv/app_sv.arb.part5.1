@@ -1,0 +1,202 @@
+{
+              "fraudAlerSettingSubtitle": "För att ställa in bedrägerivarning",
+  "enableFraudAlert": "Aktivera bedrägerivarning",
+  "enableFraudAlertDescription": "Varning för misstänkta bedrägerisamtal",
+      "enableVibration": "Aktivera vibration",
+      "enableVibrationDescription": "Vibrera när samtal misstänks vara bedrägerisamtal",
+  "notificationSettingsTitle": "Meddelandeinställningar",
+  "useLocalNotification": "Använd lokala meddelanden",
+  "useLocalNotificationDescription": "Aktivera lokala meddelanden för inkommande samtal",
+  "cancelLocalNotification": "Stäng lokala meddelanden",
+  "useStirNotification": "Använd meddelande från STIR",
+  "useStirNotificationDescription": "Aktivera STIR-meddelanden för inkommande samtal",
+  "cancelLocalNotificationDescription": "Stäng lokala meddelanden automatiskt",
+  "callerIdSettingsTitle": "Nummerpresentatörsinställningar",
+    "callerIdSettingsSubtitle": "För att ställa in meddelande om inkommande samtal och visningsläge", 
+    "purchaseTitle": "Köp",
+    "purchaseSubtitle": "För att köpa tjänsten",
+   "callerIdNotificationTitle": "Information om inkommande samtal",
+  "@callerIdNotificationTitle": {
+    "description": "Titel för information om inkommande samtal"
+  },
+  "callerIdBody": "Nummer: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Brödtext för nummerpresentatörsmeddelandet, visar telefonnumret",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Blockerat samtal",
+  "@blockedCallTitle": {
+    "description": "Titel för meddelande om blockerat samtal"
+  },
+  "blockedCallBody": "Blockerat samtal från {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Brödtext för meddelande om blockerat samtal, visar telefonnumret",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Verifierad",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verifieringsstatus: Verifierad"
+  },
+  "stirNotVerified": "Ej verifierad",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verifieringsstatus: Ej verifierad"
+  },
+  "stirFailed": "Verifiering misslyckades",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verifieringsstatus: Verifiering misslyckades"
+  },
+  "stirUnknown": "Okänd verifieringsstatus",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verifieringsstatus: Okänd"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN verifiering",
+  "@stirVerificationTitle": {
+    "description": "Titel för STIR/SHAKEN verifieringsmeddelande"
+  },
+  "stirVerificationBody": "{stirResultMessage} för nummer {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Brödtext för STIR/SHAKEN verifieringsmeddelande, visar resultat och telefonnummer",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verifierad"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Inställningar för rullande säkerhetsmeddelande",
+  "messageColor": "Meddelandefärg",
+  "messageFontSize": "Meddelandets teckenstorlek",
+  "messagePosition": "Meddelandets position",
+  "containerWidth": "Behållarens bredd",
+  "scrollSpeed": "Rullningshastighet",
+  "enableSecurityMessage": "Aktivera säkerhetsmeddelande",
+  "fraudAlertTitle": "Bedrägerivarning",
+  "@fraudAlertTitle": {
+    "description": "Titel för bedrägerivarningsmeddelandet"
+  },
+  "fraudAlertBody": "Potentiellt bedrägerisamtal från {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Brödtext för bedrägerivarningsmeddelandet",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+   },
+   "loadRulesFailed": "Kunde inte ladda regler: {error}",
+ "loadCallLogFailed": "Kunde inte ladda samtalslogg: {error}",
+ "noBlockedTypeData": "Ingen blockerad typdata tillgänglig",
+"importEntity": "Importera {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialogtitel för import av en entitet",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityImportSuccess": "{entityTypeName} importerades, till",
+ "@entityImportSuccess": {
+   "description": "Framgångsmeddelande efter import av entiteter",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "Kunde inte importera {entityTypeName}: {error}",
+ "@entityImportFailed": {
+   "description": "Felmeddelande när import av entiteter misslyckas",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Exportera {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialogtitel för export av en entitet",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} exporterades",
+ "@entityExportSuccess": {
+   "description": "Framgångsmeddelande efter export av entiteter",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Kunde inte exportera {entityTypeName}: {error}",
+ "@entityExportFailed": {
+   "description": "Felmeddelande när export av entiteter misslyckas",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Molnsynkroniseringstjänst",
+  "membershipCenter": "Medlemscenter",
+  "redeemVipWithMarks": "Lös in VIP med markeringar",
+  "currentMarkCount": "Aktuellt antal markeringar",
+  "markMoreNumbersForMore": "Markera fler nummer för fler markeringar",
+  "noAds": "Inga annonser",
+  "cloudBackup": "Molnsäkerhetskopiering",
+  "callerIdEnhancement": "Förbättring av nummerpresentatör",
+  "voiceRecognition": "Röstigenkänning",
+  "feature": "Funktion",
+  "normalUser": "Normal användare",
+  "vipUser": "VIP-användare",
+  "temporaryVip": "Tillfällig VIP",
+  "removeAds": "Ta bort annonser",
+
+  "unknownAction": "Okänd åtgärd",
+
+    "settingsBackup": "Inställningssäkerhetskopiering",
+      "allServicesStatusTitle": "Aktuell tjänstestatus",
+  "allServicesStatusSubtitle": "Aktuell status för varje molntjänst",
+   
+  "redirect": "Omdirigera",
+ "notify": "Meddela",
+ "log": "Logga",
+ "custom": "Anpassad",
+ "allowActionDescription": "Samtal kommer att tillåtas, även om numret finns på svartlistan.",
+ "blockActionDescription": "Samtal kommer att blockeras och visas i samtalsloggen.",
+ "silenceActionDescription": "Samtal kommer att tystas men visas i samtalsloggen.",
+ "noneActionDescription": "Ingen speciell åtgärd kommer att vidtas för samtalet.",
+ "redirectActionDescription": "Omdirigera samtalet till ett angivet nummer.",
+ "labelActionDescription": "Lägg till en etikett till samtalet för enkel identifiering.",
+ "notifyActionDescription": "Skicka ett meddelande när ett samtal tas emot."
+}

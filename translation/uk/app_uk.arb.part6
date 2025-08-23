@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Дозвольте програмі працювати у фоновому режимі, щоб надавати такі послуги, як ідентифікатор абонента.",
+  "permissionTitle": "Спеціальні дозволи",
+  "permissionSubtitle": "Керування дозволами накладання та оптимізації батареї",
+  "themeSettingsTitle": "Налаштування теми",
+  "themeSettingsSubtitle": "Виберіть свою улюблену тему",
+  "databaseSyncTitle": "Синхронізація бази даних",
+  "countrySyncSettingsTitle": "Налаштування синхронізації бази даних за країнами",
+  "countrySyncSettingsSubtitle": "Виберіть країни для синхронізації даних",
+  "countryDataDisclaimer": "Зверніть увагу: база даних може не містити даних для всіх конкретних країн або регіонів.",
+    "editSubscription": "Редагувати підписку",
+
+    "searchByNameOrPhoneNumber": "Пошук за іменем або номером телефону",
+"allowedBlockedRulesInfo": "Дозволені/заблоковані правила використовуються для зіставлення дзвінків з певними телефонними номерами, які мають найвищий пріоритет.",
+"searchPhoneRulesHint": "Пошук правил телефону",
+"phoneRulesInfo": "Правила телефону використовуються для зіставлення дзвінків з певними телефонними номерами, які мають нижчий пріоритет. Деякі з них походять з підписки на правила телефону",
+"searchSubscriptionsHint": "Пошук підписок",
+"searchPluginsHint": "Пошук плагінів",
+"searchLabelsHint": "Пошук міток",
+  "pluginDescription": "Опис плагіна",
+"enterPluginDescription": "Введіть опис плагіна",
+"searchRegexRulesHint": "Пошук правил регулярних виразів",
+"regexRulesInfo": "Правила регулярних виразів використовуються для фільтрації дзвінків на основі шаблонів регулярних виразів.",
+"searchMarkedPhonesHint": "Пошук позначених телефонів",
+"searchContactSubscriptionsHint": "Пошук підписок контактів",
+"showAllContacts": "Показати всі контакти",
+"showFavorites": "Показати вибрані"
+}

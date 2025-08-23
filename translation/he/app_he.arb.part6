@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "אפשר לאפליקציה לפעול ברקע כדי לספק שירותים כמו זיהוי שיחות.",
+  "permissionTitle": "הרשאות מיוחדות",
+  "permissionSubtitle": "נהל הרשאות שכבת-על ואופטימיזציית סוללה",
+  "themeSettingsTitle": "הגדרות ערכת נושא",
+  "themeSettingsSubtitle": "בחר את ערכת הנושא המועדפת עליך",
+  "databaseSyncTitle": "סנכרון מסד נתונים",
+  "countrySyncSettingsTitle": "הגדרות סנכרון מסד נתונים מבוססות מדינה",
+  "countrySyncSettingsSubtitle": "בחר מדינות לסנכרון נתונים",
+  "countryDataDisclaimer": "שימו לב: מסד הנתונים עשוי שלא לכלול נתונים עבור כל המדינות או האזורים הספציפיים.",
+    "editSubscription": "ערוך מנוי",
+
+    "searchByNameOrPhoneNumber": "חפש לפי שם או מספר טלפון",
+"allowedBlockedRulesInfo": "כללים מותרים/חסומים משמשים להתאמת שיחות למספרי טלפון ספציפיים, בעלי עדיפות עליונה.",
+"searchPhoneRulesHint": "חפש כללי טלפון",
+"phoneRulesInfo": "כללי טלפון משמשים להתאמת שיחות למספרי טלפון ספציפיים, בעלי עדיפות נמוכה יותר. חלקם מגיעים ממנוי כללי הטלפון",
+"searchSubscriptionsHint": "חפש מנויים",
+"searchPluginsHint": "חפש תוספים",
+"searchLabelsHint": "חפש תוויות",
+  "pluginDescription": "תיאור תוסף",
+"enterPluginDescription": "הזן תיאור תוסף",
+"searchRegexRulesHint": "חפש כללי Regex",
+"regexRulesInfo": "כללי Regex משמשים לסינון שיחות על בסיס תבניות Regex.",
+"searchMarkedPhonesHint": "חפש טלפונים מסומנים",
+"searchContactSubscriptionsHint": "חפש מנויי אנשי קשר",
+"showAllContacts": "הצג את כל אנשי הקשר",
+"showFavorites": "הצג מועדפים"
+}

@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Salli sovelluksen toimia taustalla tarjotakseen palveluita, kuten soittajan tunnus.",
+  "permissionTitle": "Erityisluvat",
+  "permissionSubtitle": "Hallitse peittokuva- ja akun optimointilupia",
+  "themeSettingsTitle": "Teema-asetukset",
+  "themeSettingsSubtitle": "Valitse suosikkiteemasi",
+  "databaseSyncTitle": "Tietokannan synkronointi",
+  "countrySyncSettingsTitle": "Maakohtaiset tietokannan synkronointiasetukset",
+  "countrySyncSettingsSubtitle": "Valitse maat tietojen synkronointia varten",
+  "countryDataDisclaimer": "Huomaa: Tietokanta ei välttämättä sisällä tietoja kaikista tietyistä maista tai alueista.",
+    "editSubscription": "Muokkaa tilausta",
+
+    "searchByNameOrPhoneNumber": "Hae nimen tai puhelinnumeron perusteella",
+"allowedBlockedRulesInfo": "Sallitut/estetyt säännöt vastaavat puheluita tiettyihin puhelinnumeroihin, joilla on korkein prioriteetti.",
+"searchPhoneRulesHint": "Hae puhelinsääntöjä",
+"phoneRulesInfo": "Puhelinsääntöjä käytetään puheluiden vastaamiseen tiettyihin puhelinnumeroihin, joilla on alhaisempi prioriteetti. Jotkut tulevat puhelinsääntötilauksesta",
+"searchSubscriptionsHint": "Hae tilauksia",
+"searchPluginsHint": "Hae laajennuksia",
+"searchLabelsHint": "Hae tunnisteita",
+  "pluginDescription": "Laajennuksen kuvaus",
+"enterPluginDescription": "Anna laajennuksen kuvaus",
+"searchRegexRulesHint": "Hae regex-sääntöjä",
+"regexRulesInfo": "Regex-sääntöjä käytetään puheluiden suodattamiseen Regex-kuvioiden perusteella.",
+"searchMarkedPhonesHint": "Hae merkittyjä puhelimia",
+"searchContactSubscriptionsHint": "Hae yhteystietotilauksia",
+"showAllContacts": "Näytä kaikki yhteystiedot",
+"showFavorites": "Näytä suosikit"
+}

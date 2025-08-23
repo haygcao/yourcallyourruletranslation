@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "कॉलर आईडी जैसी सेवाएं प्रदान करने के लिए ऐप को पृष्ठभूमि में चलने की अनुमति दें।",
+  "permissionTitle": "विशेष अनुमतियाँ",
+  "permissionSubtitle": "ओवरले और बैटरी ऑप्टिमाइज़ेशन अनुमतियाँ प्रबंधित करें",
+  "themeSettingsTitle": "थीम सेटिंग्स",
+  "themeSettingsSubtitle": "अपनी पसंदीदा थीम चुनें",
+  "databaseSyncTitle": "डेटाबेस सिंक",
+  "countrySyncSettingsTitle": "देश आधारित डेटाबेस सिंक सेटिंग्स",
+  "countrySyncSettingsSubtitle": "डेटा सिंक्रनाइज़ेशन के लिए देश चुनें",
+  "countryDataDisclaimer": "कृपया ध्यान दें: डेटाबेस में सभी विशिष्ट देशों या क्षेत्रों के लिए डेटा शामिल नहीं हो सकता है।",
+    "editSubscription": "सदस्यता संपादित करें",
+
+    "searchByNameOrPhoneNumber": "नाम या फ़ोन नंबर से खोजें",
+"allowedBlockedRulesInfo": "अनुमति प्राप्त/अवरुद्ध नियमों का उपयोग विशिष्ट फ़ोन नंबरों पर कॉल का मिलान करने के लिए किया जाता है, जिनकी उच्चतम प्राथमिकता होती है।",
+"searchPhoneRulesHint": "फ़ोन नियम खोजें",
+"phoneRulesInfo": "फ़ोन नियमों का उपयोग विशिष्ट फ़ोन नंबरों पर कॉल का मिलान करने के लिए किया जाता है, जिनकी प्राथमिकता कम होती है। कुछ फ़ोन नियम सदस्यता से आते हैं",
+"searchSubscriptionsHint": "सदस्यताएँ खोजें",
+"searchPluginsHint": "प्लगइन्स खोजें",
+"searchLabelsHint": "लेबल खोजें",
+  "pluginDescription": "प्लगइन विवरण",
+"enterPluginDescription": "प्लगइन विवरण दर्ज करें",
+"searchRegexRulesHint": "रेगेक्स नियम खोजें",
+"regexRulesInfo": "रेगेक्स नियमों का उपयोग रेगेक्स पैटर्न के आधार पर कॉल को फ़िल्टर करने के लिए किया जाता है।",
+"searchMarkedPhonesHint": "चिह्नित फ़ोन खोजें",
+"searchContactSubscriptionsHint": "संपर्क सदस्यताएँ खोजें",
+"showAllContacts": "सभी संपर्क दिखाएँ",
+"showFavorites": "पसंदीदा दिखाएँ"
+}
