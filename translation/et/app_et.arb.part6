@@ -1,0 +1,28 @@
+{
+  "batteryOptimizationPermissionDescription": "Luba rakendusel taustal töötada, et pakkuda teenuseid nagu helistaja ID.",
+  "permissionTitle": "Eriload",
+  "permissionSubtitle": "Halda ülekatte ja aku optimeerimise lubasid",
+  "themeSettingsTitle": "Teema seaded",
+  "themeSettingsSubtitle": "Vali oma lemmikteema",
+  "databaseSyncTitle": "Andmebaasi sünkroonimine",
+  "countrySyncSettingsTitle": "Riigipõhised andmebaasi sünkroonimise seaded",
+  "countrySyncSettingsSubtitle": "Vali andmete sünkroonimiseks riigid",
+  "countryDataDisclaimer": "Pange tähele: Andmebaas ei pruugi sisaldada andmeid kõigi konkreetsete riikide või piirkondade kohta.",
+    "editSubscription": "Muuda tellimust",
+
+    "searchByNameOrPhoneNumber": "Otsi nime või telefoninumbri järgi",
+"allowedBlockedRulesInfo": "Lubatud/blokeeritud reegleid kasutatakse kõnede sobitamiseks konkreetsete telefoninumbritega, millel on kõrgeim prioriteet.",
+"searchPhoneRulesHint": "Otsi telefonireegleid",
+"phoneRulesInfo": "Telefonireegleid kasutatakse kõnede sobitamiseks konkreetsete telefoninumbritega, millel on madalam prioriteet. Mõned pärinevad telefonireegli tellimusest.",
+"searchSubscriptionsHint": "Otsi tellimusi",
+"searchPluginsHint": "Otsi pistikprogramme",
+"searchLabelsHint": "Otsi silte",
+  "pluginDescription": "Pistikprogrammi kirjeldus",
+"enterPluginDescription": "Sisesta pistikprogrammi kirjeldus",
+"searchRegexRulesHint": "Otsi regulaaravaldise reegleid",
+"regexRulesInfo": "Regulaaravaldise reegleid kasutatakse kõnede filtreerimiseks regulaaravaldise mustrite alusel.",
+"searchMarkedPhonesHint": "Otsi märgistatud telefone",
+"searchContactSubscriptionsHint": "Otsi kontakti tellimusi",
+"showAllContacts": "Näita kõiki kontakte",
+"showFavorites": "Näita lemmikuid"
+}

@@ -15,7 +15,7 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'ภาษาไทย', 'code': const Locale('th', 'TH')},
   {'name': 'Tiếng Việt', 'code': const Locale('vi', 'VN')},
   {'name': 'Filipino', 'code': const Locale('fil', 'PH')},
-  {'name': '高棉语', 'code': const Locale('km', 'KH')},
+  {'name': 'ភាសាខ្មែរ', 'code': const Locale('km', 'KH')},
   {'name': 'Oʻzbekcha', 'code': const Locale('uz', 'UZ')},
   {'name': 'हिंदी', 'code': const Locale('hi', 'IN')},
   {'name': 'বাংলা', 'code': const Locale('bn', 'BD')},
@@ -27,7 +27,8 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'العربية (مصر)', 'code': const Locale('ar', 'EG')},        // 无需新增翻译, 将自动回退至 'ar'
   {'name': 'العربية (السعودية)', 'code': const Locale('ar', 'SA')},  // 无需新增翻译, 将自动回退至 'ar'
   {'name': 'العربية (الإمارات)', 'code': const Locale('ar', 'AE')}, // 无需新增翻译, 将自动回退至 'ar'
-  
+  {'name': 'العربية (الأردن)', 'code': const Locale('ar', 'JO')},    // 约旦, 无需新增翻译, 将自动回退至 'ar'
+
   {'name': 'فارسی', 'code': const Locale('fa', 'IR')},
   {'name': 'עברית', 'code': const Locale('he', 'IL')},
   {'name': 'Türkçe', 'code': const Locale('tr', 'TR')},
@@ -43,6 +44,7 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'English (Singapore)', 'code': const Locale('en', 'SG')},  // 无需新增翻译, 将自动回退至 'en'
   {'name': 'English (Malaysia)', 'code': const Locale('en', 'MY')},   // 无需新增翻译, 将自动回退至 'en'
   {'name': 'English (Philippines)', 'code': const Locale('en', 'PH')},// 无需新增翻译, 将自动回退至 'en'
+  {'name': 'English (Hong Kong)', 'code': const Locale('en', 'HK')}, // 无需新增翻译, 将自动回退至 'en'
 
   {'name': 'Español', 'code': const Locale('es')},
   {'name': 'Español (España)', 'code': const Locale('es', 'ES')},    // 无需新增翻译, 将自动回退至 'es'
@@ -50,6 +52,7 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'Español (Estados Unidos)', 'code': const Locale('es', 'US')}, // 无需新增翻译, 将自动回退至 'es'
   {'name': 'Español (Argentina)', 'code': const Locale('es', 'AR')},  // 无需新增翻译, 将自动回退至 'es'
   {'name': 'Español (Colombia)', 'code': const Locale('es', 'CO')},   // 无需新增翻译, 将自动回退至 'es'
+  {'name': 'Español (Perú)', 'code': const Locale('es', 'PE')},   // 秘鲁, 无需新增翻译, 将自动回退至 'es'
 
   {'name': 'Français', 'code': const Locale('fr')},
   {'name': 'Français (France)', 'code': const Locale('fr', 'FR')},    // 无需新增翻译, 将自动回退至 'fr'
@@ -68,6 +71,11 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'Русский (Беларусь)', 'code': const Locale('ru', 'BY')},   // 无需新增翻译, 将自动回退至 'ru'
   {'name': 'Русский (Казахстан)', 'code': const Locale('ru', 'KZ')},  // 无需新增翻译, 将自动回退至 'ru'
   
+  {'name': 'Estonian', 'code': const Locale('et', 'EE')},
+
+
+
+  {'name': 'Lithuanian', 'code': const Locale('lt', 'LT')},
   {'name': 'Dansk', 'code': const Locale('da', 'DK')},
   {'name': 'Deutsch', 'code': const Locale('de')},
   {'name': 'Italiano', 'code': const Locale('it')},
@@ -76,6 +84,7 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'Ελληνικά', 'code': const Locale('el', 'GR')},
   {'name': 'Українська', 'code': const Locale('uk', 'UA')},
   {'name': 'Norsk', 'code': const Locale('nb', 'NO')},
+  {'name': 'Slovenčina', 'code': const Locale('sk', 'SK')}, // 斯洛伐克
   {'name':'Suomi', 'code': const Locale('fi', 'FI')},
   {'name': 'Čeština', 'code': const Locale('cs', 'CZ')},
   {'name': 'Română', 'code': const Locale('ro', 'RO')},
@@ -86,4 +95,7 @@ final List<Map<String, dynamic>> languages = [
   {'name': 'isiZulu', 'code': const Locale('zu', 'ZA')},
   {'name': 'isiXhosa', 'code': const Locale('xh', 'ZA')},
   {'name': 'Afrikaans', 'code': const Locale('af', 'ZA')},
+  {'name': 'አማርኛ', 'code': const Locale('am', 'ET')},             // 埃塞俄比亚
+  {'name': 'English (Ghana)', 'code': const Locale('en', 'GH')},   // 加纳, 无需新增翻译, 将自动回退至 'en'
+
 ];
