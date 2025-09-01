@@ -335,13 +335,8 @@
           // Updated target URL for cleverdialer.com
           const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
           const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          // [修改] 使用 btoa 进行 Base64 编码 (window.btoa)
-          const encodedUrl = btoa(targetSearchUrl);
-          const encodedHeaders = btoa(JSON.stringify(headers));
-
-          // [修改] 构建新的、无状态的 URL 格式: /proxy/<base64_url>/<base64_headers>
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}/proxy/${encodedUrl}/${encodedHeaders}`;
-          log(`Iframe proxy URL (stateless): ${proxyUrl}`);
+          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+          log(`Iframe proxy URL: ${proxyUrl}`);
 
           const iframe = document.createElement('iframe');
           iframe.id = `query-iframe-${requestId}`;
@@ -439,79 +434,6 @@
       log(`Plugin registered: window.plugin.${PLUGIN_CONFIG.id}`);
       sendPluginLoaded();
   }
-
-
-  // --- [通用拦截器框架定义] ---
-  // 按照您的设计，我们将所有通用的、复杂的拦截器逻辑封装在这个函数里。
-  // 它在这里被定义，但不会立即执行。
-  function setupInterceptorFramework() {
-    'use strict';
-    if (window.interceptorFrameworkLoaded) {
-      return;
-    }
-
-    let baseHost = null;
-    try {
-      const encodedUrl = window.location.pathname.split('/')[2];
-      if (encodedUrl) {
-        const decodedUrl = atob(encodedUrl);
-        baseHost = new URL(decodedUrl).hostname;
-      }
-    } catch(e) { console.error('[Interceptor] Could not determine base host.', e); }
-
-    function toProxyUrl(originalUrl) {
-      if (!originalUrl || typeof originalUrl !== 'string' || originalUrl.startsWith('data:')) return originalUrl;
-      let absoluteUrl;
-      try { absoluteUrl = new URL(originalUrl, window.location.href).toString(); }
-      catch (e) { return originalUrl; }
-
-      if (baseHost && (new URL(absoluteUrl).hostname === baseHost || new URL(absoluteUrl).hostname.endsWith('.' + baseHost))) {
-          const encodedAbsoluteUrl = btoa(absoluteUrl);
-          return `${PROXY_SCHEME}://${PROXY_HOST}/proxy/${encodedAbsoluteUrl}`;
-      }
-      return absoluteUrl;
-    }
-
-    const originalFetch = window.fetch;
-    window.fetch = function(input, init) {
-      if (window.location.host === PROXY_HOST) {
-          const url = (input instanceof Request) ? input.url : String(input);
-          const proxiedUrl = toProxyUrl(url);
-          if (input instanceof Request) {
-            const newRequest = new Request(proxiedUrl, init || {
-               method: input.method, headers: input.headers, body: input.body, mode: input.mode,
-               credentials: input.credentials, cache: input.cache, redirect: input.redirect,
-               referrer: input.referrer, integrity: input.integrity
-            });
-            return originalFetch.call(this, newRequest);
-          }
-          return originalFetch.call(this, proxiedUrl, init);
-      }
-      return originalFetch.apply(this, arguments);
-    };
-
-    const originalOpen = XMLHttpRequest.prototype.open;
-    XMLHttpRequest.prototype.open = function(method, url, ...args) {
-      if (window.location.host === PROXY_HOST) {
-        const proxiedUrl = toProxyUrl(url);
-        return originalOpen.call(this, method, proxiedUrl, ...args);
-      }
-      return originalOpen.apply(this, arguments);
-    };
-
-    window.interceptorFrameworkLoaded = true;
-    console.log('Interceptor Framework loaded and activated within plugin.');
-  }
-
-
-  // --- [执行入口] ---
-  // 这是整个插件脚本的执行起点。
-  
-  // 关键一步：在执行任何插件逻辑之前，首先调用并激活我们的拦截器框架。
-  setupInterceptorFramework();
-
-  // 然后，执行插件的常规初始化逻辑。
-
 
   initialize();
 
