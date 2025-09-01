@@ -335,12 +335,7 @@
           // Updated target URL for cleverdialer.com
           const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
           const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          // [修改] 使用 btoa 进行 Base64 编码 (window.btoa)
-          const encodedUrl = btoa(targetSearchUrl);
-          const encodedHeaders = btoa(JSON.stringify(headers));
-
-          // [修改] 构建新的、无状态的 URL 格式: /proxy/<base64_url>/<base64_headers>
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}/proxy/${encodedUrl}/${encodedHeaders}`;
+          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
           log(`Iframe proxy URL: ${proxyUrl}`);
 
           const iframe = document.createElement('iframe');
