@@ -335,7 +335,18 @@
           // Updated target URL for cleverdialer.com
           const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
           const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+          // [最终修正] 将 URL 和 Headers 组合成一个 JSON 对象
+          const payload = {
+            url: targetSearchUrl,
+            headers: headers
+         };
+
+         // [最终修正] 将整个 JSON 对象字符串化，然后进行 Base64 编码
+        const encodedPayload = btoa(JSON.stringify(payload));
+
+        // [最终修正] 构建一个最简单、最不可能出错的代理 URL
+        // 我们只使用一个查询参数，例如 `p` (payload)
+          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}/?p=${encodedPayload}`;
           log(`Iframe proxy URL: ${proxyUrl}`);
 
           const iframe = document.createElement('iframe');
