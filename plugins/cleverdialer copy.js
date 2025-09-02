@@ -331,72 +331,90 @@
 
  
 
-    // --- 核心业务逻辑 ---
+    // --- 6. 核心业务逻辑 (最终版) ---
     function initiateQuery(phoneNumber, requestId) {
         log(`Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0...' };
+            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
             // 这个 URL 只用于加载主文档
             const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
             const iframe = document.createElement('iframe');
             iframe.id = `query-iframe-${requestId}`;
             iframe.style.display = 'none';
-            // 我们需要最宽松的 sandbox，因为所有请求都在我们控制之下
-            iframe.sandbox = 'allow-scripts allow-same-origin'; 
+            // 我们需要脚本权限来执行重写和解析
+            iframe.sandbox = 'allow-scripts'; 
 
             activeIFrames.set(requestId, iframe);
 
             iframe.onload = function() {
-                log(`Iframe loaded. Injecting proxy <base> tag and parser...`);
+                log(`Iframe loaded. Injecting URL rewriter and parser...`);
 
-                // 准备注入的脚本
-                const injectorScript = `
+                // 这个脚本将在 iframe 内部执行，完成所有清理和重写工作
+                const rewriterAndSanitizerScript = `
                     (function() {
-                        console.log('[Injector] Running inside iframe...');
+                        console.log('[Rewriter] Running inside iframe...');
                         
-                        // 1. 移除页面可能自带的 base 标签
-                        const existingBase = document.querySelector('base');
-                        if (existingBase) existingBase.parentNode.removeChild(existingBase);
+                        // --- 1. URL 重写逻辑 ---
+                        const origin = new URL('${targetSearchUrl}').origin;
+                        const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
 
-                        // 2. 创建并注入我们指向代理的 <base> 标签
-                        const newBase = document.createElement('base');
-                        // 关键！所有相对路径都会基于这个 URL
-                        newBase.href = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl.substring(0, targetSearchUrl.lastIndexOf("/") + 1))}';
-                        // 上面的 targetUrl 需要处理一下，只保留域名和路径部分
-                        // 一个更简单、更可靠的方式是：
-                        const baseHref = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(new URL(targetSearchUrl).origin + "/")}';
-                        newBase.href = baseHref;
-
-                        document.head.prepend(newBase);
-                        console.log('[Injector] SUCCESS: Proxy base tag injected with href:', newBase.href);
-
-                        // 3. 阻止有害脚本 (作为双重保险)
-                        // (这一步甚至可以省略，因为 Phonenumber.js 的请求会被代理捕获，我们可以在Dart端阻止它)
+                        // 使用一个隐藏的 a 标签来辅助解析相对路径
+                        const urlResolver = document.createElement('a');
                         
-                        // 4. 加载并执行真正的解析脚本
-                        const finalParserScript = \`${getParsingScript(PLUGIN_CONFIG.id, phoneNumber)}\`;
-                        eval(finalParserScript);
+                        document.querySelectorAll('link[href], script[src], img[src], a[href]').forEach(el => {
+                            const attr = el.hasAttribute('href') ? 'href' : 'src';
+                            const originalPath = el.getAttribute(attr);
+                            
+                            // 只处理相对路径和根路径
+                            if (originalPath && !originalPath.startsWith('http') && !originalPath.startsWith('data:')) {
+                                urlResolver.href = originalPath; // 浏览器自动拼接成绝对路径
+                                const absoluteUrl = urlResolver.href;
+                                
+                                const newProxyUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
+                                el.setAttribute(attr, newProxyUrl);
+                            }
+                        });
+                        console.log('[Rewriter] SUCCESS: All relative sub-resource URLs have been rewritten to re-proxy.');
+
+                        // --- 2. 脚本清理逻辑 (双重保险) ---
+                        document.querySelectorAll('script').forEach(s => {
+                            if(s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
+                                s.remove();
+                                console.log('[Rewriter] Sanitizer: Removed inline frame-buster script.');
+                            }
+                        });
 
                     })();
                 `;
                 
+                // 最终注入的脚本：先重写和清理，然后解析
+                const finalScriptToInject = rewriterAndSanitizerScript + getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+
                 setTimeout(() => {
                     try {
-                        this.contentWindow.postMessage({ type: 'executeScript', script: injectorScript }, '*');
+                        this.contentWindow.postMessage({ type: 'executeScript', script: finalScriptToInject }, '*');
                     } catch (e) {
-                        // ... 错误处理 ...
+                        logError(`[JS] Error injecting scripts:`, e);
+                        sendPluginResult({ requestId, success: false, error: `Injection failed: ${e.message}` });
+                        cleanupIframe(requestId);
                     }
-                }, 300);
+                }, 700); // 给予充足时间让 iframe 内部的 Receiver 准备好
             };
             
+            iframe.onerror = function() {
+                 logError(`Iframe loading failed for requestId ${requestId}`);
+                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+                 cleanupIframe(requestId);
+            };
+
             document.body.appendChild(iframe);
             iframe.src = initialProxyUrl;
             
         } catch (error) {
-               logError(`Error in initiateQuery for requestId ${requestId}:`, error);
-          sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
+            logError(`[JS] Error in setup:`, error);
+            sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
         }
     }
 
