@@ -121,8 +121,7 @@
   const PROXY_HOST = "flutter-webview-proxy.internal";
   const PROXY_PATH_FETCH = "/fetch";
   const activeIFrames = new Map();
- const requestDataStore = new Map(); // 用于在异步步骤间传递数据
- 
+
   function log(message) { console.log(`[${PLUGIN_CONFIG.id} v${PLUGIN_CONFIG.version}] ${message}`); }
   function logError(message, error) { console.error(`[${PLUGIN_CONFIG.id} v${PLUGIN_CONFIG.version}] ${message}`, error); }
 
@@ -332,112 +331,74 @@
 
  
 
-    // --- 5. 核心业务逻辑 ---
+    // --- 核心业务逻辑 ---
     function initiateQuery(phoneNumber, requestId) {
         log(`Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            requestDataStore.set(requestId, { phoneNumber, targetSearchUrl });
+            const headers = { 'User-Agent': 'Mozilla/5.0...' };
+            // 这个 URL 只用于加载主文档
+            const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
-            const headers = { 'User-Agent': 'Mozilla/5.0...' }; // 您的完整UA
-            const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+            const iframe = document.createElement('iframe');
+            iframe.id = `query-iframe-${requestId}`;
+            iframe.style.display = 'none';
+            // 我们需要最宽松的 sandbox，因为所有请求都在我们控制之下
+            iframe.sandbox = 'allow-scripts allow-same-origin'; 
 
-            log('[JS-Layer] Step 1: Creating downloader iframe to fetch raw HTML...');
-            const downloader = document.createElement('iframe');
-            downloader.id = `downloader-${requestId}`;
-            downloader.style.display = 'none';
-            downloader.sandbox = 'allow-scripts'; // 只需要脚本权限来执行我们的命令
+            activeIFrames.set(requestId, iframe);
 
-            downloader.onload = function() {
-                log('[JS-Layer] Downloader iframe loaded. Commanding it to send back its HTML...');
-                const getHtmlScript = `
-                    window.parent.postMessage({
-                        type: 'htmlContent',
-                        requestId: '${requestId}',
-                        html: document.documentElement.outerHTML
-                    }, '*');
+            iframe.onload = function() {
+                log(`Iframe loaded. Injecting proxy <base> tag and parser...`);
+
+                // 准备注入的脚本
+                const injectorScript = `
+                    (function() {
+                        console.log('[Injector] Running inside iframe...');
+                        
+                        // 1. 移除页面可能自带的 base 标签
+                        const existingBase = document.querySelector('base');
+                        if (existingBase) existingBase.parentNode.removeChild(existingBase);
+
+                        // 2. 创建并注入我们指向代理的 <base> 标签
+                        const newBase = document.createElement('base');
+                        // 关键！所有相对路径都会基于这个 URL
+                        newBase.href = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl.substring(0, targetSearchUrl.lastIndexOf("/") + 1))}';
+                        // 上面的 targetUrl 需要处理一下，只保留域名和路径部分
+                        // 一个更简单、更可靠的方式是：
+                        const baseHref = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(new URL(targetSearchUrl).origin + "/")}';
+                        newBase.href = baseHref;
+
+                        document.head.prepend(newBase);
+                        console.log('[Injector] SUCCESS: Proxy base tag injected with href:', newBase.href);
+
+                        // 3. 阻止有害脚本 (作为双重保险)
+                        // (这一步甚至可以省略，因为 Phonenumber.js 的请求会被代理捕获，我们可以在Dart端阻止它)
+                        
+                        // 4. 加载并执行真正的解析脚本
+                        const finalParserScript = \`${getParsingScript(PLUGIN_CONFIG.id, phoneNumber)}\`;
+                        eval(finalParserScript);
+
+                    })();
                 `;
+                
                 setTimeout(() => {
                     try {
-                        this.contentWindow.postMessage({ type: 'executeScript', script: getHtmlScript }, '*');
+                        this.contentWindow.postMessage({ type: 'executeScript', script: injectorScript }, '*');
                     } catch (e) {
-                        logError('[JS-Layer] Failed to command downloader iframe.', e);
-                        handleHtmlContent(requestId, null, e.message); // 触发失败流程
+                        // ... 错误处理 ...
                     }
-                }, 500);
+                }, 300);
             };
             
-            downloader.onerror = () => handleHtmlContent(requestId, null, 'Downloader iframe failed to load.');
-            document.body.appendChild(downloader);
-            downloader.src = proxyUrl;
-
+            document.body.appendChild(iframe);
+            iframe.src = initialProxyUrl;
+            
         } catch (error) {
-            logError(`[JS-Layer] Error in setup:`, error);
-            sendPluginResult({ requestId, success: false, error: `Setup failed: ${error.message}` });
+               logError(`Error in initiateQuery for requestId ${requestId}:`, error);
+          sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
         }
     }
-
-    // --- 6. 独立的“工作流”处理函数 ---
-    function handleHtmlContent(requestId, html, error) {
-        const downloader = document.getElementById(`downloader-${requestId}`);
-        if (downloader) downloader.parentNode.removeChild(downloader);
-
-        if (!html) {
-            logError('[JS-Layer] Failed to get HTML from downloader.', error);
-            sendPluginResult({ requestId, success: false, error: `Failed to get HTML: ${error}` });
-            return;
-        }
-
-        log('[JS-Layer] Step 2: Received raw HTML. Sanitizing...');
-        let cleanHtml = html;
-        const { phoneNumber, targetSearchUrl } = requestDataStore.get(requestId);
-        
-        // --- JS 中间层：剔除所有有害代码 ---
-        const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
-        cleanHtml = cleanHtml.replace(frameBusterPattern, '<!-- Frame-Buster Removed -->');
-        const phoneNumberJsPattern = /<script.*?src=".*?Phonenumber\.js.*?"><\/script>/i;
-        cleanHtml = cleanHtml.replace(phoneNumberJsPattern, '<!-- Phonenumber.js Removed -->');
-        log('[JS-Layer] Sanitizer: Hostile scripts removed.');
-
-        log('[JS-Layer] Step 3: Creating parser iframe with sanitized HTML via srcdoc...');
-        const parserIframe = document.createElement('iframe');
-        parserIframe.id = `query-iframe-${requestId}`;
-        parserIframe.style.display = 'none';
-        parserIframe.sandbox = 'allow-scripts';
-        activeIFrames.set(requestId, parserIframe);
-
-        parserIframe.onload = function() {
-            log('[JS-Layer] Step 4: Parser iframe loaded. Injecting parser script...');
-            // 由于 srcdoc 的内容是我们完全控制的，我们可以直接 eval 注入一个 Receiver
-            const receiverScript = `
-                window.addEventListener('message', function(event) {
-                    if (event.data && event.data.type === 'executeScript') {
-                        try { eval(event.data.script); } catch(e){}
-                    }
-                });
-            `;
-            try {
-                this.contentWindow.eval(receiverScript);
-                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-            } catch (e) {
-                logError('[JS-Layer] Failed to inject parser into srcdoc iframe.', e);
-                sendPluginResult({ requestId, success: false, error: 'Parser injection failed.' });
-                cleanupIframe(requestId);
-            }
-        };
-        
-        document.body.appendChild(parserIframe);
-        parserIframe.srcdoc = cleanHtml;
-    }
-
-    // --- 7. 新增的、只负责工作流的事件监听器 ---
-    window.addEventListener('message', function(event) {
-        if (event.data && event.data.type === 'htmlContent') {
-            handleHtmlContent(event.data.requestId, event.data.html, event.data.error);
-        }
-    });
-
 
 
  
