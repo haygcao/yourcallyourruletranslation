@@ -121,7 +121,8 @@
   const PROXY_HOST = "flutter-webview-proxy.internal";
   const PROXY_PATH_FETCH = "/fetch";
   const activeIFrames = new Map();
-
+ const requestDataStore = new Map(); // 用于在异步步骤间传递数据
+ 
   function log(message) { console.log(`[${PLUGIN_CONFIG.id} v${PLUGIN_CONFIG.version}] ${message}`); }
   function logError(message, error) { console.error(`[${PLUGIN_CONFIG.id} v${PLUGIN_CONFIG.version}] ${message}`, error); }
 
@@ -331,105 +332,112 @@
 
  
 
-    // --- 5. 核心业务逻辑 (最终版) ---
+    // --- 5. 核心业务逻辑 ---
     function initiateQuery(phoneNumber, requestId) {
-        log(`[JS] Initiating query for '${phoneNumber}'`);
+        log(`Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-            const proxyFetchUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+            requestDataStore.set(requestId, { phoneNumber, targetSearchUrl });
 
-            log('[JS] Step 1: Fetching raw HTML via proxy...');
-            fetch(proxyFetchUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error(`Proxy fetch failed with status: ${response.status}`);
-                    return response.text();
-                })
-                .then(html => {
-                    log('[JS] Step 2: Sanitizing HTML...');
-                    let cleanHtml = html;
-                    
-                    // 正则表达式移除 Frame-Busting 脚本
-                    const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
-                    cleanHtml = cleanHtml.replace(frameBusterPattern, '<!-- Frame-Buster Script Removed by Plugin -->');
-                    log('[JS] Sanitizer: Frame-busting script removed.');
+            const headers = { 'User-Agent': 'Mozilla/5.0...' }; // 您的完整UA
+            const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
-                    // 正则表达式移除 Phonenumber.js 脚本
-                    const phoneNumberJsPattern = /<script.*?src=".*?Phonenumber\.js.*?"><\/script>/i;
-                    cleanHtml = cleanHtml.replace(phoneNumberJsPattern, '<!-- Phonenumber.js Removed by Plugin -->');
-                    log('[JS] Sanitizer: Phonenumber.js script removed.');
+            log('[JS-Layer] Step 1: Creating downloader iframe to fetch raw HTML...');
+            const downloader = document.createElement('iframe');
+            downloader.id = `downloader-${requestId}`;
+            downloader.style.display = 'none';
+            downloader.sandbox = 'allow-scripts'; // 只需要脚本权限来执行我们的命令
 
-                    // 注入 <base> 标签来修复所有相对路径 (CSS, images, etc.)
-                    const baseTag = `<base href="${new URL(targetSearchUrl).origin}/">`;
-                    cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${baseTag}`);
-                    log('[JS] Sanitizer: Base tag injected.');
-
-                    // 注入我们的通信接收器
-                     const injectionScript = `
-                        <script type="text/javascript">
-                            (function() {
-                                if (window.flutterProxyInjected) return;
-                                window.flutterProxyInjected = true;
-                                function handleMessage(event) {
-                                    if (event.data && event.data.type === 'executeScript') {
-                                        try { eval(event.data.script); } catch (e) { console.error('[Receiver] Error:', e); }
-                                    }
-                                }
-                                window.addEventListener('message', handleMessage, false);
-                            })();
-                        </script>
-                    `;
-                    cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${injectionScript}`);
-                    log('[JS] Sanitizer: Communication script injected.');
-
-                    log('[JS] Step 3: Creating iframe from sanitized HTML via Blob URL...');
-                    const blob = new Blob([cleanHtml], { type: 'text/html' });
-                    const blobUrl = URL.createObjectURL(blob);
-
-                    const iframe = document.createElement('iframe');
-                    iframe.id = `query-iframe-${requestId}`;
-                    iframe.style.display = 'none';
-                    // 因为内容来自同源的 Blob URL，我们不再需要复杂的 sandbox
-                    iframe.sandbox = 'allow-scripts'; 
-                    activeIFrames.set(requestId, iframe);
-
-                    iframe.onload = function() {
-                        log('[JS] Step 4: Iframe loaded from Blob. Injecting parser...');
-                        // 释放 Blob URL 占用的内存
-                        URL.revokeObjectURL(blobUrl); 
-                        
-                        try {
-                            const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                            // 因为我们已经注入了接收器，所以 postMessage 可以工作
-                            this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-                        } catch (e) {
-                            logError(`Error posting script to iframe:`, e);
-                            sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
-                            cleanupIframe(requestId);
-                        }
-                    };
-                    
-                    iframe.onerror = function() {
-                        URL.revokeObjectURL(blobUrl);
-                        logError(`Iframe from Blob failed to load for requestId ${requestId}`);
-                        sendPluginResult({ requestId, success: false, error: 'Iframe (from Blob) loading failed.' });
-                        cleanupIframe(requestId);
-                    };
-
-                    document.body.appendChild(iframe);
-                    iframe.src = blobUrl; // 加载我们清洗过的、安全的内容
-                })
-                .catch(error => {
-                    logError('[JS] Error in fetch/sanitization process:', error);
-                    sendPluginResult({ requestId, success: false, error: `HTML fetch/sanitization failed: ${error.message}` });
-                });
+            downloader.onload = function() {
+                log('[JS-Layer] Downloader iframe loaded. Commanding it to send back its HTML...');
+                const getHtmlScript = `
+                    window.parent.postMessage({
+                        type: 'htmlContent',
+                        requestId: '${requestId}',
+                        html: document.documentElement.outerHTML
+                    }, '*');
+                `;
+                setTimeout(() => {
+                    try {
+                        this.contentWindow.postMessage({ type: 'executeScript', script: getHtmlScript }, '*');
+                    } catch (e) {
+                        logError('[JS-Layer] Failed to command downloader iframe.', e);
+                        handleHtmlContent(requestId, null, e.message); // 触发失败流程
+                    }
+                }, 500);
+            };
             
+            downloader.onerror = () => handleHtmlContent(requestId, null, 'Downloader iframe failed to load.');
+            document.body.appendChild(downloader);
+            downloader.src = proxyUrl;
+
         } catch (error) {
-            logError(`[JS] Error in setup:`, error);
-            sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
+            logError(`[JS-Layer] Error in setup:`, error);
+            sendPluginResult({ requestId, success: false, error: `Setup failed: ${error.message}` });
         }
     }
-    
+
+    // --- 6. 独立的“工作流”处理函数 ---
+    function handleHtmlContent(requestId, html, error) {
+        const downloader = document.getElementById(`downloader-${requestId}`);
+        if (downloader) downloader.parentNode.removeChild(downloader);
+
+        if (!html) {
+            logError('[JS-Layer] Failed to get HTML from downloader.', error);
+            sendPluginResult({ requestId, success: false, error: `Failed to get HTML: ${error}` });
+            return;
+        }
+
+        log('[JS-Layer] Step 2: Received raw HTML. Sanitizing...');
+        let cleanHtml = html;
+        const { phoneNumber, targetSearchUrl } = requestDataStore.get(requestId);
+        
+        // --- JS 中间层：剔除所有有害代码 ---
+        const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
+        cleanHtml = cleanHtml.replace(frameBusterPattern, '<!-- Frame-Buster Removed -->');
+        const phoneNumberJsPattern = /<script.*?src=".*?Phonenumber\.js.*?"><\/script>/i;
+        cleanHtml = cleanHtml.replace(phoneNumberJsPattern, '<!-- Phonenumber.js Removed -->');
+        log('[JS-Layer] Sanitizer: Hostile scripts removed.');
+
+        log('[JS-Layer] Step 3: Creating parser iframe with sanitized HTML via srcdoc...');
+        const parserIframe = document.createElement('iframe');
+        parserIframe.id = `query-iframe-${requestId}`;
+        parserIframe.style.display = 'none';
+        parserIframe.sandbox = 'allow-scripts';
+        activeIFrames.set(requestId, parserIframe);
+
+        parserIframe.onload = function() {
+            log('[JS-Layer] Step 4: Parser iframe loaded. Injecting parser script...');
+            // 由于 srcdoc 的内容是我们完全控制的，我们可以直接 eval 注入一个 Receiver
+            const receiverScript = `
+                window.addEventListener('message', function(event) {
+                    if (event.data && event.data.type === 'executeScript') {
+                        try { eval(event.data.script); } catch(e){}
+                    }
+                });
+            `;
+            try {
+                this.contentWindow.eval(receiverScript);
+                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
+            } catch (e) {
+                logError('[JS-Layer] Failed to inject parser into srcdoc iframe.', e);
+                sendPluginResult({ requestId, success: false, error: 'Parser injection failed.' });
+                cleanupIframe(requestId);
+            }
+        };
+        
+        document.body.appendChild(parserIframe);
+        parserIframe.srcdoc = cleanHtml;
+    }
+
+    // --- 7. 新增的、只负责工作流的事件监听器 ---
+    window.addEventListener('message', function(event) {
+        if (event.data && event.data.type === 'htmlContent') {
+            handleHtmlContent(event.data.requestId, event.data.html, event.data.error);
+        }
+    });
+
 
 
  
