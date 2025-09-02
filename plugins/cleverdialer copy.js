@@ -334,7 +334,6 @@
 function initiateQuery(phoneNumber, requestId) {
     log(`[JS Intercept] Initiating query for '${phoneNumber}'`);
     try {
-        // --- 这一部分完全保持您原始的经典模式 ---
         const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
         const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
         const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
@@ -342,54 +341,46 @@ function initiateQuery(phoneNumber, requestId) {
         const iframe = document.createElement('iframe');
         iframe.id = `query-iframe-${requestId}`;
         iframe.style.display = 'none';
-
-        // =================================================================================
-        // == 【核心修正】根据 cxxjackie 的思想，使用正确的 sandbox 属性来禁用顶层导航 ==
-        // 1. 我们允许脚本执行 ('allow-scripts')，因为我们需要注入自己的解析脚本。
-        // 2. 我们 *不* 包含 'allow-top-navigation'，这将从根本上阻止 "frame-busting" 脚本的跳转行为。
-        // 3. 我们 *不* 包含 'allow-same-origin'，强制 iframe 处于跨域状态，这正是 postMessage 擅长处理的场景。
-        // =================================================================================
+        
+        // 这个 sandbox 设置是正确的，必须保留
         iframe.sandbox = 'allow-scripts allow-popups'; 
         
         activeIFrames.set(requestId, iframe);
 
-        // --- 【核心逻辑】这部分逻辑继承自上一版，它在 iframe 加载后通过 postMessage 发送指令 ---
-        // 这个逻辑现在可以完美工作，因为 sandbox 保证了 iframe 不会自我销毁。
+        // --- 【核心修改】在 onload 中增加一个 setTimeout 延迟 ---
         iframe.onload = function() {
-            log(`[JS Intercept] Iframe loaded successfully (frame-busting was prevented by sandbox). Preparing script...`);
+            log(`[JS Intercept] Iframe loaded. Waiting for a moment to ensure receiver is ready...`);
             
-            try {
-                // 准备一个在 iframe 内部执行的脚本，它负责清理和解析
-                const combinedScript = `
-                    (function() {
-                        // **中间层操作 1: 修复路径 (现在这是最重要的操作)**
-                        console.log('[Injected-Worker] Running sanitization inside the iframe...');
-                        if (!document.querySelector('base')) {
-                            const base = document.createElement('base');
-                            base.href = '${new URL(targetSearchUrl).origin}/';
-                            document.head.prepend(base);
-                            console.log('[Injected-Worker] SUCCESS: Base tag injected to fix relative URLs.');
-                        }
+            // 增加一个 300 毫秒的延迟来解决竞争条件
+            setTimeout(() => {
+                log(`[JS Intercept] Delay complete. Preparing and posting script.`);
+                try {
+                    const combinedScript = `
+                        (function() {
+                            console.log('[Injected-Worker] Running sanitization inside the iframe...');
+                            if (!document.querySelector('base')) {
+                                const base = document.createElement('base');
+                                base.href = '${new URL(targetSearchUrl).origin}/';
+                                document.head.prepend(base);
+                                console.log('[Injected-Worker] SUCCESS: Base tag injected to fix relative URLs.');
+                            }
+                        })();
                         
-                        // **中间层操作 2: 执行解析**
-                        // 注意：我们甚至不再需要移除 eval 脚本，因为它已经被 sandbox 废掉了武功。
-                        // 但为了代码的健壮性，保留它也没有坏处。
-                    })();
-                    
-                    ${getParsingScript(PLUGIN_CONFIG.id, phoneNumber)}
-                `;
+                        ${getParsingScript(PLUGIN_CONFIG.id, phoneNumber)}
+                    `;
 
-                log('[JS Intercept] Preparation complete. Posting COMBINED script to iframe via postMessage.');
-                this.contentWindow.postMessage({
-                    type: 'executeScript',
-                    script: combinedScript
-                }, '*');
+                    log('[JS Intercept] Posting COMBINED script to iframe via postMessage.');
+                    this.contentWindow.postMessage({
+                        type: 'executeScript',
+                        script: combinedScript
+                    }, '*');
 
-            } catch (e) {
-                logError(`[JS Intercept] Error preparing the combined script:`, e);
-                sendPluginResult({ requestId, success: false, error: `Failed to prepare script: ${e.message}` });
-                cleanupIframe(requestId);
-            }
+                } catch (e) {
+                    logError(`[JS Intercept] Error during delayed script preparation/posting:`, e);
+                    sendPluginResult({ requestId, success: false, error: `Failed during delayed post: ${e.message}` });
+                    cleanupIframe(requestId);
+                }
+            }, 300); // <-- 这里的延迟是关键
         };
         
         iframe.onerror = function() {
@@ -399,7 +390,7 @@ function initiateQuery(phoneNumber, requestId) {
         };
 
         document.body.appendChild(iframe);
-        iframe.src = proxyUrl; // 触发加载
+        iframe.src = proxyUrl;
         
     } catch (error) {
         logError(`[JS Intercept] Error in setup:`, error);
