@@ -330,7 +330,6 @@
   }
 
  
-
 // --- 【唯一需要修改的函数】 initiateQuery ---
 function initiateQuery(phoneNumber, requestId) {
     log(`[JS Intercept] Initiating query for '${phoneNumber}'`);
@@ -348,45 +347,71 @@ function initiateQuery(phoneNumber, requestId) {
 
         // --- 【核心修改】在这里实现您的“中间层”思想 ---
         iframe.onload = function() {
-            log(`[JS Intercept] Iframe loaded. Applying middle-layer sanitization...`);
+            log(`[JS Intercept] Iframe loaded. Preparing combined sanitization and parsing script...`);
             
+            // 此函数现在不再直接访问iframe的DOM，而是准备一个脚本字符串，
+            // 通过 postMessage 发送给 iframe，由 iframe 自己执行。
+            // 这样就绕过了同源策略限制。
+
             try {
-                const iframeDoc = this.contentWindow.document;
+                // **步骤 1: 准备“中间层”清理脚本**
+                // 这段代码将在 iframe 内部运行。
+                const sanitizationScript = `
+                    (function() {
+                        console.log('[Injected-Sanitizer] Running sanitization inside the iframe...');
+                        // 操作 1: 移除威胁脚本
+                        const scripts = document.getElementsByTagName('script');
+                        let foundAndRemoved = false;
+                        for (let i = scripts.length - 1; i >= 0; i--) {
+                            if (scripts[i].textContent.includes('eval(function(p,a,c,k,e,d)')) {
+                                scripts[i].parentNode.removeChild(scripts[i]);
+                                foundAndRemoved = true;
+                            }
+                        }
+                        if (foundAndRemoved) {
+                            console.log('[Injected-Sanitizer] SUCCESS: Frame-busting eval script removed.');
+                        } else {
+                            console.log('[Injected-Sanitizer] WARNING: Frame-busting script not found.');
+                        }
 
-                // **中间层操作 1: 移除威胁**
-                // 遍历所有 script 标签，找到并移除那个 eval 脚本
-                const scripts = iframeDoc.getElementsByTagName('script');
-                for (let i = scripts.length - 1; i >= 0; i--) {
-                    if (scripts[i].textContent.includes('eval(function(p,a,c,k,e,d)')) {
-                        scripts[i].parentNode.removeChild(scripts[i]);
-                        log('[JS Intercept] SUCCESS: Frame-busting eval script removed.');
-                    }
-                }
+                        // 操作 2: 修复路径
+                        if (!document.querySelector('base')) {
+                            const base = document.createElement('base');
+                            base.href = '${new URL(targetSearchUrl).origin}/';
+                            document.head.prepend(base);
+                            console.log('[Injected-Sanitizer] SUCCESS: Base tag injected.');
+                        } else {
+                            console.log('[Injected-Sanitizer] INFO: Base tag already exists.');
+                        }
+                    })();
+                `;
 
-                // **中间层操作 2: 修复路径**
-                // 在 iframe 的 head 中动态创建一个 <base> 标签
-                const base = iframeDoc.createElement('base');
-                base.href = new URL(targetSearchUrl).origin + '/';
-                iframeDoc.head.prepend(base);
-                log('[JS Intercept] SUCCESS: Base tag injected.');
-                
-                // **中间层操作 3: 发送解析脚本 (这是原始逻辑)**
-                log('[JS Intercept] Sanitization complete. Posting parsing script.');
+                // **步骤 2: 获取原始的解析脚本**
                 const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+
+                // **步骤 3: 合并两个脚本并通过 postMessage 发送**
+                // 使用您Dart代码注入的接收器能识别的 'executeScript' 类型
+                const combinedScript = sanitizationScript + parsingScript;
+
+                log('[JS Intercept] Preparation complete. Posting COMBINED script to iframe.');
                 this.contentWindow.postMessage({
                     type: 'executeScript',
-                    script: parsingScript
+                    script: combinedScript
                 }, '*');
 
             } catch (e) {
-                logError(`[JS Intercept] Error during middle-layer processing:`, e);
-                sendPluginResult({ requestId, success: false, error: `Middle-layer processing failed: ${e.message}` });
+                logError(`[JS Intercept] Error preparing the combined script:`, e);
+                sendPluginResult({ requestId, success: false, error: `Failed to prepare script: ${e.message}` });
                 cleanupIframe(requestId);
             }
         };
         
         // --- 这一部分也完全保持您原始的经典模式 ---
-        iframe.onerror = function() { /* ... */ };
+        iframe.onerror = function() {
+            logError(`Iframe loading failed for requestId: ${requestId}`);
+            sendPluginResult({ requestId, success: false, error: 'Iframe onerror event triggered.' });
+            cleanupIframe(requestId);
+        };
         document.body.appendChild(iframe);
         iframe.src = proxyUrl; // 触发加载
         
@@ -395,6 +420,7 @@ function initiateQuery(phoneNumber, requestId) {
         sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
     }
 }
+
 
    
      
