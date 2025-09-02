@@ -331,20 +331,17 @@
 
  
 
-    // 这个函数是 async，因为它需要先通过代理 fetch token
+    // --- 6. 核心业务逻辑 (最终版) ---
     async function initiateQuery(phoneNumber, requestId) {
         log(`[JS] Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
             
-            // =========================================================================
-            // == 步骤 1: 父页面通过 GET 代理，提前获取真实的 CSRF token ==
-            // =========================================================================
-            let realCsrfToken = null;
+            // 步骤 1: 父页面通过 GET 代理，提前获取 CSRF token
+            let realCsrfToken;
             try {
                 log('[JS] Pre-fetching CSRF token...');
                 const tokenUrl = new URL('/api/token', targetSearchUrl).toString();
-                // 伪造 Referer 和其他头部，让服务器认为这是一个合法的 AJAX 请求
                 const tokenHeaders = {
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
                     'Referer': targetSearchUrl,
@@ -352,84 +349,69 @@
                 };
                 const proxyTokenUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(tokenUrl)}&headers=${encodeURIComponent(JSON.stringify(tokenHeaders))}`;
                 
-                // 使用父页面的 fetch 通过 Dart 代理获取 token
                 const response = await fetch(proxyTokenUrl);
-                if (!response.ok) {
-                    throw new Error(`Token fetch failed with status: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Token fetch HTTP status: ${response.status}`);
                 const data = await response.json();
 
                 if (data.token) {
                     realCsrfToken = data.token;
                     log(`[JS] SUCCESS: Pre-fetched CSRF token.`);
                 } else {
-                    throw new Error('Token not found in response body.');
+                    throw new Error('Token not found in API response.');
                 }
             } catch (e) {
-                logError('[JS] Failed to pre-fetch CSRF token. The query will likely fail.', e);
-                // 在这种情况下，我们无法继续，因为 Phonenumber.js 强依赖 token
+                logError('[JS] Failed to pre-fetch CSRF token. The query cannot proceed.', e);
                 sendPluginResult({ requestId, success: false, error: `Crucial pre-fetch of CSRF token failed: ${e.message}` });
                 return;
             }
 
-            // 步骤 2: 准备主页面的代理 URL 并创建 iframe
+            // 步骤 2: 创建主 iframe
             const pageHeaders = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
             const proxyPageUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(pageHeaders))}`;
             
             const iframe = document.createElement('iframe');
             iframe.id = `query-iframe-${requestId}`;
             iframe.style.display = 'none';
-            // 使用最安全的 sandbox 配置，因为它不再需要处理跨域 fetch
             iframe.sandbox = 'allow-scripts allow-popups'; 
             activeIFrames.set(requestId, iframe);
 
-            // 步骤 3: onload 回调，注入我们的 fetch 劫持脚本和解析脚本
+            // 步骤 3: onload 回调，注入 fetch 劫持器和解析脚本
             iframe.onload = function() {
-                log(`[JS] Iframe loaded. Injecting fetch interceptor and parser...`);
+                log(`[JS] Main iframe loaded. Injecting fetch interceptor and parser...`);
 
-                // 这个脚本会劫持 fetch，并用我们预先获取的真实 token 来响应
                 const interceptorScript = `
                     if (!window.fetchPatched) {
                         window.fetchPatched = true;
                         const originalFetch = window.fetch;
                         window.fetch = function(url, options) {
                             const urlString = url.toString();
-                            
-                            // 拦截对 /api/token 的请求
                             if (urlString.includes('/api/token')) {
                                 console.log('[Interceptor] Intercepted /api/token. Returning pre-fetched token.');
-                                return Promise.resolve(new Response('${JSON.stringify({token: realCsrfToken})}', {
+                                return Promise.resolve(new Response(JSON.stringify({token: '${realCsrfToken}'}), {
                                     status: 200,
                                     headers: { 'Content-Type': 'application/json' }
                                 }));
                             }
-                            
-                            // 拦截并阻止统计请求，这对我们没有用处
                             if (urlString.includes('/api/trackPhonenumberView')) {
                                 console.log('[Interceptor] Intercepted and blocked /trackPhonenumberView.');
-                                return Promise.resolve(new Response('{"status":"ok"}', { status: 200 }));
+                                return Promise.resolve(new Response(JSON.stringify({status: "ok"}), { status: 200 }));
                             }
-
-                            // 对于其他所有请求 (例如，页面上其他可能的 AJAX 调用)，让它们正常发出
                             return originalFetch.apply(this, arguments);
                         };
                         console.log('[Interceptor] SUCCESS: Fetch interceptor is active.');
                     }
                 `;
                 
-                // 使用延时来确保 iframe 内部的 message listener 已经准备就绪
                 setTimeout(() => {
                     try {
-                        // 步骤 3.1: 注入 fetch 拦截器 (疫苗)
                         log('[JS] Step 3.1: Injecting fetch interceptor.');
                         this.contentWindow.postMessage({ type: 'executeScript', script: interceptorScript }, '*');
 
-                        // 步骤 3.2: 给予足够时间让 Phonenumber.js 运行并渲染页面，然后再注入解析器
                         setTimeout(() => {
                             log('[JS] Step 3.2: Injecting parsing script.');
                             const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
                             this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-                        }, 700); // 增加延迟，确保页面渲染完成
+                        }, 700);
 
                     } catch (e) {
                         logError(`[JS] Error during staged injection:`, e);
@@ -439,7 +421,11 @@
                 }, 300);
             };
             
-            iframe.onerror = function() { /* ... error handling ... */ };
+            iframe.onerror = function() {
+                 logError(`Iframe loading failed for requestId ${requestId}`);
+                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+                 cleanupIframe(requestId);
+            };
             document.body.appendChild(iframe);
             iframe.src = proxyPageUrl;
             
@@ -448,6 +434,7 @@
             sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
         }
     }
+    
 
 
  
