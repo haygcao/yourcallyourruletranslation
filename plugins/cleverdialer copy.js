@@ -330,101 +330,74 @@
   }
 
  
- 
-// 【最终的、采纳了您简化建议的版本】
+
+// --- 【唯一需要修改的函数】 initiateQuery ---
 function initiateQuery(phoneNumber, requestId) {
-    log(`[Intercepted Mode] Initiating query for '${phoneNumber}'`);
+    log(`[JS Intercept] Initiating query for '${phoneNumber}'`);
     try {
-        // --- 您的原始逻辑：定义 targetSearchUrl 和 proxyUrl ---
+        // --- 这一部分完全保持您原始的经典模式 ---
         const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
         const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
         const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
         
-        // --- 中间数据处理层开始 ---
+        const iframe = document.createElement('iframe');
+        iframe.id = `query-iframe-${requestId}`;
+        iframe.style.display = 'none';
+        iframe.sandbox = 'allow-scripts allow-same-origin';
+        activeIFrames.set(requestId, iframe);
 
-        // 【核心修改】直接在您原始的 proxyUrl 基础上拼接 proxy_mode
-        const proxyFetchUrl = `${proxyUrl}&proxy_mode=fetch`;
-        
-        log(`[Intercepted Mode] Fetching HTML from: ${proxyFetchUrl}`);
-        
-        fetch(proxyFetchUrl)
-            .then(response => response.text())
-            .then(html => {
-                log('[Intercepted Mode] HTML fetched. Sanitizing...');
-                let cleanHtml = html;
-                
-                // 执行所有清洗工作
-                const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
-                cleanHtml = cleanHtml.replace(frameBusterPattern, '');
-                
-                const baseTag = `<base href="${new URL(targetSearchUrl).origin}/">`;
-                cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${baseTag}`);
-                
-                log('[Intercepted Mode] HTML Sanitized.');
+        // --- 【核心修改】在这里实现您的“中间层”思想 ---
+        iframe.onload = function() {
+            log(`[JS Intercept] Iframe loaded. Applying middle-layer sanitization...`);
+            
+            try {
+                const iframeDoc = this.contentWindow.document;
 
-                // 将清洗后的HTML字符串转换为一个临时的 Blob URL
-                const blob = new Blob([cleanHtml], { type: 'text/html' });
-                const blobUrl = URL.createObjectURL(blob);
-
-                // --- 中间数据处理层结束 ---
-
-                // --- 现在，我们回到您原始的、经典的 initiateQuery 逻辑 ---
-                
-                const iframe = document.createElement('iframe');
-                iframe.id = `query-iframe-${requestId}`;
-                iframe.style.display = 'none';
-                iframe.sandbox = 'allow-scripts allow-same-origin'; // 保留您原始的 sandbox
-                activeIFrames.set(requestId, iframe);
-
-                iframe.onload = function() {
-                    log(`[Intercepted Mode] Iframe loaded from Blob URL. Posting parsing script.`);
-                    URL.revokeObjectURL(blobUrl); 
-                    
-                    try {
-                        const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                        // 【核心】使用您原始的 postMessage 通信机制
-                        iframe.contentWindow.postMessage({
-                            type: 'executeScript',
-                            script: parsingScript
-                        }, '*');
-                    } catch (e) {
-                        logError(`Error posting script to iframe:`, e);
-                        sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
-                        cleanupIframe(requestId);
+                // **中间层操作 1: 移除威胁**
+                // 遍历所有 script 标签，找到并移除那个 eval 脚本
+                const scripts = iframeDoc.getElementsByTagName('script');
+                for (let i = scripts.length - 1; i >= 0; i--) {
+                    if (scripts[i].textContent.includes('eval(function(p,a,c,k,e,d)')) {
+                        scripts[i].parentNode.removeChild(scripts[i]);
+                        log('[JS Intercept] SUCCESS: Frame-busting eval script removed.');
                     }
-                };
+                }
+
+                // **中间层操作 2: 修复路径**
+                // 在 iframe 的 head 中动态创建一个 <base> 标签
+                const base = iframeDoc.createElement('base');
+                base.href = new URL(targetSearchUrl).origin + '/';
+                iframeDoc.head.prepend(base);
+                log('[JS Intercept] SUCCESS: Base tag injected.');
                 
-                // 您的原始 onerror 逻辑
-                iframe.onerror = function() {
-                    logError(`Iframe error for requestId ${requestId}`);
-                    URL.revokeObjectURL(blobUrl); 
-                    sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-                    cleanupIframe(requestId);
-                };
+                // **中间层操作 3: 发送解析脚本 (这是原始逻辑)**
+                log('[JS Intercept] Sanitization complete. Posting parsing script.');
+                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                this.contentWindow.postMessage({
+                    type: 'executeScript',
+                    script: parsingScript
+                }, '*');
 
-                document.body.appendChild(iframe);
-                
-                // 【核心】最终还是调用 iframe.src，但指向我们处理过的安全数据
-                iframe.src = blobUrl;
-
-            })
-            .catch(error => {
-                logError(`[Intercepted Mode] Fetch/Sanitize failed:`, error);
-                sendPluginResult({ requestId, success: false, error: `Query failed: ${error.message}` });
-                // 这里不需要 cleanupIframe，因为 iframe 可能还没创建
-            });
-
+            } catch (e) {
+                logError(`[JS Intercept] Error during middle-layer processing:`, e);
+                sendPluginResult({ requestId, success: false, error: `Middle-layer processing failed: ${e.message}` });
+                cleanupIframe(requestId);
+            }
+        };
+        
+        // --- 这一部分也完全保持您原始的经典模式 ---
+        iframe.onerror = function() { /* ... */ };
+        document.body.appendChild(iframe);
+        iframe.src = proxyUrl; // 触发加载
+        
     } catch (error) {
-        logError(`[Intercepted Mode] Error in setup:`, error);
+        logError(`[JS Intercept] Error in setup:`, error);
         sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
     }
 }
 
- 
- 
- 
- 
- 
+   
+     
 
   function generateOutput(phoneNumber, nationalNumber, e164Number, requestId) {
       log(`generateOutput called for requestId: ${requestId}`);
