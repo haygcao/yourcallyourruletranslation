@@ -352,46 +352,56 @@
                 log(`Iframe loaded. Injecting URL rewriter and parser...`);
 
                 // 这个脚本将在 iframe 内部执行，完成所有清理和重写工作
-                const rewriterAndSanitizerScript = `
-                    (function() {
-                        console.log('[Rewriter] Running inside iframe...');
-                        
-                        // --- 1. URL 重写逻辑 ---
-                        const origin = new URL('${targetSearchUrl}').origin;
-                        const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
+ const rewriterAndSanitizerScript = `
+    (function() {
+        console.log('[JS-Layer] Running Rewriter & Interceptor...');
+        
+        const targetSearchUrl = '${targetSearchUrl}';
+        const origin = new URL(targetSearchUrl).origin;
+        const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
 
-                        // 使用一个隐藏的 a 标签来辅助解析相对路径
-                        const urlResolver = document.createElement('a');
-                        
-                        document.querySelectorAll('link[href], script[src], img[src], a[href]').forEach(el => {
-                            const attr = el.hasAttribute('href') ? 'href' : 'src';
-                            const originalPath = el.getAttribute(attr);
-                            
-                            // 只处理相对路径和根路径
-                            if (originalPath && !originalPath.startsWith('http') && !originalPath.startsWith('data:')) {
-                                urlResolver.href = originalPath; // 浏览器自动拼接成绝对路径
-                                const absoluteUrl = urlResolver.href;
-                                
-                                const newProxyUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
-                                el.setAttribute(attr, newProxyUrl);
-                            }
-                        });
-                        console.log('[Rewriter] SUCCESS: All relative sub-resource URLs have been rewritten to re-proxy.');
+        // --- 1. 重写所有静态资源的 URL (link, script, img) ---
+        const urlResolver = document.createElement('a');
+        document.querySelectorAll('link[href^="/"], script[src^="/"], img[src^="/"]').forEach(el => {
+            const attr = el.hasAttribute('href') ? 'href' : 'src';
+            const originalPath = el.getAttribute(attr);
+            urlResolver.href = originalPath;
+            const absoluteUrl = urlResolver.href;
+            const newProxyUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
+            el.setAttribute(attr, newProxyUrl);
+        });
+        console.log('[Rewriter] Static resource URLs rewritten.');
 
-                        // --- 2. 脚本清理逻辑 (双重保险) ---
-                        document.querySelectorAll('script').forEach(s => {
-                            if(s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
-                                s.remove();
-                                console.log('[Rewriter] Sanitizer: Removed inline frame-buster script.');
-                            }
-                        });
+        // --- 2. 劫持 fetch API 来处理动态的 API 请求 ---
+        const originalFetch = window.fetch;
+        window.fetch = function(url, options) {
+            // 将 fetch 的 URL 也转换为绝对路径
+            const absoluteUrl = new URL(url, origin + '/').toString();
+            console.log('[Interceptor] Intercepted a fetch request to:', absoluteUrl);
+            
+            // 将这个绝对路径再次通过我们的代理
+            const proxiedFetchUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
+            
+            // 使用原始的 fetch 去请求我们构造的代理 URL
+            return originalFetch.call(this, proxiedFetchUrl, options);
+        };
+        console.log('[Interceptor] Fetch API has been intercepted and rerouted to proxy.');
 
-                    })();
-                `;
-                
-                // 最终注入的脚本：先重写和清理，然后解析
-                const finalScriptToInject = rewriterAndSanitizerScript + getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+        // --- 3. (双重保险) 剔除已知的有害脚本 ---
+        document.querySelectorAll('script').forEach(s => {
+            if (s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
+                s.remove();
+                console.log('[Sanitizer] Removed inline frame-buster script.');
+            }
+        });
+    })();
+`;
 
+// 最终注入的脚本：先运行上面的重写和劫持，然后运行解析
+const finalScriptToInject = rewriterAndSanitizerScript + getParsingScript(PLUGIN_CONFIG.id, phoneNumber);      
+                 
+       
+     
                 setTimeout(() => {
                     try {
                         this.contentWindow.postMessage({ type: 'executeScript', script: finalScriptToInject }, '*');
