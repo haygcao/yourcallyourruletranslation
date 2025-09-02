@@ -330,56 +330,79 @@
   }
 
  
-// --- 【最终版】 initiateQuery 函数 ---
+
+// --- 【最终JS解决方案】 initiateQuery 函数 ---
 function initiateQuery(phoneNumber, requestId) {
     log(`[JS Intercept] Initiating query for '${phoneNumber}'`);
     try {
-        // 步骤 1: 准备代理 URL (这部分逻辑不变)
+        // 步骤 1: 准备代理 URL (不变)
         const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
         const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
         const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
         
-        // 步骤 2: 创建并配置 iframe (这部分逻辑不变)
+        // 步骤 2: 创建并配置 iframe (不变)
         const iframe = document.createElement('iframe');
         iframe.id = `query-iframe-${requestId}`;
         iframe.style.display = 'none';
 
-        // 关键的 sandbox 设置，用于禁用 frame-busting (必须保留)
-        iframe.sandbox = 'allow-scripts allow-popups allow-same-origin'; 
+        // 关键：我们使用不带 allow-same-origin 的配置，因为它更安全
+        iframe.sandbox = 'allow-scripts allow-popups'; 
         
         activeIFrames.set(requestId, iframe);
 
         // 步骤 3: 设置 iframe 加载成功后的回调
         iframe.onload = function() {
-            log(`[JS Intercept] Iframe loaded. Waiting for receiver to be ready...`);
+            log(`[JS Intercept] Iframe loaded. Staging multi-step script injection...`);
             
+            // =========================================================================
+            // == 【核心逻辑】分两步注入脚本，先注入“疫苗”，再注入“解析器” ==
+            // =========================================================================
+
+            // 疫苗脚本：重写 fetch 函数，使其失效并返回一个无害的响应
+            const vaccineScript = `
+                (function() {
+                    console.log('[Injected-Vaccine] Neutralizing fetch function...');
+                    window.fetch = function() {
+                        console.log('[Injected-Vaccine] Blocked an outbound fetch request.');
+                        return Promise.resolve(new Response('{"token": "mock-token"}', {
+                            status: 200,
+                            headers: { 'Content-Type': 'application/json' }
+                        }));
+                    };
+                    console.log('[Injected-Vaccine] SUCCESS: fetch has been neutralized.');
+                })();
+            `;
+
             // 使用 setTimeout 解决 postMessage 的竞争条件 (必须保留)
             setTimeout(() => {
                 try {
-                    log(`[JS Intercept] Delay complete. Preparing and posting PARSING SCRIPT ONLY.`);
-                    
-                    // 【核心简化】
-                    // 我们不再需要发送任何清理或修复脚本。
-                    // <base> 标签已由 Dart 注入。
-                    // Frame-busting 脚本已被 sandbox 禁用。
-                    // 我们现在只需要发送纯粹的解析脚本。
-                    const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-
-                    // 通过 postMessage 将解析脚本发送到 iframe 内部执行
+                    // **第一步：注入疫苗**
+                    log('[JS Intercept] Step 1: Injecting vaccine script to neutralize fetch.');
                     this.contentWindow.postMessage({
                         type: 'executeScript',
-                        script: parsingScript
+                        script: vaccineScript
                     }, '*');
 
+                    // **第二步：稍作延迟后，注入解析脚本**
+                    // 这个小延迟确保疫苗先生效，然后解析脚本再运行
+                    setTimeout(() => {
+                        log('[JS Intercept] Step 2: Injecting parsing script.');
+                        const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                        this.contentWindow.postMessage({
+                            type: 'executeScript',
+                            script: parsingScript
+                        }, '*');
+                    }, 100); // 100ms 足够让疫苗脚本执行完毕
+
                 } catch (e) {
-                    logError(`[JS Intercept] Error during delayed script posting:`, e);
-                    sendPluginResult({ requestId, success: false, error: `Failed during delayed post: ${e.message}` });
+                    logError(`[JS Intercept] Error during multi-step injection:`, e);
+                    sendPluginResult({ requestId, success: false, error: `Multi-step injection failed: ${e.message}` });
                     cleanupIframe(requestId);
                 }
-            }, 300); // 延迟时间可以根据需要微调，300ms 通常足够
+            }, 300); // 初始延迟，等待 iframe 内部的 message listener 准备好
         };
         
-        // 步骤 4: 设置错误处理和启动加载 (这部分逻辑不变)
+        // 步骤 4: 错误处理和启动加载 (不变)
         iframe.onerror = function() {
             logError(`Iframe loading failed for requestId: ${requestId}`);
             sendPluginResult({ requestId, success: false, error: 'Iframe onerror event triggered.' });
@@ -394,7 +417,6 @@ function initiateQuery(phoneNumber, requestId) {
         sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
     }
 }
-
 
    
      
