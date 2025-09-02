@@ -331,103 +331,98 @@
 
  
 
-    // --- 6. 核心业务逻辑 (最终版) ---
-    async function initiateQuery(phoneNumber, requestId) {
+    // --- 5. 核心业务逻辑 (最终版) ---
+    function initiateQuery(phoneNumber, requestId) {
         log(`[JS] Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            
-            // 步骤 1: 父页面通过 GET 代理，提前获取 CSRF token
-            let realCsrfToken;
-            try {
-                log('[JS] Pre-fetching CSRF token...');
-                const tokenUrl = new URL('/api/token', targetSearchUrl).toString();
-                const tokenHeaders = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
-                    'Referer': targetSearchUrl,
-                    'X-Requested-With': 'XMLHttpRequest'
-                };
-                const proxyTokenUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(tokenUrl)}&headers=${encodeURIComponent(JSON.stringify(tokenHeaders))}`;
-                
-                const response = await fetch(proxyTokenUrl);
-                if (!response.ok) throw new Error(`Token fetch HTTP status: ${response.status}`);
-                const data = await response.json();
+            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
+            const proxyFetchUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
-                if (data.token) {
-                    realCsrfToken = data.token;
-                    log(`[JS] SUCCESS: Pre-fetched CSRF token.`);
-                } else {
-                    throw new Error('Token not found in API response.');
-                }
-            } catch (e) {
-                logError('[JS] Failed to pre-fetch CSRF token. The query cannot proceed.', e);
-                sendPluginResult({ requestId, success: false, error: `Crucial pre-fetch of CSRF token failed: ${e.message}` });
-                return;
-            }
+            log('[JS] Step 1: Fetching raw HTML via proxy...');
+            fetch(proxyFetchUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Proxy fetch failed with status: ${response.status}`);
+                    return response.text();
+                })
+                .then(html => {
+                    log('[JS] Step 2: Sanitizing HTML...');
+                    let cleanHtml = html;
+                    
+                    // 正则表达式移除 Frame-Busting 脚本
+                    const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
+                    cleanHtml = cleanHtml.replace(frameBusterPattern, '<!-- Frame-Buster Script Removed by Plugin -->');
+                    log('[JS] Sanitizer: Frame-busting script removed.');
 
-            // 步骤 2: 创建主 iframe
-            const pageHeaders = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-            const proxyPageUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(pageHeaders))}`;
-            
-            const iframe = document.createElement('iframe');
-            iframe.id = `query-iframe-${requestId}`;
-            iframe.style.display = 'none';
-            iframe.sandbox = 'allow-scripts allow-popups'; 
-            activeIFrames.set(requestId, iframe);
+                    // 正则表达式移除 Phonenumber.js 脚本
+                    const phoneNumberJsPattern = /<script.*?src=".*?Phonenumber\.js.*?"><\/script>/i;
+                    cleanHtml = cleanHtml.replace(phoneNumberJsPattern, '<!-- Phonenumber.js Removed by Plugin -->');
+                    log('[JS] Sanitizer: Phonenumber.js script removed.');
 
-            // 步骤 3: onload 回调，注入 fetch 劫持器和解析脚本
-            iframe.onload = function() {
-                log(`[JS] Main iframe loaded. Injecting fetch interceptor and parser...`);
+                    // 注入 <base> 标签来修复所有相对路径 (CSS, images, etc.)
+                    const baseTag = `<base href="${new URL(targetSearchUrl).origin}/">`;
+                    cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${baseTag}`);
+                    log('[JS] Sanitizer: Base tag injected.');
 
-                const interceptorScript = `
-                    if (!window.fetchPatched) {
-                        window.fetchPatched = true;
-                        const originalFetch = window.fetch;
-                        window.fetch = function(url, options) {
-                            const urlString = url.toString();
-                            if (urlString.includes('/api/token')) {
-                                console.log('[Interceptor] Intercepted /api/token. Returning pre-fetched token.');
-                                return Promise.resolve(new Response(JSON.stringify({token: '${realCsrfToken}'}), {
-                                    status: 200,
-                                    headers: { 'Content-Type': 'application/json' }
-                                }));
-                            }
-                            if (urlString.includes('/api/trackPhonenumberView')) {
-                                console.log('[Interceptor] Intercepted and blocked /trackPhonenumberView.');
-                                return Promise.resolve(new Response(JSON.stringify({status: "ok"}), { status: 200 }));
-                            }
-                            return originalFetch.apply(this, arguments);
-                        };
-                        console.log('[Interceptor] SUCCESS: Fetch interceptor is active.');
-                    }
-                `;
-                
-                setTimeout(() => {
-                    try {
-                        log('[JS] Step 3.1: Injecting fetch interceptor.');
-                        this.contentWindow.postMessage({ type: 'executeScript', script: interceptorScript }, '*');
+                    // 注入我们的通信接收器
+                     const injectionScript = `
+                        <script type="text/javascript">
+                            (function() {
+                                if (window.flutterProxyInjected) return;
+                                window.flutterProxyInjected = true;
+                                function handleMessage(event) {
+                                    if (event.data && event.data.type === 'executeScript') {
+                                        try { eval(event.data.script); } catch (e) { console.error('[Receiver] Error:', e); }
+                                    }
+                                }
+                                window.addEventListener('message', handleMessage, false);
+                            })();
+                        </script>
+                    `;
+                    cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${injectionScript}`);
+                    log('[JS] Sanitizer: Communication script injected.');
 
-                        setTimeout(() => {
-                            log('[JS] Step 3.2: Injecting parsing script.');
+                    log('[JS] Step 3: Creating iframe from sanitized HTML via Blob URL...');
+                    const blob = new Blob([cleanHtml], { type: 'text/html' });
+                    const blobUrl = URL.createObjectURL(blob);
+
+                    const iframe = document.createElement('iframe');
+                    iframe.id = `query-iframe-${requestId}`;
+                    iframe.style.display = 'none';
+                    // 因为内容来自同源的 Blob URL，我们不再需要复杂的 sandbox
+                    iframe.sandbox = 'allow-scripts'; 
+                    activeIFrames.set(requestId, iframe);
+
+                    iframe.onload = function() {
+                        log('[JS] Step 4: Iframe loaded from Blob. Injecting parser...');
+                        // 释放 Blob URL 占用的内存
+                        URL.revokeObjectURL(blobUrl); 
+                        
+                        try {
                             const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                            // 因为我们已经注入了接收器，所以 postMessage 可以工作
                             this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-                        }, 700);
-
-                    } catch (e) {
-                        logError(`[JS] Error during staged injection:`, e);
-                        sendPluginResult({ requestId, success: false, error: `Injection failed: ${e.message}` });
+                        } catch (e) {
+                            logError(`Error posting script to iframe:`, e);
+                            sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
+                            cleanupIframe(requestId);
+                        }
+                    };
+                    
+                    iframe.onerror = function() {
+                        URL.revokeObjectURL(blobUrl);
+                        logError(`Iframe from Blob failed to load for requestId ${requestId}`);
+                        sendPluginResult({ requestId, success: false, error: 'Iframe (from Blob) loading failed.' });
                         cleanupIframe(requestId);
-                    }
-                }, 300);
-            };
-            
-            iframe.onerror = function() {
-                 logError(`Iframe loading failed for requestId ${requestId}`);
-                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-                 cleanupIframe(requestId);
-            };
-            document.body.appendChild(iframe);
-            iframe.src = proxyPageUrl;
+                    };
+
+                    document.body.appendChild(iframe);
+                    iframe.src = blobUrl; // 加载我们清洗过的、安全的内容
+                })
+                .catch(error => {
+                    logError('[JS] Error in fetch/sanitization process:', error);
+                    sendPluginResult({ requestId, success: false, error: `HTML fetch/sanitization failed: ${error.message}` });
+                });
             
         } catch (error) {
             logError(`[JS] Error in setup:`, error);
