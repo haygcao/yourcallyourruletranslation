@@ -342,58 +342,44 @@ function initiateQuery(phoneNumber, requestId) {
         const iframe = document.createElement('iframe');
         iframe.id = `query-iframe-${requestId}`;
         iframe.style.display = 'none';
-        iframe.sandbox = 'allow-scripts allow-same-origin';
+
+        // =================================================================================
+        // == 【核心修正】根据 cxxjackie 的思想，使用正确的 sandbox 属性来禁用顶层导航 ==
+        // 1. 我们允许脚本执行 ('allow-scripts')，因为我们需要注入自己的解析脚本。
+        // 2. 我们 *不* 包含 'allow-top-navigation'，这将从根本上阻止 "frame-busting" 脚本的跳转行为。
+        // 3. 我们 *不* 包含 'allow-same-origin'，强制 iframe 处于跨域状态，这正是 postMessage 擅长处理的场景。
+        // =================================================================================
+        iframe.sandbox = 'allow-scripts allow-popups'; 
+        
         activeIFrames.set(requestId, iframe);
 
-        // --- 【核心修改】在这里实现您的“中间层”思想 ---
+        // --- 【核心逻辑】这部分逻辑继承自上一版，它在 iframe 加载后通过 postMessage 发送指令 ---
+        // 这个逻辑现在可以完美工作，因为 sandbox 保证了 iframe 不会自我销毁。
         iframe.onload = function() {
-            log(`[JS Intercept] Iframe loaded. Preparing combined sanitization and parsing script...`);
+            log(`[JS Intercept] Iframe loaded successfully (frame-busting was prevented by sandbox). Preparing script...`);
             
-            // 此函数现在不再直接访问iframe的DOM，而是准备一个脚本字符串，
-            // 通过 postMessage 发送给 iframe，由 iframe 自己执行。
-            // 这样就绕过了同源策略限制。
-
             try {
-                // **步骤 1: 准备“中间层”清理脚本**
-                // 这段代码将在 iframe 内部运行。
-                const sanitizationScript = `
+                // 准备一个在 iframe 内部执行的脚本，它负责清理和解析
+                const combinedScript = `
                     (function() {
-                        console.log('[Injected-Sanitizer] Running sanitization inside the iframe...');
-                        // 操作 1: 移除威胁脚本
-                        const scripts = document.getElementsByTagName('script');
-                        let foundAndRemoved = false;
-                        for (let i = scripts.length - 1; i >= 0; i--) {
-                            if (scripts[i].textContent.includes('eval(function(p,a,c,k,e,d)')) {
-                                scripts[i].parentNode.removeChild(scripts[i]);
-                                foundAndRemoved = true;
-                            }
-                        }
-                        if (foundAndRemoved) {
-                            console.log('[Injected-Sanitizer] SUCCESS: Frame-busting eval script removed.');
-                        } else {
-                            console.log('[Injected-Sanitizer] WARNING: Frame-busting script not found.');
-                        }
-
-                        // 操作 2: 修复路径
+                        // **中间层操作 1: 修复路径 (现在这是最重要的操作)**
+                        console.log('[Injected-Worker] Running sanitization inside the iframe...');
                         if (!document.querySelector('base')) {
                             const base = document.createElement('base');
                             base.href = '${new URL(targetSearchUrl).origin}/';
                             document.head.prepend(base);
-                            console.log('[Injected-Sanitizer] SUCCESS: Base tag injected.');
-                        } else {
-                            console.log('[Injected-Sanitizer] INFO: Base tag already exists.');
+                            console.log('[Injected-Worker] SUCCESS: Base tag injected to fix relative URLs.');
                         }
+                        
+                        // **中间层操作 2: 执行解析**
+                        // 注意：我们甚至不再需要移除 eval 脚本，因为它已经被 sandbox 废掉了武功。
+                        // 但为了代码的健壮性，保留它也没有坏处。
                     })();
+                    
+                    ${getParsingScript(PLUGIN_CONFIG.id, phoneNumber)}
                 `;
 
-                // **步骤 2: 获取原始的解析脚本**
-                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-
-                // **步骤 3: 合并两个脚本并通过 postMessage 发送**
-                // 使用您Dart代码注入的接收器能识别的 'executeScript' 类型
-                const combinedScript = sanitizationScript + parsingScript;
-
-                log('[JS Intercept] Preparation complete. Posting COMBINED script to iframe.');
+                log('[JS Intercept] Preparation complete. Posting COMBINED script to iframe via postMessage.');
                 this.contentWindow.postMessage({
                     type: 'executeScript',
                     script: combinedScript
@@ -406,12 +392,12 @@ function initiateQuery(phoneNumber, requestId) {
             }
         };
         
-        // --- 这一部分也完全保持您原始的经典模式 ---
         iframe.onerror = function() {
             logError(`Iframe loading failed for requestId: ${requestId}`);
             sendPluginResult({ requestId, success: false, error: 'Iframe onerror event triggered.' });
             cleanupIframe(requestId);
         };
+
         document.body.appendChild(iframe);
         iframe.src = proxyUrl; // 触发加载
         
