@@ -337,15 +337,15 @@
       doc.close();
   }
 
-  // --- 【核心修改】 initiateQuery 函数 ---
+  // --- 【这是唯一需要修改的部分】 initiateQuery 函数 ---
   function initiateQuery(phoneNumber, requestId) {
     log(`[JS-Side Solution] Initiating query for '${phoneNumber}'`);
     try {
         const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
         const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
         
-        // 步骤 1: 通过您干净的Dart代理 fetch 原始HTML内容
-        const proxyFetchUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+        // 【核心修改】增加查询参数，告诉Dart代理这是fetch模式
+        const proxyFetchUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}&proxy_mode=fetch`;
         
         fetch(proxyFetchUrl)
             .then(response => {
@@ -356,47 +356,41 @@
                 log('[JS-Side Solution] HTML fetched. Sanitizing...');
                 let cleanHtml = html;
 
-                // 步骤 2: 【核心】在JS层面完成所有必要的“清洗”和注入
-
-                // 注入A: <base> 标签，修复所有相对路径资源 (CSS, JS, 图片)
-                const baseTag = `<base href="${new URL(targetSearchUrl).origin}/">`;
+                // **【核心】只做两件必要的清洗工作**
                 
-                // 注入B: 通用反框架逃逸脚本，作为双重保险
-                const antiFrameBusterScript = `
-                  <script type="text/javascript">
-                    // 这个脚本会阻止任何后续脚本尝试导航离开当前页面
-                    window.onbeforeunload = function() { return ' '; };
-                  <\/script>
-                `;
-
-                // **移除威胁**: 直接用正则表达式移除那个 eval 脚本
+                // 1. **移除威胁**: 直接用正则表达式移除那个 eval 脚本
                 const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
                 if (frameBusterPattern.test(cleanHtml)) {
                     cleanHtml = cleanHtml.replace(frameBusterPattern, '');
                     log('[JS-Side Solution] SUCCESS: Frame-busting eval script removed.');
                 }
-                
-                // 将注入内容插入到<head>标签
-                cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${baseTag}${antiFrameBusterScript}`);
-                log('[JS-Side Solution] HTML sanitized and injected.');
 
-                // 步骤 3: 创建iframe并写入“干净”的HTML
+                // 2. **修复路径**: 注入 <base> 标签
+                const baseTag = `<base href="${new URL(targetSearchUrl).origin}/">`;
+                cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${baseTag}`);
+                log('[JS-Side Solution] HTML sanitized and ready.');
+
+                // --- 创建iframe并写入，这部分和您原始代码的意图一致 ---
                 const iframe = document.createElement('iframe');
                 iframe.id = `query-iframe-${requestId}`;
                 iframe.style.display = 'none';
                 
-                // 这个 sandbox 是安全的，因为我们已经从内容上移除了威胁
-                iframe.sandbox = 'allow-scripts allow-same-origin allow-forms'; 
+                // 【注意】这里不再需要 sandbox='allow-scripts allow-same-origin'
+                // 因为我们是通过 writeToIframe 写入的，并且 base 标签解决了同源问题。
+                // 移除 sandbox 可以避免不必要的警告和限制。
                 
                 document.body.appendChild(iframe);
                 activeIFrames.set(requestId, iframe);
 
+                // 将处理过的、干净的HTML写入iframe
                 writeToIframe(iframe, cleanHtml);
-
-                // 步骤 4: iframe内容已就绪，立即发送解析脚本
-                // (注意：这里我们不需要等 onload，因为 writeToIframe 是同步的)
+                
+                // 【注意】这里不再需要 iframe.onload，因为 writeToIframe 是同步操作。
+                // 内容写入后，我们立即发送解析脚本。
                 log('[JS-Side Solution] Clean HTML written. Posting parsing script.');
                 const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                
+                // 使用您已有的 postMessage 机制将解析脚本发送到 iframe
                 iframe.contentWindow.postMessage({
                     type: 'executeScript',
                     script: parsingScript
