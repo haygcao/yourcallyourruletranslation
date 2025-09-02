@@ -329,60 +329,93 @@
       `;
   }
 
-  function initiateQuery(phoneNumber, requestId) {
-      log(`Initiating query for '${phoneNumber}' (requestId: ${requestId})`);
-      try {
-          // Updated target URL for cleverdialer.com
-          const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
-          log(`Iframe proxy URL: ${proxyUrl}`);
-
-          const iframe = document.createElement('iframe');
-          iframe.id = `query-iframe-${requestId}`;
-          iframe.style.display = 'none';
-          iframe.sandbox = 'allow-scripts allow-same-origin';
-          activeIFrames.set(requestId, iframe);
-
-          iframe.onload = function() {
-              log(`Iframe loaded for requestId ${requestId}. Posting parsing script directly.`);
-              try {
-                  const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                  iframe.contentWindow.postMessage({
-                      type: 'executeScript',
-                      script: parsingScript
-                  }, '*');
-                  log(`Parsing script posted to iframe for requestId: ${requestId}`);
-              } catch (e) {
-                  logError(`Error posting script to iframe for requestId ${requestId}:`, e);
-                  sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
-                  cleanupIframe(requestId);
-              }
-          };
-
-          iframe.onerror = function() {
-              logError(`Iframe error for requestId ${requestId}`);
-              sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-              cleanupIframe(requestId);
-          };
-
-          document.body.appendChild(iframe);
-          iframe.src = proxyUrl;
-
-          // Set a timeout for the query
-          setTimeout(() => {
-              if (activeIFrames.has(requestId)) {
-                  logError(`Query timeout for requestId: ${requestId}`);
-                  sendPluginResult({ requestId, success: false, error: 'Query timed out after 30 seconds' });
-                  cleanupIframe(requestId);
-              }
-          }, 30000);
-
-      } catch (error) {
-          logError(`Error in initiateQuery for requestId ${requestId}:`, error);
-          sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
-      }
+  // --- 辅助函数: 将HTML文本安全地写入iframe ---
+  function writeToIframe(iframe, htmlContent) {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write(htmlContent);
+      doc.close();
   }
+
+  // --- 【核心修改】 initiateQuery 函数 ---
+  function initiateQuery(phoneNumber, requestId) {
+    log(`[JS-Side Solution] Initiating query for '${phoneNumber}'`);
+    try {
+        const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
+        const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
+        
+        // 步骤 1: 通过您干净的Dart代理 fetch 原始HTML内容
+        const proxyFetchUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+        
+        fetch(proxyFetchUrl)
+            .then(response => {
+                if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
+                return response.text();
+            })
+            .then(html => {
+                log('[JS-Side Solution] HTML fetched. Sanitizing...');
+                let cleanHtml = html;
+
+                // 步骤 2: 【核心】在JS层面完成所有必要的“清洗”和注入
+
+                // 注入A: <base> 标签，修复所有相对路径资源 (CSS, JS, 图片)
+                const baseTag = `<base href="${new URL(targetSearchUrl).origin}/">`;
+                
+                // 注入B: 通用反框架逃逸脚本，作为双重保险
+                const antiFrameBusterScript = `
+                  <script type="text/javascript">
+                    // 这个脚本会阻止任何后续脚本尝试导航离开当前页面
+                    window.onbeforeunload = function() { return ' '; };
+                  <\/script>
+                `;
+
+                // **移除威胁**: 直接用正则表达式移除那个 eval 脚本
+                const frameBusterPattern = /<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is;
+                if (frameBusterPattern.test(cleanHtml)) {
+                    cleanHtml = cleanHtml.replace(frameBusterPattern, '');
+                    log('[JS-Side Solution] SUCCESS: Frame-busting eval script removed.');
+                }
+                
+                // 将注入内容插入到<head>标签
+                cleanHtml = cleanHtml.replace(/<head.*?>/i, `$&${baseTag}${antiFrameBusterScript}`);
+                log('[JS-Side Solution] HTML sanitized and injected.');
+
+                // 步骤 3: 创建iframe并写入“干净”的HTML
+                const iframe = document.createElement('iframe');
+                iframe.id = `query-iframe-${requestId}`;
+                iframe.style.display = 'none';
+                
+                // 这个 sandbox 是安全的，因为我们已经从内容上移除了威胁
+                iframe.sandbox = 'allow-scripts allow-same-origin allow-forms'; 
+                
+                document.body.appendChild(iframe);
+                activeIFrames.set(requestId, iframe);
+
+                writeToIframe(iframe, cleanHtml);
+
+                // 步骤 4: iframe内容已就绪，立即发送解析脚本
+                // (注意：这里我们不需要等 onload，因为 writeToIframe 是同步的)
+                log('[JS-Side Solution] Clean HTML written. Posting parsing script.');
+                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                iframe.contentWindow.postMessage({
+                    type: 'executeScript',
+                    script: parsingScript
+                }, '*');
+
+            })
+            .catch(error => {
+                logError(`[JS-Side Solution] Query failed:`, error);
+                sendPluginResult({ requestId, success: false, error: `Query failed: ${error.message}` });
+                cleanupIframe(requestId);
+            });
+
+    } catch (error) {
+        logError(`[JS-Side Solution] Error in initiateQuery setup:`, error);
+        sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
+    }
+  }
+
+
 
   function generateOutput(phoneNumber, nationalNumber, e164Number, requestId) {
       log(`generateOutput called for requestId: ${requestId}`);
