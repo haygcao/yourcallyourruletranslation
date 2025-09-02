@@ -330,59 +330,56 @@
   }
 
  
-// --- 【唯一需要修改的函数】 initiateQuery ---
+// --- 【最终版】 initiateQuery 函数 ---
 function initiateQuery(phoneNumber, requestId) {
     log(`[JS Intercept] Initiating query for '${phoneNumber}'`);
     try {
+        // 步骤 1: 准备代理 URL (这部分逻辑不变)
         const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
         const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
         const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
         
+        // 步骤 2: 创建并配置 iframe (这部分逻辑不变)
         const iframe = document.createElement('iframe');
         iframe.id = `query-iframe-${requestId}`;
         iframe.style.display = 'none';
-        
-        // 这个 sandbox 设置是正确的，必须保留
+
+        // 关键的 sandbox 设置，用于禁用 frame-busting (必须保留)
         iframe.sandbox = 'allow-scripts allow-popups'; 
         
         activeIFrames.set(requestId, iframe);
 
-        // --- 【核心修改】在 onload 中增加一个 setTimeout 延迟 ---
+        // 步骤 3: 设置 iframe 加载成功后的回调
         iframe.onload = function() {
-            log(`[JS Intercept] Iframe loaded. Waiting for a moment to ensure receiver is ready...`);
+            log(`[JS Intercept] Iframe loaded. Waiting for receiver to be ready...`);
             
-            // 增加一个 300 毫秒的延迟来解决竞争条件
+            // 使用 setTimeout 解决 postMessage 的竞争条件 (必须保留)
             setTimeout(() => {
-                log(`[JS Intercept] Delay complete. Preparing and posting script.`);
                 try {
-                    const combinedScript = `
-                        (function() {
-                            console.log('[Injected-Worker] Running sanitization inside the iframe...');
-                            if (!document.querySelector('base')) {
-                                const base = document.createElement('base');
-                                base.href = '${new URL(targetSearchUrl).origin}/';
-                                document.head.prepend(base);
-                                console.log('[Injected-Worker] SUCCESS: Base tag injected to fix relative URLs.');
-                            }
-                        })();
-                        
-                        ${getParsingScript(PLUGIN_CONFIG.id, phoneNumber)}
-                    `;
+                    log(`[JS Intercept] Delay complete. Preparing and posting PARSING SCRIPT ONLY.`);
+                    
+                    // 【核心简化】
+                    // 我们不再需要发送任何清理或修复脚本。
+                    // <base> 标签已由 Dart 注入。
+                    // Frame-busting 脚本已被 sandbox 禁用。
+                    // 我们现在只需要发送纯粹的解析脚本。
+                    const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
 
-                    log('[JS Intercept] Posting COMBINED script to iframe via postMessage.');
+                    // 通过 postMessage 将解析脚本发送到 iframe 内部执行
                     this.contentWindow.postMessage({
                         type: 'executeScript',
-                        script: combinedScript
+                        script: parsingScript
                     }, '*');
 
                 } catch (e) {
-                    logError(`[JS Intercept] Error during delayed script preparation/posting:`, e);
+                    logError(`[JS Intercept] Error during delayed script posting:`, e);
                     sendPluginResult({ requestId, success: false, error: `Failed during delayed post: ${e.message}` });
                     cleanupIframe(requestId);
                 }
-            }, 300); // <-- 这里的延迟是关键
+            }, 300); // 延迟时间可以根据需要微调，300ms 通常足够
         };
         
+        // 步骤 4: 设置错误处理和启动加载 (这部分逻辑不变)
         iframe.onerror = function() {
             logError(`Iframe loading failed for requestId: ${requestId}`);
             sendPluginResult({ requestId, success: false, error: 'Iframe onerror event triggered.' });
@@ -390,7 +387,7 @@ function initiateQuery(phoneNumber, requestId) {
         };
 
         document.body.appendChild(iframe);
-        iframe.src = proxyUrl;
+        iframe.src = proxyUrl; // 触发加载
         
     } catch (error) {
         logError(`[JS Intercept] Error in setup:`, error);
