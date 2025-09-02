@@ -345,7 +345,7 @@ function initiateQuery(phoneNumber, requestId) {
         iframe.style.display = 'none';
 
         // 关键的 sandbox 设置，用于禁用 frame-busting (必须保留)
-        iframe.sandbox = 'allow-scripts allow-popups'; 
+        iframe.sandbox = 'allow-scripts allow-popups allow-same-origin'; 
         
         activeIFrames.set(requestId, iframe);
 
