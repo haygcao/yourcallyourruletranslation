@@ -329,121 +329,97 @@
       `;
   }
 
+ 
      function initiateQuery(phoneNumber, requestId) {
         log(`Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-            const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+            const headers = { 'User-Agent': 'Mozilla/5.0...' };
+            const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
-            const iframe = document.createElement('iframe');
-            iframe.id = `query-iframe-${requestId}`;
-            iframe.style.display = 'none';
-            iframe.sandbox = 'allow-scripts allow-same-origin';
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', proxyUrl, true);
+            
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    log('[ParentJS] Got HTML string. Performing surgical pre-processing...');
+                    let htmlString = xhr.responseText;
+                    const targetOrigin = new URL(targetSearchUrl).origin;
+                    const proxyTemplateUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=`;
 
-            activeIFrames.set(requestId, iframe);
+                    // --- 【第一步：外科手术 - 精确移除恶意脚本】 ---
+                    htmlString = htmlString.replace(/<script>eval\(function\(p,a,c,k,e,d\){.*?}\)<\/script>/is, '<!-- Malicious Script Surgically Removed -->');
+                    log('[ParentJS] Malicious eval script removed from string.');
 
-            iframe.onload = function() {
-                log(`Iframe loaded. Injecting your protection layer...`);
+                    // --- 【第二步：战场改造 - 注入我们的“终极拦截器”】 ---
+                    // 这个拦截器脚本将作为HTML的一部分，在所有其他脚本之前被解析和执行
+                    const interceptorScript = `
+                        <script>
+                            (function() {
+                                if (window.interceptorInjected) return;
+                                window.interceptorInjected = true;
+                                
+                                const targetOrigin = '${targetOrigin}';
+                                const proxyTemplateUrl = '${proxyTemplateUrl}';
 
-                const protectionLayerScript = `
-                    (function() {
-                        if (window.protectionLayerActive) return;
-                        window.protectionLayerActive = true;
-                        
-                        console.log('[Protection-Layer] Activating...');
-                        
-                        const targetOrigin = new URL('${targetSearchUrl}').origin;
-                        const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
+                                const originalFetch = window.fetch;
+                                window.fetch = function(resource, options) {
+                                    const url = resource instanceof Request ? resource.url : String(resource);
+                                    const absoluteUrl = new URL(url, location.href).toString();
+                                    
+                                    if (absoluteUrl.startsWith(targetOrigin)) {
+                                        const proxiedUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
+                                        if (resource instanceof Request) {
+                                            return originalFetch.call(this, new Request(proxiedUrl, options || resource));
+                                        }
+                                        return originalFetch.call(this, proxiedUrl, options);
+                                    }
+                                    return originalFetch.apply(this, arguments);
+                                };
+                                console.log('[Interceptor] In-line interceptor is active. Phonenumber.js will be controlled.');
+                            })();
+                        </script>
+                    `;
+                    // 将我们的拦截器注入到<head>的最顶端
+                    htmlString = htmlString.replace(/<head.*?>/i, `$&${interceptorScript}`);
+                    log('[ParentJS] Ultimate Interceptor injected into string.');
 
-                        // --- 您的第1步(可选): 主动规范化 ---
-                        // ... （为简化，我们依赖第2和第3步，这一步可以省略） ...
+                    // --- 【第三步：注入真实Base，确保所有相对路径正确解析】 ---
+                    const baseTag = `<base href="${targetOrigin}/">`;
+                    htmlString = htmlString.replace(/<head.*?>/i, `$&${baseTag}`);
+                    log('[ParentJS] Real base tag injected.');
 
-                        // --- 您的第2步：注入指向真实域名的 <base> 标签 ---
-                        console.log('[Protection-Layer] Injecting REAL base tag...');
-                        document.querySelectorAll('base').forEach(b => b.remove());
-                        const newBase = document.createElement('base');
-                        newBase.href = targetOrigin + '/';
-                        document.head.prepend(newBase);
-                        console.log('[Protection-Layer] SUCCESS: Real base tag injected.');
+                    // --- 加载经过“手术”和“改造”的HTML ---
+                    const iframe = document.createElement('iframe');
+                    iframe.id = `query-iframe-${requestId}`;
+                    iframe.style.display = 'none';
+                    // 沙箱需要允许脚本运行，因为我们保留了 Phonenumber.js
+                    iframe.sandbox = 'allow-scripts allow-same-origin';
+                    activeIFrames.set(requestId, iframe);
 
-                        // --- 新增：您的删除恶意脚本步骤 ---
-                        console.log('[Protection-Layer] Removing hostile scripts...');
-                        document.querySelectorAll('script').forEach(s => {
-                            if (s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
-                                s.remove();
-                                console.log('[Protection-Layer] SUCCESS: Inline frame-buster script removed.');
-                            }
-                        });
-
-                        // --- 您的第3步：劫持API，对匹配origin的请求强制代理 ---
-                        console.log('[Protection-Layer] Intercepting fetch and XHR APIs...');
-                        
-                        // 劫持 fetch
-                        const originalFetch = window.fetch;
-                        window.fetch = function(resource, options) {
-                            const requestUrl = resource instanceof Request ? resource.url : String(resource);
-                            
-                            if (requestUrl.startsWith(targetOrigin)) {
-                                console.log('[Interceptor] Rerouting FETCH to proxy:', requestUrl);
-                                const proxiedUrl = proxyTemplateUrl + encodeURIComponent(requestUrl);
-                                if (resource instanceof Request) {
-                                    return originalFetch.call(this, new Request(proxiedUrl, resource));
-                                }
-                                return originalFetch.call(this, proxiedUrl, options);
-                            }
-                            return originalFetch.apply(this, arguments);
-                        };
-
-                        // 劫持 XMLHttpRequest
-                        const originalXhrOpen = window.XMLHttpRequest.prototype.open;
-                        window.XMLHttpRequest.prototype.open = function(method, url, ...args) {
-                            const absoluteUrl = new URL(url, document.baseURI).toString();
-                            if (absoluteUrl.startsWith(targetOrigin)) {
-                                console.log('[Interceptor] Rerouting XHR to proxy:', absoluteUrl);
-                                const proxiedUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
-                                return originalXhrOpen.call(this, method, proxiedUrl, ...args);
-                            }
-                            return originalXhrOpen.apply(this, arguments);
-                        };
-                        console.log('[Protection-Layer] SUCCESS: APIs intercepted.');
-
-                    })();
-                `;
-                
-                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-
-                setTimeout(() => {
-                    try {
-                        this.contentWindow.postMessage({ type: 'executeScript', script: protectionLayerScript }, '*');
-                        
+                    iframe.onload = function() {
+                        log('[Iframe] Controlled document loaded. Waiting for Phonenumber.js to render data...');
+                        // 此时，Phonenumber.js 正在我们的拦截器监控下安全地运行
+                        // 我们等待它完成数据渲染，然后再注入我们的解析器
                         setTimeout(() => {
-                            this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-                        }, 2000);
-
-                    } catch (e) {
-                        logError(`[JS] Error injecting scripts:`, e);
-                        sendPluginResult({ requestId, success: false, error: `Injection failed: ${e.message}` });
-                        cleanupIframe(requestId);
-                    }
-                }, 500);
+                            try {
+                                const scriptEl = this.contentDocument.createElement('script');
+                                scriptEl.textContent = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                                this.contentDocument.body.appendChild(scriptEl);
+                            } catch (e) {
+                                logError('Error injecting parser into controlled iframe:', e);
+                            }
+                        }, 3000); // 给予充足时间让 Phonenumber.js 完成它的异步任务
+                    };
+                    
+                    document.body.appendChild(iframe);
+                    iframe.srcdoc = htmlString;
+                } else { /* ... 错误处理 ... */ }
             };
-
-            iframe.onerror = function() {
-                 logError(`Iframe loading failed for requestId ${requestId}`);
-                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-                 cleanupIframe(requestId);
-            };
-            
-            document.body.appendChild(iframe);
-            iframe.src = initialProxyUrl;
-            
-        } catch (error) {
-            logError(`[JS] Error in setup:`, error);
-            sendPluginResult({ requestId, success: false, error: `Setup failed: ${error.message}` });
-        }
+            xhr.onerror = function() { /* ... 错误处理 ... */ };
+            xhr.send();
+        } catch (error) { /* ... 错误处理 ... */ }
     }
- 
     
  
  
