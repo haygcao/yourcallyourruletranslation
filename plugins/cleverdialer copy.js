@@ -329,12 +329,11 @@
       `;
   }
 
- 
      function initiateQuery(phoneNumber, requestId) {
         log(`Initiating query for '${phoneNumber}'`);
         try {
             const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0...' };
+            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
             const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
             const iframe = document.createElement('iframe');
@@ -345,70 +344,69 @@
             activeIFrames.set(requestId, iframe);
 
             iframe.onload = function() {
-                log(`Iframe loaded. Injecting Your Elegant Logic...`);
+                log(`Iframe loaded. Injecting your protection layer...`);
 
-                const yourElegantLogicScript = `
+                const protectionLayerScript = `
                     (function() {
-                        if (window.yourLogicInjected) return;
-                        window.yourLogicInjected = true;
+                        if (window.protectionLayerActive) return;
+                        window.protectionLayerActive = true;
                         
-                        console.log('[YourLogic] Activating...');
+                        console.log('[Protection-Layer] Activating...');
                         
                         const targetOrigin = new URL('${targetSearchUrl}').origin;
                         const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
 
-                        // ==========================================================
-                        // == Part 1: 环境改造 (注入真实的 Base 标签) ==
-                        // ==========================================================
+                        // --- 您的第1步(可选): 主动规范化 ---
+                        // ... （为简化，我们依赖第2和第3步，这一步可以省略） ...
+
+                        // --- 您的第2步：注入指向真实域名的 <base> 标签 ---
+                        console.log('[Protection-Layer] Injecting REAL base tag...');
                         document.querySelectorAll('base').forEach(b => b.remove());
                         const newBase = document.createElement('base');
-                        newBase.href = targetOrigin + '/'; 
+                        newBase.href = targetOrigin + '/';
                         document.head.prepend(newBase);
-                        console.log('[YourLogic] SUCCESS: Real base tag injected. All relative paths will now resolve to origin.');
+                        console.log('[Protection-Layer] SUCCESS: Real base tag injected.');
 
+                        // --- 新增：您的删除恶意脚本步骤 ---
+                        console.log('[Protection-Layer] Removing hostile scripts...');
+                        document.querySelectorAll('script').forEach(s => {
+                            if (s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
+                                s.remove();
+                                console.log('[Protection-Layer] SUCCESS: Inline frame-buster script removed.');
+                            }
+                        });
+
+                        // --- 您的第3步：劫持API，对匹配origin的请求强制代理 ---
+                        console.log('[Protection-Layer] Intercepting fetch and XHR APIs...');
                         
-                        // ===============================================================
-                        // == Part 2: 流量控制 (拦截所有长连接) ==
-                        // ===============================================================
+                        // 劫持 fetch
                         const originalFetch = window.fetch;
                         window.fetch = function(resource, options) {
-                            // 浏览器会自动将 resource (可能是短链接) 解析为长链接
-                            const absoluteUrl = new URL(resource, document.baseURI).toString();
+                            const requestUrl = resource instanceof Request ? resource.url : String(resource);
                             
-                            // 规则：只要最终请求指向目标域，就代理
-                            if (absoluteUrl.startsWith(targetOrigin)) {
-                                console.log('[YourLogic] Intercepted fetch to origin:', absoluteUrl);
-                                const proxiedFetchUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
-                                
+                            if (requestUrl.startsWith(targetOrigin)) {
+                                console.log('[Interceptor] Rerouting FETCH to proxy:', requestUrl);
+                                const proxiedUrl = proxyTemplateUrl + encodeURIComponent(requestUrl);
                                 if (resource instanceof Request) {
-                                    return originalFetch.call(this, new Request(proxiedFetchUrl, options || resource));
+                                    return originalFetch.call(this, new Request(proxiedUrl, resource));
                                 }
-                                return originalFetch.call(this, proxiedFetchUrl, options);
+                                return originalFetch.call(this, proxiedUrl, options);
                             }
-                            
-                            // 规则：否则，放行
                             return originalFetch.apply(this, arguments);
                         };
-                        console.log('[YourLogic] SUCCESS: Fetch interceptor is active.');
-                        
-                        // 对 XHR 做同样处理
+
+                        // 劫持 XMLHttpRequest
                         const originalXhrOpen = window.XMLHttpRequest.prototype.open;
                         window.XMLHttpRequest.prototype.open = function(method, url, ...args) {
                             const absoluteUrl = new URL(url, document.baseURI).toString();
                             if (absoluteUrl.startsWith(targetOrigin)) {
+                                console.log('[Interceptor] Rerouting XHR to proxy:', absoluteUrl);
                                 const proxiedUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
                                 return originalXhrOpen.call(this, method, proxiedUrl, ...args);
                             }
                             return originalXhrOpen.apply(this, arguments);
                         };
-                        console.log('[YourLogic] SUCCESS: XHR interceptor is active.');
-                        
-                        // (保险) 移除内联的 frame-buster
-                        document.querySelectorAll('script').forEach(s => {
-                            if (s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
-                                s.remove();
-                            }
-                        });
+                        console.log('[Protection-Layer] SUCCESS: APIs intercepted.');
 
                     })();
                 `;
@@ -417,24 +415,35 @@
 
                 setTimeout(() => {
                     try {
-                        // 先注入您的优雅逻辑
-                        this.contentWindow.postMessage({ type: 'executeScript', script: yourElegantLogicScript }, '*');
+                        this.contentWindow.postMessage({ type: 'executeScript', script: protectionLayerScript }, '*');
                         
-                        // 给予足够的时间让所有子资源通过被拦截的请求加载完成
                         setTimeout(() => {
-                            // 再注入解析器
                             this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-                        }, 2500); // 增加延迟
+                        }, 2000);
 
-                    } catch (e) { /* ... 错误处理 ... */ }
-                }, 300);
+                    } catch (e) {
+                        logError(`[JS] Error injecting scripts:`, e);
+                        sendPluginResult({ requestId, success: false, error: `Injection failed: ${e.message}` });
+                        cleanupIframe(requestId);
+                    }
+                }, 500);
+            };
+
+            iframe.onerror = function() {
+                 logError(`Iframe loading failed for requestId ${requestId}`);
+                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+                 cleanupIframe(requestId);
             };
             
             document.body.appendChild(iframe);
             iframe.src = initialProxyUrl;
             
-        } catch (error) { /* ... 错误处理 ... */ }
+        } catch (error) {
+            logError(`[JS] Error in setup:`, error);
+            sendPluginResult({ requestId, success: false, error: `Setup failed: ${error.message}` });
+        }
     }
+ 
     
  
  
