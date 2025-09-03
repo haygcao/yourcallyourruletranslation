@@ -329,105 +329,148 @@
       `;
   }
 
- 
-     function initiateQuery(phoneNumber, requestId) {
-        log(`Initiating query for '${phoneNumber}'`);
-        try {
-            const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0...' };
-            const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+ function initiateQuery(phoneNumber, requestId) {
+    log(`Initiating query for '${phoneNumber}' (requestId: ${requestId})`);
+    try {
+        const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
+        const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
+        const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+        log(`Iframe proxy URL: ${proxyUrl}`);
 
-            const iframe = document.createElement('iframe');
-            iframe.id = `query-iframe-${requestId}`;
-            iframe.style.display = 'none';
-            iframe.sandbox = 'allow-scripts allow-same-origin';
-            activeIFrames.set(requestId, iframe);
+        const iframe = document.createElement('iframe');
+        iframe.id = `query-iframe-${requestId}`;
+        iframe.style.display = 'none';
+        iframe.sandbox = 'allow-scripts allow-same-origin';
+        activeIFrames.set(requestId, iframe);
 
-            iframe.onload = function() {
-                log('Iframe loaded. Sending signal-controlled injection sequence...');
-
-                // --- 准备我们的“弹药” ---
-
-                // 1. 暂停脚本
-                const pauseScript = `
-                    if (!window.isPaused) {
-                        console.log('[Signal:PAUSE] Document rendering paused.');
-                        document.documentElement.style.visibility = 'hidden';
-                        window.isPaused = true;
-                    }
-                `;
-
-                // 2. 您的终极拦截器脚本 (注入真实Base + 拦截长连接)
-                const interceptorScript = `
+        iframe.onload = function() {
+            log(`Iframe loaded for requestId ${requestId}. Injecting network interceptor...`);
+            try {
+                // First inject the network interceptor to handle all subsequent requests
+                const networkInterceptorScript = `
                     (function() {
-                        if (window.interceptorInjected) return;
-                        window.interceptorInjected = true;
+                        if (window.networkInterceptorInjected) return;
+                        window.networkInterceptorInjected = true;
                         
-                        console.log('[Interceptor] Activating...');
-                        const targetOrigin = new URL('${targetSearchUrl}').origin;
-                        const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
-
-                        // 注入真实Base
-                        const newBase = document.createElement('base');
-                        newBase.href = targetOrigin + '/';
-                        document.head.prepend(newBase);
-
-                        // 劫持Fetch
+                        console.log('[Network-Interceptor] Activating for cleverdialer.com...');
+                        
+                        const TARGET_ORIGIN = 'https://www.cleverdialer.com';
+                        const PROXY_TEMPLATE = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=';
+                        
+                        // Set the correct base href to resolve relative URLs properly
+                        if (!document.querySelector('base[href*="cleverdialer.com"]')) {
+                            const baseElement = document.createElement('base');
+                            baseElement.href = TARGET_ORIGIN + '/';
+                            document.head.insertBefore(baseElement, document.head.firstChild);
+                        }
+                        
+                        // Intercept fetch requests
                         const originalFetch = window.fetch;
-                        window.fetch = function(resource, options) {
-                            const absoluteUrl = new URL(resource, document.baseURI).toString();
-                            if (absoluteUrl.startsWith(targetOrigin)) {
-                                const proxiedUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
-                                if (resource instanceof Request) { return originalFetch.call(this, new Request(proxiedUrl, options || resource)); }
-                                return originalFetch.call(this, proxiedUrl, options);
+                        window.fetch = function(resource, options = {}) {
+                            let url = resource;
+                            if (resource instanceof Request) {
+                                url = resource.url;
                             }
+                            
+                            // Convert relative URLs to absolute
+                            const absoluteUrl = new URL(url, TARGET_ORIGIN).toString();
+                            
+                            // Only proxy requests to the target domain
+                            if (absoluteUrl.startsWith(TARGET_ORIGIN)) {
+                                const proxiedUrl = PROXY_TEMPLATE + encodeURIComponent(absoluteUrl);
+                                console.log('[Network-Interceptor] Proxying fetch:', absoluteUrl, '->', proxiedUrl);
+                                
+                                if (resource instanceof Request) {
+                                    return originalFetch.call(this, new Request(proxiedUrl, {
+                                        method: resource.method,
+                                        headers: resource.headers,
+                                        body: resource.body,
+                                        mode: 'cors',
+                                        ...options
+                                    }));
+                                }
+                                return originalFetch.call(this, proxiedUrl, { mode: 'cors', ...options });
+                            }
+                            
                             return originalFetch.apply(this, arguments);
- D
                         };
                         
-                        console.log('[Interceptor] Ready.');
+                        // Intercept XMLHttpRequest
+                        const OriginalXHR = window.XMLHttpRequest;
+                        window.XMLHttpRequest = function() {
+                            const xhr = new OriginalXHR();
+                            const originalOpen = xhr.open;
+                            
+                            xhr.open = function(method, url, ...args) {
+                                const absoluteUrl = new URL(url, TARGET_ORIGIN).toString();
+                                
+                                if (absoluteUrl.startsWith(TARGET_ORIGIN)) {
+                                    const proxiedUrl = PROXY_TEMPLATE + encodeURIComponent(absoluteUrl);
+                                    console.log('[Network-Interceptor] Proxying XHR:', absoluteUrl, '->', proxiedUrl);
+                                    return originalOpen.call(this, method, proxiedUrl, ...args);
+                                }
+                                
+                                return originalOpen.call(this, method, url, ...args);
+                            };
+                            
+                            return xhr;
+                        };
+                        
+                        // Copy static properties
+                        Object.setPrototypeOf(window.XMLHttpRequest, OriginalXHR);
+                        Object.defineProperties(window.XMLHttpRequest, Object.getOwnPropertyDescriptors(OriginalXHR));
+                        
+                        console.log('[Network-Interceptor] All network requests will now be proxied.');
                     })();
                 `;
 
-                // 3. 恢复脚本
-                const resumeScript = `
-                    if (window.isPaused) {
-                        console.log('[Signal:RESUME] Resuming document rendering.');
-                        document.documentElement.style.visibility = 'visible';
-                        window.isPaused = false;
-                    }
-                `;
-                
-                // 4. 解析脚本
-                const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                // Inject the network interceptor immediately
+                iframe.contentWindow.postMessage({
+                    type: 'executeScript',
+                    script: networkInterceptorScript
+                }, '*');
 
+                // Wait a bit for the interceptor to be set up, then inject parsing script
+                setTimeout(() => {
+                    const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                    iframe.contentWindow.postMessage({
+                        type: 'executeScript',
+                        script: parsingScript
+                    }, '*');
+                    log(`Parsing script posted to iframe for requestId: ${requestId}`);
+                }, 1000); // Increased delay to ensure page and scripts load properly
 
-                // --- 按顺序发射“信号” ---
-                try {
-                    // 第一步：立即发送“暂停”指令
-                    this.contentWindow.postMessage({ type: 'executeScript', script: pauseScript }, '*');
+            } catch (e) {
+                logError(`Error posting script to iframe for requestId ${requestId}:`, e);
+                sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
+                cleanupIframe(requestId);
+            }
+        };
 
-                    // 第二步：紧接着发送“拦截器”
-                    this.contentWindow.postMessage({ type: 'executeScript', script: interceptorScript }, '*');
-                    
-                    // 第三步：短暂延迟后，发送“恢复”指令
-                    setTimeout(() => {
-                        this.contentWindow.postMessage({ type: 'execute-script', script: resumeScript }, '*');
-                    }, 500);
+        iframe.onerror = function() {
+            logError(`Iframe error for requestId ${requestId}`);
+            sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+            cleanupIframe(requestId);
+        };
 
-                    // 第四步：等待所有资源加载后，发送“解析”指令
-                    setTimeout(() => {
-                        this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
-                    }, 3000);
+        document.body.appendChild(iframe);
+        iframe.src = proxyUrl;
 
-                } catch(e) { /* ... */ }
-            };
-            
-            document.body.appendChild(iframe);
-            iframe.src = initialProxyUrl;
-            
-        } catch (error) { /* ... */ }
+        // Set a timeout for the query
+        setTimeout(() => {
+            if (activeIFrames.has(requestId)) {
+                logError(`Query timeout for requestId: ${requestId}`);
+                sendPluginResult({ requestId, success: false, error: 'Query timed out after 30 seconds' });
+                cleanupIframe(requestId);
+            }
+        }, 30000);
+
+    } catch (error) {
+        logError(`Error in initiateQuery for requestId ${requestId}:`, error);
+        sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
     }
+}
+ 
     
  
  
