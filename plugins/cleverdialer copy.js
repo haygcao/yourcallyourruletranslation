@@ -330,112 +330,154 @@
   }
 
  
+ // cleverdialer.js
+// 这是一个独立的、完整的函数，可以直接替换您JS插件中的同名函数。
 
-    // --- 6. 核心业务逻辑 (最终版) ---
-    function initiateQuery(phoneNumber, requestId) {
-        log(`Initiating query for '${phoneNumber}'`);
-        try {
-            const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-            // 这个 URL 只用于加载主文档
-            const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+function initiateQuery(phoneNumber, requestId) {
+    log(`Initiating query for '${phoneNumber}'`);
+    try {
+        // --- 准备阶段: 定义所有需要的 URL 和头部 ---
+        // 目标网站的URL
+        const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
+        // 加载主文档时使用的HTTP头部
+        const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
+        // 第一次加载 iframe 时使用的代理 URL
+        const initialProxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
-            const iframe = document.createElement('iframe');
-            iframe.id = `query-iframe-${requestId}`;
-            iframe.style.display = 'none';
-            // 我们需要脚本权限来执行重写和解析
-            iframe.sandbox = 'allow-scripts'; 
-
-            activeIFrames.set(requestId, iframe);
-
-            iframe.onload = function() {
-                log(`Iframe loaded. Injecting URL rewriter and parser...`);
-
-                // 这个脚本将在 iframe 内部执行，完成所有清理和重写工作
- const rewriterAndSanitizerScript = `
-    (function() {
-        console.log('[JS-Layer] Running Rewriter & Interceptor...');
+        // --- Iframe 创建阶段 ---
+        const iframe = document.createElement('iframe');
+        iframe.id = `query-iframe-${requestId}`;
+        iframe.style.display = 'none';
         
-        const targetSearchUrl = '${targetSearchUrl}';
-        const origin = new URL(targetSearchUrl).origin;
-        const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
+        // 【关键 Sandbox 配置】
+        // - 'allow-scripts': 允许我们的注入脚本和网站原始脚本运行。
+        // - 'allow-same-origin': 允许我们的脚本修改 iframe 内部的原生 API (如 fetch)，这在严格沙箱中可能受限。
+        // 警告是正常的，因为我们正在创建一个强大的中间层来完全控制 iframe。
+        iframe.sandbox = 'allow-scripts allow-same-origin';
 
-        // --- 1. 重写所有静态资源的 URL (link, script, img) ---
-        const urlResolver = document.createElement('a');
-        document.querySelectorAll('link[href^="/"], script[src^="/"], img[src^="/"]').forEach(el => {
-            const attr = el.hasAttribute('href') ? 'href' : 'src';
-            const originalPath = el.getAttribute(attr);
-            urlResolver.href = originalPath;
-            const absoluteUrl = urlResolver.href;
-            const newProxyUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
-            el.setAttribute(attr, newProxyUrl);
-        });
-        console.log('[Rewriter] Static resource URLs rewritten.');
+        activeIFrames.set(requestId, iframe);
 
-        // --- 2. 劫持 fetch API 来处理动态的 API 请求 ---
-        const originalFetch = window.fetch;
-        window.fetch = function(url, options) {
-            // 将 fetch 的 URL 也转换为绝对路径
-            const absoluteUrl = new URL(url, origin + '/').toString();
-            console.log('[Interceptor] Intercepted a fetch request to:', absoluteUrl);
+        // --- Iframe 加载完成后的核心逻辑 ---
+        iframe.onload = function() {
+            log(`Iframe loaded. Injecting the Ultimate Interceptor & Parser...`);
+
+            // 这个脚本将作为我们的“JS中间层”，在 iframe 内部运行
+            const ultimateInterceptorScript = `
+                (function() {
+                    // 防止重复注入
+                    if (window.ultimateInterceptorActive) return;
+                    window.ultimateInterceptorActive = true;
+                    
+                    console.log('[JS-Layer] Activating...');
+                    
+                    const targetOrigin = new URL('${targetSearchUrl}').origin; // "https://www.cleverdialer.com"
+                    const proxyTemplateUrl = \`${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=\`;
+
+                    // ======================================================================================
+                    // == Part 1: URL Rewriter (针对静态资源) ==
+                    // 目标: HTML中所有写死的相对路径资源 (如 <script src="/js/...">, <link href="/css/...">)
+                    // 行为: 将它们的 src/href 属性，从 "/js/..." 重写为 "https://proxy.../?targetUrl=https://site.com/js/..."
+                    // ======================================================================================
+                    const urlResolver = document.createElement('a');
+                    document.querySelectorAll('link[href], script[src], img[src], a[href]').forEach(el => {
+                        const attr = el.hasAttribute('href') ? 'href' : 'src';
+                        const originalValue = el.getAttribute(attr);
+                        
+                        if (originalValue && !originalValue.startsWith('data:') && !originalValue.startsWith('${PROXY_SCHEME}')) {
+                            urlResolver.href = originalValue;
+                            const absoluteUrl = urlResolver.href;
+                            
+                            if (absoluteUrl.startsWith(targetOrigin)) {
+                                const newProxyUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
+                                el.setAttribute(attr, newProxyUrl);
+                            }
+                        }
+                    });
+                    console.log('[JS-Layer] SUCCESS: Static resource URLs rewritten.');
+
+                    // ======================================================================================
+                    // == Part 2: Fetch Interceptor (针对动态 JS 请求) ==
+                    // 目标: Phonenumber.js 内部发起的 fetch('/api/token') 等请求
+                    // 行为: 劫持 fetch 函数，将请求的 URL 包装成代理 URL 再发出
+                    // ======================================================================================
+                    const originalFetch = window.fetch;
+                    window.fetch = function(resource, options) {
+                        let requestUrl = resource instanceof Request ? resource.url : String(resource);
+                        const absoluteUrl = new URL(requestUrl, document.baseURI).toString();
+                        
+                        // 【您的保护层逻辑】
+                        // 只要请求发往目标域名，就无条件通过代理
+                        if (absoluteUrl.startsWith(targetOrigin)) {
+                            console.log('[JS-Layer] Intercepted fetch to:', absoluteUrl);
+                            const proxiedFetchUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
+                            
+                            if (resource instanceof Request) {
+                                // 如果是 Request 对象，需要基于它创建一个新的
+                                const newRequest = new Request(proxiedFetchUrl, resource);
+                                return originalFetch.call(this, newRequest);
+                            }
+                            return originalFetch.call(this, proxiedFetchUrl, options);
+                        }
+                        
+                        // 对于非目标域名的请求(如谷歌分析)，直接放行
+                        return originalFetch.apply(this, arguments);
+                    };
+                    console.log('[JS-Layer] SUCCESS: Dynamic fetch calls intercepted.');
+                    
+                    // ======================================================================================
+                    // == Part 3: Sanitizer (作为双重保险) ==
+                    // 目标: HTML中内联的 frame-busting eval 脚本
+                    // 行为: 在它有机会执行前，将其从 DOM 中物理移除
+                    // ======================================================================================
+                     document.querySelectorAll('script').forEach(s => {
+                        if (s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
+                            s.remove();
+                            console.log('[JS-Layer] SUCCESS: Inline frame-buster script removed.');
+                        }
+                    });
+                })();
+            `;
             
-            // 将这个绝对路径再次通过我们的代理
-            const proxiedFetchUrl = proxyTemplateUrl + encodeURIComponent(absoluteUrl);
-            
-            // 使用原始的 fetch 去请求我们构造的代理 URL
-            return originalFetch.call(this, proxiedFetchUrl, options);
+            // 最终的解析脚本
+            const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+
+            // --- 注入执行 ---
+            setTimeout(() => {
+                try {
+                    // 第一步：注入我们的“中间层”，它会立刻开始重写和劫持
+                    this.contentWindow.postMessage({ type: 'executeScript', script: ultimateInterceptorScript }, '*');
+                    
+                    // 第二步：给予足够的时间让所有子资源(CSS,JS,图片)通过被重写的URL重新加载
+                    setTimeout(() => {
+                        log('All sub-resources should be re-proxied now. Injecting parser.');
+                        // 第三步：注入解析脚本，此时页面是完整的、干净的
+                        this.contentWindow.postMessage({ type: 'executeScript', script: parsingScript }, '*');
+                    }, 1500); // 这个延迟是为了等待被代理的子资源加载完成
+
+                } catch (e) {
+                    logError(`Error injecting scripts into iframe:`, e);
+                    sendPluginResult({ requestId, success: false, error: `Injection failed: ${e.message}` });
+                    cleanupIframe(requestId);
+                }
+            }, 500); // 这个延迟是为了等待 iframe 内部的 Receiver 准备就绪
         };
-        console.log('[Interceptor] Fetch API has been intercepted and rerouted to proxy.');
+        
+        iframe.onerror = function() {
+             logError(`Iframe loading failed for requestId ${requestId}`);
+             sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+             cleanupIframe(requestId);
+        };
 
-        // --- 3. (双重保险) 剔除已知的有害脚本 ---
-        document.querySelectorAll('script').forEach(s => {
-            if (s.textContent.includes('eval(function(p,a,c,k,e,d)')) {
-                s.remove();
-                console.log('[Sanitizer] Removed inline frame-buster script.');
-            }
-        });
-    })();
-`;
-
-// 最终注入的脚本：先运行上面的重写和劫持，然后运行解析
-const finalScriptToInject = rewriterAndSanitizerScript + getParsingScript(PLUGIN_CONFIG.id, phoneNumber);      
-                 
-       
-     
-                setTimeout(() => {
-                    try {
-                        this.contentWindow.postMessage({ type: 'executeScript', script: finalScriptToInject }, '*');
-                    } catch (e) {
-                        logError(`[JS] Error injecting scripts:`, e);
-                        sendPluginResult({ requestId, success: false, error: `Injection failed: ${e.message}` });
-                        cleanupIframe(requestId);
-                    }
-                }, 700); // 给予充足时间让 iframe 内部的 Receiver 准备好
-            };
-            
-            iframe.onerror = function() {
-                 logError(`Iframe loading failed for requestId ${requestId}`);
-                 sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-                 cleanupIframe(requestId);
-            };
-
-            document.body.appendChild(iframe);
-            iframe.src = initialProxyUrl;
-            
-        } catch (error) {
-            logError(`[JS] Error in setup:`, error);
-            sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
-        }
+        // --- 启动加载 ---
+        document.body.appendChild(iframe);
+        iframe.src = initialProxyUrl;
+        
+    } catch (error) {
+        logError(`Error in setup:`, error);
+        sendPluginResult({ requestId, success: false, error: `Query setup failed: ${error.message}` });
     }
-
-
- 
- 
- 
-
- 
- 
- 
+}
+    
  
  
 
