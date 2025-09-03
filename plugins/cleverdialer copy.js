@@ -4,7 +4,7 @@
   const PLUGIN_CONFIG = {
       id: 'cleverdialerPlugin',
       name: 'Cleverdialer (iframe Proxy)',
-      version: '5.5.0', // Adopted from bd.js
+      version: '5.6.0', // Adopted from bd.js
       description: 'Queries cleverdialer.com for phone number information using an iframe proxy.'
   };
 
@@ -329,6 +329,7 @@
       `;
   }
 
+ 
  function initiateQuery(phoneNumber, requestId) {
     log(`Initiating query for '${phoneNumber}' (requestId: ${requestId})`);
     try {
@@ -343,118 +344,152 @@
         iframe.sandbox = 'allow-scripts allow-same-origin';
         activeIFrames.set(requestId, iframe);
 
-        iframe.onload = function() {
-            log(`Iframe loaded for requestId ${requestId}. Injecting network interceptor...`);
-            try {
-                // First inject the network interceptor to handle all subsequent requests
-                const networkInterceptorScript = `
-                    (function() {
-                        if (window.networkInterceptorInjected) return;
-                        window.networkInterceptorInjected = true;
-                        
-                        console.log('[Network-Interceptor] Activating for cleverdialer.com...');
-                        
-                        const TARGET_ORIGIN = 'https://www.cleverdialer.com';
-                        const PROXY_TEMPLATE = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=';
-                        
-                        // Set the correct base href to resolve relative URLs properly
-                        if (!document.querySelector('base[href*="cleverdialer.com"]')) {
-                            const baseElement = document.createElement('base');
-                            baseElement.href = TARGET_ORIGIN + '/';
-                            document.head.insertBefore(baseElement, document.head.firstChild);
-                        }
-                        
-                        // Intercept fetch requests
-                        const originalFetch = window.fetch;
-                        window.fetch = function(resource, options = {}) {
-                            let url = resource;
-                            if (resource instanceof Request) {
-                                url = resource.url;
-                            }
+        // Create a data URL with pre-processed content instead of loading directly
+        fetch(proxyUrl)
+            .then(response => response.text())
+            .then(html => {
+                // Rewrite relative URLs to use the proxy
+                const TARGET_ORIGIN = 'https://www.cleverdialer.com';
+                const rewrittenHtml = html
+                    // Rewrite CSS links
+                    .replace(/href=["']\/([^"']+\.css[^"']*)/g, `href="${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(TARGET_ORIGIN)}%2F$1"`)
+                    // Rewrite JS script sources
+                    .replace(/src=["']\/([^"']+\.js[^"']*)/g, `src="${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(TARGET_ORIGIN)}%2F$1"`)
+                    // Rewrite other absolute path resources
+                    .replace(/src=["']\/([^"']+)/g, `src="${TARGET_ORIGIN}/$1"`)
+                    .replace(/href=["']\/([^"']+)/g, `href="${TARGET_ORIGIN}/$1"`);
+
+                // Inject both the receiver script AND network interceptor at the beginning
+                const enhancedHtml = rewrittenHtml.replace('<head>', `<head>
+                    <script type="text/javascript">
+                        // Network interceptor - must be injected BEFORE any other scripts load
+                        (function() {
+                            console.log('[Network-Interceptor] Activating for cleverdialer.com...');
                             
-                            // Convert relative URLs to absolute
-                            const absoluteUrl = new URL(url, TARGET_ORIGIN).toString();
+                            const TARGET_ORIGIN = '${TARGET_ORIGIN}';
+                            const PROXY_TEMPLATE = '${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=';
                             
-                            // Only proxy requests to the target domain
-                            if (absoluteUrl.startsWith(TARGET_ORIGIN)) {
-                                const proxiedUrl = PROXY_TEMPLATE + encodeURIComponent(absoluteUrl);
-                                console.log('[Network-Interceptor] Proxying fetch:', absoluteUrl, '->', proxiedUrl);
-                                
+                            // Intercept fetch requests
+                            const originalFetch = window.fetch;
+                            window.fetch = function(resource, options = {}) {
+                                let url = resource;
                                 if (resource instanceof Request) {
-                                    return originalFetch.call(this, new Request(proxiedUrl, {
-                                        method: resource.method,
-                                        headers: resource.headers,
-                                        body: resource.body,
-                                        mode: 'cors',
-                                        ...options
-                                    }));
+                                    url = resource.url;
                                 }
-                                return originalFetch.call(this, proxiedUrl, { mode: 'cors', ...options });
-                            }
-                            
-                            return originalFetch.apply(this, arguments);
-                        };
-                        
-                        // Intercept XMLHttpRequest
-                        const OriginalXHR = window.XMLHttpRequest;
-                        window.XMLHttpRequest = function() {
-                            const xhr = new OriginalXHR();
-                            const originalOpen = xhr.open;
-                            
-                            xhr.open = function(method, url, ...args) {
+                                
+                                // Convert relative URLs to absolute, then proxy if needed
                                 const absoluteUrl = new URL(url, TARGET_ORIGIN).toString();
                                 
                                 if (absoluteUrl.startsWith(TARGET_ORIGIN)) {
                                     const proxiedUrl = PROXY_TEMPLATE + encodeURIComponent(absoluteUrl);
-                                    console.log('[Network-Interceptor] Proxying XHR:', absoluteUrl, '->', proxiedUrl);
-                                    return originalOpen.call(this, method, proxiedUrl, ...args);
+                                    console.log('[Network-Interceptor] Proxying fetch:', absoluteUrl, '->', proxiedUrl);
+                                    
+                                    if (resource instanceof Request) {
+                                        return originalFetch.call(this, new Request(proxiedUrl, {
+                                            method: resource.method,
+                                            headers: resource.headers,
+                                            body: resource.body,
+                                            mode: 'cors',
+                                            ...options
+                                        }));
+                                    }
+                                    return originalFetch.call(this, proxiedUrl, { mode: 'cors', ...options });
                                 }
                                 
-                                return originalOpen.call(this, method, url, ...args);
+                                return originalFetch.apply(this, arguments);
                             };
                             
-                            return xhr;
-                        };
+                            // Intercept XMLHttpRequest
+                            const OriginalXHR = window.XMLHttpRequest;
+                            window.XMLHttpRequest = function() {
+                                const xhr = new OriginalXHR();
+                                const originalOpen = xhr.open;
+                                
+                                xhr.open = function(method, url, ...args) {
+                                    const absoluteUrl = new URL(url, TARGET_ORIGIN).toString();
+                                    
+                                    if (absoluteUrl.startsWith(TARGET_ORIGIN)) {
+                                        const proxiedUrl = PROXY_TEMPLATE + encodeURIComponent(absoluteUrl);
+                                        console.log('[Network-Interceptor] Proxying XHR:', absoluteUrl, '->', proxiedUrl);
+                                        return originalOpen.call(this, method, proxiedUrl, ...args);
+                                    }
+                                    
+                                    return originalOpen.call(this, method, url, ...args);
+                                };
+                                
+                                return xhr;
+                            };
+                            
+                            // Copy static properties
+                            Object.setPrototypeOf(window.XMLHttpRequest, OriginalXHR);
+                            Object.defineProperties(window.XMLHttpRequest, Object.getOwnPropertyDescriptors(OriginalXHR));
+                            
+                            console.log('[Network-Interceptor] Network interception is active.');
+                        })();
                         
-                        // Copy static properties
-                        Object.setPrototypeOf(window.XMLHttpRequest, OriginalXHR);
-                        Object.defineProperties(window.XMLHttpRequest, Object.getOwnPropertyDescriptors(OriginalXHR));
-                        
-                        console.log('[Network-Interceptor] All network requests will now be proxied.');
-                    })();
-                `;
+                        // Message receiver
+                        (function() {
+                            console.log('[Injected-Receiver] Hello from the script injected by Flutter!');
+                            
+                            function handleMessage(event) {
+                                if (event.data && event.data.type === 'executeScript') {
+                                    console.log('[Injected-Receiver] Received a script to execute from parent window.');
+                                    try {
+                                        eval(event.data.script);
+                                        console.log('[Injected-Receiver] Script execution started.');
+                                    } catch (e) {
+                                        console.error('[Injected-Receiver] Error executing script via eval:', e);
+                                        window.parent.postMessage({ type: 'phoneQueryResult', data: { success: false, error: 'Eval execution failed: ' + e.toString() } }, '*');
+                                    }
+                                }
+                            }
+                            
+                            window.removeEventListener('message', handleMessage);
+                            window.addEventListener('message', handleMessage, false);
+                            
+                            console.log('[Injected-Receiver] Message listener is now active and waiting for commands.');
+                        })();
+                    </script>
+                `);
 
-                // Inject the network interceptor immediately
-                iframe.contentWindow.postMessage({
-                    type: 'executeScript',
-                    script: networkInterceptorScript
-                }, '*');
+                // Create a data URL with the processed HTML
+                const dataUrl = 'data:text/html;charset=utf-8,' + encodeURIComponent(enhancedHtml);
+                
+                iframe.onload = function() {
+                    log(`Iframe loaded for requestId ${requestId}. Content pre-processed.`);
+                    
+                    // Wait for page to fully load before injecting parsing script
+                    setTimeout(() => {
+                        try {
+                            const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                            iframe.contentWindow.postMessage({
+                                type: 'executeScript',
+                                script: parsingScript
+                            }, '*');
+                            log(`Parsing script posted to iframe for requestId: ${requestId}`);
+                        } catch (e) {
+                            logError(`Error posting script to iframe for requestId ${requestId}:`, e);
+                            sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
+                            cleanupIframe(requestId);
+                        }
+                    }, 2000); // Give more time for resources to load
+                };
 
-                // Wait a bit for the interceptor to be set up, then inject parsing script
-                setTimeout(() => {
-                    const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                    iframe.contentWindow.postMessage({
-                        type: 'executeScript',
-                        script: parsingScript
-                    }, '*');
-                    log(`Parsing script posted to iframe for requestId: ${requestId}`);
-                }, 1000); // Increased delay to ensure page and scripts load properly
+                iframe.onerror = function() {
+                    logError(`Iframe error for requestId ${requestId}`);
+                    sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+                    cleanupIframe(requestId);
+                };
 
-            } catch (e) {
-                logError(`Error posting script to iframe for requestId ${requestId}:`, e);
-                sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
+                document.body.appendChild(iframe);
+                iframe.src = dataUrl;
+                
+            })
+            .catch(error => {
+                logError(`Error fetching initial content for requestId ${requestId}:`, error);
+                sendPluginResult({ requestId, success: false, error: `Failed to fetch initial content: ${error.message}` });
                 cleanupIframe(requestId);
-            }
-        };
-
-        iframe.onerror = function() {
-            logError(`Iframe error for requestId ${requestId}`);
-            sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-            cleanupIframe(requestId);
-        };
-
-        document.body.appendChild(iframe);
-        iframe.src = proxyUrl;
+            });
 
         // Set a timeout for the query
         setTimeout(() => {
@@ -470,7 +505,6 @@
         sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
     }
 }
- 
     
  
  
