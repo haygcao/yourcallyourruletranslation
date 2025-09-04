@@ -313,6 +313,14 @@
               function findAndParse() {
                   if (parsingCompleted) return;
                   console.log('[Iframe-Parser] Starting parse attempt...');
+
+                // 在解析之前，打印出整个文档的 HTML 内容快照
+                // 我们用 document.documentElement.outerHTML 来获取包括 <html> 标签在内的所有内容
+                console.log('--- IFRAME HTML SNAPSHOT START ---');
+                console.log(document.documentElement.outerHTML);
+                console.log('--- IFRAME HTML SNAPSHOT END ---');
+                // ==========================================================
+
                   const finalResult = parseContent(window.document);
                   if (finalResult && finalResult.success !== false) { // Check for explicit success=false from parseContent
                       sendResult(finalResult);
