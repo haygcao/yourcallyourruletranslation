@@ -384,7 +384,7 @@
                   sendPluginResult({ requestId, success: false, error: 'Query timed out after 30 seconds' });
                   cleanupIframe(requestId);
               }
-          }, 30000);
+          }, 80000);
 
       } catch (error) {
           logError(`Error in initiateQuery for requestId ${requestId}:`, error);
