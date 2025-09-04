@@ -313,14 +313,6 @@
               function findAndParse() {
                   if (parsingCompleted) return;
                   console.log('[Iframe-Parser] Starting parse attempt...');
-
-                // 在解析之前，打印出整个文档的 HTML 内容快照
-                // 我们用 document.documentElement.outerHTML 来获取包括 <html> 标签在内的所有内容
-                console.log('--- IFRAME HTML SNAPSHOT START ---');
-                console.log(document.documentElement.outerHTML);
-                console.log('--- IFRAME HTML SNAPSHOT END ---');
-                // ==========================================================
-
                   const finalResult = parseContent(window.document);
                   if (finalResult && finalResult.success !== false) { // Check for explicit success=false from parseContent
                       sendResult(finalResult);
@@ -343,7 +335,9 @@
           // Updated target URL for cleverdialer.com
           const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
           const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+                  // ▼▼▼ 只需修改这里 ▼▼▼
+        const originalOrigin = new URL(targetSearchUrl).origin;
+        const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?requestId=${encodeURIComponent(requestId)}&originalOrigin=${encodeURIComponent(originalOrigin)}&targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
           log(`Iframe proxy URL: ${proxyUrl}`);
 
           const iframe = document.createElement('iframe');
@@ -384,7 +378,7 @@
                   sendPluginResult({ requestId, success: false, error: 'Query timed out after 30 seconds' });
                   cleanupIframe(requestId);
               }
-          }, 80000);
+          }, 30000);
 
       } catch (error) {
           logError(`Error in initiateQuery for requestId ${requestId}:`, error);
