@@ -197,7 +197,8 @@
 
                   try {
                     // --- Parsing logic from the original cleverdialer.js extractDataFromDOM function ---
-                                                                                                            
+
+
                     const bodyElement = doc.body;
                     if (!bodyElement) {
                       console.error('[Iframe-Parser] Error: Could not find body element.');
@@ -208,12 +209,12 @@
                     const callTypeCell = doc.querySelector('#comments .container-recent-comments td.callertype'); // Directly get the FIRST td.callertype
                     if (callTypeCell) {
                         const labelText = callTypeCell.textContent.trim();
-                        jsonObject.sourceLabel = labelText;
-                        jsonObject.predefinedLabel = manualMapping[labelText] || 'Unknown';
+                        result.sourceLabel = labelText;
+                        result.predefinedLabel = manualMapping[labelText] || 'Unknown';
                     }
 
                     // --- Priority 2: Label and Count from Rating ---
-                    if (!jsonObject.predefinedLabel) { // Only if Priority 1 didn't find a label
+                    if (!result.predefinedLabel) { // Only if Priority 1 didn't find a label
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
@@ -233,20 +234,20 @@
                                         if(starRating === textRating){
                                             // Map star rating to label
                                             if (starRating === 1) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely';
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely';
                                             } else if (starRating === 2) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely'; //"Enervante"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely'; //"Enervante"
                                             } else if (starRating === 3) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Unknown'; // "Neutral"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other'; //  "Positivo"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other';  //"Excelente"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
                                     }
@@ -298,12 +299,12 @@
                         }
                     }
 
-                   jsonObject.count = count; // Assign the final count (either primary or fallback)
+                   result.count = count; // Assign the final count (either primary or fallback)
                     // --- Extract City ---
                 // --- Extract City ---
                 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
                 if (cityElement) {
-                    jsonObject.city = cityElement.textContent.trim();
+                    result.city = cityElement.textContent.trim();
                 }
 
                     // --- Set Success Flag ---
@@ -345,8 +346,8 @@
                    // =================================================================
                    // ▲▲▲ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▲▲▲
 
-                    console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
-                    return jsonObject;
+                    console.log('[Iframe-Parser] Final result object:', result);
+                    return result;
 
                   } catch (e) {
                       console.error('[Iframe-Parser] Error during parsing:', e);

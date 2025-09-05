@@ -1,0 +1,166 @@
+  function getParsingScript(pluginId, phoneNumberToQuery) {
+      return `
+          (function() {
+              const PLUGIN_ID = '${pluginId}';
+              const PHONE_NUMBER = '${phoneNumberToQuery}';
+              const manualMapping = ${JSON.stringify(manualMapping)};
+              const blockKeywords = ${JSON.stringify(blockKeywords)};
+              const allowKeywords = ${JSON.stringify(allowKeywords)};
+              let parsingCompleted = false;
+
+              function sendResult(result) {
+                  if (parsingCompleted) return;
+                  parsingCompleted = true;
+                  console.log('[Iframe-Parser] Sending result back to parent:', result);
+                  window.parent.postMessage({ type: 'phoneQueryResult', data: { pluginId: PLUGIN_ID, ...result } }, '*');
+              }
+
+              function parseContent(doc) {
+                  console.log('[Iframe-Parser] Attempting to parse content in document.');
+                  // Use a single, authoritative result object from the start.
+                  const result = {
+                      phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
+                      name: 'Unknown', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: '',
+                      action: 'none'
+                  };
+
+                  try {
+                    const bodyElement = doc.body;
+                    if (!bodyElement) {
+                      console.error('[Iframe-Parser] Error: Could not find body element.');
+                      result.error = 'Body element not found.';
+                      return result;
+                    }
+
+                    // --- Priority 1: Label from *FIRST* Recent Comment ---
+                    const callTypeCell = doc.querySelector('#comments .container-recent-comments td.callertype');
+                    if (callTypeCell) {
+                        const labelText = callTypeCell.textContent.trim();
+                        result.sourceLabel = labelText;
+                        result.predefinedLabel = manualMapping[labelText] || 'Unknown';
+                    }
+
+                    // --- Priority 2: Label from Rating (only if not found above) ---
+                    if (!result.predefinedLabel || result.predefinedLabel === 'Unknown') {
+                      const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
+                        if (ratingDiv) {
+                            const classValue = ratingDiv.className;
+                            const starMatch = classValue.match(/stars-(\\d)/);
+                            if (starMatch) {
+                                 const starRating = parseInt(starMatch[1], 10);
+                                 const ratingTextSpan = doc.querySelector('.rating-text span:first-child');
+                                 if (ratingTextSpan) {
+                                     const textRatingMatch = ratingTextSpan.textContent.match(/(\\d)\\s+de\\s+5/);
+                                     if (textRatingMatch) {
+                                         const textRating = parseInt(textRatingMatch[1], 10);
+                                         if (starRating === textRating) {
+                                             if (starRating <= 2) {
+                                                 result.sourceLabel = result.sourceLabel || 'stars-' + starRating;
+                                                 result.predefinedLabel = 'Spam Likely';
+                                             } else if (starRating === 3) {
+                                                 result.sourceLabel = result.sourceLabel || 'stars-' + starRating;
+                                                 result.predefinedLabel = 'Unknown';
+                                             } else {
+                                                 result.sourceLabel = result.sourceLabel || 'stars-' + starRating;
+                                                 result.predefinedLabel = 'Other';
+                                             }
+                                         }
+                                     }
+                                 }
+                            }
+                        }
+                    }
+
+                    // --- Extract Count (Handle both numbers and words) ---
+                    const countSpan = doc.querySelector('.rating-text .nowrap');
+                    let count = 0;
+                    if (countSpan) {
+                        const countText = countSpan.textContent.trim();
+                        const wordToNumber = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten', 'uno': 1, 'dos': 2, 'tres': 3, 'cuatro': 4, 'cinco': 5, 'seis': 6, 'siete': 7, 'ocho': 8, 'nueve': 9, 'diez': 10, 'ein': 1, 'eine': 1, 'einer': 1,'eins':1, 'zwei': 2, 'drei': 3, 'vier': 4, 'fünf': 5, 'sechs': 6, 'sieben': 7, 'acht': 8, 'neun': 9, 'zehn': 10};
+                        const wordMatch = countText.match(/ (one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn) /i);
+                        if (wordMatch) {
+                            count = wordToNumber[wordMatch[1].toLowerCase()] || 0;
+                        } else {
+                            const numberMatch = countText.match(/(\\d+)\\s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
+                            if (numberMatch) {
+                                count = parseInt(numberMatch[1], 10) || 0;
+                            }
+                        }
+                    }
+                    if (count === 0) {
+                        const blockedCountH4 = doc.querySelector('.list-element-information .text-blocked');
+                        if (blockedCountH4) {
+                            const blockedCountText = blockedCountH4.textContent.trim();
+                            const blockedNumberMatch = blockedCountText.match(/(\\d+)/);
+                            if (blockedNumberMatch) {
+                                count = parseInt(blockedNumberMatch[1], 10) || 0;
+                            }
+                        }
+                    }
+                    result.count = count;
+
+                    // --- Extract City ---
+                    const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
+                    if (cityElement) {
+                        result.city = cityElement.textContent.trim();
+                    }
+                    
+                    // --- Set Success Flag ---
+                    if (result.predefinedLabel && result.predefinedLabel !== 'Unknown' && result.predefinedLabel !== '') {
+                        result.success = true;
+                    } else if (result.city) {
+                        result.success = true; 
+                    }
+
+                    // --- Action Logic ---
+                    if (result.success) {
+                       const labelToCheck = result.predefinedLabel || result.sourceLabel;
+                       if (labelToCheck) {
+                           console.log('[Iframe-Parser] Determining action based on label:', labelToCheck);
+                           let determinedAction = 'none';
+                           for (const keyword of blockKeywords) {
+                               if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                   determinedAction = 'block';
+                                   break;
+                               }
+                           }
+                           if (determinedAction === 'none') {
+                               for (const keyword of allowKeywords) {
+                                   if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                       determinedAction = 'allow';
+                                       break;
+                                   }
+                               }
+                           }
+                           result.action = determinedAction;
+                           console.log('[Iframe-Parser] Action determined as:', result.action);
+                       }
+                    }
+
+                    console.log('[Iframe-Parser] Final result object:', result);
+                    return result; // Always return the single, authoritative result object.
+
+                  } catch (e) {
+                      console.error('[Iframe-Parser] Error during parsing:', e);
+                      result.error = e.toString();
+                      return result;
+                  }
+              }
+
+              function findAndParse() {
+                  if (parsingCompleted) return;
+                  console.log('[Iframe-Parser] Starting parse attempt...');
+                  const finalResult = parseContent(window.document);
+                  if (finalResult && finalResult.success) {
+                      sendResult(finalResult);
+                  } else {
+                      console.error('[Iframe-Parser] Failed to parse content or parsing indicated failure.');
+                      sendResult({ success: false, error: finalResult ? finalResult.error : 'Could not parse meaningful content.' });
+                  }
+              }
+
+              console.log('[Iframe-Parser] Parsing script has started execution for phone: ' + PHONE_NUMBER);
+              setTimeout(findAndParse, 500);
+          })();
+      `;
+  }
