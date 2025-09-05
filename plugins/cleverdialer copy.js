@@ -115,7 +115,20 @@
       'Werbung': 'Telemarketing',
       'Bitte auswählen': 'Unknown'
   };
-
+  // Keywords for determining the 'action' field
+  const blockKeywords = [
+    'Fraud', 'Scam', 'Spam', 'Telemarketing', 'Robocall', 'Debt Collection', 'Risk',
+    'Phishing', 'Dudoso', 'Enervante', 'Trampa de costos', 'Agencia de cobranza',
+    'Betrug', 'Kostenfalle', 'Unseriös', 'Werbung', 'Verkauf', 'Daueranrufe'
+    
+  ];
+  
+  const allowKeywords = [
+    'Delivery', 'Takeaway', 'Ridesharing', 'Customer Service', 'Medical', 'Charity', 'Support', 'Bank',
+    'Prestación de Servicio', 'Servicio al cliente', 'Salud', 'Donación', 'Soporte',
+    'Dienstleistung', 'Kundendienst', 'Gesundheit', 'Spenden'
+    
+  ];
   // --- Constants, State, Logging, and Communication functions - Adopted from bd.js ---
   const PROXY_SCHEME = "https";
   const PROXY_HOST = "flutter-webview-proxy.internal";
@@ -164,6 +177,8 @@
               const PHONE_NUMBER = '${phoneNumberToQuery}';
               const manualMapping = ${JSON.stringify(manualMapping)};
               const predefinedLabels = ${JSON.stringify(predefinedLabels)};
+              const blockKeywords = ${JSON.stringify(blockKeywords)};
+              const allowKeywords = ${JSON.stringify(allowKeywords)};
               let parsingCompleted = false;
 
               function sendResult(result) {
@@ -177,21 +192,12 @@
                   console.log('[Iframe-Parser] Attempting to parse content in document.');
                   const result = {
                       phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                      name: '', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: ''
+                      name: '', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: '', action: 'none'
                   };
 
                   try {
                     // --- Parsing logic from the original cleverdialer.js extractDataFromDOM function ---
-                    const jsonObject = {
-                      count: 0,
-                      sourceLabel: "",
-                      province: "",
-                      city: "",
-                      carrier: "",
-                      phoneNumber: PHONE_NUMBER,
-                      name: "Unknown"
-                    };
-
+                                                                                                            
                     const bodyElement = doc.body;
                     if (!bodyElement) {
                       console.error('[Iframe-Parser] Error: Could not find body element.');
@@ -299,6 +305,45 @@
                 if (cityElement) {
                     jsonObject.city = cityElement.textContent.trim();
                 }
+
+                    // --- Set Success Flag ---
+                    if (result.predefinedLabel && result.predefinedLabel !== 'Unknown' && result.predefinedLabel !== '') {
+                        result.success = true;
+                    } else if (result.city) {
+                        result.success = true; 
+                    }
+
+
+                   // ▼▼▼ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▼▼▼
+                   // =================================================================
+                   if (result.success) {
+                       const labelToCheck = result.predefinedLabel || result.sourceLabel;
+                       if (labelToCheck) {
+                           console.log('[Iframe-Parser] Determining action based on label:', labelToCheck);
+                           let determinedAction = 'none';
+
+                           for (const keyword of blockKeywords) {
+                               if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                   determinedAction = 'block';
+                                   break;
+                               }
+                           }
+
+                           if (determinedAction === 'none') {
+                               for (const keyword of allowKeywords) {
+                                   if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                       determinedAction = 'allow';
+                                       break;
+                                   }
+                               }
+                           }
+                           
+                           result.action = determinedAction;
+                           console.log('[Iframe-Parser] Action determined as:', result.action);
+                       }
+                   }
+                   // =================================================================
+                   // ▲▲▲ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▲▲▲
 
                     console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
                     return jsonObject;
