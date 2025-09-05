@@ -3,7 +3,7 @@
   // --- Plugin Configuration ---
   const PLUGIN_CONFIG = {
       id: 'cleverdialerdePlugin',
-      name: 'Cleverdialer DE (iframe Proxy)',
+      name: 'Cleverdialer DE',
       version: '5.5.0', // Adopted from bd.js
       description: 'Queries cleverdialer.de for phone number information using an iframe proxy.'
   };
@@ -95,13 +95,13 @@
       'SUPPORT': 'Customer Service', // Or 'Support'
       'SURVEY': 'Survey',
       'SWEEPSTAKE': 'Other', // Could be 'Risk' if it involves gambling
-      'Beratung': 'Other',               // German mappings
+      'Beratung': 'Other',
       'Crypto Betrug': 'Fraud Scam Likely',
       'Daueranrufe': 'Spam Likely',
       'Dienstleistung': 'Customer Service',
-      'Geschäft': 'Other', // Could be more specific
+      'Geschäft': 'Other',
       'Gesundheit': 'Medical',
-      'Gewinnspiel': 'Other', // Could be 'Risk'
+      'Gewinnspiel': 'Other',
       'Inkassounternehmen': 'Debt Collection',
       'Kostenfalle': 'Fraud Scam Likely',
       'Kundendienst': 'Customer Service',
@@ -113,8 +113,22 @@
       'Unseriös': 'Spam Likely',
       'Verkauf': 'Telemarketing',
       'Werbung': 'Telemarketing',
-      'Bitte auswählen': 'Unknown'
-  };
+      'Bitte auswählen': 'Unknown',
+      'Anrufbeantworter': 'Other',
+      'Automatischer Anruf': 'Robocall',
+      'Bandansage': 'Robocall',
+      'Belästigung': 'Spam Likely',
+      'Betrugsversuch': 'Fraud Scam Likely',
+      'Nicht Abnehmen': 'Spam Likely',
+      'Nummer Blockieren': 'Spam Likely',
+      'Rückruf': 'Other',
+      'Telefonterror': 'Spam Likely',
+      'Unerwünschter Anruf': 'Spam Likely',
+      'Unbekannt': 'Unknown',
+      'Vorsicht Betrug': 'Fraud Scam Likely',
+      'Werbeanruf': 'Telemarketing'
+  }
+  
 
   // --- Constants, State, Logging, and Communication functions - Adopted from bd.js ---
   const PROXY_SCHEME = "https";
@@ -182,32 +196,73 @@
 
                   try {
                     // --- Parsing logic from the original cleverdialerde.js extractDataFromDOM function ---
-                    const jsonObject = {
+
+                    const blockKeywords = [
+                        "Werbeanruf", "Telefonterror", "Spam Anruf", "Aggressive Werbung", "Unerwünschter Anruf",
+                        "Cold Call", "Betrugsversuch", "Phishing", "Datenmissbrauch", "Abzocke",
+                        "Gewinnspiel Falle", "Kostenfalle", "Inkasso", "Meinungsforschung", "Umfrage",
+                        "Callcenter", "Ping Anruf", "Automatischer Anruf", "Bandansage", "Vorsicht Betrug",
+                        "Nicht Abnehmen", "Nummer Blockieren", "Unseriös", "Belästigung", "Nervig",
+                        "Unbekannt", "Anrufbeantworter", "Rückruf" // Added common German spam/unwanted call terms
+                    ];
+
+                    const allowKeywords = [
+                        "Seriös", "Wichtig", "Kundenbetreuung", "Service", "Bestellung",
+                        "Lieferung", "Termin", "Bank", "Versicherung", "Support",
+                        "Rückfrage", "Information", "Beratung", "Geschäftlich", "Privat",
+                        "Bekannt", "Freundlich", "Hilfreich", "Vertrag", "Rechnung",
+                        "Zahlung", "Bestätigung", "Erinnerung", "Hotline", "Kundendienst"
+                    ];
+                    const result = {
                       count: 0,
                       sourceLabel: "",
+                      predefinedLabel: "",
                       province: "",
                       city: "",
                       carrier: "",
                       phoneNumber: PHONE_NUMBER,
-                      name: "Unknown"
+                      name: "Unknown",
+                      action: "None",
+                      success: true
                     };
 
                     const bodyElement = doc.body;
                     if (!bodyElement) {
                       console.error('[Iframe-Parser] Error: Could not find body element.');
-                      return null;
+                      result.success = false;
+                      result.error = 'Could not find body element.';
+                      return result;
+                    }
+
+                    // Determine action based on sourceLabel and predefinedLabel
+                    let labelToCheck = result.sourceLabel || result.predefinedLabel;
+
+                    if (labelToCheck) {
+                        labelToCheck = labelToCheck.toLowerCase();
+                        const isBlocked = blockKeywords.some(keyword => labelToCheck.includes(keyword.toLowerCase()));
+                        const isAllowed = allowKeywords.some(keyword => labelToCheck.includes(keyword.toLowerCase()));
+
+                        if (isBlocked) {
+                            result.action = "Block";
+                        } else if (isAllowed) {
+                            result.action = "Allow";
+                        } else if (manualMapping[result.sourceLabel]) { // Check if sourceLabel has a direct manual mapping
+                            result.action = manualMapping[result.sourceLabel].toLowerCase().includes('spam') ? "Block" : "None";
+                        } else {
+                            result.action = "None";
+                        }
                     }
 
                     // --- Priority 1: Label from *FIRST* Recent Comment ---
                     const callTypeCell = doc.querySelector('#comments .container-recent-comments td.callertype'); // Directly get the FIRST td.callertype
                     if (callTypeCell) {
                         const labelText = callTypeCell.textContent.trim();
-                        jsonObject.sourceLabel = labelText;
-                        jsonObject.predefinedLabel = manualMapping[labelText] || 'Unknown';
+                        result.sourceLabel = labelText;
+                        result.predefinedLabel = manualMapping[labelText] || 'Unknown';
                     }
 
                     // --- Priority 2: Label and Count from Rating ---
-                    if (!jsonObject.predefinedLabel) { // Only if Priority 1 didn't find a label
+                    if (!result.predefinedLabel) { // Only if Priority 1 didn't find a label
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
@@ -227,20 +282,20 @@
                                         if(starRating === textRating){
                                             // Map star rating to label
                                             if (starRating === 1) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely';
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely';
                                             } else if (starRating === 2) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely'; //"Enervante"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely'; //"Enervante"
                                             } else if (starRating === 3) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Unknown'; // "Neutral"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other'; //  "Positivo"
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other';  //"Excelente"
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
                                     }
@@ -292,18 +347,18 @@
                         }
                     }
 
-                   jsonObject.count = count; // Assign the final count (either primary or fallback)
+                   result.count = count; // Assign the final count (either primary or fallback)
 
 
                     // --- Extract City ---
                 // --- Extract City ---
                 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
                 if (cityElement) {
-                    jsonObject.city = cityElement.textContent.trim();
+                    result.city = cityElement.textContent.trim();
                 }
 
-                    console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
-                    return jsonObject;
+                    console.log('[Iframe-Parser] Final result:', result);
+                    return result;
 
                   } catch (e) {
                       console.error('[Iframe-Parser] Error during parsing:', e);

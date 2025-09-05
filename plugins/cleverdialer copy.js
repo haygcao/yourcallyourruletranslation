@@ -116,19 +116,49 @@
       'Bitte auswählen': 'Unknown'
   };
   // Keywords for determining the 'action' field
-  const blockKeywords = [
-    'Fraud', 'Scam', 'Spam', 'Telemarketing', 'Robocall', 'Debt Collection', 'Risk',
-    'Phishing', 'Dudoso', 'Enervante', 'Trampa de costos', 'Agencia de cobranza',
-    'Betrug', 'Kostenfalle', 'Unseriös', 'Werbung', 'Verkauf', 'Daueranrufe'
-    
+   const blockKeywords = [
+    // Mapped Predefined Labels (English)
+    'Fraud Scam Likely', 'Spam Likely', 'Telemarketing', 'Robocall', 'Debt Collection', 'Risk', 
+    'Silent Call Voice Clone', 
+    // Source Labels (Spanish)
+    'Dudoso', 'Fraude criptográfico', 'Llamada Ping', 'Llamadas recurrentes', 'Phishing', 'Publicidad', 
+    'Trampa de costos', 'Ventas', 'Agencia de cobranza', 'Enervante',
+    // Source Labels (English from a different source)
+    'COMMERCIAL', 'CONTINUOUS_CALLS', 'COST_TRAP', 'CRYPTO_FRAUD', 'DEBT_COLLECTION_AGENCY',
+    'DUBIOUS', 'PHISHING', 'SALES',
+    // Source Labels (German)
+    'Crypto Betrug', 'Daueranrufe', 'Inkassounternehmen', 'Kostenfalle', 'Ping Anruf', 
+    'Unseriös', 'Verkauf', 'Werbung',
+    // Generic Spam terms
+    'Spam'
   ];
   
   const allowKeywords = [
-    'Delivery', 'Takeaway', 'Ridesharing', 'Customer Service', 'Medical', 'Charity', 'Support', 'Bank',
-    'Prestación de Servicio', 'Servicio al cliente', 'Salud', 'Donación', 'Soporte',
-    'Dienstleistung', 'Kundendienst', 'Gesundheit', 'Spenden'
-    
+    // Mapped Predefined Labels (English)
+    'Delivery', 'Takeaway', 'Ridesharing', 'Insurance', 'Loan', 'Customer Service', 'Bank',
+    'Education', 'Medical', 'Charity', 'Survey', 'Ecommerce', 'Recruiter', 'Headhunter',
+    'Internet', 'Travel Ticketing', 'Application Software', 'Entertainment', 'Government',
+    'Local Services', 'Automotive Industry', 'Car Rental', 'Telecommunication', 'Financial', 'Agent',
+    // Source Labels (Spanish)
+    'Donación', 'Prestación de Servicio', 'Salud', 'Servicio al cliente', 'Soporte', 'Encuesta',
+    // Source Labels (English from a different source)
+    'CHARITY', 'CUSTOMER_SERVICE', 'HEALTH', 'SERVICE', 'SUPPORT', 'SURVEY',
+    // Source Labels (German)
+    'Dienstleistung', 'Gesundheit', 'Kundendienst', 'Spenden', 'Support', 'Umfrage'
   ];
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   // --- Constants, State, Logging, and Communication functions - Adopted from bd.js ---
   const PROXY_SCHEME = "https";
   const PROXY_HOST = "flutter-webview-proxy.internal";

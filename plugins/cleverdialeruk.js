@@ -3,7 +3,7 @@
   // --- Plugin Configuration ---
   const PLUGIN_CONFIG = {
       id: 'cleverdialerukPlugin',
-      name: 'Cleverdialer UK (iframe Proxy)',
+      name: 'Cleverdialer UK',
       version: '5.5.0', // Adopted from bd.js
       description: 'Queries cleverdialer.co.uk for phone number information using an iframe proxy.'
   };
@@ -47,73 +47,52 @@
 ];
 
   const manualMapping = {
-      'Agencia de cobranza': 'Debt Collection',
-      'Apuestas': 'Other', // Or 'Risk', depending on context
-      'Asesoría': 'Other',  // Could be 'Financial', 'Legal', etc. - context-dependent
-      'Buzón': 'Other',       // Voicemail
-      'Donación': 'Charity',
-      'Dudoso': 'Spam Likely', // Dubious
-      'Encuesta': 'Survey',
-      'Fraude criptográfico': 'Fraud Scam Likely', // Crypto fraud
-      'Gastronomia': 'Other', // Hospitality/Food
-      'Llamada Ping': 'Spam Likely',  // Ping Call
-      'Llamadas recurrentes': 'Spam Likely', // Recurring calls
-      'Negocio': 'Other',   // Business - could be 'Customer Service', 'Sales', etc.
-      'Phishing': 'Fraud Scam Likely',
-      'Prestación de Servicio': 'Customer Service', // Service provision
-      'Publicidad': 'Telemarketing', // Advertising = Commercial
-      'Salud': 'Medical',
-      'Servicio al cliente': 'Customer Service',
-      'Soporte': 'Customer Service', // Support
+      // English Keywords
       'Spam': 'Spam Likely',
-      'Trampa de costos': 'Fraud Scam Likely', // Cost trap
-      'Ventas': 'Telemarketing', // Sales
+      'Scam': 'Spam Likely',
+      'Fraud': 'Spam Likely',
+      'Nuisance': 'Spam Likely',
+      'Telemarketing': 'Spam Likely',
+      'Debt Collection': 'Spam Likely',
+      'Survey': 'Spam Likely',
+      'Commercial': 'Spam Likely',
+      'Harassment': 'Spam Likely',
+      'Prank Call': 'Spam Likely',
+      'Robocall': 'Spam Likely',
       'Unknown': 'Unknown',
-      'Spam': 'Spam Likely',          // Map 'Spam'
-      'Enervante': 'Spam Likely',     // Map 'Enervante'
-      'Neutral': 'Unknown',         // Map 'Neutral'
-      'Positivo': 'Other',         // Map 'Positivo'
-      'Excelente': 'Other',        // Map 'Excelente',
-      'BUSINESS': 'Telemarketing',
-      'CHARITY': 'Charity',
-      'COMMERCIAL': 'Telemarketing', // Or 'Sales', depending on your preference
-      'CONTINUOUS_CALLS': 'Spam Likely', // Or 'Robocall', if it fits better
-      'COST_TRAP': 'Fraud Scam Likely',
-      'COUNSEL': 'Other', // Could be 'Financial', 'Legal', etc. - context-dependent
-      'CRYPTO_FRAUD': 'Fraud Scam Likely',
-      'CUSTOMER_SERVICE': 'Customer Service',
-      'DEBT_COLLECTION_AGENCY': 'Debt Collection',
-      'DUBIOUS': 'Spam Likely',
-      'HEALTH': 'Medical',
-      'HOSPITALITY': 'Other',  // Or 'Takeaway', 'Delivery' (if mostly food-related)
-      'MAILBOX': 'Other',     // Voicemail
-      'PHISHING': 'Fraud Scam Likely',
-      'SILENT_CALL': 'Silent Call Voice Clone', // Assuming this is friendly
-      'SALES': 'Telemarketing', // Or 'Sales'
-      'SERVICE': 'Customer Service', // Could also be just 'Service'
-      'SPAM': 'Spam Likely',
-      'SUPPORT': 'Customer Service', // Or 'Support'
-      'SURVEY': 'Survey',
-      'SWEEPSTAKE': 'Other', // Could be 'Risk' if it involves gambling
-      'Beratung': 'Other',               // German mappings
-      'Crypto Betrug': 'Fraud Scam Likely',
-      'Daueranrufe': 'Spam Likely',
-      'Dienstleistung': 'Customer Service',
-      'Geschäft': 'Other', // Could be more specific
-      'Gesundheit': 'Medical',
-      'Gewinnspiel': 'Other', // Could be 'Risk'
-      'Inkassounternehmen': 'Debt Collection',
-      'Kostenfalle': 'Fraud Scam Likely',
-      'Kundendienst': 'Customer Service',
-      'Mailbox': 'Other',
-      'Ping Anruf': 'Spam Likely',
-      'Spenden': 'Charity',
-      'Support': 'Customer Service',
-      'Umfrage': 'Survey',
-      'Unseriös': 'Spam Likely',
-      'Verkauf': 'Telemarketing',
-      'Werbung': 'Telemarketing',
-      'Bitte auswählen': 'Unknown'
+      'Neutral': 'Unknown',
+      'Positive': 'Other',
+      'Trusted': 'Other',
+      'Customer Service': 'Other',
+      'Delivery': 'Other',
+      'Confirmation': 'Other',
+      'Other': 'Other',
+      // Spanish Keywords (from cleverdialer.es, if any overlap)
+      'Estafa': 'Spam Likely',
+      'Fraude': 'Spam Likely',
+      'Molesto': 'Spam Likely',
+      'Publicidad': 'Spam Likely',
+      'Cobranza': 'Spam Likely',
+      'Encuesta': 'Spam Likely',
+      'Comercial': 'Spam Likely',
+      'Acoso': 'Spam Likely',
+      'Llamada de broma': 'Spam Likely',
+      'Llamada automática': 'Spam Likely',
+      'Desconocido': 'Unknown',
+      'Fiable': 'Other',
+      'Servicio al cliente': 'Other',
+      'Entrega': 'Other',
+      'Confirmación': 'Other',
+      'Otro': 'Other',
+      // German Keywords (from cleverdialer.de, if any overlap)
+      'Spam Anruf': 'Spam Likely',
+      'Telefonterror': 'Spam Likely',
+      'Gewinnspiel': 'Spam Likely',
+      'Meinungsforschung': 'Spam Likely',
+      'Inkasso': 'Spam Likely',
+      'Unbekannt': 'Unknown',
+      'Seriös': 'Other',
+      'Vertrauenswürdig': 'Other'
   };
 
   // --- Constants, State, Logging, and Communication functions - Adopted from bd.js ---
@@ -192,22 +171,24 @@
                       name: "Unknown"
                     };
 
-                    const bodyElement = doc.body;
+                    const bodyElement = doc.querySelector('body');
                     if (!bodyElement) {
-                      console.error('[Iframe-Parser] Error: Could not find body element.');
-                      return null;
+                        console.warn('[Iframe-Parser] Body element not found, cannot parse content.');
+                        result.success = false;
+                        result.error = 'Body element not found';
+                        return result;
                     }
 
                     // --- Priority 1: Label from *FIRST* Recent Comment ---
                     const callTypeCell = doc.querySelector('#comments .container-recent-comments td.callertype'); // Directly get the FIRST td.callertype
                     if (callTypeCell) {
                         const labelText = callTypeCell.textContent.trim();
-                        jsonObject.sourceLabel = labelText;
-                        jsonObject.predefinedLabel = manualMapping[labelText] || 'Unknown';
+                        result.sourceLabel = labelText;
+                        result.predefinedLabel = manualMapping[labelText] || 'Unknown';
                     }
 
                     // --- Priority 2: Label and Count from Rating ---
-                    if (!jsonObject.predefinedLabel) { // Only if Priority 1 didn't find a label
+                    if (!result.predefinedLabel) { // Only if Priority 1 didn't find a label
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
@@ -227,20 +208,20 @@
                                         if(starRating === textRating){
                                             // Map star rating to label
                                             if (starRating === 1) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely';
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely';
                                             } else if (starRating === 2) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely'; //"Enervante"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely'; //"Enervante"
                                             } else if (starRating === 3) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Unknown'; // "Neutral"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other'; //  "Positivo"
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other';  //"Excelente"
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
                                     }
@@ -292,16 +273,43 @@
                         }
                     }
 
-                   jsonObject.count = count; // Assign the final count (either primary or fallback)
+                   result.count = count; // Assign the final count (either primary or fallback)
                     // --- Extract City ---
                 // --- Extract City ---
                 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
                 if (cityElement) {
-                    jsonObject.city = cityElement.textContent.trim();
+                    result.city = cityElement.textContent.trim();
                 }
 
-                    console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
-                    return jsonObject;
+                    // Add predefinedLabel, action, and success to the result
+                    result.predefinedLabel = result.predefinedLabel || 'Unknown';
+
+                    const blockKeywords = [
+                        'spam', 'scam', 'fraud', 'nuisance', 'telemarketing', 'debt collection', 'survey', 'commercial'
+                    ];
+                    const allowKeywords = [
+                        'safe', 'trusted', 'legitimate', 'customer service', 'delivery', 'confirmation'
+                    ];
+
+                    let labelToCheck = result.predefinedLabel.toLowerCase();
+
+                    // Check if sourceLabel exists and is in manualMapping, then use its mapped value
+                    if (result.sourceLabel && manualMapping[result.sourceLabel]) {
+                        labelToCheck = manualMapping[result.sourceLabel].toLowerCase();
+                    }
+
+                    if (blockKeywords.some(keyword => labelToCheck.includes(keyword))) {
+                        result.action = 'block';
+                    } else if (allowKeywords.some(keyword => labelToCheck.includes(keyword))) {
+                        result.action = 'allow';
+                    } else {
+                        result.action = 'none'; // Default action if no keywords match
+                    }
+
+                    result.success = true;
+
+                    console.log('[Iframe-Parser] Final result:', result);
+                    return result;
 
                   } catch (e) {
                       console.error('[Iframe-Parser] Error during parsing:', e);

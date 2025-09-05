@@ -526,7 +526,7 @@
          let countryCode = null;
          if (e164Number && e164Number.startsWith('+')) {
              // Attempt to extract country code (basic: assumes 1-3 digits after +)
-             const match = e164Number.match(/^\\+(\\d{1,3})/);
+             const match = e164Number.match(/^\+(\d{1,3})/); 
              if (match && match[1]) {
                  // Map the country code digits to a Slick.ly country identifier (e.g., 1 -> us)
                  // This requires a mapping from country calling code to Slick.ly country short code.
