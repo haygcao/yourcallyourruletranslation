@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Informações de Entrada Manual",
+
+  "scriptSaved": "Script salvo",
+    "editScriptFor": "Editar script para {pluginName}",
+    "@editScriptFor": {
+        "description": "O texto do título para a página onde um usuário pode editar um script para um plugin específico.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "O nome do plugin ao qual o script pertence."
+            }
+        }
+    },
+  "saveScript": "Salvar Script",
+
+
+ "testPlugin": "Testar Plugin",
+
+"description": "Descrição",
+
+
+    "accessTargetUrl": "Acessar URL de Destino",
+ 
+ 
+ "result": "Resultado",
+
+    "editScript": "Editar Script",
+
+"numberFormat": "Formato de Número",
+
+"nationalNumber": "Número Nacional",
+"e164Number": "Número E164",
+"pluginRulesInfo": "Por segurança, use apenas plugins de fontes confiáveis. Sinta-se à vontade para usar nossos modelos para criar seus próprios plugins personalizados!",
+
+
+
+
+"advancedMode": "Modo Avançado",
+
+
+  "pleaseEnterAtLeastOneNumber": "Por favor, insira pelo menos um número.",
+
+
+
+  "openInWebView": "Abrir no WebView",
+
+  "pluginLabel": "Rótulo do Plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

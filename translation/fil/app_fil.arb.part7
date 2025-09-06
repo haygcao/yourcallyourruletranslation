@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Impormasyon sa Manu-manong Pagpasok",
+
+  "scriptSaved": "Nai-save ang script",
+    "editScriptFor": "I-edit ang script para sa {pluginName}",
+    "@editScriptFor": {
+        "description": "Ang teksto ng pamagat para sa pahina kung saan maaaring i-edit ng isang user ang isang script para sa isang partikular na plugin.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Ang pangalan ng plugin kung saan kabilang ang script."
+            }
+        }
+    },
+  "saveScript": "I-save ang Script",
+
+
+ "testPlugin": "Subukan ang Plugin",
+
+"description": "Deskripsyon",
+
+
+    "accessTargetUrl": "I-access ang Target na URL",
+ 
+ 
+ "result": "Resulta",
+
+    "editScript": "I-edit ang Script",
+
+"numberFormat": "Format ng Numero",
+
+"nationalNumber": "Pambansang Numero",
+"e164Number": "E164 Numero",
+"pluginRulesInfo": "Para sa seguridad, mangyaring gumamit lamang ng mga plugin mula sa pinagkakatiwalaang pinagmulan. Huwag mag-atubiling gamitin ang aming mga template upang lumikha ng iyong sariling mga custom na plugin!",
+
+
+
+
+"advancedMode": "Advanced Mode",
+
+
+  "pleaseEnterAtLeastOneNumber": "Mangyaring maglagay ng kahit isang numero.",
+
+
+
+  "openInWebView": "Buksan sa WebView",
+
+  "pluginLabel": "Label ng Plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

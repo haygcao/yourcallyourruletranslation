@@ -1,0 +1,30 @@
+{
+  "manualEntry": "手動輸入資訊",
+  "scriptSaved": "腳本已保存",
+  "editScriptFor": "編輯 {pluginName} 的腳本",
+  "@editScriptFor": {
+    "description": "The title text for the page where a user can edit a script for a specific plugin.",
+    "placeholders": {
+      "pluginName": {
+        "type": "String",
+        "description": "The name of the plugin that the script belongs to."
+      }
+    }
+  },
+  "saveScript": "保存腳本",
+  "testPlugin": "測試插件",
+  "description": "描述",
+  "accessTargetUrl": "訪問目標網址",
+  "result": "結果",
+  "editScript": "編輯腳本",
+  "numberFormat": "數字格式",
+  "nationalNumber": "國內號碼",
+  "e164Number": "E164號碼",
+  "pluginRulesInfo": "為安全起見，請僅使用來自受信任來源的插件。歡迎使用我們的模板創建您自己的自定義插件！",
+  "advancedMode": "高級模式",
+  "pleaseEnterAtLeastOneNumber": "請至少輸入一個數字。",
+  "openInWebView": "在WebView中打開",
+  "pluginLabel": "插件標籤",
+  "pluginID": "ID",
+  "pluginURL": "網址"
+}

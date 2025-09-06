@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "اطلاعات ورود دستی",
+
+  "scriptSaved": "اسکریپت ذخیره شد",
+    "editScriptFor": "ویرایش اسکریپت برای {pluginName}",
+    "@editScriptFor": {
+        "description": "متن عنوان صفحه ای که کاربر می تواند اسکریپت یک افزونه خاص را ویرایش کند.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "نام افزونه ای که اسکریپت به آن تعلق دارد."
+            }
+        }
+    },
+  "saveScript": "ذخیره اسکریپت",
+
+
+ "testPlugin": "تست افزونه",
+
+"description": "توضیحات",
+
+
+    "accessTargetUrl": "دسترسی به URL هدف",
+ 
+ 
+ "result": "نتیجه",
+
+    "editScript": "ویرایش اسکریپت",
+
+"numberFormat": "فرمت شماره",
+
+"nationalNumber": "شماره ملی",
+"e164Number": "شماره E164",
+"pluginRulesInfo": "برای امنیت، لطفاً فقط از افزونه های منابع قابل اعتماد استفاده کنید. برای ایجاد افزونه های سفارشی خود از الگوهای ما استفاده کنید!",
+
+
+
+
+"advancedMode": "حالت پیشرفته",
+
+
+  "pleaseEnterAtLeastOneNumber": "لطفاً حداقل یک عدد وارد کنید.",
+
+
+
+  "openInWebView": "باز کردن در WebView",
+
+  "pluginLabel": "برچسب افزونه",
+  "pluginID": "شناسه",
+
+
+  "pluginURL": "URL"
+
+}

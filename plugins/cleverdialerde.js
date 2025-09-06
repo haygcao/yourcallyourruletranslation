@@ -123,14 +123,36 @@
       'Nummer Blockieren': 'Spam Likely',
       'Rückruf': 'Other',
       'Telefonterror': 'Spam Likely',
-      'Unerwünschter Anruf': 'Spam Likely',
-      'Unbekannt': 'Unknown',
-      'Vorsicht Betrug': 'Fraud Scam Likely',
-      'Werbeanruf': 'Telemarketing'
-  }
-  
+      'Unerwünscht': 'Spam Likely',
+      'Unseriös': 'Spam Likely',
+      'Gefährlich': 'Spam Likely',
+      'Falle': 'Spam Likely',
+      'Neutral': 'Unknown',
+      'Positiv': 'Other',
+      'Seriös': 'Other',
+      'Hilfreich': 'Other',
+      'Wichtig': 'Other',
+      'Unbekannt': 'Unknown'
+  };
 
-  // --- Constants, State, Logging, and Communication functions - Adopted from bd.js ---
+  const blockKeywords = [
+      "Spam", "Scam", "Fraud", "Phishing", "Unsolicited", "Robocall", "Telemarketer", "Junk", "Unwanted",
+      "Werbeanruf", "Telefonterror", "Spam Anruf", "Aggressive Werbung", "Unerwünschter Anruf",
+      "Cold Call", "Betrugsversuch", "Phishing", "Datenmissbrauch", "Abzocke",
+      "Gewinnspiel Falle", "Kostenfalle", "Inkasso", "Meinungsforschung", "Umfrage",
+      "Callcenter", "Ping Anruf", "Automatischer Anruf", "Bandansage", "Vorsicht Betrug",
+      "Nicht Abnehmen", "Nummer Blockieren", "Unseriös", "Belästigung", "Nervig"
+  ];
+
+  const allowKeywords = [
+      "Not Spam", "Legitimate", "Safe", "Trusted", "Important", "Verification", "Reminder", "Appointment", "Delivery", "Support", "Customer Service",
+      "Seriös", "Wichtig", "Kundenbetreuung", "Service", "Bestellung",
+      "Lieferung", "Termin", "Bank", "Versicherung", "Support",
+      "Rückfrage", "Information", "Beratung", "Geschäftlich", "Privat",
+      "Bekannt", "Freundlich", "Hilfreich", "Vertrag", "Rechnung",
+      "Zahlung", "Bestätigung", "Erinnerung", "Hotline", "Kundendienst"
+  ];
+
   const PROXY_SCHEME = "https";
   const PROXY_HOST = "flutter-webview-proxy.internal";
   const PROXY_PATH_FETCH = "/fetch";
@@ -167,7 +189,6 @@
   }
 
   /**
-   * 【V5.5.0 逻辑升级】
    * Implements intelligent name selection based on data-tools and element text content.
    * Contains parsing logic for cleverdialer.de
    */
@@ -178,6 +199,8 @@
               const PHONE_NUMBER = '${phoneNumberToQuery}';
               const manualMapping = ${JSON.stringify(manualMapping)};
               const predefinedLabels = ${JSON.stringify(predefinedLabels)};
+              const blockKeywords = ${JSON.stringify(blockKeywords)};
+              const allowKeywords = ${JSON.stringify(allowKeywords)};
               let parsingCompleted = false;
 
               function sendResult(result) {
@@ -191,66 +214,17 @@
                   console.log('[Iframe-Parser] Attempting to parse content in document.');
                   const result = {
                       phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                      name: '', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: ''
+                      name: '', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: '', action: 'none'
                   };
 
                   try {
-                    // --- Parsing logic from the original cleverdialerde.js extractDataFromDOM function ---
+                    // --- Parsing logic from the original cleverdialer.js extractDataFromDOM function ---
 
-                    const blockKeywords = [
-                        "Werbeanruf", "Telefonterror", "Spam Anruf", "Aggressive Werbung", "Unerwünschter Anruf",
-                        "Cold Call", "Betrugsversuch", "Phishing", "Datenmissbrauch", "Abzocke",
-                        "Gewinnspiel Falle", "Kostenfalle", "Inkasso", "Meinungsforschung", "Umfrage",
-                        "Callcenter", "Ping Anruf", "Automatischer Anruf", "Bandansage", "Vorsicht Betrug",
-                        "Nicht Abnehmen", "Nummer Blockieren", "Unseriös", "Belästigung", "Nervig",
-                        "Unbekannt", "Anrufbeantworter", "Rückruf" // Added common German spam/unwanted call terms
-                    ];
-
-                    const allowKeywords = [
-                        "Seriös", "Wichtig", "Kundenbetreuung", "Service", "Bestellung",
-                        "Lieferung", "Termin", "Bank", "Versicherung", "Support",
-                        "Rückfrage", "Information", "Beratung", "Geschäftlich", "Privat",
-                        "Bekannt", "Freundlich", "Hilfreich", "Vertrag", "Rechnung",
-                        "Zahlung", "Bestätigung", "Erinnerung", "Hotline", "Kundendienst"
-                    ];
-                    const result = {
-                      count: 0,
-                      sourceLabel: "",
-                      predefinedLabel: "",
-                      province: "",
-                      city: "",
-                      carrier: "",
-                      phoneNumber: PHONE_NUMBER,
-                      name: "Unknown",
-                      action: "None",
-                      success: true
-                    };
 
                     const bodyElement = doc.body;
                     if (!bodyElement) {
                       console.error('[Iframe-Parser] Error: Could not find body element.');
-                      result.success = false;
-                      result.error = 'Could not find body element.';
-                      return result;
-                    }
-
-                    // Determine action based on sourceLabel and predefinedLabel
-                    let labelToCheck = result.sourceLabel || result.predefinedLabel;
-
-                    if (labelToCheck) {
-                        labelToCheck = labelToCheck.toLowerCase();
-                        const isBlocked = blockKeywords.some(keyword => labelToCheck.includes(keyword.toLowerCase()));
-                        const isAllowed = allowKeywords.some(keyword => labelToCheck.includes(keyword.toLowerCase()));
-
-                        if (isBlocked) {
-                            result.action = "Block";
-                        } else if (isAllowed) {
-                            result.action = "Allow";
-                        } else if (manualMapping[result.sourceLabel]) { // Check if sourceLabel has a direct manual mapping
-                            result.action = manualMapping[result.sourceLabel].toLowerCase().includes('spam') ? "Block" : "None";
-                        } else {
-                            result.action = "None";
-                        }
+                      return null;
                     }
 
                     // --- Priority 1: Label from *FIRST* Recent Comment ---
@@ -266,7 +240,7 @@
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
-                            const starMatch = classValue.match(/stars-(d)/); // Extract the number
+                            const starMatch = classValue.match(/stars-(\d)/); // Extract the number
 
                             if (starMatch) {
                                  const starRating = parseInt(starMatch[1], 10);
@@ -274,7 +248,7 @@
                                 // Extract star rating from text for comparison (more robust)
                                 const ratingTextSpan = doc.querySelector('.rating-text span:first-child');
                                 if (ratingTextSpan) {
-                                    const textRatingMatch = ratingTextSpan.textContent.match(/(d)s+des+5/);
+                                    const textRatingMatch = ratingTextSpan.textContent.match(/(\d)\s+de\s+5/);
                                     if (textRatingMatch) {
                                         const textRating = parseInt(textRatingMatch[1], 10);
 
@@ -291,10 +265,10 @@
                                                 result.sourceLabel = 'stars-' + starRating;
                                                 result.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.sourceLabel = 'stars-' + starRating;
                                                 result.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.sourceLabel = 'stars-' + starRating;
                                                 result.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
@@ -312,7 +286,7 @@
                         const countText = countSpan.textContent.trim();
 
 
-                        // 数字单词映射 (英语, 西班牙语, 德语)
+                        // Number-word mapping (English, Spanish, German)
                         const wordToNumber = {
                             'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
                             'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
@@ -322,25 +296,25 @@
                             'sechs': 6, 'sieben': 7, 'acht': 8, 'neun': 9, 'zehn': 10
                         };
 
-                        // 优先尝试匹配数字单词
-                        const wordMatch = countText.match(/(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)/i);
+                        // Prioritize matching number words
+                        const wordMatch = countText.match(/\b(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)\b/i);
                         if (wordMatch) {
                             count = wordToNumber[wordMatch[1].toLowerCase()] || 0;
                         } else {
-                            // 如果没有匹配到数字单词, 尝试匹配数字
-                            const numberMatch = countText.match(/(d+)s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
+                            // If no number word is matched, try matching numbers
+                            const numberMatch = countText.match(/(\d+)\s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
                             if (numberMatch) {
                                 count = parseInt(numberMatch[1], 10) || 0;
                             }
                         }
                     }
 
-                    // 如果 count 仍然是 0, 尝试从 blocked count (h4) 获取
+                    // If count is still 0, try to get it from the blocked count (h4)
                     if (count === 0) {
                         const blockedCountH4 = doc.querySelector('.list-element-information .text-blocked');
                         if (blockedCountH4) {
                             const blockedCountText = blockedCountH4.textContent.trim();
-                            const blockedNumberMatch = blockedCountText.match(/(d+)/);
+                            const blockedNumberMatch = blockedCountText.match(/(\d+)/);
                             if (blockedNumberMatch) {
                                 count = parseInt(blockedNumberMatch[1], 10) || 0;
                             }
@@ -348,8 +322,6 @@
                     }
 
                    result.count = count; // Assign the final count (either primary or fallback)
-
-
                     // --- Extract City ---
                 // --- Extract City ---
                 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
@@ -357,7 +329,46 @@
                     result.city = cityElement.textContent.trim();
                 }
 
-                    console.log('[Iframe-Parser] Final result:', result);
+                    // --- Set Success Flag ---
+                    if (result.predefinedLabel && result.predefinedLabel !== 'Unknown' && result.predefinedLabel !== '') {
+                        result.success = true;
+                    } else if (result.city) {
+                        result.success = true; 
+                    }
+
+
+                   // ▼▼▼ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▼▼▼
+                   // =================================================================
+                   if (result.success) {
+                       const labelToCheck = result.predefinedLabel || result.sourceLabel;
+                       if (labelToCheck) {
+                           console.log('[Iframe-Parser] Determining action based on label:', labelToCheck);
+                           let determinedAction = 'none';
+
+                           for (const keyword of blockKeywords) {
+                               if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                   determinedAction = 'block';
+                                   break;
+                               }
+                           }
+
+                           if (determinedAction === 'none') {
+                               for (const keyword of allowKeywords) {
+                                   if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                       determinedAction = 'allow';
+                                       break;
+                                   }
+                               }
+                           }
+                           
+                           result.action = determinedAction;
+                           console.log('[Iframe-Parser] Action determined as:', result.action);
+                       }
+                   }
+                   // =================================================================
+                   // ▲▲▲ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▲▲▲
+
+                    console.log('[Iframe-Parser] Final result object:', result);
                     return result;
 
                   } catch (e) {
@@ -391,107 +402,129 @@
       try {
           // Updated target URL for cleverdialer.de
           const targetSearchUrl = `https://www.cleverdialer.de/telefonnummer/${phoneNumber}`;
-          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
-          log(`Iframe proxy URL: ${proxyUrl}`);
+          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' };
+                  // ▼▼▼ 只需修改这里 ▼▼▼
+        const originalOrigin = new URL(targetSearchUrl).origin;
 
-          const iframe = document.createElement('iframe');
-          iframe.id = `query-iframe-${requestId}`;
-          iframe.style.display = 'none';
-          iframe.sandbox = 'allow-scripts allow-same-origin';
-          activeIFrames.set(requestId, iframe);
 
-          iframe.onload = function() {
-              log(`Iframe loaded for requestId ${requestId}. Posting parsing script directly.`);
-              try {
-                  const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
-                  iframe.contentWindow.postMessage({
-                      type: 'executeScript',
-                      script: parsingScript
-                  }, '*');
-                  log(`Parsing script posted to iframe for requestId: ${requestId}`);
-              } catch (e) {
-                  logError(`Error posting script to iframe for requestId ${requestId}:`, e);
-                  sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
-                  cleanupIframe(requestId);
-              }
-          };
+           // Define purge rules as local constants within the function.
+           // This ensures rules are tightly coupled with their usage, adhering to the principle of cohesion.
+           const domPurgeRules = [
+               {
+                   type: 'remove', 
+                   selector: 'script:not([src])',
+                   contentMatch: "eval(function(p,a,c,k,e,d)" 
+               }
+           ];
 
-          iframe.onerror = function() {
-              logError(`Iframe error for requestId ${requestId}`);
-              sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
-              cleanupIframe(requestId);
-          };
+           // 2. 动态构建净化规则参数字符串。
+           // 如果没有规则，则不添加任何参数。
+           const purgeRulesParam = domPurgeRules.length > 0 
+               ? `&purgeRules=${encodeURIComponent(JSON.stringify(domPurgeRules))}` 
+               : '';
 
-          document.body.appendChild(iframe);
-          iframe.src = proxyUrl;
+           // 3. 将参数附加到代理URL的末尾。
+           const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?requestId=${encodeURIComponent(requestId)}&originalOrigin=${encodeURIComponent(originalOrigin)}&targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}${purgeRulesParam}`;
 
-          // Set a timeout for the query
-          setTimeout(() => {
-              if (activeIFrames.has(requestId)) {
-                  logError(`Query timeout for requestId: ${requestId}`);
-                  sendPluginResult({ requestId, success: false, error: 'Query timed out after 30 seconds' });
-                  cleanupIframe(requestId);
-              }
-          }, 30000);
+           log(`Iframe proxy URL: ${proxyUrl}`);
 
-      } catch (error) {
-          logError(`Error in initiateQuery for requestId ${requestId}:`, error);
-          sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
-      }
-  }
+           const iframe = document.createElement('iframe');
+           iframe.id = `query-iframe-${requestId}`;
+           iframe.style.display = 'none';
+           iframe.sandbox = 'allow-scripts allow-same-origin';
+           activeIFrames.set(requestId, iframe);
 
-  function generateOutput(phoneNumber, nationalNumber, e164Number, requestId) {
-      log(`generateOutput called for requestId: ${requestId}`);
-      const numberToQuery = phoneNumber || nationalNumber || e164Number;
-      if (numberToQuery) {
-          initiateQuery(numberToQuery, requestId);
-      } else {
-          sendPluginResult({ requestId, success: false, error: 'No valid phone number provided.' });
-      }
-  }
+           iframe.onload = function() {
+               log(`Iframe loaded for requestId ${requestId}. Posting parsing script directly.`);
+               try {
+                   const parsingScript = getParsingScript(PLUGIN_CONFIG.id, phoneNumber);
+                   iframe.contentWindow.postMessage({
+                       type: 'executeScript',
+                       script: parsingScript
+                   }, '*');
+                   log(`Parsing script posted to iframe for requestId: ${requestId}`);
+               } catch (e) {
+                   logError(`Error posting script to iframe for requestId ${requestId}:`, e);
+                   sendPluginResult({ requestId, success: false, error: `postMessage failed: ${e.message}` });
+                   cleanupIframe(requestId);
+               }
+           };
 
-  window.addEventListener('message', function(event) {
-      if (!event.data || event.data.type !== 'phoneQueryResult' || !event.data.data) {
-          return;
-      }
-      if (event.data.data.pluginId !== PLUGIN_CONFIG.id) {
-          return;
-      }
-      let requestId = null;
-      for (const [id, iframe] of activeIFrames.entries()) {
-          if (iframe.contentWindow === event.source) {
-              requestId = id;
-              break;
-          }
-      }
-      if (requestId) {
-          log(`Received result via postMessage for requestId: ${requestId}`);
-          const result = { requestId, ...event.data.data };
-          delete result.pluginId;
-          sendPluginResult(result);
-          cleanupIframe(requestId);
-      } else {
-          logError('Received postMessage from an untracked iframe.', event.data);
-      }
-  });
+           iframe.onerror = function() {
+               logError(`Iframe error for requestId ${requestId}`);
+               sendPluginResult({ requestId, success: false, error: 'Iframe loading failed.' });
+               cleanupIframe(requestId);
+           };
 
-  function initialize() {
-      if (window.plugin && window.plugin[PLUGIN_CONFIG.id]) {
-          log('Plugin already initialized.');
-          return;
-      }
-      if (!window.plugin) {
-          window.plugin = {};
-      }
-      window.plugin[PLUGIN_CONFIG.id] = {
-          info: PLUGIN_CONFIG,
-          generateOutput: generateOutput
-      };
-      log(`Plugin registered: window.plugin.${PLUGIN_CONFIG.id}`);
-      sendPluginLoaded();
-  }
+           document.body.appendChild(iframe);
+           iframe.src = proxyUrl;
 
-  initialize();
+           // Set a timeout for the query
+           setTimeout(() => {
+               if (activeIFrames.has(requestId)) {
+                   logError(`Query timeout for requestId: ${requestId}`);
+                   sendPluginResult({ requestId, success: false, error: 'Query timed out after 30 seconds' });
+                   cleanupIframe(requestId);
+               }
+           }, 30000);
+
+       } catch (error) {
+           logError(`Error in initiateQuery for requestId ${requestId}:`, error);
+           sendPluginResult({ requestId, success: false, error: `Query initiation failed: ${error.message}` });
+       }
+   }
+
+   function generateOutput(phoneNumber, nationalNumber, e164Number, requestId) {
+       log(`generateOutput called for requestId: ${requestId}`);
+       const numberToQuery = phoneNumber || nationalNumber || e164Number;
+       if (numberToQuery) {
+           initiateQuery(numberToQuery, requestId);
+       } else {
+           sendPluginResult({ requestId, success: false, error: 'No valid phone number provided.' });
+       }
+   }
+
+   window.addEventListener('message', function(event) {
+       if (!event.data || event.data.type !== 'phoneQueryResult' || !event.data.data) {
+           return;
+       }
+       if (event.data.data.pluginId !== PLUGIN_CONFIG.id) {
+           return;
+       }
+       let requestId = null;
+       for (const [id, iframe] of activeIFrames.entries()) {
+           if (iframe.contentWindow === event.source) {
+               requestId = id;
+               break;
+           }
+       }
+       if (requestId) {
+           log(`Received result via postMessage for requestId: ${requestId}`);
+           const result = { requestId, ...event.data.data };
+           delete result.pluginId;
+           sendPluginResult(result);
+           cleanupIframe(requestId);
+       } else {
+           logError('Received postMessage from an untracked iframe.', event.data);
+       }
+   });
+
+   function initialize() {
+       if (window.plugin && window.plugin[PLUGIN_CONFIG.id]) {
+           log('Plugin already initialized.');
+           return;
+       }
+       if (!window.plugin) {
+           window.plugin = {};
+       }
+       window.plugin[PLUGIN_CONFIG.id] = {
+           info: PLUGIN_CONFIG,
+           generateOutput: generateOutput
+       };
+       log(`Plugin registered: window.plugin.${PLUGIN_CONFIG.id}`);
+       sendPluginLoaded();
+   }
+
+   initialize();
 
 })();

@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Bayanin Shigar da Hannu",
+
+  "scriptSaved": "An adana rubutun",
+    "editScriptFor": "Shirya rubutun don {pluginName}",
+    "@editScriptFor": {
+        "description": "Rubutun taken shafin inda mai amfani zai iya shirya rubutun don takamaiman plugin.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Sunan plugin ɗin da rubutun yake."
+            }
+        }
+    },
+  "saveScript": "Ajiye Rubutun",
+
+
+ "testPlugin": "Gwada Plugin",
+
+"description": "Bayani",
+
+
+    "accessTargetUrl": "Samun damar URL ɗin Target",
+ 
+ 
+ "result": "Sakamako",
+
+    "editScript": "Shirya Rubutun",
+
+"numberFormat": "Tsarin lamba",
+
+"nationalNumber": "Lambar Kasa",
+"e164Number": "Lambar E164",
+"pluginRulesInfo": "Don tsaro, da fatan za a yi amfani da plugins daga amintattun tushe kawai. Ji daɗin amfani da samfuranmu don ƙirƙirar plugins ɗinku na musamman!",
+
+
+
+
+"advancedMode": "Yanayin Ci gaba",
+
+
+  "pleaseEnterAtLeastOneNumber": "Da fatan za a shigar da aƙalla lamba ɗaya.",
+
+
+
+  "openInWebView": "Bude a cikin WebView",
+
+  "pluginLabel": "Alamar Plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

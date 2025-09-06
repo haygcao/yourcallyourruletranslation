@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Qo'lda kiritish ma'lumotlari",
+
+  "scriptSaved": "Skript saqlandi",
+    "editScriptFor": "{pluginName} uchun skriptni tahrirlash",
+    "@editScriptFor": {
+        "description": "Foydalanuvchi ma'lum bir plagin uchun skriptni tahrirlashi mumkin bo'lgan sahifa sarlavhasi matni.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Skript tegishli bo'lgan plagin nomi."
+            }
+        }
+    },
+  "saveScript": "Skriptni saqlash",
+
+
+ "testPlugin": "Plaginni sinab ko'rish",
+
+"description": "Tavsif",
+
+
+    "accessTargetUrl": "Maqsadli URLga kirish",
+ 
+ 
+ "result": "Natija",
+
+    "editScript": "Skriptni tahrirlash",
+
+"numberFormat": "Raqam formati",
+
+"nationalNumber": "Milliy raqam",
+"e164Number": "E164 raqami",
+"pluginRulesInfo": "Xavfsizlik sababli, faqat ishonchli manbalardan plaginlardan foydalaning. O'zingizning shaxsiy plaginlaringizni yaratish uchun shablonlarimizdan foydalanishdan tortinmang!",
+
+
+
+
+"advancedMode": "Kengaytirilgan rejim",
+
+
+  "pleaseEnterAtLeastOneNumber": "Iltimos, kamida bitta raqam kiriting.",
+
+
+
+  "openInWebView": "WebViewda ochish",
+
+  "pluginLabel": "Plagin yorlig'i",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

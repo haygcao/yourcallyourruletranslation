@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Informasi Entri Manual",
+
+  "scriptSaved": "Skrip disimpan",
+    "editScriptFor": "Edit skrip untuk {pluginName}",
+    "@editScriptFor": {
+        "description": "Teks judul untuk halaman di mana pengguna dapat mengedit skrip untuk plugin tertentu.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Nama plugin tempat skrip berada."
+            }
+        }
+    },
+  "saveScript": "Simpan Skrip",
+
+
+ "testPlugin": "Uji Plugin",
+
+"description": "Deskripsi",
+
+
+    "accessTargetUrl": "Akses URL Target",
+ 
+ 
+ "result": "Hasil",
+
+    "editScript": "Edit Skrip",
+
+"numberFormat": "Format Angka",
+
+"nationalNumber": "Nomor Nasional",
+"e164Number": "Nomor E164",
+"pluginRulesInfo": "Untuk keamanan, harap gunakan plugin hanya dari sumber tepercaya. Jangan ragu untuk menggunakan template kami untuk membuat plugin kustom Anda sendiri!",
+
+
+
+
+"advancedMode": "Mode Lanjutan",
+
+
+  "pleaseEnterAtLeastOneNumber": "Harap masukkan setidaknya satu nomor.",
+
+
+
+  "openInWebView": "Buka di WebView",
+
+  "pluginLabel": "Label Plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

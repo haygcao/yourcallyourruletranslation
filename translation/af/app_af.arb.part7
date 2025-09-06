@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Handmatige Invoer Inligting",
+
+  "scriptSaved": "Skrip gestoor",
+    "editScriptFor": "Wysig skrip vir {pluginName}",
+    "@editScriptFor": {
+        "description": "Die titel teks vir die bladsy waar 'n gebruiker 'n skrip vir 'n spesifieke inprop kan wysig.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Die naam van die inprop waaraan die skrip behoort."
+            }
+        }
+    },
+  "saveScript": "Stoor Skrip",
+
+
+ "testPlugin": "Toets Inprop",
+
+"description": "Beskrywing",
+
+
+    "accessTargetUrl": "Toegang Teiken URL",
+ 
+ 
+ "result": "Resultaat",
+
+    "editScript": "Wysig Skrip",
+
+"numberFormat": "Nommer Formaat",
+
+"nationalNumber": "Nasionale Nommer",
+"e164Number": "E164 Nommer",
+"pluginRulesInfo": "Vir sekuriteit, gebruik asseblief slegs inproppe van betroubare bronne. Voel vry om ons sjablone te gebruik om jou eie pasgemaakte inproppe te skep!",
+
+
+
+
+"advancedMode": "Gevorderde Modus",
+
+
+  "pleaseEnterAtLeastOneNumber": "Voer asseblief ten minste een nommer in.",
+
+
+
+  "openInWebView": "Maak oop in WebView",
+
+  "pluginLabel": "Inprop Etiket",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

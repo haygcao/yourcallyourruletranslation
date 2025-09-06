@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "ข้อมูลการป้อนด้วยตนเอง",
+
+  "scriptSaved": "บันทึกสคริปต์แล้ว",
+    "editScriptFor": "แก้ไขสคริปต์สำหรับ {pluginName}",
+    "@editScriptFor": {
+        "description": "ข้อความหัวเรื่องสำหรับหน้าเว็บที่ผู้ใช้สามารถแก้ไขสคริปต์สำหรับปลั๊กอินเฉพาะได้",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "ชื่อของปลั๊กอินที่สคริปต์เป็นของ"
+            }
+        }
+    },
+  "saveScript": "บันทึกสคริปต์",
+
+
+ "testPlugin": "ทดสอบปลั๊กอิน",
+
+"description": "คำอธิบาย",
+
+
+    "accessTargetUrl": "เข้าถึง URL เป้าหมาย",
+ 
+ 
+ "result": "ผลลัพธ์",
+
+    "editScript": "แก้ไขสคริปต์",
+
+"numberFormat": "รูปแบบตัวเลข",
+
+"nationalNumber": "หมายเลขประจำชาติ",
+"e164Number": "หมายเลข E164",
+"pluginRulesInfo": "เพื่อความปลอดภัย โปรดใช้ปลั๊กอินจากแหล่งที่เชื่อถือได้เท่านั้น โปรดใช้เทมเพลตของเราเพื่อสร้างปลั๊กอินที่กำหนดเองของคุณเอง!",
+
+
+
+
+"advancedMode": "โหมดขั้นสูง",
+
+
+  "pleaseEnterAtLeastOneNumber": "โปรดป้อนอย่างน้อยหนึ่งหมายเลข",
+
+
+
+  "openInWebView": "เปิดใน WebView",
+
+  "pluginLabel": "ป้ายกำกับปลั๊กอิน",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

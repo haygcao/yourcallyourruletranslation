@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "دستی اندراج کی معلومات",
+
+  "scriptSaved": "اسکرپٹ محفوظ ہو گیا",
+    "editScriptFor": "{pluginName} کے لیے اسکرپٹ میں ترمیم کریں",
+    "@editScriptFor": {
+        "description": "اس صفحے کا عنوان متن جہاں صارف کسی مخصوص پلگ ان کے لیے اسکرپٹ میں ترمیم کر سکتا ہے۔",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "پلگ ان کا نام جس سے اسکرپٹ تعلق رکھتا ہے۔"
+            }
+        }
+    },
+  "saveScript": "اسکرپٹ محفوظ کریں",
+
+
+ "testPlugin": "پلگ ان کی جانچ کریں",
+
+"description": "تفصیل",
+
+
+    "accessTargetUrl": "ہدف URL تک رسائی حاصل کریں",
+ 
+ 
+ "result": "نتیجہ",
+
+    "editScript": "اسکرپٹ میں ترمیم کریں",
+
+"numberFormat": "نمبر فارمیٹ",
+
+"nationalNumber": "قومی نمبر",
+"e164Number": "E164 نمبر",
+"pluginRulesInfo": "حفاظتی وجوہات کی بنا پر، براہ کرم صرف قابل اعتماد ذرائع سے پلگ ان استعمال کریں۔ اپنی مرضی کے مطابق پلگ ان بنانے کے لیے ہمارے ٹیمپلیٹس استعمال کرنے میں ہچکچاہٹ محسوس نہ کریں!",
+
+
+
+
+"advancedMode": "اعلی درجے کا موڈ",
+
+
+  "pleaseEnterAtLeastOneNumber": "براہ کرم کم از کم ایک نمبر درج کریں۔",
+
+
+
+  "openInWebView": "ویب ویو میں کھولیں",
+
+  "pluginLabel": "پلگ ان لیبل",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

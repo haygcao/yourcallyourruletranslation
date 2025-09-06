@@ -1,0 +1,55 @@
+﻿
+
+"manualEntry": "Manual Entry Info",
+
+  "scriptSaved": "Script saved",
+    "editScriptFor": "Edit script for {pluginName}",
+    "@editScriptFor": {
+        "description": "The title text for the page where a user can edit a script for a specific plugin.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "The name of the plugin that the script belongs to."
+            }
+        }
+    },
+  "saveScript": "Save Script",
+
+
+ "testPlugin": "Test Plugin",
+
+"description": "Description",
+
+
+    "accessTargetUrl": "Access Target URL",
+ 
+ 
+ "result": "Result",
+
+    "editScript": "Edit Script",
+
+"numberFormat": "Number Format",
+
+"nationalNumber": "National Number",
+"e164Number": "E164 Number",
+"pluginRulesInfo": "For security, please use plugins from trusted sources only. Feel free to use our templates to create your own custom plugins!",
+
+
+
+
+"advancedMode": "Advanced Mode",
+
+
+  "pleaseEnterAtLeastOneNumber": "Please enter at least one number.",
+
+
+
+  "openInWebView": "Open in WebView",
+
+  "pluginLabel": "Plugin Label",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL",
+
+

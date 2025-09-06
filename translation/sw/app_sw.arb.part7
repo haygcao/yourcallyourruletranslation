@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Maelezo ya Kuingiza kwa Mkono",
+
+  "scriptSaved": "Hati imehifadhiwa",
+    "editScriptFor": "Hariri hati kwa {pluginName}",
+    "@editScriptFor": {
+        "description": "Maandishi ya kichwa kwa ukurasa ambapo mtumiaji anaweza kuhariri hati kwa programu-jalizi maalum.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Jina la programu-jalizi ambayo hati inamiliki."
+            }
+        }
+    },
+  "saveScript": "Hifadhi Hati",
+
+
+ "testPlugin": "Jaribu Programu-jalizi",
+
+"description": "Maelezo",
+
+
+    "accessTargetUrl": "Fikia URL lengwa",
+ 
+ 
+ "result": "Matokeo",
+
+    "editScript": "Hariri Hati",
+
+"numberFormat": "Umbizo la Nambari",
+
+"nationalNumber": "Nambari ya Kitaifa",
+"e164Number": "Nambari ya E164",
+"pluginRulesInfo": "Kwa sababu za usalama, tafadhali tumia programu-jalizi kutoka vyanzo vinavyoaminika pekee. Jisikie huru kutumia violezo vyetu kuunda programu-jalizi zako maalum!",
+
+
+
+
+"advancedMode": "Hali ya Juu",
+
+
+  "pleaseEnterAtLeastOneNumber": "Tafadhali ingiza angalau nambari moja.",
+
+
+
+  "openInWebView": "Fungua katika WebView",
+
+  "pluginLabel": "Lebo ya Programu-jalizi",
+  "pluginID": "Kitambulisho",
+
+
+  "pluginURL": "URL"
+
+}

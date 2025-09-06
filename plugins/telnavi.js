@@ -342,7 +342,7 @@
         log(`Initiating query for '${phoneNumber}' (requestId: ${requestId})`);
         try {
             const targetSearchUrl = `https://www.jpnumber.com/searchnumber.do?number=${encodeURIComponent(phoneNumber)}`;
-            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' };
+            const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' };
             const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
 
             const iframe = document.createElement('iframe');

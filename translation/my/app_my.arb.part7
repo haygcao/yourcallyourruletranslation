@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "လက်ဖြင့်ထည့်သွင်းမှုအချက်အလက်",
+
+  "scriptSaved": "Script သိမ်းဆည်းပြီးပါပြီ",
+    "editScriptFor": "{pluginName} အတွက် script ကိုတည်းဖြတ်ပါ",
+    "@editScriptFor": {
+        "description": "အသုံးပြုသူသည် သီးခြားပလပ်အင်အတွက် script ကိုတည်းဖြတ်နိုင်သည့် စာမျက်နှာ၏ ခေါင်းစဉ်စာသား။",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "script ပိုင်ဆိုင်သည့် ပလပ်အင်၏အမည်။"
+            }
+        }
+    },
+  "saveScript": "Script သိမ်းဆည်းပါ",
+
+
+ "testPlugin": "ပလပ်အင်ကိုစမ်းသပ်ပါ",
+
+"description": "ဖော်ပြချက်",
+
+
+    "accessTargetUrl": "ပစ်မှတ် URL ကိုဝင်ရောက်ပါ",
+ 
+ 
+ "result": "ရလဒ်",
+
+    "editScript": "Script တည်းဖြတ်ပါ",
+
+"numberFormat": "နံပါတ်ပုံစံ",
+
+"nationalNumber": "နိုင်ငံတော်နံပါတ်",
+"e164Number": "E164 နံပါတ်",
+"pluginRulesInfo": "လုံခြုံရေးအတွက်၊ ယုံကြည်စိတ်ချရသောရင်းမြစ်များမှ ပလပ်အင်များကိုသာ အသုံးပြုပါ။ သင့်ကိုယ်ပိုင်စိတ်ကြိုက်ပလပ်အင်များကို ဖန်တီးရန် ကျွန်ုပ်တို့၏ နမူနာပုံစံများကို အသုံးပြုရန် အားမနာပါနှင့်။",
+
+
+
+
+"advancedMode": "အဆင့်မြင့်မုဒ်",
+
+
+  "pleaseEnterAtLeastOneNumber": "ကျေးဇူးပြု၍ နံပါတ်တစ်ခုထက်မနည်း ထည့်သွင်းပါ။",
+
+
+
+  "openInWebView": "WebView တွင်ဖွင့်ပါ",
+
+  "pluginLabel": "ပလပ်အင်တံဆိပ်",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

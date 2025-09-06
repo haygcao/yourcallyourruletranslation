@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "手动输入信息",
+
+  "scriptSaved": "脚本已保存",
+    "editScriptFor": "编辑 {pluginName} 的脚本",
+    "@editScriptFor": {
+        "description": "页面的标题文本，用户可以在其中编辑特定插件的脚本。",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "脚本所属插件的名称。"
+            }
+        }
+    },
+  "saveScript": "保存脚本",
+
+
+ "testPlugin": "测试插件",
+
+"description": "描述",
+
+
+    "accessTargetUrl": "访问目标网址",
+ 
+ 
+ "result": "结果",
+
+    "editScript": "编辑脚本",
+
+"numberFormat": "数字格式",
+
+"nationalNumber": "国内号码",
+"e164Number": "E164号码",
+"pluginRulesInfo": "出于安全原因，请仅使用来自受信任来源的插件。欢迎使用我们的模板创建您自己的自定义插件！",
+
+
+
+
+"advancedMode": "高级模式",
+
+
+  "pleaseEnterAtLeastOneNumber": "请输入至少一个号码。",
+
+
+
+  "openInWebView": "在 WebView 中打开",
+
+  "pluginLabel": "插件标签",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

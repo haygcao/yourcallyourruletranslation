@@ -93,7 +93,7 @@
   }
 
   /**
-   * 【V5.5.0 逻辑升级】
+   * [V5.5.0 Logic Upgrade]
    * Implements intelligent name selection based on data-tools and element text content.
    * Contains parsing logic for cleverdialer.es
    */
@@ -104,6 +104,8 @@
               const PHONE_NUMBER = '${phoneNumberToQuery}';
               const manualMapping = ${JSON.stringify(manualMapping)};
               const predefinedLabels = ${JSON.stringify(predefinedLabels)};
+              const blockKeywords = ${JSON.stringify(blockKeywords)};
+              const allowKeywords = ${JSON.stringify(allowKeywords)};
               let parsingCompleted = false;
 
               function sendResult(result) {
@@ -117,27 +119,17 @@
                   console.log('[Iframe-Parser] Attempting to parse content in document.');
                   const result = {
                       phoneNumber: PHONE_NUMBER, sourceLabel: '', count: 0, province: '', city: '', carrier: '',
-                      name: '', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: ''
+                      name: '', predefinedLabel: '', source: PLUGIN_ID, numbers: [], success: false, error: '', action: 'none'
                   };
 
                   try {
-                    // --- Parsing logic from the original cleverdialeres.js extractDataFromDOM function ---
-                    const jsonObject = {
-                      count: 0,
-                      sourceLabel: "",
-                      province: "",
-                      city: "",
-                      carrier: "",
-                      phoneNumber: PHONE_NUMBER,
-                      name: "Unknown"
-                    };
+                    // --- Parsing logic from the original cleverdialer.js extractDataFromDOM function ---
+
 
                     const bodyElement = doc.body;
                     if (!bodyElement) {
                       console.error('[Iframe-Parser] Error: Could not find body element.');
-                      result.success = false;
-                      result.error = 'Body element not found';
-                      return result;
+                      return null;
                     }
 
                     // --- Priority 1: Label from *FIRST* Recent Comment ---
@@ -153,7 +145,7 @@
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
-                            const starMatch = classValue.match(/stars-(d)/); // Extract the number
+                            const starMatch = classValue.match(/stars-(\d)/); // Extract the number
 
                             if (starMatch) {
                                  const starRating = parseInt(starMatch[1], 10);
@@ -161,7 +153,7 @@
                                 // Extract star rating from text for comparison (more robust)
                                 const ratingTextSpan = doc.querySelector('.rating-text span:first-child');
                                 if (ratingTextSpan) {
-                                    const textRatingMatch = ratingTextSpan.textContent.match(/(d)s+des+5/);
+                                    const textRatingMatch = ratingTextSpan.textContent.match(/(\d)\s+de\s+5/);
                                     if (textRatingMatch) {
                                         const textRating = parseInt(textRatingMatch[1], 10);
 
@@ -178,10 +170,10 @@
                                                 result.sourceLabel = 'stars-' + starRating;
                                                 result.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.sourceLabel = 'stars-' + starRating;
                                                 result.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.sourceLabel = 'stars-' + starRating;
                                                 result.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
@@ -199,7 +191,7 @@
                         const countText = countSpan.textContent.trim();
 
 
-                        // 数字单词映射 (英语, 西班牙语, 德语)
+                        // Number word mapping (English, Spanish, German)
                         const wordToNumber = {
                             'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
                             'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
@@ -209,25 +201,25 @@
                             'sechs': 6, 'sieben': 7, 'acht': 8, 'neun': 9, 'zehn': 10
                         };
 
-                        // 优先尝试匹配数字单词
-                        const wordMatch = countText.match(/(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)/i);
+                        // First try to match number words
+                        const wordMatch = countText.match(/(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)/i);
                         if (wordMatch) {
                             count = wordToNumber[wordMatch[1].toLowerCase()] || 0;
                         } else {
-                            // 如果没有匹配到数字单词, 尝试匹配数字
-                            const numberMatch = countText.match(/(d+)s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
+                            // If no word match, try to match numbers
+                            const numberMatch = countText.match(/(\d+)\s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
                             if (numberMatch) {
                                 count = parseInt(numberMatch[1], 10) || 0;
                             }
                         }
                     }
 
-                    // 如果 count 仍然是 0, 尝试从 blocked count (h4) 获取
+                    // If count is still 0, try to get count from blocked count (h4)
                     if (count === 0) {
                         const blockedCountH4 = doc.querySelector('.list-element-information .text-blocked');
                         if (blockedCountH4) {
                             const blockedCountText = blockedCountH4.textContent.trim();
-                            const blockedNumberMatch = blockedCountText.match(/(d+)/);
+                            const blockedNumberMatch = blockedCountText.match(/(\d+)/);
                             if (blockedNumberMatch) {
                                 count = parseInt(blockedNumberMatch[1], 10) || 0;
                             }
@@ -235,8 +227,6 @@
                     }
 
                    result.count = count; // Assign the final count (either primary or fallback)
-
-
                     // --- Extract City ---
                 // --- Extract City ---
                 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
@@ -244,34 +234,46 @@
                     result.city = cityElement.textContent.trim();
                 }
 
-                    // Add predefinedLabel, action, and success to the result
-                    result.predefinedLabel = result.predefinedLabel || 'Unknown';
-
-                    const blockKeywords = [
-                        'spam', 'estafa', 'fraude', 'molesto', 'publicidad', 'telemarketing', 'cobranza', 'encuesta', 'comercial'
-                    ];
-                    const allowKeywords = [
-                        'seguro', 'fiable', 'confiable', 'legítimo', 'servicio al cliente', 'entrega', 'confirmación'
-                    ];
-
-                    let labelToCheck = result.predefinedLabel.toLowerCase();
-
-                    // Check if sourceLabel exists and is in manualMapping, then use its mapped value
-                    if (result.sourceLabel && manualMapping[result.sourceLabel]) {
-                        labelToCheck = manualMapping[result.sourceLabel].toLowerCase();
+                    // --- Set Success Flag ---
+                    if (result.predefinedLabel && result.predefinedLabel !== 'Unknown' && result.predefinedLabel !== '') {
+                        result.success = true;
+                    } else if (result.city) {
+                        result.success = true; 
                     }
 
-                    if (blockKeywords.some(keyword => labelToCheck.includes(keyword))) {
-                        result.action = 'block';
-                    } else if (allowKeywords.some(keyword => labelToCheck.includes(keyword))) {
-                        result.action = 'allow';
-                    } else {
-                        result.action = 'none'; // Default action if no keywords match
-                    }
 
-                    result.success = true;
+                   // ▼▼▼ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▼▼▼
+                   // =================================================================
+                   if (result.success) {
+                       const labelToCheck = result.predefinedLabel || result.sourceLabel;
+                       if (labelToCheck) {
+                           console.log('[Iframe-Parser] Determining action based on label:', labelToCheck);
+                           let determinedAction = 'none';
 
-                    console.log('[Iframe-Parser] Final result:', result);
+                           for (const keyword of blockKeywords) {
+                               if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                   determinedAction = 'block';
+                                   break;
+                               }
+                           }
+
+                           if (determinedAction === 'none') {
+                               for (const keyword of allowKeywords) {
+                                   if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                       determinedAction = 'allow';
+                                       break;
+                                   }
+                               }
+                           }
+                           
+                           result.action = determinedAction;
+                           console.log('[Iframe-Parser] Action determined as:', result.action);
+                       }
+                   }
+                   // =================================================================
+                   // ▲▲▲ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▲▲▲
+
+                    console.log('[Iframe-Parser] Final result object:', result);
                     return result;
 
                   } catch (e) {
@@ -305,8 +307,36 @@
       try {
           // Updated target URL for cleverdialer.es
           const targetSearchUrl = `https://www.cleverdialer.es/numero/${phoneNumber}`;
-          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
-          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' };
+                  // ▼▼▼ Just modify here ▼▼▼
+        const originalOrigin = new URL(targetSearchUrl).origin;
+
+
+          // 1. Define purge rules as local constants within the function.
+          // This makes the rules tightly coupled with where they are used, following cohesion principle.
+          const domPurgeRules = [
+              {
+                  type: 'remove', 
+                  selector: 'script:not([src])',
+                  contentMatch: "eval(function(p,a,c,k,e,d)" 
+              }
+          ];
+
+          // 2. Dynamically build purge rules parameter string.
+          // If no rules, don't add any parameter.
+          const purgeRulesParam = domPurgeRules.length > 0 
+              ? `&purgeRules=${encodeURIComponent(JSON.stringify(domPurgeRules))}` 
+              : '';
+
+          // 3. Append parameters to the end of proxy URL.
+          const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?requestId=${encodeURIComponent(requestId)}&originalOrigin=${encodeURIComponent(originalOrigin)}&targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}${purgeRulesParam}`;
+
+
+
+
+
+
+     
           log(`Iframe proxy URL: ${proxyUrl}`);
 
           const iframe = document.createElement('iframe');

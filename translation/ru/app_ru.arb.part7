@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Информация о ручном вводе",
+
+  "scriptSaved": "Скрипт сохранен",
+    "editScriptFor": "Редактировать скрипт для {pluginName}",
+    "@editScriptFor": {
+        "description": "Текст заголовка страницы, где пользователь может редактировать скрипт для определенного плагина.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Название плагина, к которому относится скрипт."
+            }
+        }
+    },
+  "saveScript": "Сохранить скрипт",
+
+
+ "testPlugin": "Тестовый плагин",
+
+"description": "Описание",
+
+
+    "accessTargetUrl": "Доступ к целевому URL",
+ 
+ 
+ "result": "Результат",
+
+    "editScript": "Редактировать скрипт",
+
+"numberFormat": "Формат номера",
+
+"nationalNumber": "Национальный номер",
+"e164Number": "Номер E164",
+"pluginRulesInfo": "В целях безопасности используйте плагины только из надежных источников. Не стесняйтесь использовать наши шаблоны для создания собственных настраиваемых плагинов!",
+
+
+
+
+"advancedMode": "Расширенный режим",
+
+
+  "pleaseEnterAtLeastOneNumber": "Пожалуйста, введите хотя бы один номер.",
+
+
+
+  "openInWebView": "Открыть в WebView",
+
+  "pluginLabel": "Метка плагина",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

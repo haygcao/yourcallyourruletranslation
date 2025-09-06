@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Maklumat Kemasukan Manual",
+
+  "scriptSaved": "Skrip disimpan",
+    "editScriptFor": "Edit skrip untuk {pluginName}",
+    "@editScriptFor": {
+        "description": "Teks tajuk untuk halaman di mana pengguna boleh mengedit skrip untuk pemalam tertentu.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Nama pemalam yang skrip itu milik."
+            }
+        }
+    },
+  "saveScript": "Simpan Skrip",
+
+
+ "testPlugin": "Uji Pemalam",
+
+"description": "Penerangan",
+
+
+    "accessTargetUrl": "Akses URL Sasaran",
+ 
+ 
+ "result": "Hasil",
+
+    "editScript": "Edit Skrip",
+
+"numberFormat": "Format Nombor",
+
+"nationalNumber": "Nombor Kebangsaan",
+"e164Number": "Nombor E164",
+"pluginRulesInfo": "Untuk keselamatan, sila gunakan pemalam dari sumber yang dipercayai sahaja. Jangan ragu untuk menggunakan templat kami untuk mencipta pemalam tersuai anda sendiri!",
+
+
+
+
+"advancedMode": "Mod Lanjutan",
+
+
+  "pleaseEnterAtLeastOneNumber": "Sila masukkan sekurang-kurangnya satu nombor.",
+
+
+
+  "openInWebView": "Buka dalam WebView",
+
+  "pluginLabel": "Label Pemalam",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

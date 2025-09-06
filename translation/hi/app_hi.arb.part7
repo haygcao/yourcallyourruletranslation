@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "मैनुअल एंट्री जानकारी",
+
+  "scriptSaved": "स्क्रिप्ट सहेजी गई",
+    "editScriptFor": "{pluginName} के लिए स्क्रिप्ट संपादित करें",
+    "@editScriptFor": {
+        "description": "उस पृष्ठ का शीर्षक पाठ जहाँ उपयोगकर्ता किसी विशिष्ट प्लगइन के लिए स्क्रिप्ट संपादित कर सकता है।",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "प्लगइन का नाम जिससे स्क्रिप्ट संबंधित है।"
+            }
+        }
+    },
+  "saveScript": "स्क्रिप्ट सहेजें",
+
+
+ "testPlugin": "प्लगइन का परीक्षण करें",
+
+"description": "विवरण",
+
+
+    "accessTargetUrl": "लक्ष्य URL तक पहुंचें",
+ 
+ 
+ "result": "परिणाम",
+
+    "editScript": "स्क्रिप्ट संपादित करें",
+
+"numberFormat": "संख्या प्रारूप",
+
+"nationalNumber": "राष्ट्रीय संख्या",
+"e164Number": "E164 संख्या",
+"pluginRulesInfo": "सुरक्षा के लिए, कृपया केवल विश्वसनीय स्रोतों से प्लगइन्स का उपयोग करें। अपने स्वयं के कस्टम प्लगइन्स बनाने के लिए हमारे टेम्पलेट्स का उपयोग करने के लिए स्वतंत्र महसूस करें!",
+
+
+
+
+"advancedMode": "उन्नत मोड",
+
+
+  "pleaseEnterAtLeastOneNumber": "कृपया कम से कम एक नंबर दर्ज करें।",
+
+
+
+  "openInWebView": "वेबव्यू में खोलें",
+
+  "pluginLabel": "प्लगइन लेबल",
+  "pluginID": "आईडी",
+
+
+  "pluginURL": "URL"
+
+}

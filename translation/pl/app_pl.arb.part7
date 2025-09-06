@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Informacje o ręcznym wprowadzaniu",
+
+  "scriptSaved": "Skrypt zapisany",
+    "editScriptFor": "Edytuj skrypt dla {pluginName}",
+    "@editScriptFor": {
+        "description": "Tekst tytułu strony, na której użytkownik może edytować skrypt dla określonej wtyczki.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Nazwa wtyczki, do której należy skrypt."
+            }
+        }
+    },
+  "saveScript": "Zapisz skrypt",
+
+
+ "testPlugin": "Testuj wtyczkę",
+
+"description": "Opis",
+
+
+    "accessTargetUrl": "Dostęp do docelowego adresu URL",
+ 
+ 
+ "result": "Wynik",
+
+    "editScript": "Edytuj skrypt",
+
+"numberFormat": "Format numeru",
+
+"nationalNumber": "Numer krajowy",
+"e164Number": "Numer E164",
+"pluginRulesInfo": "Ze względów bezpieczeństwa używaj tylko wtyczek z zaufanych źródeł. Zachęcamy do korzystania z naszych szablonów do tworzenia własnych niestandardowych wtyczek!",
+
+
+
+
+"advancedMode": "Tryb zaawansowany",
+
+
+  "pleaseEnterAtLeastOneNumber": "Wprowadź co najmniej jeden numer.",
+
+
+
+  "openInWebView": "Otwórz w WebView",
+
+  "pluginLabel": "Etykieta wtyczki",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

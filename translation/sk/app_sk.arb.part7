@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Informácie o manuálnom vstupe",
+
+  "scriptSaved": "Skript uložený",
+    "editScriptFor": "Upraviť skript pre {pluginName}",
+    "@editScriptFor": {
+        "description": "Text názvu stránky, kde môže používateľ upravovať skript pre konkrétny plugin.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Názov pluginu, ku ktorému skript patrí."
+            }
+        }
+    },
+  "saveScript": "Uložiť skript",
+
+
+ "testPlugin": "Testovať plugin",
+
+"description": "Popis",
+
+
+    "accessTargetUrl": "Prístup k cieľovej URL",
+ 
+ 
+ "result": "Výsledok",
+
+    "editScript": "Upraviť skript",
+
+"numberFormat": "Formát čísla",
+
+"nationalNumber": "Národné číslo",
+"e164Number": "Číslo E164",
+"pluginRulesInfo": "Z bezpečnostných dôvodov používajte iba pluginy z dôveryhodných zdrojov. Neváhajte použiť naše šablóny na vytvorenie vlastných prispôsobených pluginov!",
+
+
+
+
+"advancedMode": "Pokročilý režim",
+
+
+  "pleaseEnterAtLeastOneNumber": "Zadajte aspoň jedno číslo.",
+
+
+
+  "openInWebView": "Otvoriť v WebView",
+
+  "pluginLabel": "Štítok pluginu",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

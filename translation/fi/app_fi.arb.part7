@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Manuaalinen syöttötieto",
+
+  "scriptSaved": "Skripti tallennettu",
+    "editScriptFor": "Muokkaa skriptiä kohteelle {pluginName}",
+    "@editScriptFor": {
+        "description": "Otsikkoteksti sivulle, jossa käyttäjä voi muokata skriptiä tietylle laajennukselle.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Sen laajennuksen nimi, johon skripti kuuluu."
+            }
+        }
+    },
+  "saveScript": "Tallenna skripti",
+
+
+ "testPlugin": "Testaa laajennus",
+
+"description": "Kuvaus",
+
+
+    "accessTargetUrl": "Käytä kohde-URL-osoitetta",
+ 
+ 
+ "result": "Tulos",
+
+    "editScript": "Muokkaa skriptiä",
+
+"numberFormat": "Numeromuoto",
+
+"nationalNumber": "Kansallinen numero",
+"e164Number": "E164-numero",
+"pluginRulesInfo": "Turvallisuussyistä käytä vain luotettavista lähteistä peräisin olevia laajennuksia. Voit vapaasti käyttää mallejamme omien mukautettujen laajennusten luomiseen!",
+
+
+
+
+"advancedMode": "Edistynyt tila",
+
+
+  "pleaseEnterAtLeastOneNumber": "Syötä vähintään yksi numero.",
+
+
+
+  "openInWebView": "Avaa WebView-näkymässä",
+
+  "pluginLabel": "Laajennuksen tunniste",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

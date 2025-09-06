@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "በእጅ ግቤት መረጃ",
+
+  "scriptSaved": "ስክሪፕት ተቀምጧል",
+    "editScriptFor": "ስክሪፕት አርትዕ ለ {pluginName}",
+    "@editScriptFor": {
+        "description": "አንድ ተጠቃሚ ለአንድ የተወሰነ ተሰኪ ስክሪፕት ማርትዕ የሚችልበት ገጽ ርዕስ ጽሑፍ።",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "ስክሪፕቱ የያዘው የተሰኪው ስም።"
+            }
+        }
+    },
+  "saveScript": "ስክሪፕት አስቀምጥ",
+
+
+ "testPlugin": "ተሰኪን ሞክር",
+
+"description": "መግለጫ",
+
+
+    "accessTargetUrl": "ዒላማ URL ን ይድረሱ",
+ 
+ 
+ "result": "ውጤት",
+
+    "editScript": "ስክሪፕት አርትዕ",
+
+"numberFormat": "ቁጥር ቅርጸት",
+
+"nationalNumber": "ብሔራዊ ቁጥር",
+"e164Number": "E164 ቁጥር",
+"pluginRulesInfo": "ለደህንነት ሲባል፣ እባክዎ ከተአማኒ ምንጮች ብቻ ተሰኪዎችን ይጠቀሙ። የራስዎን ብጁ ተሰኪዎች ለመፍጠር የእኛን አብነቶች ለመጠቀም ነፃነት ይሰማዎ!",
+
+
+
+
+"advancedMode": "የላቀ ሁነታ",
+
+
+  "pleaseEnterAtLeastOneNumber": "እባክዎ ቢያንስ አንድ ቁጥር ያስገቡ።",
+
+
+
+  "openInWebView": "በ WebView ውስጥ ክፈት",
+
+  "pluginLabel": "ተሰኪ መለያ",
+  "pluginID": "መታወቂያ",
+
+
+  "pluginURL": "URL"
+
+}

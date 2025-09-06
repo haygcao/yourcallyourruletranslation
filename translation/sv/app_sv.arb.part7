@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Manuell inmatningsinformation",
+
+  "scriptSaved": "Skript sparat",
+    "editScriptFor": "Redigera skript för {pluginName}",
+    "@editScriptFor": {
+        "description": "Titeltexten för sidan där en användare kan redigera ett skript för en specifik plugin.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Namnet på pluginen som skriptet tillhör."
+            }
+        }
+    },
+  "saveScript": "Spara skript",
+
+
+ "testPlugin": "Testa plugin",
+
+"description": "Beskrivning",
+
+
+    "accessTargetUrl": "Åtkomst till mål-URL",
+ 
+ 
+ "result": "Resultat",
+
+    "editScript": "Redigera skript",
+
+"numberFormat": "Nummerformat",
+
+"nationalNumber": "Nationellt nummer",
+"e164Number": "E164-nummer",
+"pluginRulesInfo": "Av säkerhetsskäl, använd endast plugins från betrodda källor. Använd gärna våra mallar för att skapa dina egna anpassade plugins!",
+
+
+
+
+"advancedMode": "Avancerat läge",
+
+
+  "pleaseEnterAtLeastOneNumber": "Vänligen ange minst ett nummer.",
+
+
+
+  "openInWebView": "Öppna i WebView",
+
+  "pluginLabel": "Plugin-etikett",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

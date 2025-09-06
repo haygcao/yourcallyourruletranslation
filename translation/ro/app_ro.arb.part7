@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Informații introducere manuală",
+
+  "scriptSaved": "Script salvat",
+    "editScriptFor": "Editați scriptul pentru {pluginName}",
+    "@editScriptFor": {
+        "description": "Textul titlului pentru pagina unde un utilizator poate edita un script pentru un anumit plugin.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Numele pluginului căruia îi aparține scriptul."
+            }
+        }
+    },
+  "saveScript": "Salvați scriptul",
+
+
+ "testPlugin": "Testați pluginul",
+
+"description": "Descriere",
+
+
+    "accessTargetUrl": "Accesați URL-ul țintă",
+ 
+ 
+ "result": "Rezultat",
+
+    "editScript": "Editați scriptul",
+
+"numberFormat": "Format număr",
+
+"nationalNumber": "Număr național",
+"e164Number": "Număr E164",
+"pluginRulesInfo": "Din motive de securitate, vă rugăm să utilizați numai plugin-uri din surse de încredere. Simțiți-vă liber să utilizați șabloanele noastre pentru a vă crea propriile plugin-uri personalizate!",
+
+
+
+
+"advancedMode": "Mod avansat",
+
+
+  "pleaseEnterAtLeastOneNumber": "Vă rugăm să introduceți cel puțin un număr.",
+
+
+
+  "openInWebView": "Deschideți în WebView",
+
+  "pluginLabel": "Etichetă plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Ulwazi Lokufaka Ngokwakho",
+
+  "scriptSaved": "Iskripthi sigciniwe",
+    "editScriptFor": "Hlela iskripthi se {pluginName}",
+    "@editScriptFor": {
+        "description": "Umbhalo wesihloko wekhasi lapho umsebenzisi angahlela khona iskripthi se-plugin ethile.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Igama le-plugin iskripthi esingaphansi kwayo."
+            }
+        }
+    },
+  "saveScript": "Gcina Iskripthi",
+
+
+ "testPlugin": "Hlola i-Plugin",
+
+"description": "Incazelo",
+
+
+    "accessTargetUrl": "Finyelela i-URL eqondiwe",
+ 
+ 
+ "result": "Umphumela",
+
+    "editScript": "Hlela Iskripthi",
+
+"numberFormat": "Ifomethi Yenombolo",
+
+"nationalNumber": "Inombolo Kazwelonke",
+"e164Number": "Inombolo ye-E164",
+"pluginRulesInfo": "Ngenxa yezizathu zokuphepha, sicela usebenzise ama-plugin avela emithonjeni ethembekile kuphela. Zizwe ukhululekile ukusebenzisa izifanekiso zethu ukudala ama-plugin akho angokwezifiso!",
+
+
+
+
+"advancedMode": "Imodi Ethuthukisiwe",
+
+
+  "pleaseEnterAtLeastOneNumber": "Sicela ufake okungenani inombolo eyodwa.",
+
+
+
+  "openInWebView": "Vula ku-WebView",
+
+  "pluginLabel": "Ilebula le-Plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

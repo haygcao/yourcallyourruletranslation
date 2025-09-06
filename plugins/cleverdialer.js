@@ -115,6 +115,37 @@
       'Werbung': 'Telemarketing',
       'Bitte auswählen': 'Unknown'
   };
+  // Keywords for determining the 'action' field
+   const blockKeywords = [
+    // Mapped Predefined Labels (English)
+    'Fraud Scam Likely', 'Spam Likely', 'Telemarketing', 'Robocall', 'Debt Collection', 'Risk', 
+    'Silent Call Voice Clone', 
+    // Source Labels (Spanish)
+    'Dudoso', 'Fraude criptográfico', 'Llamada Ping', 'Llamadas recurrentes', 'Phishing', 'Publicidad', 
+    'Trampa de costos', 'Ventas', 'Agencia de cobranza', 'Enervante',
+    // Source Labels (English from a different source)
+    'COMMERCIAL', 'CONTINUOUS_CALLS', 'COST_TRAP', 'CRYPTO_FRAUD', 'DEBT_COLLECTION_AGENCY',
+    'DUBIOUS', 'PHISHING', 'SALES',
+    // Source Labels (German)
+    'Crypto Betrug', 'Daueranrufe', 'Inkassounternehmen', 'Kostenfalle', 'Ping Anruf', 
+    'Unseriös', 'Verkauf', 'Werbung',
+    // Generic Spam terms
+    'Spam'
+  ];
+  
+  const allowKeywords = [
+    // Mapped Predefined Labels (English)
+    'Delivery', 'Takeaway', 'Ridesharing', 'Insurance', 'Loan', 'Customer Service', 'Bank',
+    'Education', 'Medical', 'Charity', 'Survey', 'Ecommerce', 'Recruiter', 'Headhunter',
+    'Internet', 'Travel Ticketing', 'Application Software', 'Entertainment', 'Government',
+    'Local Services', 'Automotive Industry', 'Car Rental', 'Telecommunication', 'Financial', 'Agent',
+    // Source Labels (Spanish)
+    'Donación', 'Prestación de Servicio', 'Salud', 'Servicio al cliente', 'Soporte', 'Encuesta',
+    // Source Labels (English from a different source)
+    'CHARITY', 'CUSTOMER_SERVICE', 'HEALTH', 'SERVICE', 'SUPPORT', 'SURVEY',
+    // Source Labels (German)
+    'Dienstleistung', 'Gesundheit', 'Kundendienst', 'Spenden', 'Support', 'Umfrage'
+  ];
 
   // --- Constants, State, Logging, and Communication functions - Adopted from bd.js ---
   const PROXY_SCHEME = "https";
@@ -153,7 +184,6 @@
   }
 
   /**
-   * 【V5.5.0 逻辑升级】
    * Implements intelligent name selection based on data-tools and element text content.
    * Contains parsing logic for cleverdialer.com
    */
@@ -164,6 +194,8 @@
               const PHONE_NUMBER = '${phoneNumberToQuery}';
               const manualMapping = ${JSON.stringify(manualMapping)};
               const predefinedLabels = ${JSON.stringify(predefinedLabels)};
+              const blockKeywords = ${JSON.stringify(blockKeywords)};
+              const allowKeywords = ${JSON.stringify(allowKeywords)};
               let parsingCompleted = false;
 
               function sendResult(result) {
@@ -182,15 +214,7 @@
 
                   try {
                     // --- Parsing logic from the original cleverdialer.js extractDataFromDOM function ---
-                    const jsonObject = {
-                      count: 0,
-                      sourceLabel: "",
-                      province: "",
-                      city: "",
-                      carrier: "",
-                      phoneNumber: PHONE_NUMBER,
-                      name: "Unknown"
-                    };
+
 
                     const bodyElement = doc.body;
                     if (!bodyElement) {
@@ -202,12 +226,12 @@
                     const callTypeCell = doc.querySelector('#comments .container-recent-comments td.callertype'); // Directly get the FIRST td.callertype
                     if (callTypeCell) {
                         const labelText = callTypeCell.textContent.trim();
-                        jsonObject.sourceLabel = labelText;
-                        jsonObject.predefinedLabel = manualMapping[labelText] || 'Unknown';
+                        result.sourceLabel = labelText;
+                        result.predefinedLabel = manualMapping[labelText] || 'Unknown';
                     }
 
                     // --- Priority 2: Label and Count from Rating ---
-                    if (!jsonObject.predefinedLabel) { // Only if Priority 1 didn't find a label
+                    if (!result.predefinedLabel) { // Only if Priority 1 didn't find a label
                       const ratingDiv = doc.querySelector('.stars.star-rating .front-stars');
                         if (ratingDiv) {
                             const classValue = ratingDiv.className; // Get the full class name (e.g., "front-stars stars-3")
@@ -227,20 +251,20 @@
                                         if(starRating === textRating){
                                             // Map star rating to label
                                             if (starRating === 1) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely';
+                                                 result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely';
                                             } else if (starRating === 2) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Spam Likely'; //"Enervante"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Spam Likely'; //"Enervante"
                                             } else if (starRating === 3) {
-                                                jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Unknown'; // "Neutral"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Unknown'; // "Neutral"
                                             } else if (starRating === 4) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other'; //  "Positivo"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other'; //  "Positivo"
                                             } else if (starRating === 5) {
-                                                 jsonObject.sourceLabel = 'stars-' + starRating;
-                                                jsonObject.predefinedLabel = 'Other';  //"Excelente"
+                                                result.sourceLabel = 'stars-' + starRating;
+                                                result.predefinedLabel = 'Other';  //"Excelente"
                                             }
                                         }
                                     }
@@ -257,7 +281,7 @@
                         const countText = countSpan.textContent.trim();
 
 
-                        // 数字单词映射 (英语, 西班牙语, 德语)
+                        // Number-word mapping (English, Spanish, German)
                         const wordToNumber = {
                             'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
                             'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
@@ -267,12 +291,12 @@
                             'sechs': 6, 'sieben': 7, 'acht': 8, 'neun': 9, 'zehn': 10
                         };
 
-                        // 优先尝试匹配数字单词
-                        const wordMatch = countText.match(/(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)/i);
+                        // Prioritize matching number words
+                        const wordMatch = countText.match(/\b(one|two|three|four|five|six|seven|eight|nine|ten|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|ein|eine|einer|eins|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)\b/i);
                         if (wordMatch) {
                             count = wordToNumber[wordMatch[1].toLowerCase()] || 0;
                         } else {
-                            // 如果没有匹配到数字单词, 尝试匹配数字
+                            // If no number word is matched, try matching numbers
                             const numberMatch = countText.match(/(\d+)\s+(Bewertungen|bewertungen|Bewertung|bewertung|ratings|rating|valoraciones|valoración)/i);
                             if (numberMatch) {
                                 count = parseInt(numberMatch[1], 10) || 0;
@@ -280,7 +304,7 @@
                         }
                     }
 
-                    // 如果 count 仍然是 0, 尝试从 blocked count (h4) 获取
+                    // If count is still 0, try to get it from the blocked count (h4)
                     if (count === 0) {
                         const blockedCountH4 = doc.querySelector('.list-element-information .text-blocked');
                         if (blockedCountH4) {
@@ -292,16 +316,55 @@
                         }
                     }
 
-                   jsonObject.count = count; // Assign the final count (either primary or fallback)
+                   result.count = count; // Assign the final count (either primary or fallback)
                     // --- Extract City ---
                 // --- Extract City ---
                 const cityElement = doc.querySelector('.list-element.list-element-action .list-text h4');
                 if (cityElement) {
-                    jsonObject.city = cityElement.textContent.trim();
+                    result.city = cityElement.textContent.trim();
                 }
 
-                    console.log('[Iframe-Parser] Final jsonObject:', jsonObject);
-                    return jsonObject;
+                    // --- Set Success Flag ---
+                    if (result.predefinedLabel && result.predefinedLabel !== 'Unknown' && result.predefinedLabel !== '') {
+                        result.success = true;
+                    } else if (result.city) {
+                        result.success = true; 
+                    }
+
+
+                   // ▼▼▼ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▼▼▼
+                   // =================================================================
+                   if (result.success) {
+                       const labelToCheck = result.predefinedLabel || result.sourceLabel;
+                       if (labelToCheck) {
+                           console.log('[Iframe-Parser] Determining action based on label:', labelToCheck);
+                           let determinedAction = 'none';
+
+                           for (const keyword of blockKeywords) {
+                               if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                   determinedAction = 'block';
+                                   break;
+                               }
+                           }
+
+                           if (determinedAction === 'none') {
+                               for (const keyword of allowKeywords) {
+                                   if (labelToCheck.toLowerCase().includes(keyword.toLowerCase())) {
+                                       determinedAction = 'allow';
+                                       break;
+                                   }
+                               }
+                           }
+                           
+                           result.action = determinedAction;
+                           console.log('[Iframe-Parser] Action determined as:', result.action);
+                       }
+                   }
+                   // =================================================================
+                   // ▲▲▲ NEW ACTION LOGIC - ADDED AT THE END (NON-DESTRUCTIVE) ▲▲▲
+
+                    console.log('[Iframe-Parser] Final result object:', result);
+                    return result;
 
                   } catch (e) {
                       console.error('[Iframe-Parser] Error during parsing:', e);
@@ -334,10 +397,30 @@
       try {
           // Updated target URL for cleverdialer.com
           const targetSearchUrl = `https://www.cleverdialer.com/phonenumber/${phoneNumber}`;
-          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' };
+          const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' };
                   // ▼▼▼ 只需修改这里 ▼▼▼
         const originalOrigin = new URL(targetSearchUrl).origin;
-        const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?requestId=${encodeURIComponent(requestId)}&originalOrigin=${encodeURIComponent(originalOrigin)}&targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
+
+
+          // 1. 将净化规则定义为函数内部的局部常量。
+          // 这使得规则与使用它的地方紧密耦合，符合内聚性原则。
+          const domPurgeRules = [
+              {
+                  type: 'remove', 
+                  selector: 'script:not([src])',
+                  contentMatch: "eval(function(p,a,c,k,e,d)" 
+              }
+          ];
+
+          // 2. 动态构建净化规则参数字符串。
+          // 如果没有规则，则不添加任何参数。
+          const purgeRulesParam = domPurgeRules.length > 0 
+              ? `&purgeRules=${encodeURIComponent(JSON.stringify(domPurgeRules))}` 
+              : '';
+
+          // 3. Append parameters to the proxy URL.
+          const proxyUrl = `
+              ${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?requestId=${encodeURIComponent(requestId)}&originalOrigin=${encodeURIComponent(originalOrigin)}&targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}${purgeRulesParam}`;;
           log(`Iframe proxy URL: ${proxyUrl}`);
 
           const iframe = document.createElement('iframe');

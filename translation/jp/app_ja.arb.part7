@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "手動入力情報",
+
+  "scriptSaved": "スクリプトが保存されました",
+    "editScriptFor": "{pluginName} のスクリプトを編集",
+    "@editScriptFor": {
+        "description": "ユーザーが特定のプラグインのスクリプトを編集できるページのタイトルテキスト。",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "スクリプトが属するプラグインの名前。"
+            }
+        }
+    },
+  "saveScript": "スクリプトを保存",
+
+
+ "testPlugin": "プラグインをテスト",
+
+"description": "説明",
+
+
+    "accessTargetUrl": "ターゲットURLにアクセス",
+ 
+ 
+ "result": "結果",
+
+    "editScript": "スクリプトを編集",
+
+"numberFormat": "数値形式",
+
+"nationalNumber": "国内番号",
+"e164Number": "E164番号",
+"pluginRulesInfo": "セキュリティのため、信頼できるソースからのプラグインのみを使用してください。独自のカスタムプラグインを作成するために、当社のテンプレートを自由にご利用ください！",
+
+
+
+
+"advancedMode": "詳細モード",
+
+
+  "pleaseEnterAtLeastOneNumber": "少なくとも1つの数字を入力してください。",
+
+
+
+  "openInWebView": "WebViewで開く",
+
+  "pluginLabel": "プラグインラベル",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

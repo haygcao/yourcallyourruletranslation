@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Käsitsi sisestamise teave",
+
+  "scriptSaved": "Skript salvestatud",
+    "editScriptFor": "Muuda skripti {pluginName} jaoks",
+    "@editScriptFor": {
+        "description": "Pealkirja tekst lehele, kus kasutaja saab redigeerida skripti konkreetse pistikprogrammi jaoks.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Pistikprogrammi nimi, millele skript kuulub."
+            }
+        }
+    },
+  "saveScript": "Salvesta skript",
+
+
+ "testPlugin": "Testi pistikprogrammi",
+
+"description": "Kirjeldus",
+
+
+    "accessTargetUrl": "Juurdepääs siht-URL-ile",
+ 
+ 
+ "result": "Tulemus",
+
+    "editScript": "Muuda skripti",
+
+"numberFormat": "Numbriformaat",
+
+"nationalNumber": "Riiklik number",
+"e164Number": "E164 number",
+"pluginRulesInfo": "Turvalisuse huvides kasutage palun ainult usaldusväärsetest allikatest pärit pistikprogramme. Kasutage julgelt meie malle oma kohandatud pistikprogrammide loomiseks!",
+
+
+
+
+"advancedMode": "Täpsem režiim",
+
+
+  "pleaseEnterAtLeastOneNumber": "Palun sisestage vähemalt üks number.",
+
+
+
+  "openInWebView": "Ava WebView's",
+
+  "pluginLabel": "Pistikprogrammi silt",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

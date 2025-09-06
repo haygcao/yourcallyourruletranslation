@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Manuelle Eingabeinformationen",
+
+  "scriptSaved": "Skript gespeichert",
+    "editScriptFor": "Skript bearbeiten für {pluginName}",
+    "@editScriptFor": {
+        "description": "Der Titeltext für die Seite, auf der ein Benutzer ein Skript für ein bestimmtes Plugin bearbeiten kann.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Der Name des Plugins, zu dem das Skript gehört."
+            }
+        }
+    },
+  "saveScript": "Skript speichern",
+
+
+ "testPlugin": "Plugin testen",
+
+"description": "Beschreibung",
+
+
+    "accessTargetUrl": "Ziel-URL aufrufen",
+ 
+ 
+ "result": "Ergebnis",
+
+    "editScript": "Skript bearbeiten",
+
+"numberFormat": "Zahlenformat",
+
+"nationalNumber": "Nationale Nummer",
+"e164Number": "E164 Nummer",
+"pluginRulesInfo": "Aus Sicherheitsgründen verwenden Sie bitte nur Plugins aus vertrauenswürdigen Quellen. Sie können gerne unsere Vorlagen verwenden, um Ihre eigenen benutzerdefinierten Plugins zu erstellen!",
+
+
+
+
+"advancedMode": "Erweiterter Modus",
+
+
+  "pleaseEnterAtLeastOneNumber": "Bitte geben Sie mindestens eine Nummer ein.",
+
+
+
+  "openInWebView": "In WebView öffnen",
+
+  "pluginLabel": "Plugin-Bezeichnung",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

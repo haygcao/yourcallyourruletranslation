@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Thông tin nhập thủ công",
+
+  "scriptSaved": "Đã lưu tập lệnh",
+    "editScriptFor": "Chỉnh sửa tập lệnh cho {pluginName}",
+    "@editScriptFor": {
+        "description": "Văn bản tiêu đề cho trang nơi người dùng có thể chỉnh sửa tập lệnh cho một plugin cụ thể.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Tên của plugin mà tập lệnh thuộc về."
+            }
+        }
+    },
+  "saveScript": "Lưu tập lệnh",
+
+
+ "testPlugin": "Kiểm tra plugin",
+
+"description": "Mô tả",
+
+
+    "accessTargetUrl": "Truy cập URL đích",
+ 
+ 
+ "result": "Kết quả",
+
+    "editScript": "Chỉnh sửa tập lệnh",
+
+"numberFormat": "Định dạng số",
+
+"nationalNumber": "Số quốc gia",
+"e164Number": "Số E164",
+"pluginRulesInfo": "Vì lý do bảo mật, vui lòng chỉ sử dụng các plugin từ các nguồn đáng tin cậy. Vui lòng sử dụng các mẫu của chúng tôi để tạo các plugin tùy chỉnh của riêng bạn!",
+
+
+
+
+"advancedMode": "Chế độ nâng cao",
+
+
+  "pleaseEnterAtLeastOneNumber": "Vui lòng nhập ít nhất một số.",
+
+
+
+  "openInWebView": "Mở trong WebView",
+
+  "pluginLabel": "Nhãn plugin",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

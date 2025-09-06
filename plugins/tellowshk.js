@@ -288,7 +288,7 @@
       log(`Initiating query for '${phoneNumber}' (requestId: ${requestId})`);
       try {
           const targetSearchUrl = `https://hk.tellows.asia/num/${encodeURIComponent(phoneNumber)}?lang=en`; // Updated URL
-          const headers = { 'User-Agent': 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.199 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36' };
+          const headers = { 'User-Agent': 'Mozilla/5.0 (Linux; arm_64; Android 14; SM-S711B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 YaBrowser/24.12.4.199.00 SA/3 Mobile Safari/537.36' };
           const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
           log(`Iframe proxy URL: ${proxyUrl}`);
           const iframe = document.createElement('iframe');

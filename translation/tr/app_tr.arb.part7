@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Manuel Giriş Bilgileri",
+
+  "scriptSaved": "Betik kaydedildi",
+    "editScriptFor": "{pluginName} için betiği düzenle",
+    "@editScriptFor": {
+        "description": "Bir kullanıcının belirli bir eklenti için bir betiği düzenleyebileceği sayfanın başlık metni.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "Betiğin ait olduğu eklentinin adı."
+            }
+        }
+    },
+  "saveScript": "Betiği Kaydet",
+
+
+ "testPlugin": "Eklentiyi Test Et",
+
+"description": "Açıklama",
+
+
+    "accessTargetUrl": "Hedef URL'ye Eriş",
+ 
+ 
+ "result": "Sonuç",
+
+    "editScript": "Betiği Düzenle",
+
+"numberFormat": "Sayı Biçimi",
+
+"nationalNumber": "Ulusal Numara",
+"e164Number": "E164 Numarası",
+"pluginRulesInfo": "Güvenlik nedeniyle, lütfen yalnızca güvenilir kaynaklardan eklentiler kullanın. Kendi özel eklentilerinizi oluşturmak için şablonlarımızı kullanmaktan çekinmeyin!",
+
+
+
+
+"advancedMode": "Gelişmiş Mod",
+
+
+  "pleaseEnterAtLeastOneNumber": "Lütfen en az bir numara girin.",
+
+
+
+  "openInWebView": "WebView'da Aç",
+
+  "pluginLabel": "Eklenti Etiketi",
+  "pluginID": "Kimlik",
+
+
+  "pluginURL": "URL"
+
+}

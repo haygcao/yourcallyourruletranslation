@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "Handmatige invoerinfo",
+
+  "scriptSaved": "Script opgeslagen",
+    "editScriptFor": "Script bewerken voor {pluginName}",
+    "@editScriptFor": {
+        "description": "De titeltekst voor de pagina waar een gebruiker een script voor een specifieke plug-in kan bewerken.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "De naam van de plug-in waartoe het script behoort."
+            }
+        }
+    },
+  "saveScript": "Script opslaan",
+
+
+ "testPlugin": "Plug-in testen",
+
+"description": "Beschrijving",
+
+
+    "accessTargetUrl": "Toegang tot doel-URL",
+ 
+ 
+ "result": "Resultaat",
+
+    "editScript": "Script bewerken",
+
+"numberFormat": "Nummerformaat",
+
+"nationalNumber": "Nationaal nummer",
+"e164Number": "E164-nummer",
+"pluginRulesInfo": "Gebruik om veiligheidsredenen alleen plug-ins van vertrouwde bronnen. Voel je vrij om onze sjablonen te gebruiken om je eigen aangepaste plug-ins te maken!",
+
+
+
+
+"advancedMode": "Geavanceerde modus",
+
+
+  "pleaseEnterAtLeastOneNumber": "Voer ten minste één nummer in.",
+
+
+
+  "openInWebView": "Openen in WebView",
+
+  "pluginLabel": "Plug-in label",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
+}

@@ -401,7 +401,7 @@
              // Construct Slick.ly search URL based on country code
              const baseUrl = `https://slick.ly/${countryCode.toLowerCase()}/`;
              const targetSearchUrl = `${baseUrl}${encodeURIComponent(phoneNumber)}`;
-             const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36' }; // Using a common user agent
+             const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36' }; // Using a common user agent
              const proxyUrl = `${PROXY_SCHEME}://${PROXY_HOST}${PROXY_PATH_FETCH}?targetUrl=${encodeURIComponent(targetSearchUrl)}&headers=${encodeURIComponent(JSON.stringify(headers))}`;
              log(`Iframe proxy URL: ${proxyUrl}`);
 
@@ -468,7 +468,7 @@
          let countryCode = null;
          if (e164Number && e164Number.startsWith('+')) {
              // Attempt to extract country code digits (basic: assumes 1-3 digits after +)
-             const match = e164Number.match(/^\\+(\\d{1,3})/);
+             const match = e164Number.match(/^\+(\d{1,3})/);
              if (match && match[1]) {
                  const extractedCountryCodeDigits = match[1];
                   console.log('[Slickly Plugin] Extracted country code digits from e164Number:', extractedCountryCodeDigits);
@@ -479,9 +479,9 @@
                       '886': 'tw', // Taiwan
                       '852': 'hk', // Hong Kong
                        '853': 'mo',  // Macau
-                       '44': 'gb', // United Kingdom
-                       '61': 'au', // Australia
-                       '60': 'my'  // Malaysia
+                  
+                  
+                  
                       // Add more mappings as needed
                   };
                   countryCode = countryCodeMap[extractedCountryCodeDigits];

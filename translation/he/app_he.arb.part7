@@ -1,0 +1,55 @@
+{
+
+"manualEntry": "מידע על הזנה ידנית",
+
+  "scriptSaved": "הסקריפט נשמר",
+    "editScriptFor": "ערוך סקריפט עבור {pluginName}",
+    "@editScriptFor": {
+        "description": "טקסט הכותרת עבור הדף שבו משתמש יכול לערוך סקריפט עבור תוסף ספציפי.",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "שם התוסף שאליו שייך הסקריפט."
+            }
+        }
+    },
+  "saveScript": "שמור סקריפט",
+
+
+ "testPlugin": "בדוק תוסף",
+
+"description": "תיאור",
+
+
+    "accessTargetUrl": "גישה לכתובת URL יעד",
+ 
+ 
+ "result": "תוצאה",
+
+    "editScript": "ערוך סקריפט",
+
+"numberFormat": "פורמט מספר",
+
+"nationalNumber": "מספר לאומי",
+"e164Number": "מספר E164",
+"pluginRulesInfo": "למען האבטחה, אנא השתמשו רק בתוספים ממקורות מהימנים. אתם מוזמנים להשתמש בתבניות שלנו כדי ליצור תוספים מותאמים אישית משלכם!",
+
+
+
+
+"advancedMode": "מצב מתקדם",
+
+
+  "pleaseEnterAtLeastOneNumber": "אנא הזן לפחות מספר אחד.",
+
+
+
+  "openInWebView": "פתח ב-WebView",
+
+  "pluginLabel": "תווית תוסף",
+  "pluginID": "מזהה",
+
+
+  "pluginURL": "כתובת אתר"
+
+}
