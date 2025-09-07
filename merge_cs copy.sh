@@ -1,0 +1,1 @@
+bash /c/Users/Ngokel/Desktop/en/new/yourcallyourruletranslation/merge_cs.sh
