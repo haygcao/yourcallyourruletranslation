@@ -1,27 +1,28 @@
-{
+
+  "fraudAlerSettingTitle": "የማጭበርበር ማንቂያ ቅንብር",
   "fraudAlerSettingSubtitle": "የማጭበርበር ማንቂያ ለማዘጋጀት",
   "enableFraudAlert": "የማጭበርበር ማንቂያ አንቃ",
   "enableFraudAlertDescription": "ለተጠረጠሩ የማጭበርበር ጥሪዎች ማንቂያ",
   "enableVibration": "ንዝረትን አንቃ",
-  "enableVibrationDescription": "ጥሪ የማጭበርበር ጥሪ እንደሆነ ሲጠረጠር ይንቀጠቀጡ",
+  "enableVibrationDescription": "ጥሪ የማጭበርበር ጥሪዎች እንደሆነ ሲጠረጠር ይንቀጠቀጡ",
   "notificationSettingsTitle": "የማሳወቂያ ቅንብሮች",
   "useLocalNotification": "አካባቢያዊ ማሳወቂያዎችን ተጠቀም",
-  "useLocalNotificationDescription": "ለገቢ ጥሪዎች አካባቢያዊ ማሳወቂያዎችን አንቃ",
+  "useLocalNotificationDescription": "ለገቢ ጥሪዎች የአካባቢ ማሳወቂያዎችን አንቃ",
   "cancelLocalNotification": "አካባቢያዊ ማሳወቂያዎችን ዝጋ",
-  "useStirNotification": "ከ STIR ማሳወቂያ ተጠቀም",
+  "useStirNotification": "ከSTIR ማሳወቂያ ተጠቀም",
   "useStirNotificationDescription": "ለገቢ ጥሪዎች STIR ማሳወቂያዎችን አንቃ",
   "cancelLocalNotificationDescription": "አካባቢያዊ ማሳወቂያዎችን በራስ-ሰር ዝጋ",
   "callerIdSettingsTitle": "የደዋይ መታወቂያ ቅንብሮች",
   "callerIdSettingsSubtitle": "ገቢ ጥሪ ማሳወቂያ እና የማሳያ ሁነታን ለማዘጋጀት",
   "purchaseTitle": "ግዢ",
   "purchaseSubtitle": "አገልግሎቱን ለመግዛት",
-  "callerIdNotificationTitle": "ገቢ ጥሪ መረጃ",
+  "callerIdNotificationTitle": "የገቢ ጥሪ መረጃ",
   "@callerIdNotificationTitle": {
-    "description": "Title for the Incoming Call Info"
+    "description": "ለገቢ ጥሪ መረጃ ርዕስ"
   },
   "callerIdBody": "ቁጥር: {phoneNumber}",
   "@callerIdBody": {
-    "description": "Body for the caller ID notification, showing the phone number",
+    "description": "ለደዋይ መታወቂያ ማሳወቂያ አካል፣ የስልክ ቁጥሩን ያሳያል",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -31,11 +32,11 @@
   },
   "blockedCallTitle": "የታገደ ጥሪ",
   "@blockedCallTitle": {
-    "description": "Title for blocked call notification"
+    "description": "ለታገደ ጥሪ ማሳወቂያ ርዕስ"
   },
   "blockedCallBody": "ከ {phoneNumber} የታገደ ጥሪ",
   "@blockedCallBody": {
-    "description": "Body for blocked call notification, showing the phone number",
+    "description": "ለታገደ ጥሪ ማሳወቂያ አካል፣ የስልክ ቁጥሩን ያሳያል",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -45,31 +46,31 @@
   },
   "stirVerified": "ተረጋግጧል",
   "@stirVerified": {
-    "description": "STIR/SHAKEN verification status: Verified"
+    "description": "STIR/SHAKEN ማረጋገጫ ሁኔታ: ተረጋግጧል"
   },
   "stirNotVerified": "አልተረጋገጠም",
   "@stirNotVerified": {
-    "description": "STIR/SHAKEN verification status: Not Verified"
+    "description": "STIR/SHAKEN ማረጋገጫ ሁኔታ: አልተረጋገጠም"
   },
-  "stirFailed": "ማረጋገጥ አልተሳካም",
+  "stirFailed": "ማረጋገጫ አልተሳካም",
   "@stirFailed": {
-    "description": "STIR/SHAKEN verification status: Verification Failed"
+    "description": "STIR/SHAKEN ማረጋገጫ ሁኔታ: ማረጋገጫ አልተሳካም"
   },
-  "stirUnknown": "ያልታወቀ የማረጋገጫ ሁኔታ",
+  "stirUnknown": "ያልታወቀ ማረጋገጫ ሁኔታ",
   "@stirUnknown": {
-    "description": "STIR/SHAKEN verification status: Unknown"
+    "description": "STIR/SHAKEN ማረጋገጫ ሁኔታ: ያልታወቀ"
   },
   "stirVerificationTitle": "STIR/SHAKEN ማረጋገጫ",
   "@stirVerificationTitle": {
-    "description": "Title for STIR/SHAKEN verification notification"
+    "description": "ለSTIR/SHAKEN ማረጋገጫ ማሳወቂያ ርዕስ"
   },
-  "stirVerificationBody": "{stirResultMessage} ለቁጥር {phoneNumber}",
+  "stirVerificationBody": "ለቁጥር {phoneNumber} {stirResultMessage}",
   "@stirVerificationBody": {
-    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "description": "ለSTIR/SHAKEN ማረጋገጫ ማሳወቂያ አካል፣ ውጤት እና የስልክ ቁጥር ያሳያል",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
-        "example": "Verified"
+        "example": "ተረጋግጧል"
       },
       "phoneNumber": {
         "type": "String",
@@ -77,20 +78,20 @@
       }
     }
   },
-  "scrollingSecurityMessageSettings": "የማሸብለል ደህንነት መልእክት ቅንብሮች",
+  "scrollingSecurityMessageSettings": "የማሸብለል የደህንነት መልእክት ቅንብሮች",
   "messageColor": "የመልእክት ቀለም",
-  "messageFontSize": "የመልእክት የቅርጸ ቁምፊ መጠን",
+  "messageFontSize": "የመልእክት ቅርጸ-ቁምፊ መጠን",
   "messagePosition": "የመልእክት አቀማመጥ",
   "containerWidth": "የመያዣ ስፋት",
   "scrollSpeed": "የማሸብለል ፍጥነት",
   "enableSecurityMessage": "የደህንነት መልእክት አንቃ",
   "fraudAlertTitle": "የማጭበርበር ማንቂያ",
   "@fraudAlertTitle": {
-    "description": "Title for the fraud alert notification"
+    "description": "ለማጭበርበር ማንቂያ ማሳወቂያ ርዕስ"
   },
-  "fraudAlertBody": "ሊሆን የሚችል የማጭበርበር ጥሪ ከ {phoneNumber}",
+  "fraudAlertBody": "ከ {phoneNumber} ሊሆን የሚችል የማጭበርበር ጥሪ",
   "@fraudAlertBody": {
-    "description": "Body for the fraud alert notification",
+    "description": "ለማጭበርበር ማንቂያ ማሳወቂያ አካል",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -98,21 +99,21 @@
       }
     }
   },
-  "loadRulesFailed": "ህጎችን መጫን አልተሳካም: {error}",
-  "loadCallLogFailed": "የጥሪ ምዝግብ ማስታወሻን መጫን አልተሳካም: {error}",
+  "loadRulesFailed": "ደንቦችን መጫን አልተሳካም: {error}",
+  "loadCallLogFailed": "የጥሪ ምዝግብ ማስታወሻ መጫን አልተሳካም: {error}",
   "noBlockedTypeData": "ምንም የታገደ አይነት ውሂብ የለም",
   "importEntity": "{entityTypeName} አስመጣ",
   "@importEntity": {
-    "description": "Dialog title for importing an entity",
+    "description": "አንድ አካል ለማስመጣት የንግግር ርዕስ",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
       }
     }
   },
-  "entityImportSuccess": "{entityTypeName} በተሳካ ሁኔታ ገብቷል",
+  "entityImportSuccess": "{entityTypeName} በተሳካ ሁኔታ ገብቷል፣ ጠቅላላ {count} መዝገቦች ገብተዋል",
   "@entityImportSuccess": {
-    "description": "Success message after importing entities",
+    "description": "አካላትን ካስመጡ በኋላ የስኬት መልእክት",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -125,7 +126,7 @@
   },
   "entityImportFailed": "{entityTypeName} ማስመጣት አልተሳካም: {error}",
   "@entityImportFailed": {
-    "description": "Error message when importing entities fails",
+    "description": "አካላትን ማስመጣት ሲሳካ የስህተት መልእክት",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -137,7 +138,7 @@
   },
   "exportEntity": "{entityTypeName} ላክ",
   "@exportEntity": {
-    "description": "Dialog title for exporting an entity",
+    "description": "አንድ አካል ለመላክ የንግግር ርዕስ",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -146,7 +147,7 @@
   },
   "entityExportSuccess": "{entityTypeName} በተሳካ ሁኔታ ተልኳል",
   "@entityExportSuccess": {
-    "description": "Success message after exporting entities",
+    "description": "አካላትን ከላኩ በኋላ የስኬት መልእክት",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -155,7 +156,7 @@
   },
   "entityExportFailed": "{entityTypeName} መላክ አልተሳካም: {error}",
   "@entityExportFailed": {
-    "description": "Error message when exporting entities fails",
+    "description": "አካላትን መላክ ሲሳካ የስህተት መልእክት",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -168,8 +169,8 @@
   "cloudSyncService": "የደመና ማመሳሰል አገልግሎት",
   "membershipCenter": "የአባልነት ማዕከል",
   "redeemVipWithMarks": "ቪአይፒን በምልክቶች ያስመልሱ",
-  "currentMarkCount": "የአሁኑ ምልክት ብዛት",
-  "markMoreNumbersForMore": "ለበለጠ ምልክቶች ተጨማሪ ቁጥሮችን ምልክት ያድርጉ",
+  "currentMarkCount": "የአሁኑ የምልክት ብዛት",
+  "markMoreNumbersForMore": "ለተጨማሪ ምልክቶች ተጨማሪ ቁጥሮችን ምልክት ያድርጉ",
   "noAds": "ማስታወቂያ የለም",
   "cloudBackup": "የደመና ምትኬ",
   "callerIdEnhancement": "የደዋይ መታወቂያ ማሻሻያ",
@@ -180,18 +181,18 @@
   "temporaryVip": "ጊዜያዊ ቪአይፒ",
   "removeAds": "ማስታወቂያዎችን አስወግድ",
   "unknownAction": "ያልታወቀ እርምጃ",
-  "settingsBackup": "የቅንብሮች ምትኬ",
+  "settingsBackup": "ቅንብሮች ምትኬ",
   "allServicesStatusTitle": "የአሁኑ የአገልግሎት ሁኔታ",
   "allServicesStatusSubtitle": "የእያንዳንዱ የደመና አገልግሎት የአሁኑ ሁኔታ",
   "redirect": "አቅጣጫ ቀይር",
   "notify": "አሳውቅ",
-  "log": "ምዝግብ ማስታወሻ",
+  "log": "ምዝግብ",
   "custom": "ብጁ",
-  "allowActionDescription": "ቁጥሩ በጥቁር መዝገብ ውስጥ ቢሆንም እንኳ ጥሪዎች ይፈቀዳሉ።",
+  "allowActionDescription": "ቁጥሩ በጥቁር መዝገብ ውስጥ ቢሆንም ጥሪዎች ይፈቀዳሉ።",
   "blockActionDescription": "ጥሪዎች ይታገዳሉ እና በጥሪ ምዝግብ ማስታወሻ ውስጥ ይታያሉ።",
-  "silenceActionDescription": "ጥሪዎች ዝም ይባላሉ ነገር ግን በጥሪ ምዝግብ ማስታወሻ ውስጥ ይታያሉ።",
+  "silenceActionDescription": "ጥሪዎች ድምጸ-ከል ይደረጋሉ ነገር ግን በጥሪ ምዝግብ ማስታወሻ ውስጥ ይታያሉ።",
   "noneActionDescription": "ለጥሪው ምንም ልዩ እርምጃ አይወሰድም።",
-  "redirectActionDescription": "ጥሪውን ወደተገለጸ ቁጥር አቅጣጫ ቀይር።",
+  "redirectActionDescription": "ጥሪውን ወደተገለጸ ቁጥር ያዞሩ።",
   "labelActionDescription": "ለቀላል መለያ ለጥሪው መለያ ያክሉ።",
   "notifyActionDescription": "ጥሪ ሲደርስ ማሳወቂያ ይላኩ።"
 }

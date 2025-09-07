@@ -1942,7 +1942,7 @@
      }
    }
  },
- "entityImportSuccess": "{entityTypeName} imported successfully, to
+  "entityImportSuccess": "{entityTypeName} imported successfully, total {count} records imported",
  "@entityImportSuccess": {
    "description": "Success message after importing entities",
    "placeholders": {
@@ -2022,14 +2022,14 @@
  "notify": "Notify",
  "log": "Log",
  "custom": "Custom",
- "allowActionDescription": "Calls will be allowed, even if the number is on the bl
+ "allowActionDescription": "Calls will be allowed, even if the number is on the blocklist.",
  "blockActionDescription": "Calls will be blocked and shown in the call log.",
  "silenceActionDescription": "Calls will be silenced but shown in the call log.",
  "noneActionDescription": "No special action will be taken for the call.",
  "redirectActionDescription": "Redirect the call to a specified number.",
  "labelActionDescription": "Add a label to the call for easy identification.",
  "notifyActionDescription": "Send a notification when a call is received.",
- "logActionDescription": "Log the call information without taking any other action
+ "logActionDescription": "Log the call information without taking any other action.",
  "customActionDescription": "Perform a custom action.",
  "synced": "Synced",
  "lastUpdated": "Last Updated: {date}",

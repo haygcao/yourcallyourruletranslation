@@ -1,28 +1,28 @@
 {
   "fraudAlerSettingTitle": "Innstillinger for svindelvarsel",
-  "fraudAlerSettingSubtitle": "For å angi svindelvarsel",
+  "fraudAlerSettingSubtitle": "Konfigurer svindelvarsler",
   "enableFraudAlert": "Aktiver svindelvarsel",
-  "enableFraudAlertDescription": "Varsle om mistenkte svindelanrop",
+  "enableFraudAlertDescription": "Varsler for mistenkelige svindelanrop",
   "enableVibration": "Aktiver vibrasjon",
-  "enableVibrationDescription": "Vibrer når anrop mistenkes å være svindelanrop",
+  "enableVibrationDescription": "Vibrasjon hvis anropet er mistenkelig svindel",
   "notificationSettingsTitle": "Varslingsinnstillinger",
-  "useLocalNotification": "Bruk lokale varsler",
+  "useLocalNotification": "Bruk lokal varsling",
   "useLocalNotificationDescription": "Aktiver lokale varsler for innkommende anrop",
-  "cancelLocalNotification": "Lukk lokale varsler",
-  "useStirNotification": "Bruk varsel fra STIR",
+  "cancelLocalNotification": "Avbryt lokal varsling",
+  "useStirNotification": "Bruk STIR-varsling",
   "useStirNotificationDescription": "Aktiver STIR-varsler for innkommende anrop",
-  "cancelLocalNotificationDescription": "Lukk lokale varsler automatisk",
+  "cancelLocalNotificationDescription": "Avbryt lokale varsler automatisk",
   "callerIdSettingsTitle": "Innstillinger for anrops-ID",
-  "callerIdSettingsSubtitle": "For å konfigurere varsling og visningsmodus for innkommende anrop",
+  "callerIdSettingsSubtitle": "Konfigurer varsler for innkommende anrop og visningsmodus",
   "purchaseTitle": "Kjøp",
-  "purchaseSubtitle": "For å kjøpe tjenesten",
-  "callerIdNotificationTitle": "Informasjon om innkommende anrop",
+  "purchaseSubtitle": "Kjøp tjenester",
+  "callerIdNotificationTitle": "Anropsinformasjon",
   "@callerIdNotificationTitle": {
-    "description": "Tittel for informasjon om innkommende anrop"
+    "description": "Tittel for anropsinformasjonsvarsel"
   },
   "callerIdBody": "Nummer: {phoneNumber}",
   "@callerIdBody": {
-    "description": "Brødtekst for varsel om anrops-ID, viser telefonnummeret",
+    "description": "Anrops-ID varslingstekst, viser telefonnummer",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -32,11 +32,11 @@
   },
   "blockedCallTitle": "Blokkert anrop",
   "@blockedCallTitle": {
-    "description": "Tittel for varsel om blokkert anrop"
+    "description": "Tittel for blokkert anropsvarsel"
   },
-  "blockedCallBody": "Blokkert anrop fra {phoneNumber}",
+  "blockedCallBody": "Anrop blokkert fra {phoneNumber}",
   "@blockedCallBody": {
-    "description": "Brødtekst for varsel om blokkert anrop, viser telefonnummeret",
+    "description": "Blokkert anropsvarslingstekst, viser telefonnummer",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -60,13 +60,13 @@
   "@stirUnknown": {
     "description": "STIR/SHAKEN verifiseringsstatus: Ukjent"
   },
-  "stirVerificationTitle": "STIR/SHAKEN verifisering",
+  "stirVerificationTitle": "STIR/SHAKEN Verifisering",
   "@stirVerificationTitle": {
     "description": "Tittel for STIR/SHAKEN verifiseringsvarsel"
   },
   "stirVerificationBody": "{stirResultMessage} for nummer {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "Brødtekst for STIR/SHAKEN verifiseringsvarsel, viser resultat og telefonnummer",
+    "description": "STIR/SHAKEN verifiseringsvarslingstekst, viser resultat og telefonnummer",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
@@ -91,7 +91,7 @@
   },
   "fraudAlertBody": "Potensielt svindelanrop fra {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "Brødtekst for svindelvarsel",
+    "description": "Svindelvarslingstekst",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -99,9 +99,9 @@
       }
     }
   },
-  "loadRulesFailed": "Kunne ikke laste inn regler: {error}",
-  "loadCallLogFailed": "Kunne ikke laste inn anropslogg: {error}",
-  "noBlockedTypeData": "Ingen blokkerte typedata tilgjengelig",
+  "loadRulesFailed": "Klarte ikke å laste regler: {error}",
+  "loadCallLogFailed": "Klarte ikke å laste anropslogg: {error}",
+  "noBlockedTypeData": "Ingen blokkert typedata",
   "importEntity": "Importer {entityTypeName}",
   "@importEntity": {
     "description": "Dialogtittel for import av en enhet",
@@ -111,9 +111,9 @@
       }
     }
   },
-  "entityImportSuccess": "{entityTypeName} importert vellykket, til",
+  "entityImportSuccess": "{entityTypeName} importert, {count} poster importert",
   "@entityImportSuccess": {
-    "description": "Suksessmelding etter import av enheter",
+    "description": "Suksessmelding etter import av en enhet",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -124,9 +124,9 @@
       }
     }
   },
-  "entityImportFailed": "Kunne ikke importere {entityTypeName}: {error}",
+  "entityImportFailed": "Import av {entityTypeName} mislyktes: {error}",
   "@entityImportFailed": {
-    "description": "Feilmelding når import av enheter mislykkes",
+    "description": "Feilmelding når import av en enhet mislykkes",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -145,18 +145,18 @@
       }
     }
   },
-  "entityExportSuccess": "{entityTypeName} eksportert vellykket",
+  "entityExportSuccess": "{entityTypeName} eksportert",
   "@entityExportSuccess": {
-    "description": "Suksessmelding etter eksport av enheter",
+    "description": "Suksessmelding etter eksport av en enhet",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
       }
     }
   },
-  "entityExportFailed": "Kunne ikke eksportere {entityTypeName}: {error}",
+  "entityExportFailed": "Eksport av {entityTypeName} mislyktes: {error}",
   "@entityExportFailed": {
-    "description": "Feilmelding når eksport av enheter mislykkes",
+    "description": "Feilmelding når eksport av en enhet mislykkes",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -168,11 +168,11 @@
   },
   "cloudSyncService": "Skysynkroniseringstjeneste",
   "membershipCenter": "Medlemssenter",
-  "redeemVipWithMarks": "Løs inn VIP med merker",
-  "currentMarkCount": "Gjeldende antall merker",
-  "markMoreNumbersForMore": "Merk flere numre for flere merker",
+  "redeemVipWithMarks": "Løs inn VIP med poeng",
+  "currentMarkCount": "Gjeldende poengsum",
+  "markMoreNumbersForMore": "Merk flere numre for flere poeng",
   "noAds": "Ingen annonser",
-  "cloudBackup": "Sky-sikkerhetskopiering",
+  "cloudBackup": "Skybasert sikkerhetskopi",
   "callerIdEnhancement": "Forbedring av anrops-ID",
   "voiceRecognition": "Stemmegjenkjenning",
   "feature": "Funksjon",
@@ -181,18 +181,18 @@
   "temporaryVip": "Midlertidig VIP",
   "removeAds": "Fjern annonser",
   "unknownAction": "Ukjent handling",
-  "settingsBackup": "Innstillinger sikkerhetskopiering",
-  "allServicesStatusTitle": "Gjeldende tjenestestatus",
+  "settingsBackup": "Innstillinger sikkerhetskopi",
+  "allServicesStatusTitle": "Status for alle tjenester",
   "allServicesStatusSubtitle": "Gjeldende status for hver skytjeneste",
   "redirect": "Omdiriger",
   "notify": "Varsle",
   "log": "Logg",
   "custom": "Tilpasset",
-  "allowActionDescription": "Anrop vil bli tillatt, selv om nummeret er på svartelisten.",
-  "blockActionDescription": "Anrop vil bli blokkert og vist i anropsloggen.",
-  "silenceActionDescription": "Anrop vil bli dempet, men vist i anropsloggen.",
+  "allowActionDescription": "Vil tillate anrop selv om nummeret er på blokkeringslisten.",
+  "blockActionDescription": "Vil blokkere anrop og vise dem i anropsloggen.",
+  "silenceActionDescription": "Vil dempe anrop, men vise dem i anropsloggen.",
   "noneActionDescription": "Ingen spesiell handling vil bli utført for anropet.",
-  "redirectActionDescription": "Omdiriger anropet til et spesifisert nummer.",
+  "redirectActionDescription": "Vil omdirigere anropet til et spesifikt nummer.",
   "labelActionDescription": "Legg til en etikett til anropet for enkel identifisering.",
-  "notifyActionDescription": "Send et varsel når et anrop mottas."
+  "notifyActionDescription": "Send et varsel når et anrop kommer inn."
 }

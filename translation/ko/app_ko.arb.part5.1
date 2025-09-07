@@ -1,0 +1,198 @@
+{
+  "fraudAlerSettingTitle": "사기 경고 설정",
+  "fraudAlerSettingSubtitle": "사기 경고 구성",
+  "enableFraudAlert": "사기 경고 활성화",
+  "enableFraudAlertDescription": "의심스러운 사기 전화에 대한 경고",
+  "enableVibration": "진동 활성화",
+  "enableVibrationDescription": "통화가 의심스러운 사기 전화인 경우 진동",
+  "notificationSettingsTitle": "알림 설정",
+  "useLocalNotification": "로컬 알림 사용",
+  "useLocalNotificationDescription": "수신 전화에 대한 로컬 알림 활성화",
+  "cancelLocalNotification": "로컬 알림 취소",
+  "useStirNotification": "STIR 알림 사용",
+  "useStirNotificationDescription": "수신 전화에 대한 STIR 알림 활성화",
+  "cancelLocalNotificationDescription": "로컬 알림 자동 취소",
+  "callerIdSettingsTitle": "발신자 ID 설정",
+  "callerIdSettingsSubtitle": "수신 전화 알림 및 표시 모드 구성",
+  "purchaseTitle": "구매",
+  "purchaseSubtitle": "서비스 구매",
+  "callerIdNotificationTitle": "발신자 정보",
+  "@callerIdNotificationTitle": {
+    "description": "발신자 정보 알림 제목"
+  },
+  "callerIdBody": "번호: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "발신자 ID 알림 텍스트, 전화 번호 표시",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "blockedCallTitle": "차단된 통화",
+  "@blockedCallTitle": {
+    "description": "차단된 통화 알림 제목"
+  },
+  "blockedCallBody": "{phoneNumber}에서 차단된 통화",
+  "@blockedCallBody": {
+    "description": "차단된 통화 알림 텍스트, 전화 번호 표시",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "확인됨",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN 확인 상태: 확인됨"
+  },
+  "stirNotVerified": "확인되지 않음",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN 확인 상태: 확인되지 않음"
+  },
+  "stirFailed": "확인 실패",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN 확인 상태: 확인 실패"
+  },
+  "stirUnknown": "알 수 없는 확인 상태",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN 확인 상태: 알 수 없음"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN 확인",
+  "@stirVerificationTitle": {
+    "description": "STIR/SHAKEN 확인 알림 제목"
+  },
+  "stirVerificationBody": "번호 {phoneNumber}에 대한 {stirResultMessage}",
+  "@stirVerificationBody": {
+    "description": "STIR/SHAKEN 확인 알림 텍스트, 결과 및 전화 번호 표시",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "확인됨"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "scrollingSecurityMessageSettings": "스크롤 보안 메시지 설정",
+  "messageColor": "메시지 색상",
+  "messageFontSize": "메시지 글꼴 크기",
+  "messagePosition": "메시지 위치",
+  "containerWidth": "컨테이너 너비",
+  "scrollSpeed": "스크롤 속도",
+  "enableSecurityMessage": "보안 메시지 활성화",
+  "fraudAlertTitle": "사기 경고",
+  "@fraudAlertTitle": {
+    "description": "사기 경고 제목"
+  },
+  "fraudAlertBody": "{phoneNumber}에서 잠재적인 사기 전화",
+  "@fraudAlertBody": {
+    "description": "사기 경고 텍스트",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "loadRulesFailed": "규칙 로드 실패: {error}",
+  "loadCallLogFailed": "통화 기록 로드 실패: {error}",
+  "noBlockedTypeData": "차단된 유형 데이터 없음",
+  "importEntity": "{entityTypeName} 가져오기",
+  "@importEntity": {
+    "description": "엔티티 가져오기 대화 상자 제목",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityImportSuccess": "{entityTypeName} 성공적으로 가져옴, {count}개 레코드 가져옴",
+  "@entityImportSuccess": {
+    "description": "엔티티 가져오기 성공 메시지",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "entityImportFailed": "{entityTypeName} 가져오기 실패: {error}",
+  "@entityImportFailed": {
+    "description": "엔티티 가져오기 실패 오류 메시지",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "exportEntity": "{entityTypeName} 내보내기",
+  "@exportEntity": {
+    "description": "엔티티 내보내기 대화 상자 제목",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportSuccess": "{entityTypeName} 성공적으로 내보냄",
+  "@entityExportSuccess": {
+    "description": "엔티티 내보내기 성공 메시지",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportFailed": "{entityTypeName} 내보내기 실패: {error}",
+  "@entityExportFailed": {
+    "description": "엔티티 내보내기 실패 오류 메시지",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "cloudSyncService": "클라우드 동기화 서비스",
+  "membershipCenter": "멤버십 센터",
+  "redeemVipWithMarks": "마크로 VIP 교환",
+  "currentMarkCount": "현재 마크 수",
+  "markMoreNumbersForMore": "더 많은 마크를 위해 더 많은 번호 마크",
+  "noAds": "광고 없음",
+  "cloudBackup": "클라우드 백업",
+  "callerIdEnhancement": "발신자 ID 향상",
+  "voiceRecognition": "음성 인식",
+  "feature": "기능",
+  "normalUser": "일반 사용자",
+  "vipUser": "VIP 사용자",
+  "temporaryVip": "임시 VIP",
+  "removeAds": "광고 제거",
+  "unknownAction": "알 수 없는 작업",
+  "settingsBackup": "설정 백업",
+  "allServicesStatusTitle": "모든 서비스 상태",
+  "allServicesStatusSubtitle": "각 클라우드 서비스의 현재 상태",
+  "redirect": "리디렉션",
+  "notify": "알림",
+  "log": "로그",
+  "custom": "사용자 정의",
+  "allowActionDescription": "번호가 차단 목록에 있어도 통화 허용.",
+  "blockActionDescription": "통화를 차단하고 통화 기록에 표시합니다.",
+  "silenceActionDescription": "통화를 무음으로 설정하지만 통화 기록에 표시합니다.",
+  "noneActionDescription": "통화에 대해 특별한 조치가 취해지지 않습니다.",
+  "redirectActionDescription": "통화를 특정 번호로 리디렉션합니다.",
+  "labelActionDescription": "쉽게 식별할 수 있도록 통화에 레이블을 추가합니다.",
+  "notifyActionDescription": "통화가 수신될 때 알림을 보냅니다."
+}

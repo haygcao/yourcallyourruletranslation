@@ -1,0 +1,198 @@
+{
+  "fraudAlerSettingTitle": "Настройки оповещений о мошенничестве",
+  "fraudAlerSettingSubtitle": "Настроить оповещения о мошенничестве",
+  "enableFraudAlert": "Включить оповещение о мошенничестве",
+  "enableFraudAlertDescription": "Оповещения о подозрительных мошеннических звонках",
+  "enableVibration": "Включить вибрацию",
+  "enableVibrationDescription": "Вибрация, если звонок является подозрительным мошенничеством",
+  "notificationSettingsTitle": "Настройки уведомлений",
+  "useLocalNotification": "Использовать локальное уведомление",
+  "useLocalNotificationDescription": "Включить локальные уведомления для входящих звонков",
+  "cancelLocalNotification": "Отменить локальное уведомление",
+  "useStirNotification": "Использовать уведомление STIR",
+  "useStirNotificationDescription": "Включить уведомления STIR для входящих звонков",
+  "cancelLocalNotificationDescription": "Автоматически отменять локальные уведомления",
+  "callerIdSettingsTitle": "Настройки идентификатора вызывающего абонента",
+  "callerIdSettingsSubtitle": "Настроить уведомления о входящих звонках и режим отображения",
+  "purchaseTitle": "Покупка",
+  "purchaseSubtitle": "Купить услуги",
+  "callerIdNotificationTitle": "Информация о звонке",
+  "@callerIdNotificationTitle": {
+    "description": "Заголовок для уведомления об информации о звонке"
+  },
+  "callerIdBody": "Номер: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Текст уведомления идентификатора вызывающего абонента, отображает номер телефона",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "blockedCallTitle": "Заблокированный звонок",
+  "@blockedCallTitle": {
+    "description": "Заголовок для уведомления о заблокированном звонке"
+  },
+  "blockedCallBody": "Звонок заблокирован с {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Текст уведомления о заблокированном звонке, отображает номер телефона",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Проверено",
+  "@stirVerified": {
+    "description": "Статус проверки STIR/SHAKEN: Проверено"
+  },
+  "stirNotVerified": "Не проверено",
+  "@stirNotVerified": {
+    "description": "Статус проверки STIR/SHAKEN: Не проверено"
+  },
+  "stirFailed": "Проверка не удалась",
+  "@stirFailed": {
+    "description": "Статус проверки STIR/SHAKEN: Проверка не удалась"
+  },
+  "stirUnknown": "Неизвестный статус проверки",
+  "@stirUnknown": {
+    "description": "Статус проверки STIR/SHAKEN: Неизвестно"
+  },
+  "stirVerificationTitle": "Проверка STIR/SHAKEN",
+  "@stirVerificationTitle": {
+    "description": "Заголовок для уведомления о проверке STIR/SHAKEN"
+  },
+  "stirVerificationBody": "{stirResultMessage} для номера {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Текст уведомления о проверке STIR/SHAKEN, отображает результат и номер телефона",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Проверено"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "scrollingSecurityMessageSettings": "Настройки прокручивающегося сообщения безопасности",
+  "messageColor": "Цвет сообщения",
+  "messageFontSize": "Размер шрифта сообщения",
+  "messagePosition": "Позиция сообщения",
+  "containerWidth": "Ширина контейнера",
+  "scrollSpeed": "Скорость прокрутки",
+  "enableSecurityMessage": "Включить сообщение безопасности",
+  "fraudAlertTitle": "Оповещение о мошенничестве",
+  "@fraudAlertTitle": {
+    "description": "Заголовок для оповещения о мошенничестве"
+  },
+  "fraudAlertBody": "Потенциальный мошеннический звонок с {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Текст оповещения о мошенничестве",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "loadRulesFailed": "Не удалось загрузить правила: {error}",
+  "loadCallLogFailed": "Не удалось загрузить журнал звонков: {error}",
+  "noBlockedTypeData": "Нет данных о заблокированном типе",
+  "importEntity": "Импортировать {entityTypeName}",
+  "@importEntity": {
+    "description": "Заголовок диалога для импорта сущности",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityImportSuccess": "{entityTypeName} импортировано, {count} записей импортировано",
+  "@entityImportSuccess": {
+    "description": "Сообщение об успехе после импорта сущности",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "entityImportFailed": "Импорт {entityTypeName} не удался: {error}",
+  "@entityImportFailed": {
+    "description": "Сообщение об ошибке при неудачном импорте сущности",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "exportEntity": "Экспортировать {entityTypeName}",
+  "@exportEntity": {
+    "description": "Заголовок диалога для экспорта сущности",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportSuccess": "{entityTypeName} экспортировано",
+  "@entityExportSuccess": {
+    "description": "Сообщение об успехе после экспорта сущности",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportFailed": "Экспорт {entityTypeName} не удался: {error}",
+  "@entityExportFailed": {
+    "description": "Сообщение об ошибке при неудачном экспорте сущности",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "cloudSyncService": "Служба облачной синхронизации",
+  "membershipCenter": "Центр членства",
+  "redeemVipWithMarks": "Обменять VIP на баллы",
+  "currentMarkCount": "Текущее количество баллов",
+  "markMoreNumbersForMore": "Отметьте больше номеров для получения большего количества баллов",
+  "noAds": "Без рекламы",
+  "cloudBackup": "Облачное резервное копирование",
+  "callerIdEnhancement": "Улучшение идентификатора вызывающего абонента",
+  "voiceRecognition": "Распознавание голоса",
+  "feature": "Функция",
+  "normalUser": "Обычный пользователь",
+  "vipUser": "VIP-пользователь",
+  "temporaryVip": "Временный VIP",
+  "removeAds": "Удалить рекламу",
+  "unknownAction": "Неизвестное действие",
+  "settingsBackup": "Резервное копирование настроек",
+  "allServicesStatusTitle": "Статус всех служб",
+  "allServicesStatusSubtitle": "Текущий статус каждой облачной службы",
+  "redirect": "Перенаправить",
+  "notify": "Уведомить",
+  "log": "Журнал",
+  "custom": "Пользовательский",
+  "allowActionDescription": "Разрешит звонки, даже если номер находится в черном списке.",
+  "blockActionDescription": "Заблокирует звонки и отобразит их в журнале звонков.",
+  "silenceActionDescription": "Отключит звук звонков, но отобразит их в журнале звонков.",
+  "noneActionDescription": "Для звонка не будет выполнено никаких специальных действий.",
+  "redirectActionDescription": "Перенаправит звонок на указанный номер.",
+  "labelActionDescription": "Добавить метку к звонку для легкой идентификации.",
+  "notifyActionDescription": "Отправить уведомление при поступлении звонка."
+}

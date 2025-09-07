@@ -1,28 +1,28 @@
 {
   "fraudAlerSettingTitle": "تنظیمات هشدار کلاهبرداری",
-  "fraudAlerSettingSubtitle": "برای تنظیم هشدارهای کلاهبرداری",
+  "fraudAlerSettingSubtitle": "پیکربندی هشدارهای کلاهبرداری",
   "enableFraudAlert": "فعال کردن هشدار کلاهبرداری",
-  "enableFraudAlertDescription": "هشدارهایی برای تماس‌های مشکوک کلاهبرداری",
+  "enableFraudAlertDescription": "هشدارهایی برای تماس‌های کلاهبرداری مشکوک",
   "enableVibration": "فعال کردن لرزش",
   "enableVibrationDescription": "لرزش هنگام تماس مشکوک به کلاهبرداری",
   "notificationSettingsTitle": "تنظیمات اعلان",
   "useLocalNotification": "استفاده از اعلان محلی",
   "useLocalNotificationDescription": "فعال کردن اعلان‌های محلی برای تماس‌های ورودی",
   "cancelLocalNotification": "لغو اعلان محلی",
-  "useStirNotification": "استفاده از اعلان از STIR",
+  "useStirNotification": "استفاده از اعلان STIR",
   "useStirNotificationDescription": "فعال کردن اعلان‌های STIR برای تماس‌های ورودی",
-  "cancelLocalNotificationDescription": "لغو خودکار اعلان‌های محلی",
+  "cancelLocalNotificationDescription": "لغو خودکار اعلان محلی",
   "callerIdSettingsTitle": "تنظیمات شناسه تماس‌گیرنده",
-  "callerIdSettingsSubtitle": "برای تنظیم اعلان تماس ورودی و حالت نمایش",
+  "callerIdSettingsSubtitle": "پیکربندی اعلان‌های تماس ورودی و حالت نمایش",
   "purchaseTitle": "خرید",
-  "purchaseSubtitle": "برای خرید سرویس",
+  "purchaseSubtitle": "خرید خدمات",
   "callerIdNotificationTitle": "اطلاعات تماس ورودی",
   "@callerIdNotificationTitle": {
     "description": "عنوان برای اطلاعات تماس ورودی"
   },
   "callerIdBody": "شماره: {phoneNumber}",
   "@callerIdBody": {
-    "description": "بدنه برای اعلان شناسه تماس‌گیرنده، نمایش شماره تلفن",
+    "description": "متن اعلان شناسه تماس‌گیرنده، نمایش شماره تلفن",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -36,7 +36,7 @@
   },
   "blockedCallBody": "تماس مسدود شده از {phoneNumber}",
   "@blockedCallBody": {
-    "description": "بدنه برای اعلان تماس مسدود شده، نمایش شماره تلفن",
+    "description": "متن اعلان تماس مسدود شده، نمایش شماره تلفن",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -66,7 +66,7 @@
   },
   "stirVerificationBody": "{stirResultMessage} برای شماره {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "بدنه برای اعلان تأیید STIR/SHAKEN، نمایش نتیجه و شماره تلفن",
+    "description": "متن اعلان تأیید STIR/SHAKEN، نمایش نتیجه و شماره تلفن",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
@@ -87,11 +87,11 @@
   "enableSecurityMessage": "فعال کردن پیام امنیتی",
   "fraudAlertTitle": "هشدار کلاهبرداری",
   "@fraudAlertTitle": {
-    "description": "عنوان برای اعلان هشدار کلاهبرداری"
+    "description": "عنوان برای هشدار کلاهبرداری"
   },
-  "fraudAlertBody": "تماس احتمالی کلاهبرداری از {phoneNumber}",
+  "fraudAlertBody": "تماس کلاهبرداری احتمالی از {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "بدنه برای اعلان هشدار کلاهبرداری",
+    "description": "متن هشدار کلاهبرداری",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -99,21 +99,21 @@
       }
     }
   },
-  "loadRulesFailed": "بارگذاری قوانین ناموفق بود: {error}",
-  "loadCallLogFailed": "بارگذاری گزارش تماس ناموفق بود: {error}",
-  "noBlockedTypeData": "داده‌ای برای نوع مسدود شده موجود نیست",
+  "loadRulesFailed": "بارگیری قوانین ناموفق بود: {error}",
+  "loadCallLogFailed": "بارگیری گزارش تماس ناموفق بود: {error}",
+  "noBlockedTypeData": "داده‌های نوع مسدود شده وجود ندارد",
   "importEntity": "وارد کردن {entityTypeName}",
   "@importEntity": {
-    "description": "عنوان دیالوگ برای وارد کردن یک موجودیت",
+    "description": "عنوان گفتگو برای وارد کردن یک موجودیت",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
       }
     }
   },
-  "entityImportSuccess": "{entityTypeName} با موفقیت وارد شد",
+  "entityImportSuccess": "{entityTypeName} با موفقیت وارد شد، {count} رکورد وارد شد",
   "@entityImportSuccess": {
-    "description": "پیام موفقیت پس از وارد کردن موجودیت‌ها",
+    "description": "پیام موفقیت پس از وارد کردن موجودیت",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -126,7 +126,7 @@
   },
   "entityImportFailed": "وارد کردن {entityTypeName} ناموفق بود: {error}",
   "@entityImportFailed": {
-    "description": "پیام خطا هنگام ناموفق بودن وارد کردن موجودیت‌ها",
+    "description": "پیام خطا در صورت عدم موفقیت در وارد کردن موجودیت",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -138,7 +138,7 @@
   },
   "exportEntity": "صادر کردن {entityTypeName}",
   "@exportEntity": {
-    "description": "عنوان دیالوگ برای صادر کردن یک موجودیت",
+    "description": "عنوان گفتگو برای صادر کردن یک موجودیت",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -147,7 +147,7 @@
   },
   "entityExportSuccess": "{entityTypeName} با موفقیت صادر شد",
   "@entityExportSuccess": {
-    "description": "پیام موفقیت پس از صادر کردن موجودیت‌ها",
+    "description": "پیام موفقیت پس از صادر کردن موجودیت",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -156,7 +156,7 @@
   },
   "entityExportFailed": "صادر کردن {entityTypeName} ناموفق بود: {error}",
   "@entityExportFailed": {
-    "description": "پیام خطا هنگام ناموفق بودن صادر کردن موجودیت‌ها",
+    "description": "پیام خطا در صورت عدم موفقیت در صادر کردن موجودیت",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -170,7 +170,7 @@
   "membershipCenter": "مرکز عضویت",
   "redeemVipWithMarks": "بازخرید VIP با امتیاز",
   "currentMarkCount": "تعداد امتیاز فعلی",
-  "markMoreNumbersForMore": "شماره‌های بیشتری را برای بیشتر علامت بزنید",
+  "markMoreNumbersForMore": "شماره‌های بیشتری را برای امتیاز بیشتر علامت‌گذاری کنید",
   "noAds": "بدون تبلیغات",
   "cloudBackup": "پشتیبان‌گیری ابری",
   "callerIdEnhancement": "بهبود شناسه تماس‌گیرنده",
@@ -181,18 +181,18 @@
   "temporaryVip": "VIP موقت",
   "removeAds": "حذف تبلیغات",
   "unknownAction": "عمل ناشناخته",
-  "settingsBackup": "پشتیبان‌گیری تنظیمات",
+  "settingsBackup": "پشتیبان‌گیری از تنظیمات",
   "allServicesStatusTitle": "وضعیت همه سرویس‌ها",
   "allServicesStatusSubtitle": "وضعیت فعلی هر سرویس ابری",
   "redirect": "تغییر مسیر",
   "notify": "اعلان",
   "log": "گزارش",
   "custom": "سفارشی",
-  "allowActionDescription": "تماس مجاز خواهد بود، حتی اگر شماره در لیست سیاه باشد.",
+  "allowActionDescription": "تماس‌ها حتی اگر شماره در لیست مسدود شده باشد، مجاز خواهند بود.",
   "blockActionDescription": "تماس‌ها مسدود شده و در گزارش تماس نمایش داده می‌شوند.",
-  "silenceActionDescription": "تماس‌ها بی‌صدا می‌شوند، اما همچنان در گزارش تماس نمایش داده می‌شوند.",
+  "silenceActionDescription": "تماس‌ها بی‌صدا می‌شوند اما در گزارش تماس نمایش داده می‌شوند.",
   "noneActionDescription": "هیچ اقدام خاصی برای تماس انجام نخواهد شد.",
-  "redirectActionDescription": "تماس را به یک شماره مشخص تغییر مسیر دهید.",
+  "redirectActionDescription": "تماس را به یک شماره خاص تغییر مسیر دهید.",
   "labelActionDescription": "برای شناسایی آسان، یک برچسب به تماس اضافه کنید.",
   "notifyActionDescription": "هنگام دریافت تماس، یک اعلان ارسال کنید."
 }

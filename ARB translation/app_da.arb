@@ -1,0 +1,2174 @@
+{
+  "@@locale": "da",
+
+  "aboutContactSubscription": "Om kontaktabonnement",
+  "@aboutContactSubscription": {
+    "description": "Titel for kontaktabonnement"
+  },
+  "aboutLabels": "Om etiketter",
+  "aboutPhoneSubscriptionRules": "Om telefonabonnementsregler",
+  "aboutPhoneSubscriptions": "Om telefonabonnementer",
+  "@aboutPhoneSubscriptions": {
+    "description": "Titel for telefonabonnementer"
+  },
+  "aboutPhoneSubscriptionsDesc": "Abonner på telefonregellister via URL, opdater automatisk sortliste- og hvidlisteregler. Understøtter JSON-format regelfiler.",
+  "@aboutPhoneSubscriptionsDesc": {
+    "description": "Beskrivelse af telefonabonnementer"
+  },
+  "aboutSmsFilter": "Om SMS-filtrering",
+  "aboutSmsSubscriptionRules": "Om SMS-abonnementsregler",
+  "aboutSubtitle": "Applikationsversion og juridisk information",
+  "aboutTitle": "Om",
+  "action": "Handling",
+  "actionAll": "Alle",
+  "actionAllow": "Tillad",
+  "actionBlock": "Bloker",
+  "actionFilterAll": "Alle filtre",
+  "actionFilterTitle": "Filtrer efter handlingstype",
+  "actionFilterTooltip": "Handlingsfilter",
+  "actionNone": "Ingen handling",
+  "actionSilence": "Stilhed",
+  "actionTag": "Handling: {actionType}",
+  "actionType": "Handlingstype",
+  "actionUnknown": "Ukendt",
+  "add": "Tilføj",
+  "addAllowedBlockedRule": "Tilføj tillad/bloker regel",
+  "addAllowSubscription": "Tilføj tillad abonnement",
+  "@addAllowSubscription": {
+    "description": "Tilføj tillad abonnement dialogtitel"
+  },
+  "addBlockSubscription": "Tilføj bloker abonnement",
+  "@addBlockSubscription": {
+    "description": "Tilføj bloker abonnement dialogtitel"
+  },
+  "addContactButton": "Tilføj kontakt",
+  "addContactFailed": "Kunne ikke tilføje kontakt: {error}",
+  "addedToAllowedRules": "Tilføjet til tilladte regler",
+  "addedToBlacklist": "Tilføjet til sortliste",
+  "addedToBlockedRules": "Tilføjet til blokerede regler",
+  "addedToFavoriteContacts": "Tilføjet til favoritkontakter",
+  "addedToFavorites": "Tilføjet til favoritkontakter",
+  "addedToWhitelist": "Tilføjet til hvidliste",
+  "addFavorite": "Tilføj favorit",
+  "addFilter": "Tilføj filter",
+  "addLabel": "Tilføj etiket",
+  "addLabelButton": "Tilføj etiket",
+  "addLabelFailed": "Kunne ikke tilføje etiket: {error}",
+  "addLabelToCall": "Tilføj etiket til opkaldslog",
+  "addName": "Tilføj navn",
+  "addNoneSubscription": "Tilføj ingen abonnement",
+  "@addNoneSubscription": {
+    "description": "Tilføj ingen abonnement dialogtitel"
+  },
+  "addOrEditContactInfo": "Bruges til at tilføje eller redigere kontaktoplysninger",
+  "addPhoneMark": "Tilføj telefonmærke",
+  "addPhoneNumberRule": "Tilføj telefonnummerregel",
+  "addPlugin": "Tilføj plugin",
+  "addPluginFailed": "Kunne ikke tilføje plugin",
+  "addPluginFailedWithError": "Kunne ikke tilføje plugin: {error}",
+  "addPluginFromLocalFile": "Tilføj plugin fra lokal fil",
+  "addPluginFromUrl": "Tilføj plugin fra URL",
+  "addRegexRule": "Tilføj Regex-regel",
+  "addRule": "Tilføj regel",
+  "addRuleButton": "Tilføj regel",
+  "addRuleFailed": "Kunne ikke tilføje regel: {error}",
+  "addRuleTooltip": "Tilføj regel",
+  "addSilenceSubscription": "Tilføj stilhed abonnement",
+  "@addSilenceSubscription": {
+    "description": "Tilføj stilhed abonnement dialogtitel"
+  },
+  "addSimRuleButton": "Tilføj SIM-regel",
+  "addSmsFilterRule": "Tilføj SMS-filterregel",
+  "addSmsRule": "Tilføj SMS-regel",
+  "addSmsSubscription": "Tilføj SMS-abonnement",
+  "addSubscription": "Tilføj abonnement",
+  "@addSubscription": {
+    "description": "Tilføj abonnement knaptekst"
+  },
+  "addSubscriptionButton": "Tilføj abonnement",
+  "addSubscriptionFailed": "Kunne ikke tilføje abonnement: {error}",
+  "@addSubscriptionFailed": {
+    "description": "Fejlmeddelelse ved tilføjelse af abonnement",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "addSubscriptionTooltip": "Tilføj abonnement",
+  "addToAllowedRules": "Tilføj til tilladte regler",
+  "addToBlacklist": "Tilføj til sortliste",
+  "addToBlockedRules": "Tilføj til blokerede regler",
+  "addToFavoriteContacts": "Tilføj til favoritkontakter",
+  "addToFavorites": "Tilføj til favoritter",
+  "addToRules": "Tilføj til regler",
+  "addToWhitelist": "Tilføj til hvidliste",
+  "adPlaceholder": "Annoncepladsholder",
+  "agent": "Agent",
+  "all": "Alle",
+  "allCallsTab": "Alle",
+  "allDataClearedSuccessfully": "Alle data ryddet med succes",
+  "allow": "Tillad",
+  "allowAllAllowRules": "Tillad alle tilladte regler",
+  "allowAllAllowRulesDesc": "Tillad opkald fra tilladte regler",
+  "allowAllBlacklistedNumbers": "Tillad alle sortlistede numre",
+  "allowAllBlacklistedNumbersDesc": "Tillad opkald fra sortliste",
+  "@allowAllBlacklistedNumbersDesc": {
+    "description": "Tillad opkald fra sortliste"
+  },
+  "allowAllBlockRules": "Tillad alle blokeringsregler",
+  "allowAllBlockRulesDesc": "Tillad opkald fra blokeringsregler",
+  "allowAllowedNumbers": "Tillad tilladte numre",
+  "allowAllowedNumbersDesc": "Tillad opkald fra hvidliste",
+  "allowBlock": "Tillad/Bloker",
+  "allowBlockedNumbers": "Tillad blokerede numre",
+  "allowBlockedNumbersDesc": "Tillad opkald fra sortliste",
+  "allowedBlockedRule": "Tillad/Bloker regel",
+  "allowedBlockedRuleEditDialogTitle": "Rediger tillad/bloker regel",
+  "allowedBlockedRuleManagement": "Tillad/Bloker regelstyring",
+  "allowNonExceededNumbers": "Tillad ikke-overskredne numre",
+  "allowNonExceededNumbersDescription": "Tillad automatisk numre, der ikke overskrider tærskelværdien",
+  "allowRegexAllowRules": "Tillad Regex tilladte regler",
+  "allowRegexAllowRulesDesc": "Aktiver regex-mønstermatchning for tilladte regler",
+  "allowRegexAllowRulesDescription": "Aktiver regex-baserede tilladte regler",
+  "allowRegexBlockRules": "Tillad Regex blokeringsregler",
+  "allowRegexBlockRulesDesc": "Aktiver regex-mønstermatchning for blokeringsregler",
+  "allowRegexBlockRulesDescription": "Aktiver regex-baserede blokeringsregler",
+  "allowRule": "Tillad regel",
+  "allowRules": "Tilladte regler",
+  "allowWhitelistedNumbers": "Tillad hvidlistede numre",
+  "allowWhitelistedNumbersDescription": "Tillad alle numre på hvidlisten",
+  "allPermissionsGranted": "Alle tilladelser givet",
+  "allSettingsCompleted": "Alle indstillinger fuldført.",
+  "allUpdateSuccess": "Alle opdateringer fuldført ({count} regler)",
+  "@allUpdateSuccess": {
+    "description": "Fuld opdatering succesmeddelelse",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "answerThenHangup": "Besvar og læg på",
+  "appLegalese": "© 2023 Your Call Your Rule. Alle rettigheder forbeholdes.",
+  "applicationSoftware": "Applikationssoftware",
+  "apply": "Anvend",
+  "appName": "Your Call Your Rule",
+  "authorizationFailedCheckCredentialsMessage": "Autorisation mislykkedes: Kontroller klient-ID og nøgle",
+  "authorizationFailedMessage": "Autorisation mislykkedes",
+  "authorizationSuccessMessage": "Autorisation lykkedes",
+  "authorizeLoginButton": "Autoriser login",
+  "automotiveIndustry": "Bilindustrien",
+  "autoSyncLabel": "Auto-synkronisering",
+  "autoUpdate": "Auto-opdatering",
+  "autoUpdateDescription": "Indstil auto-opdateringsintervaller for abonnementer eller opdater manuelt",
+  "autoUpdateSettings": "Auto-opdateringsindstillinger",
+  "autoUpdateSettingsSubtitle": "Administrer automatiske opdateringer for regler og plugins",
+  "autoUpdateSettingsTitle": "Auto-opdateringsindstillinger",
+  "autoUpdateSubtitle": "Administrer automatiske opdateringer for regler og plugins",
+  "autoUpdateTitle": "Auto-opdatering",
+  "avatarBorderColor": "Avatar kantfarve",
+  "avatarBorderSize": "Avatar kantstørrelse",
+  "avatarIconSizesSetting": "Avatar- og ikonstørrelser",
+  "avatarPosition": "Avatarposition",
+  "avatarSize": "Avatarstørrelse",
+  "axisPosition": "{axis} position",
+  "backgroundGradientSetting": "Baggrundsgradient",
+  "backup": "Sikkerhedskopi",
+  "backupAndRestore": "Sikkerhedskopi og gendannelse",
+  "backupAndRestoreSubtitle": "Sikkerhedskopier eller gendan applikationsdata",
+  "backupAndRestoreTitle": "Sikkerhedskopi og gendannelse",
+  "backupFailed": "Sikkerhedskopi mislykkedes",
+  "backupFailedMessage": "Sikkerhedskopi mislykkedes",
+  "backupFailedWithError": "Sikkerhedskopi mislykkedes: {error}",
+  "backupRestoreSubtitle": "Sikkerhedskopier eller gendan applikationsdata",
+  "backupRestoreTitle": "Sikkerhedskopi og gendannelse",
+  "backupSectionTitle": "Sikkerhedskopi",
+  "backupSettings": "Sikkerhedskopiindstillinger",
+  "backupSettingsDialogTitle": "Sikkerhedskopiindstillinger",
+  "backupSettingsTitle": "Sikkerhedskopiindstillinger",
+  "backupSuccessMessage": "Sikkerhedskopi lykkedes til skyen",
+  "backupSuccessToLocal": "Sikkerhedskopi lykkedes til: {path}",
+  "backupToCloud": "Sikkerhedskopi til skyen",
+  "backupToCloudDescription": "Sikkerhedskopier indstillinger og regler til skylager",
+  "backupToCloudFailed": "Kunne ikke sikkerhedskopiere til skyen: {error}",
+  "backupToCloudLabel": "Sikkerhedskopi til skyen",
+  "backupToCloudSuccess": "Sikkerhedskopi lykkedes til skyen",
+  "backupToCloudTitle": "Sikkerhedskopi til skyen",
+  "backupToLocalLabel": "Sikkerhedskopi til lokal",
+  "bank": "Bank"
+,
+  "basicRuleFilter": "Grundlæggende regel filter",
+  "basicRuleFiltering": "Grundlæggende regel filtrering",
+  "basicRuleFilteringExplanation": "• Grundlæggende regel filtrering: Filtreringsregler baseret på sortliste, hvidliste og regex",
+  "basicRuleFilterSettings": "Grundlæggende regel filter indstillinger",
+  "@basicRuleFilterSettings": {
+    "description": "Titel for grundlæggende regel filter indstillinger side"
+  },
+  "basicRuleFilterSubtitle": "Filtrer opkald ved hjælp af sortliste/hvidliste og regulære udtryk",
+  "batchDeleteContacts": "Slet kontakter i batch",
+  "batchDeleteContactsConfirm": "Er du sikker på, at du vil slette {count} valgte kontakter?",
+  "batchDeleteFailed": "Batch sletning mislykkedes",
+  "batchDeleteLabelsConfirm": "Er du sikker på, at du vil slette {count} etiketter?",
+  "blacklist": "Sortliste",
+  "@blacklist": {
+    "description": "Sortliste etiket"
+  },
+  "blacklistingAndWhitelisting": "Sortlisting og hvidlisting",
+  "blacklistLabel": "Sortliste",
+  "blackWhiteList": "Sort/Hvid Liste",
+  "block": "Bloker",
+  "blockCalls": "Bloker opkald",
+  "blocked": "Blokeret",
+  "blockedCallAction": "Blokeret opkald handling",
+  "blockedCalls": "Blokerede opkald",
+  "blockedCallsTitle": "Blokerede opkald",
+  "blockedCommunications": "Blokerede kommunikationer",
+  "blockedPhoneLabel": "Blokerede opkald",
+  "blockedSpamCalls": "Blokerede spamopkald",
+  "blockingTrend": "Blokerings trend",
+  "blockInternationalCalls": "matcher numre, der ikke starter med + eller 00",
+  "blockInternationalCallsTitle": "Bloker internationale opkald",
+  "blockLandlineNumbersTitle": "Bloker fastnetnumre",
+  "blockMobileNumbers": "matcher numre, der ikke starter med 13-19",
+  "blockMobileNumbersTitle": "Bloker mobilnumre",
+  "blockPremiumRateNumbers": "matcher numre, der ikke starter med 118 eller 120-190",
+  "blockPremiumRateNumbersTitle": "Bloker præmienumre",
+  "blockRule": "Bloker regel",
+  "blockRules": "Blokeringsregler",
+  "blockSpecificAreaCodes": "matcher numre, der starter med 0 + 2-3 cifre",
+  "blockSpecificAreaCodesTitle": "Bloker specifikke områdekoder:",
+  "blockTypeAnalysisTitle": "Bloker type analyse",
+  "both": "Begge",
+  "bulkDelete": "Slet kontakter i batch",
+  "bulkDeleteContacts": "Slet kontakter i batch",
+  "bulkDeleteLabels": "Slet etiketter i bulk",
+  "call": "Opkald",
+  "callback": "Ring tilbage",
+  "callbackTo": "Ring tilbage til {number}",
+  "@callbackTo": {
+    "description": "Tilbagekald notifikationsbesked",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "callBlocking": "Opkaldsblokering",
+  "callerIdApp": "Opkalder ID App",
+  "callerIdCustomizationTitle": "Tilpas opkalder ID",
+  "callerIdDialogTitle": "Opkalder ID information",
+  "callerIdDisplayMode": "Opkalder ID visningstilstand",
+  "callerIdMarkedByCount": "Markeret af {count}",
+  "@callerIdMarkedByCount": {
+    "description": "Markeringstæller visning",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "callerIdPreview": "Opkalder ID forhåndsvisning",
+  "callFilter": "Opkaldsfilter",
+  "callFilterDescription": "Når aktiveret, tjekkes indgående opkald mod regellisten nedenfor. Opkaldsfiltreringsregler synkroniseres ikke mellem enheder som standard.",
+  "callFilterRules": "Opkaldsfilter regler",
+  "callFilterRulesDescription": "Indstil grundlæggende regler for opkaldsfiltrering",
+  "callFilterSettings": "Opkaldsfilter indstillinger",
+  "callFrequencyInterceptionSubtitle": "Indstil opkaldsfrekvensgrænser og blokeringsregler",
+  "callFrequencyInterceptionTitle": "Opkaldsfrekvens interception",
+  "callHistory": "Opkalds historik",
+  "callHistoryInfoDesc": "Her vises din opkalds historik, inklusive indgående, udgående og mistede opkald.",
+  "callHistoryInfoTitle": "Opkalds historik",
+  "callHistoryInitFailed": "Kunne ikke initialisere opkalds historik: {error}",
+  "@callHistoryInitFailed": {
+    "description": "Opkalds historik initialiseringsfejl besked",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "callHistoryRefreshFailed": "Kunne ikke opdatere opkalds historik: {error}",
+  "@callHistoryRefreshFailed": {
+    "description": "Opkalds historik opdateringsfejl besked",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "callHistoryTab": "Opkalds historik",
+  "callHistoryTimelineEarlier": "Tidligere",
+  "callHistoryTimelineToday": "I dag",
+  "callHistoryTimelineYesterday": "I går",
+  "callScreeningPermission": "Opkalds screening tilladelse",
+  "callScreeningPermissionDescription": "Bruges til at screene og blokere spamopkald.",
+  "callScreeningPermissionNotGranted": "Opkalds screening tilladelse ikke givet, kan påvirke app funktionalitet.",
+  "callSettingsSubtitle": "Opkalder ID, filtrering og blokeringsindstillinger",
+  "callSettingsTitle": "Opkalds indstillinger",
+  "callStatistics": "Opkalds statistik",
+  "callTypeAnswered": "Besvaret",
+  "callTypeBlocked": "Blokeret",
+  "callTypeIconColor": "Opkaldstype ikon farve",
+  "callTypeMissed": "Mistet opkald",
+  "callTypeOutgoing": "Udgående",
+  "callTypePosition": "Opkaldstype position",
+  "callTypeUnknown": "Ukendt",
+  "cancelButton": "Annuller",
+  "carRental": "Biludlejning",
+  "carrier": "Telefonudbyder",
+  "carrierColor": "Telefonudbyder farve",
+  "carrierFontSize": "Telefonudbyder skriftstørrelse",
+  "carrierPosition": "Telefonudbyder position",
+  "changeLabel": "Skift etiket",
+  "changePluginStatusFailed": "Kunne ikke ændre plugin status: {error}",
+  "changeSubscriptionStatusFailed": "Kunne ikke ændre abonnementsstatus: {error}",
+  "@changeSubscriptionStatusFailed": {
+    "description": "Fejlmeddelelse ved ændring af abonnementsstatus",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "changeTag": "Skift tag",
+  "charity": "Velgørenhed",
+  "chartMonthFormat": "Måned {month}",
+  "@chartMonthFormat": {
+    "description": "Månedsformat for diagrametiketter",
+    "placeholders": {
+      "month": {
+        "type": "int"
+      }
+    }
+  },
+  "chartOneDayAgo": "1 dag siden",
+  "chartOneMonthAgo": "1 måned siden",
+  "chartOneWeekAgo": "1 uge siden",
+  "chartTenDaysAgo": "10 dage siden",
+  "chartThreeDaysAgo": "3 dage siden",
+  "chartToday": "I dag",
+  "checkFileFormat": "Kontroller venligst filformat eller tilladelser",
+  "checkPermissionFailed": "Kunne ikke kontrollere tilladelser: {error}",
+  "chooseDefaultInterceptAction": "Vælg standard interception handling",
+  "clearAllData": "Ryd alle data",
+  "clearAllDataConfirmation": "Er du sikker på, at du vil rydde alle applikationsdata? Denne handling kan ikke fortrydes.",
+  "clearAllDataDescription": "Ryd alle applikationsdata",
+  "clearAllDataLabel": "Ryd alle data",
+  "clearFilter": "Ryd filter",
+  "clearLabelFilter": "Ryd etiketfilter",
+  "clearLabelFilterButton": "Ryd etiketfilter",
+  "close": "Luk",
+  "closeButton": "Luk",
+  "cloudSync": "Cloud synkronisering",
+  "cloudSyncAndBackupTitle": "Cloud synkronisering & sikkerhedskopi",
+  "cloudSyncSettingsSubtitle": "Konfigurer WebDAV, OneDrive og Google Drive",
+  "cloudSyncSettingsTitle": "Cloud synkroniseringsindstillinger",
+  "cloudSyncTitle": "Cloud synkronisering",
+  "collapseLabelSelector": "Skjul etiketvælger",
+  "collection": "Gældsinddrivelse",
+  "colorPickerTitle": "Vælg farve",
+  "configManagement": "Konfigurationsstyring",
+  "configUpdated": "Konfiguration opdateret",
+  "configurationAdvice": "Gennem korrekt konfiguration kan du indstille forskellige filtreringsstrategier for arbejds- og personlige SIM-kort.",
+  "configureBackupOptions": "Konfigurer sikkerhedskopieringsmuligheder",
+  "configureBackupOptionsSubtitle": "Konfigurer sikkerhedskopieringsmuligheder",
+  "configureCloudSyncService": "Konfigurer cloud synkroniseringstjeneste",
+  "configureCloudSyncServiceHint": "Konfigurer venligst en cloud synkroniseringstjeneste for at aktivere multi-enhed synkronisering.",
+  "configureCloudSyncServiceMessage": "Konfigurer venligst en cloud synkroniseringstjeneste for at aktivere multi-enhed synkronisering.",
+  "configureSimCardFilterRules": "Konfigurer SIM-kort filterregler",
+  "configureSyncServiceHint": "Konfigurer venligst synkroniseringstjeneste i cloud synkroniseringsindstillinger først",
+  "confirm": "Bekræft",
+  "confirmBatchDeleteContacts": "Er du sikker på, at du vil slette de valgte",
+  "confirmButton": "Bekræft",
+  "confirmDelete": "Bekræft sletning",
+  "confirmDeleteContact": "Er du sikker på, at du vil slette",
+  "confirmDeleteContactName": "Bekræft sletning?",
+  "confirmDeleteFilter": "Er du sikker på, at du vil slette dette filter?",
+  "confirmDeleteLabel": "Er du sikker på, at du vil slette etiket \"{name}\"",
+  "confirmDeletePlugin": "Er du sikker på, at du vil slette plugin \"{name}\"?",
+  "confirmDeletePlugins": "Er du sikker på, at du vil slette {count} plugins?",
+  "@confirmDeletePlugins": {
+    "description": "Bekræftelsesbesked vist før sletning af en eller flere plugins.",
+    "placeholders": {
+      "count": {
+        "type": "Object",
+        "example": "5"
+      }
+    }
+  }
+,
+  "confirmDeleteSelectedContacts": "Er du sikker på, at du vil slette valgte kontakter?",
+  "confirmDeleteSmsFilterRule": "Er du sikker på, at du vil slette denne SMS-filterregel?",
+  "confirmDeleteSmsRule": "Er du sikker på, at du vil slette denne SMS-regel?",
+  "confirmDeleteSubscription": "Er du sikker på, at du vil slette dette abonnement?",
+  "confirmDeleteSubscriptions": "Er du sikker på, at du vil slette {name}?",
+  "@confirmDeleteSubscriptions": {
+    "description": "Bekræftelsesbesked vist før sletning af et abonnement.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Premium Plan"
+      }
+    }
+  },
+  "confirmPassword": "Bekræft adgangskode",
+  "confirmPasswordLabel": "Bekræft adgangskode",
+  "connectedStatus": "Forbundet",
+  "connectionFailedCheckCredentialsMessage": "Forbindelse mislykkedes: Kontroller serveradresse, brugernavn og adgangskode",
+  "connectionFailedMessage": "Forbindelse mislykkedes",
+  "connectionStatusLabel": "Forbindelsesstatus",
+  "connectionSuccessMessage": "Forbindelse lykkedes",
+  "contactAddSuccess": "Kontakt tilføjet med succes",
+  "contactDeleted": "Kontakt slettet",
+  "contactEditDialog": "Kontakt redigeringsdialog",
+  "contactNameHint": "Indtast kontaktnavn (valgfrit)",
+  "contactNameLabel": "Navn",
+  "contactNameOptional": "Kontaktnavn (valgfrit)",
+  "contactNotFound": "Kontakt ikke fundet",
+  "contacts": "kontakter",
+  "contactsDeleted": "Slettet {count} kontakter",
+  "contactSettingsSubtitle": "Kontaktstyring og etiketindstillinger",
+  "contactSettingsTitle": "Kontaktindstillinger",
+  "contactsLoadingFailed": "Kunne ikke indlæse kontakter: {error}",
+  "contactsManagement": "Kontaktstyring",
+  "contactsManagementPageTitle": "Kontaktstyringsside",
+  "contactsPageTitle": "Kontaktstyring",
+  "contactsPermission": "Kontakttilladelse",
+  "contactsPermissionDescription": "Bruges til at identificere kontaktkald.",
+  "contactsTab": "Kontakter",
+  "contactSubscriptionDescription": "Abonner på kontaktlister via URL, opdater automatisk kontaktoplysninger og etiketter. Understøtter JSON-formatdata.",
+  "@contactSubscriptionDescription": {
+    "description": "Om kontaktabonnementsbeskrivelse"
+  },
+  "contactSubscriptionLoadingFailed": "Kunne ikke indlæse kontaktabonnementer: {error}",
+  "contactSubscriptionPageTitle": "Kontaktabonnementer",
+  "contactUpdateSuccess": "Kontakt opdateret med succes",
+  "contactUs": "Kontakt os",
+  "content": "Indhold",
+  "contentRegex": "Indhold Regex",
+  "countColor": "Antal farve",
+  "countFontSize": "Antal skriftstørrelse",
+  "countPosition": "Antal position",
+  "country": "Land",
+  "countryNameColor": "Landenavn farve",
+  "countryNameFontSize": "Landenavn skriftstørrelse",
+  "countryRegionNamePosition": "Land/Region navn position",
+  "countrySelectionDialog": "Landevalgsdialog",
+  "countrySelectionDialogDescription": "Bruges til at vælge et land for at forespørge opkalder-ID-information",
+  "countThresholdDescription": "Indstil den mindste tærskelværdi, der kræves for at udløse filtreringshandlinger",
+  "countThresholdLabel": "Antal tærskel",
+  "countThresholdSettings": "Antal tærskelindstillinger",
+  "countThresholdValue": "Antal tærskel: {count}",
+  "createdRules": "Oprettede regler",
+  "csvFormat": "CSV-format",
+  "currentDeviceChip": "Nuværende",
+  "currentDeviceLabel": "Nuværende enhedsetiket",
+  "currentDeviceTitle": "Nuværende enhed",
+  "currentLabels": "Nuværende etiketter:",
+  "currentLanguage": "Nuværende sprog",
+  "currentPasswordLabel": "Nuværende adgangskode",
+  "customerService": "Kundeservice",
+  "customRange": "Brugerdefineret område",
+  "dailyStatistics": "Daglig statistik",
+  "@dailyStatistics": {
+    "description": "Daglig statistik notifikationsmulighed"
+  },
+  "dailyStatisticsDesc": "Modtag daglig statistik over blokerede opkald og beskeder",
+  "@dailyStatisticsDesc": {
+    "description": "Beskrivelse for daglig statistik mulighed"
+  },
+  "dashboardTab": "Dashboard",
+  "dataAnalysis": "Dataanalyse",
+  "dataAnalysisDashboardPage": "Dataanalyse dashboard side",
+  "dataExport": "Dataeksport",
+  "dataLoadFailure": "Dataindlæsning mislykkedes: {error}",
+  "@dataLoadFailure": {
+    "description": "Dataindlæsningsfejlmeddelelse",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "dataLoadingFailed": "Kunne ikke indlæse data: {error}",
+  "dataMigration": "Datamigrering",
+  "dataMigrationDescription": "Denne funktion giver dig mulighed for at overføre alle dine data mellem enheder. I øjeblikket kan du bruge sikkerhedskopierings- og gendannelsesfunktionerne til manuelt at migrere dine data.",
+  "dataMigrationDialogContent": "Denne funktion giver dig mulighed for at overføre alle dine data mellem enheder. I øjeblikket kan du bruge sikkerhedskopierings- og gendannelsesfunktionerne til manuelt at migrere dine data.",
+  "dataMigrationDialogTitle": "Datamigrering",
+  "dataMigrationSectionTitle": "Datamigrering",
+  "dataSourceReminder": "Datakilde påmindelse"
+,
+  "days": "{count, plural, =1{1 dag} other{{count} dage}}",
+  "@days": {
+    "description": "Viser antallet af dage",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "daysVip": "{days} VIP dage",
+  "debtCollection": "Gældsinddrivelse",
+  "defaultPeriod": "Uge",
+  "deleteButton": "Slet",
+  "deleteContact": "Slet kontakt",
+  "deleteContactConfirm": "Er du sikker på, at du vil slette {name}?",
+  "deleteContactConfirmation": "Er du sikker på, at du vil slette kontakten",
+  "deleteDeviceConfirmation": "Er du sikker på, at du vil slette {deviceName}?",
+  "deleteDeviceDialogTitle": "Slet enhed",
+  "deleteFailed": "Sletning mislykkedes: {error}",
+  "deleteFilter": "Slet filter",
+  "deleteLabel": "Slet mærke",
+  "deleteLabelFailed": "Kunne ikke slette mærke: {error}",
+  "deletePlugin": "Slet plugin",
+  "deletePluginFailed": "Kunne ikke slette plugin: {error}",
+  "deletePlugins": "Slet plugins",
+  "deletePluginsFailed": "Kunne ikke slette plugins: {error}",
+  "deleteRule": "Slet regel",
+  "deleteRuleFailed": "Sletning mislykkedes: {error}",
+  "deleteSelected": "Slet valgte",
+  "deleteSmsRule": "Slet SMS-regel",
+  "deleteSubscription": "Slet abonnement",
+  "@deleteSubscription": {
+    "description": "Dialogtitel for sletning af abonnement"
+  },
+  "deleteSubscriptionConfirm": "Er du sikker på, at du vil slette abonnementet \"{name}\"?",
+  "@deleteSubscriptionConfirm": {
+    "description": "Bekræftelsesbesked for sletning af abonnement",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "deleteSubscriptionFailed": "Kunne ikke slette abonnement: {error}",
+  "@deleteSubscriptionFailed": {
+    "description": "Fejlmeddelelse for mislykket sletning af abonnement",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "deleteSuccess": "Slettet succesfuldt",
+  "delivery": "Levering",
+  "deviceDeletedSuccessfully": "Enhed slettet succesfuldt",
+  "deviceDeletedSuccessfullyMessage": "Enhed slettet succesfuldt",
+  "deviceIdLabel": "Enheds-ID",
+  "deviceIDLabel": "Enheds-ID",
+  "deviceManagementSubtitle": "Administrer synkronisering af flere enheder",
+  "deviceManagementTitle": "Enhedsadministration",
+  "deviceModelLabel": "Enhedsmodel",
+  "deviceName": "Enhedsnavn",
+  "deviceNameCannotBeEmpty": "Enhedsnavn kan ikke være tomt",
+  "deviceNameHint": "Indtast enhedsnavn",
+  "deviceNameLabel": "Enhedsnavn",
+  "deviceRenamedSuccessfully": "Enhed omdøbt succesfuldt",
+  "deviceRenamedSuccessfullyMessage": "Enhed omdøbt succesfuldt",
+  "devicesSyncedSuccessfully": "Enheder synkroniseret succesfuldt",
+  "devicesSyncedSuccessfullyMessage": "Enheder synkroniseret succesfuldt",
+  "devicesSynchronizedSuccessfullyMessage": "Enheder synkroniseret succesfuldt",
+  "deviceUnregisteredSuccessfullyMessage": "Enhed afregistreret succesfuldt",
+  "dialogTitle": "Forklaring af Regex-mønster",
+  "differentFromLocalCounter": "Denne funktion adskiller sig fra det lokale filtertæller, da den fokuserer på gentagne opkaldsmønstre i en kort periode i stedet for langsigtede mærketællinger.",
+  "disabled": "Deaktiveret",
+  "@disabled": {
+    "description": "Tekst for deaktiveret tilstand"
+  },
+  "disabledStatus": "Deaktiveret",
+  "disableGlobalPlugins": "Deaktiver globale plugins",
+  "disableSubscriptionSuccessfully": "Abonnement deaktiveret succesfuldt",
+  "disconnectButton": "Frakobl",
+  "disconnectedMessage": "Frakoblet",
+  "disconnectedStatus": "Frakoblet",
+  "disconnectFailedMessage": "Frakobling mislykkedes",
+  "done": "Udført",
+  "dualSimAdvice": "Denne funktion er særlig nyttig til dual-SIM-telefoner til konfiguration af forskellige filterstrategier til arbejds- og personlige SIM-kort.",
+  "earlier": "Tidligere",
+  "ecommerce": "E-handel",
+  "edit": "Rediger",
+  "editContact": "Rediger kontakt",
+  "editFilter": "Rediger filter",
+  "editLabel": "Rediger mærke",
+  "editPhoneRule": "Rediger telefonregel",
+  "editPhoneRules": "Bruges til at redigere telefonregler",
+  "editPhoneRuleTitle": "Rediger telefonregel",
+  "editRule": "Rediger regel",
+  "editSmsRule": "Rediger SMS-regel",
+  "education": "Uddannelse",
+  "elementPositionsSetting": "Indstilling af elementpositioner",
+  "email": "E-mail",
+  "emailOptional": "E-mail (valgfrit)",
+  "enableCallFilter": "Aktivér opkaldsfilter",
+  "enableCallFilterDescription": "Når aktiveret, kontrolleres indgående opkald mod følgende regelliste. Opkaldsfilterregler synkroniseres som standard ikke mellem enheder.",
+  "enabled": "Aktiveret",
+  "@enabled": {
+    "description": "Tekst for aktiveret tilstand"
+  },
+  "enabledStatus": "Aktiveret",
+  "enableEncryption": "Aktivér kryptering",
+  "enableEncryptionDescription": "Krypter sikkerhedskopifiler",
+  "enableEncryptionLabel": "Aktivér kryptering",
+  "enableEncryptionSubtitle": "Sikkerhedskopifiler vil blive krypteret",
+  "enableEncryptionTitle": "Aktivér kryptering",
+  "enableGlobalPlugins": "Aktivér globale plugins",
+  "enableLocalCountFilter": "Aktivér lokalt tællefilter",
+  "enableLocalCountFilterDescription": "Filtrer automatisk spamopkald baseret på antallet af opkaldsmærker",
+  "enableLocalNotification": "Brug lokal notifikation",
+  "enableLocalNotificationDescription": "Når aktiveret, vises notifikationer for filtrerede beskeder på enheden",
+  "enableLocationSummary": "Placering",
+  "enableMuteRules": "Aktivér lydløsregler",
+  "enableMuteRulesDesc": "Anvend indstillinger for lydløsningsfangstregler",
+  "enableNoneActionRules": "Aktivér ingen-handlingsregler",
+  "enableNoneActionRulesDesc": "Tillad indstillinger for regler uden fangsthandlinger",
+  "enableNotifications": "Aktivér notifikationer",
+  "enableRemoteNumberFilter": "Aktivér fjernnummerfilter",
+  "enableRemoteNumberFilterDescription": "Brug en fjern database til at filtrere numre",
+  "enableRule": "Aktivér regel",
+  "enableSmsFilter": "Aktivér SMS-filter",
+  "enableSmsFilterDescription": "Når aktiveret, filtreres beskeder automatisk efter regler",
+  "enableStatisticsNotifications": "Aktivér statistiknotifikationer",
+  "enableSubscriptionSuccessfully": "Abonnement aktiveret succesfuldt",
+  "enableTimeInterception": "Aktivér tidsfangst",
+  "enableTimeInterceptionDescription": "Fang gentagne opkald i en kort periode",
+  "enableTimeInterceptor": "Aktivér tidsfangst",
+  "endCallImmediately": "Afslut opkald med det samme",
+  "endColor": "Slutfarve",
+  "endDate": "Slutdato",
+  "enhancedFilterInstructionsTitle": "Forbedret filtersystem",
+  "enhancedFilterSettings": "Forbedret filterindstilling",
+  "@enhancedFilterSettings": {
+    "description": "Titel på forbedret filterindstillingsside"
+  },
+  "enhancedFilterSettingsTitle": "Forbedret filterindstilling",
+  "enhancedFilterSystemDescription": "Det forbedrede filtersystem understøtter både globale regler og filterindstillinger pr. SIM.",
+  "enterBothPhoneNumberAndRegexPattern": "Indtast både telefonnummer og Regex-mønster",
+  "enterBothPhoneNumberAndRegexPatternMessage": "Indtast både telefonnummer og Regex-mønster.",
+  "enterContactName": "Indtast kontaktnavn",
+  "enterCurrentPasswordHint": "Indtast nuværende adgangskode",
+  "enterDeviceName": "Indtast enhedsnavn",
+  "enterDeviceNameHint": "Indtast enhedsnavn",
+  "enterEmail": "Indtast e-mail",
+  "enterEmailOptional": "Indtast e-mail (valgfrit)",
+  "enterEncryptionPasswordHint": "Indtast krypteringsadgangskode",
+  "enterEncryptionPasswordTitle": "Indtast krypteringsadgangskode",
+  "enterFilterName": "Indtast filternavn",
+  "enterFilterPattern": "Indtast filtermønster",
+  "enterIconCode": "Indtast ikonkode",
+  "enterName": "Indtast kontaktnavn",
+  "enterNewDeviceNameHint": "Indtast et nyt navn til denne enhed",
+  "enterNewPasswordHint": "Indtast ny adgangskode",
+  "enterPasswordAgain": "Indtast adgangskode igen",
+  "enterPasswordHint": "Indtast adgangskode",
+  "enterPhoneNumber": "Indtast telefonnummer",
+  "enterPhoneNumberHint": "Indtast telefonnummer til test",
+  "enterPhoneNumberMultiple": "Indtast telefonnummer, flere numre adskilt af komma",
+  "enterPhoneNumberToStartSearch": "Indtast telefonnummer for at starte søgning",
+  "enterPhoneNumberToVerify": "Indtast telefonnummer for at verificere",
+  "enterPluginName": "Indtast plugin-navn",
+  "enterPluginUrl": "Indtast plugin-URL",
+  "enterRegexHint": "Indtast Regex-mønster",
+  "enterRuleNameAndPattern": "Indtast regelnavn og mønster",
+  "enterRuleNameAndPatternMessage": "Indtast både regelnavn og Regex-mønster.",
+  "enterRuleNameHint": "Indtast regelnavn",
+  "enterSearchContent": "Indtast søgeindhold",
+  "enterSubscriptionName": "Indtast abonnementsnavn",
+  "@enterSubscriptionName": {
+    "description": "Hint til abonnementsnavnefelt"
+  },
+  "enterSubscriptionUrl": "Indtast abonnements-URL",
+  "@enterSubscriptionUrl": {
+    "description": "Hint til abonnements-URL-felt"
+  },
+  "enterSyncFolderNameHint": "Indtast synkroniseringsmappenavn (standard: NotificationManager)",
+  "entertainment": "Underholdning",
+  "enterValidNameAndUrl": "Indtast et gyldigt navn og URL",
+  "@enterValidNameAndUrl": {
+    "description": "Fejlmeddelelse for indtastning af gyldigt navn og URL"
+  },
+  "enterValidUrl": "Indtast en gyldig URL",
+  "enterVersion": "Indtast version",
+  "enterWebDAVPasswordHint": "Indtast WebDAV-adgangskode",
+  "enterWebDAVServerAddressHint": "Indtast WebDAV-serveradresse",
+  "enterWebDAVUsernameHint": "Indtast WebDAV-brugernavn",
+  "errorDeletingDeviceMessage": "Fejl ved sletning af enhed: {error}",
+  "errorLoadingPlugin": "Fejl ved indlæsning af plugin",
+  "errorOccurredMessage": "Der opstod en fejl: {error}",
+  "errorRenamingDeviceMessage": "Fejl ved omdøbning af enhed: {error}",
+  "errorSynchronizingDevicesMessage": "Fejl ved synkronisering af enheder: {error}",
+  "errorSyncingDevicesMessage": "Fejl ved synkronisering af enheder: {error}",
+  "errorText": "Fejl"
+,
+  "exampleBlock400Prefix": "f.eks. Bloker 400 præfiksnumre",
+  "exampleBlockMarketingSms": "f.eks. Bloker marketing SMS",
+  "exampleContentRegex": "f.eks., .*tilbud.*",
+  "exampleContentRegexHint": "Eksempel indhold Regex",
+  "exampleCouponPromotionDiscount": "f.eks. .*(kupon|kampagne|rabat).*",
+  "exampleFamilyFriends": "f.eks. Familie, venner osv.",
+  "examplePhoneNumber": "f.eks. 10086, 12345 osv.",
+  "exampleRegex400Prefix": "Eksempel regex for 400 præfiks",
+  "exampleRegexFormat": "Eksempel: ^10086$ format",
+  "exampleSenderRegexHint": "Eksempel",
+  "exchange": "Udveksling",
+  "exchangeNow": "Udveksl nu",
+  "exchangeVip": "Udveksl VIP",
+  "expandLabelSelector": "Udvid etiketvælger",
+  "expiryTime": "Udløbstid: {time}",
+  "export": "Eksporter",
+  "exportAllApplicationSettings": "Eksporter alle applikationsindstillinger",
+  "exportAllApplicationSettingsSubtitle": "Eksporter alle applikationsindstillinger",
+  "exportAllRuleConfigurations": "Eksporter alle regelkonfigurationer",
+  "exportAllRuleConfigurationsSubtitle": "Eksporter alle regelkonfigurationer",
+  "exportComplete": "Eksport fuldført",
+  "exportConfig": "Eksporter konfiguration",
+  "exportContacts": "Eksporter kontakter",
+  "exportData": "Eksporter data",
+  "exportError": "Eksportfejl",
+  "exportFailed": "Eksport mislykkedes",
+  "exportFailure": "Kunne ikke eksportere konfiguration",
+  "exportFeatureComingSoon": "Eksportfunktion kommer snart",
+  "exporting": "Eksporterer...",
+  "exportLabels": "Eksporter etiketter",
+  "exportLabelsFailed": "Kunne ikke eksportere etiketter: {error}",
+  "exportPluginList": "Eksporter pluginliste",
+  "exportPluginListFailed": "Kunne ikke eksportere pluginliste: {error}",
+  "exportRules": "Eksporter regler",
+  "exportRulesDialogTitle": "Eksporter regler",
+  "exportRulesTitle": "Eksporter regler",
+  "exportSmsRules": "Eksporter SMS-regler",
+  "exportStatisticsData": "Eksporter statistikdata",
+  "exportSuccess": "Eksport lykkedes",
+  "exportSuccesslly": "Konfiguration eksporteret med succes",
+  "failedToAddContact": "Kunne ikke tilføje kontakt",
+  "failedToAddRule": "Kunne ikke tilføje regel: {error}",
+  "failedToAddSmsRule": "Kunne ikke tilføje SMS-regel: {error}",
+  "failedToAddSmsSubscription": "Kunne ikke tilføje SMS-abonnement: {error}",
+  "failedToBackupSettings": "Kunne ikke sikkerhedskopiere indstillinger: {error}",
+  "failedToDecryptBackupFile": "Kunne ikke dekryptere sikkerhedskopifil",
+  "failedToDeleteDevice": "Kunne ikke slette enhed",
+  "failedToDeleteSmsRule": "Kunne ikke slette SMS-regel: {error}",
+  "failedToExportRules": "Kunne ikke eksportere regler: {error}",
+  "failedToExportSmsRules": "Kunne ikke eksportere SMS-regler: {error}",
+  "failedToGetCallerIdInfo": "Kunne ikke hente opkalds-ID-information: {error}",
+  "failedToImportRules": "Kunne ikke importere regler: {error}",
+  "failedToImportSmsRules": "Kunne ikke importere SMS-regler: {error}",
+  "failedToLoadContacts": "Kunne ikke indlæse kontakter",
+  "failedToLoadPlugin": "Kunne ikke indlæse plugin",
+  "failedToRenameDevice": "Kunne ikke omdøbe enhed",
+  "failedToRestoreSettings": "Kunne ikke gendanne indstillinger",
+  "failedToRestoreSettingsWithError": "Kunne ikke gendanne indstillinger: {error}",
+  "failedToSetPassword": "Kunne ikke indstille adgangskode: {error}",
+  "failedToSyncDevices": "Kunne ikke synkronisere enheder",
+  "failedToToggleRuleStatus": "Kunne ikke skifte regelstatus: {error}",
+  "failedToToggleSubscriptionStatus": "Kunne ikke skifte abonnementsstatus",
+  "failedToUpdateContact": "Kunne ikke opdatere kontakt",
+  "failedToUpdateSmsRule": "Kunne ikke opdatere SMS-regel: {error}",
+  "failure": "Fejl",
+  "favoriteContacts": "Favoritkontakter",
+  "featureAddRules": "• Tilføj telefonnummerspecifikke regler",
+  "featureCenter": "Funktionscenter",
+  "featureEnableDisable": "• Aktiver/deaktiver forskellige filtre pr. SIM",
+  "featureListTitle": "Funktioner:",
+  "@featureListTitle": {
+    "description": "Titel for funktionslisteafsnit"
+  },
+  "featureManageRules": "• Administrer regellister pr. SIM",
+  "features": "Funktioner",
+  "fetchingCallerIdInfo": "Henter opkalds-ID-information...",
+  "fileSavedTo": "Fil gemt til: {path}",
+  "filter": "Filter",
+  "filterByLabel": "Filtrer efter etiket",
+  "filterClear": "Ryd filter",
+  "filterControlPanelTitle": "Filterkontrolpanel",
+  "filterControlSubtitle": "Administrer tænd/sluk-status for alle filtre",
+  "filterControlTitle": "Filterkontrol",
+  "filterDeleteFailed": "Filter sletning mislykkedes",
+  "filterDeleteSuccess": "Filter slettet med succes",
+  "filterDetails": "Filterdetaljer",
+  "filtered": "Filtreret",
+  "filteredSms": "Filtreret SMS",
+  "filteredSmsLabel": "Filtreret SMS",
+  "filterExplanation": "Filterforklaring",
+  "filterManagement": "Filterstyring",
+  "filterName": "Filternavn",
+  "filterPattern": "Filtermønster",
+  "filterPriorityNote": "Bemærk: Der er prioriteringsforhold mellem filtre, se venligst hjælpedokumentationen for detaljer",
+  "filterSaveFailed": "Filterlagring mislykkedes",
+  "filterSaveSuccess": "Filter gemt med succes",
+  "filterSettings": "Filterindstillinger",
+  "filterSettingsTitle": "Filterindstillinger",
+  "filterSMS": "Filtrer SMS",
+  "filterToggleInstructions": "Aktiver eller deaktiver filtre for denne SIM-slot:",
+  "filterToggleStatus": "{status} filter: {filterName}",
+  "@filterToggleStatus": {
+    "description": "Meddelelse om ændring af filter aktiver/deaktiver status",
+    "placeholders": {
+      "status": {
+        "type": "Object"
+      },
+      "filterName": {
+        "type": "Object"
+      }
+    }
+  },
+  "filterType": "Filtertype",
+  "financial": "Finansiel",
+  "flexibleCombinationFeature": "• Fleksible kombinationer: Aktiver/deaktiver filtre pr. SIM-slot",
+  "fontSizesSetting": "Skriftstørrelser",
+  "foundRules": "Fundet {count} regler",
+  "foundRulesDoYouWantToImport": "Fundet {count} regler. Vil du importere dem?",
+  "foundRulesToImport": "Fundet {count} regler. Vil du importere dem?",
+  "fraudAlert": "SVINDELALARM - Læg på",
+  "fraudScamLikely": "Svindel sandsynlig",
+  "free": "Gratis",
+  "functionSettingsTitle": "Funktionsindstillinger",
+  "generalUpdateFailure": "Opdatering mislykkedes: {error}",
+  "@generalUpdateFailure": {
+    "description": "Generel fejlmeddelelse ved opdatering",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "getFree": "Få gratis",
+  "github": "GitHub",
+  "globalFilterDescription": "Konfigurer globale filtre for alle SIM-kort:",
+  "globalFilterFeature": "• Globale filtre: Grundlæggende regler for alle indgående opkald",
+  "globalFilterSettings": "Globale filterindstillinger",
+  "@globalFilterSettings": {
+    "description": "Titel på afsnit for globale filterindstillinger"
+  },
+  "globalFilterToggleInstructions": "Konfigurer globale filterindstillinger, der gælder for alle SIM-slots:",
+  "@globalFilterToggleInstructions": {
+    "description": "Instruktioner til konfiguration af globale filterindstillinger"
+  },
+  "globalSearchSubtitle": "Søg kontakter, etiketter, sortlister, hvidlister osv.",
+  "globalSearchTitle": "Global søgning",
+  "globalSettings": "Globale indstillinger",
+  "@globalSettings": {
+    "description": "Titel for side med globale indstillinger"
+  },
+  "googleAdDisplayPosition": "Google annoncevisningsposition",
+  "googleAdMobIntegrationText": "Google AdMob-annoncer kan integreres her",
+  "googleDriveAuthDescription": "Autoriser ved hjælp af systemkonfigureret Google Drive klient-ID og nøgle",
+  "googleDriveAuthorizationHint": "Autoriser ved hjælp af systemkonfigureret Google Drive klient-ID og nøgle",
+  "googleDriveConfigTitle": "Google Drive konfiguration",
+  "googleDriveConfigurationTitle": "Google Drive konfiguration",
+  "government": "Regering",
+  "granted": "Tildelt",
+  "grantNecessaryPermissions": "Tildel nødvendige tilladelser",
+  "grantPermissions": "Tildel tilladelser",
+  "headhunter": "Headhunter",
+  "height": "Højde",
+  "homePageTitle": "Hjemmeside",
+  "homeTab": "Hjem",
+  "howItWorksPoint1": "• Systemet vil automatisk aflytte opkald fra samme nummer inden for det indstillede tidsvindue",
+  "howItWorksPoint2": "• Kortere tidsvinduer resulterer i strengere aflytning; længere tidsvinduer resulterer i løsere aflytning",
+  "howItWorksPoint3": "• Systemet kontrollerer opkaldslister for at afgøre, om det er et gentaget opkald",
+  "howItWorksTitle": "Sådan fungerer det:",
+  "iconCodeOptional": "Ikonkode (valgfrit)",
+  "iconSize": "Ikonstørrelse",
+  "import": "Importer",
+  "important": "Vigtigt",
+  "importButton": "Importer",
+  "importConfig": "Importer konfiguration",
+  "importContacts": "Importer kontakter",
+  "importExportContacts": "Importer/Eksporter kontakter",
+  "importExportContactsTooltip": "Importer/Eksporter kontakter",
+  "importExportRules": "Importer/Eksporter regler",
+  "importFailed": "Import mislykkedes: {error}",
+  "importFailure": "Kunne ikke importere konfiguration",
+  "importFeatureComingSoon": "Importfunktion kommer snart",
+  "importLabels": "Importer etiketter",
+  "importLabelsFailed": "Kunne ikke importere etiketter: {error}",
+  "importPluginList": "Importer pluginliste",
+  "importPluginListFailed": "Kunne ikke importere pluginliste: {error}",
+  "importPluginSuccess": "Importerede {count} plugins med succes",
+  "importRuleConfigurationsFromFile": "Importer regelkonfigurationer fra fil",
+  "importRuleConfigurationsFromFileSubtitle": "Importer regelkonfigurationer fra fil",
+  "importRules": "Importer regler",
+  "importRulesButton": "Importer regler",
+  "importRulesDialogTitle": "Importer regler",
+  "importRulesError": "Kunne ikke importere regler: {error}",
+  "importRulesInstructions": "Importer regler fra en CSV-fil",
+  "importRulesSuccess": "Regler importeret med succes",
+  "importRulesTitle": "Importer regler",
+  "importSuccess": "Import lykkedes",
+  "incomingCallInterceptAction": "Indgående opkalds aflytningshandling",
+  "incomingCallNotification": "Indgående opkaldsnotifikation"
+,
+  "initializing": "Initialiserer",
+  "installed": "Installeret",
+  "insufficientMarks": "Utilstrækkelige mærker",
+  "insurance": "Forsikring",
+  "interceptAction": "Aflytningshandling",
+  "interceptionActionSettingsSubtitle": "Indstil hvordan blokerede opkald håndteres",
+  "interceptionActionSettingsTitle": "Indstillinger for aflytningshandling",
+  "interceptionTimeInterval": "Aflytningstidsinterval",
+  "internet": "Internet",
+  "intervalSetSuccess": "{service} opdateringsinterval indstillet til {days} dage",
+  "@intervalSetSuccess": {
+    "description": "Bekræftelsesbesked for opdateringsinterval",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "invalidContentRegex": "Ugyldig indholdsregex",
+  "invalidLabel": "Ugyldig etiket",
+  "invalidRegexPattern": "Ugyldigt regex-mønster",
+  "invalidSenderRegex": "Ugyldig afsenderregex",
+  "joinTheTelegramChannelAndGroupForMoreInfo": "Tilmeld dig Telegram-kanalen og -gruppen for mere info",
+  "jsLogsTitle": "JS-logfiler",
+  "jsonFormat": "JSON-format",
+  "keepAllVersions": "Behold alle versioner",
+  "keepAllVersionsDescription": "Behold alle historiske versioner af hver sikkerhedskopi",
+  "keepAllVersionsLabel": "Behold alle versioner",
+  "keepAllVersionsSubtitle": "Behold historiske versioner af hver sikkerhedskopi",
+  "keepAllVersionsTitle": "Behold alle versioner",
+  "label": "Etiket",
+  "labelAddedSuccessfully": "Etiket \"{name}\" tilføjet med succes",
+  "labelCategories": "Etiketkategorier",
+  "labelDeleted": "Etiket slettet",
+  "labelDescription": "Etiketter hjælper dig med bedre at administrere kontakter, tilføje brugerdefinerede etiketter til telefonnumre for nem identifikation af opkald og beskeder.",
+  "labelFilter": "Etiketfilter",
+  "labelFilterTooltip": "Etiketfilter",
+  "labelIconColor": "Etiketikonfarve",
+  "labelManagement": "Etiketstyring",
+  "labelNotFound": "Etiket ikke fundet",
+  "labelRemoved": "Etiket fjernet",
+  "labelRemoveFailed": "Kunne ikke fjerne etiket: {error}",
+  "@labelRemoveFailed": {
+    "description": "Fejlmeddelelse ved fjernelse af etiket",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "labels": "Etiketter",
+  "labelsColor": "Etiketfarve",
+  "labelsDeleted": "{count} etiketter slettet",
+  "labelsExportedSuccessfully": "Etiketter eksporteret med succes",
+  "labelsFontSize": "Etiket skriftstørrelse",
+  "labelsImportedSuccessfully": "Importerede {count} etiketter med succes",
+  "labelsPosition": "Etiketposition",
+  "labelTag": "Etiket: {labelId}",
+  "labelUpdated": "Etiket opdateret",
+  "labelUpdateFailed": "Kunne ikke opdatere etiket: {error}",
+  "@labelUpdateFailed": {
+    "description": "Fejlmeddelelse ved opdatering af etiket",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "labelUpdateSuccess": "Etiket \"$labelText\" opdateret med succes",
+  "languageSettings": "Sprogindstillinger",
+  "languageSettingsSubtitle": "Skift applikationsvisningssprog",
+  "languageSettingsTitle": "Sprogindstillinger",
+  "last30Days": "Sidste 30 dage",
+  "last7Days": "Sidste 7 dage",
+  "lastSyncLabel": "Sidste synkronisering",
+  "lastUpdated": "Sidst opdateret: {date}",
+  "@lastUpdated": {
+    "description": "Sidst opdateret etiket",
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "lifetimeMembership": "Livsvarigt medlemskab",
+  "lifetimeMembershipDescription": "Engangskøb, permanent oplåsning af alle premiumfunktioner og fremtidige opdateringer",
+  "loadContactsFailed": "Kunne ikke indlæse kontakter: {error}",
+  "loadDataFailed": "Kunne ikke indlæse data",
+  "loadFailed": "Indlæsning mislykkedes",
+  "loading": "Indlæser...",
+  "loadingData": "Indlæser data...",
+  "loadingTags": "Indlæser tags...",
+  "loadLabelFailed": "Kunne ikke indlæse etiketter: {error}",
+  "loadLabelsFailed": "Kunne ikke indlæse etiketter: {error}",
+  "loadMarkCountFailed": "Kunne ikke indlæse markerede telefonnumre: {error}",
+  "loadMarkedPhonesFailed": "Kunne ikke indlæse markerede telefoner: {error}"
+,
+  "loadMore": "Indlæs mere",
+  "loadPluginButton": "Indlæs plugin",
+  "loadPluginsFailed": "Kunne ikke indlæse plugins: {error}",
+  "loadRulesFailed": "Kunne ikke indlæse regler: {error}",
+  "loadSettingsFailed": "Kunne ikke indlæse indstillinger: {error}",
+  "loadSmsRulesFailed": "Kunne ikke indlæse SMS-regler: {error}",
+  "loadStatusFailedMessage": "Kunne ikke indlæse status",
+  "loadSubscriptionsFailed": "Kunne ikke indlæse abonnementer: {error}",
+  "@loadSubscriptionsFailed": {
+    "description": "Fejlmeddelelse ved indlæsning af abonnementer",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "loan": "Lån",
+  "localBackupTitle": "Lokal sikkerhedskopi",
+  "localCounterFilter": "Lokal tællerfilter",
+  "localCounterFilterSubtitle": "Filtrer automatisk spamopkald baseret på opkaldsfrekvens",
+  "localCountFilter": "Lokal tællerfilter",
+  "localCountFilterDescription": "Aflyt hyppige opkald baseret på lokale nummertællinger",
+  "localCountFilterExplanationContent": "Den lokale tællerfilter analyserer opkaldshistorik for automatisk at identificere og blokere hyppige spamopkald.",
+  "localCountFilterExplanationTitle": "Forklaring af lokal tællerfilter",
+  "localCountFilterHowItWorksPoint1": "• Afgør om der skal blokeres baseret på nummerets tællerværdi",
+  "localCountFilterHowItWorksPoint2": "• Når et nummers tæller overstiger den indstillede tærskel, kan du vælge automatisk at blokere det",
+  "localCountFilterHowItWorksPoint3": "• Du kan selektivt tillade numre, der ikke overstiger tærsklen",
+  "localCountFilterHowItWorksPoint4": "• Du kan vælge om alle forespørgselslogfiler skal registreres",
+  "localCountFiltering": "Lokal tællerfiltrering",
+  "localCountFilteringExplanation": "• Lokal tællerfiltrering: Filtreringsregler baseret på lokalt markeringsantal",
+  "localCountFilterSettings": "Indstillinger for lokal tællerfilter",
+  "localCountFilterUseCases": "Dette filter er særligt velegnet til at identificere automatisk opkaldte spamopkald og marketingopkald.",
+  "localFilterSettings": "Lokale filterindstillinger",
+  "@localFilterSettings": {
+    "description": "Titel for side med lokale filterindstillinger"
+  },
+  "localNotificationDisabled": "Lokal notifikation deaktiveret",
+  "localNotificationEnabled": "Lokal notifikation aktiveret",
+  "localServices": "Lokale tjenester",
+  "locationColor": "Placeringsfarve",
+  "locationFontSize": "Placeringsskriftstørrelse",
+  "locationIconColor": "Placeringsikonfarve",
+  "locationPosition": "Placeringsposition",
+  "logAllLocalQueries": "Log alle lokale forespørgsler",
+  "logAllLocalQueriesDescription": "Registrer logfiler for alle lokale nummerforespørgsler",
+  "logAllRemoteQueries": "Log alle fjernforespørgsler",
+  "logAllRemoteQueriesDescription": "Registrer alle fjernnummerforespørgsler",
+  "manage": "Administrer kontakter",
+  "manageContacts": "Administrer",
+  "manageFavoriteContacts": "Administrer favoritkontakter",
+  "manageFilterRules": "Administrer filterregler",
+  "manageFilterRulesDescription": "Tilføj, rediger eller slet SMS-filterregler",
+  "manageFrequentContacts": "Administrer hyppige kontakter",
+  "markCounts": "Marker antal",
+  "markCount": "Marker antal",
+  "markedByCount": "Markeret af {count}",
+  "@markedByCount": {
+    "description": "Tekst der viser hvor mange brugere der har markeret dette nummer",
+    "placeholders": {
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "markedPhonesList": "Markerede telefonnumre",
+  "markExchange": "Marker udveksling",
+  "markPhone": "Marker telefonnummer",
+  "markPhoneFailed": "Kunne ikke markere telefonnummer: {error}",
+  "markPhoneManagementSubtitle": "Til at markere telefonnumre",
+  "markPhoneManagementTitle": "Markering af telefonstyring",
+  "markPhoneSuccess": "Telefonnummer markeret med succes",
+  "matchFailed": "Match mislykkedes!",
+  "matchFailedMessage": "Match mislykkedes.",
+  "matchNumbersWithSpecialCharacters": "matcher specifikt nummerformat",
+  "matchNumbersWithSpecialCharactersTitle": "Match numre med specialtegn:",
+  "matchSpecificDigitPatterns": "matcher XXX-XXXX-XXXX format",
+  "matchSpecificDigitPatternsTitle": "Match specifikke ciffermønstre:",
+  "matchSuccessful": "Match lykkedes!",
+  "matchSuccessfulMessage": "Match lykkedes!",
+  "medical": "Medicinsk",
+  "membershipPrivileges": "Medlemsfordele",
+  "migrationTool": "Migrationsværktøj",
+  "migrationToolTitle": "Migrationsværktøj",
+  "minutes": "minutter",
+  "month": "Måned",
+  "monthly": "Månedlig",
+  "monthlyCallCount": "Månedlige opkald",
+  "monthlyChartTitle": "Månedlige blokerede opkald",
+  "monthlyMembership": "Månedligt medlemskab",
+  "monthlyMembershipDescription": "Lås op for alle premiumfunktioner, fornyes automatisk månedligt",
+  "monthlyTotal": "Månedlig total",
+  "monthlyTotalLabel": "Månedlig total",
+  "moreOptions": "Flere muligheder",
+  "mute": "Lydløs",
+  "name": "Navn",
+  "nameAndPhoneNumberCannotBeEmpty": "Navn og telefonnummer kan ikke være tomt",
+  "nameAndPhoneNumberRequired": "Navn og telefonnummer kan ikke være tomt",
+  "nameColor": "Navnefarve",
+  "nameFontSize": "Navneskriftstørrelse",
+  "nameLabel": "Navn: {name}",
+  "@nameLabel": {
+    "description": "Opkalds-ID navn etiket",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "namePosition": "Navneposition",
+  "nameUnknown": "Navn: Ukendt",
+  "nameWithValue": "Navn: {name}",
+  "@nameWithValue": {
+    "description": "Tekst der viser navnet på en kontakt",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "John Doe"
+      }
+    }
+  },
+  "newPasswordLabel": "Ny adgangskode",
+  "nextStep": "Næste",
+  "noAction": "Ingen handling",
+  "noActionRules": "Ingen handlingsregler",
+  "noActiveCloudSyncServiceMessage": "Ingen aktiv sky-synkroniseringstjeneste",
+  "noAds": "Ingen annoncer",
+  "noCallLogs": "Ingen opkaldslogfiler",
+  "noCallRecords": "Ingen opkaldsregistreringer",
+  "noContacts": "Ingen kontakter endnu",
+  "noContactsYet": "Ingen kontakter endnu",
+  "noData": "Ingen data",
+  "noDevicesRegisteredMessage": "Ingen enheder registreret",
+  "noDevicesRegisteredYet": "Ingen enheder registreret endnu.",
+  "noFilters": "Ingen filtre endnu",
+  "noLabels": "Ingen etiketter endnu",
+  "noMarkedPhones": "Ingen markerede telefonnumre",
+  "noMatchingContacts": "Ingen matchende kontakter",
+  "noMatchingContactsFound": "Ingen matchende kontakter fundet",
+  "noMatchingNumbersFound": "Ingen matchende numre fundet",
+  "noMatchingRecords": "Ingen matchende opkaldsregistreringer",
+  "noMatchingRules": "Ingen matchende {ruleType}",
+  "none": "Ingen",
+  "noneServiceType": "Ingen",
+  "noPlugins": "Ingen plugins endnu",
+  "noRecords": "Ingen opkaldsregistreringer",
+  "noResultReturned": "Intet resultat returneret",
+  "noResultReturnedLog": "Intet resultat returneret fra plugin",
+  "noRules": "Ingen {ruleType} endnu",
+  "noRulesPrompt": "Ingen regler fundet, tilføj venligst regler",
+  "noRulesToExport": "Ingen regler at eksportere",
+  "noSmsFilterRulesYet": "Ingen SMS-filterregler endnu",
+  "noSmsRulesYet": "Ingen SMS-regler endnu",
+  "noSubscriptions": "Ingen abonnementer",
+  "@noSubscriptions": {
+    "description": "Ingen abonnementer besked"
+  },
+  "noSubscriptionsYet": "Ingen abonnementer endnu",
+  "notGranted": "Ikke tildelt",
+  "notificationMode": "Notifikation",
+  "notificationModeDescription": "Vis opkaldsinformation i notifikationslinjen",
+  "notificationPermission": "Notifikationstilladelse",
+  "notificationPermissionDescription": "Bruges til at vise indgående opkalds- og beskednotifikationer.",
+  "notifications": "Notifikationer",
+  "notificationSettings": "Notifikationsindstillinger",
+  "@notificationSettings": {
+    "description": "Notifikationsindstillinger titel"
+  },
+  "notificationSettingsSaved": "Notifikationsindstillinger gemt med succes",
+  "notSet": "Ikke indstillet",
+  "notVerifiedText": "Ikke verificeret",
+  "noValidSmsRulesFoundInFile": "Ingen gyldige SMS-regler fundet i fil",
+  "number": "Nummer",
+  "numberColor": "Nummerfarve",
+  "numberFontSize": "Nummer skriftstørrelse",
+  "numberPosition": "Nummerposition",
+  "numberSearch": "Nummersøgning",
+  "numberTypeColor": "Nummertypefarve",
+  "numberTypeFontSize": "Nummertype skriftstørrelse",
+  "numberTypePosition": "Nummertypeposition",
+  "ok": "OK",
+  "okButton": "OK",
+  "onboardingCompleteDescription": "Din opkaldssikkerhedschef er klar, begynd at nyde en sikker opkaldsoplevelse!",
+  "onboardingLanguageDescription": "Vælg dit foretrukne sprog for den bedste oplevelse.",
+  "onboardingPermissionsDescription": "For at levere fuld service har vi brug for følgende tilladelser:",
+  "onboardingPowerfulSpamBlockingDescription": "Blokering af spamopkald og beskeder med et enkelt klik, tilpas blokeringsregler, og giv dig et roligt miljø.",
+  "onboardingSmartCallerIdDescription": "Identificer automatisk ukendte opkald, marker mistænkelige numre, og beskyt din opkaldssikkerhed.",
+  "onboardingWelcomeDescription": "Din opkaldsstyringsekspert, der leverer omfattende opkaldsidentifikations- og blokeringsydelser.",
+  "oneDriveAuthDescription": "Autoriser ved hjælp af systemkonfigureret OneDrive klient-ID og nøgle",
+  "oneDriveAuthorizationHint": "Autoriser ved hjælp af systemkonfigureret OneDrive klient-ID og nøgle",
+  "oneDriveConfigTitle": "OneDrive konfiguration",
+  "oneDriveConfigurationTitle": "OneDrive konfiguration",
+  "onlineCallerIdSubscription": "Online opkalds-ID abonnement",
+  "openAppSettings": "Åbn appindstillinger",
+  "openAppSettingsFailed": "Kunne ikke åbne appindstillinger: {error}",
+  "operationFailed": "Handling mislykkedes: {error}",
+  "operationFailure": "Handling mislykkedes",
+  "operationSuccess": "Handling lykkedes",
+  "other": "Andet"
+,
+  "overlayMode": "Flydende vindue",
+  "overlayModeDescription": "Vis opkaldsinformation i et flydende vindue",
+  "overlayPermission": "Overlay-tilladelse",
+  "overlayPermissionDescription": "Bruges til at vise overlay for indgående opkald.",
+  "overview": "Oversigt",
+  "password": "Adgangskode",
+  "passwordCannotBeEmpty": "Adgangskode kan ikke være tom",
+  "passwordLabel": "Adgangskode",
+  "passwordsDoNotMatch": "Adgangskoder stemmer ikke overens",
+  "passwordSetSuccessfully": "Adgangskode indstillet med succes",
+  "pattern": "Mønster",
+  "pendingSync": "Afventer synkronisering",
+  "periodMonth": "Måned",
+  "periodWeek": "Uge",
+  "periodYear": "År",
+  "permissionDenied": "Tilladelsesanmodning afvist",
+  "permissionGranted": "Tilladelse givet",
+  "permissionManagement": "Tilladelsesstyring",
+  "phoneCallsTab": "Telefon",
+  "phoneNumber": "Telefonnummer",
+  "phoneNumberCannotBeEmpty": "Telefonnummer kan ikke være tomt",
+  "phoneNumberHint": "Indtast telefonnummer",
+  "phoneNumberHintText": "Indtast telefonnummer for at tilføje regel",
+  "phoneNumberLabel": "Telefonnummer",
+  "phoneNumberRegexRequired": "Indtast både telefonnummer og regex-mønster",
+  "phoneNumberRequired": "Telefonnummer er påkrævet",
+  "phoneNumberTypeFixedLine": "Fastnet",
+  "phoneNumberTypeFixedLineOrMobile": "Fastnet eller mobil",
+  "phoneNumberTypeMobile": "Mobil",
+  "phoneNumberTypePager": "Personsøger",
+  "phoneNumberTypePersonalNumber": "Personligt nummer",
+  "phoneNumberTypePremiumRate": "Premium takst",
+  "phoneNumberTypeSharedCost": "Delt omkostning",
+  "phoneNumberTypeTollFree": "Gratisnummer",
+  "phoneNumberTypeUan": "UAN",
+  "phoneNumberTypeUnknown": "Ukendt",
+  "phoneNumberTypeVoicemail": "Telefonsvarer",
+  "phoneNumberTypeVoip": "VoIP",
+  "phonePermission": "Telefontilladelse",
+  "phonePermissionDescription": "Bruges til at identificere og blokere indgående opkald.",
+  "phoneRule": "Telefonregel",
+  "phoneRuleEditDialog": "Redigeringsdialog for telefonregel",
+  "phoneRuleManagement": "Styring af telefonregler",
+  "phoneRuleSubscription": "Abonnement på telefonregel",
+  "phoneSubscription": "Telefonabonnement",
+  "phoneSubscriptionRulesDescription": "Abonner på telefonregellister via URL for automatisk at opdatere hvidliste- og sortlisteregler. Understøtter JSON-format regelfiler.",
+  "phoneSubscriptionTitle": "Abonnementer på telefonregler",
+  "@phoneSubscriptionTitle": {
+    "description": "Titel på side for telefonabonnement"
+  },
+  "pleaseSelectLabelAndEnterValidPhone": "Vælg venligst en etiket og indtast et gyldigt telefonnummer",
+  "pluginAddedSuccess": "Plugin \"{name}\" tilføjet med succes",
+  "pluginDeleted": "Plugin slettet",
+  "pluginLatestVersion": "Plugin er allerede den nyeste version",
+  "pluginListExportSuccess": "Pluginliste eksporteret med succes",
+  "pluginLoadedSuccessfully": "Plugin indlæst med succes",
+  "pluginManagement": "Plugin-styring",
+  "pluginManagementSubtitle": "Administrer og konfigurer tredjeparts plugins",
+  "pluginManagementTitle": "Plugin-styring",
+  "pluginName": "Plugin-navn",
+  "pluginNotLoaded": "Plugin er ikke indlæst endnu. Indlæs venligst plugin'et først.",
+  "pluginsDeleted": "{count} plugins slettet med succes.",
+  "pluginService": "Plugin-tjeneste",
+  "pluginTestPageTitle": "Plugin-test",
+  "pluginUpdateSuccess": "Plugin opdateret med succes",
+  "pluginUrl": "Plugin-URL",
+  "pluginUrlCannotBeEmpty": "Plugin-URL kan ikke være tom",
+  "pluginUrlHint": "Indtast plugin-URL",
+  "pluginUrlLabel": "Plugin-URL",
+  "pluginVersion": "Plugin-version",
+  "political": "Politisk",
+  "powerfulSpamBlocking": "Kraftfuld spam-blokering",
+  "previousStep": "Forrige",
+  "prioritizeRemoteAction": "Prioriter indstillinger for fjernhandling",
+  "prioritizeRemoteActionDescription": "Prioriter handlingsindstillinger fra fjernbasen",
+  "processing": "Behandler...",
+  "processingOperation": "Behandler...",
+  "purchase": "Køb",
+  "quarterlyMembership": "Kvartalsmedlemskab",
+  "quarterlyMembershipDescription": "Lås op for alle premiumfunktioner, fornyes automatisk kvartalsvis",
+  "queryButton": "Forespørg",
+  "queryFailed": "Forespørgsel mislykkedes",
+  "queryFailedLog": "Forespørgsel mislykkedes",
+  "querying": "Forespørger...",
+  "queryingPhoneNumber": "Forespørger telefonnummer",
+  "queryResultTitle": "Forespørgselsresultat",
+  "ready": "Klar!",
+  "receiveWeeklyStatistics": "Modtag ugentlig statistik",
+  "recruiter": "Rekrutterer",
+  "reEnterPasswordHint": "Indtast venligst adgangskode igen",
+  "refresh": "Opdater",
+  "refreshPermissionStatus": "Opdater tilladelsesstatus",
+  "refreshTooltip": "Opdater",
+  "regexError": "Regex-fejl: {error}",
+  "regexErrorMessage": "Regex-fejl: {error}",
+  "regexPattern": "Regex-mønster",
+  "regexPatternExplanation": "Forklaring af Regex-mønster",
+  "regexPatternExplanationButton": "Forklaring af Regex-mønster",
+  "regexPatternLabel": "Regex-mønster",
+  "regexPatternsExamples": "Brug standard regex-syntaks til at definere mønstre. Eksempler:",
+  "regexPatternsForPhoneNumberMatching": "Regex-mønstre til telefonnummer-matching",
+  "regexRule": "Regex-regel",
+  "regexRuleAddFailed": "Kunne ikke tilføje regex-regel: {error}",
+  "regexRuleAddSuccess": "Regex-regel tilføjet med succes",
+  "regexRuleManagement": "Styring af Regex-regler",
+  "regexRuleNamePatternRequired": "Regelnavn og regex-mønster kan ikke være tomme",
+  "regexRules": "Regex-regler",
+  "regexTesterTitle": "Regex-tester",
+  "regexValidationFailed": "Regex-validering mislykkedes: {error}",
+  "regexValidationSuccess": "Regex-validering lykkedes",
+  "region": "Region",
+  "registeredDevicesTitle": "Registrerede enheder",
+  "rejectAllCalls": "Afvis alle opkald",
+  "rejectAllCallsDescription": "Når aktiveret, vil alle opkald blive afvist med højeste prioritet",
+  "rejectAllNumbers": "Afvis alle numre",
+  "rejectAllNumbersDesc": "Afvis alle indgående opkald, når aktiveret",
+  "rejectExceededNumbers": "Afvis overskredne numre",
+  "rejectExceededNumbersDescription": "Afvis automatisk numre, der overskrider tærskeværdien",
+  "remoteFilterSettings": "Fjernfilterindstillinger",
+  "@remoteFilterSettings": {
+    "description": "Titel for side med fjernfilterindstillinger"
+  },
+  "remoteFilterSettingsPageTitle": "Indstillinger for fjernnummerfilter",
+  "remoteNumberFilter": "Fjernnummerfilter",
+  "remoteNumberFilterDatabaseInfo": "Dette filter bruger en uafhængig fjernbase til at få de seneste nummeroplysninger.",
+  "remoteNumberFilterDescription": "Opsnap chikanerende opkald baseret på fjernbasedata",
+  "remoteNumberFilterExplanationContent": "Fjernnummerfilteret identificerer og blokerer spamopkald ved at forespørge en fjernbase baseret på nummerantal.",
+  "remoteNumberFilterExplanationTitle": "Forklaring af fjernnummerfilter",
+  "remoteNumberFilterFeatureCountThreshold": "• Antalstærskel: Bestem baseret på nummerets forekomstfrekvens",
+  "remoteNumberFilterFeatureFilterAction": "• Filterhandlinger: Konfigurer hvordan numre, der overskrider tærsklen, skal håndteres",
+  "remoteNumberFilterFeaturePriority": "• Prioritetsindstillinger: Indstil prioritet for fjernhandlinger",
+  "remoteNumberFilterFeatures": "Funktioner:",
+  "remoteNumberFiltering": "Fjernnummerfiltrering",
+  "remoteNumberFilteringExplanation": "• Fjernnummerfiltrering: Filtreringsregler baseret på fjernbasedata",
+  "remoteNumberFilterSubtitle": "Identificer spamopkald ved hjælp af skybaseret database og fællesskabsrapporter",
+  "removeAdsDescription": "Fjern permanent alle annoncer i appen for en mere flydende oplevelse",
+  "removeAdsTitle": "Fjern annoncer",
+  "removedFromFavoriteContacts": "Fjernet fra favoritkontakter",
+  "removedFromFavorites": "Fjernet fra favoritkontakter",
+  "removeFavorite": "Fjern favorit",
+  "removeFromFavorites": "Fjern fra favoritter",
+  "renameButton": "Omdøb",
+  "renameDeviceDialogTitle": "Omdøb enhed",
+  "renameDeviceTitle": "Omdøb enhed",
+  "replaceCurrentSettingsConfirmation": "Dette vil erstatte alle dine nuværende indstillinger. Er du sikker på, at du vil fortsætte?",
+  "requestAllPermissions": "Anmod om alle tilladelser",
+  "requestPermission": "Anmod om tilladelse",
+  "requestPermissionFailed": "Kunne ikke anmode om tilladelse: {error}",
+  "requiredMarks": "{count} markeringer",
+  "reset": "Nulstil",
+  "restore": "Gendan",
+  "restoreApplicationSettingsFromBackup": "Gendan applikationsindstillinger fra sikkerhedskopi",
+  "restoreApplicationSettingsFromBackupSubtitle": "Gendan applikationsindstillinger fra sikkerhedskopi",
+  "restoreButton": "Gendan",
+  "restoreFailedWithError": "Gendannelse fra sky mislykkedes: {error}",
+  "restoreFromCloud": "Gendan fra sky",
+  "restoreFromCloudDescription": "Gendan indstillinger og regler fra skyopbevaring",
+  "restoreFromCloudFailed": "Kunne ikke gendanne fra sky: {error}",
+  "restoreFromCloudLabel": "Gendan fra sky",
+  "restoreFromCloudSuccess": "Gendannet fra sky med succes",
+  "restoreFromCloudTitle": "Gendan fra sky",
+  "restoreFromLocal": "Gendan fra lokal",
+  "restorePurchases": "Gendan køb",
+  "restoreSectionTitle": "Gendan",
+  "restoreSettings": "Gendan indstillinger",
+  "restoreSettingsConfirmation": "Dette vil erstatte alle dine nuværende indstillinger. Er du sikker på, at du vil fortsætte?",
+  "restoreSettingsDialogTitle": "Gendan indstillinger",
+  "restoreSettingsTitle": "Gendan indstillinger",
+  "restoreSuccessFromLocal": "Gendannet fra lokal med succes",
+  "restoreSuccessMessage": "Gendannet fra sky med succes",
+  "retry": "Prøv igen",
+  "ridesharing": "Samkørsel",
+  "risk": "Risiko",
+  "robocall": "Robotopkald",
+  "ruleAction": "Regelhandling",
+  "ruleAddButton": "Tilføj regel",
+  "ruleAddedSuccess": "Regel tilføjet med succes",
+  "@ruleAddedSuccess": {
+    "description": "Besked om succesfuld regeloprettelse"
+  },
+  "ruleAddFailure": "Kunne ikke tilføje regel: {error}",
+  "@ruleAddFailure": {
+    "description": "Besked om mislykket regeloprettelse",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "ruleAddSuccess": "Regel tilføjet med succes",
+  "ruleDeleteConfirmContent": "Er du sikker på, at du vil slette denne {ruleType}?",
+  "ruleDeleteConfirmTitle": "Slet regel",
+  "ruleDeletedSuccess": "Regel slettet med succes",
+  "ruleDeletedSuccessfully": "Regel slettet med succes",
+  "ruleDeleteFailed": "Kunne ikke slette regel: {error}",
+  "ruleDeleteFailure": "Kunne ikke slette regel: {error}",
+
+  "description": "Besked om mislykket regel sletning",
+  "placeholders": {
+    "error": {
+      "type": "Object"
+    }
+  
+},
+  "ruleDeleteSuccess": "Regel slettet med succes",
+  "ruleDisabledSuccessfully": "Regel deaktiveret med succes",
+  "ruleEnabledSuccessfully": "Regel aktiveret med succes",
+  "ruleLoadFailed": "Kunne ikke indlæse regler: {error}",
+  "ruleManagement": "Regelstyring",
+  "ruleManagementTitle": "Regelstyring",
+  "ruleName": "Regelnavn",
+  "ruleNameAndContentRegexCannotBeEmpty": "Regelnavn og indholdsregex kan ikke være tomme",
+  "ruleNameAndPhoneNumberCannotBeEmpty": "Regelnavn og telefonnummer kan ikke være tomme",
+  "ruleNameHint": "f.eks. Familie, Venner osv.",
+  "ruleNameLabel": "Regelnavn",
+  "ruleNamePatternRequired": "Indtast venligst regelnavn og mønster",
+  "ruleNameRequired": "Regelnavn og telefonnummer kan ikke være tomme",
+  "ruleNotExist": "Regel eksisterer ikke eller er blevet slettet",
+  "ruleNotFound": "Regel ikke fundet: {error}",
+  "ruleSavedSuccessfully": "Regel gemt med succes!",
+  "ruleSavedSuccessMessage": "Regel gemt med succes!",
+  "ruleSaveFailed": "Gem mislykkedes: {error}",
+  "ruleSaveFailedMessage": "Gem mislykkedes: {error}",
+  "ruleSaveSuccess": "Regel gemt med succes!",
+  "rulesExportedSuccessfully": "Regler eksporteret med succes",
+  "rulesExportedTo": "Regler eksporteret til: {path}",
+  "rulesImported": "Regler importeret med succes",
+  "rulesImportedSuccessfully": "{count} regler importeret med succes",
+  "rulesImportFailed": "Kunne ikke importere regler: {error}",
+  "ruleStatistics": "Regelstatistik",
+  "ruleStatusChanged": "Regel {status} med succes",
+  "ruleToggleFailed": "Handling mislykkedes: {error}",
+  "ruleToggleSuccess": "Regel {status} med succes",
+  "ruleUpdateFailed": "Kunne ikke opdatere regel: {error}",
+  "ruleUpdateSuccess": "Regel opdateret med succes",
+  "ruleVerification": "Regelverifikation",
+  "save": "Gem",
+  "saveButton": "Gem",
+  "saveButtonLabel": "GEM",
+  "saveButtonText": "Gem",
+  "saveFailed": "Gem mislykkedes: {error}",
+  "saveFilter": "Gem filter",
+  "saveSettings": "Gem indstillinger",
+  "saveSettingsFailed": "Kunne ikke gemme indstillinger: {error}",
+  "scamsLikely": "Svindel sandsynlig",
+  "search": "Søg",
+  "searchContacts": "Søg kontakter",
+  "searchError": "Søgefejl: {error}",
+  "searchFilters": "Søgefiltre",
+  "searchForContacts": "Søg efter kontakter",
+  "searchHint": "Søg...",
+  "searchSettingsSubtitle": "Søg kontakter, etiketter, sortlister, hvidlister osv.",
+  "searchSettingsTitle": "Søgeindstillinger",
+  "securityMessage": "Stol ikke på telefonopkald. Verificer altid kundeservicenumre uafhængigt. Del aldrig adgangskoder, verificeringskoder, kortnumre eller personlige oplysninger.",
+  "selectActionToPerform": "Vælg den handling, der skal udføres, når reglen matcher",
+  "selectActionWhenBlockingCalls": "Vælg handling ved blokering af opkald",
+  "selectActionWhenRuleMatches": "Vælg handling, når reglen matcher",
+  "selectAll": "Vælg alle",
+  "selectCountry": "Vælg land",
+  "selectDateRange": "Vælg datointerval",
+  "selectedDateRange": "Valgt datointerval",
+  "@selectedDateRange": {
+    "description": "Tekst for valgt datointerval"
+  },
+  "selectedItems": "{count} elementer valgt",
+  "selectedLabel": "Valgt:",
+  "selectExportFormat": "Vælg eksportformat",
+  "selectLabel": "Vælg etiket",
+  "selectLabelAndEnterPhoneNumber": "Vælg venligst en etiket og indtast et gyldigt telefonnummer",
+  "selectLanguage": "Vælg sprog",
+  "selectMultiple": "Vælg flere",
+  "selectPeriod": "Vælg periode",
+  "selectSimCard": "Vælg SIM-kort",
+  "selectSimSlot": "Vælg SIM-slot",
+  "@selectSimSlot": {
+    "description": "Titel for dialogboks til valg af SIM-slot"
+  },
+  "selectSpecificActionForBlockedCalls": "Vælg den specifikke handling, der skal udføres ved blokering af opkald",
+  "selectTag": "Vælg tag",
+  "selectTags": "Vælg tags",
+  "selectTrustedDataSource": "Vælg venligst betroede datakilder",
+  "selectYourLanguage": "Vælg dit sprog",
+  "sender": "Afsender",
+  "senderRegexOptional": "Afsender Regex (valgfrit)",
+  "serverAddressLabel": "Serveradresse",
+  "serviceTypeContact": "Kontaktabonnement",
+  "serviceTypeLabel": "Servicetype",
+  "serviceTypePhone": "Telefonabonnement",
+  "serviceTypePlugin": "Plugin-opdatering",
+  "serviceTypeSms": "SMS-abonnement",
+  "serviceUpdateFailure": "{error}",
+  "@serviceUpdateFailure": {
+    "description": "Besked om mislykket serviceopdatering",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "setButton": "Indstil"
+,
+  "setEncryptionPasswordDescription": "Indstil krypteringsadgangskode til sikkerhedskopiering og gendannelse",
+  "setEncryptionPasswordLabel": "Indstil krypteringsadgangskode",
+  "setEncryptionPasswordTitle": "Indstil krypteringsadgangskode",
+  "setPasswordButton": "Indstil",
+  "settings": "Indstillinger",
+  "settingsBackedUpTo": "Indstillinger sikkerhedskopieret til: {path}",
+  "settingsLoaded": "Indstillinger indlæst",
+  "settingsLoadFailed": "Kunne ikke indlæse indstillinger: {error}",
+  "settingsRestoredSuccessfully": "Indstillinger gendannet med succes. Genstart venligst appen for at ændringerne træder i kraft.",
+  "settingsSaved": "Indstillinger gemt",
+  "@settingsSaved": {
+    "description": "Bekræftelsesmeddelelse for gemte indstillinger"
+  },
+  "settingsSaveFailed": "Kunne ikke gemme indstillinger: {error}",
+  "settingsTab": "Indstillinger",
+  "settingsTitle": "Indstillinger",
+  "setup": "Opsætning",
+  "showContactEditDialogStaticMethod": "Statisk metode til at vise kontaktredigeringsdialog",
+  "showExplanation": "Vis forklaring",
+  "silence": "Stilhed",
+  "silenceAndNoAnswer": "Stilhed og intet svar",
+  "silenceNoAnswer": "Stilhed intet svar",
+  "silentCallVoiceClone": "Stille opkald stemmeklon",
+  "silentRules": "Stille regler",
+  "simCard": "SIM-kort {simNumber}",
+  "simCardColor": "SIM-kort farve",
+  "simCardConfigurationExplanation": "• SIM-kort konfiguration: Indstil uafhængige filtreringsregler for hvert SIM-kort",
+  "simCardFilterRules": "SIM-kort filterregler",
+  "simCardFilterRulesDescription": "Indstil forskellige filtreringsregler baseret på SIM-kortpladser",
+  "simCardFontSize": "SIM-kort skriftstørrelse",
+  "simCardPosition": "SIM-kort position",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM-kort information",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Kunne ikke indlæse SIM-kort information: {error}",
+  "simRuleInstructions": "SIM-slot regler giver dig mulighed for at konfigurere uafhængige filtreringsregler for hver SIM-slot.",
+  "simRuleInstructionsTitle": "SIM-slot regler",
+  "@simRuleInstructionsTitle": {
+    "description": "Afsnitstitel for instruktioner til SIM-slot regler"
+  },
+  "simRuleManagement": "SIM-slot regelstyring",
+  "@simRuleManagement": {
+    "description": "Afsnitstitel for SIM-slot regelstyring"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Tekst der viser SIM-slot 1 med landets ISO-kode",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Tekst der viser SIM-slot 2 med landets ISO-kode",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Kunne ikke indlæse SIM-data: {error}",
+  "simSlotFilterConfiguration": "SIM-slot filterkonfiguration",
+  "simSlotFilterConfigurationDescription": "Tillader at indstille filterregler efter SIM-slot",
+  "simSlotFilterDescription": "Konfigurer uafhængige filtreringsregler for hvert SIM-kort:",
+  "simSlotFilterSettingsTitle": "SIM-slot {slotNumber} filterindstillinger",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Titel for SIM-slot filterindstillinger",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Kunne ikke indlæse SIM-slots: {error}",
+  "simSlotManagement": "SIM-slot styring",
+  "simSlotOperationFailed": "SIM-slot handling mislykkedes: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM-slot handling fejlmeddelelse",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIM-slot position {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM-slot position visning",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM-slot regler: Uafhængige filtreringsstrategier pr. SIM",
+  "simSlotRuleListTitle": "SIM-slot regelliste",
+  "simSlotRuleManagement": "SIM-slot regler",
+  "simSlotRuleManagementTitle": "Regelstyring",
+  "simSlotSettings": "SIM-slot indstillinger",
+  "@simSlotSettings": {
+    "description": "Titel for SIM-slot indstillingsside"
+  },
+  "simSlotTitle": "SIM-slot {slotNumber}",
+  "skip": "Spring over",
+  "smartCallerId": "Smart opkaldsidentifikation",
+  "sms": "SMS",
+  "smsFilterDescription": "SMS-filtrering hjælper dig med automatisk at filtrere spam-beskeder og holde din beskedliste ren. Du kan indstille filterregler og notifikationsmetoder.",
+  "smsFilterDisabled": "SMS-filtrering deaktiveret",
+  "smsFilterEnabled": "SMS-filtrering aktiveret",
+  "smsFilterRuleAddedSuccessfully": "SMS-filterregel tilføjet med succes",
+  "smsFilterRules": "SMS-filterregler",
+  "smsFilterSettings": "SMS-filterindstillinger",
+  "smsHistory": "SMS-historik",
+  "smsManagement": "SMS-styring",
+  "smsPermission": "SMS-tilladelse",
+  "smsPermissionDescription": "Bruges til at filtrere spam-beskeder.",
+  "smsRuleAddedSuccessfully": "SMS-regel tilføjet med succes",
+  "smsRuleDeletedSuccessfully": "SMS-regel slettet med succes",
+  "smsRuleLoadFailed": "Kunne ikke indlæse SMS-regler: {error}",
+  "smsRuleManagement": "SMS-regelstyring",
+  "smsRulesExportedSuccessfully": "SMS-regler eksporteret med succes til {filePath}",
+  "smsRulesImportedSuccessfully": "SMS-regler importeret med succes",
+  "smsRuleSubscription": "SMS-regelabonnement",
+  "smsRuleUpdatedSuccessfully": "SMS-regel opdateret med succes",
+  "smsSettingsSubtitle": "SMS-filtrering og søgeordsblokering",
+  "smsSettingsTitle": "SMS-indstillinger",
+  "smsSubscription": "SMS-abonnement",
+  "smsSubscriptionAddedSuccessfully": "SMS-abonnement tilføjet med succes",
+  "smsSubscriptionRulesDescription": "Abonner på SMS-regellister via URL, understøtter regulære udtryk. Du kan indstille blokerings- eller tilladelseshandlinger.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Nogle tilladelsesanmodninger afvist",
+  "spamLikely": "Spam sandsynlig",
+  "startColor": "Startfarve",
+  "startDate": "Startdato",
+  "startUsing": "Kom i gang",
+  "statAnswered": "Besvaret",
+  "statBlocked": "Blokeret",
+  "staticMethodShowCallerIdDialog": "Statisk metode til at vise dialogboksen for opkalds-ID-information",
+  "staticMethodToDisplayCountrySelectionDialog": "Statisk metode til at vise dialogboks for valg af land",
+  "staticMethodToDisplayDialog": "Statisk metode til at vise dialogboks",
+  "statistics": "Statistik",
+  "statisticsExportFeatureComingSoon": "Eksport af statistikfunktion kommer snart",
+  "statisticsGrid": "Statistikgitter",
+  "statisticsPageTitle": "Dataanalyse",
+  "stirColor": "STIR-farve",
+  "stirFontSize": "STIR-skriftstørrelse",
+  "stirPosition": "STIR-position",
+  "storagePermission": "Lagertilladelse",
+  "storagePermissionDescription": "Bruges til at gemme indstillinger og regler.",
+  "subscribe": "Abonner",
+  "subscriptionAddSuccess": "Abonnement \"{name}\" tilføjet med succes",
+  "@subscriptionAddSuccess": {
+    "description": "Besked om succesfuld tilføjelse af abonnement",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Er du sikker på, at du vil slette dette abonnement?",
+  "subscriptionDeleteConfirmTitle": "Slet abonnement",
+  "subscriptionDeleted": "Abonnement slettet",
+  "@subscriptionDeleted": {
+    "description": "Besked om succesfuld sletning af abonnement"
+  },
+  "subscriptionDeletedSuccessfully": "Abonnement slettet med succes",
+  "subscriptionDeleteFailed": "Kunne ikke slette abonnement: {error}",
+  "subscriptionDeleteSuccess": "Abonnement slettet",
+  "subscriptionEmptyState": "Ingen abonnementer tilgængelige",
+  "subscriptionEmptyText": "Ingen abonnementer endnu",
+  "subscriptionLoadFailed": "Kunne ikke indlæse abonnementer: {error}",
+  "subscriptionLoadingFailed": "Kunne ikke indlæse abonnementer: {error}",
+  "subscriptionManagementTitle": "Abonnementsstyring",
+  "subscriptionName": "Abonnementsnavn",
+  "@subscriptionName": {
+    "description": "Etiket for abonnementsnavn"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Abonnementsnavn og URL kan ikke være tomme",
+  "subscriptionNameHint": "Indtast abonnementsnavn",
+  "subscriptionPageTitle": "Abonnementsstyring",
+  "subscriptionStatusChangeFailed": "Kunne ikke ændre abonnementsstatus: {error}",
+  "subscriptionToggleFailed": "Kunne ikke skifte abonnementsstatus: {error}",
+  "subscriptionUpdateFailed": "Kunne ikke opdatere abonnement: {error}",
+  "subscriptionUpdateSuccess": "Abonnement opdateret med succes",
+ "@subscriptionUpdateSuccess": {
+  "description": "Besked om succesfuld opdatering af abonnement",
+  "placeholders": {}
+},
+  "subscriptionUrl": "Abonnements-URL",
+  "@subscriptionUrl": {
+    "description": "Etiket for abonnements-URL-felt"
+  },
+  "subscriptionUrlHint": "Indtast abonnements-URL",
+  "successfullyImportedRules": "Importerede {count} regler med succes",
+  "supportSync": "Understøtter synkronisering",
+  "survey": "Undersøgelse",
+  "syncDevicesButton": "Synkroniser enheder",
+  "synced": "Synkroniseret",
+  "@synced": {
+    "description": "Synkroniseret statusetiket"
+  },
+  "syncFailed": "Synkronisering mislykkedes",
+  "syncFailedMessage": "Synkronisering mislykkedes",
+  "syncFolderNameHint": "Indtast venligst synkroniseringsmappenavn (standard: NotificationManager)",
+  "syncFolderNameLabel": "Synkroniseringsmappenavn",
+  "synchronized": "Synkroniseret",
+  "@synchronized": {
+    "description": "Synkroniseret statusetiket"
+  },
+  "syncing": "Synkroniserer...",
+  "syncNow": "Synkroniser nu",
+  "@syncNow": {
+    "description": "Synkroniser nu knaptekst"
+  },
+  "syncNowButton": "Synkroniser nu",
+  "syncStatusTitle": "Synkroniseringsstatus",
+  "syncStatusUpdatedMessage": "Synkroniseringsstatus opdateret",
+  "syncSuccessful": "Synkronisering lykkedes",
+  "syncSuccessMessage": "Synkronisering lykkedes",
+  "syncWithCloudStorage": "Synkroniser med skyopbevaring",
+  "syncWithCloudStorageSubtitle": "Synkroniser med skyopbevaring",
+  "systemFeatures": "Systemfunktioner:",
+  "systemSettingsTitle": "Systemindstillinger",
+  "tabAll": "Alle",
+  "tabAnswered": "Besvaret",
+  "tabBlocked": "Blokeret",
+  "tabMissed": "Ubesvaret",
+  "tabOutgoing": "Udgående",
+  "tagLabel": "Tag: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Tags opdateret",
+  "takeaway": "Takeaway",
+  "telecommunication": "Telekommunikation",
+  "telegram": "Telegram",
+  "telemarketing": "Telemarketing",
+  "testButton": "TEST",
+  "testButtonLabel": "TEST",
+  "testConnectionButton": "Test forbindelse",
+  "textColorsSetting": "Tekst- og etiketfarver",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Denne app er et kraftfuldt opkalds-ID-værktøj, der giver dig mulighed for at identificere og blokere uønskede opkald.",
+  "thisWeek": "Denne uge",
+  "timeInterceptor": "Tidsinterceptor",
+  "timeInterceptorDescription": "Automatisk opsnapning af potentielle spamopkald baseret på opkaldsfrekvens",
+  "timeInterceptorExplanation": "• Tidsinterceptor: Opsnap gentagne opkald inden for kort tid",
+  "timeInterceptorExplanationContent": "Funktionen til opsnapning af opkaldsfrekvens analyserer opkaldsfrekvensen for automatisk at identificere og opsnappe hyppige spamopkald.",
+  "timeInterceptorExplanationTitle": "Forklaring af opsnapning af opkaldsfrekvens",
+  "timeInterceptorSettingsTitle": "Indstillinger for opsnapning af opkaldsfrekvens",
+  "timeInterceptorSubtitle": "Automatisk opsnapning af potentielle spamopkald baseret på opkaldsfrekvens",
+  "timeInterceptorTitle": "Aktiver opsnapning af opkaldsfrekvens",
+  "timeWindowDescription": "Indstil tidsvinduets størrelse for opsnapning af gentagne opkald. Opkald fra samme nummer inden for dette vindue vil blive opsnappet",
+  "timeWindowLabel": "Opsnapningstidsvindue (minutter): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Tidsvindueetiket med varighed i minutter",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Indstil tidsvinduets størrelse for opsnapning af gentagne opkald. Opkald fra samme nummer inden for dette vindue vil blive opsnappet",
+  "today": "I dag",
+  "total": "Total",
+  "totalBlocked": "Total blokeret",
+  "totalFiltered": "Total filtreret",
+  "transferDataBetweenDevicesOrPlatforms": "Overfør data mellem enheder eller platforme",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Overfør data mellem enheder eller platforme",
+  "travelTicketing": "Rejsebilletter",
+  "trend": "Trend",
+  "trendChart": "Trenddiagram",
+  "tutorial": "Tutorial",
+  "type": "Type",
+  "unassignedSIMCard": "Ikke-tildelt SIM-kort",
+  "unknown": "Ukendt",
+  "@unknown": {
+    "description": "Visningstekst for ukendt status"
+  },
+  "unknownAction": "Ukendt handling",
+  "unknownLabel": "Ukendt etiket",
+  "unknownTag": "Tag: Ukendt",
+  "unregisterButton": "Afregistrer",
+  "unregisterDeviceConfirmationMessage": "Er du sikker på, at du vil afregistrere {deviceName}?",
+  "unregisterDeviceTitle": "Afregistrer enhed",
+  "unsupportedFileFormat": "Ikke-understøttet filformat",
+  "update": "Opdater",
+  "updateAllNow": "Opdater alle nu",
+  "updateCallFilterConfig": "Opdater opkaldsfilterkonfiguration",
+  "@updateCallFilterConfig": {
+    "description": "Knaptekst til opdatering af opkaldsfilterkonfiguration"
+  },
+  "updateContactFailed": "Kunne ikke opdatere kontakt: {error}",
+  "updateFavoriteStatus": "Opdater favoritstatus",
+  "updateFavoriteStatusFailed": "Kunne ikke opdatere favoritstatus: {error}",
+  "updateInterval": "Opdateringsinterval",
+  "updateLabelFailed": "Kunne ikke opdatere etiket",
+  "updateNow": "Opdater nu",
+  "updatePlugin": "Opdater plugin",
+  "updatePluginFailed": "Kunne ikke opdatere plugin: {error}",
+  "updateRuleFailed": "Kunne ikke opdatere regel: {error}",
+  "updateSubscriptionFailed": "Kunne ikke opdatere abonnement: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Fejlmeddelelse ved mislykket opdatering af abonnement",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} opdateret med succes ({count} regler)",
+  "@updateSuccess": {
+    "description": "Besked om succesfuld opdatering af enkelt tjeneste",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "Opdater tags",
+  "useCasesPoint1": "• Identificer automatisk genopkalds-spamopkald",
+  "useCasesPoint2": "• Opsnap marketingopkald, der ringer flere gange inden for kort tid",
+  "useCasesPoint3": "• Forhindre telefonbombning og chikane",
+  "useCasesTitle": "Anvendelsestilfælde:",
+  "useGlobalSettings": "Brug globale indstillinger",
+  "userEmail": "user@example.com",
+  "usernameLabel": "Brugernavn",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Brug standard regex-syntaks til at definere mønstre. Eksempler:",
+  "validateRegex": "Valider Regex",
+  "verificationFailedText": "Mislykkedes",
+  "verifiedText": "Verificeret",
+  "verify": "Verificer",
+  "version": "Version: {version}",
+  "vipExchangeDescription": "Udveksle VIP-medlemskab med telefonnummer markeringsantal",
+  "vipExchangeTitle": "Marker udveksling VIP",
+  "watchAd": "Se annonce",
+  "watchAdForTemp": "Se annonce for midlertidige privilegier",
+  "watchAdForTempDescription": "Se en kort annonce for midlertidigt at låse op for nogle premiumfunktioner",
+  "webDAVConfigTitle": "WebDAV-konfiguration",
+  "webdavConfigurationTitle": "WebDAV-konfiguration",
+  "webdavPasswordHint": "Indtast venligst WebDAV-adgangskode",
+  "webdavServerAddressHint": "Indtast venligst WebDAV-serveradresse",
+  "webdavUsernameHint": "Indtast venligst WebDAV-brugernavn",
+  "week": "Uge",
+  "weekly": "Ugentlig",
+  "weeklyBlockedCallsSummary": "Ugentlig oversigt over blokerede opkald",
+  "weeklyChartTitle": "Ugentlige blokerede opkald",
+  "weeklyReport": "Ugentlig rapport",
+  "@weeklyReport": {
+    "description": "Ugentlig rapport notifikationsmulighed"
+  },
+  "weeklyReportDesc": "Modtag ugentlig opsummeringsrapport over opkaldsblokeringsaktivitet",
+  "@weeklyReportDesc": {
+    "description": "Beskrivelse af ugentlig rapportmulighed"
+  },
+  "welcome": "Velkommen",
+  "whitelist": "Hvidliste",
+  "@whitelist": {
+    "description": "Hvidliste etiket"
+  },
+  "whitelistLabel": "Hvidliste",
+  "width": "Bredde",
+  "wildcardMatchingDescription": "Brug '.' til at matche ethvert tegn (f.eks. '123.456' matcher 123-456)",
+  "wildcardMatchingTitle": "Wildcard-matching:",
+  "wildcardSupportForFlexibleFiltering": "Wildcard-understøttelse for fleksibel filtrering",
+  "windowSizeSetting": "Vinduesstørrelse",
+  "year": "År",
+  "yearly": "Årlig",
+  "yearlyChartTitle": "Årlige blokerede opkald",
+  "noSimCardsDetected": "Ingen SIM-kort fundet",
+  "filterManagementDescription": "Indstil opkaldsfiltre",
+  "callerIdCustomizationSubtitle": "Tilpas opkalds-ID-layout",
+  "yesterday": "I går"
+,
+              "fraudAlerSettingSubtitle": "For at indstille svindeladvarsel",
+  "enableFraudAlert": "Aktiver svindeladvarsel",
+  "enableFraudAlertDescription": "Advarsel for mistænkte svindelopkald",
+      "enableVibration": "Aktiver vibration",
+      "enableVibrationDescription": "Vibrer, når opkald mistænkes for at være svindelopkald",
+  "notificationSettingsTitle": "Meddelelsesindstillinger",
+  "useLocalNotification": "Brug lokale meddelelser",
+  "useLocalNotificationDescription": "Aktiver lokale meddelelser for indgående opkald",
+  "cancelLocalNotification": "Luk lokale meddelelser",
+  "useStirNotification": "Brug meddelelse fra STIR",
+  "useStirNotificationDescription": "Aktiver STIR-meddelelser for indgående opkald",
+  "cancelLocalNotificationDescription": "Luk lokale meddelelser automatisk",
+  "callerIdSettingsTitle": "Indstillinger for opkalds-ID",
+    "callerIdSettingsSubtitle": "For at indstille meddelelse om indgående opkald og visningstilstand", 
+    "purchaseTitle": "Køb",
+    "purchaseSubtitle": "For at købe tjenesten",
+   "callerIdNotificationTitle": "Info om indgående opkald",
+  "@callerIdNotificationTitle": {
+    "description": "Titel for info om indgående opkald"
+  },
+  "callerIdBody": "Nummer: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Brødtekst til meddelelse om opkalds-ID, der viser telefonnummeret",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+   "blockedCallTitle": "Blokeret opkald",
+  "@blockedCallTitle": {
+    "description": "Titel for meddelelse om blokeret opkald"
+  },
+  "blockedCallBody": "Blokeret opkald fra {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Brødtekst til meddelelse om blokeret opkald, der viser telefonnummeret",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Verificeret",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN-verifikationsstatus: Verificeret"
+  },
+  "stirNotVerified": "Ikke verificeret",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN-verifikationsstatus: Ikke verificeret"
+  },
+  "stirFailed": "Verifikation mislykkedes",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN-verifikationsstatus: Verifikation mislykkedes"
+  },
+  "stirUnknown": "Ukendt verifikationsstatus",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN-verifikationsstatus: Ukendt"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN-verifikation",
+  "@stirVerificationTitle": {
+    "description": "Titel for STIR/SHAKEN-verifikationsmeddelelse"
+  },
+  "stirVerificationBody": "{stirResultMessage} for nummer {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Brødtekst til STIR/SHAKEN-verifikationsmeddelelse, der viser resultat og telefonnummer",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Verificeret"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+ 
+ 
+  "scrollingSecurityMessageSettings": "Indstillinger for rullende sikkerhedsmeddelelse",
+  "messageColor": "Meddelelsesfarve",
+  "messageFontSize": "Meddelelsesfontstørrelse",
+  "messagePosition": "Meddelelsesposition",
+  "containerWidth": "Beholderbredde",
+  "scrollSpeed": "Rullehastighed",
+  "enableSecurityMessage": "Aktiver sikkerhedsmeddelelse",
+  "fraudAlertTitle": "Svindeladvarsel",
+  "@fraudAlertTitle": {
+    "description": "Titel for svindeladvarselsmeddelelse"
+  },
+  "fraudAlertBody": "Potentielt svindelopkald fra {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Brødtekst til svindeladvarselsmeddelelse",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+       }
+    },
+   "loadRulesFailed": "Kunne ikke indlæse regler: {error}",
+ "loadCallLogFailed": "Kunne ikke indlæse opkaldslog: {error}",
+ "noBlockedTypeData": "Ingen data for blokeret type tilgængelig",
+"importEntity": "Importer {entityTypeName}",
+ "@importEntity": {
+   "description": "Dialogtitel for import af en enhed",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+  "entityImportSuccess": "{entityTypeName} importeret succesfuldt, i alt {count} poster importeret",
+ "@entityImportSuccess": {
+   "description": "Succesmeddelelse efter import af enheder",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "count": {
+       "type": "Object",
+       "example": "42"
+     }
+   }
+ },
+ "entityImportFailed": "Kunne ikke importere {entityTypeName}: {error}",
+ "@entityImportFailed": {
+   "description": "Fejlmeddelelse, når import af enheder mislykkes",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+ "exportEntity": "Eksporter {entityTypeName}",
+ "@exportEntity": {
+   "description": "Dialogtitel for eksport af en enhed",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportSuccess": "{entityTypeName} eksporteret succesfuldt",
+ "@entityExportSuccess": {
+   "description": "Succesmeddelelse efter eksport af enheder",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     }
+   }
+ },
+ "entityExportFailed": "Kunne ikke eksportere {entityTypeName}: {error}",
+ "@entityExportFailed": {
+   "description": "Fejlmeddelelse, når eksport af enheder mislykkes",
+   "placeholders": {
+     "entityTypeName": {
+       "type": "Object"
+     },
+     "error": {
+       "type": "Object"
+     }
+   }
+ },
+"cloudSyncService": "Cloud Sync Service",
+  "membershipCenter": "Medlemscenter",
+  "redeemVipWithMarks": "Indløs VIP med point",
+  "currentMarkCount": "Nuværende antal point",
+  "markMoreNumbersForMore": "Marker flere numre for flere point",
+  "noAds": "Ingen annoncer",
+  "cloudBackup": "Cloud Backup",
+  "callerIdEnhancement": "Forbedring af opkalds-ID",
+  "voiceRecognition": "Stemmegenkendelse",
+  "feature": "Funktion",
+  "normalUser": "Normal bruger",
+  "vipUser": "VIP-bruger",
+  "temporaryVip": "Midlertidig VIP",
+  "removeAds": "Fjern annoncer",
+
+  "unknownAction": "Ukendt handling",
+
+    "settingsBackup": "Indstillinger sikkerhedskopi ",
+      "allServicesStatusTitle": "Nuværende servicestatus",
+  "allServicesStatusSubtitle": "Nuværende status for hver cloud-tjeneste",
+   
+  "redirect": "Omdiriger",
+ "notify": "Giv besked",
+ "log": "Log",
+ "custom": "Brugerdefineret",
+ "allowActionDescription": "Opkald vil blive tilladt, selvom nummeret er på blokeringslisten.",
+ "blockActionDescription": "Opkald vil blive blokeret og vist i opkaldsloggen.",
+ "silenceActionDescription": "Opkald vil blive lydløse, men vist i opkaldsloggen.",
+ "noneActionDescription": "Der vil ikke blive foretaget nogen særlig handling for opkaldet.",
+ "redirectActionDescription": "Omdiriger opkaldet til et angivet nummer.",
+ "labelActionDescription": "Tilføj en etiket til opkaldet for nem identifikation.",
+ "notifyActionDescription": "Send en meddelelse, når et opkald modtages."
+,
+  "customActionDescription": "Udfør en tilpasset handling.",
+  "synced": "Synkroniseret",
+  "lastUpdated": "Sidst opdateret: {date}",
+  "needVipAccess": "Du har brug for VIP-adgang for at bruge denne funktion",
+  "importExportDescription": "Importer eller eksporter {entityTypeName} data",
+  "importExportTitle": "Import/Eksport",
+  "noPhoneRules": "Ingen telefonregler fundet",
+  "noRegexRules": "Ingen regex-regler fundet",
+  "noAllowedBlockedRules": "Ingen tilladte/blokerede regler fundet",
+  "importExport": "Import/Eksport",
+  "filterByAction": "Filtrer efter handling",
+  "upgradeToVip": "Opgradér til VIP",
+  "batteryOptimizationPermission": "Batterioptimering",
+  "batteryOptimizationPermissionDescription": "Tillad appen at køre i baggrunden for at levere tjenester som opkalds-ID.",
+  "permissionTitle": "Særlige tilladelser",
+  "permissionSubtitle": "Administrer overlay- og batterioptimeringstilladelser",
+  "themeSettingsTitle": "Temaindstillinger",
+  "themeSettingsSubtitle": "Vælg dit foretrukne tema",
+  "databaseSyncTitle": "Databasesynkronisering",
+  "countrySyncSettingsTitle": "Landesynkroniseringsindstillinger",
+  "countrySyncSettingsSubtitle": "Vælg lande til datasynkronisering",
+  "yesterday": "I går"
+,
+  "batteryOptimizationPermissionDescription": "Tillad appen at køre i baggrunden for at levere tjenester som opkalds-ID.",
+  "permissionTitle": "Særlige tilladelser",
+  "permissionSubtitle": "Administrer overlay- og batterioptimeringstilladelser",
+  "themeSettingsTitle": "Temaindstillinger",
+  "themeSettingsSubtitle": "Vælg dit foretrukne tema",
+  "databaseSyncTitle": "Databasesynkronisering",
+  "countrySyncSettingsTitle": "Landebaseret databasesynkroniseringsindstillinger",
+  "countrySyncSettingsSubtitle": "Vælg lande til datasynkronisering",
+  "countryDataDisclaimer": "Bemærk venligst: Databasen inkluderer muligvis ikke data for alle specifikke lande eller regioner.",
+  "editSubscription": "Rediger abonnement",
+  "searchByNameOrPhoneNumber": "Søg efter navn eller telefonnummer",
+  "allowedBlockedRulesInfo": "Tilladte/blokerede regler bruges til at matche opkald til specifikke telefonnumre, som har den højeste prioritet.",
+  "searchPhoneRulesHint": "Søg telefonregler",
+  "phoneRulesInfo": "Telefonregler bruges til at matche opkald til specifikke telefonnumre, som har en lavere prioritet. Nogle kommer fra telefonregelabonnementet",
+  "searchSubscriptionsHint": "Søg abonnementer",
+  "searchPluginsHint": "Søg plugins",
+  "searchLabelsHint": "Søg etiketter",
+  "pluginDescription": "Pluginbeskrivelse",
+  "enterPluginDescription": "Indtast pluginbeskrivelse",
+  "searchRegexRulesHint": "Søg regex-regler",
+  "regexRulesInfo": "Regex-regler bruges til at filtrere opkald baseret på Regex-mønstre.",
+  "searchMarkedPhonesHint": "Søg markerede telefoner",
+  "searchContactSubscriptionsHint": "Søg kontaktabonnementer",
+  "showAllContacts": "Vis alle kontakter",
+  "showFavorites": "Vis favoritter"
+,
+  "manualEntry": "Manuel indtastningsinfo",
+  "scriptSaved": "Script gemt",
+  "editScriptFor": "Rediger script for {pluginName}",
+  "@editScriptFor": {
+    "description": "Titelteksten for siden, hvor en bruger kan redigere et script for et specifikt plugin.",
+    "placeholders": {
+      "pluginName": {
+        "type": "String",
+        "description": "Navnet på det plugin, som scriptet tilhører."
+      }
+    }
+  },
+  "saveScript": "Gem script",
+  "testPlugin": "Test plugin",
+  "description": "Beskrivelse",
+  "accessTargetUrl": "Adgang til mål-URL",
+  "result": "Resultat",
+  "editScript": "Rediger script",
+  "numberFormat": "Nummerformat",
+  "nationalNumber": "Nationalt nummer",
+  "e164Number": "E164-nummer",
+  "pluginRulesInfo": "Af sikkerhedsmæssige årsager bedes du kun bruge plugins fra betroede kilder. Du er velkommen til at bruge vores skabeloner til at oprette dine egne tilpassede plugins!",
+  "advancedMode": "Avanceret tilstand",
+  "pleaseEnterAtLeastOneNumber": "Indtast venligst mindst ét nummer.",
+  "openInWebView": "Åbn i WebView",
+  "pluginLabel": "Plugin-etiket",
+  "pluginID": "ID",
+  "pluginURL": "URL"
+}

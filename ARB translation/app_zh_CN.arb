@@ -1880,5 +1880,86 @@
   "noSimCardsDetected": "未检测到 SIM 卡",
   "filterManagementDescription": "设置呼叫过滤器",
       "callerIdCustomizationSubtitle": "自定义来电显示布局",
-  "yesterday": "昨天"
+  "yesterday": "昨天",
+
+  "batteryOptimizationPermission": "电池优化",
+  "batteryOptimizationPermissionDescription": "允许应用在后台运行以提供如来电显示等服务。",
+  "permissionTitle": "特殊权限",
+  "permissionSubtitle": "管理浮窗和电池优化权限",
+  "themeSettingsTitle": "主题设置",
+  "themeSettingsSubtitle": "选择您喜欢的主题",
+  "databaseSyncTitle": "数据库同步",
+  "countrySyncSettingsTitle": "基于国家的数据库同步设置",
+  "countrySyncSettingsSubtitle": "选择要同步数据的国家",
+  "countryDataDisclaimer": "请注意：数据库可能不包含所有特定国家或地区的数据。",
+  "editSubscription": "编辑订阅",
+  "searchByNameOrPhoneNumber": "按姓名或电话号码搜索",
+  "allowedBlockedRulesInfo": "允许/阻止规则用于匹配特定电话号码的呼叫，具有最高优先级。",
+  "searchPhoneRulesHint": "搜索电话规则",
+  "phoneRulesInfo": "电话规则用于匹配特定电话号码的呼叫，优先级较低。部分来自电话规则订阅",
+  "searchSubscriptionsHint": "搜索订阅",
+  "searchPluginsHint": "搜索插件",
+  "searchLabelsHint": "搜索标签",
+  "pluginDescription": "插件描述",
+  "enterPluginDescription": "输入插件描述",
+  "searchRegexRulesHint": "搜索正则表达式规则",
+  "regexRulesInfo": "正则表达式规则用于根据正则表达式模式过滤呼叫。",
+  "searchMarkedPhonesHint": "搜索已标记的电话",
+  "searchContactSubscriptionsHint": "搜索联系人订阅",
+  "showAllContacts": "显示所有联系人",
+  "showFavorites": "显示收藏夹",
+
+
+"manualEntry": "手动输入信息",
+
+  "scriptSaved": "脚本已保存",
+    "editScriptFor": "编辑 {pluginName} 的脚本",
+    "@editScriptFor": {
+        "description": "用户可以为特定插件编辑脚本的页面标题文本。",
+        "placeholders": {
+            "pluginName": {
+                "type": "String",
+                "description": "脚本所属插件的名称。"
+            }
+        }
+    },
+  "saveScript": "保存脚本",
+
+
+ "testPlugin": "测试插件",
+
+"description": "描述",
+
+
+    "accessTargetUrl": "访问目标URL",
+ 
+ 
+ "result": "结果",
+
+    "editScript": "编辑脚本",
+
+"numberFormat": "数字格式",
+
+"nationalNumber": "国内号码",
+"e164Number": "E164号码",
+"pluginRulesInfo": "为了安全起见，请仅使用来自受信任来源的插件。欢迎使用我们的模板创建您自己的自定义插件！",
+
+
+
+
+"advancedMode": "高级模式",
+
+
+  "pleaseEnterAtLeastOneNumber": "请输入至少一个数字。",
+
+
+
+  "openInWebView": "在WebView中打开",
+
+  "pluginLabel": "插件标签",
+  "pluginID": "ID",
+
+
+  "pluginURL": "URL"
+
 }

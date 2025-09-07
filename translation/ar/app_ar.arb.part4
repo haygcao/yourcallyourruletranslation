@@ -1,4 +1,4 @@
-{
+
   "simCardFontSize": "حجم خط بطاقة SIM",
   "simCardPosition": "موضع بطاقة SIM",
   "simInfo": "SIM {slotNumber} - {countryIso}",

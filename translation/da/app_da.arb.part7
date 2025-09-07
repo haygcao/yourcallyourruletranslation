@@ -1,0 +1,30 @@
+{
+  "manualEntry": "Manuel indtastningsinfo",
+  "scriptSaved": "Script gemt",
+  "editScriptFor": "Rediger script for {pluginName}",
+  "@editScriptFor": {
+    "description": "Titelteksten for siden, hvor en bruger kan redigere et script for et specifikt plugin.",
+    "placeholders": {
+      "pluginName": {
+        "type": "String",
+        "description": "Navnet på det plugin, som scriptet tilhører."
+      }
+    }
+  },
+  "saveScript": "Gem script",
+  "testPlugin": "Test plugin",
+  "description": "Beskrivelse",
+  "accessTargetUrl": "Adgang til mål-URL",
+  "result": "Resultat",
+  "editScript": "Rediger script",
+  "numberFormat": "Nummerformat",
+  "nationalNumber": "Nationalt nummer",
+  "e164Number": "E164-nummer",
+  "pluginRulesInfo": "Af sikkerhedsmæssige årsager bedes du kun bruge plugins fra betroede kilder. Du er velkommen til at bruge vores skabeloner til at oprette dine egne tilpassede plugins!",
+  "advancedMode": "Avanceret tilstand",
+  "pleaseEnterAtLeastOneNumber": "Indtast venligst mindst ét nummer.",
+  "openInWebView": "Åbn i WebView",
+  "pluginLabel": "Plugin-etiket",
+  "pluginID": "ID",
+  "pluginURL": "URL"
+}

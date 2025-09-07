@@ -1,27 +1,28 @@
 {
-              "fraudAlerSettingSubtitle": "För att ställa in bedrägerivarning",
+  "fraudAlerSettingTitle": "Inställningar för bedrägerivarningar",
+  "fraudAlerSettingSubtitle": "Konfigurera bedrägerivarningar",
   "enableFraudAlert": "Aktivera bedrägerivarning",
-  "enableFraudAlertDescription": "Varning för misstänkta bedrägerisamtal",
-      "enableVibration": "Aktivera vibration",
-      "enableVibrationDescription": "Vibrera när samtal misstänks vara bedrägerisamtal",
+  "enableFraudAlertDescription": "Varningar för misstänkta bedrägerisamtal",
+  "enableVibration": "Aktivera vibration",
+  "enableVibrationDescription": "Vibration om samtalet är misstänkt bedrägeri",
   "notificationSettingsTitle": "Meddelandeinställningar",
-  "useLocalNotification": "Använd lokala meddelanden",
-  "useLocalNotificationDescription": "Aktivera lokala meddelanden för inkommande samtal",
-  "cancelLocalNotification": "Stäng lokala meddelanden",
-  "useStirNotification": "Använd meddelande från STIR",
-  "useStirNotificationDescription": "Aktivera STIR-meddelanden för inkommande samtal",
-  "cancelLocalNotificationDescription": "Stäng lokala meddelanden automatiskt",
-  "callerIdSettingsTitle": "Nummerpresentatörsinställningar",
-    "callerIdSettingsSubtitle": "För att ställa in meddelande om inkommande samtal och visningsläge", 
-    "purchaseTitle": "Köp",
-    "purchaseSubtitle": "För att köpa tjänsten",
-   "callerIdNotificationTitle": "Information om inkommande samtal",
+  "useLocalNotification": "Använd lokal avisering",
+  "useLocalNotificationDescription": "Aktivera lokala aviseringar för inkommande samtal",
+  "cancelLocalNotification": "Avbryt lokal avisering",
+  "useStirNotification": "Använd STIR-avisering",
+  "useStirNotificationDescription": "Aktivera STIR-aviseringar för inkommande samtal",
+  "cancelLocalNotificationDescription": "Avbryt lokala aviseringar automatiskt",
+  "callerIdSettingsTitle": "Inställningar för nummerpresentation",
+  "callerIdSettingsSubtitle": "Konfigurera aviseringar för inkommande samtal och visningsläge",
+  "purchaseTitle": "Köp",
+  "purchaseSubtitle": "Köp tjänster",
+  "callerIdNotificationTitle": "Samtalsinformation",
   "@callerIdNotificationTitle": {
-    "description": "Titel för information om inkommande samtal"
+    "description": "Rubrik för samtalsinformationsavisering"
   },
   "callerIdBody": "Nummer: {phoneNumber}",
   "@callerIdBody": {
-    "description": "Brödtext för nummerpresentatörsmeddelandet, visar telefonnumret",
+    "description": "Nummerpresentationsaviseringstext, visar telefonnummer",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -29,13 +30,13 @@
       }
     }
   },
-   "blockedCallTitle": "Blockerat samtal",
+  "blockedCallTitle": "Blockerat samtal",
   "@blockedCallTitle": {
-    "description": "Titel för meddelande om blockerat samtal"
+    "description": "Rubrik för blockerad samtalsavisering"
   },
-  "blockedCallBody": "Blockerat samtal från {phoneNumber}",
+  "blockedCallBody": "Samtal blockerat från {phoneNumber}",
   "@blockedCallBody": {
-    "description": "Brödtext för meddelande om blockerat samtal, visar telefonnumret",
+    "description": "Blockerad samtalsaviseringstext, visar telefonnummer",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -59,13 +60,13 @@
   "@stirUnknown": {
     "description": "STIR/SHAKEN verifieringsstatus: Okänd"
   },
-  "stirVerificationTitle": "STIR/SHAKEN verifiering",
+  "stirVerificationTitle": "STIR/SHAKEN-verifiering",
   "@stirVerificationTitle": {
-    "description": "Titel för STIR/SHAKEN verifieringsmeddelande"
+    "description": "Rubrik för STIR/SHAKEN-verifieringsavisering"
   },
   "stirVerificationBody": "{stirResultMessage} för nummer {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "Brödtext för STIR/SHAKEN verifieringsmeddelande, visar resultat och telefonnummer",
+    "description": "STIR/SHAKEN-verifieringsaviseringstext, visar resultat och telefonnummer",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
@@ -77,126 +78,121 @@
       }
     }
   },
- 
- 
   "scrollingSecurityMessageSettings": "Inställningar för rullande säkerhetsmeddelande",
   "messageColor": "Meddelandefärg",
   "messageFontSize": "Meddelandets teckenstorlek",
-  "messagePosition": "Meddelandets position",
-  "containerWidth": "Behållarens bredd",
+  "messagePosition": "Meddelandeposition",
+  "containerWidth": "Behållarbredd",
   "scrollSpeed": "Rullningshastighet",
   "enableSecurityMessage": "Aktivera säkerhetsmeddelande",
   "fraudAlertTitle": "Bedrägerivarning",
   "@fraudAlertTitle": {
-    "description": "Titel för bedrägerivarningsmeddelandet"
+    "description": "Rubrik för bedrägerivarning"
   },
   "fraudAlertBody": "Potentiellt bedrägerisamtal från {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "Brödtext för bedrägerivarningsmeddelandet",
+    "description": "Bedrägerivarningstext",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
         "example": "+1234567890"
       }
     }
-   },
-   "loadRulesFailed": "Kunde inte ladda regler: {error}",
- "loadCallLogFailed": "Kunde inte ladda samtalslogg: {error}",
- "noBlockedTypeData": "Ingen blockerad typdata tillgänglig",
-"importEntity": "Importera {entityTypeName}",
- "@importEntity": {
-   "description": "Dialogtitel för import av en entitet",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     }
-   }
- },
- "entityImportSuccess": "{entityTypeName} importerades, till",
- "@entityImportSuccess": {
-   "description": "Framgångsmeddelande efter import av entiteter",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     },
-     "count": {
-       "type": "Object",
-       "example": "42"
-     }
-   }
- },
- "entityImportFailed": "Kunde inte importera {entityTypeName}: {error}",
- "@entityImportFailed": {
-   "description": "Felmeddelande när import av entiteter misslyckas",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     },
-     "error": {
-       "type": "Object"
-     }
-   }
- },
- "exportEntity": "Exportera {entityTypeName}",
- "@exportEntity": {
-   "description": "Dialogtitel för export av en entitet",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     }
-   }
- },
- "entityExportSuccess": "{entityTypeName} exporterades",
- "@entityExportSuccess": {
-   "description": "Framgångsmeddelande efter export av entiteter",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     }
-   }
- },
- "entityExportFailed": "Kunde inte exportera {entityTypeName}: {error}",
- "@entityExportFailed": {
-   "description": "Felmeddelande när export av entiteter misslyckas",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     },
-     "error": {
-       "type": "Object"
-     }
-   }
- },
-"cloudSyncService": "Molnsynkroniseringstjänst",
+  },
+  "loadRulesFailed": "Kunde inte ladda regler: {error}",
+  "loadCallLogFailed": "Kunde inte ladda samtalslogg: {error}",
+  "noBlockedTypeData": "Ingen blockerad typdata",
+  "importEntity": "Importera {entityTypeName}",
+  "@importEntity": {
+    "description": "Dialogrubrik för entitetsimport",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityImportSuccess": "{entityTypeName} importerad, {count} poster importerade",
+  "@entityImportSuccess": {
+    "description": "Framgångsmeddelande efter entitetsimport",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "entityImportFailed": "Import av {entityTypeName} misslyckades: {error}",
+  "@entityImportFailed": {
+    "description": "Felmeddelande för misslyckad entitetsimport",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "exportEntity": "Exportera {entityTypeName}",
+  "@exportEntity": {
+    "description": "Dialogrubrik för entitetsexport",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportSuccess": "{entityTypeName} exporterad",
+  "@entityExportSuccess": {
+    "description": "Framgångsmeddelande efter entitetsexport",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportFailed": "Export av {entityTypeName} misslyckades: {error}",
+  "@entityExportFailed": {
+    "description": "Felmeddelande för misslyckad entitetsexport",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "cloudSyncService": "Molnsynkroniseringstjänst",
   "membershipCenter": "Medlemscenter",
-  "redeemVipWithMarks": "Lös in VIP med markeringar",
-  "currentMarkCount": "Aktuellt antal markeringar",
-  "markMoreNumbersForMore": "Markera fler nummer för fler markeringar",
+  "redeemVipWithMarks": "Lös in VIP med poäng",
+  "currentMarkCount": "Aktuellt poängantal",
+  "markMoreNumbersForMore": "Markera fler nummer för fler poäng",
   "noAds": "Inga annonser",
   "cloudBackup": "Molnsäkerhetskopiering",
-  "callerIdEnhancement": "Förbättring av nummerpresentatör",
+  "callerIdEnhancement": "Förbättring av nummerpresentation",
   "voiceRecognition": "Röstigenkänning",
   "feature": "Funktion",
   "normalUser": "Normal användare",
   "vipUser": "VIP-användare",
   "temporaryVip": "Tillfällig VIP",
   "removeAds": "Ta bort annonser",
-
   "unknownAction": "Okänd åtgärd",
-
-    "settingsBackup": "Inställningssäkerhetskopiering",
-      "allServicesStatusTitle": "Aktuell tjänstestatus",
+  "settingsBackup": "Inställningssäkerhetskopiering",
+  "allServicesStatusTitle": "Alla tjänsters status",
   "allServicesStatusSubtitle": "Aktuell status för varje molntjänst",
-   
   "redirect": "Omdirigera",
- "notify": "Meddela",
- "log": "Logga",
- "custom": "Anpassad",
- "allowActionDescription": "Samtal kommer att tillåtas, även om numret finns på svartlistan.",
- "blockActionDescription": "Samtal kommer att blockeras och visas i samtalsloggen.",
- "silenceActionDescription": "Samtal kommer att tystas men visas i samtalsloggen.",
- "noneActionDescription": "Ingen speciell åtgärd kommer att vidtas för samtalet.",
- "redirectActionDescription": "Omdirigera samtalet till ett angivet nummer.",
- "labelActionDescription": "Lägg till en etikett till samtalet för enkel identifiering.",
- "notifyActionDescription": "Skicka ett meddelande när ett samtal tas emot."
+  "notify": "Meddela",
+  "log": "Logg",
+  "custom": "Anpassad",
+  "allowActionDescription": "Tillåter samtal även om numret finns på svartlistan.",
+  "blockActionDescription": "Blockerar samtal och visar dem i samtalsloggen.",
+  "silenceActionDescription": "Tystar samtal men visar dem i samtalsloggen.",
+  "noneActionDescription": "Ingen speciell åtgärd kommer att vidtas för samtalet.",
+  "redirectActionDescription": "Omdirigerar samtalet till ett angivet nummer.",
+  "labelActionDescription": "Lägg till en etikett till samtalet för enkel identifiering.",
+  "notifyActionDescription": "Skicka ett meddelande när ett samtal kommer in."
 }

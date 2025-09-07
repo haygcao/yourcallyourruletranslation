@@ -1,6 +1,5 @@
 {
   "@@locale": "de",
-
   "aboutContactSubscription": "Über Kontakt-Abonnement",
   "@aboutContactSubscription": {
     "description": "Titel für Kontakt-Abonnement"
@@ -510,7 +509,6 @@
   "daysVip": "{days} Tage VIP",
   "debtCollection": "Inkasso",
   "defaultPeriod": "Woche",
-
   "deleteButton": "Löschen",
   "deleteContact": "Kontakt löschen",
   "deleteContactConfirm": "Möchten Sie {name} wirklich löschen?",
@@ -1890,6 +1888,60 @@
   "noSimCardsDetected": "Keine SIM-Karten erkannt",
   "filterManagementDescription": "Anruffilter festlegen",
   "callerIdCustomizationSubtitle": "Passen Sie das Anrufer-ID-Layout an",
-  "yesterday": "Gestern"
-}
-
+  "yesterday": "Gestern",
+  "batteryOptimizationPermission": "Batterieoptimierung",
+  "batteryOptimizationPermissionDescription": "Erlauben Sie der App, im Hintergrund zu laufen, um Dienste wie die Anrufer-ID bereitzustellen.",
+  "permissionTitle": "Spezielle Berechtigungen",
+  "permissionSubtitle": "Overlay- und Batterieoptimierungsberechtigungen verwalten",
+  "themeSettingsTitle": "Themen-Einstellungen",
+  "themeSettingsSubtitle": "Wählen Sie Ihr Lieblingsthema",
+  "databaseSyncTitle": "Datenbank-Synchronisierung",
+  "countrySyncSettingsTitle": "Länderbasierte Datenbank-Synchronisierungseinstellungen",
+  "countrySyncSettingsSubtitle": "Länder für die Datensynchronisierung auswählen",
+  "countryDataDisclaimer": "Bitte beachten Sie: Die Datenbank enthält möglicherweise nicht für alle spezifischen Länder oder Regionen Daten.",
+  "editSubscription": "Abonnement bearbeiten",
+  "searchByNameOrPhoneNumber": "Nach Name oder Telefonnummer suchen",
+  "allowedBlockedRulesInfo": "Erlaubte/blockierte Regeln werden verwendet, um Anrufe an bestimmte Telefonnummern abzugleichen, die die höchste Priorität haben.",
+  "searchPhoneRulesHint": "Telefonregeln suchen",
+  "phoneRulesInfo": "Telefonregeln werden verwendet, um Anrufe an bestimmte Telefonnummern abzugleichen, die eine niedrigere Priorität haben. Einige stammen aus dem Telefonregel-Abonnement",
+  "searchSubscriptionsHint": "Abonnements suchen",
+  "searchPluginsHint": "Plugins suchen",
+  "searchLabelsHint": "Labels suchen",
+  "pluginDescription": "Plugin-Beschreibung",
+  "enterPluginDescription": "Plugin-Beschreibung eingeben",
+  "searchRegexRulesHint": "Regex-Regeln suchen",
+  "regexRulesInfo": "Regex-Regeln werden verwendet, um Anrufe basierend auf Regex-Mustern zu filtern.",
+  "searchMarkedPhonesHint": "Markierte Telefone suchen",
+  "searchContactSubscriptionsHint": "Kontaktabonnements suchen",
+  "showAllContacts": "Alle Kontakte anzeigen",
+  "showFavorites": "Favoriten anzeigen",
+  
+    "manualEntry": "Manuelle Eingabeinformationen",
+    "scriptSaved": "Skript gespeichert",
+    "editScriptFor": "Skript bearbeiten für {pluginName}",
+    "@editScriptFor": {
+      "description": "Der Titeltext für die Seite, auf der ein Benutzer ein Skript für ein bestimmtes Plugin bearbeiten kann.",
+      "placeholders": {
+        "pluginName": {
+          "type": "String",
+          "description": "Der Name des Plugins, zu dem das Skript gehört."
+        }
+      }
+    },
+    "saveScript": "Skript speichern",
+    "testPlugin": "Plugin testen",
+    "description": "Beschreibung",
+    "accessTargetUrl": "Ziel-URL aufrufen",
+    "result": "Ergebnis",
+    "editScript": "Skript bearbeiten",
+    "numberFormat": "Zahlenformat",
+    "nationalNumber": "Nationale Nummer",
+    "e164Number": "E164 Nummer",
+    "pluginRulesInfo": "Aus Sicherheitsgründen verwenden Sie bitte nur Plugins aus vertrauenswürdigen Quellen. Sie können gerne unsere Vorlagen verwenden, um Ihre eigenen benutzerdefinierten Plugins zu erstellen!",
+    "advancedMode": "Erweiterter Modus",
+    "pleaseEnterAtLeastOneNumber": "Bitte geben Sie mindestens eine Nummer ein.",
+    "openInWebView": "In WebView öffnen",
+    "pluginLabel": "Plugin-Bezeichnung",
+    "pluginID": "ID",
+    "pluginURL": "URL"
+  }

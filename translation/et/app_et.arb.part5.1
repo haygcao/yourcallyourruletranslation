@@ -1,27 +1,28 @@
 {
-              "fraudAlerSettingSubtitle": "Pettusehoiatuse seadistamine",
+  "fraudAlerSettingTitle": "Pettusehoiatusseaded",
+  "fraudAlerSettingSubtitle": "Pettusehoiatuste konfigureerimine",
   "enableFraudAlert": "Luba pettusehoiatus",
-  "enableFraudAlertDescription": "Hoiatus kahtlustatavate pettuskõnede kohta",
-      "enableVibration": "Luba vibratsioon",
-      "enableVibrationDescription": "Vibreeri, kui kõne on kahtlustatav pettuskõne",
+  "enableFraudAlertDescription": "Hoiatused kahtlaste pettusekõnede kohta",
+  "enableVibration": "Luba vibratsioon",
+  "enableVibrationDescription": "Vibratsioon, kui kõne on kahtlane pettusekõne",
   "notificationSettingsTitle": "Teavituste seaded",
-  "useLocalNotification": "Kasuta kohalikke teavitusi",
+  "useLocalNotification": "Kasuta kohalikku teavitust",
   "useLocalNotificationDescription": "Luba sissetulevate kõnede kohalikud teavitused",
-  "cancelLocalNotification": "Sulge kohalikud teavitused",
-  "useStirNotification": "Kasuta STIR-i teavitust",
+  "cancelLocalNotification": "Tühista kohalik teavitus",
+  "useStirNotification": "Kasuta STIR-teavitust",
   "useStirNotificationDescription": "Luba sissetulevate kõnede STIR-teavitused",
-  "cancelLocalNotificationDescription": "Sulge kohalikud teavitused automaatselt",
+  "cancelLocalNotificationDescription": "Tühista kohalik teavitus automaatselt",
   "callerIdSettingsTitle": "Helistaja ID seaded",
-    "callerIdSettingsSubtitle": "Sissetulevate kõnede teavituse ja kuvamisrežiimi seadistamine",
-    "purchaseTitle": "Ost",
-    "purchaseSubtitle": "Teenuse ostmiseks",
-   "callerIdNotificationTitle": "Sissetuleva kõne info",
+  "callerIdSettingsSubtitle": "Konfigureeri sissetulevate kõnede teavitused ja kuvamisrežiim",
+  "purchaseTitle": "Ost",
+  "purchaseSubtitle": "Ostuteenused",
+  "callerIdNotificationTitle": "Sissetuleva kõne teave",
   "@callerIdNotificationTitle": {
-    "description": "Title for the Incoming Call Info"
+    "description": "Sissetuleva kõne teabe pealkiri"
   },
   "callerIdBody": "Number: {phoneNumber}",
   "@callerIdBody": {
-    "description": "Body for the caller ID notification, showing the phone number",
+    "description": "Helistaja ID teavituse tekst, mis näitab telefoninumbrit",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -29,13 +30,13 @@
       }
     }
   },
-   "blockedCallTitle": "Blokeeritud kõne",
+  "blockedCallTitle": "Blokeeritud kõne",
   "@blockedCallTitle": {
-    "description": "Title for blocked call notification"
+    "description": "Blokeeritud kõne teavituse pealkiri"
   },
   "blockedCallBody": "Blokeeritud kõne numbrilt {phoneNumber}",
   "@blockedCallBody": {
-    "description": "Body for blocked call notification, showing the phone number",
+    "description": "Blokeeritud kõne teavituse tekst, mis näitab telefoninumbrit",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -43,33 +44,33 @@
       }
     }
   },
-  "stirVerified": "Kinnitatud",
+  "stirVerified": "Kontrollitud",
   "@stirVerified": {
-    "description": "STIR/SHAKEN verification status: Verified"
+    "description": "STIR/SHAKEN-i kontrolli olek: Kontrollitud"
   },
-  "stirNotVerified": "Kinnitamata",
+  "stirNotVerified": "Kontrollimata",
   "@stirNotVerified": {
-    "description": "STIR/SHAKEN verification status: Not Verified"
+    "description": "STIR/SHAKEN-i kontrolli olek: Kontrollimata"
   },
-  "stirFailed": "Kinnitamine ebaõnnestus",
+  "stirFailed": "Kontrollimine ebaõnnestus",
   "@stirFailed": {
-    "description": "STIR/SHAKEN verification status: Verification Failed"
+    "description": "STIR/SHAKEN-i kontrolli olek: Kontrollimine ebaõnnestus"
   },
-  "stirUnknown": "Tundmatu kinnituse olek",
+  "stirUnknown": "Tundmatu kontrolli olek",
   "@stirUnknown": {
-    "description": "STIR/SHAKEN verification status: Unknown"
+    "description": "STIR/SHAKEN-i kontrolli olek: Tundmatu"
   },
-  "stirVerificationTitle": "STIR/SHAKEN kinnitus",
+  "stirVerificationTitle": "STIR/SHAKEN-i kontroll",
   "@stirVerificationTitle": {
-    "description": "Title for STIR/SHAKEN verification notification"
+    "description": "STIR/SHAKEN-i kontrolli teavituse pealkiri"
   },
   "stirVerificationBody": "{stirResultMessage} numbrile {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "Body for STIR/SHAKEN verification notification, showing result and phone number",
+    "description": "STIR/SHAKEN-i kontrolli teavituse tekst, mis näitab tulemust ja telefoninumbrit",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
-        "example": "Verified"
+        "example": "Kontrollitud"
       },
       "phoneNumber": {
         "type": "String",
@@ -77,9 +78,7 @@
       }
     }
   },
- 
- 
-  "scrollingSecurityMessageSettings": "Keriva turvateate seaded",
+  "scrollingSecurityMessageSettings": "Keritava turvateate seaded",
   "messageColor": "Sõnumi värv",
   "messageFontSize": "Sõnumi fondi suurus",
   "messagePosition": "Sõnumi asukoht",
@@ -88,91 +87,92 @@
   "enableSecurityMessage": "Luba turvateade",
   "fraudAlertTitle": "Pettusehoiatus",
   "@fraudAlertTitle": {
-    "description": "Title for the fraud alert notification"
+    "description": "Pettusehoiatuse pealkiri"
   },
-  "fraudAlertBody": "Potentsiaalne pettuskõne numbrilt {phoneNumber}",
+  "fraudAlertBody": "Võimalik pettusekõne numbrilt {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "Body for the fraud alert notification",
+    "description": "Pettusehoiatuse tekst",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
         "example": "+1234567890"
       }
-    },
-   "loadRulesFailed": "Reeglite laadimine ebaõnnestus: {error}",
- "loadCallLogFailed": "Kõnelogi laadimine ebaõnnestus: {error}",
- "noBlockedTypeData": "Blokeeritud tüübi andmed puuduvad",
-"importEntity": "Impordi {entityTypeName}",
- "@importEntity": {
-   "description": "Dialog title for importing an entity",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     }
-   }
- },
- "entityImportSuccess": "{entityTypeName} imporditi edukalt, et",
- "@entityImportSuccess": {
-   "description": "Success message after importing entities",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     },
-     "count": {
-       "type": "Object",
-       "example": "42"
-     }
-   }
- },
- "entityImportFailed": "{entityTypeName} importimine ebaõnnestus: {error}",
- "@entityImportFailed": {
-   "description": "Error message when importing entities fails",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     },
-     "error": {
-       "type": "Object"
-     }
-   }
- },
- "exportEntity": "Ekspordi {entityTypeName}",
- "@exportEntity": {
-   "description": "Dialog title for exporting an entity",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     }
-   }
- },
- "entityExportSuccess": "{entityTypeName} eksporditi edukalt",
- "@entityExportSuccess": {
-   "description": "Success message after exporting entities",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     }
-   }
- },
- "entityExportFailed": "{entityTypeName} eksportimine ebaõnnestus: {error}",
- "@entityExportFailed": {
-   "description": "Error message when exporting entities fails",
-   "placeholders": {
-     "entityTypeName": {
-       "type": "Object"
-     },
-     "error": {
-       "type": "Object"
-     }
-   }
- },
-"cloudSyncService": "Pilvesünkroonimisteenus",
+    }
+  },
+  "loadRulesFailed": "Reeglite laadimine ebaõnnestus: {error}",
+  "loadCallLogFailed": "Kõnelogi laadimine ebaõnnestus: {error}",
+  "noBlockedTypeData": "Blokeeritud tüübi andmed puuduvad",
+  "importEntity": "Impordi {entityTypeName}",
+  "@importEntity": {
+    "description": "Dialoogi pealkiri üksuse importimiseks",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityImportSuccess": "{entityTypeName} edukalt imporditud, {count} kirjet imporditud",
+  "@entityImportSuccess": {
+    "description": "Edukas sõnum pärast üksuse importimist",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "entityImportFailed": "{entityTypeName} importimine ebaõnnestus: {error}",
+  "@entityImportFailed": {
+    "description": "Veateade, kui üksuse importimine ebaõnnestub",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "exportEntity": "Ekspordi {entityTypeName}",
+  "@exportEntity": {
+    "description": "Dialoogi pealkiri üksuse eksportimiseks",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportSuccess": "{entityTypeName} edukalt eksporditud",
+  "@entityExportSuccess": {
+    "description": "Edukas sõnum pärast üksuse eksportimist",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportFailed": "{entityTypeName} eksportimine ebaõnnestus: {error}",
+  "@entityExportFailed": {
+    "description": "Veateade, kui üksuse eksportimine ebaõnnestub",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "cloudSyncService": "Pilve sünkroonimisteenus",
   "membershipCenter": "Liikmelisuse keskus",
-  "redeemVipWithMarks": "Lunasta VIP märkidega",
-  "currentMarkCount": "Praegune märkide arv",
-  "markMoreNumbersForMore": "Märgi rohkem numbreid, et saada rohkem märke",
-  "noAds": "Reklaame pole",
-  "cloudBackup": "Pilvevarundus",
+  "redeemVipWithMarks": "Lunasta VIP punktidega",
+  "currentMarkCount": "Praegune punktide arv",
+  "markMoreNumbersForMore": "Märgi rohkem numbreid rohkemate punktide saamiseks",
+  "noAds": "Reklaamideta",
+  "cloudBackup": "Pilve varundamine",
   "callerIdEnhancement": "Helistaja ID täiustamine",
   "voiceRecognition": "Kõnetuvastus",
   "feature": "Funktsioon",
@@ -180,22 +180,19 @@
   "vipUser": "VIP-kasutaja",
   "temporaryVip": "Ajutine VIP",
   "removeAds": "Eemalda reklaamid",
-
   "unknownAction": "Tundmatu tegevus",
-
-    "settingsBackup": "Seadete varundamine ",
-      "allServicesStatusTitle": "Praegune teenuse olek",
+  "settingsBackup": "Seadete varundamine",
+  "allServicesStatusTitle": "Kõigi teenuste olek",
   "allServicesStatusSubtitle": "Iga pilveteenuse praegune olek",
-   
   "redirect": "Ümbersuunamine",
- "notify": "Teavita",
- "log": "Logi",
- "custom": "Kohandatud",
- "allowActionDescription": "Kõned lubatakse, isegi kui number on mustas nimekirjas.",
- "blockActionDescription": "Kõned blokeeritakse ja kuvatakse kõnelogis.",
- "silenceActionDescription": "Kõned vaigistatakse, kuid kuvatakse kõnelogis.",
- "noneActionDescription": "Kõnele ei rakendata erilist toimingut.",
- "redirectActionDescription": "Suuna kõne ümber määratud numbrile.",
- "labelActionDescription": "Lisa kõnele silt lihtsaks tuvastamiseks.",
- "notifyActionDescription": "Saada teavitus, kui kõne vastu võetakse."
+  "notify": "Teavita",
+  "log": "Logi",
+  "custom": "Kohandatud",
+  "allowActionDescription": "Kõned lubatakse isegi siis, kui number on blokeerimisloendis.",
+  "blockActionDescription": "Kõned blokeeritakse ja kuvatakse kõnelogis.",
+  "silenceActionDescription": "Kõned vaigistatakse, kuid kuvatakse kõnelogis.",
+  "noneActionDescription": "Kõnele ei tehta erilist toimingut.",
+  "redirectActionDescription": "Suunake kõne kindlale numbrile.",
+  "labelActionDescription": "Lisage kõnele silt lihtsaks tuvastamiseks.",
+  "notifyActionDescription": "Saada teavitus, kui kõne saabub."
 }

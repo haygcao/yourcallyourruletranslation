@@ -1,26 +1,28 @@
-"fraudAlerSettingSubtitle": "Nastavenie upozornenia na podvod",
-  "enableFraudAlert": "Povoliť upozornenie na podvod",
-  "enableFraudAlertDescription": "Upozornenie na podozrivé podvodné hovory",
+{
+  "fraudAlerSettingTitle": "Nastavenia upozornení na podvody",
+  "fraudAlerSettingSubtitle": "Konfigurácia upozornení na podvody",
+  "enableFraudAlert": "Povoliť upozornenie na podvody",
+  "enableFraudAlertDescription": "Upozornenia na podozrivé podvodné hovory",
   "enableVibration": "Povoliť vibrácie",
-  "enableVibrationDescription": "Vibrovať, keď je hovor podozrivý z podvodných hovorov",
+  "enableVibrationDescription": "Vibrácie, ak je hovor podozrivý podvod",
   "notificationSettingsTitle": "Nastavenia upozornení",
-  "useLocalNotification": "Používať lokálne upozornenia",
+  "useLocalNotification": "Použiť lokálne upozornenie",
   "useLocalNotificationDescription": "Povoliť lokálne upozornenia pre prichádzajúce hovory",
-  "cancelLocalNotification": "Zrušiť lokálne upozornenia",
-  "useStirNotification": "Používať upozornenia z STIR",
+  "cancelLocalNotification": "Zrušiť lokálne upozornenie",
+  "useStirNotification": "Použiť upozornenie STIR",
   "useStirNotificationDescription": "Povoliť upozornenia STIR pre prichádzajúce hovory",
   "cancelLocalNotificationDescription": "Automaticky zrušiť lokálne upozornenia",
   "callerIdSettingsTitle": "Nastavenia ID volajúceho",
-  "callerIdSettingsSubtitle": "Nastavenie upozornení na prichádzajúce hovory a režimu zobrazenia",
+  "callerIdSettingsSubtitle": "Konfigurácia upozornení na prichádzajúce hovory a režimu zobrazenia",
   "purchaseTitle": "Nákup",
-  "purchaseSubtitle": "Nákup služby",
-  "callerIdNotificationTitle": "Informácie o prichádzajúcom hovore",
+  "purchaseSubtitle": "Kúpiť služby",
+  "callerIdNotificationTitle": "Informácie o hovore",
   "@callerIdNotificationTitle": {
-    "description": "Nadpis pre informácie o prichádzajúcom hovore"
+    "description": "Nadpis pre upozornenie na informácie o hovore"
   },
   "callerIdBody": "Číslo: {phoneNumber}",
   "@callerIdBody": {
-    "description": "Telo upozornenia na ID volajúceho, zobrazujúce telefónne číslo",
+    "description": "Telo upozornenia ID volajúceho, zobrazuje telefónne číslo",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -28,13 +30,13 @@
       }
     }
   },
-  "blockedCallTitle": "Blokovaný hovor",
+  "blockedCallTitle": "Zablokovaný hovor",
   "@blockedCallTitle": {
-    "description": "Nadpis pre upozornenie na blokovaný hovor"
+    "description": "Nadpis pre upozornenie na zablokovaný hovor"
   },
-  "blockedCallBody": "Blokovaný hovor z {phoneNumber}",
+  "blockedCallBody": "Hovor zablokovaný z {phoneNumber}",
   "@blockedCallBody": {
-    "description": "Telo upozornenia na blokovaný hovor, zobrazujúce telefónne číslo",
+    "description": "Telo upozornenia na zablokovaný hovor, zobrazuje telefónne číslo",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -56,7 +58,7 @@
   },
   "stirUnknown": "Neznámy stav overenia",
   "@stirUnknown": {
-    "description": "Stav overenia STIR/SHAKEN: Neznámy"
+    "description": "Stav overenia STIR/SHAKEN: Neznáme"
   },
   "stirVerificationTitle": "Overenie STIR/SHAKEN",
   "@stirVerificationTitle": {
@@ -64,7 +66,7 @@
   },
   "stirVerificationBody": "{stirResultMessage} pre číslo {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "Telo upozornenia na overenie STIR/SHAKEN, zobrazujúce výsledok a telefónne číslo",
+    "description": "Telo upozornenia na overenie STIR/SHAKEN, zobrazuje výsledok a telefónne číslo",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
@@ -83,13 +85,13 @@
   "containerWidth": "Šírka kontajnera",
   "scrollSpeed": "Rýchlosť posúvania",
   "enableSecurityMessage": "Povoliť bezpečnostnú správu",
-  "fraudAlertTitle": "Upozornenie na podvod",
+  "fraudAlertTitle": "Upozornenie na podvody",
   "@fraudAlertTitle": {
-    "description": "Nadpis pre upozornenie na podvod"
+    "description": "Nadpis pre upozornenie na podvody"
   },
   "fraudAlertBody": "Potenciálny podvodný hovor z {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "Telo upozornenia na podvod",
+    "description": "Telo upozornenia na podvody",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -99,7 +101,7 @@
   },
   "loadRulesFailed": "Nepodarilo sa načítať pravidlá: {error}",
   "loadCallLogFailed": "Nepodarilo sa načítať denník hovorov: {error}",
-  "noBlockedTypeData": "Nie sú k dispozícii žiadne údaje o blokovanom type",
+  "noBlockedTypeData": "Žiadne údaje o zablokovanom type",
   "importEntity": "Importovať {entityTypeName}",
   "@importEntity": {
     "description": "Nadpis dialógu pre import entity",
@@ -109,9 +111,9 @@
       }
     }
   },
-  "entityImportSuccess": "{entityTypeName} úspešne importované, do",
+  "entityImportSuccess": "{entityTypeName} importované, {count} záznamov importovaných",
   "@entityImportSuccess": {
-    "description": "Správa o úspešnom importe entít",
+    "description": "Správa o úspechu po importe entity",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -122,9 +124,9 @@
       }
     }
   },
-  "entityImportFailed": "Nepodarilo sa importovať {entityTypeName}: {error}",
+  "entityImportFailed": "Import {entityTypeName} zlyhal: {error}",
   "@entityImportFailed": {
-    "description": "Chybová správa pri zlyhaní importu entít",
+    "description": "Chybová správa pre neúspešný import entity",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -143,18 +145,18 @@
       }
     }
   },
-  "entityExportSuccess": "{entityTypeName} úspešne exportované",
+  "entityExportSuccess": "{entityTypeName} exportované",
   "@entityExportSuccess": {
-    "description": "Správa o úspešnom exporte entít",
+    "description": "Správa o úspechu po exporte entity",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
       }
     }
   },
-  "entityExportFailed": "Nepodarilo sa exportovať {entityTypeName}: {error}",
+  "entityExportFailed": "Export {entityTypeName} zlyhal: {error}",
   "@entityExportFailed": {
-    "description": "Chybová správa pri zlyhaní exportu entít",
+    "description": "Chybová správa pre neúspešný export entity",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -164,11 +166,11 @@
       }
     }
   },
-  "cloudSyncService": "Cloudová synchronizačná služba",
+  "cloudSyncService": "Služba cloudovej synchronizácie",
   "membershipCenter": "Členské centrum",
-  "redeemVipWithMarks": "Vykúpiť VIP za značky",
-  "currentMarkCount": "Aktuálny počet značiek",
-  "markMoreNumbersForMore": "Označte viac čísel pre viac značiek",
+  "redeemVipWithMarks": "Vykúpiť VIP za body",
+  "currentMarkCount": "Aktuálny počet bodov",
+  "markMoreNumbersForMore": "Označte viac čísel pre viac bodov",
   "noAds": "Žiadne reklamy",
   "cloudBackup": "Cloudová záloha",
   "callerIdEnhancement": "Vylepšenie ID volajúceho",
@@ -180,16 +182,17 @@
   "removeAds": "Odstrániť reklamy",
   "unknownAction": "Neznáma akcia",
   "settingsBackup": "Záloha nastavení",
-  "allServicesStatusTitle": "Aktuálny stav služby",
+  "allServicesStatusTitle": "Stav všetkých služieb",
   "allServicesStatusSubtitle": "Aktuálny stav každej cloudovej služby",
   "redirect": "Presmerovať",
   "notify": "Upozorniť",
   "log": "Záznam",
   "custom": "Vlastné",
-  "allowActionDescription": "Hovory budú povolené, aj keď je číslo na čiernej listine.",
-  "blockActionDescription": "Hovory budú blokované a zobrazené v denníku hovorov.",
-  "silenceActionDescription": "Hovory budú stlmené, ale zobrazené v denníku hovorov.",
-  "noneActionDescription": "Pre hovor sa nevykoná žiadna špeciálna akcia.",
-  "redirectActionDescription": "Presmerovať hovor na zadané číslo.",
-  "labelActionDescription": "Pridať štítok k hovoru pre ľahkú identifikáciu.",
-  "notifyActionDescription": "Odoslať upozornenie, keď je prijatý hovor."
+  "allowActionDescription": "Povoliť hovory, aj keď je číslo na čiernej listine.",
+  "blockActionDescription": "Zablokuje hovory a zobrazí ich v denníku hovorov.",
+  "silenceActionDescription": "Stlmí hovory, ale zobrazí ich v denníku hovorov.",
+  "noneActionDescription": "Pre hovor sa nevykonajú žiadne špeciálne akcie.",
+  "redirectActionDescription": "Presmeruje hovor na zadané číslo.",
+  "labelActionDescription": "Pridá štítok k hovoru pre ľahkú identifikáciu.",
+  "notifyActionDescription": "Odošle upozornenie, keď príde hovor."
+}

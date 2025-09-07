@@ -1,28 +1,28 @@
 {
   "fraudAlerSettingTitle": "הגדרות התראת הונאה",
-  "fraudAlerSettingSubtitle": "להגדרת התראת הונאה",
+  "fraudAlerSettingSubtitle": "הגדר התראות הונאה",
   "enableFraudAlert": "הפעל התראת הונאה",
-  "enableFraudAlertDescription": "התראה על שיחות חשודות כהונאה",
+  "enableFraudAlertDescription": "התראות לשיחות הונאה חשודות",
   "enableVibration": "הפעל רטט",
-  "enableVibrationDescription": "רטט כאשר שיחה חשודה כהונאה",
+  "enableVibrationDescription": "רטט כאשר השיחה היא שיחת הונאה חשודה",
   "notificationSettingsTitle": "הגדרות התראות",
-  "useLocalNotification": "השתמש בהתראות מקומיות",
+  "useLocalNotification": "השתמש בהתראה מקומית",
   "useLocalNotificationDescription": "הפעל התראות מקומיות לשיחות נכנסות",
-  "cancelLocalNotification": "סגור התראות מקומיות",
-  "useStirNotification": "השתמש בהתראה מ-STIR",
+  "cancelLocalNotification": "בטל התראה מקומית",
+  "useStirNotification": "השתמש בהתראת STIR",
   "useStirNotificationDescription": "הפעל התראות STIR לשיחות נכנסות",
-  "cancelLocalNotificationDescription": "סגור התראות מקומיות אוטומטית",
+  "cancelLocalNotificationDescription": "בטל אוטומטית התראה מקומית",
   "callerIdSettingsTitle": "הגדרות זיהוי מתקשר",
-  "callerIdSettingsSubtitle": "להגדרת התראת שיחה נכנסת ומצב תצוגה",
+  "callerIdSettingsSubtitle": "הגדר התראות שיחות נכנסות ומצב תצוגה",
   "purchaseTitle": "רכישה",
-  "purchaseSubtitle": "לרכישת השירות",
-  "callerIdNotificationTitle": "פרטי שיחה נכנסת",
+  "purchaseSubtitle": "רכוש שירותים",
+  "callerIdNotificationTitle": "מידע על שיחה נכנסת",
   "@callerIdNotificationTitle": {
-    "description": "כותרת לפרטי שיחה נכנסת"
+    "description": "כותרת למידע על שיחה נכנסת"
   },
   "callerIdBody": "מספר: {phoneNumber}",
   "@callerIdBody": {
-    "description": "גוף התראת זיהוי מתקשר, מציג את מספר הטלפון",
+    "description": "טקסט התראת זיהוי מתקשר, מציג מספר טלפון",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -36,7 +36,7 @@
   },
   "blockedCallBody": "שיחה חסומה מ- {phoneNumber}",
   "@blockedCallBody": {
-    "description": "גוף התראת שיחה חסומה, מציג את מספר הטלפון",
+    "description": "טקסט התראת שיחה חסומה, מציג מספר טלפון",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -66,7 +66,7 @@
   },
   "stirVerificationBody": "{stirResultMessage} עבור מספר {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "גוף התראת אימות STIR/SHAKEN, מציג תוצאה ומספר טלפון",
+    "description": "טקסט התראת אימות STIR/SHAKEN, מציג תוצאה ומספר טלפון",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
@@ -91,7 +91,7 @@
   },
   "fraudAlertBody": "שיחת הונאה פוטנציאלית מ- {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "גוף התראת הונאה",
+    "description": "טקסט התראת הונאה",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -101,19 +101,19 @@
   },
   "loadRulesFailed": "טעינת כללים נכשלה: {error}",
   "loadCallLogFailed": "טעינת יומן שיחות נכשלה: {error}",
-  "noBlockedTypeData": "אין נתוני סוג חסומים זמינים",
+  "noBlockedTypeData": "אין נתוני סוג חסומים",
   "importEntity": "ייבא {entityTypeName}",
   "@importEntity": {
-    "description": "כותרת דיאלוג לייבוא ישות",
+    "description": "כותרת תיבת דו-שיח לייבוא ישות",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
       }
     }
   },
-  "entityImportSuccess": "{entityTypeName} יובא בהצלחה",
+  "entityImportSuccess": "{entityTypeName} יובא בהצלחה, {count} רשומות יובאו",
   "@entityImportSuccess": {
-    "description": "הודעת הצלחה לאחר ייבוא ישויות",
+    "description": "הודעת הצלחה לאחר ייבוא ישות",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -126,7 +126,7 @@
   },
   "entityImportFailed": "ייבוא {entityTypeName} נכשל: {error}",
   "@entityImportFailed": {
-    "description": "הודעת שגיאה כאשר ייבוא ישויות נכשל",
+    "description": "הודעת שגיאה אם ייבוא ישות נכשל",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -138,7 +138,7 @@
   },
   "exportEntity": "ייצא {entityTypeName}",
   "@exportEntity": {
-    "description": "כותרת דיאלוג לייצוא ישות",
+    "description": "כותרת תיבת דו-שיח לייצוא ישות",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -147,7 +147,7 @@
   },
   "entityExportSuccess": "{entityTypeName} יוצא בהצלחה",
   "@entityExportSuccess": {
-    "description": "הודעת הצלחה לאחר ייצוא ישויות",
+    "description": "הודעת הצלחה לאחר ייצוא ישות",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -156,7 +156,7 @@
   },
   "entityExportFailed": "ייצוא {entityTypeName} נכשל: {error}",
   "@entityExportFailed": {
-    "description": "הודעת שגיאה כאשר ייצוא ישויות נכשל",
+    "description": "הודעת שגיאה אם ייצוא ישות נכשל",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -168,9 +168,9 @@
   },
   "cloudSyncService": "שירות סנכרון ענן",
   "membershipCenter": "מרכז חברות",
-  "redeemVipWithMarks": "פדה VIP עם נקודות",
-  "currentMarkCount": "מספר נקודות נוכחי",
-  "markMoreNumbersForMore": "סמן מספרים נוספים עבור נקודות נוספות",
+  "redeemVipWithMarks": "פדה VIP עם סימנים",
+  "currentMarkCount": "מספר סימנים נוכחי",
+  "markMoreNumbersForMore": "סמן יותר מספרים עבור יותר סימנים",
   "noAds": "ללא פרסומות",
   "cloudBackup": "גיבוי ענן",
   "callerIdEnhancement": "שיפור זיהוי מתקשר",
@@ -182,17 +182,17 @@
   "removeAds": "הסר פרסומות",
   "unknownAction": "פעולה לא ידועה",
   "settingsBackup": "גיבוי הגדרות",
-  "allServicesStatusTitle": "סטטוס שירות נוכחי",
-  "allServicesStatusSubtitle": "סטטוס נוכחי של כל שירותי הענן",
-  "redirect": "הפניה מחדש",
+  "allServicesStatusTitle": "סטטוס כל השירותים",
+  "allServicesStatusSubtitle": "סטטוס נוכחי של כל שירות ענן",
+  "redirect": "הפנה מחדש",
   "notify": "הודע",
   "log": "יומן",
   "custom": "מותאם אישית",
-  "allowActionDescription": "שיחות יאושרו, גם אם המספר נמצא ברשימה השחורה.",
-  "blockActionDescription": "שיחות ייחסמו ויוצגו ביומן השיחות.",
-  "silenceActionDescription": "שיחות יושתקו אך יוצגו ביומן השיחות.",
-  "noneActionDescription": "לא תינקט פעולה מיוחדת עבור השיחה.",
-  "redirectActionDescription": "הפנה את השיחה למספר שצוין.",
+  "allowActionDescription": "יתיר שיחות גם אם המספר נמצא ברשימת החסימה.",
+  "blockActionDescription": "יחסום שיחות ויציג אותן ביומן השיחות.",
+  "silenceActionDescription": "ישתיק שיחות אך עדיין יציג אותן ביומן השיחות.",
+  "noneActionDescription": "לא תבוצע פעולה מיוחדת עבור השיחה.",
+  "redirectActionDescription": "יפנה את השיחה למספר ספציפי.",
   "labelActionDescription": "הוסף תווית לשיחה לזיהוי קל.",
-  "notifyActionDescription": "שלח התראה כאשר מתקבלת שיחה."
+  "notifyActionDescription": "שלח התראה כאשר שיחה נכנסת."
 }

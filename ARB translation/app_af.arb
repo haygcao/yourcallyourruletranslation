@@ -1,0 +1,2167 @@
+{
+  "@@locale": "af",
+  "aboutContactSubscription": "Oor Kontakintekening",
+  "@aboutContactSubscription": {
+    "description": "Oor kontakintekening titel"
+  },
+  "aboutLabels": "Oor Etikette",
+  "aboutPhoneSubscriptionRules": "Oor Telefoonintekeningreëls",
+  "aboutPhoneSubscriptions": "Oor Telefoonintekeninge",
+  "@aboutPhoneSubscriptions": {
+    "description": "Oor telefoonintekeninge titel"
+  },
+  "aboutPhoneSubscriptionsDesc": "Teken in op telefoonreëllyste via URL, werk outomaties swartlys- en witlysreëls op. Ondersteun JSON-formaat reëllêers.",
+  "@aboutPhoneSubscriptionsDesc": {
+    "description": "Oor telefoonintekeninge beskrywing"
+  },
+  "aboutSmsFilter": "Oor SMS-filtrering",
+  "aboutSmsSubscriptionRules": "Oor SMS-intekeningreëls",
+  "aboutSubtitle": "Toepassingsweergawe en wetlike inligting",
+  "aboutTitle": "Oor",
+  "action": "Aksie",
+  "actionAll": "Alles",
+  "actionAllow": "Laat toe",
+  "actionBlock": "Blokkeer",
+  "actionFilterAll": "Alle Filter",
+  "actionFilterTitle": "Filter volgens Aksietipe",
+  "actionFilterTooltip": "Aksie Filter",
+  "actionNone": "Geen Aksie",
+  "actionSilence": "Stilte",
+  "actionTag": "Aksie: {actionType}",
+  "actionType": "Aksietipe",
+  "actionUnknown": "Onbekend",
+  "add": "Voeg by",
+  "addAllowedBlockedRule": "Voeg Toelaat/Blokkeer Reël by",
+  "addAllowSubscription": "Voeg Toelaat Intekening by",
+  "@addAllowSubscription": {
+    "description": "Voeg toelaat intekening dialoog titel by"
+  },
+  "addBlockSubscription": "Voeg Blokkeer Intekening by",
+  "@addBlockSubscription": {
+    "description": "Voeg blokkeer intekening dialoog titel by"
+  },
+  "addContactButton": "Voeg Kontak by",
+  "addContactFailed": "Kon nie kontak byvoeg nie: {error}",
+  "addedToAllowedRules": "Bygevoeg by Toegelate Reëls",
+  "addedToBlacklist": "Bygevoeg by Swartlys",
+  "addedToBlockedRules": "Bygevoeg by Geblokkeerde Reëls",
+  "addedToFavoriteContacts": "Bygevoeg by gunsteling kontakte",
+  "addedToFavorites": "Bygevoeg by gunsteling kontakte",
+  "addedToWhitelist": "Bygevoeg by Witlys",
+  "addFavorite": "Voeg Gunsteling by",
+  "addFilter": "Voeg Filter by",
+  "addLabel": "Voeg Etiket by",
+  "addLabelButton": "Voeg Etiket by",
+  "addLabelFailed": "Kon nie etiket byvoeg nie: {error}",
+  "addLabelToCall": "Voeg Etiket by Oproeprekord",
+  "addName": "Voeg Naam by",
+  "addNoneSubscription": "Voeg Geen Intekening by",
+  "@addNoneSubscription": {
+    "description": "Voeg geen intekening dialoog titel by"
+  },
+  "addOrEditContactInfo": "Word gebruik om kontakinligting by te voeg of te wysig",
+  "addPhoneMark": "Voeg Telefoonmerk by",
+  "addPhoneNumberRule": "Voeg Telefoonnommer Reël by",
+  "addPlugin": "Voeg Inprop by",
+  "addPluginFailed": "Kon nie inprop byvoeg nie",
+  "addPluginFailedWithError": "Kon nie inprop byvoeg nie: {error}",
+  "addPluginFromLocalFile": "Voeg Inprop van Plaaslike Lêer by",
+  "addPluginFromUrl": "Voeg Inprop van URL by",
+  "addRegexRule": "Voeg Regex Reël by",
+  "addRule": "Voeg Reël by",
+  "addRuleButton": "Voeg Reël by",
+  "addRuleFailed": "Kon nie reël byvoeg nie: {error}",
+  "addRuleTooltip": "Voeg Reël by",
+  "addSilenceSubscription": "Voeg Stilte Intekening by",
+  "@addSilenceSubscription": {
+    "description": "Voeg stilte intekening dialoog titel by"
+  },
+  "addSimRuleButton": "Voeg SIM Reël by",
+  "addSmsFilterRule": "Voeg SMS Filter Reël by",
+  "addSmsRule": "Voeg SMS Reël by",
+  "addSmsSubscription": "Voeg SMS Intekening by",
+  "addSubscription": "Voeg Intekening by",
+  "@addSubscription": {
+    "description": "Voeg intekening knoppie teks by"
+  },
+  "addSubscriptionButton": "Voeg Intekening by",
+  "addSubscriptionFailed": "Kon nie intekening byvoeg nie: {error}",
+  "@addSubscriptionFailed": {
+    "description": "Kon nie intekening foutboodskap byvoeg nie",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "addSubscriptionTooltip": "Voeg Intekening by",
+  "addToAllowedRules": "Voeg by Toegelate Reëls",
+  "addToBlacklist": "Voeg by Swartlys",
+  "addToBlockedRules": "Voeg by Geblokkeerde Reëls",
+  "addToFavoriteContacts": "Voeg by Gunsteling Kontakte",
+  "addToFavorites": "Voeg by Gunstelinge",
+  "addToRules": "Voeg by Reëls",
+  "addToWhitelist": "Voeg by Witlys",
+  "adPlaceholder": "Advertensie Plekhouer",
+  "agent": "Agent",
+  "all": "Alles",
+  "allCallsTab": "Alles",
+  "allDataClearedSuccessfully": "Alle data suksesvol skoongemaak",
+  "allow": "Laat toe",
+  "allowAllAllowRules": "Laat Alle Toelaat Reëls toe",
+  "allowAllAllowRulesDesc": "Laat oproepe van toelaat reëls toe",
+  "allowAllBlacklistedNumbers": "Laat Alle Swartlysnommers toe",
+  "allowAllBlacklistedNumbersDesc": "Laat oproepe van bloklys toe",
+  "@allowAllBlacklistedNumbersDesc": {
+    "description": "Laat oproepe van bloklys toe"
+  },
+  "allowAllBlockRules": "Laat Alle Blokkeer Reëls toe",
+  "allowAllBlockRulesDesc": "Laat oproepe van blokkeer reëls toe",
+  "allowAllowedNumbers": "Laat Toegelate Nommers toe",
+  "allowAllowedNumbersDesc": "Laat oproepe van toelaatlys toe",
+  "allowBlock": "Laat toe/Blokkeer",
+  "allowBlockedNumbers": "Laat Geblokkeerde Nommers toe",
+  "allowBlockedNumbersDesc": "Laat oproepe van bloklys toe",
+  "allowedBlockedRule": "Laat toe/Blokkeer Reël",
+  "allowedBlockedRuleEditDialogTitle": "Wysig Toelaat/Blokkeer Reël",
+  "allowedBlockedRuleManagement": "Toelaat/Blokkeer Reël Bestuur",
+  "allowNonExceededNumbers": "Laat Nie-Oorskryde Nommers toe",
+  "allowNonExceededNumbersDescription": "Laat outomaties nommers toe wat nie die tellingdrempel oorskry nie",
+  "allowRegexAllowRules": "Laat Regex Toelaat Reëls toe",
+  "allowRegexAllowRulesDesc": "Aktiveer regex patroonpassing vir toelaat reëls",
+  "allowRegexAllowRulesDescription": "Aktiveer regex-gebaseerde toelaat reëls",
+  "allowRegexBlockRules": "Laat Regex Blokkeer Reëls toe",
+  "allowRegexBlockRulesDesc": "Aktiveer regex patroonpassing vir blokkeer reëls",
+  "allowRegexBlockRulesDescription": "Aktiveer regex-gebaseerde blokkeer reëls",
+  "allowRule": "Laat Reël toe",
+  "allowRules": "Laat Reëls toe",
+  "allowWhitelistedNumbers": "Laat Witlysnommers toe",
+  "allowWhitelistedNumbersDescription": "Laat alle nommers in die witlys toe",
+  "allPermissionsGranted": "Alle toestemmings toegestaan",
+  "allSettingsCompleted": "Alle instellings voltooi.",
+  "allUpdateSuccess": "Alle opdaterings voltooi ({count} reëls)",
+  "@allUpdateSuccess": {
+    "description": "Volledige opdatering suksesboodskap",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "answerThenHangup": "Antwoord dan ophang",
+  "appLegalese": "© 2023 Your Call Your Rule. Alle regte voorbehou.",
+  "applicationSoftware": "Toepassingsagteware",
+  "apply": "Pas toe",
+  "appName": "Your Call Your Rule",
+  "authorizationFailedCheckCredentialsMessage": "Magtiging het misluk: Kontroleer asseblief kliënt-ID en sleutel",
+  "authorizationFailedMessage": "Magtiging het misluk",
+  "authorizationSuccessMessage": "Magtiging suksesvol",
+  "authorizeLoginButton": "Magtig Aanmelding",
+  "automotiveIndustry": "Motorbedryf",
+  "autoSyncLabel": "Outo-sinkronisering",
+  "autoUpdate": "Outo-opdatering",
+  "autoUpdateDescription": "Stel outo-opdateringsintervalle vir intekeninge of werk handmatig op",
+  "autoUpdateSettings": "Outo-opdatering Instellings",
+  "autoUpdateSettingsSubtitle": "Bestuur outomatiese opdaterings vir reëls en inproppe",
+  "autoUpdateSettingsTitle": "Outo-opdatering Instellings",
+  "autoUpdateSubtitle": "Bestuur outomatiese opdaterings vir reëls en inproppe",
+  "autoUpdateTitle": "Outo-opdatering",
+  "avatarBorderColor": "Avatar Randkleur",
+  "avatarBorderSize": "Avatar Randgrootte",
+  "avatarIconSizesSetting": "Avatar & Ikoongroottes",
+  "avatarPosition": "Avatar Posisie",
+  "avatarSize": "Avatar Grootte",
+  "axisPosition": "{axis} Posisie",
+  "backgroundGradientSetting": "Agtergrond Gradiënt",
+  "backup": "Rugsteun",
+  "backupAndRestore": "Rugsteun en Herstel",
+  "backupAndRestoreSubtitle": "Rugsteun of herstel toepassingsdata",
+  "backupAndRestoreTitle": "Rugsteun & Herstel",
+  "backupFailed": "Rugsteun het misluk",
+  "backupFailedMessage": "Rugsteun het misluk",
+  "backupFailedWithError": "Rugsteun het misluk: {error}",
+  "backupRestoreSubtitle": "Rugsteun of herstel toepassingsdata",
+  "backupRestoreTitle": "Rugsteun & Herstel",
+  "backupSectionTitle": "Rugsteun",
+  "backupSettings": "Rugsteun Instellings",
+  "backupSettingsDialogTitle": "Rugsteun Instellings",
+  "backupSettingsTitle": "Rugsteun Instellings",
+  "backupSuccessMessage": "Suksesvol na wolk gerugsteun",
+  "backupSuccessToLocal": "Rugsteun suksesvol na: {path}",
+  "backupToCloud": "Rugsteun na Wolk",
+  "backupToCloudDescription": "Rugsteun instellings en reëls na wolkberging",
+  "backupToCloudFailed": "Kon nie na wolk rugsteun nie: {error}",
+  "backupToCloudLabel": "Rugsteun na Wolk",
+  "backupToCloudSuccess": "Suksesvol na wolk gerugsteun",
+  "backupToCloudTitle": "Rugsteun na Wolk",
+  "backupToLocalLabel": "Rugsteun na Plaaslik",
+  "bank": "Bank",
+  "basicRuleFilter": "Basiese Reël Filter",
+  "basicRuleFiltering": "Basiese Reël Filtrering",
+  "basicRuleFilteringExplanation": "• Basiese Reël Filtrering: Filtrering van reëls gebaseer op swartlys, witlys en regex",
+  "basicRuleFilterSettings": "Basiese Reël Filter Instellings",
+  "@basicRuleFilterSettings": {
+    "description": "Titel vir basiese reël filter instellings bladsy"
+  },
+  "basicRuleFilterSubtitle": "Filtreer oproepe met swartlys/witlys en reguliere uitdrukkings",
+  "batchDeleteContacts": "Joernaal Verwyder Kontakte",
+  "batchDeleteContactsConfirm": "Is jy seker jy wil {count} geselekteerde kontakte verwyder?",
+  "batchDeleteFailed": "Joernaal verwydering het misluk",
+  "batchDeleteLabelsConfirm": "Is jy seker jy wil {count} etikette verwyder?",
+  "blacklist": "Swartlys",
+  "@blacklist": {
+    "description": "Swartlys etiket"
+  },
+  "blacklistingAndWhitelisting": "Swartlys en Witlys",
+  "blacklistLabel": "Swartlys",
+  "blackWhiteList": "Swart/Wit Lys",
+  "block": "Blokkeer",
+  "blockCalls": "Blokkeer Oproepe",
+  "blocked": "Geblokkeer",
+  "blockedCallAction": "Geblokkeerde Oproep Aksie",
+  "blockedCalls": "Geblokkeerde Oproepe",
+  "blockedCallsTitle": "Geblokkeerde Oproepe",
+  "blockedCommunications": "Geblokkeerde Kommunikasie",
+  "blockedPhoneLabel": "Geblokkeerde Oproepe",
+  "blockedSpamCalls": "Geblokkeerde Gemorsoproepe",
+  "blockingTrend": "Blokkeringstendens",
+  "blockInternationalCalls": "pas nommers wat nie met + of 00 begin nie",
+  "blockInternationalCallsTitle": "Blokkeer Internasionale Oproepe",
+  "blockLandlineNumbersTitle": "Blokkeer Landlynnommers",
+  "blockMobileNumbers": "pas nommers wat nie met 13-19 begin nie",
+  "blockMobileNumbersTitle": "Blokkeer Mobiele Nommers",
+  "blockPremiumRateNumbers": "pas nommers wat nie met 118 of 120-190 begin nie",
+  "blockPremiumRateNumbersTitle": "Blokkeer Premiumkoersnommers",
+  "blockRule": "Blokkeer Reël",
+  "blockRules": "Blokkeer Reëls",
+  "blockSpecificAreaCodes": "pas nommers wat met 0 + 2-3 syfers begin",
+  "blockSpecificAreaCodesTitle": "Blokkeer spesifieke areakodes:",
+  "blockTypeAnalysisTitle": "Blokkeer Tipe Analise",
+  "both": "Beide",
+  "bulkDelete": "Joernaal Verwyder Kontakte",
+  "bulkDeleteContacts": "Joernaal Verwyder Kontakte",
+  "bulkDeleteLabels": "Joernaal Verwyder Etikette",
+  "call": "Oproep",
+  "callback": "Bel Terug",
+  "callbackTo": "Bel terug na {number}",
+  "@callbackTo": {
+    "description": "Terugbel kennisgewing boodskap",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "callBlocking": "Oproepblokkering",
+  "callerIdApp": "Beller-ID Toepassing",
+  "callerIdCustomizationTitle": "Pasmaak Beller-ID",
+  "callerIdDialogTitle": "Beller-ID Inligting",
+  "callerIdDisplayMode": "Beller-ID Vertoonmodus",
+  "callerIdMarkedByCount": "Gemarkeer deur {count}",
+  "@callerIdMarkedByCount": {
+    "description": "Merk telling vertoon",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "callerIdPreview": "Beller-ID Voorskou",
+  "callFilter": "Oproepfilter",
+  "callFilterDescription": "Wanneer geaktiveer, word inkomende oproepe teen die reëllys hieronder nagegaan. Oproepfiltreringsreëls word nie by verstek tussen toestelle gesinkroniseer nie.",
+  "callFilterRules": "Oproepfilter Reëls",
+  "callFilterRulesDescription": "Stel basiese reëls vir oproepfiltrering",
+  "callFilterSettings": "Oproepfilter Instellings",
+  "callFrequencyInterceptionSubtitle": "Stel oproepfrekwensiebeperkings en blokkeerreëls",
+  "callFrequencyInterceptionTitle": "Oproepfrekwensie-onderskepping",
+  "callHistory": "Oproepgeskiedenis",
+  "callHistoryInfoDesc": "Hier wys jou oproepgeskiedenis, insluitend inkomende, uitgaande en gemiste oproepe.",
+  "callHistoryInfoTitle": "Oproepgeskiedenis",
+  "callHistoryInitFailed": "Kon nie oproepgeskiedenis inisialiseer nie: {error}",
+  "@callHistoryInitFailed": {
+    "description": "Oproepgeskiedenis inisialisering misluk boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "callHistoryRefreshFailed": "Kon nie oproepgeskiedenis verfris nie: {error}",
+  "@callHistoryRefreshFailed": {
+    "description": "Oproepgeskiedenis verfris misluk boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "callHistoryTab": "Oproepgeskiedenis",
+  "callHistoryTimelineEarlier": "Vroeër",
+  "callHistoryTimelineToday": "Vandag",
+  "callHistoryTimelineYesterday": "Gister",
+  "callScreeningPermission": "Oproepskermtoestemming",
+  "callScreeningPermissionDescription": "Word gebruik om gemorsoproepe te skerm en te blokkeer.",
+  "callScreeningPermissionNotGranted": "Oproepskermtoestemming nie toegestaan nie, kan toepassingsfunksionaliteit beïnvloed.",
+  "callSettingsSubtitle": "Beller-ID, filtrering en blokkeer instellings",
+  "callSettingsTitle": "Oproepinstellings",
+  "callStatistics": "Oproepstatistieke",
+  "callTypeAnswered": "Beantwoord",
+  "callTypeBlocked": "Geblokkeer",
+  "callTypeIconColor": "Oproeptipe Ikoonkleur",
+  "callTypeMissed": "Gemiste Oproep",
+  "callTypeOutgoing": "Uitgaande",
+  "callTypePosition": "Oproeptipe Posisie",
+  "callTypeUnknown": "Onbekend",
+  "cancelButton": "Kanselleer",
+  "carRental": "Motorhuur",
+  "carrier": "Draer",
+  "carrierColor": "Draerkleur",
+  "carrierFontSize": "Draer Lettergrootte",
+  "carrierPosition": "Draer Posisie",
+  "changeLabel": "Verander Etiket",
+  "changePluginStatusFailed": "Kon nie inpropstatus verander nie: {error}",
+  "changeSubscriptionStatusFailed": "Kon nie intekeningstatus verander nie: {error}",
+  "@changeSubscriptionStatusFailed": {
+    "description": "Kon nie intekeningstatus foutboodskap verander nie",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "changeTag": "Verander Etiket",
+  "charity": "Liefdadigheid",
+  "chartMonthFormat": "Maand {month}",
+  "@chartMonthFormat": {
+    "description": "Maandformaat vir grafiek etikette",
+    "placeholders": {
+      "month": {
+        "type": "int"
+      }
+    }
+  },
+  "chartOneDayAgo": "1 dag gelede",
+  "chartOneMonthAgo": "1 maand gelede",
+  "chartOneWeekAgo": "1 week gelede",
+  "chartTenDaysAgo": "10 dae gelede",
+  "chartThreeDaysAgo": "3 dae gelede",
+  "chartToday": "Vandag",
+  "checkFileFormat": "Kontroleer asseblief lêerformaat of toestemmings",
+  "checkPermissionFailed": "Kon nie toestemmings nagaan nie: {error}",
+  "chooseDefaultInterceptAction": "Kies die verstek onderskepaksie",
+  "clearAllData": "Vee Alle Data Skoon",
+  "clearAllDataConfirmation": "Is jy seker jy wil alle toepassingsdata skoonmaak? Hierdie aksie kan nie ongedaan gemaak word nie.",
+  "clearAllDataDescription": "Vee alle toepassingsdata skoon",
+  "clearAllDataLabel": "Vee Alle Data Skoon",
+  "clearFilter": "Vee Filter Skoon",
+  "clearLabelFilter": "Vee Etiketfilter Skoon",
+  "clearLabelFilterButton": "Vee Etiketfilter Skoon",
+  "close": "Sluit",
+  "closeButton": "Sluit",
+  "cloudSync": "Wolk Sinkronisering",
+  "cloudSyncAndBackupTitle": "Wolk Sinkronisering & Rugsteun",
+  "cloudSyncSettingsSubtitle": "Konfigureer WebDAV, OneDrive en Google Drive",
+  "cloudSyncSettingsTitle": "Wolk Sinkronisering Instellings",
+  "cloudSyncTitle": "Wolk Sinkronisering",
+  "collapseLabelSelector": "Vou Etiketkieser Toe",
+  "collection": "Skuldinvordering",
+  "colorPickerTitle": "Kies Kleur",
+  "configManagement": "Konfigurasie Bestuur",
+  "configUpdated": "Konfigurasie opgedateer",
+  "configurationAdvice": "Deur behoorlike konfigurasie kan jy verskillende filtreringstrategieë vir werk- en persoonlike SIM-kaarte instel.",
+  "configureBackupOptions": "Konfigureer Rugsteunopsies",
+  "configureBackupOptionsSubtitle": "Konfigureer rugsteunopsies",
+  "configureCloudSyncService": "Konfigureer Wolk Sinkronisering Diens",
+  "configureCloudSyncServiceHint": "Konfigureer asseblief 'n wolk sinkronisering diens om multi-toestel sinkronisering te aktiveer.",
+  "configureCloudSyncServiceMessage": "Konfigureer asseblief 'n wolk sinkronisering diens om multi-toestel sinkronisering te aktiveer.",
+  "configureSimCardFilterRules": "Konfigureer SIM-kaart Filter Reëls",
+  "configureSyncServiceHint": "Konfigureer asseblief sinkronisering diens in wolk sinkronisering instellings eers",
+  "confirm": "Bevestig",
+  "confirmBatchDeleteContacts": "Is jy seker jy wil die geselekteerde verwyder",
+  "confirmButton": "Bevestig",
+  "confirmDelete": "Bevestig Verwydering",
+  "confirmDeleteContact": "Is jy seker jy wil verwyder",
+  "confirmDeleteContactName": "Bevestig verwydering?",
+  "confirmDeleteFilter": "Is jy seker jy wil hierdie filter verwyder?",
+  "confirmDeleteLabel": "Is jy seker jy wil etiket \"{name}\" verwyder",
+  "confirmDeletePlugin": "Is jy seker jy wil inprop \"{name}\" verwyder?",
+  "confirmDeletePlugins": "Is jy seker jy wil {count} inproppe verwyder?",
+  "@confirmDeletePlugins": {
+    "description": "Bevestigingsboodskap wat gewys word voordat een of meer inproppe verwyder word.",
+    "placeholders": {
+      "count": {
+        "type": "Object",
+        "example": "5"
+      }
+    }
+  },
+  "confirmDeleteSelectedContacts": "Is jy seker jy wil geselekteerde kontakte verwyder?",
+  "confirmDeleteSmsFilterRule": "Is jy seker jy wil hierdie SMS-filterreël verwyder?",
+  "confirmDeleteSmsRule": "Is jy seker jy wil hierdie SMS-reël verwyder?",
+  "confirmDeleteSubscription": "Is jy seker jy wil hierdie intekening verwyder?",
+  "confirmDeleteSubscriptions": "Is jy seker jy wil {name} verwyder?",
+  "@confirmDeleteSubscriptions": {
+    "description": "Bevestigingsboodskap wat gewys word voordat 'n intekening verwyder word.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Premium Plan"
+      }
+    }
+  },
+  "confirmPassword": "Bevestig Wagwoord",
+  "confirmPasswordLabel": "Bevestig Wagwoord",
+  "connectedStatus": "Gekoppel",
+  "connectionFailedCheckCredentialsMessage": "Verbinding misluk: Kontroleer asseblief bedieneradres, gebruikersnaam en wagwoord",
+  "connectionFailedMessage": "Verbinding misluk",
+  "connectionStatusLabel": "Verbindingstatus",
+  "connectionSuccessMessage": "Verbinding suksesvol",
+  "contactAddSuccess": "Kontak suksesvol bygevoeg",
+  "contactDeleted": "Kontak verwyder",
+  "contactEditDialog": "Kontak Wysig Dialoog",
+  "contactNameHint": "Voer kontaknaam in (opsioneel)",
+  "contactNameLabel": "Naam",
+  "contactNameOptional": "Kontaknaam (opsioneel)",
+  "contactNotFound": "Kontak nie gevind nie",
+  "contacts": "kontakte",
+  "contactsDeleted": "{count} kontakte verwyder",
+  "contactSettingsSubtitle": "Kontakbestuur en etiketinstellings",
+  "contactSettingsTitle": "Kontakinstellings",
+  "contactsLoadingFailed": "Kon nie kontakte laai nie: {error}",
+  "contactsManagement": "Kontakbestuur",
+  "contactsManagementPageTitle": "Kontakbestuur Bladsy",
+  "contactsPageTitle": "Kontakbestuur",
+  "contactsPermission": "Kontaktoestemming",
+  "contactsPermissionDescription": "Word gebruik om kontakoproepe te identifiseer.",
+  "contactsTab": "Kontakte",
+  "contactSubscriptionDescription": "Teken in op kontaklyste via URL, werk outomaties kontakinligting en etikette op. Ondersteun JSON-formaat data.",
+  "@contactSubscriptionDescription": {
+    "description": "Oor kontakintekeningbeskrywing"
+  },
+  "contactSubscriptionLoadingFailed": "Kon nie kontakintekeninge laai nie: {error}",
+  "contactSubscriptionPageTitle": "Kontakintekeninge",
+  "contactUpdateSuccess": "Kontak suksesvol opgedateer",
+  "contactUs": "Kontak Ons",
+  "content": "Inhoud",
+  "contentRegex": "Inhoud Regex",
+  "countColor": "Telling Kleur",
+  "countFontSize": "Telling Lettergrootte",
+  "countPosition": "Telling Posisie",
+  "country": "Land",
+  "countryNameColor": "Landnaam Kleur",
+  "countryNameFontSize": "Landnaam Lettergrootte",
+  "countryRegionNamePosition": "Land/Streek Naam Posisie",
+  "countrySelectionDialog": "Landkeuse Dialoog",
+  "countrySelectionDialogDescription": "Word gebruik om 'n land te kies om beller-ID-inligting te bevraagteken",
+  "countThresholdDescription": "Stel die minimum tellingdrempel wat benodig word om filteraksies te aktiveer",
+  "countThresholdLabel": "Telling Drempel",
+  "countThresholdSettings": "Telling Drempel Instellings",
+  "countThresholdValue": "Telling Drempel: {count}",
+  "createdRules": "Geskepte Reëls",
+  "csvFormat": "CSV Formaat",
+  "currentDeviceChip": "Huidige",
+  "currentDeviceLabel": "Huidige Toestel Etiket",
+  "currentDeviceTitle": "Huidige Toestel",
+  "currentLabels": "Huidige Etikette:",
+  "currentLanguage": "Huidige Taal",
+  "currentPasswordLabel": "Huidige Wagwoord",
+  "customerService": "Kliëntediens",
+  "customRange": "Pasgemaakte Reeks",
+  "dailyStatistics": "Daaglikse Statistiek",
+  "@dailyStatistics": {
+    "description": "Daaglikse statistiek kennisgewing opsie"
+  },
+  "dailyStatisticsDesc": "Ontvang daaglikse statistiek oor geblokkeerde oproepe en boodskappe",
+  "@dailyStatisticsDesc": {
+    "description": "Beskrywing vir daaglikse statistiek opsie"
+  },
+  "dashboardTab": "Dashboard",
+  "dataAnalysis": "Data Analise",
+  "dataAnalysisDashboardPage": "Data Analise Dashboard Bladsy",
+  "dataExport": "Data Uitvoer",
+  "dataLoadFailure": "Data laai misluk: {error}",
+  "@dataLoadFailure": {
+    "description": "Data laai misluk boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "dataLoadingFailed": "Kon nie data laai nie: {error}",
+  "dataMigration": "Data Migrasie",
+  "dataMigrationDescription": "Hierdie funksie laat jou toe om al jou data tussen toestelle oor te dra. Tans kan jy die rugsteun- en herstelkenmerke gebruik om jou data handmatig te migreer.",
+  "dataMigrationDialogContent": "Hierdie funksie laat jou toe om al jou data tussen toestelle oor te dra. Tans kan jy die rugsteun- en herstelkenmerke gebruik om jou data handmatig te migreer.",
+  "dataMigrationDialogTitle": "Data Migrasie",
+  "dataMigrationSectionTitle": "Data Migrasie",
+  "dataSourceReminder": "Databron Herinnering",
+  "days": "{count, plural, =1{1 dag} other{{count} dae}}",
+  "@days": {
+    "description": "Dagtelling vertoon",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "daysVip": "{days} Dae VIP",
+  "debtCollection": "Skuldinvordering",
+  "defaultPeriod": "Week",
+  "deleteButton": "Verwyder",
+  "deleteContact": "Verwyder Kontak",
+  "deleteContactConfirm": "Is jy seker jy wil {name} verwyder?",
+  "deleteContactConfirmation": "Is jy seker jy wil kontak verwyder",
+  "deleteDeviceConfirmation": "Is jy seker jy wil {deviceName} verwyder?",
+  "deleteDeviceDialogTitle": "Verwyder Toestel",
+  "deleteFailed": "Verwydering misluk: {error}",
+  "deleteFilter": "Verwyder Filter",
+  "deleteLabel": "Verwyder Etiket",
+  "deleteLabelFailed": "Kon nie etiket verwyder nie: {error}",
+  "deletePlugin": "Verwyder Inprop",
+  "deletePluginFailed": "Kon nie inprop verwyder nie: {error}",
+  "deletePlugins": "Verwyder Inproppe",
+  "deletePluginsFailed": "Kon nie inproppe verwyder nie: {error}",
+  "deleteRule": "Verwyder Reël",
+  "deleteRuleFailed": "Verwydering misluk: {error}",
+  "deleteSelected": "Verwyder Geselekteerde",
+  "deleteSmsRule": "Verwyder SMS Reël",
+  "deleteSubscription": "Verwyder Intekening",
+  "@deleteSubscription": {
+    "description": "Verwyder intekening dialoog titel"
+  },
+  "deleteSubscriptionConfirm": "Is jy seker jy wil intekening \"{name}\" verwyder?",
+  "@deleteSubscriptionConfirm": {
+    "description": "Verwyder intekening bevestigingsboodskap",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "deleteSubscriptionFailed": "Kon nie intekening verwyder nie: {error}",
+  "@deleteSubscriptionFailed": {
+    "description": "Kon nie intekening foutboodskap verwyder nie",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "deleteSuccess": "Verwydering suksesvol",
+  "delivery": "Aflewering",
+  "deviceDeletedSuccessfully": "Toestel suksesvol verwyder",
+  "deviceDeletedSuccessfullyMessage": "Toestel suksesvol verwyder",
+  "deviceIdLabel": "Toestel ID",
+  "deviceIDLabel": "Toestel ID",
+  "deviceManagementSubtitle": "Bestuur multi-toestel sinkronisering",
+  "deviceManagementTitle": "Toestelbestuur",
+  "deviceModelLabel": "Toestel Model",
+  "deviceName": "Toestel Naam",
+  "deviceNameCannotBeEmpty": "Toestelnaam kan nie leeg wees nie",
+  "deviceNameHint": "Voer toestelnaam in",
+  "deviceNameLabel": "Toestel Naam",
+  "deviceRenamedSuccessfully": "Toestel suksesvol hernoem",
+  "deviceRenamedSuccessfullyMessage": "Toestel suksesvol hernoem",
+  "devicesSyncedSuccessfully": "Toestelle suksesvol gesinkroniseer",
+  "devicesSyncedSuccessfullyMessage": "Toestelle suksesvol gesinkroniseer",
+  "devicesSynchronizedSuccessfullyMessage": "Toestelle suksesvol gesinkroniseer",
+  "deviceUnregisteredSuccessfullyMessage": "Toestel suksesvol ongeregistreer",
+  "dialogTitle": "Regex Patroon Verduideliking",
+  "differentFromLocalCounter": "Hierdie funksie verskil van die plaaslike tellerfilter, aangesien dit fokus op herhaalde oproeppatrone in 'n kort tyd eerder as langtermyn merk tellings.",
+  "disabled": "Gedeaktiveer",
+  "@disabled": {
+    "description": "Gedeaktiveerde status teks"
+  },
+  "disabledStatus": "Gedeaktiveer",
+  "disableGlobalPlugins": "Deaktiveer globale inproppe",
+  "disableSubscriptionSuccessfully": "Deaktiveer intekening suksesvol",
+  "disconnectButton": "Ontkoppel",
+  "disconnectedMessage": "Ontkoppel",
+  "disconnectedStatus": "Ontkoppel",
+  "disconnectFailedMessage": "Ontkoppel misluk",
+  "done": "Klaar",
+  "dualSimAdvice": "Hierdie funksie is veral nuttig vir dubbel-SIM-fone om verskillende filterstrategieë vir werk- en persoonlike SIM-kaarte in te stel.",
+  "earlier": "Vroeër",
+  "ecommerce": "E-handel",
+  "edit": "Wysig",
+  "editContact": "Wysig Kontak",
+  "editFilter": "Wysig Filter",
+  "editLabel": "Wysig Etiket",
+  "editPhoneRule": "Wysig Foonreël",
+  "editPhoneRules": "Word gebruik om foonreëls te wysig",
+  "editPhoneRuleTitle": "Wysig Foonreël",
+  "editRule": "Wysig Reël",
+  "editSmsRule": "Wysig SMS Reël",
+  "education": "Onderwys",
+  "elementPositionsSetting": "Element Posisies",
+  "email": "E-pos",
+  "emailOptional": "E-pos (Opsioneel)",
+  "enableCallFilter": "Aktiveer Oproepfilter",
+  "enableCallFilterDescription": "Wanneer geaktiveer, word inkomende oproepe teen die reëllys hieronder nagegaan. Oproepfiltreringsreëls word nie by verstek tussen toestelle gesinkroniseer nie.",
+  "enabled": "Geaktiveer",
+  "@enabled": {
+    "description": "Geaktiveerde status teks"
+  },
+  "enabledStatus": "Geaktiveer",
+  "enableEncryption": "Aktiveer Enkripsie",
+  "enableEncryptionDescription": "Enkripteer rugsteunlêers",
+  "enableEncryptionLabel": "Aktiveer Enkripsie",
+  "enableEncryptionSubtitle": "Rugsteunlêers sal geënkripteer word",
+  "enableEncryptionTitle": "Aktiveer Enkripsie",
+  "enableGlobalPlugins": "Aktiveer globale inproppe",
+  "enableLocalCountFilter": "Aktiveer Plaaslike Tellingfilter",
+  "enableLocalCountFilterDescription": "Filtreer outomaties gemorsoproepe gebaseer op oproepmerk telling",
+  "enableLocalNotification": "Gebruik Plaaslike Kennisgewing",
+  "enableLocalNotificationDescription": "Wanneer geaktiveer, sal kennisgewings vir gefiltreerde boodskappe op die toestel vertoon word",
+  "enableLocationSummary": "Ligging",
+  "enableMuteRules": "Aktiveer Demp Reëls",
+  "enableMuteRulesDesc": "Pas demp onderskeppingsreëls konfigurasie toe",
+  "enableNoneActionRules": "Aktiveer Geen Aksie Reëls",
+  "enableNoneActionRulesDesc": "Laat reëlkonfigurasies sonder onderskeppingsaksies toe",
+  "enableNotifications": "Aktiveer Kennisgewings",
+  "enableRemoteNumberFilter": "Aktiveer Afgeleë Nommerfilter",
+  "enableRemoteNumberFilterDescription": "Gebruik afgeleë databasis om nommers te filtreer",
+  "enableRule": "Aktiveer Reël",
+  "enableSmsFilter": "Aktiveer SMS Filtrering",
+  "enableSmsFilterDescription": "Wanneer geaktiveer, sal boodskappe outomaties volgens die reëls gefiltreer word",
+  "enableStatisticsNotifications": "Aktiveer Statistiek Kennisgewings",
+  "enableSubscriptionSuccessfully": "Aktiveer intekening suksesvol",
+  "enableTimeInterception": "Aktiveer Tyd Onderskepping",
+  "enableTimeInterceptionDescription": "Onderskep herhaalde oproepe binne 'n kort tyd",
+  "enableTimeInterceptor": "Aktiveer Tyd Onderskepper",
+  "endCallImmediately": "Beëindig oproep onmiddellik",
+  "endColor": "Eindkleur",
+  "endDate": "Einddatum",
+  "enhancedFilterInstructionsTitle": "Verbeterde Filterstelsel",
+  "enhancedFilterSettings": "Verbeterde Filterinstellings",
+  "@enhancedFilterSettings": {
+    "description": "Verbeterde filterinstellings bladsy titel"
+  },
+  "enhancedFilterSettingsTitle": "Verbeterde Filterinstellings",
+  "enhancedFilterSystemDescription": "Die verbeterde filterstelsel ondersteun beide globale reëls en per-SIM-kaart filterkonfigurasies.",
+  "enterBothPhoneNumberAndRegexPattern": "Voer asseblief beide telefoonnommer en regex-patroon in",
+  "enterBothPhoneNumberAndRegexPatternMessage": "Voer asseblief beide telefoonnommer en regex-patroon in.",
+  "enterContactName": "Voer asseblief kontaknaam in",
+  "enterCurrentPasswordHint": "Voer asseblief huidige wagwoord in",
+  "enterDeviceName": "Voer Toestelnaam in",
+  "enterDeviceNameHint": "Voer asseblief toestelnaam in",
+  "enterEmail": "Voer asseblief e-pos in",
+  "enterEmailOptional": "Voer asseblief e-pos in (opsioneel)",
+  "enterEncryptionPasswordHint": "Voer enkripsie wagwoord in",
+  "enterEncryptionPasswordTitle": "Voer Enkripsie Wagwoord in",
+  "enterFilterName": "Voer asseblief filternaam in",
+  "enterFilterPattern": "Voer asseblief filterpatroon in",
+  "enterIconCode": "Voer ikoonkode in",
+  "enterName": "Voer kontaknaam in",
+  "enterNewDeviceNameHint": "Voer 'n nuwe naam vir hierdie toestel in",
+  "enterNewPasswordHint": "Voer asseblief nuwe wagwoord in",
+  "enterPasswordAgain": "Voer Wagwoord Weer in",
+  "enterPasswordHint": "Voer asseblief wagwoord in",
+  "enterPhoneNumber": "Voer telefoonnommer in",
+  "enterPhoneNumberHint": "Voer telefoonnommer in om te toets",
+  "enterPhoneNumberMultiple": "Voer asseblief telefoonnommer in, veelvuldige nommers geskei deur kommas",
+  "enterPhoneNumberToStartSearch": "Voer telefoonnommer in om soektog te begin",
+  "enterPhoneNumberToVerify": "Voer telefoonnommer in om te verifieer",
+  "enterPluginName": "Voer Inpropnaam in",
+  "enterPluginUrl": "Voer inprop URL-adres in",
+  "enterRegexHint": "Voer regex-patroon in",
+  "enterRuleNameAndPattern": "Voer asseblief reëlnaam en patroon in",
+  "enterRuleNameAndPatternMessage": "Voer asseblief beide reëlnaam en regex-patroon in.",
+  "enterRuleNameHint": "Voer reëlnaam in",
+  "enterSearchContent": "Voer asseblief soekinhoud in",
+  "enterSubscriptionName": "Voer intekeningnaam in",
+  "@enterSubscriptionName": {
+    "description": "Intekeningnaam veld wenk"
+  },
+  "enterSubscriptionUrl": "Voer intekening URL in",
+  "@enterSubscriptionUrl": {
+    "description": "Intekening URL veld wenk"
+  },
+  "enterSyncFolderNameHint": "Voer asseblief sinkroniseer vouernaam in (verstek: NotificationManager)",
+  "entertainment": "Vermaak",
+  "enterValidNameAndUrl": "Voer asseblief geldige naam en URL in",
+  "@enterValidNameAndUrl": {
+    "description": "Voer geldige naam en URL foutboodskap in"
+  },
+  "enterValidUrl": "Voer asseblief 'n geldige URL in",
+  "enterVersion": "Voer Weergawe in",
+  "enterWebDAVPasswordHint": "Voer asseblief WebDAV wagwoord in",
+  "enterWebDAVServerAddressHint": "Voer asseblief WebDAV bedieneradres in",
+  "enterWebDAVUsernameHint": "Voer asseblief WebDAV gebruikersnaam in",
+  "errorDeletingDeviceMessage": "Fout tydens verwydering van toestel: {error}",
+  "errorLoadingPlugin": "Fout tydens laai van inprop",
+  "errorOccurredMessage": "'n Fout het voorgekom: {error}",
+  "errorRenamingDeviceMessage": "Fout tydens hernoeming van toestel: {error}",
+  "errorSynchronizingDevicesMessage": "Fout tydens sinkronisering van toestelle: {error}",
+  "errorSyncingDevicesMessage": "Fout tydens sinkronisering van toestelle: {error}",
+  "errorText": "Fout",
+  "exampleBlock400Prefix": "bv. Blokkeer 400 voorvoegselnommers",
+  "exampleBlockMarketingSms": "bv. Blokkeer bemarkings-SMS",
+  "exampleContentRegex": "bv., .*aanbod.*",
+  "exampleContentRegexHint": "Voorbeeld Inhoud Regex",
+  "exampleCouponPromotionDiscount": "bv. .*(koepon|promosie|afslag).*",
+  "exampleFamilyFriends": "bv. Familie, Vriende, ens.",
+  "examplePhoneNumber": "bv. 10086, 12345, ens.",
+  "exampleRegex400Prefix": "Voorbeeld regex vir 400 voorvoegsel",
+  "exampleRegexFormat": "Voorbeeld: ^10086$ formaat",
+  "exampleSenderRegexHint": "Voorbeeld",
+  "exchange": "Ruil",
+  "exchangeNow": "Ruil Nou",
+  "exchangeVip": "Ruil VIP",
+  "expandLabelSelector": "Vou Etiketkieser Uit",
+  "expiryTime": "Verval tyd: {time}",
+  "export": "Uitvoer",
+  "exportAllApplicationSettings": "Voer alle toepassingsinstellings uit",
+  "exportAllApplicationSettingsSubtitle": "Voer alle toepassingsinstellings uit",
+  "exportAllRuleConfigurations": "Voer Alle Reëlkonfigurasies Uit",
+  "exportAllRuleConfigurationsSubtitle": "Voer alle reëlkonfigurasies uit",
+  "exportComplete": "Uitvoer Voltooi",
+  "exportConfig": "Voer Konfigurasie Uit",
+  "exportContacts": "Voer Kontakte Uit",
+  "exportData": "Voer Data Uit",
+  "exportError": "Uitvoer Fout",
+  "exportFailed": "Uitvoer misluk",
+  "exportFailure": "Konfigurasie kon nie uitgevoer word nie",
+  "exportFeatureComingSoon": "Uitvoerfunksie kom binnekort",
+  "exporting": "Voer uit...",
+  "exportLabels": "Voer Etikette Uit",
+  "exportLabelsFailed": "Kon nie etikette uitvoer nie: {error}",
+  "exportPluginList": "Voer Inproplys Uit",
+  "exportPluginListFailed": "Kon nie inproplys uitvoer nie: {error}",
+  "exportRules": "Voer Reëls Uit",
+  "exportRulesDialogTitle": "Voer Reëls Uit",
+  "exportRulesTitle": "Voer Reëls Uit",
+  "exportSmsRules": "Voer SMS Reëls Uit",
+  "exportStatisticsData": "Voer Statistiekdata Uit",
+  "exportSuccess": "Uitvoer suksesvol",
+  "exportSuccesslly": "Konfigurasie suksesvol uitgevoer",
+  "failedToAddContact": "Kon nie kontak byvoeg nie",
+  "failedToAddRule": "Kon nie reël byvoeg nie: {error}",
+  "failedToAddSmsRule": "Kon nie SMS-reël byvoeg nie: {error}",
+  "failedToAddSmsSubscription": "Kon nie SMS-intekening byvoeg nie: {error}",
+  "failedToBackupSettings": "Kon nie instellings rugsteun nie: {error}",
+  "failedToDecryptBackupFile": "Kon nie rugsteunlêer ontsyfer nie",
+  "failedToDeleteDevice": "Kon nie toestel verwyder nie",
+  "failedToDeleteSmsRule": "Kon nie SMS-reël verwyder nie: {error}",
+  "failedToExportRules": "Kon nie reëls uitvoer nie: {error}",
+  "failedToExportSmsRules": "Kon nie SMS-reëls uitvoer nie: {error}",
+  "failedToGetCallerIdInfo": "Kon nie beller-ID-inligting kry nie: {error}",
+  "failedToImportRules": "Kon nie reëls invoer nie: {error}",
+  "failedToImportSmsRules": "Kon nie SMS-reëls invoer nie: {error}",
+  "failedToLoadContacts": "Kon nie kontakte laai nie",
+  "failedToLoadPlugin": "Kon nie inprop laai nie",
+  "failedToRenameDevice": "Kon nie toestel hernoem nie",
+  "failedToRestoreSettings": "Kon nie instellings herstel nie",
+  "failedToRestoreSettingsWithError": "Kon nie instellings herstel nie: {error}",
+  "failedToSetPassword": "Kon nie wagwoord stel nie: {error}",
+  "failedToSyncDevices": "Kon nie toestelle sinkroniseer nie",
+  "failedToToggleRuleStatus": "Kon nie reëlstatus wissel nie: {error}",
+  "failedToToggleSubscriptionStatus": "Kon nie intekeningstatus wissel nie",
+  "failedToUpdateContact": "Kon nie kontak opdateer nie",
+  "failedToUpdateSmsRule": "Kon nie SMS-reël opdateer nie: {error}",
+  "failure": "Mislukking",
+  "favoriteContacts": "Gunsteling Kontakte",
+  "featureAddRules": "• Voeg telefoonnommer spesifieke reëls by",
+  "featureCenter": "Funksiesentrum",
+  "featureEnableDisable": "• Aktiveer/deaktiveer verskillende filters per SIM",
+  "featureListTitle": "Kenmerke:",
+  "@featureListTitle": {
+    "description": "Titel vir kenmerke lys afdeling"
+  },
+  "featureManageRules": "• Bestuur reëllyste per SIM",
+  "features": "Kenmerke",
+  "fetchingCallerIdInfo": "Haal beller-ID-inligting op...",
+  "fileSavedTo": "Lêer gestoor na: {path}",
+  "filter": "Filter",
+  "filterByLabel": "Filtreer volgens Etiket",
+  "filterClear": "Vee Filter Skoon",
+  "filterControlPanelTitle": "Filter Beheerpaneel",
+  "filterControlSubtitle": "Bestuur aan/af status van alle filters",
+  "filterControlTitle": "Filter Beheer",
+  "filterDeleteFailed": "Filter verwydering misluk",
+  "filterDeleteSuccess": "Filter suksesvol verwyder",
+  "filterDetails": "Filter Besonderhede",
+  "filtered": "Gefiltreer",
+  "filteredSms": "Gefiltreerde SMS",
+  "filteredSmsLabel": "Gefiltreerde SMS",
+  "filterExplanation": "Filter Verduideliking",
+  "filterManagement": "Filter Bestuur",
+  "filterName": "Filter Naam",
+  "filterPattern": "Filter Patroon",
+  "filterPriorityNote": "Let wel: Daar is prioriteitsverhoudings tussen filters, verwys asseblief na die hulpdokumentasie vir besonderhede",
+  "filterSaveFailed": "Filter stoor misluk",
+  "filterSaveSuccess": "Filter suksesvol gestoor",
+  "filterSettings": "Filter Instellings",
+  "filterSettingsTitle": "Filter Instellings",
+  "filterSMS": "Filtreer SMS",
+  "filterToggleInstructions": "Aktiveer of deaktiveer filters vir hierdie SIM-gleuf:",
+  "filterToggleStatus": "{status} filter: {filterName}",
+  "@filterToggleStatus": {
+    "description": "Filter aktiveer/deaktiveer status verandering kennisgewing",
+    "placeholders": {
+      "status": {
+        "type": "Object"
+      },
+      "filterName": {
+        "type": "Object"
+      }
+    }
+  },
+  "filterType": "Filter Tipe",
+  "financial": "Finansieel",
+  "flexibleCombinationFeature": "• Buigsame Kombinasies: Aktiveer/deaktiveer filters per SIM-gleuf",
+  "fontSizesSetting": "Lettergroottes",
+  "foundRules": "{count} reëls gevind",
+  "foundRulesDoYouWantToImport": "{count} reëls gevind. Wil jy dit invoer?",
+  "foundRulesToImport": "{count} reëls gevind. Wil jy dit invoer?",
+  "fraudAlert": "BEDROGWAARSKUWING - Hang die oproep op",
+  "fraudScamLikely": "Bedrogbedrog Waarskynlik",
+  "free": "Gratis",
+  "functionSettingsTitle": "Funksie Instellings",
+  "generalUpdateFailure": "Opdatering misluk: {error}",
+  "@generalUpdateFailure": {
+    "description": "Algemene opdatering misluk boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "getFree": "Kry Gratis",
+  "github": "GitHub",
+  "globalFilterDescription": "Konfigureer globale filters vir alle SIM-kaarte:",
+  "globalFilterFeature": "• Globale Filters: Basiese reëls vir alle inkomende oproepe",
+  "globalFilterSettings": "Globale Filter Instellings",
+  "@globalFilterSettings": {
+    "description": "Globale filter instellings afdeling titel"
+  },
+  "globalFilterToggleInstructions": "Konfigureer globale filterinstellings wat op alle SIM-gleuwe van toepassing is:",
+  "@globalFilterToggleInstructions": {
+    "description": "Instruksies vir die konfigurasie van globale filterinstellings"
+  },
+  "globalSearchSubtitle": "Soek kontakte, etikette, swartlyste, witlyste, ens.",
+  "globalSearchTitle": "Globale Soektog",
+  "globalSettings": "Globale Instellings",
+  "@globalSettings": {
+    "description": "Titel vir globale instellings bladsy"
+  },
+  "googleAdDisplayPosition": "Google Advertensie Vertoonposisie",
+  "googleAdMobIntegrationText": "Google AdMob-advertensies kan hier geïntegreer word",
+  "googleDriveAuthDescription": "Magtig met behulp van stelsel-gekonfigureerde Google Drive kliënt-ID en sleutel",
+  "googleDriveAuthorizationHint": "Magtig met behulp van stelsel-gekonfigureerde Google Drive kliënt-ID en sleutel",
+  "googleDriveConfigTitle": "Google Drive Konfigurasie",
+  "googleDriveConfigurationTitle": "Google Drive Konfigurasie",
+  "government": "Regering",
+  "granted": "Toegestaan",
+  "grantNecessaryPermissions": "Verleen Nodige Toestemmings",
+  "grantPermissions": "Verleen Toestemmings",
+  "headhunter": "Kopjagter",
+  "height": "Hoogte",
+  "homePageTitle": "Tuisblad",
+  "homeTab": "Tuis",
+  "howItWorksPoint1": "• Die stelsel sal outomaties oproepe van dieselfde nommer binne die gestelde tydvenster onderskep",
+  "howItWorksPoint2": "• Korter tydvensters lei tot strenger onderskepping; langer tydvensters lei tot losser onderskepping",
+  "howItWorksPoint3": "• Die stelsel kontroleer oproeplogboeke om te bepaal of dit 'n herhaalde oproep is",
+  "howItWorksTitle": "Hoe Dit Werk:",
+  "iconCodeOptional": "Ikoonkode (Opsioneel)",
+  "iconSize": "Ikoongrootte",
+  "import": "Invoer",
+  "important": "Belangrik",
+  "importButton": "Invoer",
+  "importConfig": "Voer Konfigurasie In",
+  "importContacts": "Voer Kontakte In",
+  "importExportContacts": "Invoer/Uitvoer Kontakte",
+  "importExportContactsTooltip": "Invoer/Uitvoer Kontakte",
+  "importExportRules": "Invoer/Uitvoer Reëls",
+  "importFailed": "Invoer misluk: {error}",
+  "importFailure": "Konfigurasie kon nie ingevoer word nie",
+  "importFeatureComingSoon": "Invoerfunksie kom binnekort",
+  "importLabels": "Voer Etikette In",
+  "importLabelsFailed": "Kon nie etikette invoer nie: {error}",
+  "importPluginList": "Voer Inproplys In",
+  "importPluginListFailed": "Kon nie inproplys invoer nie: {error}",
+  "importPluginSuccess": "{count} inproppe suksesvol ingevoer",
+  "importRuleConfigurationsFromFile": "Voer Reëlkonfigurasies vanaf Lêer In",
+  "importRuleConfigurationsFromFileSubtitle": "Voer reëlkonfigurasies vanaf lêer in",
+  "importRules": "Voer Reëls In",
+  "importRulesButton": "Voer Reëls In",
+  "importRulesDialogTitle": "Voer Reëls In",
+  "importRulesError": "Kon nie reëls invoer nie: {error}",
+  "importRulesInstructions": "Voer reëls in vanaf 'n CSV-lêer",
+  "importRulesSuccess": "Reëls suksesvol ingevoer",
+  "importRulesTitle": "Voer Reëls In",
+  "importSuccess": "Invoer suksesvol",
+  "incomingCallInterceptAction": "Inkomende Oproep Onderskep Aksie",
+  "incomingCallNotification": "Inkomende Oproep Kennisgewing",
+  "incorrectPassword": "Verkeerde wagwoord",
+  "initializing": "Inisialiseer",
+  "installed": "Geïnstalleer",
+  "insufficientMarks": "Onvoldoende Punte",
+  "insurance": "Versekering",
+  "interceptAction": "Onderskep Aksie",
+  "interceptionActionSettingsSubtitle": "Stel in hoe geblokkeerde oproepe hanteer word",
+  "interceptionActionSettingsTitle": "Onderskep Aksie Instellings",
+  "interceptionTimeInterval": "Onderskep Tydinterval",
+  "internet": "Internet",
+  "intervalSetSuccess": "{service} opdateringsinterval gestel op {days} dae",
+  "@intervalSetSuccess": {
+    "description": "Opdateringsinterval bevestigingsboodskap",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "invalidContentRegex": "Ongeldige inhoud regex",
+  "invalidLabel": "Ongeldige etiket",
+  "invalidRegexPattern": "Ongeldige regex patroon",
+  "invalidSenderRegex": "Ongeldige sender regex",
+  "joinTheTelegramChannelAndGroupForMoreInfo": "Sluit aan by die Telegram Kanaal en Groep vir Meer Inligting",
+  "jsLogsTitle": "JS Logboeke",
+  "jsonFormat": "JSON Formaat",
+  "keepAllVersions": "Hou Alle Weergawes",
+  "keepAllVersionsDescription": "Hou alle historiese weergawes van elke rugsteun",
+  "keepAllVersionsLabel": "Hou Alle Weergawes",
+  "keepAllVersionsSubtitle": "Hou historiese weergawes van elke rugsteun",
+  "keepAllVersionsTitle": "Hou Alle Weergawes",
+  "label": "Etiket",
+  "labelAddedSuccessfully": "Etiket \"{name}\" suksesvol bygevoeg",
+  "labelCategories": "Etiket Kategorieë",
+  "labelDeleted": "Etiket verwyder",
+  "labelDescription": "Etikette help jou om kontakte beter te bestuur, voeg pasgemaakte etikette by telefoonnommers vir maklike identifikasie van oproepe en boodskappe.",
+  "labelFilter": "Etiket Filter",
+  "labelFilterTooltip": "Etiket Filter",
+  "labelIconColor": "Etiket Ikoon Kleur",
+  "labelManagement": "Etiket Bestuur",
+  "labelNotFound": "Etiket nie gevind nie",
+  "labelRemoved": "Etiket verwyder",
+  "labelRemoveFailed": "Kon nie etiket verwyder nie: {error}",
+  "@labelRemoveFailed": {
+    "description": "Etiket verwydering mislukking boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "labels": "Etikette",
+  "labelsColor": "Etikette Kleur",
+  "labelsDeleted": "{count} etikette verwyder",
+  "labelsExportedSuccessfully": "Etikette suksesvol uitgevoer",
+  "labelsFontSize": "Etikette Lettergrootte",
+  "labelsImportedSuccessfully": "Suksesvol {count} etikette ingevoer",
+  "labelsPosition": "Etikette Posisie",
+  "labelTag": "Etiket: {labelId}",
+  "labelUpdated": "Etiket opgedateer",
+  "labelUpdateFailed": "Kon nie etiket opdateer nie: {error}",
+  "@labelUpdateFailed": {
+    "description": "Etiket opdatering mislukking boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "labelUpdateSuccess": "Etiket \"$labelText\" suksesvol opgedateer",
+  "languageSettings": "Taal Instellings",
+  "languageSettingsSubtitle": "Verander toepassing vertoon taal",
+  "languageSettingsTitle": "Taal Instellings",
+  "last30Days": "Laaste 30 Dae",
+  "last7Days": "Laaste 7 Dae",
+  "lastSyncLabel": "Laaste Sinkronisasie",
+  "lastUpdated": "Laas opgedateer: {date}",
+  "@lastUpdated": {
+    "description": "Laas opgedateer etiket",
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "lifetimeMembership": "Lewenslange Lidmaatskap",
+  "lifetimeMembershipDescription": "Eenmalige aankoop, ontgrendel alle premium funksies en toekomstige opdaterings permanent",
+  "loadContactsFailed": "Kon nie kontakte laai nie: {error}",
+  "loadDataFailed": "Kon nie data laai nie",
+  "loadFailed": "Laai Misluk",
+  "loading": "Laai...",
+  "loadingData": "Laai Data...",
+  "loadingTags": "Laai etikette...",
+  "loadLabelFailed": "Kon nie etikette laai nie: {error}",
+  "loadLabelsFailed": "Kon nie etikette laai nie: {error}",
+  "loadMarkCountFailed": "Kon nie gemerkde telefoonnommers laai nie: {error}",
+  "loadMarkedPhonesFailed": "Kon nie gemerkde fone laai nie: {error}",
+  "loadMore": "Laai Meer",
+  "loadPluginButton": "Laai Inprop",
+  "loadPluginsFailed": "Kon nie inproppe laai nie: {error}",
+  "loadRulesFailed": "Kon nie reëls laai nie: {error}",
+  "loadSettingsFailed": "Kon nie instellings laai nie: {error}",
+  "loadSmsRulesFailed": "Kon nie SMS-reëls laai nie: {error}",
+  "loadStatusFailedMessage": "Kon nie status laai nie",
+  "loadSubscriptionsFailed": "Kon nie intekeninge laai nie: {error}",
+  "@loadSubscriptionsFailed": {
+    "description": "Kon nie intekeninge laai nie foutboodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "loan": "Lening",
+  "localBackupTitle": "Plaaslike Rugsteun",
+  "localCounterFilter": "Plaaslike Teller Filter",
+  "localCounterFilterSubtitle": "Filtreer outomaties strooiposoproepe gebaseer op oproepfrekwensie",
+  "localCountFilter": "Plaaslike Telling Filter",
+  "localCountFilterDescription": "Onderskep gereelde oproepe gebaseer op plaaslike nommertellings",
+  "localCountFilterExplanationContent": "Die plaaslike tellingfilter analiseer oproepgeskiedenisrekords om gereelde strooiposoproepe outomaties te identifiseer en te blokkeer.",
+  "localCountFilterExplanationTitle": "Plaaslike Telling Filter Verduideliking",
+  "localCountFilterHowItWorksPoint1": "• Bepaal of geblokkeer moet word gebaseer op die nommer se telwaarde",
+  "localCountFilterHowItWorksPoint2": "• Wanneer 'n nommer se telling die gestelde drempel oorskry, kan jy kies om dit outomaties te blokkeer",
+  "localCountFilterHowItWorksPoint3": "• Jy kan selektief nommers toelaat wat nie die drempel oorskry nie",
+  "localCountFilterHowItWorksPoint4": "• Jy kan kies of alle navraaglogboeke opgeneem moet word",
+  "localCountFiltering": "Plaaslike Telling Filtrering",
+  "localCountFilteringExplanation": "• Plaaslike Telling Filtrering: Filtreringreëls gebaseer op plaaslike merk telling",
+  "localCountFilterSettings": "Plaaslike Telling Filter Instellings",
+  "localCountFilterUseCases": "Hierdie filter is veral geskik vir die identifisering van outo-geskakelde strooiposoproepe en bemarkingsoproepe.",
+  "localFilterSettings": "Plaaslike Filter Instellings",
+  "@localFilterSettings": {
+    "description": "Titel vir plaaslike filter instellings bladsy"
+  },
+  "localNotificationDisabled": "Plaaslike kennisgewing gedeaktiveer",
+  "localNotificationEnabled": "Plaaslike kennisgewing geaktiveer",
+  "localServices": "Plaaslike Dienste",
+  "locationColor": "Ligging Kleur",
+  "locationFontSize": "Ligging Lettergrootte",
+  "locationIconColor": "Ligging Ikoon Kleur",
+  "locationPosition": "Ligging Posisie",
+  "logAllLocalQueries": "Teken Alle Plaaslike Navrae aan",
+  "logAllLocalQueriesDescription": "Teken logboeke aan vir alle plaaslike nommernavrae",
+  "logAllRemoteQueries": "Teken Alle Afgeleë Navrae aan",
+  "logAllRemoteQueriesDescription": "Teken alle afgeleë nommernavraagbewerkings aan",
+  "manage": "Bestuur Kontakte",
+  "manageContacts": "Bestuur",
+  "manageFavoriteContacts": "Bestuur Gunsteling Kontakte",
+  "manageFilterRules": "Bestuur Filter Reëls",
+  "manageFilterRulesDescription": "Voeg, wysig of verwyder SMS-filterreëls",
+  "manageFrequentContacts": "Bestuur Gereelde Kontakte",
+  "markCounts": "Merk Tellings",
+  "markCount": "Merk Telling",
+  "markedByCount": "Gemerk deur {count}",
+  "@markedByCount": {
+    "description": "Teks wat wys hoeveel gebruikers hierdie nommer gemerk het",
+    "placeholders": {
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "markedPhonesList": "Gemerkte Telefoonnommers",
+  "markExchange": "Merk Ruil",
+  "markPhone": "Merk Telefoonnommer",
+  "markPhoneFailed": "Kon nie telefoonnommer merk nie: {error}",
+  "markPhoneManagementSubtitle": "Om Telefoonnommers te Merk",
+  "markPhoneManagementTitle": "Merk Telefoon Bestuur",
+  "markPhoneSuccess": "Telefoonnommer suksesvol gemerk",
+  "matchFailed": "Pas misluk!",
+  "matchFailedMessage": "Pas misluk.",
+  "matchNumbersWithSpecialCharacters": "pas spesifieke nommerformaat",
+  "matchNumbersWithSpecialCharactersTitle": "Pas nommers met spesiale karakters:",
+  "matchSpecificDigitPatterns": "pas XXX-XXXX-XXXX formaat",
+  "matchSpecificDigitPatternsTitle": "Pas spesifieke syferpatrone:",
+  "matchSuccessful": "Pas suksesvol!",
+  "matchSuccessfulMessage": "Pas suksesvol!",
+  "medical": "Medies",
+  "membershipPrivileges": "Lidmaatskap Voorregte",
+  "migrationTool": "Migrasie Hulpmiddel",
+  "migrationToolTitle": "Migrasie Hulpmiddel",
+  "minutes": "minute",
+  "month": "Maand",
+  "monthly": "Maandeliks",
+  "monthlyCallCount": "Maandelikse Oproepe",
+  "monthlyChartTitle": "Maandelikse Geblokkeerde Oproepe",
+  "monthlyMembership": "Maandelikse Lidmaatskap",
+  "monthlyMembershipDescription": "Ontgrendel alle premium funksies, outo-hernu maandeliks",
+  "monthlyTotal": "Maandelikse Totaal",
+  "monthlyTotalLabel": "Maandelikse Totaal",
+  "moreOptions": "Meer Opsies",
+  "mute": "Demp",
+  "name": "Naam",
+  "nameAndPhoneNumberCannotBeEmpty": "Naam en telefoonnommer kan nie leeg wees nie",
+  "nameAndPhoneNumberRequired": "Naam en telefoonnommer kan nie leeg wees nie",
+  "nameColor": "Naam Kleur",
+  "nameFontSize": "Naam Lettergrootte",
+  "nameLabel": "Naam: {name}",
+  "@nameLabel": {
+    "description": "Beller ID naam etiket",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "namePosition": "Naam Posisie",
+  "nameUnknown": "Naam: Onbekend",
+  "nameWithValue": "Naam: {name}",
+  "@nameWithValue": {
+    "description": "Teks wat die naam van 'n kontak wys",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "John Doe"
+      }
+    }
+  },
+  "newPasswordLabel": "Nuwe Wagwoord",
+  "nextStep": "Volgende",
+  "noAction": "Geen Aksie",
+  "noActionRules": "Geen Aksie Reëls",
+  "noActiveCloudSyncServiceMessage": "Geen aktiewe wolk sinkronisasie diens",
+  "noAds": "Geen Advertensies",
+  "noCallLogs": "Geen Oproeplogboeke",
+  "noCallRecords": "Geen oproeprekords",
+  "noContacts": "Nog geen kontakte nie",
+  "noContactsYet": "Nog geen kontakte nie",
+  "noData": "Geen Data",
+  "noDevicesRegisteredMessage": "Geen toestelle geregistreer nie",
+  "noDevicesRegisteredYet": "Nog geen toestelle geregistreer nie.",
+  "noFilters": "Nog geen filters nie",
+  "noLabels": "Nog geen etikette nie",
+  "noMarkedPhones": "Geen gemerkte telefoonnommers",
+  "noMatchingContacts": "Geen ooreenstemmende kontakte nie",
+  "noMatchingContactsFound": "Geen ooreenstemmende kontakte gevind nie",
+  "noMatchingNumbersFound": "Geen ooreenstemmende nommers gevind nie",
+  "noMatchingRecords": "Geen ooreenstemmende oproeprekords",
+  "noMatchingRules": "Geen ooreenstemmende {ruleType}",
+  "none": "Geen",
+  "noneServiceType": "Geen",
+  "noPlugins": "Nog geen inproppe nie",
+  "noRecords": "Geen oproeprekords",
+  "noResultReturned": "Geen resultaat teruggekeer nie",
+  "noResultReturnedLog": "Geen resultaat teruggekeer van inprop nie",
+  "noRules": "Nog geen {ruleType} nie",
+  "noRulesPrompt": "Geen reëls gevind nie, voeg asseblief reëls by",
+  "noRulesToExport": "Geen reëls om uit te voer nie",
+  "noSmsFilterRulesYet": "Nog geen SMS-filterreëls nie",
+  "noSmsRulesYet": "Nog geen SMS-reëls nie",
+  "noSubscriptions": "Geen intekeninge nie",
+  "@noSubscriptions": {
+    "description": "Geen intekeninge boodskap"
+  },
+  "noSubscriptionsYet": "Nog Geen Intekeninge Nie",
+  "notGranted": "Nie Toegestaan nie",
+  "notificationMode": "Kennisgewing",
+  "notificationModeDescription": "Wys bellerinligting in die kennisgewingbalk",
+  "notificationPermission": "Kennisgewing Toestemming",
+  "notificationPermissionDescription": "Word gebruik om inkomende oproep- en boodskapkennisgewings te vertoon.",
+  "notifications": "Kennisgewings",
+  "notificationSettings": "Kennisgewing Instellings",
+  "@notificationSettings": {
+    "description": "Kennisgewing instellings titel"
+  },
+  "notificationSettingsSaved": "Kennisgewing instellings suksesvol gestoor",
+  "notSet": "Nie Gestel nie",
+  "notVerifiedText": "Nie Geverifieer nie",
+  "noValidSmsRulesFoundInFile": "Geen geldige SMS-reëls in lêer gevind nie",
+  "number": "Nommer",
+  "numberColor": "Nommer Kleur",
+  "numberFontSize": "Nommer Lettergrootte",
+  "numberPosition": "Nommer Posisie",
+  "numberSearch": "Nommer Soektog",
+  "numberTypeColor": "Nommer Tipe Kleur",
+  "numberTypeFontSize": "Nommer Tipe Lettergrootte",
+  "numberTypePosition": "Nommer Tipe Posisie",
+  "ok": "OK",
+  "okButton": "OK",
+  "onboardingCompleteDescription": "Jou oproepsekuriteitsbestuurder is gereed, begin 'n veilige oproepervaring geniet!",
+  "onboardingLanguageDescription": "Kies jou voorkeurtaal vir die beste ervaring.",
+  "onboardingPermissionsDescription": "Om volle diens te lewer, benodig ons die volgende toestemmings:",
+  "onboardingPowerfulSpamBlockingDescription": "Een-klik blokkering van strooiposoproepe en -boodskappe, pas blokkeringreëls aan, en gee jou 'n stil omgewing.",
+  "onboardingSmartCallerIdDescription": "Identifiseer outomaties onbekende oproepe, merk verdagte nommers, en beskerm jou oproepveiligheid.",
+  "onboardingWelcomeDescription": "Jou oproepbestuurkenner, wat omvattende oproepidentifikasie- en blokkeringsdienste bied.",
+  "oneDriveAuthDescription": "Magtig met behulp van stelsel-gekonfigureerde OneDrive kliënt-ID en sleutel",
+  "oneDriveAuthorizationHint": "Magtig met behulp van stelsel-gekonfigureerde OneDrive kliënt-ID en sleutel",
+  "oneDriveConfigTitle": "OneDrive Konfigurasie",
+  "oneDriveConfigurationTitle": "OneDrive Konfigurasie",
+  "onlineCallerIdSubscription": "Aanlyn Beller ID Intekening",
+  "openAppSettings": "Maak toepassing instellings oop",
+  "openAppSettingsFailed": "Kon nie toepassing instellings oopmaak nie: {error}",
+  "operationFailed": "Operasie misluk: {error}",
+  "operationFailure": "Operasie misluk",
+  "operationSuccess": "Operasie suksesvol",
+  "other": "Ander",
+  "ourOtherApps": "Ons Ander Toepassings",
+  "overlayMode": "Swaai Venster",
+  "overlayModeDescription": "Wys bellerinligting in 'n swaai venster",
+  "overlayPermission": "Oorleg Toestemming",
+  "overlayPermissionDescription": "Word gebruik om inkomende oproepoorleg te vertoon.",
+  "overview": "Oorsig",
+  "password": "Wagwoord",
+  "passwordCannotBeEmpty": "Wagwoord kan nie leeg wees nie",
+  "passwordLabel": "Wagwoord",
+  "passwordsDoNotMatch": "Wagwoorde stem nie ooreen nie",
+  "passwordSetSuccessfully": "Wagwoord suksesvol gestel",
+  "pattern": "Patroon",
+  "pendingSync": "Hangende Sinkronisasie",
+  "periodMonth": "Maand",
+  "periodWeek": "Week",
+  "periodYear": "Jaar",
+  "permissionDenied": "Toestemmingsversoek geweier",
+  "permissionGranted": "Toestemming toegestaan",
+  "permissionManagement": "Toestemming Bestuur",
+  "phoneCallsTab": "Foon",
+  "phoneNumber": "Telefoonnommer",
+  "phoneNumberCannotBeEmpty": "Telefoonnommer kan nie leeg wees nie",
+  "phoneNumberHint": "Voer telefoonnommer in",
+  "phoneNumberHintText": "Voer telefoonnommer in om reël by te voeg",
+  "phoneNumberLabel": "Telefoonnommer",
+  "phoneNumberRegexRequired": "Voer asseblief beide telefoonnommer en regex patroon in",
+  "phoneNumberRequired": "Telefoonnommer word vereis",
+  "phoneNumberTypeFixedLine": "Vaste lyn",
+  "phoneNumberTypeFixedLineOrMobile": "Vaste lyn of selfoon",
+  "phoneNumberTypeMobile": "Selfoon",
+  "phoneNumberTypePager": "Paging",
+  "phoneNumberTypePersonalNumber": "Persoonlike nommer",
+  "phoneNumberTypePremiumRate": "Premium tarief",
+  "phoneNumberTypeSharedCost": "Gedeelde koste",
+  "phoneNumberTypeTollFree": "Tolvry",
+  "phoneNumberTypeUan": "UAN",
+  "phoneNumberTypeUnknown": "Onbekend",
+  "phoneNumberTypeVoicemail": "Stemboodskap",
+  "phoneNumberTypeVoip": "VoIP",
+  "phonePermission": "Foon Toestemming",
+  "phonePermissionDescription": "Word gebruik om inkomende oproepe te identifiseer en te blokkeer.",
+  "phoneRule": "Foonreël",
+  "phoneRuleEditDialog": "Foonreël Wysig Dialoog",
+  "phoneRuleManagement": "Foonreël Bestuur",
+  "phoneRuleSubscription": "Foonreël Intekening",
+  "phoneSubscription": "Foon Intekening",
+  "phoneSubscriptionRulesDescription": "Teken in op telefoonreëllyste via URL om outomaties witlys- en swartlysreëls op te dateer. Ondersteun JSON-formaat reëllêers.",
+  "phoneSubscriptionTitle": "Foonreël Intekeninge",
+  "@phoneSubscriptionTitle": {
+    "description": "Foon intekening bladsy titel"
+  },
+  "pleaseSelectLabelAndEnterValidPhone": "Kies asseblief 'n etiket en voer 'n geldige telefoonnommer in",
+  "pluginAddedSuccess": "Inprop \"{name}\" suksesvol bygevoeg",
+  "pluginDeleted": "Inprop verwyder",
+  "pluginLatestVersion": "Inprop is reeds die nuutste weergawe",
+  "pluginListExportSuccess": "Inproplys suksesvol uitgevoer",
+  "pluginLoadedSuccessfully": "Inprop suksesvol gelaai",
+  "pluginManagement": "Inprop Bestuur",
+  "pluginManagementSubtitle": "Bestuur en konfigureer derdeparty-inproppe",
+  "pluginManagementTitle": "Inprop Bestuur",
+  "pluginName": "Inprop Naam",
+  "pluginNotLoaded": "Inprop is nog nie gelaai nie. Laai asseblief eers die inprop.",
+  "pluginsDeleted": "{count} inproppe suksesvol verwyder.",
+  "pluginService": "Inprop Diens",
+  "pluginTestPageTitle": "Inprop Toets",
+  "pluginUpdateSuccess": "Inprop suksesvol opgedateer",
+  "pluginUrl": "Inprop URL",
+  "pluginUrlCannotBeEmpty": "Inprop URL kan nie leeg wees nie",
+  "pluginUrlHint": "Voer inprop URL in",
+  "pluginUrlLabel": "Inprop URL",
+  "pluginVersion": "Inprop Weergawe",
+  "political": "Polities",
+  "powerfulSpamBlocking": "Kragtige Strooipos Blokkering",
+  "previousStep": "Vorige",
+  "prioritizeRemoteAction": "Prioritiseer Afgeleë Aksie Instellings",
+  "prioritizeRemoteActionDescription": "Prioritiseer aksie-instellings van die afgeleë databasis",
+  "processing": "Verwerk...",
+  "processingOperation": "Verwerk...",
+  "purchase": "Aankoop",
+  "quarterlyMembership": "Kwartaallikse Lidmaatskap",
+  "quarterlyMembershipDescription": "Ontgrendel alle premium funksies, outo-hernu kwartaalliks",
+  "queryButton": "Navraag",
+  "queryFailed": "Navraag misluk",
+  "queryFailedLog": "Navraag misluk",
+  "querying": "Navraag doen...",
+  "queryingPhoneNumber": "Navraag doen oor telefoonnommer",
+  "queryResultTitle": "Navraag Resultaat",
+  "ready": "Gereed!",
+  "receiveWeeklyStatistics": "Ontvang weeklikse statistieke",
+  "recruiter": "Werwer",
+  "reEnterPasswordHint": "Voer asseblief wagwoord weer in",
+  "refresh": "Verfris",
+  "refreshPermissionStatus": "Verfris toestemmingstatus",
+  "refreshTooltip": "Verfris",
+  "regexError": "Regex fout: {error}",
+  "regexErrorMessage": "Regex fout: {error}",
+  "regexPattern": "Regex Patroon",
+  "regexPatternExplanation": "Regex Patroon Verduideliking",
+  "regexPatternExplanationButton": "Regex Patroon Verduideliking",
+  "regexPatternLabel": "Regex Patroon",
+  "regexPatternsExamples": "Gebruik standaard regex sintaksis om patrone te definieer. Voorbeelde:",
+  "regexPatternsForPhoneNumberMatching": "Regex Patrone vir Telefoonnommer Passing",
+  "regexRule": "Regex Reël",
+  "regexRuleAddFailed": "Kon nie regex reël byvoeg nie: {error}",
+  "regexRuleAddSuccess": "Regex reël suksesvol bygevoeg",
+  "regexRuleManagement": "Regex Reël Bestuur",
+  "regexRuleNamePatternRequired": "Reëlnaam en regex patroon kan nie leeg wees nie",
+  "regexRules": "Regex Reëls",
+  "regexTesterTitle": "Regex Toetser",
+  "regexValidationFailed": "Regex validering misluk: {error}",
+  "regexValidationSuccess": "Regex validering suksesvol",
+  "region": "Streek",
+  "registeredDevicesTitle": "Geregistreerde Toestelle",
+  "rejectAllCalls": "Verwerp Alle Oproepe",
+  "rejectAllCallsDescription": "Wanneer geaktiveer, sal alle oproepe met die hoogste prioriteit verwerp word",
+  "rejectAllNumbers": "Verwerp Alle Nommers",
+  "rejectAllNumbersDesc": "Verwerp alle inkomende oproepe wanneer geaktiveer",
+  "rejectExceededNumbers": "Verwerp Oorskryde Nommers",
+  "rejectExceededNumbersDescription": "Verwerp outomaties nommers wat die tel drempel oorskry",
+  "remoteFilterSettings": "Afgeleë Filter Instellings",
+  "@remoteFilterSettings": {
+    "description": "Titel vir afgeleë filter instellings bladsy"
+  },
+  "remoteFilterSettingsPageTitle": "Afgeleë Nommer Filter Instellings",
+  "remoteNumberFilter": "Afgeleë Nommer Filter",
+  "remoteNumberFilterDatabaseInfo": "Hierdie filter gebruik 'n onafhanklike afgeleë databasis om die nuutste nommerinligting te kry.",
+  "remoteNumberFilterDescription": "Onderskep teisterende oproepe gebaseer op afgeleë databasisinligting",
+  "remoteNumberFilterExplanationContent": "Die afgeleë nommerfilter identifiseer en blokkeer strooiposoproepe deur 'n afgeleë databasis te bevraagteken gebaseer op nommertelling.",
+  "remoteNumberFilterExplanationTitle": "Afgeleë Nommer Filter Verduideliking",
+  "remoteNumberFilterFeatureCountThreshold": "• Tel Drempel: Bepaal gebaseer op nommer voorkoms frekwensie",
+  "remoteNumberFilterFeatureFilterAction": "• Filter Aksies: Konfigureer hoe om nommers wat die drempel oorskry te hanteer",
+  "remoteNumberFilterFeaturePriority": "• Prioriteit Instellings: Stel prioriteit vir afgeleë aksies",
+  "remoteNumberFilterFeatures": "Kenmerke:",
+  "remoteNumberFiltering": "Afgeleë Nommer Filtrering",
+  "remoteNumberFilteringExplanation": "• Afgeleë Nommer Filtrering: Filtreringreëls gebaseer op afgeleë databasisinligting",
+  "remoteNumberFilterSubtitle": "Identifiseer strooiposoproepe met behulp van wolkdatabasis en gemeenskapsverslae",
+  "removeAdsDescription": "Verwyder permanent alle advertensies in die toepassing vir 'n gladder ervaring",
+  "removeAdsTitle": "Verwyder Advertensies",
+  "removedFromFavoriteContacts": "Verwyder van gunsteling kontakte",
+  "removedFromFavorites": "Verwyder van gunsteling kontakte",
+  "removeFavorite": "Verwyder Gunsteling",
+  "removeFromFavorites": "Verwyder van Gunstelinge",
+  "renameButton": "Hernoem",
+  "renameDeviceDialogTitle": "Hernoem Toestel",
+  "renameDeviceTitle": "Hernoem Toestel",
+  "replaceCurrentSettingsConfirmation": "Dit sal al jou huidige instellings vervang. Is jy seker jy wil voortgaan?",
+  "requestAllPermissions": "Versoek Alle Toestemmings",
+  "requestPermission": "Versoek Toestemming",
+  "requestPermissionFailed": "Kon nie toestemming versoek nie: {error}",
+  "requiredMarks": "{count} Merke",
+  "reset": "Herstel",
+  "restore": "Herstel",
+  "restoreApplicationSettingsFromBackup": "Herstel Toepassing Instellings vanaf Rugsteun",
+  "restoreApplicationSettingsFromBackupSubtitle": "Herstel toepassing instellings vanaf rugsteun",
+  "restoreButton": "Herstel",
+  "restoreFailedWithError": "Herstel van wolk misluk: {error}",
+  "restoreFromCloud": "Herstel van Wolk",
+  "restoreFromCloudDescription": "Herstel instellings en reëls van wolkberging",
+  "restoreFromCloudFailed": "Kon nie van wolk herstel nie: {error}",
+  "restoreFromCloudLabel": "Herstel van Wolk",
+  "restoreFromCloudSuccess": "Suksesvol van wolk herstel",
+  "restoreFromCloudTitle": "Herstel van Wolk",
+  "restoreFromLocal": "Herstel van Plaaslik",
+  "restorePurchases": "Herstel Aankope",
+  "restoreSectionTitle": "Herstel",
+  "restoreSettings": "Herstel Instellings",
+  "restoreSettingsConfirmation": "Dit sal al jou huidige instellings vervang. Is jy seker jy wil voortgaan?",
+  "restoreSettingsDialogTitle": "Herstel Instellings",
+  "restoreSettingsTitle": "Herstel Instellings",
+  "restoreSuccessFromLocal": "Suksesvol van plaaslik herstel",
+  "restoreSuccessMessage": "Suksesvol van wolk herstel",
+  "retry": "Probeer weer",
+  "ridesharing": "Ritdeel",
+  "risk": "Risiko",
+  "robocall": "Robo-oproep",
+  "ruleAction": "Reël Aksie",
+  "ruleAddButton": "Voeg Reël By",
+  "ruleAddedSuccess": "Reël suksesvol bygevoeg",
+  "@ruleAddedSuccess": {
+    "description": "Reël skepping sukses boodskap"
+  },
+  "ruleAddFailure": "Kon nie reël byvoeg nie: {error}",
+  "@ruleAddFailure": {
+    "description": "Reël skepping mislukking boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "ruleAddSuccess": "Reël suksesvol bygevoeg",
+  "ruleDeleteConfirmContent": "Is jy seker jy wil hierdie {ruleType} verwyder?",
+  "ruleDeleteConfirmTitle": "Verwyder Reël",
+  "ruleDeletedSuccess": "Reël suksesvol verwyder",
+  "ruleDeletedSuccessfully": "Reël suksesvol verwyder",
+  "ruleDeleteFailed": "Kon nie reël verwyder nie: {error}",
+  "ruleDeleteFailure": "Kon nie reël verwyder nie: {error}",
+  "@ruleDeleteFailure": {
+    "description": "Reël skrap mislukking boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "ruleDeleteSuccess": "Reël suksesvol geskrap",
+  "ruleDisabledSuccessfully": "Reël suksesvol gedeaktiveer",
+  "ruleEnabledSuccessfully": "Reël suksesvol geaktiveer",
+  "ruleLoadFailed": "Kon nie reëls laai nie: {error}",
+  "ruleManagement": "Reël Bestuur",
+  "ruleManagementTitle": "Reël Bestuur",
+  "ruleName": "Reël Naam",
+  "ruleNameAndContentRegexCannotBeEmpty": "Reëlnaam en inhoud regex kan nie leeg wees nie",
+  "ruleNameAndPhoneNumberCannotBeEmpty": "Reëlnaam en telefoonnommer kan nie leeg wees nie",
+  "ruleNameHint": "bv., Familie, Vriende, ens.",
+  "ruleNameLabel": "Reël Naam",
+  "ruleNamePatternRequired": "Voer asseblief reëlnaam en patroon in",
+  "ruleNameRequired": "Reëlnaam en telefoonnommer kan nie leeg wees nie",
+  "ruleNotExist": "Reël bestaan nie of is geskrap",
+  "ruleNotFound": "Reël nie gevind nie: {error}",
+  "ruleSavedSuccessfully": "Reël suksesvol gestoor!",
+  "ruleSavedSuccessMessage": "Reël suksesvol gestoor!",
+  "ruleSaveFailed": "Stoor misluk: {error}",
+  "ruleSaveFailedMessage": "Stoor misluk: {error}",
+  "ruleSaveSuccess": "Reël suksesvol gestoor!",
+  "rulesExportedSuccessfully": "Reëls suksesvol uitgevoer",
+  "rulesExportedTo": "Reëls uitgevoer na: {path}",
+  "rulesImported": "Reëls suksesvol ingevoer",
+  "rulesImportedSuccessfully": "{count} reëls suksesvol ingevoer",
+  "rulesImportFailed": "Kon nie reëls invoer nie: {error}",
+  "ruleStatistics": "Reël Statistiek",
+  "ruleStatusChanged": "Reël {status} suksesvol",
+  "ruleToggleFailed": "Operasie misluk: {error}",
+  "ruleToggleSuccess": "Reël {status} suksesvol",
+  "ruleUpdateFailed": "Kon nie reël opdateer nie: {error}",
+  "ruleUpdateSuccess": "Reël suksesvol opgedateer",
+  "ruleVerification": "Reël Verifikasie",
+  "save": "Stoor",
+  "saveButton": "Stoor",
+  "saveButtonLabel": "STOOR",
+  "saveButtonText": "Stoor",
+  "saveFailed": "Stoor misluk: {error}",
+  "saveFilter": "Stoor Filter",
+  "saveSettings": "Stoor Instellings",
+  "saveSettingsFailed": "Kon nie instellings stoor nie: {error}",
+  "scamsLikely": "Bedrog Waarskynlik",
+  "search": "Soek",
+  "searchContacts": "Soek Kontakte",
+  "searchError": "Soekfout: {error}",
+  "searchFilters": "Soek Filters",
+  "searchForContacts": "Soek vir kontakte",
+  "searchHint": "Soek...",
+  "searchSettingsSubtitle": "Soek kontakte, etikette, swartlyste, witlyste, ens.",
+  "searchSettingsTitle": "Soek Instellings",
+  "securityMessage": "Moenie enige telefoonoproepe vertrou nie. Verifieer altyd kliëntediensnommers onafhanklik. Moet nooit wagwoorde, verifikasiekodes, kaartnommers of persoonlike inligting deel nie.",
+  "selectActionToPerform": "Kies die aksie om uit te voer wanneer die reël ooreenstem",
+  "selectActionWhenBlockingCalls": "Kies aksie wanneer oproepe geblokkeer word",
+  "selectActionWhenRuleMatches": "Kies aksie wanneer reël ooreenstem",
+  "selectAll": "Kies Alles",
+  "selectCountry": "Kies Land",
+  "selectDateRange": "Kies Datumreeks",
+  "selectedDateRange": "Geselekteerde datumreeks",
+  "@selectedDateRange": {
+    "description": "Geselekteerde datumreeks teks"
+  },
+  "selectedItems": "{count} items gekies",
+  "selectedLabel": "Gekies:",
+  "selectExportFormat": "Kies Uitvoerformaat",
+  "selectLabel": "Kies Etiket",
+  "selectLabelAndEnterPhoneNumber": "Kies asseblief 'n etiket en voer 'n geldige telefoonnommer in",
+  "selectLanguage": "Kies Taal",
+  "selectMultiple": "Kies Meervoudig",
+  "selectPeriod": "Kies Tydperk",
+  "selectSimCard": "Kies SIM Kaart",
+  "selectSimSlot": "Kies SIM Gleuf",
+  "@selectSimSlot": {
+    "description": "Titel vir SIM gleuf seleksie dialoog"
+  },
+  "selectSpecificActionForBlockedCalls": "Kies die spesifieke aksie om uit te voer wanneer oproepe geblokkeer word",
+  "selectTag": "Kies Etiket",
+  "selectTags": "Kies Etikette",
+  "selectTrustedDataSource": "Kies asseblief betroubare databronne",
+  "selectYourLanguage": "Kies Jou Taal",
+  "sender": "Sender",
+  "senderRegexOptional": "Sender Regex (Opsioneel)",
+  "serverAddressLabel": "Bedienersadres",
+  "serviceTypeContact": "Kontak Intekening",
+  "serviceTypeLabel": "Diens Tipe",
+  "serviceTypePhone": "Foon Intekening",
+  "serviceTypePlugin": "Inprop Opdatering",
+  "serviceTypeSms": "SMS Intekening",
+  "serviceUpdateFailure": "{error}",
+  "@serviceUpdateFailure": {
+    "description": "Diens opdatering mislukking boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "setButton": "Stel",
+  "setEncryptionPassword": "Stel Enkripsie Wagwoord In",
+  "setEncryptionPasswordDescription": "Stel enkripsie wagwoord vir rugsteun en herstel",
+  "setEncryptionPasswordLabel": "Stel Enkripsie Wagwoord In",
+  "setEncryptionPasswordTitle": "Stel Enkripsie Wagwoord In",
+  "setPasswordButton": "Stel",
+  "settings": "Instellings",
+  "settingsBackedUpTo": "Instellings gerugsteun na: {path}",
+  "settingsLoaded": "Instellings gelaai",
+  "settingsLoadFailed": "Kon nie instellings laai nie: {error}",
+  "settingsRestoredSuccessfully": "Instellings suksesvol herstel. Herbegin asseblief die toepassing vir veranderinge om in werking te tree.",
+  "settingsSaved": "Instellings gestoor",
+  "@settingsSaved": {
+    "description": "Instellings gestoor bevestiging boodskap"
+  },
+  "settingsSaveFailed": "Kon nie instellings stoor nie: {error}",
+  "settingsTab": "Instellings",
+  "settingsTitle": "Instellings",
+  "setup": "Opstel",
+  "showContactEditDialogStaticMethod": "Statiese metode om kontak wysig dialoog te vertoon",
+  "showExplanation": "Wys Verduideliking",
+  "silence": "Stilte",
+  "silenceAndNoAnswer": "Stilte en geen antwoord",
+  "silenceNoAnswer": "Stilte Geen Antwoord",
+  "silentCallVoiceClone": "Stil Oproep Stem Kloon",
+  "silentRules": "Stil Reëls",
+  "simCard": "SIM Kaart {simNumber}",
+  "simCardColor": "SIM Kaart Kleur",
+  "simCardConfigurationExplanation": "• SIM Kaart Konfigurasie: Stel onafhanklike filterreëls vir elke SIM kaart",
+  "simCardFilterRules": "SIM Kaart Filter Reëls",
+  "simCardFilterRulesDescription": "Stel verskillende filterreëls gebaseer op SIM kaart gleuwe",
+  "simCardFontSize": "SIM Kaart Lettergrootte",
+  "simCardPosition": "SIM Kaart Posisie",
+  "simInfo": "SIM {slotNumber} - {countryIso}",
+  "@simInfo": {
+    "description": "SIM Kaart inligting",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      },
+      "countryIso": {
+        "type": "Object"
+      }
+    }
+  },
+  "simInfoLoadFailure": "Kon nie SIM kaart inligting laai nie: {error}",
+  "simRuleInstructions": "SIM gleuf reëls laat jou toe om onafhanklike filterreëls vir elke SIM gleuf te konfigureer.",
+  "simRuleInstructionsTitle": "SIM Gleuf Reëls",
+  "@simRuleInstructionsTitle": {
+    "description": "Afdeling titel vir SIM gleuf reëls instruksies"
+  },
+  "simRuleManagement": "SIM Gleuf Reël Bestuur",
+  "@simRuleManagement": {
+    "description": "SIM gleuf reël bestuur afdeling titel"
+  },
+  "simSlot1": "SIM 1,-{countryIso}",
+  "@simSlot1": {
+    "description": "Teks wat SIM gleuf 1 met land ISO kode wys",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "US"
+      }
+    }
+  },
+  "simSlot2": "SIM 2,-{countryIso}",
+  "@simSlot2": {
+    "description": "Teks wat SIM gleuf 2 met land ISO kode wys",
+    "placeholders": {
+      "countryIso": {
+        "type": "String",
+        "example": "CN"
+      }
+    }
+  },
+  "simSlotDataLoadFailed": "Kon nie SIM data laai nie: {error}",
+  "simSlotFilterConfiguration": "SIM Gleuf Filter Konfigurasie",
+  "simSlotFilterConfigurationDescription": "Laat toe om filterreëls per SIM gleuf te stel",
+  "simSlotFilterDescription": "Konfigureer onafhanklike filterreëls vir elke SIM kaart:",
+  "simSlotFilterSettingsTitle": "SIM Gleuf {slotNumber} Filter Instellings",
+  "@simSlotFilterSettingsTitle": {
+    "description": "Titel vir SIM gleuf filter instellings",
+    "placeholders": {
+      "slotNumber": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotLoadFailed": "Kon nie SIM gleuwe laai nie: {error}",
+  "simSlotManagement": "SIM Gleuf Bestuur",
+  "simSlotOperationFailed": "SIM gleuf operasie misluk: {error}",
+  "@simSlotOperationFailed": {
+    "description": "SIM gleuf operasie mislukking boodskap",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "simSlotPosition": "SIM Gleuf Posisie {slotNumber}",
+  "@simSlotPosition": {
+    "description": "SIM gleuf posisie vertoon",
+    "placeholders": {
+      "slotNumber": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+  "simSlotRuleFeature": "• SIM Gleuf Reëls: Onafhanklike filterstrategieë per SIM",
+  "simSlotRuleListTitle": "SIM Gleuf Reëls Lys",
+  "simSlotRuleManagement": "SIM Gleuf Reëls",
+  "simSlotRuleManagementTitle": "Reël Bestuur",
+  "simSlotSettings": "SIM Gleuf Instellings",
+  "@simSlotSettings": {
+    "description": "Titel vir SIM gleuf instellings bladsy"
+  },
+  "simSlotTitle": "SIM Gleuf {slotNumber}",
+  "skip": "Slaan oor",
+  "smartCallerId": "Slim Beller Identifikasie",
+  "sms": "SMS",
+  "smsFilterDescription": "SMS filtering help jou om outomaties strooipos boodskappe te filter en jou boodskaplys skoon te hou. Jy kan filterreëls en kennisgewingmetodes instel.",
+  "smsFilterDisabled": "SMS filtering gedeaktiveer",
+  "smsFilterEnabled": "SMS filtering geaktiveer",
+  "smsFilterRuleAddedSuccessfully": "SMS filterreël suksesvol bygevoeg",
+  "smsFilterRules": "SMS Filter Reëls",
+  "smsFilterSettings": "SMS Filter Instellings",
+  "smsHistory": "SMS Geskiedenis",
+  "smsManagement": "SMS Bestuur",
+  "smsPermission": "SMS Toestemming",
+  "smsPermissionDescription": "Word gebruik om strooipos boodskappe te filter.",
+  "smsRuleAddedSuccessfully": "SMS reël suksesvol bygevoeg",
+  "smsRuleDeletedSuccessfully": "SMS reël suksesvol geskrap",
+  "smsRuleLoadFailed": "Kon nie SMS reëls laai nie: {error}",
+  "smsRuleManagement": "SMS Reël Bestuur",
+  "smsRulesExportedSuccessfully": "SMS reëls suksesvol uitgevoer na {filePath}",
+  "smsRulesImportedSuccessfully": "SMS reëls suksesvol ingevoer",
+  "smsRuleSubscription": "SMS Reël Intekening",
+  "smsRuleUpdatedSuccessfully": "SMS reël suksesvol opgedateer",
+  "smsSettingsSubtitle": "SMS filtering en sleutelwoord blokkering",
+  "smsSettingsTitle": "SMS Instellings",
+  "smsSubscription": "SMS Intekening",
+  "smsSubscriptionAddedSuccessfully": "SMS intekening suksesvol bygevoeg",
+  "@smsSubscriptionAddedSuccessfully": {
+    "description": "Intekening bygevoeg sukses boodskap",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "smsSubscriptionRulesDescription": "Teken in op SMS reëllyste via URL, ondersteun gereelde uitdrukking passing. Jy kan blokkeer of toelaat aksies instel.",
+  "smsTab": "SMS",
+  "somePermissionsDenied": "Sommige toestemmingsversoeke geweier",
+  "spamLikely": "Strooipos Waarskynlik",
+  "startColor": "Begin Kleur",
+  "startDate": "Begindatum",
+  "startUsing": "Begin Gebruik",
+  "statAnswered": "Beantwoord",
+  "statBlocked": "Geblokkeer",
+  "staticMethodShowCallerIdDialog": "Statiese metode om die Beller ID Inligting Dialoog te wys",
+  "staticMethodToDisplayCountrySelectionDialog": "Statiese metode om land seleksie dialoog te vertoon",
+  "staticMethodToDisplayDialog": "Statiese metode om dialoog te vertoon",
+  "statistics": "Statistiek",
+  "statisticsExportFeatureComingSoon": "Statistiek uitvoer funksie kom binnekort",
+  "statisticsGrid": "Statistiek Rooster",
+  "statisticsPageTitle": "Data Analise",
+  "stirColor": "STIR Kleur",
+  "stirFontSize": "STIR Lettergrootte",
+  "stirPosition": "STIR Posisie",
+  "storagePermission": "Berging Toestemming",
+  "storagePermissionDescription": "Word gebruik om instellings en reëls te stoor.",
+  "subscribe": "Teken in",
+  "subscriptionAddSuccess": "Intekening \"{name}\" suksesvol bygevoeg",
+  "@subscriptionAddSuccess": {
+    "description": "Intekening bygevoeg sukses boodskap",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "subscriptionDeleteConfirmContent": "Is jy seker jy wil hierdie intekening verwyder?",
+  "subscriptionDeleteConfirmTitle": "Verwyder Intekening",
+  "subscriptionDeleted": "Intekening verwyder",
+  "@subscriptionDeleted": {
+    "description": "Intekening verwyder sukses boodskap"
+  },
+  "subscriptionDeletedSuccessfully": "Intekening suksesvol verwyder",
+  "subscriptionDeleteFailed": "Kon nie intekening verwyder nie: {error}",
+  "subscriptionDeleteSuccess": "Intekening verwyder",
+  "subscriptionEmptyState": "Geen intekeninge beskikbaar nie",
+  "subscriptionEmptyText": "Nog geen intekeninge nie",
+  "subscriptionLoadFailed": "Kon nie intekeninge laai nie: {error}",
+  "subscriptionLoadingFailed": "Kon nie intekeninge laai nie: {error}",
+  "subscriptionManagementTitle": "Intekening Bestuur",
+  "subscriptionName": "Intekening Naam",
+  "@subscriptionName": {
+    "description": "Intekening naam veld etiket"
+  },
+  "subscriptionNameAndUrlCannotBeEmpty": "Intekening naam en URL kan nie leeg wees nie",
+  "subscriptionNameHint": "Voer intekening naam in",
+  "subscriptionPageTitle": "Intekening Bestuur",
+  "subscriptionStatusChangeFailed": "Kon nie intekening status verander nie: {error}",
+  "subscriptionToggleFailed": "Kon nie intekening status wissel nie: {error}",
+  "subscriptionUpdateFailed": "Kon nie intekening opdateer nie: {error}",
+  "subscriptionUpdateSuccess": "Intekening suksesvol opgedateer",
+  "@subscriptionUpdateSuccess": {
+    "description": "Intekening opdatering sukses boodskap",
+    "placeholders": {}
+  },
+  "subscriptionUrl": "Intekening URL",
+  "@subscriptionUrl": {
+    "description": "Intekening URL veld etiket"
+  },
+  "subscriptionUrlHint": "Voer intekening URL in",
+  "successfullyImportedRules": "Suksesvol {count} reëls ingevoer",
+  "supportSync": "Ondersteun Sinkronisasie",
+  "survey": "Opname",
+  "syncDevicesButton": "Sinkroniseer Toestelle",
+  "synced": "Gesinkroniseer",
+  "@synced": {
+    "description": "Gesinkroniseer status etiket"
+  },
+  "syncFailed": "Sinkronisasie misluk",
+  "syncFailedMessage": "Sinkronisasie misluk",
+  "syncFolderNameHint": "Voer asseblief sinkronisasie vouer naam in (verstek: NotificationManager)",
+  "syncFolderNameLabel": "Sinkronisasie Vouer Naam",
+  "synchronized": "Gesinkroniseer",
+  "@synchronized": {
+    "description": "Gesinkroniseer status etiket"
+  },
+  "syncing": "Sinkroniseer...",
+  "syncNow": "Sinkroniseer Nou",
+  "@syncNow": {
+    "description": "Sinkroniseer nou knoppie teks"
+  },
+  "syncNowButton": "Sinkroniseer Nou",
+  "syncStatusTitle": "Sinkronisasie Status",
+  "syncStatusUpdatedMessage": "Sinkronisasie status opgedateer",
+  "syncSuccessful": "Sinkronisasie suksesvol",
+  "syncSuccessMessage": "Sinkronisasie suksesvol",
+  "syncWithCloudStorage": "Sinkroniseer met Wolkberging",
+  "syncWithCloudStorageSubtitle": "Sinkroniseer met wolkberging",
+  "systemFeatures": "Stelsel Kenmerke:",
+  "systemSettingsTitle": "Stelsel Instellings",
+  "tabAll": "Alles",
+  "tabAnswered": "Beantwoord",
+  "tabBlocked": "Geblokkeer",
+  "tabMissed": "Gemis",
+  "tabOutgoing": "Uitgaande",
+  "tagLabel": "Etiket: {tag}",
+  "@tagLabel": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "tagsUpdated": "Etikette opgedateer",
+  "takeaway": "Wegneemete",
+  "telecommunication": "Telekommunikasie",
+  "telegram": "Telegram",
+  "telemarketing": "Telebemarking",
+  "testButton": "TOETS",
+  "testButtonLabel": "TOETS",
+  "testConnectionButton": "Toets Verbinding",
+  "textColorsSetting": "Teks & Etiket Kleure",
+  "thisAppIsAPowerfulCallerIdToolThatAllows": "Hierdie toepassing is 'n kragtige beller-ID hulpmiddel wat jou toelaat om ongewenste oproepe te identifiseer en te blokkeer.",
+  "thisWeek": "Hierdie Week",
+  "timeInterceptor": "Tyd Onderskepper",
+  "timeInterceptorDescription": "Onderskep outomaties potensiële strooipos oproepe gebaseer op oproepfrekwensie",
+  "timeInterceptorExplanation": "• Tyd Onderskepper: Onderskep herhaalde oproepe binne 'n kort tyd",
+  "timeInterceptorExplanationContent": "Die oproepfrekwensie onderskeppingsfunksie analiseer oproepfrekwensie om outomaties gereelde strooipos oproepe te identifiseer en te onderskep.",
+  "timeInterceptorExplanationTitle": "Oproepfrekwensie Onderskepping Verduideliking",
+  "timeInterceptorSettingsTitle": "Oproepfrekwensie Onderskepping Instellings",
+  "timeInterceptorSubtitle": "Onderskep outomaties potensiële strooipos oproepe gebaseer op oproepfrekwensie",
+  "timeInterceptorTitle": "Aktiveer Oproepfrekwensie Onderskepping",
+  "timeWindowDescription": "Stel die tydvenster grootte vir die onderskepping van herhaalde oproepe. Oproepe van dieselfde nommer binne hierdie venster sal onderskep word",
+  "timeWindowLabel": "Onderskepping Tydvenster (minute): {minutes}",
+  "@timeWindowLabel": {
+    "description": "Tydvenster etiket met duur in minute",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeWindowSetting": "Stel die tydvenster grootte vir die onderskepping van herhaalde oproepe. Oproepe van dieselfde nommer binne hierdie venster sal onderskep word",
+  "today": "Vandag",
+  "total": "Totaal",
+  "totalBlocked": "Totaal Geblokkeer",
+  "totalFiltered": "Totaal Gefiltreer",
+  "transferDataBetweenDevicesOrPlatforms": "Oordra data tussen toestelle of platforms",
+  "transferDataBetweenDevicesOrPlatformsSubtitle": "Oordra data tussen toestelle of platforms",
+  "travelTicketing": "Reiskaartjies",
+  "trend": "Tendens",
+  "trendChart": "Tendens Grafiek",
+  "tutorial": "Tutoriaal",
+  "type": "Tipe",
+  "unassignedSIMCard": "Ongekoppelde SIM Kaart",
+  "unknown": "Onbekend",
+  "@unknown": {
+    "description": "Vertoon teks vir onbekende status"
+  },
+  "unknownAction": "Onbekende Aksie",
+  "unknownLabel": "Onbekende Etiket",
+  "unknownTag": "Etiket: Onbekend",
+  "unregisterButton": "Deregistreer",
+  "unregisterDeviceConfirmationMessage": "Is jy seker jy wil {deviceName} deregistreer?",
+  "unregisterDeviceTitle": "Deregistreer Toestel",
+  "unsupportedFileFormat": "Onondersteunde lêerformaat",
+  "update": "Opdateer",
+  "updateAllNow": "Dateer Alles Nou Op",
+  "updateCallFilterConfig": "Dateer Oproep Filter Konfigurasie Op",
+  "@updateCallFilterConfig": {
+    "description": "Knoppie teks vir die opdatering van oproep filter konfigurasie"
+  },
+  "updateContactFailed": "Kon nie kontak opdateer nie: {error}",
+  "updateFavoriteStatus": "Dateer Gunsteling Status Op",
+  "updateFavoriteStatusFailed": "Kon nie gunsteling status opdateer nie: {error}",
+  "updateInterval": "Opdatering Interval",
+  "updateLabelFailed": "Kon nie etiket opdateer nie",
+  "updateNow": "Dateer Nou Op",
+  "updatePlugin": "Dateer Inprop Op",
+  "updatePluginFailed": "Kon nie inprop opdateer nie: {error}",
+  "updateRuleFailed": "Kon nie reël opdateer nie: {error}",
+  "updateSubscriptionFailed": "Kon nie intekening opdateer nie: {error}",
+  "@updateSubscriptionFailed": {
+    "description": "Kon nie intekening opdateer fout boodskap nie",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateSuccess": "{service} suksesvol opgedateer ({count} reëls)",
+  "@updateSuccess": {
+    "description": "Enkele diens opdatering sukses boodskap",
+    "placeholders": {
+      "service": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "updateTags": "Dateer Etikette Op",
+  "useCasesPoint1": "• Identifiseer outo-herbel strooipos oproepe",
+  "useCasesPoint2": "• Onderskep bemarkingsoproepe wat verskeie kere in 'n kort tyd bel",
+  "useCasesPoint3": "• Voorkom telefoonbombardement en teistering",
+  "useCasesTitle": "Gebruiksgevalle:",
+  "useGlobalSettings": "Gebruik Globale Instellings",
+  "userEmail": "gebruiker@voorbeeld.com",
+  "usernameLabel": "Gebruikersnaam",
+  "useStandardRegexSyntaxToDefinePatternsExamples": "Gebruik standaard regex sintaksis om patrone te definieer. Voorbeelde:",
+  "validateRegex": "Valideer Regex",
+  "verificationFailedText": "Misluk",
+  "verifiedText": "Geverifieer",
+  "verify": "Verifieer",
+  "version": "Weergawe: {version}",
+  "vipExchangeDescription": "Ruil VIP lidmaatskap met telefoonnommer merk tellings",
+  "vipExchangeTitle": "Merk Ruil VIP",
+  "watchAd": "Kyk Advertensie",
+  "watchAdForTemp": "Kyk Advertensie vir Tydelike Voorregte",
+  "watchAdForTempDescription": "Kyk 'n kort advertensie om tydelik sommige premium funksies te ontsluit",
+  "webDAVConfigTitle": "WebDAV Konfigurasie",
+  "webdavConfigurationTitle": "WebDAV Konfigurasie",
+  "webdavPasswordHint": "Voer asseblief WebDAV wagwoord in",
+  "webdavServerAddressHint": "Voer asseblief WebDAV bediener adres in",
+  "webdavUsernameHint": "Voer asseblief WebDAV gebruikersnaam in",
+  "week": "Week",
+  "weekly": "Weekliks",
+  "weeklyBlockedCallsSummary": "Weeklikse Geblokkeerde Oproepe Opsomming",
+  "weeklyChartTitle": "Weeklikse Geblokkeerde Oproepe",
+  "weeklyReport": "Weeklikse Verslag",
+  "@weeklyReport": {
+    "description": "Weeklikse verslag kennisgewing opsie"
+  },
+  "weeklyReportDesc": "Ontvang weeklikse opsommingsverslag van oproepblokkering aktiwiteit",
+  "@weeklyReportDesc": {
+    "description": "Beskrywing vir weeklikse verslag opsie"
+  },
+  "welcome": "Welkom",
+  "whitelist": "Witlys",
+  "@whitelist": {
+    "description": "Witlys etiket"
+  },
+  "whitelistLabel": "Witlys",
+  "width": "Breedte",
+  "wildcardMatchingDescription": "Gebruik '.' om enige karakter te pas (bv. '123.456' pas 123-456)",
+  "wildcardMatchingTitle": "Wildcard passing:",
+  "wildcardSupportForFlexibleFiltering": "Wildcard Ondersteuning vir Buigsame Filtrering",
+  "windowSizeSetting": "Venster Grootte",
+  "year": "Jaar",
+  "yearly": "Jaarliks",
+  "yearlyChartTitle": "Jaarlikse Geblokkeerde Oproepe",
+  "noSimCardsDetected": "Geen SIM kaarte bespeur nie",
+  "filterManagementDescription": "Stel Oproep Filters In",
+  "callerIdCustomizationSubtitle": "Pasmaak Beller ID Uitleg",
+  "yesterday": "Gister",
+  "fraudAlerSettingSubtitle": "Om Bedrogwaarskuwing te Stel",
+  "enableFraudAlert": "Aktiveer Bedrogwaarskuwing",
+  "enableFraudAlertDescription": "Waarskuwing vir verdagte bedrogoproepe",
+  "enableVibration": "Aktiveer Vibrasie",
+  "enableVibrationDescription": "Vibreer wanneer oproep verdagte bedrogoproepe is",
+  "notificationSettingsTitle": "Kennisgewing Instellings",
+  "useLocalNotification": "Gebruik Plaaslike Kennisgewings",
+  "useLocalNotificationDescription": "Aktiveer plaaslike kennisgewings vir inkomende oproepe",
+  "cancelLocalNotification": "Sluit Plaaslike Kennisgewings",
+  "useStirNotification": "Gebruik Kennisgewing van STIR",
+  "useStirNotificationDescription": "Aktiveer STIR kennisgewings vir inkomende oproepe",
+  "cancelLocalNotificationDescription": "Sluit Plaaslike Kennisgewings Outomaties",
+  "callerIdSettingsTitle": "Oproeper ID Instellings",
+  "callerIdSettingsSubtitle": "Om Inkomende Oproep Kennisgewing & Vertoonmodus op te stel",
+  "purchaseTitle": "Aankoop",
+  "purchaseSubtitle": "Om die Diens te Koop",
+  "callerIdNotificationTitle": "Inkomende Oproep Inligting",
+  "@callerIdNotificationTitle": {
+    "description": "Titel vir die Inkomende Oproep Inligting"
+  },
+  "callerIdBody": "Nommer: {phoneNumber}",
+  "@callerIdBody": {
+    "description": "Liggaam vir die oproeper ID kennisgewing, wat die telefoonnommer wys",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "blockedCallTitle": "Geblokkeerde Oproep",
+  "@blockedCallTitle": {
+    "description": "Titel vir geblokkeerde oproep kennisgewing"
+  },
+  "blockedCallBody": "Geblokkeerde oproep van {phoneNumber}",
+  "@blockedCallBody": {
+    "description": "Liggaam vir geblokkeerde oproep kennisgewing, wat die telefoonnommer wys",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "stirVerified": "Geverifieer",
+  "@stirVerified": {
+    "description": "STIR/SHAKEN verifikasie status: Geverifieer"
+  },
+  "stirNotVerified": "Nie Geverifieer nie",
+  "@stirNotVerified": {
+    "description": "STIR/SHAKEN verifikasie status: Nie Geverifieer nie"
+  },
+  "stirFailed": "Verifikasie Misluk",
+  "@stirFailed": {
+    "description": "STIR/SHAKEN verifikasie status: Verifikasie Misluk"
+  },
+  "stirUnknown": "Onbekende Verifikasie Status",
+  "@stirUnknown": {
+    "description": "STIR/SHAKEN verifikasie status: Onbekend"
+  },
+  "stirVerificationTitle": "STIR/SHAKEN Verifikasie",
+  "@stirVerificationTitle": {
+    "description": "Titel vir STIR/SHAKEN verifikasie kennisgewing"
+  },
+  "stirVerificationBody": "{stirResultMessage} vir nommer {phoneNumber}",
+  "@stirVerificationBody": {
+    "description": "Liggaam vir STIR/SHAKEN verifikasie kennisgewing, wat resultaat en telefoonnommer wys",
+    "placeholders": {
+      "stirResultMessage": {
+        "type": "String",
+        "example": "Geverifieer"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "scrollingSecurityMessageSettings": "Rolleende Sekuriteitsboodskap Instellings",
+  "messageColor": "Boodskap Kleur",
+  "messageFontSize": "Boodskap Lettergrootte",
+  "messagePosition": "Boodskap Posisie",
+  "containerWidth": "Houer Breedte",
+  "scrollSpeed": "Rolleer Spoed",
+  "enableSecurityMessage": "Aktiveer Sekuriteitsboodskap",
+  "fraudAlertTitle": "Bedrogwaarskuwing",
+  "@fraudAlertTitle": {
+    "description": "Titel vir die bedrogwaarskuwing kennisgewing"
+  },
+  "fraudAlertBody": "Potensiële bedrogoproep van {phoneNumber}",
+  "@fraudAlertBody": {
+    "description": "Liggaam vir die bedrogwaarskuwing kennisgewing",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "example": "+1234567890"
+      }
+    }
+  },
+  "loadRulesFailed": "Kon nie reëls laai nie: {error}",
+  "loadCallLogFailed": "Kon nie oproeplog laai nie: {error}",
+  "noBlockedTypeData": "Geen geblokkeerde tipe data beskikbaar nie",
+  "importEntity": "Voer {entityTypeName} in",
+  "@importEntity": {
+    "description": "Dialoog titel vir die invoer van 'n entiteit",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityImportSuccess": "{entityTypeName} suksesvol ingevoer, {count} rekords ingevoer",
+  "@entityImportSuccess": {
+    "description": "Suksesboodskap na die invoer van entiteite",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "count": {
+        "type": "Object",
+        "example": "42"
+      }
+    }
+  },
+  "entityImportFailed": "Kon nie {entityTypeName} invoer nie: {error}",
+  "@entityImportFailed": {
+    "description": "Foutboodskap wanneer die invoer van entiteite misluk",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "exportEntity": "Voer {entityTypeName} uit",
+  "@exportEntity": {
+    "description": "Dialoog titel vir die uitvoer van 'n entiteit",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportSuccess": "{entityTypeName} suksesvol uitgevoer",
+  "@entityExportSuccess": {
+    "description": "Suksesboodskap na die uitvoer van entiteite",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      }
+    }
+  },
+  "entityExportFailed": "Kon nie {entityTypeName} uitvoer nie: {error}",
+  "@entityExportFailed": {
+    "description": "Foutboodskap wanneer die uitvoer van entiteite misluk",
+    "placeholders": {
+      "entityTypeName": {
+        "type": "Object"
+      },
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "cloudSyncService": "Wolk Sinkroniseer Diens",
+  "membershipCenter": "Lidmaatskap Sentrum",
+  "redeemVipWithMarks": "Verlos VIP met Merke",
+  "currentMarkCount": "Huidige Merk Telling",
+  "markMoreNumbersForMore": "Merk meer nommers vir meer merke",
+  "noAds": "Geen Advertensies",
+  "cloudBackup": "Wolk Rugsteun",
+  "callerIdEnhancement": "Oproeper ID Verbetering",
+  "voiceRecognition": "Stemherkenning",
+  "feature": "Kenmerk",
+  "normalUser": "Normale Gebruiker",
+  "vipUser": "VIP Gebruiker",
+  "temporaryVip": "Tydelike VIP",
+  "removeAds": "Verwyder Advertensies",
+  "unknownAction": "Onbekende Aksie",
+  "settingsBackup": "Instellings Rugsteun",
+  "allServicesStatusTitle": "Huidige Diens Status",
+  "allServicesStatusSubtitle": "Huidige Status van Elke Wolk Diens",
+  "redirect": "Herlei",
+  "notify": "Stel in kennis",
+  "log": "Log",
+  "custom": "Pasgemaak",
+  "allowActionDescription": "Oproepe sal toegelaat word, selfs al is die nommer op die swartlys.",
+  "blockActionDescription": "Oproepe sal geblokkeer word en in die oproeplog gewys word.",
+  "silenceActionDescription": "Oproepe sal stilgemaak word maar in die oproeplog gewys word.",
+  "noneActionDescription": "Geen spesiale aksie sal vir die oproep geneem word nie.",
+  "redirectActionDescription": "Herlei die oproep na 'n gespesifiseerde nommer.",
+  "labelActionDescription": "Voeg 'n etiket by die oproep vir maklike identifikasie.",
+  "notifyActionDescription": "Stuur 'n kennisgewing wanneer 'n oproep ontvang word.",
+  "customActionDescription": "Voer 'n pasgemaakte aksie uit.",
+  "synced": "Gesinkroniseer",
+  "lastUpdated": "Laas opgedateer: {date}",
+  "needVipAccess": "Jy benodig VIP toegang om hierdie funksie te gebruik",
+  "importExportDescription": "Voer {entityTypeName} data in of uit",
+  "importExportTitle": "Invoer/Uitvoer",
+  "noPhoneRules": "Geen telefoonreëls gevind nie",
+  "noRegexRules": "Geen regex reëls gevind nie",
+  "noAllowedBlockedRules": "Geen toegelate/geblokkeerde reëls gevind nie",
+  "importExport": "Invoer/Uitvoer",
+  "filterByAction": "Filter volgens Aksie",
+  "upgradeToVip": "Gradeer op na VIP",
+  "batteryOptimizationPermission": "Battery Optimalisering",
+  "batteryOptimizationPermissionDescription": "Laat die toepassing toe om in die agtergrond te loop om dienste soos oproeper-ID te verskaf.",
+  "permissionTitle": "Spesiale Toestemmings",
+  "permissionSubtitle": "Bestuur oorleg en battery optimalisering toestemmings",
+  "themeSettingsTitle": "Tema Instellings",
+  "themeSettingsSubtitle": "Kies jou gunsteling tema",
+  "databaseSyncTitle": "Databasis Sinkronisering",
+  "countrySyncSettingsTitle": "Land Sinkronisering Instellings",
+  "countrySyncSettingsSubtitle": "Kies lande vir data sinkronisering",
+  "yesterday": "Gister",
+  "batteryOptimizationPermissionDescription": "Laat die toepassing toe om in die agtergrond te loop om dienste soos oproeper-ID te verskaf.",
+  "permissionTitle": "Spesiale Toestemmings",
+  "permissionSubtitle": "Bestuur oorleg en battery optimalisering toestemmings",
+  "themeSettingsTitle": "Tema Instellings",
+  "themeSettingsSubtitle": "Kies jou gunsteling tema",
+  "databaseSyncTitle": "Databasis Sinkronisering",
+  "countrySyncSettingsTitle": "Land Gebaseerde Databasis Sinkronisering Instellings",
+  "countrySyncSettingsSubtitle": "Kies lande vir data sinkronisering",
+  "countryDataDisclaimer": "Neem asseblief kennis: Die databasis mag nie data vir alle spesifieke lande of streke insluit nie.",
+  "editSubscription": "Wysig Subskripsie",
+  "searchByNameOrPhoneNumber": "Soek Volgens Naam of Telefoonnommer",
+  "allowedBlockedRulesInfo": "Toegelate/geblokkeerde reëls word gebruik om oproepe te pas by spesifieke telefoonnommers, wat die hoogste prioriteit het.",
+  "searchPhoneRulesHint": "Soek telefoonreëls",
+  "phoneRulesInfo": "Telefoonreëls word gebruik om oproepe te pas by spesifieke telefoonnommers, wat 'n laer prioriteit het. Sommige kom van die phoneRule subskripsie",
+  "searchSubscriptionsHint": "Soek subskripsies",
+  "searchPluginsHint": "Soek plugins",
+  "searchLabelsHint": "Soek etikette",
+  "pluginDescription": "Plugin beskrywing",
+  "enterPluginDescription": "Voer plugin beskrywing in",
+  "searchRegexRulesHint": "Soek regex reëls",
+  "regexRulesInfo": "Regex reëls word gebruik om oproepe te filter gebaseer op die Regex Patrone.",
+  "searchMarkedPhonesHint": "Soek gemerkte fone",
+  "searchContactSubscriptionsHint": "Soek kontak subskripsies",
+  "showAllContacts": "Wys Alle Kontakte",
+  "showFavorites": "Wys Gunstelinge",
+  "manualEntry": "Handmatige Invoer Inligting",
+  "scriptSaved": "Skrip gestoor",
+  "editScriptFor": "Wysig skrip vir {pluginName}",
+  "@editScriptFor": {
+    "description": "Die titel teks vir die bladsy waar 'n gebruiker 'n skrip vir 'n spesifieke inprop kan wysig.",
+    "placeholders": {
+      "pluginName": {
+        "type": "String",
+        "description": "Die naam van die inprop waaraan die skrip behoort."
+      }
+    }
+  },
+  "saveScript": "Stoor Skrip",
+  "testPlugin": "Toets Inprop",
+  "description": "Beskrywing",
+  "accessTargetUrl": "Toegang Teiken URL",
+  "result": "Resultaat",
+  "editScript": "Wysig Skrip",
+  "numberFormat": "Nommer Formaat",
+  "nationalNumber": "Nasionale Nommer",
+  "e164Number": "E164 Nommer",
+  "pluginRulesInfo": "Vir sekuriteit, gebruik asseblief slegs inproppe van betroubare bronne. Voel vry om ons sjablone te gebruik om jou eie pasgemaakte inproppe te skep!",
+  "advancedMode": "Gevorderde Modus",
+  "pleaseEnterAtLeastOneNumber": "Voer asseblief ten minste een nommer in.",
+  "openInWebView": "Maak oop in WebView",
+  "pluginLabel": "Inprop Etiket",
+  "pluginID": "ID",
+  "pluginURL": "URL"
+}

@@ -1,27 +1,28 @@
 {
-  "fraudAlerSettingSubtitle": "Aby ustawić alert o oszustwie",
-  "enableFraudAlert": "Włącz alert o oszustwie",
-  "enableFraudAlertDescription": "Alert o podejrzanych połączeniach oszukańczych",
+  "fraudAlerSettingTitle": "Ustawienia alertów o oszustwach",
+  "fraudAlerSettingSubtitle": "Skonfiguruj alerty o oszustwach",
+  "enableFraudAlert": "Włącz alert o oszustwach",
+  "enableFraudAlertDescription": "Alerty o podejrzanych połączeniach oszukańczych",
   "enableVibration": "Włącz wibracje",
-  "enableVibrationDescription": "Wibruj, gdy połączenie jest podejrzane o oszustwo",
+  "enableVibrationDescription": "Wibracje, jeśli połączenie jest podejrzane o oszustwo",
   "notificationSettingsTitle": "Ustawienia powiadomień",
-  "useLocalNotification": "Użyj powiadomień lokalnych",
+  "useLocalNotification": "Użyj powiadomienia lokalnego",
   "useLocalNotificationDescription": "Włącz powiadomienia lokalne dla połączeń przychodzących",
-  "cancelLocalNotification": "Zamknij powiadomienia lokalne",
-  "useStirNotification": "Użyj powiadomień z STIR",
+  "cancelLocalNotification": "Anuluj powiadomienie lokalne",
+  "useStirNotification": "Użyj powiadomienia STIR",
   "useStirNotificationDescription": "Włącz powiadomienia STIR dla połączeń przychodzących",
-  "cancelLocalNotificationDescription": "Automatycznie zamykaj powiadomienia lokalne",
+  "cancelLocalNotificationDescription": "Automatycznie anuluj powiadomienia lokalne",
   "callerIdSettingsTitle": "Ustawienia identyfikacji dzwoniącego",
-  "callerIdSettingsSubtitle": "Aby ustawić powiadomienia o połączeniach przychodzących i tryb wyświetlania",
+  "callerIdSettingsSubtitle": "Skonfiguruj powiadomienia o połączeniach przychodzących i tryb wyświetlania",
   "purchaseTitle": "Zakup",
-  "purchaseSubtitle": "Aby zakupić usługę",
-  "callerIdNotificationTitle": "Informacje o połączeniu przychodzącym",
+  "purchaseSubtitle": "Kup usługi",
+  "callerIdNotificationTitle": "Informacje o połączeniu",
   "@callerIdNotificationTitle": {
-    "description": "Tytuł dla informacji o połączeniu przychodzącym"
+    "description": "Tytuł powiadomienia o informacjach o połączeniu"
   },
   "callerIdBody": "Numer: {phoneNumber}",
   "@callerIdBody": {
-    "description": "Treść powiadomienia o identyfikacji dzwoniącego, pokazująca numer telefonu",
+    "description": "Tekst powiadomienia o identyfikacji dzwoniącego, wyświetla numer telefonu",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -31,11 +32,11 @@
   },
   "blockedCallTitle": "Zablokowane połączenie",
   "@blockedCallTitle": {
-    "description": "Tytuł dla powiadomienia o zablokowanym połączeniu"
+    "description": "Tytuł powiadomienia o zablokowanym połączeniu"
   },
-  "blockedCallBody": "Zablokowane połączenie z {phoneNumber}",
+  "blockedCallBody": "Połączenie zablokowane z {phoneNumber}",
   "@blockedCallBody": {
-    "description": "Treść powiadomienia o zablokowanym połączeniu, pokazująca numer telefonu",
+    "description": "Tekst powiadomienia o zablokowanym połączeniu, wyświetla numer telefonu",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -61,11 +62,11 @@
   },
   "stirVerificationTitle": "Weryfikacja STIR/SHAKEN",
   "@stirVerificationTitle": {
-    "description": "Tytuł dla powiadomienia o weryfikacji STIR/SHAKEN"
+    "description": "Tytuł powiadomienia o weryfikacji STIR/SHAKEN"
   },
   "stirVerificationBody": "{stirResultMessage} dla numeru {phoneNumber}",
   "@stirVerificationBody": {
-    "description": "Treść powiadomienia o weryfikacji STIR/SHAKEN, pokazująca wynik i numer telefonu",
+    "description": "Tekst powiadomienia o weryfikacji STIR/SHAKEN, wyświetla wynik i numer telefonu",
     "placeholders": {
       "stirResultMessage": {
         "type": "String",
@@ -84,13 +85,13 @@
   "containerWidth": "Szerokość kontenera",
   "scrollSpeed": "Prędkość przewijania",
   "enableSecurityMessage": "Włącz wiadomość bezpieczeństwa",
-  "fraudAlertTitle": "Alert o oszustwie",
+  "fraudAlertTitle": "Alert o oszustwach",
   "@fraudAlertTitle": {
-    "description": "Tytuł dla powiadomienia o oszustwie"
+    "description": "Tytuł alertu o oszustwach"
   },
   "fraudAlertBody": "Potencjalne połączenie oszukańcze z {phoneNumber}",
   "@fraudAlertBody": {
-    "description": "Treść powiadomienia o oszustwie",
+    "description": "Tekst alertu o oszustwach",
     "placeholders": {
       "phoneNumber": {
         "type": "String",
@@ -99,8 +100,8 @@
     }
   },
   "loadRulesFailed": "Nie udało się załadować reguł: {error}",
-  "loadCallLogFailed": "Nie udało się załadować rejestru połączeń: {error}",
-  "noBlockedTypeData": "Brak danych o zablokowanych typach",
+  "loadCallLogFailed": "Nie udało się załadować dziennika połączeń: {error}",
+  "noBlockedTypeData": "Brak danych typu zablokowanego",
   "importEntity": "Importuj {entityTypeName}",
   "@importEntity": {
     "description": "Tytuł dialogu do importowania encji",
@@ -110,7 +111,7 @@
       }
     }
   },
-  "entityImportSuccess": "{entityTypeName} zaimportowano pomyślnie, do",
+  "entityImportSuccess": "{entityTypeName} zaimportowano, {count} rekordów zaimportowano",
   "@entityImportSuccess": {
     "description": "Komunikat o sukcesie po zaimportowaniu encji",
     "placeholders": {
@@ -123,9 +124,9 @@
       }
     }
   },
-  "entityImportFailed": "Nie udało się zaimportować {entityTypeName}: {error}",
+  "entityImportFailed": "Import {entityTypeName} nie powiódł się: {error}",
   "@entityImportFailed": {
-    "description": "Komunikat o błędzie, gdy importowanie encji nie powiedzie się",
+    "description": "Komunikat o błędzie, gdy import encji nie powiedzie się",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -144,7 +145,7 @@
       }
     }
   },
-  "entityExportSuccess": "{entityTypeName} wyeksportowano pomyślnie",
+  "entityExportSuccess": "{entityTypeName} wyeksportowano",
   "@entityExportSuccess": {
     "description": "Komunikat o sukcesie po wyeksportowaniu encji",
     "placeholders": {
@@ -153,9 +154,9 @@
       }
     }
   },
-  "entityExportFailed": "Nie udało się wyeksportować {entityTypeName}: {error}",
+  "entityExportFailed": "Eksport {entityTypeName} nie powiódł się: {error}",
   "@entityExportFailed": {
-    "description": "Komunikat o błędzie, gdy eksportowanie encji nie powiedzie się",
+    "description": "Komunikat o błędzie, gdy eksport encji nie powiedzie się",
     "placeholders": {
       "entityTypeName": {
         "type": "Object"
@@ -170,7 +171,7 @@
   "redeemVipWithMarks": "Wymień VIP za punkty",
   "currentMarkCount": "Aktualna liczba punktów",
   "markMoreNumbersForMore": "Oznacz więcej numerów, aby uzyskać więcej punktów",
-  "noAds": "Bez reklam",
+  "noAds": "Brak reklam",
   "cloudBackup": "Kopia zapasowa w chmurze",
   "callerIdEnhancement": "Ulepszenie identyfikacji dzwoniącego",
   "voiceRecognition": "Rozpoznawanie głosu",
@@ -181,17 +182,17 @@
   "removeAds": "Usuń reklamy",
   "unknownAction": "Nieznana akcja",
   "settingsBackup": "Kopia zapasowa ustawień",
-  "allServicesStatusTitle": "Aktualny status usługi",
+  "allServicesStatusTitle": "Status wszystkich usług",
   "allServicesStatusSubtitle": "Aktualny status każdej usługi w chmurze",
   "redirect": "Przekieruj",
   "notify": "Powiadom",
-  "log": "Log",
+  "log": "Loguj",
   "custom": "Niestandardowe",
-  "allowActionDescription": "Połączenia będą dozwolone, nawet jeśli numer znajduje się na czarnej liście.",
-  "blockActionDescription": "Połączenia zostaną zablokowane i wyświetlone w rejestrze połączeń.",
-  "silenceActionDescription": "Połączenia zostaną wyciszone, ale wyświetlone w rejestrze połączeń.",
-  "noneActionDescription": "Nie zostaną podjęte żadne specjalne działania dla połączenia.",
-  "redirectActionDescription": "Przekieruj połączenie na określony numer.",
+  "allowActionDescription": "Zezwoli na połączenia, nawet jeśli numer znajduje się na liście blokowanych.",
+  "blockActionDescription": "Zablokuje połączenia i wyświetli je w dzienniku połączeń.",
+  "silenceActionDescription": "Wyciszy połączenia, ale wyświetli je w dzienniku połączeń.",
+  "noneActionDescription": "Dla połączenia nie zostanie wykonana żadna specjalna akcja.",
+  "redirectActionDescription": "Przekieruje połączenie na określony numer.",
   "labelActionDescription": "Dodaj etykietę do połączenia w celu łatwej identyfikacji.",
-  "notifyActionDescription": "Wyślij powiadomienie po odebraniu połączenia."
+  "notifyActionDescription": "Wyślij powiadomienie, gdy nadejdzie połączenie."
 }
