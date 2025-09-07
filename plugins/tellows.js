@@ -216,17 +216,10 @@
                       }
 
                       // --- Map sourceLabel to predefinedLabel ---
-                      let matchedLabel = predefinedLabels.find(label => label.label === jsonObject.sourceLabel)?.label;
-
-                      if (!matchedLabel) {
-                        matchedLabel = manualMapping[jsonObject.sourceLabel];
+                      if (jsonObject.sourceLabel) {
+                          jsonObject.predefinedLabel = manualMapping[jsonObject.sourceLabel] || 'Unknown';
                       }
-
-                      if (!matchedLabel) {
-                        matchedLabel = 'Unknown';
-                      }
-                      jsonObject.predefinedLabel = matchedLabel;
-
+                          
                       // Determine success based on whether a label or count was found
                       jsonObject.success = jsonObject.sourceLabel !== "" || jsonObject.count > 0 || jsonObject.name !== "unknown";
 
