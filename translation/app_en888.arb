@@ -1,0 +1,856 @@
+﻿{
+  "activeProposals": "Active Proposals",
+  "@activeProposals": {
+    "description": "Active proposals label"
+  },
+  "agreeVotes": "Agree: {count}",
+  "@agreeVotes": {
+    "description": "Agree votes count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allCallLogsCleared": "All call logs cleared",
+  "allNotificationsCleared": "All notifications cleared",
+  "approved": "APPROVED",
+  "@approved": {
+    "description": "Status label for approved"
+  },
+  "avatar": "Avatar",
+  "@avatar": {
+    "description": "The avatar of the user."
+  },
+  "batchNotifications": "Batched",
+  "@batchNotifications": {
+    "description": "Label for the batched notification mode"
+  },
+  "batchNotificationsDescription": "Receive a summary of notifications periodically.",
+  "@batchNotificationsDescription": {
+    "description": "Description for the batched notification mode"
+  },
+  "blockedCallNotifications": "Blocked Call Notifications",
+  "blockedCallNotificationsDescription": "Displays information about blocked calls.",
+  "blockNumber": "Block Number",
+  "blockNumberFailed": "Block number failed",
+  "blockNumberSuccess": "Block number success",
+  "callDetails": "Call Details",
+  "callingNumber": "Calling {phoneNumber}...",
+  "@callingNumber": {
+    "description": "Status text displayed on the screen when an outgoing call is initiated.",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number that is being dialed.",
+        "example": "+1 555-123-4567"
+      }
+    }
+  },
+  "callingNumberFailed": "Calling number failed",
+  "callTime": "Call Time",
+  "callType": "Call Type",
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "clearAllCallLogs": "Clear All Call Logs",
+  "clearAllCallLogsConfirmation": "Confirm to clear all call logs",
+  "clearAllNotifications": "Clear All Notifications",
+  "clearAllNotificationsConfirmation": "Confirm to clear all notifications",
+  "clearButton": "Clear",
+  "communityImpact": "Community Impact",
+  "@communityImpact": {
+    "description": "Community impact label"
+  },
+  "communityParticipation": "Community Participation",
+  "@communityParticipation": {
+    "description": "Community participation label"
+  },
+  "communityVotes": "Community votes",
+  "@communityVotes": {
+    "description": "Label for community votes count"
+  },
+  "communityVotingStarted": "Community Voting Started",
+  "@communityVotingStarted": {
+    "description": "Title for community voting started notification"
+  },
+  "communityVotingStartedBody": "A new deletion proposal for {phoneNumber} is now open for community voting.",
+  "@communityVotingStartedBody": {
+    "description": "Body text for community voting started notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number in the proposal"
+      }
+    }
+  },
+  "completed": "COMPLETED",
+  "@completed": {
+    "description": "Status label for completed"
+  },
+  "completedProposals": "Completed Proposals",
+  "@completedProposals": {
+    "description": "Completed proposals label"
+  },
+  "countryCodeHint": "e.g., US, CN, GB",
+  "@countryCodeHint": {
+    "description": "Hint text for country code input field"
+  },
+  "countryCodeLabel": "Country Code (ISO 3166-1 alpha-2) *",
+  "@countryCodeLabel": {
+    "description": "Label for country code input field"
+  },
+  "countryCodeLengthError": "Country code must be 2 letters",
+  "@countryCodeLengthError": {
+    "description": "Validation message for country code length"
+  },
+  "countryCodeRequired": "Country code is required",
+  "@countryCodeRequired": {
+    "description": "Validation message for required country code"
+  },
+  "countryCodeTwoLetters": "Country Code (ISO 3166-1 alpha-2) *",
+  "createdAt": "Created: {date}",
+  "@createdAt": {
+    "description": "Created date label",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "createProposal": "Create Proposal",
+  "@createProposal": {
+    "description": "Create proposal button text"
+  },
+  "createProposalTitle": "Create Deletion Proposal",
+  "@createProposalTitle": {
+    "description": "Create proposal dialog title"
+  },
+  "critical": "Critical",
+  "@critical": {
+    "description": "Critical risk level label"
+  },
+  "criticalIssues": "Critical Issues",
+  "@criticalIssues": {
+    "description": "Critical issues label"
+  },
+  "customFrequency": "Custom Frequency",
+  "@customFrequency": {
+    "description": "Title for the custom frequency slider section"
+  },
+  "customNotifications": "Custom",
+  "@customNotifications": {
+    "description": "Label for the custom notification mode"
+  },
+  "customNotificationsDescription": "Define your own interval for receiving notifications.",
+  "@customNotificationsDescription": {
+    "description": "Description for the custom notification mode"
+  },
+  "dataSourceDisclaimer": "Numbers are sourced from the internet and user submissions. We cannot guarantee that a number, once deleted, will not be re-submitted by other users or sources. Please actively search and verify information.",
+  "@dataSourceDisclaimer": {
+    "description": "A disclaimer explaining where the phone number data comes from and its limitations."
+  },
+  "daysAgo": "{count,plural, =1{1 day ago} other{{count} days ago}}",
+  "@daysAgo": {
+    "description": "Relative time for days ago.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "defaultNotifications": "Default Notifications",
+  "defaultNotificationsDescription": "Default notification channel for the app.",
+  "deletionProposal": "Deletion Proposal",
+  "@deletionProposal": {
+    "description": "Deletion proposal title"
+  },
+  "deletionProposalCreated": "Deletion Proposal Created",
+  "@deletionProposalCreated": {
+    "description": "Title for deletion proposal created notification"
+  },
+  "deletionProposalCreatedBody": "Your deletion proposal for {phoneNumber} has been submitted for community review.",
+  "@deletionProposalCreatedBody": {
+    "description": "Body text for deletion proposal created notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number in the proposal"
+      }
+    }
+  },
+  "deletionProposalDescription": "Propose numbers for deletion that violate community guidelines. Your participation helps keep the platform safe.",
+  "deletionProposalInfo": "Deletion Proposal Information",
+  "deletionProposalNotificationDescription": "Notifications about deletion proposal voting results and updates.",
+  "@deletionProposalNotificationDescription": {
+    "description": "Description for deletion proposal notification channel"
+  },
+  "deletionProposals": "Deletion Proposals",
+  "@deletionProposals": {
+    "description": "Title for deletion proposals notification channel"
+  },
+  "disagreeVotes": "Disagree: {count}",
+  "@disagreeVotes": {
+    "description": "Disagree votes count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "earnedTempVip": "Earned temporary VIP",
+  "elementsSettingsTitle": "Elements Settings",
+  "errorMessage": "Error: {error}",
+  "@errorMessage": {
+    "description": "Generic error message template",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeFailed": "Exchange failed: {error}",
+  "exchangeSuccess": "Successfully exchanged for {description}, expiry date: {expiryDate}",
+  "finalRisk": "Final Risk",
+  "fraudAlerts": "Fraud Alerts",
+  "fraudAlertsDescription": "Displays warnings for potential fraudulent calls.",
+  "grantedTempPurchaseWithExpiry": "You have been granted {days} days of temporary purchase privileges. Expiry date: {expiryDate}",
+  "guidelinesLabel": "Guidelines",
+  "guidelinesText": "• Only report numbers that are genuinely problematic\n• Provide accurate and detailed reasons\n• Choose appropriate risk level based on severity\n• False reports may result in account restrictions",
+  "@guidelinesText": {
+    "description": "Text content for guidelines section"
+  },
+  "guidelinesTitle": "Guidelines",
+  "@guidelinesTitle": {
+    "description": "Title for guidelines section"
+  },
+  "hasTempPrivilegeWithExpiry": "You already have temporary privileges, expiry date: {expiryDate}",
+  "hasVipPrivilegeExceptAds": "You already have VIP privileges (except for ads)",
+  "hideReport": "Hide Report",
+  "@hideReport": {
+    "description": "Hide report button text"
+  },
+  "high": "High",
+  "@high": {
+    "description": "High level label"
+  },
+  "highRisk": "High Risk",
+  "@highRisk": {
+    "description": "High risk label"
+  },
+  "hoursAgo": "{count,plural, =1{1 hour ago} other{{count} hours ago}}",
+  "@hoursAgo": {
+    "description": "Relative time for hours ago.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "hoursDuration": "{count, plural, =0{0 hours} =1{1 hour} other{{count} hours}}",
+  "@hoursDuration": {
+    "description": "A duration in hours, formatted to be grammatically correct for singular or plural.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "immediateNotifications": "Immediate",
+  "@immediateNotifications": {
+    "description": "Label for the immediate notification mode"
+  },
+  "immediateNotificationsDescription": "Receive a notification as soon as a proposal is created.",
+  "@immediateNotificationsDescription": {
+    "description": "Description for the immediate notification mode"
+  },
+  "importantNoticeTitle": "Important Notice",
+  "@importantNoticeTitle": {
+    "description": "The title for the data source disclaimer card."
+  },
+  "invalidExchangeRule": "Invalid exchange rule",
+  "ipCountry": "IP Country",
+  "isNumberMatch": "Number Match",
+  "isRoaming": "Roaming",
+  "justNow": "Just now",
+  "listView": "List View",
+  "liveActivitiesSettingsTitle": "Live Activities Settings",
+  "liveActivitiesTestEndActivity": "End Activity",
+  "liveActivitiesTestSendNewActivity": "Send New Activity",
+  "liveActivitiesTestSubtitle": "Test the live activity Notification.",
+  "liveActivitiesTestTitle": "Live Activities Test",
+  "liveActivitiesTestUpdateActivity": "Update Activity",
+  "liveActivityControlsTitle": "Live Activity Controls",
+  "liveActivityMode": "Live Activity",
+  "liveActivityModeDescription": "Displays call information as a persistent notification on the lock screen and in the Dynamic Island (iOS).",
+  "liveNotificationCustomizationSubtitle": "Customize the appearance of live notifications.",
+  "liveNotificationCustomizationTitle": "Live Notification Customization",
+  "loadingAd": "Loading Ad...",
+  "loadingProposals": "Loading proposals...",
+  "@loadingProposals": {
+    "description": "Loading proposals message"
+  },
+  "loadVoteCountFailed": "Failed to load vote count",
+  "location": "Location",
+  "@location": {
+    "description": "The location of the user."
+  },
+  "low": "Low",
+  "@low": {
+    "description": "Low level label"
+  },
+  "lowRisk": "Low Risk",
+  "@lowRisk": {
+    "description": "Low risk label"
+  },
+  "marksInsufficient": "Insufficient marks to exchange",
+  "medium": "Medium",
+  "mediumRisk": "Medium Risk",
+  "@mediumRisk": {
+    "description": "Medium risk label"
+  },
+  "membershipFeature": "Membership Feature",
+  "minutesAgo": "{count,plural, =1{1 minute ago} other{{count} minutes ago}}",
+  "@minutesAgo": {
+    "description": "Relative time for minutes ago.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "moderate": "Moderate",
+  "@moderate": {
+    "description": "Moderate level label"
+  },
+  "myVotes": "My Votes",
+  "@myVotes": {
+    "description": "My votes label"
+  },
+  "nameCannotBeEmpty": "Name cannot be empty",
+  "newVoteReceived": "New Vote Received",
+  "@newVoteReceived": {
+    "description": "Title for new vote received notification"
+  },
+  "newVoteReceivedBody": "Someone voted to {voteType} the deletion of {phoneNumber}. Current votes: {totalVotes}.",
+  "@newVoteReceivedBody": {
+    "description": "Body text for new vote received notification",
+    "placeholders": {
+      "voteType": {
+        "type": "String",
+        "description": "The type of vote (support/oppose)"
+      },
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number in the proposal"
+      },
+      "totalVotes": {
+        "type": "int",
+        "description": "The total number of votes"
+      }
+    }
+  },
+  "noActivity": "No Activity",
+  "@noActivity": {
+    "description": "No activity label"
+  },
+  "noNotifications": "No notifications",
+  "noProposalsFound": "No proposals found",
+  "@noProposalsFound": {
+    "description": "No proposals found message"
+  },
+  "notification_instructions": "Instructions:\n1. Tap \"SEND\" to create or update a notification.\n2. Go to your home screen or pull down the notification tray to see the result.\n3. Tap \"END\" to dismiss the notification.",
+  "@notification_instructions": {
+    "description": "A single string containing all instructions for the notification."
+  },
+  "notificationFrequencyDescription": "Choose how often you receive notifications about new deletion proposals. You can receive them immediately, in batches, or at a custom interval.",
+  "@notificationFrequencyDescription": {
+    "description": "A detailed explanation of what the notification frequency settings do"
+  },
+  "notificationFrequencyDurationHours": "{hours} h",
+  "@notificationFrequencyDurationHours": {
+    "description": "Formats a duration that is in whole hours.",
+    "placeholders": {
+      "hours": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "notificationFrequencyDurationHoursAndMinutes": "{hours} h {minutes} min",
+  "@notificationFrequencyDurationHoursAndMinutes": {
+    "description": "Formats a duration that has both hours and minutes.",
+    "placeholders": {
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "notificationFrequencyDurationMinutes": "{minutes} min",
+  "@notificationFrequencyDurationMinutes": {
+    "description": "Formats a duration that is only in minutes.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "45"
+      }
+    }
+  },
+  "notificationFrequencyHours": "Notification Frequency (Hours)",
+  "@notificationFrequencyHours": {
+    "description": "Title for the notification frequency setting."
+  },
+  "notificationFrequencyLabel": "Notification Frequency (hours)",
+  "@notificationFrequencyLabel": {
+    "description": "Label for notification frequency dropdown"
+  },
+  "notificationFrequencyTitle": "Notification Frequency",
+  "@notificationFrequencyTitle": {
+    "description": "Title for notification frequency settings"
+  },
+  "notificationMode": "Notification Mode",
+  "@notificationMode": {
+    "description": "Title for the mode selection part (Immediate, Batched, Custom)"
+  },
+  "numberInvalidFormat": "Number invalid format",
+  "oppose": "Oppose",
+  "@oppose": {
+    "description": "Label for oppose votes"
+  },
+  "opposeCount": "Oppose ({opposeCount})",
+  "@opposeCount": {
+    "description": "Shows the number of oppose votes.",
+    "placeholders": {
+      "opposeCount": {
+        "type": "int"
+      }
+    }
+  },
+  "opposed": "OPPOSED",
+  "@opposed": {
+    "description": "Label for opposed vote"
+  },
+  "overview": "Overview",
+  "@overview": {
+    "description": "Overview label"
+  },
+  "pending": "PENDING",
+  "@pending": {
+    "description": "Status label for pending"
+  },
+  "pendingProposals": "Pending Proposals",
+  "pendingProposalsBody": "You have {count, plural, =0 {no pending proposals} one {1 pending proposal} other {{count} pending proposals}}.",
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "description": "Phone number label"
+  },
+  "phoneNumberHint": "Enter phone number",
+  "@phoneNumberHint": {
+    "description": "Hint text for phone number input field"
+  },
+  "phoneNumberLengthError": "Phone number must be at least 7 digits",
+  "@phoneNumberLengthError": {
+    "description": "Validation message for phone number length"
+  },
+  "phoneNumberMinDigits": "Phone number must be at least 7 digits",
+  "phoneNumberRequired": "Phone number is required",
+  "@phoneNumberRequired": {
+    "description": "Validation message for required phone number"
+  },
+  "phoneNumberType": "PhoneNumber Type",
+  "proposalApproved": "Proposal Approved ✅",
+  "@proposalApproved": {
+    "description": "Title for proposal approved notification"
+  },
+  "proposalApprovedBody": "The deletion proposal for {phoneNumber} has been approved by the community ({supportPercentage}% support, {totalVotes} votes).",
+  "@proposalApprovedBody": {
+    "description": "Body text for proposal approved notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number in the proposal"
+      },
+      "supportPercentage": {
+        "type": "int",
+        "description": "The percentage of support votes"
+      },
+      "totalVotes": {
+        "type": "int",
+        "description": "The total number of votes"
+      }
+    }
+  },
+  "proposalCreated": "Proposal created successfully",
+  "@proposalCreated": {
+    "description": "Proposal created success message"
+  },
+  "proposalCreateFailed": "Failed to create proposal",
+  "@proposalCreateFailed": {
+    "description": "Proposal create failed message"
+  },
+  "proposalProcessed": "This proposal has been processed",
+  "@proposalProcessed": {
+    "description": "Message when proposal is completed"
+  },
+  "proposalRejected": "Proposal Rejected ❌",
+  "@proposalRejected": {
+    "description": "Title for proposal rejected notification"
+  },
+  "proposalRejectedBody": "The deletion proposal for {phoneNumber} has been rejected by the community ({supportPercentage}% support, {totalVotes} votes).",
+  "@proposalRejectedBody": {
+    "description": "Body text for proposal rejected notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number in the proposal"
+      },
+      "supportPercentage": {
+        "type": "int",
+        "description": "The percentage of support votes"
+      },
+      "totalVotes": {
+        "type": "int",
+        "description": "The total number of votes"
+      }
+    }
+  },
+  "proposalStatistics": "Proposal Statistics",
+  "@proposalStatistics": {
+    "description": "Proposal statistics title"
+  },
+  "proposalStatus": "Status",
+  "@proposalStatus": {
+    "description": "Proposal status label"
+  },
+  "provideDetailedExplanation": "Provide a detailed explanation(minimum 10 characters)",
+  "reason": "Reason",
+  "@reason": {
+    "description": "Reason label"
+  },
+  "reasonHint": "Provide detailed explanation (minimum 10 characters)",
+  "@reasonHint": {
+    "description": "Hint text for reason input field"
+  },
+  "reasonInaccurateInfo": "Inaccurate Information",
+  "@reasonInaccurateInfo": {
+    "description": "Inaccurate Information reason option"
+  },
+  "reasonLengthError": "Reason must be at least 10 characters",
+  "@reasonLengthError": {
+    "description": "Validation message for reason length"
+  },
+  "reasonMinCharacters": "Reason must be at least 10 characters",
+  "reasonNotInService": "Not in Service",
+  "@reasonNotInService": {
+    "description": "Not in Service reason option"
+  },
+  "reasonOther": "Other",
+  "@reasonOther": {
+    "description": "Other reason option"
+  },
+  "reasonOutdated": "Outdated Number",
+  "@reasonOutdated": {
+    "description": "Outdated Number reason option"
+  },
+  "reasonPrivacy": "Privacy Concern",
+  "@reasonPrivacy": {
+    "description": "Privacy Concern reason option"
+  },
+  "reasonRequired": "Reason is required",
+  "@reasonRequired": {
+    "description": "Validation message for required reason"
+  },
+  "reasonWronglyIdentified": "Wrongly Identified",
+  "@reasonWronglyIdentified": {
+    "description": "Wrongly Identified reason option"
+  },
+  "reasonWrongMarked": "Wrong Marked",
+  "@reasonWrongMarked": {
+    "description": "Wrong marked reason option"
+  },
+  "refreshProposals": "Refresh Proposals",
+  "@refreshProposals": {
+    "description": "Refresh proposals button text"
+  },
+  "rejected": "REJECTED",
+  "@rejected": {
+    "description": "Status label for rejected"
+  },
+  "reportingGuidelines": "• Only report numbers that are genuinely problematic\n• Provide accurate and detailed reasons\n• Choose appropriate risk level based on severity\n• False reports may result in account restrictions",
+  "@reportingGuidelines": {
+    "description": "Guidelines for reporting a number."
+  },
+  "rewardedAdService": "Rewarded Ad Service",
+  "riskDescriptionCritical": "Critical - Dangerous scams or threats",
+  "@riskDescriptionCritical": {
+    "description": "Description for critical risk level"
+  },
+  "riskDescriptionHigh": "High - Persistent harassment or scam attempts",
+  "@riskDescriptionHigh": {
+    "description": "Description for high risk level"
+  },
+  "riskDescriptionLow": "Low - Occasional unwanted calls",
+  "@riskDescriptionLow": {
+    "description": "Description for low risk level"
+  },
+  "riskDescriptionMedium": "Medium - Regular spam or telemarketing",
+  "@riskDescriptionMedium": {
+    "description": "Description for medium risk level"
+  },
+  "riskDescriptionVeryLow": "Very Low - Minor annoyance, infrequent calls",
+  "@riskDescriptionVeryLow": {
+    "description": "Description for very low risk level"
+  },
+  "riskLevel": "Risk Level",
+  "@riskLevel": {
+    "description": "Risk level label"
+  },
+  "riskLevelCritical": "Critical",
+  "@riskLevelCritical": {
+    "description": "Label for critical risk level"
+  },
+  "riskLevelDescription": "Risk level of the number",
+  "riskLevelHigh": "High",
+  "@riskLevelHigh": {
+    "description": "Label for high risk level"
+  },
+  "riskLevelLabel": "Risk Level",
+  "riskLevelLow": "Low",
+  "@riskLevelLow": {
+    "description": "Label for low risk level"
+  },
+  "riskLevelMedium": "Medium",
+  "@riskLevelMedium": {
+    "description": "Label for medium risk level"
+  },
+  "riskLevelUnknown": "Unknown",
+  "@riskLevelUnknown": {
+    "description": "Unknown risk level"
+  },
+  "riskLevelVerified": "Verified",
+  "@riskLevelVerified": {
+    "description": "Verified risk level"
+  },
+  "riskLevelVeryLow": "Very Low",
+  "@riskLevelVeryLow": {
+    "description": "Label for very low risk level"
+  },
+  "searchProposals": "Search Proposals",
+  "selectAction": "Select the action",
+  "selectTargetService": "Select the target service",
+  "serviceNotAvailable": "Service not available",
+  "showReport": "Show Report",
+  "@showReport": {
+    "description": "Show report button text"
+  },
+  "simCardTitle": "SIM Card",
+  "simCountry": "SIM Country",
+  "simState": "SIM State",
+  "statusActive": "Active",
+  "@statusActive": {
+    "description": "Active status"
+  },
+  "statusCompleted": "Completed",
+  "@statusCompleted": {
+    "description": "Completed status"
+  },
+  "statusExpired": "Expired",
+  "@statusExpired": {
+    "description": "Expired status"
+  },
+  "statusPending": "Pending",
+  "@statusPending": {
+    "description": "Pending status"
+  },
+  "stirVerification": "STIR/SHAKEN Verification",
+  "stirVerificationDescription": "Displays STIR/SHAKEN verification results for numbers.",
+  "submit": "Submit",
+  "@submit": {
+    "description": "Submit button text"
+  },
+  "support": "Support",
+  "supportCount": "Support ({supportCount})",
+  "@supportCount": {
+    "description": "Shows the number of support votes.",
+    "placeholders": {
+      "supportCount": {
+        "type": "int"
+      }
+    }
+  },
+  "supported": "SUPPORTED",
+  "@supported": {
+    "description": "Label for supported vote"
+  },
+  "tempPurchaseExpired": "Temporary purchase privilege has expired",
+  "timeDaysAgo": "{days}d ago",
+  "@timeDaysAgo": {
+    "description": "Time format for days ago",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "timeHoursAgo": "{hours}h ago",
+  "@timeHoursAgo": {
+    "description": "Time format for hours ago",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "timeJustNow": "Just now",
+  "@timeJustNow": {
+    "description": "Time format for recent events"
+  },
+  "timelineView": "Timeline View",
+  "timeMinutesAgo": "{minutes}m ago",
+  "@timeMinutesAgo": {
+    "description": "Time format for minutes ago",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "totalPendingProposals": "Total Pending Proposals",
+  "@totalPendingProposals": {
+    "description": "Total pending proposals label"
+  },
+  "totalProposals": "Total Proposals",
+  "@totalProposals": {
+    "description": "Total proposals label"
+  },
+  "totalVotes": "Total: {count}",
+  "@totalVotes": {
+    "description": "Total votes count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unblock": "Unblock",
+  "unblocked": "Unblocked",
+  "unblockNumber": "Unblock Number",
+  "unblockNumberConfirmation": "Are you sure you want to unblock {phoneNumber}?",
+  "@unblockNumberConfirmation": {
+    "description": "Confirmation message shown when a user tries to unblock a number from their blocklist.",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number that the user wants to unblock.",
+        "example": "+1 415-555-0132"
+      }
+    }
+  },
+  "unblockNumberFailed": "Unblock number failed",
+  "unblockNumberSuccess": "Number unblocked successfully",
+  "verificationReport": "Verification Report",
+  "@verificationReport": {
+    "description": "Verification report label"
+  },
+  "veryHigh": "Very High",
+  "@veryHigh": {
+    "description": "Very high level label"
+  },
+  "veryLow": "Very Low",
+  "@veryLow": {
+    "description": "Very low risk level label"
+  },
+  "viewDetails": "View Details",
+  "vip3DaysWithAds": "3-day VIP with ads (sync only)",
+  "vip5DaysNoAds": "5-day full-featured ad-free VIP",
+  "vip7DaysNoAds": "7-day full-featured ad-free VIP",
+  "vipExchangeService": "VIP Exchange Service",
+  "voteAgree": "Agree",
+  "@voteAgree": {
+    "description": "Vote agree button text"
+  },
+  "voteCount": "Vote Count",
+  "voted": "Voted",
+  "@voted": {
+    "description": "Label for when user voted"
+  },
+  "voteDisagree": "Disagree",
+  "@voteDisagree": {
+    "description": "Vote disagree button text"
+  },
+  "voteFailed": "Vote failed",
+  "votesStatistics": "Votes: {totalVotes} ({supportPercentage}% support)",
+  "@votesStatistics": {
+    "description": "Voting statistics text",
+    "placeholders": {
+      "totalVotes": {
+        "type": "int"
+      },
+      "supportPercentage": {
+        "type": "int"
+      }
+    }
+  },
+  "voteSubmitFailed": "Failed to submit vote",
+  "@voteSubmitFailed": {
+    "description": "Vote submit failed message"
+  },
+  "voteSubmitted": "Vote submitted successfully",
+  "@voteSubmitted": {
+    "description": "Vote submitted success message"
+  },
+  "votesWithPercentage": "{totalVotes} votes ({supportPercentage}% support)",
+  "@votesWithPercentage": {
+    "description": "Displays the total vote count and the percentage of support votes.",
+    "placeholders": {
+      "totalVotes": {
+        "type": "int"
+      },
+      "supportPercentage": {
+        "type": "int"
+      }
+    }
+  },
+  "voteToEarnVip": "Vote on proposals to earn VIP privileges!",
+  "votingCompleted": "Voting Completed",
+  "@votingCompleted": {
+    "description": "Title for voting completed notification"
+  },
+  "votingCompletedBody": "Community voting for {phoneNumber} has ended. Result: {result} ({supportPercentage}% support).",
+  "@votingCompletedBody": {
+    "description": "Body text for voting completed notification",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String",
+        "description": "The phone number in the proposal"
+      },
+      "result": {
+        "type": "String",
+        "description": "The voting result (Approved/Rejected)"
+      },
+      "supportPercentage": {
+        "type": "int",
+        "description": "The percentage of support votes"
+      }
+    }
+  },
+  "votingProgress": "Voting Progress",
+  "@votingProgress": {
+    "description": "Voting progress label"
+  },
+  "waitingForMoreVotes": "Waiting for more community votes",
+  "@waitingForMoreVotes": {
+    "description": "Message when waiting for more votes"
+  },
+  "watchMoreAdsForTempVip": "You need to watch {count} more ads to get temporary VIP privileges",
+  "yesterday": "Yesterday"
+}
