@@ -3180,16 +3180,108 @@
 "setDelayTime": "Set Delay Time",
   "@setDelayTime": {
     "description": "A button to set the delay time for the notification."
+  },
+  "proposalDetails": "Proposal Details",
+  "@proposalDetails": {
+    "description": "The title of the proposal details page."  
+  },
+   "filterByStatus": "Filter by Status",
+
+
+"proposalNotFound": "Proposal not found",
+"@proposalNotFound": {
+    "description": "A message displayed when a proposal is not found."
+  },
+
+
+ "processed": "Processed",
+ "@processed": {
+   "description": "A label for the processed status."
+ },
+"showAll": "Show All",
+
+"@showAll": {
+    "description": "A button to show all proposals."
+  },
+ 
+ "filterAndSortTitle": "Filter and Sort",
+
+"filterVerifiedOwner": "Filter Verified Owner",
+"@filterVerifiedOwner": {
+    "description": "A checkbox to toggle whether to filter verified owners."
+  },
+ 
+ 
+"filterBy": "Filter By",
+"@filterBy": {
+    "description": "A label for the filter by dropdown."
+  },
+
+"sortOldest": "Sort Oldest",
+"sortNewest": "Sort Newest",
+
+"sortMostPopular": "Sort Most Popular",
+
+"sortLeastPopular": "Sort Least Popular",
+"sortBy": "Sort By",
+"simRulesNotFound": "SIM Rules not found",
+"@simRulesNotFound": {
+    "description": "A message displayed when SIM rules are not found."
+  },
+"simSlotRules": "SIM Slot Rules",
+"@simSlotRules": {
+    "description": "A label for the SIM slot rules."
+  },
+"noSimCardDetected": "No SIM card detected",
+"@noSimCardDetected": {
+    "description": "A message displayed when no SIM card is detected."
+  },
+"invalidSimData": "Invalid SIM data",
+"@invalidSimData": {
+    "description": "A message displayed when the SIM data is invalid."
+  },
+"simCardData": "SIM Card Data",
+"@simCardData": {
+    "description": "A label for the SIM card data."
+  },
+"simSlot": "SIM Slot",
+"@simSlot": {
+    "description": "A label for the SIM slot."
+  },
+  "enableFiltering": "Enable Filtering",
+  "@enableFiltering": {
+    "description": "A checkbox to toggle whether to enable filtering."
+  },
+
+"detailedSettingsTitle": "Detailed Settings",
+"@detailedSettingsTitle": {
+    "description": "The title of the detailed settings page."
+  },
+"entryPointViewTitle": "Entry Point View",
+"@entryPointViewTitle": {
+    "description": "The title of the entry point view."
+  },
+
+"callTypeRejected": "Rejected",
+
+"callTypeSilenced": "Silenced",
+"callTypeVoicemail": "Voicemail",
+"callTypeUnknownIntercept": "Unknown Intercept",
+
+    "andMoreItems": "and {count} more items",
+  "@andMoreItems": {
+    "description": "Text to show when there are more items than displayed.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
   }
-
- 
  
  
  
 
-
- 
- 
  
  
  
